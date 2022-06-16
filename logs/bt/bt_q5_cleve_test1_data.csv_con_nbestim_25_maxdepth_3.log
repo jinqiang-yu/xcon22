@@ -1,0 +1,2412 @@
+c XDual: dual explanations for XGBoost models
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (-inf..42.0] AND Sex = 0 AND Chest pain type = 3 AND Trestbps = (-inf..113.2] AND Cholesterol = (261.6..301.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 1 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Chest pain type = 3 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Number of vessels colored = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 0 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 3 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 0 AND NOT Cholesterol = (261.6..301.6] AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Sex = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Slope = 2 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (261.6..301.6] AND NOT Max heart rate = (155.0..173.0] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (261.6..301.6] AND NOT Max heart rate = (155.0..173.0] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Cholesterol = (261.6..301.6] AND NOT Max heart rate = (155.0..173.0] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Cholesterol = (261.6..301.6] AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Cholesterol = (261.6..301.6] AND NOT Slope = 2 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Sex = 0 AND NOT Cholesterol = (261.6..301.6] AND NOT Max heart rate = (155.0..173.0] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Trestbps = (-inf..113.2] AND NOT Cholesterol = (261.6..301.6] AND NOT Resting ecg = 1 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 5
+  exp time: 1.14
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (-inf..42.0] AND Sex = 1 AND Chest pain type = 0 AND Trestbps = (-inf..113.2] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (137.0..155.0] AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Slope = 2 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (229.4..261.6] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Resting ecg = 2 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 0 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (-inf..113.2] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (-inf..113.2] AND NOT Exercise induced angina = 0 AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 0 AND NOT Resting ecg = 2 AND NOT Exercise induced angina = 0 AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Chest pain type = 0 AND NOT Exercise induced angina = 0 AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Resting ecg = 2 AND NOT Exercise induced angina = 0 AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Resting ecg = 2 AND NOT Exercise induced angina = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Trestbps = (-inf..113.2] AND NOT Exercise induced angina = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Cholesterol = (229.4..261.6] AND NOT Resting ecg = 2 AND NOT Exercise induced angina = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  exp time: 0.80
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (-inf..42.0] AND Sex = 1 AND Chest pain type = 1 AND Trestbps = (113.2..126.4] AND Cholesterol = (-inf..198.2] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (173.0..+inf) AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Chest pain type = 1 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (173.0..+inf) AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 1 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (173.0..+inf) AND NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (173.0..+inf) AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Max heart rate = (173.0..+inf) AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (173.0..+inf) AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (173.0..+inf) AND NOT Exercise induced angina = 0 AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Max heart rate = (173.0..+inf) AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Chest pain type = 1 AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Resting ecg = 1 AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Resting ecg = 1 AND NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Cholesterol = (-inf..198.2] AND NOT Exercise induced angina = 0 AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Exercise induced angina = 0 AND NOT Slope = 2 AND NOT Number of vessels colored = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 5
+  exp time: 1.80
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (-inf..42.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (-inf..113.2] AND Cholesterol = (-inf..198.2] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (-inf..117.0] AND Exercise induced angina = 1 AND Oldpeak = (1.56..2.44] AND Slope = 1 AND Number of vessels colored = 0 AND Thal = 3 THEN 1"
+  explanation: "IF NOT Sex = 1 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Exercise induced angina = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (-inf..113.2] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Slope = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (1.56..2.44] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Resting ecg = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (-inf..117.0] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Oldpeak = (1.56..2.44] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Chest pain type = 2 AND NOT Max heart rate = (-inf..117.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Resting ecg = 1 AND NOT Oldpeak = (1.56..2.44] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Resting ecg = 1 AND NOT Oldpeak = (1.56..2.44] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Resting ecg = 1 AND NOT Oldpeak = (1.56..2.44] THEN NOT 1"
+  # hypos left: 3
+  exp time: 0.94
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (-inf..42.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (113.2..126.4] AND Cholesterol = (198.2..229.4] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (137.0..155.0] AND Exercise induced angina = 0 AND Oldpeak = (0.78..1.56] AND Slope = 1 AND Number of vessels colored = 0 AND Thal = 3 THEN 1"
+  explanation: "IF NOT Thal = 3 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Sex = 1 AND NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (137.0..155.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Max heart rate = (137.0..155.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (137.0..155.0] AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Trestbps = (113.2..126.4] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (113.2..126.4] AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Sex = 1 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Chest pain type = 2 AND NOT Fasting blood sugar &lt; 120 = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Resting ecg = 2 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Trestbps = (113.2..126.4] AND NOT Fasting blood sugar &lt; 120 = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Chest pain type = 2 AND NOT Trestbps = (113.2..126.4] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Trestbps = (113.2..126.4] AND NOT Max heart rate = (137.0..155.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (113.2..126.4] AND NOT Max heart rate = (137.0..155.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Max heart rate = (137.0..155.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Trestbps = (113.2..126.4] AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 4
+  exp time: 1.05
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (-inf..42.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (126.4..141.6] AND Cholesterol = (301.6..+inf) AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (117.0..137.0] AND Exercise induced angina = 1 AND Oldpeak = (1.56..2.44] AND Slope = 1 AND Number of vessels colored = 0 AND Thal = 1 THEN 1"
+  explanation: "IF NOT Age = (-inf..42.0] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Thal = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Slope = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Oldpeak = (1.56..2.44] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Max heart rate = (117.0..137.0] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Chest pain type = 2 AND NOT Cholesterol = (301.6..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Cholesterol = (301.6..+inf) AND NOT Fasting blood sugar &lt; 120 = 0 THEN NOT 1"
+  # hypos left: 3
+  exp time: 0.35
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (-inf..42.0] AND Sex = 1 AND Chest pain type = 3 AND Trestbps = (126.4..141.6] AND Cholesterol = (198.2..229.4] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 0 AND Oldpeak = (1.56..2.44] AND Slope = 1 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Oldpeak = (1.56..2.44] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Thal = 2 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 3 AND NOT Cholesterol = (198.2..229.4] AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Cholesterol = (198.2..229.4] AND NOT Resting ecg = 1 AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (-inf..42.0] AND NOT Trestbps = (126.4..141.6] AND NOT Cholesterol = (198.2..229.4] AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 4
+  exp time: 0.42
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (42.0..50.0] AND Sex = 0 AND Chest pain type = 2 AND Trestbps = (126.4..141.6] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (137.0..155.0] AND Exercise induced angina = 1 AND Oldpeak = (-inf..0.78] AND Slope = 1 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Age = (42.0..50.0] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Thal = 2 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Trestbps = (126.4..141.6] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 1
+  exp time: 0.27
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (42.0..50.0] AND Sex = 0 AND Chest pain type = 3 AND Trestbps = (126.4..141.6] AND Cholesterol = (261.6..301.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (137.0..155.0] AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 0 AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Cholesterol = (261.6..301.6] AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Resting ecg = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Cholesterol = (261.6..301.6] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Chest pain type = 3 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Number of vessels colored = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Resting ecg = 2 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Chest pain type = 3 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Exercise induced angina = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Cholesterol = (261.6..301.6] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Resting ecg = 2 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Resting ecg = 2 AND NOT Number of vessels colored = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (261.6..301.6] AND NOT Resting ecg = 2 AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Cholesterol = (261.6..301.6] AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Cholesterol = (261.6..301.6] AND NOT Resting ecg = 2 AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  exp time: 1.96
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (42.0..50.0] AND Sex = 0 AND Chest pain type = 3 AND Trestbps = (141.6..157.6] AND Cholesterol = (-inf..198.2] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 1 AND Oldpeak = (0.78..1.56] AND Slope = 0 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Chest pain type = 3 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Slope = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (0.78..1.56] AND NOT Slope = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Oldpeak = (0.78..1.56] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 0 AND NOT Oldpeak = (0.78..1.56] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (0.78..1.56] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (0.78..1.56] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Slope = 0 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 3 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 0 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Number of vessels colored = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 0 AND NOT Max heart rate = (155.0..173.0] AND NOT Slope = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Max heart rate = (155.0..173.0] AND NOT Slope = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Max heart rate = (155.0..173.0] AND NOT Slope = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Max heart rate = (155.0..173.0] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Cholesterol = (-inf..198.2] AND NOT Oldpeak = (0.78..1.56] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Chest pain type = 3 AND NOT Cholesterol = (-inf..198.2] AND NOT Slope = 0 THEN NOT 0"
+  # hypos left: 4
+  exp time: 0.80
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (42.0..50.0] AND Sex = 1 AND Chest pain type = 0 AND Trestbps = (-inf..113.2] AND Cholesterol = (198.2..229.4] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 0 AND Oldpeak = (0.78..1.56] AND Slope = 0 AND Number of vessels colored = 0 AND Thal = 3 THEN 0"
+  explanation: "IF NOT Chest pain type = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Slope = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Oldpeak = (0.78..1.56] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (198.2..229.4] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Resting ecg = 2 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Number of vessels colored = 0 AND NOT Thal = 3 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (-inf..113.2] AND NOT Max heart rate = (155.0..173.0] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (198.2..229.4] AND NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Cholesterol = (198.2..229.4] AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 3
+  exp time: 0.34
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (42.0..50.0] AND Sex = 1 AND Chest pain type = 0 AND Trestbps = (126.4..141.6] AND Cholesterol = (198.2..229.4] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (173.0..+inf) AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Chest pain type = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 0 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (173.0..+inf) AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (173.0..+inf) AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (198.2..229.4] AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (173.0..+inf) AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (198.2..229.4] AND NOT Max heart rate = (173.0..+inf) AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (173.0..+inf) AND NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Cholesterol = (198.2..229.4] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (198.2..229.4] AND NOT Slope = 2 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Slope = 2 AND NOT Number of vessels colored = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (173.0..+inf) AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (198.2..229.4] AND NOT Max heart rate = (173.0..+inf) AND NOT Exercise induced angina = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Cholesterol = (198.2..229.4] AND NOT Exercise induced angina = 0 AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Exercise induced angina = 0 AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  exp time: 1.36
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (42.0..50.0] AND Sex = 1 AND Chest pain type = 0 AND Trestbps = (126.4..141.6] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (173.0..+inf) AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 1 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Number of vessels colored = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 0 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (173.0..+inf) AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (173.0..+inf) AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Cholesterol = (229.4..261.6] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (229.4..261.6] AND NOT Slope = 1 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Exercise induced angina = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (229.4..261.6] AND NOT Exercise induced angina = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Exercise induced angina = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 0 AND NOT Trestbps = (126.4..141.6] AND NOT Max heart rate = (173.0..+inf) AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Chest pain type = 0 AND NOT Max heart rate = (173.0..+inf) AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Resting ecg = 1 AND NOT Max heart rate = (173.0..+inf) AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Trestbps = (126.4..141.6] AND NOT Max heart rate = (173.0..+inf) AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Cholesterol = (229.4..261.6] AND NOT Exercise induced angina = 0 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Trestbps = (126.4..141.6] AND NOT Exercise induced angina = 0 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 4
+  exp time: 0.91
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (42.0..50.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (-inf..113.2] AND Cholesterol = (198.2..229.4] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (137.0..155.0] AND Exercise induced angina = 1 AND Oldpeak = (2.44..3.42] AND Slope = 1 AND Number of vessels colored = 0 AND Thal = 2 THEN 1"
+  explanation: "IF NOT Oldpeak = (2.44..3.42] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Exercise induced angina = 1 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (137.0..155.0] AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (137.0..155.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Trestbps = (-inf..113.2] AND NOT Max heart rate = (137.0..155.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Sex = 1 AND NOT Max heart rate = (137.0..155.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Resting ecg = 1 AND NOT Max heart rate = (137.0..155.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Trestbps = (-inf..113.2] AND NOT Max heart rate = (137.0..155.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Trestbps = (-inf..113.2] AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Resting ecg = 1 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Sex = 1 AND NOT Trestbps = (-inf..113.2] AND NOT Resting ecg = 1 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 5
+  exp time: 0.77
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (42.0..50.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (113.2..126.4] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (173.0..+inf) AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Thal = 2 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Max heart rate = (173.0..+inf) AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (173.0..+inf) AND NOT Exercise induced angina = 0 AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Resting ecg = 1 AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  exp time: 0.53
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (42.0..50.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (141.6..157.6] AND Cholesterol = (198.2..229.4] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (117.0..137.0] AND Exercise induced angina = 1 AND Oldpeak = (0.78..1.56] AND Slope = 1 AND Number of vessels colored = 0 AND Thal = 3 THEN 1"
+  explanation: "IF NOT Thal = 3 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Sex = 1 AND NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Chest pain type = 2 AND NOT Fasting blood sugar &lt; 120 = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Trestbps = (141.6..157.6] AND NOT Fasting blood sugar &lt; 120 = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Chest pain type = 2 AND NOT Trestbps = (141.6..157.6] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Trestbps = (141.6..157.6] AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Chest pain type = 2 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (117.0..137.0] AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Chest pain type = 2 AND NOT Max heart rate = (117.0..137.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Trestbps = (141.6..157.6] AND NOT Max heart rate = (117.0..137.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Resting ecg = 1 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Resting ecg = 1 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Exercise induced angina = 1 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Cholesterol = (198.2..229.4] AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Max heart rate = (117.0..137.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Resting ecg = 1 AND NOT Max heart rate = (117.0..137.0] AND NOT Exercise induced angina = 1 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Max heart rate = (117.0..137.0] AND NOT Exercise induced angina = 1 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Exercise induced angina = 1 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 4
+  exp time: 1.93
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (42.0..50.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (141.6..157.6] AND Cholesterol = (301.6..+inf) AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (137.0..155.0] AND Exercise induced angina = 1 AND Oldpeak = (-inf..0.78] AND Slope = 1 AND Number of vessels colored = 3 AND Thal = 3 THEN 1"
+  explanation: "IF NOT Number of vessels colored = 3 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Resting ecg = 1 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Resting ecg = 1 AND NOT Max heart rate = (137.0..155.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Resting ecg = 1 AND NOT Max heart rate = (137.0..155.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Resting ecg = 1 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Resting ecg = 1 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Slope = 1 AND NOT Number of vessels colored = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Chest pain type = 2 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Exercise induced angina = 1 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Trestbps = (141.6..157.6] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Chest pain type = 2 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Chest pain type = 2 AND NOT Max heart rate = (137.0..155.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age = (42.0..50.0] AND NOT Chest pain type = 2 AND NOT Max heart rate = (137.0..155.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (137.0..155.0] AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Trestbps = (141.6..157.6] AND NOT Max heart rate = (137.0..155.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (137.0..155.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Cholesterol = (301.6..+inf) AND NOT Max heart rate = (137.0..155.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Cholesterol = (301.6..+inf) AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (137.0..155.0] AND NOT Number of vessels colored = 3 THEN NOT 1"
+  # hypos left: 3
+  exp time: 2.70
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (42.0..50.0] AND Sex = 1 AND Chest pain type = 3 AND Trestbps = (126.4..141.6] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 1 AND Number of vessels colored = 1 AND Thal = 3 THEN 1"
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Thal = 3 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Chest pain type = 3 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Cholesterol = (229.4..261.6] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Max heart rate = (155.0..173.0] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Slope = 1 THEN NOT 1"
+  # hypos left: 1
+  exp time: 0.32
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (42.0..50.0] AND Sex = 1 AND Chest pain type = 3 AND Trestbps = (126.4..141.6] AND Cholesterol = (301.6..+inf) AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 0 AND Oldpeak = (1.56..2.44] AND Slope = 2 AND Number of vessels colored = 1 AND Thal = 2 THEN 1"
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Thal = 2 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Age = (42.0..50.0] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Cholesterol = (301.6..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Max heart rate = (155.0..173.0] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Oldpeak = (1.56..2.44] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Sex = 1 THEN NOT 1"
+  # hypos left: 1
+  exp time: 0.17
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 0 AND Chest pain type = 0 AND Trestbps = (126.4..141.6] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (173.0..+inf) AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 1 AND Number of vessels colored = 1 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Sex = 0 AND NOT Chest pain type = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Number of vessels colored = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 0 AND NOT Max heart rate = (173.0..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 0 AND NOT Max heart rate = (173.0..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (173.0..+inf) AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (173.0..+inf) AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 0 AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 0 AND NOT Slope = 1 AND NOT Number of vessels colored = 1 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Sex = 0 AND NOT Cholesterol = (229.4..261.6] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Trestbps = (126.4..141.6] AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Exercise induced angina = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Max heart rate = (173.0..+inf) AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (173.0..+inf) AND NOT Exercise induced angina = 0 AND NOT Slope = 1 AND NOT Number of vessels colored = 1 THEN NOT 0"
+  # hypos left: 4
+  exp time: 1.20
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 0 AND Chest pain type = 2 AND Trestbps = (126.4..141.6] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Thal = 2 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Sex = 0 AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 0 AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (155.0..173.0] AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 0 AND NOT Trestbps = (126.4..141.6] AND NOT Max heart rate = (155.0..173.0] AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 0 AND NOT Chest pain type = 2 AND NOT Max heart rate = (155.0..173.0] AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 0 AND NOT Trestbps = (126.4..141.6] AND NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Sex = 0 AND NOT Chest pain type = 2 AND NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Chest pain type = 2 AND NOT Trestbps = (126.4..141.6] AND NOT Resting ecg = 1 AND NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Sex = 0 AND NOT Chest pain type = 2 AND NOT Trestbps = (126.4..141.6] AND NOT Resting ecg = 1 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 6
+  exp time: 1.09
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 0 AND Chest pain type = 2 AND Trestbps = (126.4..141.6] AND Cholesterol = (301.6..+inf) AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (137.0..155.0] AND Exercise induced angina = 1 AND Oldpeak = (1.56..2.44] AND Slope = 1 AND Number of vessels colored = 2 AND Thal = 3 THEN 1"
+  explanation: "IF NOT Number of vessels colored = 2 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Oldpeak = (1.56..2.44] AND NOT Number of vessels colored = 2 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Resting ecg = 1 AND NOT Oldpeak = (1.56..2.44] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Oldpeak = (1.56..2.44] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Slope = 1 AND NOT Number of vessels colored = 2 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (137.0..155.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Cholesterol = (301.6..+inf) AND NOT Max heart rate = (137.0..155.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (137.0..155.0] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (137.0..155.0] AND NOT Number of vessels colored = 2 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (137.0..155.0] AND NOT Oldpeak = (1.56..2.44] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (137.0..155.0] AND NOT Oldpeak = (1.56..2.44] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Resting ecg = 1 AND NOT Exercise induced angina = 1 AND NOT Oldpeak = (1.56..2.44] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Exercise induced angina = 1 AND NOT Oldpeak = (1.56..2.44] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Exercise induced angina = 1 AND NOT Oldpeak = (1.56..2.44] AND NOT Number of vessels colored = 2 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (137.0..155.0] AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Exercise induced angina = 1 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Cholesterol = (301.6..+inf) AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Resting ecg = 1 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Exercise induced angina = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Resting ecg = 1 AND NOT Exercise induced angina = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 3
+  exp time: 1.74
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 0 AND Chest pain type = 3 AND Trestbps = (126.4..141.6] AND Cholesterol = (-inf..198.2] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 1 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Sex = 0 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 3 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Number of vessels colored = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Exercise induced angina = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Cholesterol = (-inf..198.2] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Number of vessels colored = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Number of vessels colored = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Number of vessels colored = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Max heart rate = (155.0..173.0] AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 3
+  exp time: 1.42
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 0 AND Chest pain type = 3 AND Trestbps = (126.4..141.6] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (137.0..155.0] AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Chest pain type = 3 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Number of vessels colored = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 0 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 3 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 3 AND NOT Exercise induced angina = 0 AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Exercise induced angina = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Trestbps = (126.4..141.6] AND NOT Exercise induced angina = 0 AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Cholesterol = (229.4..261.6] AND NOT Exercise induced angina = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  exp time: 0.96
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 0 AND Chest pain type = 3 AND Trestbps = (126.4..141.6] AND Cholesterol = (301.6..+inf) AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (137.0..155.0] AND Exercise induced angina = 0 AND Oldpeak = (0.78..1.56] AND Slope = 2 AND Number of vessels colored = 1 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Oldpeak = (0.78..1.56] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Sex = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Number of vessels colored = 1 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Chest pain type = 3 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  exp time: 0.31
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 0 AND Chest pain type = 3 AND Trestbps = (126.4..141.6] AND Cholesterol = (301.6..+inf) AND Fasting blood sugar &lt; 120 = 1 AND Resting ecg = 2 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Sex = 0 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Fasting blood sugar &lt; 120 = 1 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Resting ecg = 2 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Resting ecg = 2 AND NOT Number of vessels colored = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Number of vessels colored = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Resting ecg = 2 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Chest pain type = 3 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Cholesterol = (301.6..+inf) AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 0 AND NOT Fasting blood sugar &lt; 120 = 1 AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Sex = 0 AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 0 AND NOT Max heart rate = (155.0..173.0] AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 0 AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Sex = 0 AND NOT Chest pain type = 3 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 0 AND NOT Chest pain type = 3 AND NOT Trestbps = (126.4..141.6] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 0 AND NOT Chest pain type = 3 AND NOT Resting ecg = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 0 AND NOT Chest pain type = 3 AND NOT Fasting blood sugar &lt; 120 = 1 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Chest pain type = 3 AND NOT Resting ecg = 2 AND NOT Max heart rate = (155.0..173.0] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  exp time: 2.84
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 1 AND Chest pain type = 0 AND Trestbps = (113.2..126.4] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 0 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Chest pain type = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Slope = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Slope = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 0 AND NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 0 AND NOT Slope = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Cholesterol = (229.4..261.6] AND NOT Resting ecg = 2 AND NOT Exercise induced angina = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 5
+  exp time: 0.84
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 1 AND Chest pain type = 1 AND Trestbps = (113.2..126.4] AND Cholesterol = (198.2..229.4] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (117.0..137.0] AND Exercise induced angina = 1 AND Oldpeak = (0.78..1.56] AND Slope = 2 AND Number of vessels colored = 1 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Oldpeak = (0.78..1.56] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Max heart rate = (117.0..137.0] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Cholesterol = (198.2..229.4] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Age = (50.0..58.0] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Slope = 2 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Number of vessels colored = 1 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Chest pain type = 1 THEN NOT 0"
+  # hypos left: 1
+  exp time: 0.23
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (-inf..113.2] AND Cholesterol = (198.2..229.4] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (-inf..117.0] AND Exercise induced angina = 1 AND Oldpeak = (-inf..0.78] AND Slope = 1 AND Number of vessels colored = 1 AND Thal = 2 THEN 1"
+  explanation: "IF NOT Sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Resting ecg = 1 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (198.2..229.4] AND NOT Resting ecg = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (-inf..113.2] AND NOT Resting ecg = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Resting ecg = 1 AND NOT Thal = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Resting ecg = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Resting ecg = 1 AND NOT Max heart rate = (-inf..117.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Resting ecg = 1 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (-inf..113.2] AND NOT Max heart rate = (-inf..117.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (198.2..229.4] AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Max heart rate = (-inf..117.0] AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Max heart rate = (-inf..117.0] AND NOT Exercise induced angina = 1 AND NOT Thal = 2 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Max heart rate = (-inf..117.0] AND NOT Exercise induced angina = 1 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 4
+  exp time: 0.53
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (126.4..141.6] AND Cholesterol = (198.2..229.4] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 1 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 0 AND Thal = 3 THEN 1"
+  explanation: "IF NOT Max heart rate = (155.0..173.0] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Trestbps = (126.4..141.6] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Thal = 3 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 2
+  exp time: 0.28
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (126.4..141.6] AND Cholesterol = (198.2..229.4] AND Fasting blood sugar &lt; 120 = 1 AND Resting ecg = 2 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 1 AND Oldpeak = (0.78..1.56] AND Slope = 1 AND Number of vessels colored = 0 AND Thal = 0 THEN 0"
+  explanation: "IF NOT Oldpeak = (0.78..1.56] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Thal = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Max heart rate = (155.0..173.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Resting ecg = 2 AND NOT Max heart rate = (155.0..173.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (198.2..229.4] AND NOT Fasting blood sugar &lt; 120 = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (198.2..229.4] AND NOT Max heart rate = (155.0..173.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Cholesterol = (198.2..229.4] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Cholesterol = (198.2..229.4] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Max heart rate = (155.0..173.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Trestbps = (126.4..141.6] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Fasting blood sugar &lt; 120 = 1 AND NOT Resting ecg = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Fasting blood sugar &lt; 120 = 1 AND NOT Max heart rate = (155.0..173.0] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Fasting blood sugar &lt; 120 = 1 AND NOT Resting ecg = 2 THEN NOT 0"
+  # hypos left: 3
+  exp time: 0.65
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (126.4..141.6] AND Cholesterol = (301.6..+inf) AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (117.0..137.0] AND Exercise induced angina = 1 AND Oldpeak = (0.78..1.56] AND Slope = 1 AND Number of vessels colored = 1 AND Thal = 3 THEN 1"
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (0.78..1.56] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Number of vessels colored = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (117.0..137.0] AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Cholesterol = (301.6..+inf) AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Cholesterol = (301.6..+inf) AND NOT Fasting blood sugar &lt; 120 = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Cholesterol = (301.6..+inf) AND NOT Max heart rate = (117.0..137.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (117.0..137.0] AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Exercise induced angina = 1 AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Exercise induced angina = 1 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (117.0..137.0] AND NOT Exercise induced angina = 1 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (117.0..137.0] AND NOT Oldpeak = (0.78..1.56] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (301.6..+inf) AND NOT Exercise induced angina = 1 AND NOT Oldpeak = (0.78..1.56] AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 4
+  exp time: 1.17
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (141.6..157.6] AND Cholesterol = (198.2..229.4] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (-inf..117.0] AND Exercise induced angina = 1 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 0 AND Thal = 3 THEN 1"
+  explanation: "IF NOT Thal = 3 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Sex = 1 AND NOT Trestbps = (141.6..157.6] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Max heart rate = (-inf..117.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Resting ecg = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Resting ecg = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Resting ecg = 1 AND NOT Max heart rate = (-inf..117.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Resting ecg = 1 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Max heart rate = (-inf..117.0] AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  exp time: 0.78
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (141.6..157.6] AND Cholesterol = (198.2..229.4] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (-inf..117.0] AND Exercise induced angina = 0 AND Oldpeak = (1.56..2.44] AND Slope = 1 AND Number of vessels colored = 1 AND Thal = 3 THEN 1"
+  explanation: "IF NOT Sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Number of vessels colored = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (1.56..2.44] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (-inf..117.0] AND NOT Oldpeak = (1.56..2.44] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Oldpeak = (1.56..2.44] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Oldpeak = (1.56..2.44] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (-inf..117.0] AND NOT Slope = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Max heart rate = (-inf..117.0] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Max heart rate = (-inf..117.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Max heart rate = (-inf..117.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Max heart rate = (-inf..117.0] AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (-inf..117.0] AND NOT Slope = 1 AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Max heart rate = (-inf..117.0] AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (198.2..229.4] AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Max heart rate = (-inf..117.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 4
+  exp time: 0.63
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (141.6..157.6] AND Cholesterol = (261.6..301.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (-inf..117.0] AND Exercise induced angina = 1 AND Oldpeak = (-inf..0.78] AND Slope = 1 AND Number of vessels colored = 1 AND Thal = 1 THEN 1"
+  explanation: "IF NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Sex = 1 AND NOT Thal = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Resting ecg = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Resting ecg = 1 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (261.6..301.6] AND NOT Resting ecg = 1 AND NOT Thal = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Resting ecg = 1 AND NOT Max heart rate = (-inf..117.0] AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Resting ecg = 1 AND NOT Max heart rate = (-inf..117.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (261.6..301.6] AND NOT Resting ecg = 1 AND NOT Max heart rate = (-inf..117.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Resting ecg = 1 AND NOT Max heart rate = (-inf..117.0] AND NOT Thal = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Resting ecg = 1 AND NOT Max heart rate = (-inf..117.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Resting ecg = 1 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Resting ecg = 1 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Resting ecg = 1 AND NOT Thal = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Resting ecg = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Cholesterol = (261.6..301.6] AND NOT Resting ecg = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Trestbps = (141.6..157.6] AND NOT Max heart rate = (-inf..117.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Trestbps = (141.6..157.6] AND NOT Cholesterol = (261.6..301.6] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Cholesterol = (261.6..301.6] AND NOT Max heart rate = (-inf..117.0] THEN NOT 1"
+  # hypos left: 3
+  exp time: 1.11
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (157.6..+inf) AND Cholesterol = (261.6..301.6] AND Fasting blood sugar &lt; 120 = 1 AND Resting ecg = 1 AND Max heart rate = (117.0..137.0] AND Exercise induced angina = 0 AND Oldpeak = (0.78..1.56] AND Slope = 1 AND Number of vessels colored = 3 AND Thal = 3 THEN 1"
+  explanation: "IF NOT Chest pain type = 2 AND NOT Resting ecg = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Trestbps = (157.6..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (117.0..137.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Number of vessels colored = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Number of vessels colored = 3 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Resting ecg = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Cholesterol = (261.6..301.6] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Resting ecg = 1 AND NOT Number of vessels colored = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Cholesterol = (261.6..301.6] AND NOT Resting ecg = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Trestbps = (157.6..+inf) AND NOT Resting ecg = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (157.6..+inf) AND NOT Oldpeak = (0.78..1.56] AND NOT Number of vessels colored = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Resting ecg = 1 AND NOT Oldpeak = (0.78..1.56] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (261.6..301.6] AND NOT Resting ecg = 1 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Resting ecg = 1 AND NOT Oldpeak = (0.78..1.56] AND NOT Number of vessels colored = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Resting ecg = 1 AND NOT Max heart rate = (117.0..137.0] AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (157.6..+inf) AND NOT Resting ecg = 1 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Resting ecg = 1 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 3
+  exp time: 1.58
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 1 AND Chest pain type = 3 AND Trestbps = (-inf..113.2] AND Cholesterol = (198.2..229.4] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (137.0..155.0] AND Exercise induced angina = 1 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 1 AND Thal = 3 THEN 0"
+  explanation: "IF NOT Resting ecg = 2 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Slope = 2 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Chest pain type = 3 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Trestbps = (-inf..113.2] AND NOT Cholesterol = (198.2..229.4] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (198.2..229.4] AND NOT Number of vessels colored = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (198.2..229.4] AND NOT Thal = 3 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Number of vessels colored = 1 AND NOT Thal = 3 THEN NOT 0"
+  # hypos left: 2
+  exp time: 0.55
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 1 AND Chest pain type = 3 AND Trestbps = (-inf..113.2] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (137.0..155.0] AND Exercise induced angina = 1 AND Oldpeak = (-inf..0.78] AND Slope = 1 AND Number of vessels colored = 0 AND Thal = 3 THEN 1"
+  explanation: "IF NOT Max heart rate = (137.0..155.0] AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (229.4..261.6] AND NOT Max heart rate = (137.0..155.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (-inf..113.2] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (229.4..261.6] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (137.0..155.0] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Max heart rate = (137.0..155.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Exercise induced angina = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 3 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Resting ecg = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 3 AND NOT Max heart rate = (137.0..155.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Resting ecg = 1 AND NOT Max heart rate = (137.0..155.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (137.0..155.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (-inf..113.2] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (229.4..261.6] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Exercise induced angina = 1 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 2
+  exp time: 1.11
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 1 AND Chest pain type = 3 AND Trestbps = (-inf..113.2] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 0 AND Oldpeak = (2.44..3.42] AND Slope = 1 AND Number of vessels colored = 1 AND Thal = 3 THEN 1"
+  explanation: "IF NOT Oldpeak = (2.44..3.42] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Oldpeak = (2.44..3.42] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Resting ecg = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Chest pain type = 3 AND NOT Max heart rate = (155.0..173.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Chest pain type = 3 AND NOT Cholesterol = (229.4..261.6] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Chest pain type = 3 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Max heart rate = (155.0..173.0] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Cholesterol = (229.4..261.6] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Chest pain type = 3 AND NOT Fasting blood sugar &lt; 120 = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Max heart rate = (155.0..173.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Max heart rate = (155.0..173.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Resting ecg = 1 AND NOT Max heart rate = (155.0..173.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Slope = 1 AND NOT Number of vessels colored = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Slope = 1 AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Resting ecg = 1 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Resting ecg = 1 AND NOT Oldpeak = (2.44..3.42] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (229.4..261.6] AND NOT Resting ecg = 1 AND NOT Oldpeak = (2.44..3.42] THEN NOT 1"
+  # hypos left: 3
+  exp time: 1.37
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 1 AND Chest pain type = 3 AND Trestbps = (113.2..126.4] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 1 AND Resting ecg = 1 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 0 AND Oldpeak = (1.56..2.44] AND Slope = 1 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Oldpeak = (1.56..2.44] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Chest pain type = 3 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 1 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Chest pain type = 3 AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Fasting blood sugar &lt; 120 = 1 AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Cholesterol = (229.4..261.6] AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Fasting blood sugar &lt; 120 = 1 AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 3
+  exp time: 0.47
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (50.0..58.0] AND Sex = 1 AND Chest pain type = 3 AND Trestbps = (126.4..141.6] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 1 AND Resting ecg = 1 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 3 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 1 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Chest pain type = 3 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Number of vessels colored = 3 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Age = (50.0..58.0] AND NOT Cholesterol = (229.4..261.6] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Exercise induced angina = 0 AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Cholesterol = (229.4..261.6] AND NOT Max heart rate = (155.0..173.0] THEN NOT 0"
+  # hypos left: 3
+  exp time: 0.67
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (58.0..66.0] AND Sex = 0 AND Chest pain type = 1 AND Trestbps = (141.6..157.6] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 0 AND Oldpeak = (0.78..1.56] AND Slope = 2 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Chest pain type = 1 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 0 AND NOT Oldpeak = (0.78..1.56] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (0.78..1.56] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 0 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 1 AND NOT Exercise induced angina = 0 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (229.4..261.6] AND NOT Exercise induced angina = 0 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Slope = 2 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 1 AND NOT Slope = 2 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 1 AND NOT Resting ecg = 2 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 1 AND NOT Trestbps = (141.6..157.6] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 1 AND NOT Cholesterol = (229.4..261.6] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Trestbps = (141.6..157.6] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Oldpeak = (0.78..1.56] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 0 AND NOT Oldpeak = (0.78..1.56] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Exercise induced angina = 0 AND NOT Oldpeak = (0.78..1.56] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Oldpeak = (0.78..1.56] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Oldpeak = (0.78..1.56] AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 1 AND NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 0 AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 4
+  exp time: 1.85
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (58.0..66.0] AND Sex = 0 AND Chest pain type = 2 AND Trestbps = (113.2..126.4] AND Cholesterol = (-inf..198.2] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (117.0..137.0] AND Exercise induced angina = 1 AND Oldpeak = (-inf..0.78] AND Slope = 1 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Thal = 2 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Sex = 0 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Resting ecg = 2 AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (117.0..137.0] AND NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Max heart rate = (117.0..137.0] THEN NOT 0"
+  # hypos left: 2
+  exp time: 0.36
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (58.0..66.0] AND Sex = 0 AND Chest pain type = 3 AND Trestbps = (126.4..141.6] AND Cholesterol = (261.6..301.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (-inf..117.0] AND Exercise induced angina = 0 AND Oldpeak = (0.78..1.56] AND Slope = 1 AND Number of vessels colored = 1 AND Thal = 3 THEN 0"
+  explanation: "IF NOT Resting ecg = 2 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Sex = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Chest pain type = 3 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Oldpeak = (0.78..1.56] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Max heart rate = (-inf..117.0] AND NOT Number of vessels colored = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Cholesterol = (261.6..301.6] AND NOT Number of vessels colored = 1 THEN NOT 0"
+  # hypos left: 3
+  exp time: 0.39
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (58.0..66.0] AND Sex = 1 AND Chest pain type = 1 AND Trestbps = (157.6..+inf) AND Cholesterol = (261.6..301.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (117.0..137.0] AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Chest pain type = 1 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (261.6..301.6] AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 1 AND NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (261.6..301.6] AND NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (117.0..137.0] AND NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (261.6..301.6] AND NOT Resting ecg = 1 AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Resting ecg = 1 AND NOT Max heart rate = (117.0..137.0] AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Max heart rate = (117.0..137.0] AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Trestbps = (157.6..+inf) AND NOT Resting ecg = 1 AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Trestbps = (157.6..+inf) AND NOT Cholesterol = (261.6..301.6] AND NOT Resting ecg = 1 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Cholesterol = (261.6..301.6] AND NOT Resting ecg = 1 AND NOT Max heart rate = (117.0..137.0] AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Cholesterol = (261.6..301.6] AND NOT Max heart rate = (117.0..137.0] AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Chest pain type = 1 AND NOT Cholesterol = (261.6..301.6] AND NOT Max heart rate = (117.0..137.0] AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Trestbps = (157.6..+inf) AND NOT Resting ecg = 1 AND NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Chest pain type = 1 AND NOT Cholesterol = (261.6..301.6] AND NOT Max heart rate = (117.0..137.0] AND NOT Exercise induced angina = 0 AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Cholesterol = (261.6..301.6] AND NOT Max heart rate = (117.0..137.0] AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 5
+  exp time: 1.36
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (58.0..66.0] AND Sex = 1 AND Chest pain type = 1 AND Trestbps = (157.6..+inf) AND Cholesterol = (261.6..301.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 1 AND Number of vessels colored = 0 AND Thal = 3 THEN 0"
+  explanation: "IF NOT Chest pain type = 1 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Cholesterol = (261.6..301.6] AND NOT Resting ecg = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Cholesterol = (261.6..301.6] AND NOT Max heart rate = (155.0..173.0] THEN NOT 0"
+  # hypos left: 3
+  exp time: 0.38
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (58.0..66.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (-inf..113.2] AND Cholesterol = (198.2..229.4] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (117.0..137.0] AND Exercise induced angina = 1 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 1 AND Thal = 2 THEN 1"
+  explanation: "IF NOT Sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Resting ecg = 1 AND NOT Max heart rate = (117.0..137.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Resting ecg = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Resting ecg = 1 AND NOT Thal = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Resting ecg = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (-inf..113.2] AND NOT Resting ecg = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Trestbps = (-inf..113.2] AND NOT Max heart rate = (117.0..137.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Max heart rate = (117.0..137.0] AND NOT Exercise induced angina = 1 AND NOT Thal = 2 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Max heart rate = (117.0..137.0] AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 4
+  exp time: 0.67
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (58.0..66.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (-inf..113.2] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (137.0..155.0] AND Exercise induced angina = 1 AND Oldpeak = (0.78..1.56] AND Slope = 1 AND Number of vessels colored = 1 AND Thal = 3 THEN 1"
+  explanation: "IF NOT Chest pain type = 2 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Slope = 1 AND NOT Number of vessels colored = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Chest pain type = 2 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (137.0..155.0] AND NOT Number of vessels colored = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Exercise induced angina = 1 AND NOT Number of vessels colored = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 1 AND NOT Chest pain type = 2 AND NOT Number of vessels colored = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Chest pain type = 2 AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Number of vessels colored = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Chest pain type = 2 AND NOT Cholesterol = (229.4..261.6] AND NOT Number of vessels colored = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Cholesterol = (229.4..261.6] AND NOT Resting ecg = 1 AND NOT Number of vessels colored = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Cholesterol = (229.4..261.6] AND NOT Number of vessels colored = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Trestbps = (-inf..113.2] AND NOT Cholesterol = (229.4..261.6] AND NOT Number of vessels colored = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 1 AND NOT Resting ecg = 1 AND NOT Max heart rate = (137.0..155.0] AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 1 AND NOT Exercise induced angina = 1 AND NOT Number of vessels colored = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Exercise induced angina = 1 AND NOT Number of vessels colored = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Cholesterol = (229.4..261.6] AND NOT Exercise induced angina = 1 AND NOT Number of vessels colored = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (137.0..155.0] AND NOT Oldpeak = (0.78..1.56] AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Chest pain type = 2 AND NOT Max heart rate = (137.0..155.0] AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Chest pain type = 2 AND NOT Trestbps = (-inf..113.2] AND NOT Max heart rate = (137.0..155.0] AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Chest pain type = 2 AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Max heart rate = (137.0..155.0] AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Chest pain type = 2 AND NOT Cholesterol = (229.4..261.6] AND NOT Max heart rate = (137.0..155.0] AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 4
+  exp time: 3.56
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (58.0..66.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (-inf..113.2] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 2 AND Thal = 1 THEN 1"
+  explanation: "IF NOT Number of vessels colored = 2 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Resting ecg = 1 AND NOT Max heart rate = (155.0..173.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Resting ecg = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Resting ecg = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Fasting blood sugar &lt; 120 = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Thal = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Exercise induced angina = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (155.0..173.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (229.4..261.6] AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Max heart rate = (155.0..173.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Cholesterol = (229.4..261.6] AND NOT Max heart rate = (155.0..173.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Max heart rate = (155.0..173.0] AND NOT Slope = 2 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Cholesterol = (229.4..261.6] AND NOT Slope = 2 AND NOT Thal = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 1 AND NOT Trestbps = (-inf..113.2] AND NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 0 AND NOT Thal = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Sex = 1 AND NOT Trestbps = (-inf..113.2] AND NOT Cholesterol = (229.4..261.6] AND NOT Exercise induced angina = 0 AND NOT Thal = 1 THEN NOT 1"
+  # hypos left: 5
+  exp time: 1.03
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (58.0..66.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (113.2..126.4] AND Cholesterol = (-inf..198.2] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (137.0..155.0] AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 0 AND Thal = 3 THEN 1"
+  explanation: "IF NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Thal = 3 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Max heart rate = (137.0..155.0] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Trestbps = (113.2..126.4] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Fasting blood sugar &lt; 120 = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Fasting blood sugar &lt; 120 = 0 THEN NOT 1"
+  # hypos left: 2
+  exp time: 0.34
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (58.0..66.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (113.2..126.4] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 1 AND Resting ecg = 2 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 1 AND Oldpeak = (0.78..1.56] AND Slope = 2 AND Number of vessels colored = 2 AND Thal = 3 THEN 1"
+  explanation: "IF NOT Chest pain type = 2 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Number of vessels colored = 2 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Cholesterol = (229.4..261.6] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Trestbps = (113.2..126.4] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Number of vessels colored = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (155.0..173.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (113.2..126.4] AND NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Cholesterol = (229.4..261.6] AND NOT Oldpeak = (0.78..1.56] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 1 AND NOT Max heart rate = (155.0..173.0] AND NOT Oldpeak = (0.78..1.56] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 1 AND NOT Cholesterol = (229.4..261.6] AND NOT Max heart rate = (155.0..173.0] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Cholesterol = (229.4..261.6] AND NOT Max heart rate = (155.0..173.0] AND NOT Oldpeak = (0.78..1.56] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 1 AND NOT Oldpeak = (0.78..1.56] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Cholesterol = (229.4..261.6] AND NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 1 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Cholesterol = (229.4..261.6] AND NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 1 AND NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 1 AND NOT Cholesterol = (229.4..261.6] AND NOT Exercise induced angina = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 1 AND NOT Exercise induced angina = 1 AND NOT Oldpeak = (0.78..1.56] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 4
+  exp time: 2.06
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (58.0..66.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (126.4..141.6] AND Cholesterol = (-inf..198.2] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (117.0..137.0] AND Exercise induced angina = 1 AND Oldpeak = (3.42..+inf) AND Slope = 1 AND Number of vessels colored = 1 AND Thal = 2 THEN 1"
+  explanation: "IF NOT Sex = 1 AND NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Oldpeak = (3.42..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Slope = 1 AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Exercise induced angina = 1 AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Oldpeak = (3.42..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Oldpeak = (3.42..+inf) AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Max heart rate = (117.0..137.0] AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (117.0..137.0] AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Resting ecg = 1 AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Resting ecg = 1 AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Resting ecg = 1 AND NOT Max heart rate = (117.0..137.0] AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Resting ecg = 1 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Slope = 1 AND NOT Thal = 2 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (117.0..137.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Resting ecg = 1 AND NOT Oldpeak = (3.42..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Resting ecg = 1 AND NOT Oldpeak = (3.42..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Resting ecg = 1 AND NOT Oldpeak = (3.42..+inf) THEN NOT 1"
+  # hypos left: 3
+  exp time: 1.21
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (58.0..66.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (126.4..141.6] AND Cholesterol = (-inf..198.2] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 1 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 1 AND Thal = 3 THEN 1"
+  explanation: "IF NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Sex = 1 AND NOT Trestbps = (126.4..141.6] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Number of vessels colored = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 1 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (-inf..198.2] AND NOT Max heart rate = (155.0..173.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Max heart rate = (155.0..173.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Max heart rate = (155.0..173.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Thal = 3 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Exercise induced angina = 1 AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Max heart rate = (155.0..173.0] AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Cholesterol = (-inf..198.2] AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Sex = 1 AND NOT Cholesterol = (-inf..198.2] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Sex = 1 AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Exercise induced angina = 1 AND NOT Number of vessels colored = 1 THEN NOT 1"
+  # hypos left: 4
+  exp time: 1.38
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (58.0..66.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (126.4..141.6] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 1 AND Number of vessels colored = 0 AND Thal = 3 THEN 1"
+  explanation: "IF NOT Thal = 3 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Cholesterol = (229.4..261.6] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Cholesterol = (229.4..261.6] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Resting ecg = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (155.0..173.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Max heart rate = (155.0..173.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (229.4..261.6] AND NOT Max heart rate = (155.0..173.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Max heart rate = (155.0..173.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Fasting blood sugar &lt; 120 = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Fasting blood sugar &lt; 120 = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (229.4..261.6] AND NOT Fasting blood sugar &lt; 120 = 0 THEN NOT 1"
+  # hypos left: 2
+  exp time: 0.63
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (58.0..66.0] AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (141.6..157.6] AND Cholesterol = (198.2..229.4] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (117.0..137.0] AND Exercise induced angina = 0 AND Oldpeak = (1.56..2.44] AND Slope = 1 AND Number of vessels colored = 2 AND Thal = 1 THEN 1"
+  explanation: "IF NOT Number of vessels colored = 2 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Sex = 1 AND NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Age = (58.0..66.0] AND NOT Chest pain type = 2 AND NOT Max heart rate = (117.0..137.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (117.0..137.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Trestbps = (141.6..157.6] AND NOT Oldpeak = (1.56..2.44] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Oldpeak = (1.56..2.44] AND NOT Thal = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Slope = 1 AND NOT Thal = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Resting ecg = 1 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Resting ecg = 1 AND NOT Thal = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Trestbps = (141.6..157.6] AND NOT Resting ecg = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Resting ecg = 1 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Resting ecg = 1 AND NOT Oldpeak = (1.56..2.44] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Resting ecg = 1 AND NOT Max heart rate = (117.0..137.0] AND NOT Oldpeak = (1.56..2.44] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (117.0..137.0] AND NOT Oldpeak = (1.56..2.44] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Max heart rate = (117.0..137.0] AND NOT Oldpeak = (1.56..2.44] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Chest pain type = 2 AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Max heart rate = (117.0..137.0] AND NOT Thal = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Chest pain type = 2 AND NOT Resting ecg = 1 AND NOT Max heart rate = (117.0..137.0] AND NOT Thal = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Chest pain type = 2 AND NOT Fasting blood sugar &lt; 120 = 0 AND NOT Resting ecg = 1 AND NOT Max heart rate = (117.0..137.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Fasting blood sugar &lt; 120 = 0 AND NOT Resting ecg = 1 AND NOT Max heart rate = (117.0..137.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 4
+  exp time: 1.89
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (66.0..+inf) AND Sex = 0 AND Chest pain type = 0 AND Trestbps = (113.2..126.4] AND Cholesterol = (261.6..301.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (117.0..137.0] AND Exercise induced angina = 1 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 1 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Chest pain type = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Cholesterol = (261.6..301.6] AND NOT Max heart rate = (117.0..137.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 0 AND NOT Number of vessels colored = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 0 AND NOT Cholesterol = (261.6..301.6] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Max heart rate = (117.0..137.0] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 0 AND NOT Max heart rate = (117.0..137.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Age = (66.0..+inf) AND NOT Sex = 0 AND NOT Exercise induced angina = 1 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (66.0..+inf) AND NOT Sex = 0 AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Exercise induced angina = 1 AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (66.0..+inf) AND NOT Number of vessels colored = 1 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (261.6..301.6] AND NOT Number of vessels colored = 1 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (117.0..137.0] AND NOT Slope = 2 AND NOT Number of vessels colored = 1 THEN NOT 0"
+  # hypos left: 3
+  exp time: 0.66
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (66.0..+inf) AND Sex = 0 AND Chest pain type = 1 AND Trestbps = (126.4..141.6] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (137.0..155.0] AND Exercise induced angina = 0 AND Oldpeak = (1.56..2.44] AND Slope = 2 AND Number of vessels colored = 2 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Sex = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Oldpeak = (1.56..2.44] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Chest pain type = 1 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 1 AND NOT Trestbps = (126.4..141.6] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 1 AND NOT Resting ecg = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Cholesterol = (229.4..261.6] AND NOT Resting ecg = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 1 AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Resting ecg = 2 AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (126.4..141.6] AND NOT Cholesterol = (229.4..261.6] AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 4
+  exp time: 0.70
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (66.0..+inf) AND Sex = 0 AND Chest pain type = 3 AND Trestbps = (113.2..126.4] AND Cholesterol = (301.6..+inf) AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 0 AND Oldpeak = (1.56..2.44] AND Slope = 1 AND Number of vessels colored = 0 AND Thal = 3 THEN 0"
+  explanation: "IF NOT Oldpeak = (1.56..2.44] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Sex = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Chest pain type = 3 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 1
+  exp time: 0.24
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (66.0..+inf) AND Sex = 0 AND Chest pain type = 3 AND Trestbps = (141.6..157.6] AND Cholesterol = (261.6..301.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 2 AND Max heart rate = (155.0..173.0] AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 1 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Number of vessels colored = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Sex = 0 AND NOT Chest pain type = 3 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Exercise induced angina = 0 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 3 AND NOT Number of vessels colored = 1 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Cholesterol = (261.6..301.6] AND NOT Number of vessels colored = 1 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Cholesterol = (261.6..301.6] AND NOT Resting ecg = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Resting ecg = 2 AND NOT Max heart rate = (155.0..173.0] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 0 AND NOT Resting ecg = 2 AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (66.0..+inf) AND NOT Sex = 0 AND NOT Resting ecg = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Resting ecg = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Exercise induced angina = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Resting ecg = 2 AND NOT Exercise induced angina = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Max heart rate = (155.0..173.0] AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Oldpeak = (-inf..0.78] AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Resting ecg = 2 AND NOT Oldpeak = (-inf..0.78] AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (66.0..+inf) AND NOT Resting ecg = 2 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 3 AND NOT Resting ecg = 2 AND NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 3
+  exp time: 2.04
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (66.0..+inf) AND Sex = 1 AND Chest pain type = 0 AND Trestbps = (141.6..157.6] AND Cholesterol = (229.4..261.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (137.0..155.0] AND Exercise induced angina = 0 AND Oldpeak = (-inf..0.78] AND Slope = 2 AND Number of vessels colored = 0 AND Thal = 2 THEN 0"
+  explanation: "IF NOT Oldpeak = (-inf..0.78] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Number of vessels colored = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT Chest pain type = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Slope = 2 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT Age = (66.0..+inf) AND NOT Exercise induced angina = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Cholesterol = (229.4..261.6] AND NOT Exercise induced angina = 0 AND NOT Thal = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age = (66.0..+inf) AND NOT Exercise induced angina = 0 AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 0 AND NOT Exercise induced angina = 0 AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Trestbps = (141.6..157.6] AND NOT Resting ecg = 1 AND NOT Exercise induced angina = 0 AND NOT Slope = 2 THEN NOT 0"
+  # hypos left: 4
+  exp time: 0.70
+
+Sample of length 13  :  [[3. 1. 2. 4. 1. 0. 1. 2. 0. 2. 2. 0. 1.]]
+Encoded sample of length 50  :  [[0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 1.
+  0. 0.]]
+Back to sample [array([3., 1., 2., 4., 1., 0., 1., 2., 0., 2., 2., 0., 1.])]
+Readable sample ['(58.0..66.0]' '1' '2' '(157.6..+inf)' '(198.2..229.4]' '0' '1'
+ '(137.0..155.0]' '0' '(1.56..2.44]' '2' '0' '1']
+  explaining:  "IF Age = (66.0..+inf) AND Sex = 1 AND Chest pain type = 2 AND Trestbps = (-inf..113.2] AND Cholesterol = (261.6..301.6] AND Fasting blood sugar &lt; 120 = 0 AND Resting ecg = 1 AND Max heart rate = (117.0..137.0] AND Exercise induced angina = 1 AND Oldpeak = (0.78..1.56] AND Slope = 1 AND Number of vessels colored = 2 AND Thal = 2 THEN 1"
+  explanation: "IF NOT Number of vessels colored = 2 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT Sex = 1 AND NOT Chest pain type = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Chest pain type = 2 AND NOT Max heart rate = (117.0..137.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Chest pain type = 2 AND NOT Slope = 1 AND NOT Thal = 2 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Cholesterol = (261.6..301.6] AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Resting ecg = 1 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Sex = 1 AND NOT Resting ecg = 1 AND NOT Exercise induced angina = 1 AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 1 AND NOT Cholesterol = (261.6..301.6] AND NOT Resting ecg = 1 AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Age = (66.0..+inf) AND NOT Chest pain type = 2 AND NOT Trestbps = (-inf..113.2] AND NOT Max heart rate = (117.0..137.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Resting ecg = 1 AND NOT Max heart rate = (117.0..137.0] AND NOT Oldpeak = (0.78..1.56] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Cholesterol = (261.6..301.6] AND NOT Resting ecg = 1 AND NOT Max heart rate = (117.0..137.0] AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Trestbps = (-inf..113.2] AND NOT Resting ecg = 1 AND NOT Max heart rate = (117.0..137.0] AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Resting ecg = 1 AND NOT Max heart rate = (117.0..137.0] AND NOT Exercise induced angina = 1 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Resting ecg = 1 AND NOT Max heart rate = (117.0..137.0] AND NOT Oldpeak = (0.78..1.56] AND NOT Thal = 2 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 1 AND NOT Resting ecg = 1 AND NOT Max heart rate = (117.0..137.0] AND NOT Exercise induced angina = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 1 AND NOT Max heart rate = (117.0..137.0] AND NOT Exercise induced angina = 1 AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 1 AND NOT Trestbps = (-inf..113.2] AND NOT Max heart rate = (117.0..137.0] AND NOT Oldpeak = (0.78..1.56] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Sex = 1 AND NOT Trestbps = (-inf..113.2] AND NOT Resting ecg = 1 AND NOT Max heart rate = (117.0..137.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Sex = 1 AND NOT Cholesterol = (261.6..301.6] AND NOT Resting ecg = 1 AND NOT Max heart rate = (117.0..137.0] AND NOT Slope = 1 THEN NOT 1"
+  # hypos left: 5
+  exp time: 1.88
+
+
+exptimes: [1.1370110000000002, 0.7971870000000001, 1.8003499999999995, 0.9422510000000006, 1.0458680000000005, 0.3480750000000006, 0.423222, 0.270722000000001, 1.9614589999999996, 0.7971900000000005, 0.3419819999999998, 1.358772, 0.9053239999999985, 0.7749439999999996, 0.5278779999999994, 1.9300499999999996, 2.6983190000000015, 0.3158489999999965, 0.16718700000000197, 1.1976970000000016, 1.0888120000000008, 1.7404100000000007, 1.4156700000000022, 0.9576950000000011, 0.3126749999999987, 2.8446159999999985, 0.837959000000005, 0.2322740000000003, 0.5332690000000007, 0.2836670000000012, 0.6546869999999956, 1.1659950000000023, 0.7804140000000004, 0.6250959999999992, 1.112339999999996, 1.5766940000000034, 0.5472100000000069, 1.110921999999995, 1.3716150000000056, 0.4749139999999912, 0.6707940000000079, 1.8539230000000018, 0.36317100000000124, 0.3874240000000029, 1.3567609999999917, 0.3774890000000042, 0.6654470000000003, 3.5643689999999992, 1.0250079999999997, 0.3422119999999964, 2.0587680000000006, 1.2113999999999976, 1.380075000000005, 0.6328520000000069, 1.8909160000000043, 0.6597859999999969, 0.6965390000000014, 0.2396269999999987, 2.040949000000005, 0.6997169999999926, 1.8761010000000056]
+all samples: 61
+total exp time: 63.40
+max exp time per instance: 3.56
+min exp time per instance: 0.17
+avg exp time per instance: 1.04
+total oracle calls: 10674
+max oracle calls per instance: 731
+min oracle calls per instance: 31
+avg oracle calls per instance: 174.98
+avg number of explanations per instance: 14.64
+avg explanation size per instance: 2.34
+

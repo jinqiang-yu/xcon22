@@ -1,0 +1,3066 @@
+c XDual: dual explanations for XGBoost models
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (-inf..40.67] AND sex = 0 AND cp = 2 AND trestbps = (134.0..146.0] AND chol = (219.33..245.5] AND fbs = 0 AND restecg = 1 AND thalach = (146.0..161.0] AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 1 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF age = (-inf..40.67] AND trestbps = (134.0..146.0] THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND sex = 0 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 2 AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND cp = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 2
+  explanation: "IF sex = 0 AND cp = 2 AND chol = (219.33..245.5] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND cp = 2 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND restecg = 1 AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND trestbps = (134.0..146.0] AND chol = (219.33..245.5] THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND chol = (219.33..245.5] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF oldpeak = (-inf..0.65] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND restecg = 1 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND oldpeak = (-inf..0.65] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (-inf..40.67] AND chol = (219.33..245.5] AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND cp = 2 AND trestbps = (134.0..146.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND trestbps = (134.0..146.0] AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND trestbps = (134.0..146.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  exp time: 7.77
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (-inf..40.67] AND sex = 1 AND cp = 0 AND trestbps = (-inf..110.0] AND chol = (-inf..192.17] AND fbs = 0 AND restecg = 0 AND thalach = (-inf..114.0] AND exang = 1 AND oldpeak = (1.3..2.05] AND slope = 1 AND ca = 0 AND thal = 3 THEN 0"
+  explanation: "IF age = (-inf..40.67] AND thalach = (-inf..114.0] THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (-inf..114.0] AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND thal = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND exang = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND slope = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (-inf..114.0] AND slope = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (-inf..110.0] AND thalach = (-inf..114.0] THEN 0"
+  # hypos left: 2
+  explanation: "IF chol = (-inf..192.17] AND fbs = 0 AND thalach = (-inf..114.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (-inf..192.17] AND restecg = 0 AND thalach = (-inf..114.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (-inf..192.17] AND thalach = (-inf..114.0] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND chol = (-inf..192.17] AND thalach = (-inf..114.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND chol = (-inf..192.17] AND thalach = (-inf..114.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (-inf..40.67] AND sex = 1 AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (-inf..40.67] AND restecg = 0 AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (-inf..192.17] AND restecg = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (-inf..192.17] AND oldpeak = (1.3..2.05] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND oldpeak = (1.3..2.05] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND chol = (-inf..192.17] AND restecg = 0 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND restecg = 0 AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (-inf..40.67] AND cp = 0 AND restecg = 0 THEN 0"
+  # hypos left: 3
+  exp time: 7.85
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (-inf..40.67] AND sex = 1 AND cp = 0 AND trestbps = (123.0..134.0] AND chol = (272.33..306.83] AND fbs = 0 AND restecg = 0 AND thalach = (146.0..161.0] AND exang = 1 AND oldpeak = (-inf..0.65] AND slope = 2 AND ca = 0 AND thal = 3 THEN 0"
+  explanation: "IF age = (-inf..40.67] AND thalach = (146.0..161.0] THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND exang = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND thal = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND chol = (272.33..306.83] THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND cp = 0 AND trestbps = (123.0..134.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (-inf..40.67] AND cp = 0 AND restecg = 0 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (-inf..40.67] AND sex = 1 AND cp = 0 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (-inf..40.67] AND cp = 0 AND oldpeak = (-inf..0.65] THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND thalach = (146.0..161.0] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND oldpeak = (-inf..0.65] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND slope = 2 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND fbs = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND chol = (272.33..306.83] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND restecg = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (123.0..134.0] AND chol = (272.33..306.83] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND exang = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND exang = 1 AND ca = 0 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND chol = (272.33..306.83] AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND fbs = 0 AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND chol = (272.33..306.83] AND exang = 1 THEN 0"
+  # hypos left: 3
+  exp time: 7.90
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (-inf..40.67] AND sex = 1 AND cp = 0 AND trestbps = (146.0..164.0] AND chol = (219.33..245.5] AND fbs = 0 AND restecg = 1 AND thalach = (177.0..+inf) AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 2 AND ca = 0 AND thal = 3 THEN 1"
+  explanation: "IF thalach = (177.0..+inf) AND exang = 0 THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 0 AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND slope = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND slope = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (146.0..164.0] AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND trestbps = (146.0..164.0] THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND cp = 0 AND chol = (219.33..245.5] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (-inf..40.67] AND chol = (219.33..245.5] AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (219.33..245.5] AND slope = 2 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND slope = 2 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (146.0..164.0] AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (146.0..164.0] AND restecg = 1 AND ca = 0 AND thal = 3 THEN 1"
+  # hypos left: 4
+  explanation: "IF sex = 1 AND trestbps = (146.0..164.0] AND restecg = 1 AND ca = 0 THEN 1"
+  # hypos left: 4
+  explanation: "IF trestbps = (146.0..164.0] AND restecg = 1 AND exang = 0 AND ca = 0 THEN 1"
+  # hypos left: 4
+  explanation: "IF sex = 1 AND trestbps = (146.0..164.0] AND chol = (219.33..245.5] AND restecg = 1 THEN 1"
+  # hypos left: 4
+  explanation: "IF trestbps = (146.0..164.0] AND chol = (219.33..245.5] AND restecg = 1 AND thal = 3 THEN 1"
+  # hypos left: 4
+  explanation: "IF trestbps = (146.0..164.0] AND chol = (219.33..245.5] AND restecg = 1 AND exang = 0 THEN 1"
+  # hypos left: 4
+  explanation: "IF trestbps = (146.0..164.0] AND chol = (219.33..245.5] AND restecg = 1 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 4
+  exp time: 6.89
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (-inf..40.67] AND sex = 1 AND cp = 2 AND trestbps = (123.0..134.0] AND chol = (245.5..272.33] AND fbs = 0 AND restecg = 1 AND thalach = (177.0..+inf) AND exang = 0 AND oldpeak = (2.8..3.55] AND slope = 0 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF age = (-inf..40.67] AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 2 AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND cp = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND oldpeak = (2.8..3.55] THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (123.0..134.0] AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF chol = (245.5..272.33] AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND exang = 0 THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 2 AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND slope = 0 THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND oldpeak = (2.8..3.55] THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND trestbps = (123.0..134.0] THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND chol = (245.5..272.33] THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND slope = 0 THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 2 AND slope = 0 THEN 1"
+  # hypos left: 2
+  explanation: "IF chol = (245.5..272.33] AND oldpeak = (2.8..3.55] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND exang = 0 AND oldpeak = (2.8..3.55] THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND restecg = 1 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND chol = (245.5..272.33] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (123.0..134.0] AND chol = (245.5..272.33] AND ca = 0 THEN 1"
+  # hypos left: 3
+  exp time: 8.71
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (-inf..40.67] AND sex = 1 AND cp = 3 AND trestbps = (134.0..146.0] AND chol = (192.17..219.33] AND fbs = 0 AND restecg = 1 AND thalach = (177.0..+inf) AND exang = 1 AND oldpeak = (1.3..2.05] AND slope = 2 AND ca = 0 AND thal = 3 THEN 1"
+  explanation: "IF age = (-inf..40.67] AND trestbps = (134.0..146.0] THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (-inf..40.67] AND slope = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF chol = (192.17..219.33] AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND oldpeak = (1.3..2.05] THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND slope = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (134.0..146.0] AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 3 AND fbs = 0 AND oldpeak = (1.3..2.05] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND restecg = 1 AND oldpeak = (1.3..2.05] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND exang = 1 AND oldpeak = (1.3..2.05] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND oldpeak = (1.3..2.05] AND thal = 3 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND oldpeak = (1.3..2.05] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND trestbps = (134.0..146.0] AND fbs = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND trestbps = (134.0..146.0] AND restecg = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND trestbps = (134.0..146.0] AND exang = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND trestbps = (134.0..146.0] AND thal = 3 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND trestbps = (134.0..146.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (-inf..40.67] AND cp = 3 AND oldpeak = (1.3..2.05] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (-inf..40.67] AND cp = 3 AND chol = (192.17..219.33] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND chol = (192.17..219.33] AND exang = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND chol = (192.17..219.33] AND oldpeak = (1.3..2.05] THEN 1"
+  # hypos left: 3
+  exp time: 7.53
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (40.67..47.33] AND sex = 0 AND cp = 0 AND trestbps = (134.0..146.0] AND chol = (219.33..245.5] AND fbs = 0 AND restecg = 0 AND thalach = (146.0..161.0] AND exang = 1 AND oldpeak = (-inf..0.65] AND slope = 1 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF age = (40.67..47.33] AND chol = (219.33..245.5] THEN 1"
+  # hypos left: 2
+  explanation: "IF sex = 0 AND exang = 1 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND cp = 0 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF oldpeak = (-inf..0.65] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND sex = 0 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND sex = 0 AND fbs = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND sex = 0 AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND sex = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND chol = (219.33..245.5] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND chol = (219.33..245.5] AND restecg = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND chol = (219.33..245.5] AND exang = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND trestbps = (134.0..146.0] AND chol = (219.33..245.5] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND trestbps = (134.0..146.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND sex = 0 AND trestbps = (134.0..146.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND oldpeak = (-inf..0.65] AND slope = 1 AND ca = 0 THEN 1"
+  # hypos left: 4
+  explanation: "IF age = (40.67..47.33] AND exang = 1 AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 4
+  explanation: "IF age = (40.67..47.33] AND oldpeak = (-inf..0.65] AND slope = 1 AND thal = 2 THEN 1"
+  # hypos left: 4
+  explanation: "IF age = (40.67..47.33] AND exang = 1 AND oldpeak = (-inf..0.65] AND thal = 2 THEN 1"
+  # hypos left: 4
+  explanation: "IF age = (40.67..47.33] AND trestbps = (134.0..146.0] AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 4
+  exp time: 9.31
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (40.67..47.33] AND sex = 0 AND cp = 1 AND trestbps = (-inf..110.0] AND chol = (192.17..219.33] AND fbs = 0 AND restecg = 1 AND thalach = (161.0..177.0] AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 2 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF age = (40.67..47.33] AND cp = 1 THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 1 AND chol = (192.17..219.33] THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (40.67..47.33] AND thalach = (161.0..177.0] THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (161.0..177.0] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (192.17..219.33] AND thalach = (161.0..177.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF thalach = (161.0..177.0] AND slope = 2 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (192.17..219.33] AND thalach = (161.0..177.0] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND slope = 2 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND slope = 2 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF oldpeak = (-inf..0.65] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF slope = 2 AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND slope = 2 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND trestbps = (-inf..110.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND cp = 1 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND restecg = 1 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND trestbps = (-inf..110.0] AND restecg = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND restecg = 1 AND exang = 0 THEN 1"
+  # hypos left: 3
+  exp time: 11.48
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (40.67..47.33] AND sex = 0 AND cp = 2 AND trestbps = (110.0..123.0] AND chol = (192.17..219.33] AND fbs = 0 AND restecg = 1 AND thalach = (161.0..177.0] AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 1 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF age = (40.67..47.33] AND cp = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (40.67..47.33] AND thalach = (161.0..177.0] THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 2 AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF sex = 0 AND restecg = 1 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND chol = (192.17..219.33] AND restecg = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND chol = (192.17..219.33] AND thalach = (161.0..177.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (192.17..219.33] AND thalach = (161.0..177.0] AND slope = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND chol = (192.17..219.33] AND thalach = (161.0..177.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND chol = (192.17..219.33] AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND cp = 2 AND chol = (192.17..219.33] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND cp = 2 AND thalach = (161.0..177.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND chol = (192.17..219.33] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND chol = (192.17..219.33] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND chol = (192.17..219.33] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (192.17..219.33] AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF oldpeak = (-inf..0.65] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND oldpeak = (-inf..0.65] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND chol = (192.17..219.33] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND cp = 2 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  exp time: 12.90
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (40.67..47.33] AND sex = 0 AND cp = 2 AND trestbps = (110.0..123.0] AND chol = (219.33..245.5] AND fbs = 0 AND restecg = 1 AND thalach = (146.0..161.0] AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 1 AND ca = 1 AND thal = 2 THEN 1"
+  explanation: "IF age = (40.67..47.33] AND chol = (219.33..245.5] THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (40.67..47.33] AND cp = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 2 AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF sex = 0 AND thalach = (146.0..161.0] AND ca = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND trestbps = (110.0..123.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND trestbps = (110.0..123.0] AND ca = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND trestbps = (110.0..123.0] AND chol = (219.33..245.5] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND cp = 2 AND chol = (219.33..245.5] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND trestbps = (110.0..123.0] AND restecg = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND ca = 1 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND restecg = 1 AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND restecg = 1 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND oldpeak = (-inf..0.65] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND restecg = 1 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND sex = 0 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND cp = 2 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND trestbps = (110.0..123.0] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (110.0..123.0] AND chol = (219.33..245.5] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (110.0..123.0] AND oldpeak = (-inf..0.65] AND slope = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (110.0..123.0] AND restecg = 1 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  exp time: 9.18
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (40.67..47.33] AND sex = 1 AND cp = 0 AND trestbps = (-inf..110.0] AND chol = (192.17..219.33] AND fbs = 0 AND restecg = 0 AND thalach = (161.0..177.0] AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 2 AND ca = 1 AND thal = 2 THEN 0"
+  explanation: "IF sex = 1 AND trestbps = (-inf..110.0] AND thalach = (161.0..177.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND trestbps = (-inf..110.0] AND thalach = (161.0..177.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND trestbps = (-inf..110.0] AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND chol = (192.17..219.33] AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND chol = (192.17..219.33] AND restecg = 0 THEN 0"
+  # hypos left: 3
+  explanation: "IF restecg = 0 AND thalach = (161.0..177.0] AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND thalach = (161.0..177.0] AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND cp = 0 AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND restecg = 0 AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND sex = 1 AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND trestbps = (-inf..110.0] AND chol = (192.17..219.33] AND restecg = 0 THEN 0"
+  # hypos left: 4
+  explanation: "IF age = (40.67..47.33] AND trestbps = (-inf..110.0] AND restecg = 0 AND slope = 2 THEN 0"
+  # hypos left: 4
+  explanation: "IF age = (40.67..47.33] AND trestbps = (-inf..110.0] AND restecg = 0 AND thalach = (161.0..177.0] THEN 0"
+  # hypos left: 4
+  explanation: "IF age = (40.67..47.33] AND sex = 1 AND trestbps = (-inf..110.0] AND restecg = 0 THEN 0"
+  # hypos left: 4
+  explanation: "IF age = (40.67..47.33] AND cp = 0 AND restecg = 0 AND thalach = (161.0..177.0] THEN 0"
+  # hypos left: 4
+  explanation: "IF age = (40.67..47.33] AND cp = 0 AND thalach = (161.0..177.0] AND oldpeak = (-inf..0.65] THEN 0"
+  # hypos left: 4
+  explanation: "IF age = (40.67..47.33] AND cp = 0 AND chol = (192.17..219.33] AND thalach = (161.0..177.0] THEN 0"
+  # hypos left: 4
+  explanation: "IF age = (40.67..47.33] AND chol = (192.17..219.33] AND restecg = 0 AND oldpeak = (-inf..0.65] THEN 0"
+  # hypos left: 4
+  explanation: "IF sex = 1 AND cp = 0 AND restecg = 0 AND thalach = (161.0..177.0] THEN 0"
+  # hypos left: 4
+  explanation: "IF sex = 1 AND cp = 0 AND restecg = 0 AND ca = 1 THEN 0"
+  # hypos left: 4
+  exp time: 6.56
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (40.67..47.33] AND sex = 1 AND cp = 0 AND trestbps = (123.0..134.0] AND chol = (245.5..272.33] AND fbs = 1 AND restecg = 0 AND thalach = (130.0..146.0] AND exang = 1 AND oldpeak = (-inf..0.65] AND slope = 1 AND ca = 4 AND thal = 3 THEN 0"
+  explanation: "IF cp = 0 AND ca = 4 THEN 0"
+  # hypos left: 2
+  explanation: "IF ca = 4 AND thal = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF fbs = 1 AND ca = 4 THEN 0"
+  # hypos left: 2
+  explanation: "IF slope = 1 AND ca = 4 THEN 0"
+  # hypos left: 2
+  explanation: "IF exang = 1 AND ca = 4 THEN 0"
+  # hypos left: 2
+  explanation: "IF chol = (245.5..272.33] AND ca = 4 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (40.67..47.33] AND ca = 4 THEN 0"
+  # hypos left: 2
+  explanation: "IF restecg = 0 AND ca = 4 THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (123.0..134.0] AND ca = 4 THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (130.0..146.0] AND ca = 4 THEN 0"
+  # hypos left: 2
+  explanation: "IF fbs = 1 AND restecg = 0 AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND exang = 1 AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF exang = 1 AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND restecg = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND exang = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND cp = 0 AND trestbps = (123.0..134.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND chol = (245.5..272.33] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND trestbps = (123.0..134.0] AND thal = 3 THEN 0"
+  # hypos left: 3
+  exp time: 10.24
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (40.67..47.33] AND sex = 1 AND cp = 0 AND trestbps = (134.0..146.0] AND chol = (219.33..245.5] AND fbs = 0 AND restecg = 1 AND thalach = (177.0..+inf) AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 2 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF thalach = (177.0..+inf) AND exang = 0 THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 0 AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (134.0..146.0] AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (40.67..47.33] AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND slope = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (40.67..47.33] AND chol = (219.33..245.5] THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (40.67..47.33] AND trestbps = (134.0..146.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND chol = (219.33..245.5] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND oldpeak = (-inf..0.65] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF slope = 2 AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF oldpeak = (-inf..0.65] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND restecg = 1 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND restecg = 1 AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND trestbps = (134.0..146.0] AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND trestbps = (134.0..146.0] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND restecg = 1 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND restecg = 1 AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND slope = 2 AND ca = 0 THEN 1"
+  # hypos left: 3
+  exp time: 10.24
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (40.67..47.33] AND sex = 1 AND cp = 1 AND trestbps = (-inf..110.0] AND chol = (192.17..219.33] AND fbs = 1 AND restecg = 1 AND thalach = (146.0..161.0] AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 2 AND ca = 0 AND thal = 3 THEN 1"
+  explanation: "IF age = (40.67..47.33] AND cp = 1 THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (-inf..110.0] AND fbs = 1 THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 1 AND chol = (192.17..219.33] THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 1 AND trestbps = (-inf..110.0] AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (-inf..110.0] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (-inf..110.0] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND trestbps = (-inf..110.0] AND restecg = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND sex = 1 AND fbs = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND fbs = 1 AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF fbs = 1 AND exang = 0 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF fbs = 1 AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND fbs = 1 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND restecg = 1 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND fbs = 1 AND restecg = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND fbs = 1 AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND fbs = 1 AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND restecg = 1 AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND restecg = 1 AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND restecg = 1 AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND slope = 2 AND ca = 0 THEN 1"
+  # hypos left: 3
+  exp time: 7.38
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (40.67..47.33] AND sex = 1 AND cp = 1 AND trestbps = (-inf..110.0] AND chol = (219.33..245.5] AND fbs = 0 AND restecg = 1 AND thalach = (146.0..161.0] AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 2 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF age = (40.67..47.33] AND cp = 1 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (40.67..47.33] AND chol = (219.33..245.5] THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (-inf..110.0] AND chol = (219.33..245.5] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND oldpeak = (-inf..0.65] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF oldpeak = (-inf..0.65] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND trestbps = (-inf..110.0] AND restecg = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (-inf..110.0] AND exang = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (-inf..110.0] AND slope = 2 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (-inf..110.0] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (-inf..110.0] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (-inf..110.0] AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND slope = 2 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND thalach = (146.0..161.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND restecg = 1 AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND cp = 1 AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND fbs = 0 AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND restecg = 1 AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND restecg = 1 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (-inf..110.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  exp time: 9.26
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (40.67..47.33] AND sex = 1 AND cp = 1 AND trestbps = (110.0..123.0] AND chol = (245.5..272.33] AND fbs = 0 AND restecg = 1 AND thalach = (161.0..177.0] AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 2 AND ca = 0 AND thal = 3 THEN 1"
+  explanation: "IF age = (40.67..47.33] AND cp = 1 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (40.67..47.33] AND thalach = (161.0..177.0] THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 1 AND chol = (245.5..272.33] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND chol = (245.5..272.33] AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND chol = (245.5..272.33] AND thalach = (161.0..177.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND chol = (245.5..272.33] AND thal = 3 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (110.0..123.0] AND chol = (245.5..272.33] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND oldpeak = (-inf..0.65] AND thal = 3 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (110.0..123.0] AND thalach = (161.0..177.0] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (110.0..123.0] AND restecg = 1 AND thalach = (161.0..177.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (110.0..123.0] AND restecg = 1 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (110.0..123.0] AND restecg = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (110.0..123.0] AND thalach = (161.0..177.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (110.0..123.0] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (110.0..123.0] AND oldpeak = (-inf..0.65] AND thal = 3 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (110.0..123.0] AND chol = (245.5..272.33] AND thalach = (161.0..177.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (110.0..123.0] AND thalach = (161.0..177.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND slope = 2 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND restecg = 1 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND thalach = (161.0..177.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  exp time: 10.54
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (40.67..47.33] AND sex = 1 AND cp = 1 AND trestbps = (123.0..134.0] AND chol = (192.17..219.33] AND fbs = 0 AND restecg = 0 AND thalach = (177.0..+inf) AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 2 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF thalach = (177.0..+inf) AND exang = 0 THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND slope = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (123.0..134.0] AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 2
+  explanation: "IF restecg = 0 AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (40.67..47.33] AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF chol = (192.17..219.33] AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 1 AND chol = (192.17..219.33] THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (40.67..47.33] AND cp = 1 THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 1 AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 1 AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND restecg = 0 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (123.0..134.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND cp = 1 AND trestbps = (123.0..134.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (123.0..134.0] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND slope = 2 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (123.0..134.0] AND slope = 2 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF slope = 2 AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  exp time: 9.85
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (40.67..47.33] AND sex = 1 AND cp = 2 AND trestbps = (123.0..134.0] AND chol = (306.83..+inf) AND fbs = 0 AND restecg = 1 AND thalach = (161.0..177.0] AND exang = 0 AND oldpeak = (1.3..2.05] AND slope = 2 AND ca = 1 AND thal = 2 THEN 1"
+  explanation: "IF age = (40.67..47.33] AND thalach = (161.0..177.0] THEN 1"
+  # hypos left: 2
+  explanation: "IF chol = (306.83..+inf) AND thalach = (161.0..177.0] THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 2 AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (40.67..47.33] AND cp = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (40.67..47.33] AND restecg = 1 AND ca = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND restecg = 1 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND trestbps = (123.0..134.0] AND restecg = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND trestbps = (123.0..134.0] AND fbs = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (306.83..+inf) AND fbs = 0 AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND chol = (306.83..+inf) AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (306.83..+inf) AND slope = 2 AND ca = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (306.83..+inf) AND exang = 0 AND ca = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND chol = (306.83..+inf) AND ca = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (306.83..+inf) AND oldpeak = (1.3..2.05] AND ca = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND chol = (306.83..+inf) AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND chol = (306.83..+inf) AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND chol = (306.83..+inf) AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND chol = (306.83..+inf) AND ca = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (306.83..+inf) AND restecg = 1 AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (306.83..+inf) AND restecg = 1 AND slope = 2 THEN 1"
+  # hypos left: 3
+  exp time: 7.73
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (40.67..47.33] AND sex = 1 AND cp = 3 AND trestbps = (-inf..110.0] AND chol = (245.5..272.33] AND fbs = 0 AND restecg = 1 AND thalach = (130.0..146.0] AND exang = 0 AND oldpeak = (0.65..1.3] AND slope = 1 AND ca = 0 AND thal = 3 THEN 0"
+  explanation: "IF cp = 3 AND chol = (245.5..272.33] THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (40.67..47.33] AND thalach = (130.0..146.0] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND trestbps = (-inf..110.0] AND thalach = (130.0..146.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND thalach = (130.0..146.0] AND oldpeak = (0.65..1.3] THEN 0"
+  # hypos left: 3
+  explanation: "IF thalach = (130.0..146.0] AND exang = 0 AND oldpeak = (0.65..1.3] THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (-inf..110.0] AND thalach = (130.0..146.0] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF thalach = (130.0..146.0] AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF thalach = (130.0..146.0] AND oldpeak = (0.65..1.3] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF fbs = 0 AND oldpeak = (0.65..1.3] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (-inf..110.0] AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (-inf..110.0] AND oldpeak = (0.65..1.3] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (-inf..110.0] AND exang = 0 AND oldpeak = (0.65..1.3] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND trestbps = (-inf..110.0] AND oldpeak = (0.65..1.3] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND cp = 3 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND cp = 3 AND ca = 0 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND cp = 3 AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND cp = 3 AND restecg = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (40.67..47.33] AND cp = 3 AND trestbps = (-inf..110.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND trestbps = (-inf..110.0] AND oldpeak = (0.65..1.3] THEN 0"
+  # hypos left: 3
+  exp time: 9.82
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (47.33..54.0] AND sex = 0 AND cp = 2 AND trestbps = (123.0..134.0] AND chol = (245.5..272.33] AND fbs = 0 AND restecg = 0 AND thalach = (146.0..161.0] AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 2 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF cp = 2 AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (47.33..54.0] AND sex = 0 AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND sex = 0 AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND sex = 0 AND restecg = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND fbs = 0 AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND thalach = (146.0..161.0] AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND trestbps = (123.0..134.0] AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND chol = (245.5..272.33] AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND sex = 0 AND chol = (245.5..272.33] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND sex = 0 AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND sex = 0 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND oldpeak = (-inf..0.65] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND slope = 2 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (123.0..134.0] AND thalach = (146.0..161.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND exang = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND thalach = (146.0..161.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND trestbps = (123.0..134.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND chol = (245.5..272.33] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND slope = 2 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  exp time: 12.46
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (47.33..54.0] AND sex = 0 AND cp = 2 AND trestbps = (146.0..164.0] AND chol = (192.17..219.33] AND fbs = 0 AND restecg = 1 AND thalach = (161.0..177.0] AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 2 AND ca = 1 AND thal = 2 THEN 1"
+  explanation: "IF cp = 2 AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (47.33..54.0] AND restecg = 1 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND exang = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND thalach = (161.0..177.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND ca = 1 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND oldpeak = (-inf..0.65] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (146.0..164.0] AND chol = (192.17..219.33] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND trestbps = (146.0..164.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND slope = 2 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND chol = (192.17..219.33] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND chol = (192.17..219.33] AND restecg = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND chol = (192.17..219.33] AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND chol = (192.17..219.33] AND thalach = (161.0..177.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (192.17..219.33] AND thalach = (161.0..177.0] AND ca = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (192.17..219.33] AND thalach = (161.0..177.0] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND chol = (192.17..219.33] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND restecg = 1 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND trestbps = (146.0..164.0] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND thalach = (161.0..177.0] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND slope = 2 AND ca = 1 THEN 1"
+  # hypos left: 3
+  exp time: 10.85
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (47.33..54.0] AND sex = 1 AND cp = 0 AND trestbps = (110.0..123.0] AND chol = (219.33..245.5] AND fbs = 0 AND restecg = 0 AND thalach = (177.0..+inf) AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 2 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF thalach = (177.0..+inf) AND slope = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND exang = 0 THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 2
+  explanation: "IF restecg = 0 AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 0 AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (47.33..54.0] AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (47.33..54.0] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND trestbps = (110.0..123.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND chol = (219.33..245.5] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND trestbps = (110.0..123.0] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND chol = (219.33..245.5] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND trestbps = (110.0..123.0] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND trestbps = (110.0..123.0] AND chol = (219.33..245.5] THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (110.0..123.0] AND chol = (219.33..245.5] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND trestbps = (110.0..123.0] AND restecg = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND slope = 2 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND exang = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF slope = 2 AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (219.33..245.5] AND slope = 2 AND ca = 0 THEN 1"
+  # hypos left: 3
+  exp time: 9.89
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (47.33..54.0] AND sex = 1 AND cp = 0 AND trestbps = (110.0..123.0] AND chol = (272.33..306.83] AND fbs = 0 AND restecg = 0 AND thalach = (114.0..130.0] AND exang = 1 AND oldpeak = (2.8..3.55] AND slope = 1 AND ca = 2 AND thal = 2 THEN 0"
+  explanation: "IF oldpeak = (2.8..3.55] THEN 0"
+  # hypos left: 1
+  explanation: "IF trestbps = (110.0..123.0] AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (114.0..130.0] AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF exang = 1 AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF slope = 1 AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF sex = 1 AND thalach = (114.0..130.0] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND cp = 0 AND thalach = (114.0..130.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND cp = 0 AND thalach = (114.0..130.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND trestbps = (110.0..123.0] AND thalach = (114.0..130.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND thalach = (114.0..130.0] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND trestbps = (110.0..123.0] AND thalach = (114.0..130.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND thalach = (114.0..130.0] AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF thalach = (114.0..130.0] AND exang = 1 AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND thalach = (114.0..130.0] AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND chol = (272.33..306.83] AND thalach = (114.0..130.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND thalach = (114.0..130.0] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND chol = (272.33..306.83] AND thalach = (114.0..130.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (110.0..123.0] AND chol = (272.33..306.83] AND thalach = (114.0..130.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (110.0..123.0] AND exang = 1 AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND trestbps = (110.0..123.0] AND exang = 1 THEN 0"
+  # hypos left: 3
+  exp time: 10.40
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (47.33..54.0] AND sex = 1 AND cp = 0 AND trestbps = (134.0..146.0] AND chol = (245.5..272.33] AND fbs = 0 AND restecg = 0 AND thalach = (177.0..+inf) AND exang = 1 AND oldpeak = (-inf..0.65] AND slope = 2 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF thalach = (177.0..+inf) AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND slope = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF restecg = 0 AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (134.0..146.0] AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 0 AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF chol = (245.5..272.33] AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (47.33..54.0] AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (47.33..54.0] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND slope = 2 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND trestbps = (134.0..146.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND chol = (245.5..272.33] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF oldpeak = (-inf..0.65] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF slope = 2 AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND slope = 2 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND oldpeak = (-inf..0.65] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND chol = (245.5..272.33] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND chol = (245.5..272.33] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  exp time: 10.90
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (47.33..54.0] AND sex = 1 AND cp = 0 AND trestbps = (134.0..146.0] AND chol = (272.33..306.83] AND fbs = 0 AND restecg = 1 AND thalach = (161.0..177.0] AND exang = 1 AND oldpeak = (1.3..2.05] AND slope = 2 AND ca = 0 AND thal = 3 THEN 0"
+  explanation: "IF chol = (272.33..306.83] AND thalach = (161.0..177.0] AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND thalach = (161.0..177.0] AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND thalach = (161.0..177.0] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND slope = 2 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND fbs = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND chol = (272.33..306.83] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND cp = 0 AND chol = (272.33..306.83] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND chol = (272.33..306.83] AND thalach = (161.0..177.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND chol = (272.33..306.83] AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND restecg = 1 AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND fbs = 0 AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND exang = 1 AND ca = 0 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND chol = (272.33..306.83] AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND exang = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND chol = (272.33..306.83] AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND chol = (272.33..306.83] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND thalach = (161.0..177.0] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND trestbps = (134.0..146.0] AND chol = (272.33..306.83] THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND oldpeak = (1.3..2.05] AND slope = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND restecg = 1 AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  exp time: 9.34
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (47.33..54.0] AND sex = 1 AND cp = 1 AND trestbps = (123.0..134.0] AND chol = (192.17..219.33] AND fbs = 0 AND restecg = 1 AND thalach = (146.0..161.0] AND exang = 0 AND oldpeak = (0.65..1.3] AND slope = 2 AND ca = 1 AND thal = 2 THEN 1"
+  explanation: "IF cp = 1 AND chol = (192.17..219.33] THEN 1"
+  # hypos left: 2
+  explanation: "IF sex = 1 AND cp = 1 AND trestbps = (123.0..134.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND cp = 1 AND trestbps = (123.0..134.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (123.0..134.0] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (123.0..134.0] AND oldpeak = (0.65..1.3] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (123.0..134.0] AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND exang = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND trestbps = (123.0..134.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND slope = 2 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND slope = 2 AND ca = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF oldpeak = (0.65..1.3] AND slope = 2 AND ca = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND oldpeak = (0.65..1.3] AND ca = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND fbs = 0 AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND thalach = (146.0..161.0] AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND thalach = (146.0..161.0] AND ca = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF thalach = (146.0..161.0] AND oldpeak = (0.65..1.3] AND ca = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF thalach = (146.0..161.0] AND oldpeak = (0.65..1.3] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (192.17..219.33] AND oldpeak = (0.65..1.3] AND ca = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND ca = 1 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (123.0..134.0] AND thalach = (146.0..161.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  exp time: 7.10
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (47.33..54.0] AND sex = 1 AND cp = 1 AND trestbps = (164.0..+inf) AND chol = (272.33..306.83] AND fbs = 0 AND restecg = 0 AND thalach = (177.0..+inf) AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 2 AND ca = 1 AND thal = 3 THEN 1"
+  explanation: "IF chol = (272.33..306.83] AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND ca = 1 THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND exang = 0 THEN 1"
+  # hypos left: 2
+  explanation: "IF restecg = 0 AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND slope = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (47.33..54.0] AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 1 AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (47.33..54.0] AND trestbps = (164.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND exang = 0 THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND ca = 1 THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 1 AND trestbps = (164.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND slope = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND chol = (272.33..306.83] AND fbs = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND chol = (272.33..306.83] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND chol = (272.33..306.83] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND oldpeak = (-inf..0.65] AND thal = 3 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND slope = 2 AND thal = 3 THEN 1"
+  # hypos left: 3
+  exp time: 7.58
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (47.33..54.0] AND sex = 1 AND cp = 2 AND trestbps = (110.0..123.0] AND chol = (-inf..192.17] AND fbs = 0 AND restecg = 0 AND thalach = (114.0..130.0] AND exang = 0 AND oldpeak = (0.65..1.3] AND slope = 2 AND ca = 3 AND thal = 2 THEN 1"
+  explanation: "IF cp = 2 AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 2 AND thalach = (114.0..130.0] THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (114.0..130.0] AND slope = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (110.0..123.0] AND chol = (-inf..192.17] AND oldpeak = (0.65..1.3] THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (110.0..123.0] AND thalach = (114.0..130.0] AND oldpeak = (0.65..1.3] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND trestbps = (110.0..123.0] AND oldpeak = (0.65..1.3] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND trestbps = (110.0..123.0] AND oldpeak = (0.65..1.3] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND chol = (-inf..192.17] AND oldpeak = (0.65..1.3] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND oldpeak = (0.65..1.3] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND exang = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (-inf..192.17] AND oldpeak = (0.65..1.3] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (-inf..192.17] AND exang = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND chol = (-inf..192.17] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND chol = (-inf..192.17] AND restecg = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (-inf..192.17] AND oldpeak = (0.65..1.3] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND chol = (-inf..192.17] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND slope = 2 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (-inf..192.17] AND slope = 2 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (110.0..123.0] AND chol = (-inf..192.17] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND trestbps = (110.0..123.0] AND slope = 2 THEN 1"
+  # hypos left: 3
+  exp time: 11.37
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (47.33..54.0] AND sex = 1 AND cp = 2 AND trestbps = (123.0..134.0] AND chol = (219.33..245.5] AND fbs = 1 AND restecg = 0 AND thalach = (161.0..177.0] AND exang = 0 AND oldpeak = (2.05..2.8] AND slope = 1 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF cp = 2 AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (47.33..54.0] AND trestbps = (123.0..134.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (123.0..134.0] AND chol = (219.33..245.5] AND fbs = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF fbs = 1 AND oldpeak = (2.05..2.8] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND chol = (219.33..245.5] AND fbs = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF thalach = (161.0..177.0] AND oldpeak = (2.05..2.8] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF fbs = 1 AND thalach = (161.0..177.0] AND oldpeak = (2.05..2.8] THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (123.0..134.0] AND thalach = (161.0..177.0] AND oldpeak = (2.05..2.8] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND fbs = 1 AND thalach = (161.0..177.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND fbs = 1 AND thalach = (161.0..177.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND fbs = 1 AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND chol = (219.33..245.5] AND fbs = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND trestbps = (123.0..134.0] AND chol = (219.33..245.5] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND cp = 2 AND trestbps = (123.0..134.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND cp = 2 AND restecg = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND cp = 2 AND fbs = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND exang = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND chol = (219.33..245.5] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND thalach = (161.0..177.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND fbs = 1 AND thal = 2 THEN 1"
+  # hypos left: 3
+  exp time: 9.16
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (47.33..54.0] AND sex = 1 AND cp = 3 AND trestbps = (110.0..123.0] AND chol = (-inf..192.17] AND fbs = 0 AND restecg = 0 AND thalach = (177.0..+inf) AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 1 AND ca = 0 AND thal = 1 THEN 1"
+  explanation: "IF age = (47.33..54.0] AND thal = 1 THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 3 AND thal = 1 THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND thal = 1 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (47.33..54.0] AND cp = 3 THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND exang = 0 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (47.33..54.0] AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF restecg = 0 AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 3 AND chol = (-inf..192.17] THEN 1"
+  # hypos left: 2
+  explanation: "IF chol = (-inf..192.17] AND thalach = (177.0..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (177.0..+inf) AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 3 AND trestbps = (110.0..123.0] AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND trestbps = (110.0..123.0] AND restecg = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND fbs = 0 AND restecg = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND restecg = 0 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND exang = 0 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND fbs = 0 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND trestbps = (110.0..123.0] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND trestbps = (110.0..123.0] AND restecg = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (47.33..54.0] AND trestbps = (110.0..123.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  exp time: 6.68
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 0 AND cp = 0 AND trestbps = (-inf..110.0] AND chol = (245.5..272.33] AND fbs = 0 AND restecg = 0 AND thalach = (114.0..130.0] AND exang = 0 AND oldpeak = (0.65..1.3] AND slope = 1 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF trestbps = (-inf..110.0] AND thalach = (114.0..130.0] AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF thalach = (114.0..130.0] AND exang = 0 AND oldpeak = (0.65..1.3] THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND thalach = (114.0..130.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND thalach = (114.0..130.0] AND oldpeak = (0.65..1.3] THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (-inf..110.0] AND chol = (245.5..272.33] AND thalach = (114.0..130.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND trestbps = (-inf..110.0] AND thalach = (114.0..130.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND thalach = (114.0..130.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND thalach = (114.0..130.0] AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND trestbps = (-inf..110.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (-inf..110.0] AND exang = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (-inf..110.0] AND exang = 0 AND slope = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND trestbps = (-inf..110.0] AND chol = (245.5..272.33] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND sex = 0 AND trestbps = (-inf..110.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND trestbps = (-inf..110.0] AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND trestbps = (-inf..110.0] AND restecg = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND trestbps = (-inf..110.0] AND thalach = (114.0..130.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (-inf..110.0] AND chol = (245.5..272.33] AND oldpeak = (0.65..1.3] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND trestbps = (-inf..110.0] AND oldpeak = (0.65..1.3] THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (-inf..110.0] AND chol = (245.5..272.33] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND trestbps = (-inf..110.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  exp time: 7.78
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 0 AND cp = 0 AND trestbps = (110.0..123.0] AND chol = (306.83..+inf) AND fbs = 0 AND restecg = 1 AND thalach = (161.0..177.0] AND exang = 1 AND oldpeak = (-inf..0.65] AND slope = 2 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF chol = (306.83..+inf) AND thalach = (161.0..177.0] THEN 1"
+  # hypos left: 2
+  explanation: "IF sex = 0 AND thalach = (161.0..177.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND slope = 2 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND sex = 0 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (306.83..+inf) AND exang = 1 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (306.83..+inf) AND restecg = 1 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND chol = (306.83..+inf) AND restecg = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND sex = 0 AND restecg = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (306.83..+inf) AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF oldpeak = (-inf..0.65] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND oldpeak = (-inf..0.65] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND restecg = 1 AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND fbs = 0 AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND cp = 0 AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND exang = 1 AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (306.83..+inf) AND fbs = 0 AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (306.83..+inf) AND restecg = 1 AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND slope = 2 AND ca = 0 THEN 1"
+  # hypos left: 3
+  exp time: 12.09
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 0 AND cp = 0 AND trestbps = (123.0..134.0] AND chol = (306.83..+inf) AND fbs = 0 AND restecg = 0 AND thalach = (146.0..161.0] AND exang = 1 AND oldpeak = (1.3..2.05] AND slope = 1 AND ca = 2 AND thal = 3 THEN 0"
+  explanation: "IF thalach = (146.0..161.0] AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF exang = 1 AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF oldpeak = (1.3..2.05] AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF slope = 1 AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF ca = 2 AND thal = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF chol = (306.83..+inf) AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF chol = (306.83..+inf) AND slope = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND chol = (306.83..+inf) AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND sex = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND chol = (306.83..+inf) AND restecg = 0 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND thalach = (146.0..161.0] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 0 AND chol = (306.83..+inf) THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND chol = (306.83..+inf) AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND sex = 0 AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND restecg = 0 AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND thalach = (146.0..161.0] AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND oldpeak = (1.3..2.05] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND trestbps = (123.0..134.0] AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 0 AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  exp time: 10.59
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 0 AND cp = 0 AND trestbps = (134.0..146.0] AND chol = (219.33..245.5] AND fbs = 0 AND restecg = 1 AND thalach = (114.0..130.0] AND exang = 1 AND oldpeak = (-inf..0.65] AND slope = 1 AND ca = 0 AND thal = 3 THEN 0"
+  explanation: "IF chol = (219.33..245.5] AND thalach = (114.0..130.0] THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (114.0..130.0] AND thal = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF cp = 0 AND thalach = (114.0..130.0] AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF thalach = (114.0..130.0] AND exang = 1 AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF thalach = (114.0..130.0] AND exang = 1 AND ca = 0 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND thalach = (114.0..130.0] AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND thalach = (114.0..130.0] AND oldpeak = (-inf..0.65] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND trestbps = (134.0..146.0] AND thalach = (114.0..130.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND restecg = 1 AND thalach = (114.0..130.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND thalach = (114.0..130.0] AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND exang = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND chol = (219.33..245.5] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND cp = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 0 AND chol = (219.33..245.5] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND trestbps = (134.0..146.0] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND chol = (219.33..245.5] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND trestbps = (134.0..146.0] AND thalach = (114.0..130.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND sex = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  exp time: 13.45
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 0 AND cp = 0 AND trestbps = (164.0..+inf) AND chol = (245.5..272.33] AND fbs = 0 AND restecg = 1 AND thalach = (130.0..146.0] AND exang = 1 AND oldpeak = (-inf..0.65] AND slope = 1 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF trestbps = (164.0..+inf) AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND chol = (245.5..272.33] THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 2
+  explanation: "IF restecg = 1 AND thalach = (130.0..146.0] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (164.0..+inf) AND fbs = 0 AND slope = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND restecg = 1 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND trestbps = (164.0..+inf) AND restecg = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (164.0..+inf) AND restecg = 1 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (164.0..+inf) AND fbs = 0 AND restecg = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (164.0..+inf) AND restecg = 1 AND thalach = (130.0..146.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND slope = 1 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND chol = (245.5..272.33] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND chol = (245.5..272.33] AND thalach = (130.0..146.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND trestbps = (164.0..+inf) AND fbs = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND trestbps = (164.0..+inf) AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND chol = (245.5..272.33] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND exang = 1 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND cp = 0 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND thalach = (130.0..146.0] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  exp time: 13.33
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 0 AND cp = 0 AND trestbps = (164.0..+inf) AND chol = (272.33..306.83] AND fbs = 1 AND restecg = 0 AND thalach = (130.0..146.0] AND exang = 1 AND oldpeak = (3.55..+inf) AND slope = 0 AND ca = 2 AND thal = 3 THEN 0"
+  explanation: "IF fbs = 1 AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF oldpeak = (3.55..+inf) AND slope = 0 THEN 0"
+  # hypos left: 2
+  explanation: "IF cp = 0 AND slope = 0 THEN 0"
+  # hypos left: 2
+  explanation: "IF sex = 0 AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF restecg = 0 AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF exang = 1 AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF chol = (272.33..306.83] AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF cp = 0 AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF oldpeak = (3.55..+inf) AND thal = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND slope = 0 THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (130.0..146.0] AND slope = 0 THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (130.0..146.0] AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND thalach = (130.0..146.0] THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND restecg = 0 THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND chol = (272.33..306.83] THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND trestbps = (164.0..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND slope = 0 THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND ca = 2 THEN 0"
+  # hypos left: 2
+  exp time: 10.52
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 0 AND cp = 0 AND trestbps = (164.0..+inf) AND chol = (306.83..+inf) AND fbs = 0 AND restecg = 2 AND thalach = (114.0..130.0] AND exang = 1 AND oldpeak = (2.8..3.55] AND slope = 1 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF restecg = 2 AND oldpeak = (2.8..3.55] THEN 1"
+  # hypos left: 2
+  explanation: "IF restecg = 2 AND ca = 0 THEN 1"
+  # hypos left: 2
+  explanation: "IF restecg = 2 AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND restecg = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND thalach = (114.0..130.0] THEN 1"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF thalach = (114.0..130.0] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND thalach = (114.0..130.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND thalach = (114.0..130.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND thalach = (114.0..130.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND sex = 0 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (306.83..+inf) AND exang = 1 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND fbs = 0 AND oldpeak = (2.8..3.55] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND oldpeak = (2.8..3.55] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND sex = 0 AND oldpeak = (2.8..3.55] THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (306.83..+inf) AND oldpeak = (2.8..3.55] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND oldpeak = (2.8..3.55] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (306.83..+inf) AND thalach = (114.0..130.0] AND oldpeak = (2.8..3.55] THEN 1"
+  # hypos left: 3
+  explanation: "IF thalach = (114.0..130.0] AND oldpeak = (2.8..3.55] AND ca = 0 THEN 1"
+  # hypos left: 3
+  exp time: 13.73
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 0 AND cp = 1 AND trestbps = (134.0..146.0] AND chol = (272.33..306.83] AND fbs = 0 AND restecg = 0 AND thalach = (146.0..161.0] AND exang = 0 AND oldpeak = (0.65..1.3] AND slope = 1 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF cp = 1 AND fbs = 0 AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND thalach = (146.0..161.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND restecg = 0 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND slope = 1 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 1 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND cp = 1 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND thalach = (146.0..161.0] AND oldpeak = (0.65..1.3] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND oldpeak = (0.65..1.3] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND cp = 1 AND oldpeak = (0.65..1.3] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 1 AND oldpeak = (0.65..1.3] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND oldpeak = (0.65..1.3] AND slope = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (134.0..146.0] AND oldpeak = (0.65..1.3] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND trestbps = (134.0..146.0] AND oldpeak = (0.65..1.3] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND sex = 0 AND oldpeak = (0.65..1.3] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND restecg = 0 AND oldpeak = (0.65..1.3] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND thalach = (146.0..161.0] AND oldpeak = (0.65..1.3] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (134.0..146.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (134.0..146.0] AND fbs = 0 THEN 1"
+  # hypos left: 3
+  exp time: 7.75
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 1 AND cp = 0 AND trestbps = (-inf..110.0] AND chol = (192.17..219.33] AND fbs = 0 AND restecg = 1 AND thalach = (114.0..130.0] AND exang = 1 AND oldpeak = (1.3..2.05] AND slope = 1 AND ca = 0 AND thal = 1 THEN 0"
+  explanation: "IF trestbps = (-inf..110.0] AND thal = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (114.0..130.0] AND thal = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF oldpeak = (1.3..2.05] AND thal = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND thal = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF exang = 1 AND thal = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF cp = 0 AND slope = 1 AND thal = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND restecg = 1 AND thal = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND chol = (192.17..219.33] AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND exang = 1 AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND trestbps = (-inf..110.0] AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND exang = 1 AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND trestbps = (-inf..110.0] AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 0 AND trestbps = (-inf..110.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 0 AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND trestbps = (-inf..110.0] AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND trestbps = (-inf..110.0] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND trestbps = (-inf..110.0] AND ca = 0 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND sex = 1 AND trestbps = (-inf..110.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND trestbps = (-inf..110.0] AND chol = (192.17..219.33] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND trestbps = (-inf..110.0] AND thalach = (114.0..130.0] THEN 0"
+  # hypos left: 3
+  exp time: 8.85
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 1 AND cp = 0 AND trestbps = (123.0..134.0] AND chol = (-inf..192.17] AND fbs = 0 AND restecg = 0 AND thalach = (-inf..114.0] AND exang = 1 AND oldpeak = (2.05..2.8] AND slope = 1 AND ca = 1 AND thal = 1 THEN 0"
+  explanation: "IF thalach = (-inf..114.0] AND ca = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (-inf..114.0] AND slope = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (123.0..134.0] AND thalach = (-inf..114.0] THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (-inf..114.0] AND thal = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF exang = 1 AND thal = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND thal = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF ca = 1 AND thal = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (123.0..134.0] AND thal = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF chol = (-inf..192.17] AND thal = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF chol = (-inf..192.17] AND oldpeak = (2.05..2.8] THEN 0"
+  # hypos left: 2
+  explanation: "IF exang = 1 AND oldpeak = (2.05..2.8] THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND oldpeak = (2.05..2.8] THEN 0"
+  # hypos left: 2
+  explanation: "IF oldpeak = (2.05..2.8] AND ca = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (123.0..134.0] AND oldpeak = (2.05..2.8] THEN 0"
+  # hypos left: 2
+  explanation: "IF oldpeak = (2.05..2.8] AND slope = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF restecg = 0 AND slope = 1 AND thal = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND slope = 1 AND thal = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND exang = 1 AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND restecg = 0 AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND slope = 1 AND ca = 1 THEN 0"
+  # hypos left: 3
+  exp time: 10.18
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 1 AND cp = 0 AND trestbps = (134.0..146.0] AND chol = (192.17..219.33] AND fbs = 0 AND restecg = 1 AND thalach = (-inf..114.0] AND exang = 0 AND oldpeak = (1.3..2.05] AND slope = 1 AND ca = 1 AND thal = 3 THEN 0"
+  explanation: "IF thalach = (-inf..114.0] AND ca = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF chol = (192.17..219.33] AND thalach = (-inf..114.0] THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (-inf..114.0] AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (-inf..114.0] AND slope = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (134.0..146.0] AND chol = (192.17..219.33] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND trestbps = (134.0..146.0] AND chol = (192.17..219.33] THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND chol = (192.17..219.33] AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND chol = (192.17..219.33] AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (192.17..219.33] AND oldpeak = (1.3..2.05] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND trestbps = (134.0..146.0] AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND trestbps = (134.0..146.0] AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND oldpeak = (1.3..2.05] AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND oldpeak = (1.3..2.05] AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND restecg = 1 AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND trestbps = (134.0..146.0] AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND ca = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND oldpeak = (1.3..2.05] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND oldpeak = (1.3..2.05] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF oldpeak = (1.3..2.05] AND ca = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND oldpeak = (1.3..2.05] AND thal = 3 THEN 0"
+  # hypos left: 3
+  exp time: 9.75
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 1 AND cp = 0 AND trestbps = (134.0..146.0] AND chol = (272.33..306.83] AND fbs = 0 AND restecg = 0 AND thalach = (130.0..146.0] AND exang = 1 AND oldpeak = (2.05..2.8] AND slope = 1 AND ca = 2 AND thal = 3 THEN 0"
+  explanation: "IF oldpeak = (2.05..2.8] AND slope = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF chol = (272.33..306.83] AND oldpeak = (2.05..2.8] THEN 0"
+  # hypos left: 2
+  explanation: "IF oldpeak = (2.05..2.8] AND thal = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF exang = 1 AND oldpeak = (2.05..2.8] THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND oldpeak = (2.05..2.8] THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF ca = 2 AND thal = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF slope = 1 AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF exang = 1 AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF oldpeak = (2.05..2.8] AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (134.0..146.0] AND fbs = 0 AND oldpeak = (2.05..2.8] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND trestbps = (134.0..146.0] AND oldpeak = (2.05..2.8] THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND thalach = (130.0..146.0] AND oldpeak = (2.05..2.8] THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND restecg = 0 AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND trestbps = (134.0..146.0] AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND trestbps = (134.0..146.0] AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND cp = 0 AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND restecg = 0 AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  exp time: 10.89
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 1 AND cp = 0 AND trestbps = (134.0..146.0] AND chol = (272.33..306.83] AND fbs = 0 AND restecg = 0 AND thalach = (161.0..177.0] AND exang = 0 AND oldpeak = (0.65..1.3] AND slope = 1 AND ca = 2 AND thal = 3 THEN 0"
+  explanation: "IF slope = 1 AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF ca = 2 AND thal = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (161.0..177.0] AND oldpeak = (0.65..1.3] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND thalach = (161.0..177.0] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND fbs = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND chol = (272.33..306.83] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF fbs = 0 AND oldpeak = (0.65..1.3] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND oldpeak = (0.65..1.3] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND oldpeak = (0.65..1.3] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND restecg = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF restecg = 0 AND oldpeak = (0.65..1.3] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF restecg = 0 AND oldpeak = (0.65..1.3] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND thalach = (161.0..177.0] AND oldpeak = (0.65..1.3] THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND thalach = (161.0..177.0] AND oldpeak = (0.65..1.3] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND trestbps = (134.0..146.0] AND oldpeak = (0.65..1.3] THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND chol = (272.33..306.83] AND oldpeak = (0.65..1.3] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND trestbps = (134.0..146.0] AND chol = (272.33..306.83] THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND trestbps = (134.0..146.0] AND chol = (272.33..306.83] THEN 0"
+  # hypos left: 3
+  exp time: 10.13
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 1 AND cp = 0 AND trestbps = (146.0..164.0] AND chol = (272.33..306.83] AND fbs = 0 AND restecg = 1 AND thalach = (-inf..114.0] AND exang = 1 AND oldpeak = (0.65..1.3] AND slope = 1 AND ca = 1 AND thal = 3 THEN 0"
+  explanation: "IF chol = (272.33..306.83] AND thalach = (-inf..114.0] THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (-inf..114.0] AND oldpeak = (0.65..1.3] THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (-inf..114.0] AND ca = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (-inf..114.0] AND slope = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND oldpeak = (0.65..1.3] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND chol = (272.33..306.83] AND restecg = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 0 AND oldpeak = (0.65..1.3] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND trestbps = (146.0..164.0] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND trestbps = (146.0..164.0] AND chol = (272.33..306.83] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND trestbps = (146.0..164.0] AND oldpeak = (0.65..1.3] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 0 AND trestbps = (146.0..164.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND trestbps = (146.0..164.0] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND exang = 1 AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND exang = 1 AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (146.0..164.0] AND fbs = 0 AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (146.0..164.0] AND chol = (272.33..306.83] AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND trestbps = (146.0..164.0] AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND chol = (272.33..306.83] AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND exang = 1 AND oldpeak = (0.65..1.3] THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND restecg = 1 AND exang = 1 THEN 0"
+  # hypos left: 3
+  exp time: 8.83
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 1 AND cp = 0 AND trestbps = (164.0..+inf) AND chol = (272.33..306.83] AND fbs = 1 AND restecg = 0 AND thalach = (114.0..130.0] AND exang = 0 AND oldpeak = (0.65..1.3] AND slope = 1 AND ca = 3 AND thal = 3 THEN 0"
+  explanation: "IF trestbps = (164.0..+inf) AND restecg = 0 THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND chol = (272.33..306.83] THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND oldpeak = (0.65..1.3] THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND slope = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND trestbps = (164.0..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND thalach = (114.0..130.0] THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (114.0..130.0] AND thal = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND ca = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (114.0..130.0] AND ca = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF chol = (272.33..306.83] AND ca = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND ca = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF oldpeak = (0.65..1.3] AND ca = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF slope = 1 AND ca = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF restecg = 0 AND ca = 3 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND restecg = 0 AND ca = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF fbs = 1 AND restecg = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND fbs = 1 AND restecg = 0 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND chol = (272.33..306.83] AND fbs = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND fbs = 1 AND oldpeak = (0.65..1.3] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND restecg = 0 AND oldpeak = (0.65..1.3] THEN 0"
+  # hypos left: 3
+  exp time: 10.20
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 1 AND cp = 1 AND trestbps = (110.0..123.0] AND chol = (219.33..245.5] AND fbs = 0 AND restecg = 1 AND thalach = (161.0..177.0] AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 0 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF oldpeak = (-inf..0.65] AND slope = 0 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 1 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND thalach = (161.0..177.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND trestbps = (110.0..123.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (110.0..123.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (110.0..123.0] AND thalach = (161.0..177.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (110.0..123.0] AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF slope = 0 AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF oldpeak = (-inf..0.65] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (110.0..123.0] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (110.0..123.0] AND slope = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 1 AND slope = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND slope = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND restecg = 1 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (110.0..123.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (110.0..123.0] AND chol = (219.33..245.5] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (110.0..123.0] AND thalach = (161.0..177.0] THEN 1"
+  # hypos left: 3
+  exp time: 8.09
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 1 AND cp = 1 AND trestbps = (123.0..134.0] AND chol = (219.33..245.5] AND fbs = 0 AND restecg = 1 AND thalach = (130.0..146.0] AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 1 AND ca = 4 AND thal = 3 THEN 0"
+  explanation: "IF slope = 1 AND ca = 4 THEN 0"
+  # hypos left: 2
+  explanation: "IF cp = 1 AND ca = 4 THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (123.0..134.0] AND ca = 4 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND ca = 4 THEN 0"
+  # hypos left: 2
+  explanation: "IF ca = 4 AND thal = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (130.0..146.0] AND ca = 4 THEN 0"
+  # hypos left: 2
+  explanation: "IF chol = (219.33..245.5] AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (123.0..134.0] AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND chol = (219.33..245.5] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF thalach = (130.0..146.0] AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (219.33..245.5] AND thalach = (130.0..146.0] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND chol = (219.33..245.5] AND thalach = (130.0..146.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND chol = (219.33..245.5] AND thalach = (130.0..146.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (123.0..134.0] AND chol = (219.33..245.5] AND thalach = (130.0..146.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND chol = (219.33..245.5] AND thalach = (130.0..146.0] AND oldpeak = (-inf..0.65] THEN 0"
+  # hypos left: 4
+  explanation: "IF age = (54.0..60.67] AND chol = (219.33..245.5] AND restecg = 1 AND thal = 3 THEN 0"
+  # hypos left: 4
+  explanation: "IF cp = 1 AND chol = (219.33..245.5] AND restecg = 1 AND thal = 3 THEN 0"
+  # hypos left: 4
+  explanation: "IF cp = 1 AND trestbps = (123.0..134.0] AND chol = (219.33..245.5] AND restecg = 1 THEN 0"
+  # hypos left: 4
+  exp time: 9.97
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 1 AND cp = 1 AND trestbps = (123.0..134.0] AND chol = (245.5..272.33] AND fbs = 0 AND restecg = 1 AND thalach = (146.0..161.0] AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 2 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF restecg = 1 AND oldpeak = (-inf..0.65] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND restecg = 1 AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (123.0..134.0] AND restecg = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 1 AND restecg = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND slope = 2 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (123.0..134.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND cp = 1 AND trestbps = (123.0..134.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND trestbps = (123.0..134.0] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (123.0..134.0] AND slope = 2 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (123.0..134.0] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF slope = 2 AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 1 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND restecg = 1 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND slope = 2 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND thalach = (146.0..161.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND cp = 1 AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND fbs = 0 AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  exp time: 11.96
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 1 AND cp = 2 AND trestbps = (134.0..146.0] AND chol = (-inf..192.17] AND fbs = 0 AND restecg = 0 AND thalach = (146.0..161.0] AND exang = 0 AND oldpeak = (2.8..3.55] AND slope = 1 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF cp = 2 AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF chol = (-inf..192.17] AND oldpeak = (2.8..3.55] THEN 1"
+  # hypos left: 2
+  explanation: "IF exang = 0 AND oldpeak = (2.8..3.55] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND oldpeak = (2.8..3.55] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND oldpeak = (2.8..3.55] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (-inf..192.17] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND chol = (-inf..192.17] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (-inf..192.17] AND exang = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (-inf..192.17] AND thalach = (146.0..161.0] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND chol = (-inf..192.17] AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND trestbps = (134.0..146.0] AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 2 AND trestbps = (134.0..146.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND trestbps = (134.0..146.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND trestbps = (134.0..146.0] AND chol = (-inf..192.17] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND chol = (-inf..192.17] AND restecg = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND chol = (-inf..192.17] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 2 AND chol = (-inf..192.17] THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND trestbps = (134.0..146.0] AND oldpeak = (2.8..3.55] THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND fbs = 0 AND oldpeak = (2.8..3.55] THEN 1"
+  # hypos left: 3
+  exp time: 10.45
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 1 AND cp = 3 AND trestbps = (110.0..123.0] AND chol = (192.17..219.33] AND fbs = 0 AND restecg = 0 AND thalach = (161.0..177.0] AND exang = 0 AND oldpeak = (1.3..2.05] AND slope = 1 AND ca = 0 AND thal = 3 THEN 0"
+  explanation: "IF cp = 3 AND oldpeak = (1.3..2.05] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF oldpeak = (1.3..2.05] AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF thalach = (161.0..177.0] AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND thalach = (161.0..177.0] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND fbs = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND restecg = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND thalach = (161.0..177.0] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND thalach = (161.0..177.0] AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND exang = 0 AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 3 AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND thalach = (161.0..177.0] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 3 AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 3 AND trestbps = (110.0..123.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND trestbps = (110.0..123.0] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND chol = (192.17..219.33] AND exang = 0 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND trestbps = (110.0..123.0] AND chol = (192.17..219.33] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND chol = (192.17..219.33] AND thalach = (161.0..177.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 3 AND chol = (192.17..219.33] THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (110.0..123.0] AND thalach = (161.0..177.0] AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND trestbps = (110.0..123.0] AND chol = (192.17..219.33] THEN 0"
+  # hypos left: 3
+  exp time: 9.40
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 1 AND cp = 3 AND trestbps = (164.0..+inf) AND chol = (245.5..272.33] AND fbs = 0 AND restecg = 0 AND thalach = (130.0..146.0] AND exang = 0 AND oldpeak = (3.55..+inf) AND slope = 0 AND ca = 0 AND thal = 3 THEN 0"
+  explanation: "IF trestbps = (164.0..+inf) AND thalach = (130.0..146.0] THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND slope = 0 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND trestbps = (164.0..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND slope = 0 THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND restecg = 0 THEN 0"
+  # hypos left: 2
+  explanation: "IF cp = 3 AND trestbps = (164.0..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF cp = 3 AND chol = (245.5..272.33] THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND chol = (245.5..272.33] THEN 0"
+  # hypos left: 2
+  explanation: "IF chol = (245.5..272.33] AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF restecg = 0 AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF oldpeak = (3.55..+inf) AND thal = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF cp = 3 AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF oldpeak = (3.55..+inf) AND slope = 0 THEN 0"
+  # hypos left: 2
+  explanation: "IF chol = (245.5..272.33] AND slope = 0 THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (130.0..146.0] AND slope = 0 THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (130.0..146.0] AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND fbs = 0 AND exang = 0 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND trestbps = (164.0..+inf) AND fbs = 0 THEN 0"
+  # hypos left: 3
+  exp time: 9.05
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (54.0..60.67] AND sex = 1 AND cp = 3 AND trestbps = (164.0..+inf) AND chol = (272.33..306.83] AND fbs = 0 AND restecg = 0 AND thalach = (146.0..161.0] AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 1 AND ca = 0 AND thal = 3 THEN 0"
+  explanation: "IF trestbps = (164.0..+inf) AND slope = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND restecg = 0 THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND chol = (272.33..306.83] THEN 0"
+  # hypos left: 2
+  explanation: "IF cp = 3 AND trestbps = (164.0..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND trestbps = (164.0..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (54.0..60.67] AND thalach = (146.0..161.0] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND chol = (272.33..306.83] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 3 AND thalach = (146.0..161.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (54.0..60.67] AND cp = 3 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND fbs = 0 AND thalach = (146.0..161.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND thalach = (146.0..161.0] AND oldpeak = (-inf..0.65] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND chol = (272.33..306.83] AND thalach = (146.0..161.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND thalach = (146.0..161.0] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND restecg = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND fbs = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND oldpeak = (-inf..0.65] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND oldpeak = (-inf..0.65] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND thalach = (146.0..161.0] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND restecg = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND fbs = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  exp time: 8.27
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (60.67..67.33] AND sex = 0 AND cp = 0 AND trestbps = (146.0..164.0] AND chol = (-inf..192.17] AND fbs = 0 AND restecg = 0 AND thalach = (130.0..146.0] AND exang = 0 AND oldpeak = (3.55..+inf) AND slope = 0 AND ca = 3 AND thal = 3 THEN 0"
+  explanation: "IF thalach = (130.0..146.0] AND slope = 0 THEN 0"
+  # hypos left: 2
+  explanation: "IF cp = 0 AND slope = 0 THEN 0"
+  # hypos left: 2
+  explanation: "IF sex = 0 AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (60.67..67.33] AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF oldpeak = (3.55..+inf) AND thal = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (130.0..146.0] AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF restecg = 0 AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (146.0..164.0] AND ca = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (60.67..67.33] AND ca = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF fbs = 0 AND ca = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (130.0..146.0] AND ca = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF sex = 0 AND ca = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF chol = (-inf..192.17] AND ca = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF slope = 0 AND ca = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF oldpeak = (3.55..+inf) AND slope = 0 THEN 0"
+  # hypos left: 2
+  explanation: "IF chol = (-inf..192.17] AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF cp = 0 AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF oldpeak = (3.55..+inf) AND ca = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (60.67..67.33] AND restecg = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF restecg = 0 AND thalach = (130.0..146.0] AND thal = 3 THEN 0"
+  # hypos left: 3
+  exp time: 9.84
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (60.67..67.33] AND sex = 0 AND cp = 2 AND trestbps = (134.0..146.0] AND chol = (245.5..272.33] AND fbs = 0 AND restecg = 0 AND thalach = (161.0..177.0] AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 2 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF cp = 2 AND thal = 2 THEN 1"
+  # hypos left: 2
+  explanation: "IF sex = 0 AND thalach = (161.0..177.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (60.67..67.33] AND thalach = (161.0..177.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND thalach = (161.0..177.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND restecg = 0 AND thalach = (161.0..177.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND oldpeak = (-inf..0.65] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND chol = (245.5..272.33] AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (60.67..67.33] AND sex = 0 AND oldpeak = (-inf..0.65] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND fbs = 0 AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (60.67..67.33] AND sex = 0 AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND thalach = (161.0..177.0] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (60.67..67.33] AND thalach = (161.0..177.0] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND thalach = (161.0..177.0] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND slope = 2 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND chol = (245.5..272.33] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (60.67..67.33] AND chol = (245.5..272.33] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (245.5..272.33] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND chol = (245.5..272.33] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF oldpeak = (-inf..0.65] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  exp time: 10.32
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (60.67..67.33] AND sex = 1 AND cp = 0 AND trestbps = (134.0..146.0] AND chol = (-inf..192.17] AND fbs = 0 AND restecg = 0 AND thalach = (130.0..146.0] AND exang = 1 AND oldpeak = (3.55..+inf) AND slope = 2 AND ca = 2 AND thal = 3 THEN 0"
+  explanation: "IF oldpeak = (3.55..+inf) AND slope = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF restecg = 0 AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF thalach = (130.0..146.0] AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF chol = (-inf..192.17] AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF cp = 0 AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (60.67..67.33] AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF oldpeak = (3.55..+inf) AND thal = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (134.0..146.0] AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF oldpeak = (3.55..+inf) AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF chol = (-inf..192.17] AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF ca = 2 AND thal = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF exang = 1 AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF exang = 1 AND oldpeak = (3.55..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (60.67..67.33] AND cp = 0 AND trestbps = (134.0..146.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND restecg = 0 AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND trestbps = (134.0..146.0] AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND cp = 0 AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND trestbps = (134.0..146.0] AND thalach = (130.0..146.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (60.67..67.33] AND restecg = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF restecg = 0 AND thalach = (130.0..146.0] AND thal = 3 THEN 0"
+  # hypos left: 3
+  exp time: 8.48
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (60.67..67.33] AND sex = 1 AND cp = 0 AND trestbps = (134.0..146.0] AND chol = (192.17..219.33] AND fbs = 0 AND restecg = 0 AND thalach = (130.0..146.0] AND exang = 0 AND oldpeak = (1.3..2.05] AND slope = 1 AND ca = 2 AND thal = 1 THEN 0"
+  explanation: "IF slope = 1 AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF ca = 2 AND thal = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF oldpeak = (1.3..2.05] AND thal = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF oldpeak = (1.3..2.05] AND ca = 2 THEN 0"
+  # hypos left: 2
+  explanation: "IF sex = 1 AND cp = 0 AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND restecg = 0 AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (60.67..67.33] AND restecg = 0 AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF restecg = 0 AND thalach = (130.0..146.0] AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND thalach = (130.0..146.0] AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (60.67..67.33] AND sex = 1 AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND chol = (192.17..219.33] AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (192.17..219.33] AND thalach = (130.0..146.0] AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (192.17..219.33] AND restecg = 0 AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND thalach = (130.0..146.0] AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND trestbps = (134.0..146.0] AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND restecg = 0 AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND trestbps = (134.0..146.0] AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND chol = (192.17..219.33] AND ca = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (60.67..67.33] AND cp = 0 AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND thalach = (130.0..146.0] AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  exp time: 8.43
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (60.67..67.33] AND sex = 1 AND cp = 0 AND trestbps = (134.0..146.0] AND chol = (192.17..219.33] AND fbs = 0 AND restecg = 0 AND thalach = (130.0..146.0] AND exang = 1 AND oldpeak = (1.3..2.05] AND slope = 2 AND ca = 1 AND thal = 3 THEN 0"
+  explanation: "IF thalach = (130.0..146.0] AND exang = 1 AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND exang = 1 AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND oldpeak = (1.3..2.05] AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND thalach = (130.0..146.0] AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND thalach = (130.0..146.0] AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND trestbps = (134.0..146.0] AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND trestbps = (134.0..146.0] AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF thalach = (130.0..146.0] AND exang = 1 AND slope = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND chol = (192.17..219.33] AND restecg = 0 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (60.67..67.33] AND oldpeak = (1.3..2.05] AND slope = 2 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (60.67..67.33] AND cp = 0 AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (60.67..67.33] AND trestbps = (134.0..146.0] AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (60.67..67.33] AND trestbps = (134.0..146.0] AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND thalach = (130.0..146.0] AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND chol = (192.17..219.33] AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND trestbps = (134.0..146.0] AND oldpeak = (1.3..2.05] THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND chol = (192.17..219.33] AND exang = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND trestbps = (134.0..146.0] AND chol = (192.17..219.33] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (60.67..67.33] AND cp = 0 AND trestbps = (134.0..146.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 0 AND trestbps = (134.0..146.0] AND thalach = (130.0..146.0] THEN 0"
+  # hypos left: 3
+  exp time: 8.16
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (60.67..67.33] AND sex = 1 AND cp = 3 AND trestbps = (164.0..+inf) AND chol = (219.33..245.5] AND fbs = 0 AND restecg = 0 AND thalach = (146.0..161.0] AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 1 AND ca = 0 AND thal = 3 THEN 0"
+  explanation: "IF trestbps = (164.0..+inf) AND chol = (219.33..245.5] THEN 0"
+  # hypos left: 2
+  explanation: "IF cp = 3 AND trestbps = (164.0..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND restecg = 0 THEN 0"
+  # hypos left: 2
+  explanation: "IF trestbps = (164.0..+inf) AND slope = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF cp = 3 AND chol = (219.33..245.5] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND oldpeak = (-inf..0.65] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (219.33..245.5] AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (60.67..67.33] AND slope = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND trestbps = (164.0..+inf) AND thalach = (146.0..161.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (164.0..+inf) AND thalach = (146.0..161.0] AND exang = 0 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND fbs = 0 AND thalach = (146.0..161.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND chol = (219.33..245.5] AND oldpeak = (-inf..0.65] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (60.67..67.33] AND cp = 3 AND oldpeak = (-inf..0.65] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND thalach = (146.0..161.0] AND oldpeak = (-inf..0.65] THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND thalach = (146.0..161.0] AND slope = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND thalach = (146.0..161.0] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (60.67..67.33] AND cp = 3 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND restecg = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND fbs = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 3 AND chol = (219.33..245.5] AND thal = 3 THEN 0"
+  # hypos left: 3
+  exp time: 11.20
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (67.33..+inf) AND sex = 0 AND cp = 3 AND trestbps = (134.0..146.0] AND chol = (219.33..245.5] AND fbs = 0 AND restecg = 1 AND thalach = (146.0..161.0] AND exang = 0 AND oldpeak = (1.3..2.05] AND slope = 2 AND ca = 2 AND thal = 2 THEN 1"
+  explanation: "IF age = (67.33..+inf) AND sex = 0 THEN 1"
+  # hypos left: 2
+  explanation: "IF sex = 0 AND cp = 3 THEN 1"
+  # hypos left: 2
+  explanation: "IF cp = 3 AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (67.33..+inf) AND oldpeak = (1.3..2.05] AND ca = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND oldpeak = (1.3..2.05] AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND restecg = 1 AND oldpeak = (1.3..2.05] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND restecg = 1 AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND thalach = (146.0..161.0] AND exang = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND fbs = 0 AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND thalach = (146.0..161.0] AND ca = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND fbs = 0 AND ca = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND chol = (219.33..245.5] AND oldpeak = (1.3..2.05] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND chol = (219.33..245.5] AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND chol = (219.33..245.5] AND fbs = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND chol = (219.33..245.5] AND ca = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND chol = (219.33..245.5] AND restecg = 1 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (134.0..146.0] AND chol = (219.33..245.5] AND ca = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND trestbps = (134.0..146.0] AND chol = (219.33..245.5] THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND trestbps = (134.0..146.0] AND thalach = (146.0..161.0] THEN 1"
+  # hypos left: 3
+  explanation: "IF sex = 0 AND trestbps = (134.0..146.0] AND chol = (219.33..245.5] THEN 1"
+  # hypos left: 3
+  exp time: 7.57
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (67.33..+inf) AND sex = 1 AND cp = 1 AND trestbps = (146.0..164.0] AND chol = (219.33..245.5] AND fbs = 0 AND restecg = 0 AND thalach = (130.0..146.0] AND exang = 0 AND oldpeak = (-inf..0.65] AND slope = 2 AND ca = 0 AND thal = 2 THEN 1"
+  explanation: "IF cp = 1 AND thalach = (130.0..146.0] THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (67.33..+inf) AND cp = 1 THEN 1"
+  # hypos left: 2
+  explanation: "IF age = (67.33..+inf) AND chol = (219.33..245.5] AND fbs = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND exang = 0 AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND thalach = (130.0..146.0] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (146.0..164.0] AND thalach = (130.0..146.0] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND trestbps = (146.0..164.0] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (219.33..245.5] AND thalach = (130.0..146.0] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND chol = (219.33..245.5] AND slope = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND chol = (219.33..245.5] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (219.33..245.5] AND thalach = (130.0..146.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF thalach = (130.0..146.0] AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (146.0..164.0] AND thalach = (130.0..146.0] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF chol = (219.33..245.5] AND slope = 2 AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF slope = 2 AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF oldpeak = (-inf..0.65] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF trestbps = (146.0..164.0] AND oldpeak = (-inf..0.65] AND ca = 0 THEN 1"
+  # hypos left: 3
+  explanation: "IF thalach = (130.0..146.0] AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  explanation: "IF cp = 1 AND ca = 0 AND thal = 2 THEN 1"
+  # hypos left: 3
+  exp time: 11.04
+
+Sample of length 13  :  [[2. 1. 1. 2. 2. 0. 0. 5. 0. 0. 1. 0. 2.]]
+Encoded sample of length 55  :  [[0. 0. 1. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0.
+  0. 0. 0. 0. 0. 1. 0.]]
+Back to sample [array([2., 1., 1., 2., 2., 0., 0., 5., 0., 0., 1., 0., 2.])]
+Readable sample ['(47.33..54.0]' '1' '1' '(123.0..134.0]' '(219.33..245.5]' '0' '0'
+ '(177.0..+inf)' '0' '(-inf..0.65]' '1' '0' '2']
+  explaining:  "IF age = (67.33..+inf) AND sex = 1 AND cp = 2 AND trestbps = (110.0..123.0] AND chol = (272.33..306.83] AND fbs = 0 AND restecg = 1 AND thalach = (146.0..161.0] AND exang = 0 AND oldpeak = (0.65..1.3] AND slope = 2 AND ca = 1 AND thal = 3 THEN 0"
+  explanation: "IF age = (67.33..+inf) AND thalach = (146.0..161.0] THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (67.33..+inf) AND thal = 3 THEN 0"
+  # hypos left: 2
+  explanation: "IF age = (67.33..+inf) AND sex = 1 THEN 0"
+  # hypos left: 2
+  explanation: "IF chol = (272.33..306.83] AND restecg = 1 AND thalach = (146.0..161.0] THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND thalach = (146.0..161.0] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND fbs = 0 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND ca = 1 AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND chol = (272.33..306.83] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (110.0..123.0] AND chol = (272.33..306.83] AND thal = 3 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND chol = (272.33..306.83] AND oldpeak = (0.65..1.3] THEN 0"
+  # hypos left: 3
+  explanation: "IF restecg = 1 AND oldpeak = (0.65..1.3] AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF fbs = 0 AND oldpeak = (0.65..1.3] AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF sex = 1 AND oldpeak = (0.65..1.3] AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND oldpeak = (0.65..1.3] AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF chol = (272.33..306.83] AND thalach = (146.0..161.0] AND oldpeak = (0.65..1.3] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND chol = (272.33..306.83] AND oldpeak = (0.65..1.3] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND trestbps = (110.0..123.0] AND chol = (272.33..306.83] THEN 0"
+  # hypos left: 3
+  explanation: "IF age = (67.33..+inf) AND cp = 2 AND chol = (272.33..306.83] THEN 0"
+  # hypos left: 3
+  explanation: "IF trestbps = (110.0..123.0] AND chol = (272.33..306.83] AND ca = 1 THEN 0"
+  # hypos left: 3
+  explanation: "IF cp = 2 AND trestbps = (110.0..123.0] AND ca = 1 THEN 0"
+  # hypos left: 3
+  exp time: 7.92
+
+
+exptimes: [7.765098000000002, 7.853149999999999, 7.898705999999997, 6.891293999999988, 8.705042000000006, 7.530322000000012, 9.306386000000003, 11.482126000000022, 12.903325000000024, 9.177430000000015, 6.55524900000006, 10.24275399999999, 10.235094000000004, 7.382863000000043, 9.261622999999986, 10.537048999999968, 9.84833900000001, 7.727569999999957, 9.816388000000074, 12.462312999999995, 10.85106200000007, 9.888642000000118, 10.398597999999993, 10.898239999999987, 9.338574999999992, 7.101432000000045, 7.576928000000066, 11.373614000000089, 9.15938499999993, 6.676768000000038, 7.782669000000169, 12.08779400000003, 10.592997000000082, 13.447199999999953, 13.332529000000022, 10.522364000000152, 13.734264999999823, 7.75304200000005, 8.852799000000005, 10.175003999999944, 9.748806999999942, 10.889080000000376, 10.132716999999957, 8.831160999999838, 10.197949000000108, 8.092984999999771, 9.9674279999997, 11.96006199999988, 10.446386999999959, 9.404839999999695, 9.046540999999706, 8.270809999999983, 9.841871999999967, 10.31581899999992, 8.475696000000198, 8.433485000000019, 8.160550999999941, 11.197666000000027, 7.572077000000263, 11.041945999999825, 7.92260599999986]
+all samples: 61
+total exp time: 585.08
+max exp time per instance: 13.73
+min exp time per instance: 6.56
+avg exp time per instance: 9.59
+total oracle calls: 11687
+max oracle calls per instance: 293
+min oracle calls per instance: 112
+avg oracle calls per instance: 191.59
+avg number of explanations per instance: 20.00
+avg explanation size per instance: 2.75
+

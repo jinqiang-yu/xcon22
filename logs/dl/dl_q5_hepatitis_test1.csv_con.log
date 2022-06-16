@@ -1,0 +1,553 @@
+MODEL:
+IF SEX != 1 THEN target == 2
+IF FATIGUE == 2 THEN target == 2
+IF AGE == (-inf..30.6], STEROID != 1 THEN target == 2
+IF FATIGUE != 0, AGE == (49.8..60.4] THEN target == 2
+IF AGE == (-inf..30.6], ANTIVIRALS != 2 THEN target == 2
+IF AGE == (-inf..30.6], FATIGUE != 0 THEN target == 2
+IF ANTIVIRALS == 1, AGE != (40.2..49.8] THEN target == 2
+IF ALBUMIN == (-inf..5.8], AGE != (30.6..40.2] THEN target == 1
+IF AGE == (-inf..30.6] THEN target == 2
+IF SPLEEN PALPABLE == 2 THEN target == 2
+IF FATIGUE != 0, ANTIVIRALS == 1 THEN target == 2
+IF FATIGUE != 0, LIVER BIG == 0 THEN target == 2
+IF FATIGUE != 0, LIVER BIG != 1 THEN target == 2
+IF LIVER BIG == 2 THEN target == 1
+IF AGE == (60.4..+inf) THEN target == 2
+IF ALBUMIN == (-inf..5.8] THEN target == 2
+IF SPIDERS != 0, AGE == (49.8..60.4] THEN target == 2
+IF SPIDERS != 0, STEROID != 0 THEN target == 2
+IF SGOT == (-inf..16.8] THEN target == 1
+IF PROTIME == (-inf..8.8] THEN target == 1
+IF ANTIVIRALS == 1 THEN target == 2
+IF BILIRUBIN == (6.8..13.6], AGE != (40.2..49.8] THEN target == 2
+IF STEROID != 0, AGE != (40.2..49.8] THEN target == 1
+IF ALK PHOSPHATE == (49.8..66.4] THEN target == 2
+IF SGOT == (16.8..33.6] THEN target == 1
+IF LIVER BIG == 0 THEN target == 2
+IF BILIRUBIN == (6.8..13.6] THEN target == 2
+IF BILIRUBIN == (13.6..20.4] THEN target == 2
+IF AGE == (40.2..49.8] THEN target == 1
+IF MALAISE == 0 THEN target == 2
+IF AGE != (30.6..40.2] THEN target == 1
+IF FATIGUE == 0 THEN target == 2
+IF LIVER FIRM == 0 THEN target == 1
+IF AGE == (30.6..40.2] THEN target == 2
+IF TRUE THEN target == 2
+
+ENCODINDS:
+# of classes: 2
+min # of vars: 65
+avg # of vars: 65.00
+max # of vars: 65
+min # of clauses: 130
+avg # of clauses: 138.50
+max # of clauses: 147
+
+EXPLANATIONS:
+  inst: "IF AGE == (-inf..30.6] AND SEX == 1 AND STEROID == 0 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 0 AND ANOREXIA == 1 AND LIVER BIG == 1 AND LIVER FIRM == 1 AND SPLEEN PALPABLE == 1 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (-inf..6.8] AND ALK PHOSPHATE == (66.4..+inf) AND SGOT == (50.4..67.2] AND ALBUMIN == (11.6..17.4] AND PROTIME == (-inf..8.8] AND HISTOLOGY == 1 THEN target == 2"
+  expl: "IF AGE != (-inf..30.6] THEN target != 2"
+  # hypos left: 1
+  expl: "IF STEROID != 0 AND ALBUMIN != (11.6..17.4] THEN target != 2"
+  # hypos left: 2
+  exp time: 0.00
+
+  inst: "IF AGE == (-inf..30.6] AND SEX == 1 AND STEROID == 1 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 0 AND ANOREXIA == 0 AND LIVER BIG == 0 AND LIVER FIRM == 0 AND SPLEEN PALPABLE == 0 AND SPIDERS == 0 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (6.8..13.6] AND ALK PHOSPHATE == (-inf..16.6] AND SGOT == (67.2..+inf) AND ALBUMIN == (11.6..17.4] AND PROTIME == (8.8..17.6] AND HISTOLOGY == 1 THEN target != 2"
+  expl: "IF ALBUMIN != (11.6..17.4] THEN target != 2"
+  # hypos left: 1
+  expl: "IF AGE != (-inf..30.6] AND BILIRUBIN != (6.8..13.6] THEN target != 2"
+  # hypos left: 2
+  expl: "IF AGE != (-inf..30.6] AND SGOT != (67.2..+inf) THEN target != 2"
+  # hypos left: 2
+  expl: "IF AGE != (-inf..30.6] AND PROTIME != (8.8..17.6] THEN target != 2"
+  # hypos left: 2
+  expl: "IF AGE != (-inf..30.6] AND LIVER BIG != 0 THEN target != 2"
+  # hypos left: 2
+  exp time: 0.00
+
+  inst: "IF AGE == (-inf..30.6] AND SEX == 2 AND STEROID == 1 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 0 AND ANOREXIA == 1 AND LIVER BIG == 1 AND LIVER FIRM == 0 AND SPLEEN PALPABLE == 1 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (13.6..20.4] AND ALK PHOSPHATE == (33.2..49.8] AND SGOT == (50.4..67.2] AND ALBUMIN == (5.8..11.6] AND PROTIME == (8.8..17.6] AND HISTOLOGY == 1 THEN target != 2"
+  expl: "IF SEX != 2 AND ALBUMIN != (5.8..11.6] THEN target != 2"
+  # hypos left: 2
+  expl: "IF AGE != (-inf..30.6] AND SEX != 2 AND LIVER BIG != 1 THEN target != 2"
+  # hypos left: 3
+  expl: "IF AGE != (-inf..30.6] AND SEX != 2 AND SPIDERS != 1 THEN target != 2"
+  # hypos left: 3
+  expl: "IF AGE != (-inf..30.6] AND SEX != 2 AND STEROID != 1 AND BILIRUBIN != (13.6..20.4] THEN target != 2"
+  # hypos left: 4
+  expl: "IF AGE != (-inf..30.6] AND SEX != 2 AND STEROID != 1 AND PROTIME != (8.8..17.6] THEN target != 2"
+  # hypos left: 4
+  expl: "IF AGE != (-inf..30.6] AND SEX != 2 AND STEROID != 1 AND SGOT != (50.4..67.2] THEN target != 2"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF AGE == (30.6..40.2] AND SEX == 1 AND STEROID == 0 AND ANTIVIRALS == 1 AND FATIGUE == 0 AND MALAISE == 0 AND ANOREXIA == 1 AND LIVER BIG == 1 AND LIVER FIRM == 0 AND SPLEEN PALPABLE == 1 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (13.6..20.4] AND ALK PHOSPHATE == (33.2..49.8] AND SGOT == (67.2..+inf) AND ALBUMIN == (11.6..17.4] AND PROTIME == (8.8..17.6] AND HISTOLOGY == 1 THEN target != 2"
+  expl: "IF ANTIVIRALS != 1 AND PROTIME != (8.8..17.6] THEN target != 2"
+  # hypos left: 2
+  expl: "IF AGE != (30.6..40.2] AND ALBUMIN != (11.6..17.4] THEN target != 2"
+  # hypos left: 2
+  expl: "IF AGE != (30.6..40.2] AND SGOT != (67.2..+inf) THEN target != 2"
+  # hypos left: 2
+  expl: "IF AGE != (30.6..40.2] AND LIVER BIG != 1 THEN target != 2"
+  # hypos left: 2
+  expl: "IF ANTIVIRALS != 1 AND SGOT != (67.2..+inf) THEN target != 2"
+  # hypos left: 2
+  expl: "IF ANTIVIRALS != 1 AND LIVER BIG != 1 THEN target != 2"
+  # hypos left: 2
+  expl: "IF AGE != (30.6..40.2] AND PROTIME != (8.8..17.6] THEN target != 2"
+  # hypos left: 2
+  expl: "IF STEROID != 0 AND ANTIVIRALS != 1 AND SPIDERS != 1 THEN target != 2"
+  # hypos left: 3
+  expl: "IF AGE != (30.6..40.2] AND ANTIVIRALS != 1 AND BILIRUBIN != (13.6..20.4] THEN target != 2"
+  # hypos left: 3
+  expl: "IF ANTIVIRALS != 1 AND FATIGUE != 0 AND MALAISE != 0 AND BILIRUBIN != (13.6..20.4] THEN target != 2"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF AGE == (30.6..40.2] AND SEX == 1 AND STEROID == 0 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 0 AND ANOREXIA == 0 AND LIVER BIG == 0 AND LIVER FIRM == 0 AND SPLEEN PALPABLE == 1 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (-inf..6.8] AND ALK PHOSPHATE == (66.4..+inf) AND SGOT == (16.8..33.6] AND ALBUMIN == (17.4..23.2] AND PROTIME == (35.2..+inf) AND HISTOLOGY == 2 THEN target == 1"
+  expl: "IF BILIRUBIN != (-inf..6.8] THEN target != 1"
+  # hypos left: 1
+  expl: "IF SEX != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF ANTIVIRALS != 2 THEN target != 1"
+  # hypos left: 1
+  expl: "IF FATIGUE != 0 THEN target != 1"
+  # hypos left: 1
+  expl: "IF ALBUMIN != (17.4..23.2] THEN target != 1"
+  # hypos left: 1
+  expl: "IF SGOT != (16.8..33.6] THEN target != 1"
+  # hypos left: 1
+  expl: "IF STEROID != 0 THEN target != 1"
+  # hypos left: 1
+  expl: "IF AGE != (30.6..40.2] THEN target != 1"
+  # hypos left: 1
+  expl: "IF ALK PHOSPHATE != (66.4..+inf) THEN target != 1"
+  # hypos left: 1
+  expl: "IF SPLEEN PALPABLE != 1 THEN target != 1"
+  # hypos left: 1
+  exp time: 0.00
+
+  inst: "IF AGE == (30.6..40.2] AND SEX == 1 AND STEROID == 0 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 0 AND ANOREXIA == 0 AND LIVER BIG == 1 AND LIVER FIRM == 0 AND SPLEEN PALPABLE == 1 AND SPIDERS == 0 AND ASCITES == 0 AND VARICES == 0 AND BILIRUBIN == (6.8..13.6] AND ALK PHOSPHATE == (-inf..16.6] AND SGOT == (16.8..33.6] AND ALBUMIN == (-inf..5.8] AND PROTIME == (35.2..+inf) AND HISTOLOGY == 2 THEN target != 2"
+  expl: "IF AGE != (30.6..40.2] THEN target != 2"
+  # hypos left: 1
+  expl: "IF LIVER BIG != 1 THEN target != 2"
+  # hypos left: 1
+  expl: "IF ALBUMIN != (-inf..5.8] AND PROTIME != (35.2..+inf) THEN target != 2"
+  # hypos left: 2
+  expl: "IF BILIRUBIN != (6.8..13.6] AND ALBUMIN != (-inf..5.8] THEN target != 2"
+  # hypos left: 2
+  expl: "IF SGOT != (16.8..33.6] AND ALBUMIN != (-inf..5.8] THEN target != 2"
+  # hypos left: 2
+  exp time: 0.00
+
+  inst: "IF AGE == (30.6..40.2] AND SEX == 1 AND STEROID == 0 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 0 AND ANOREXIA == 0 AND LIVER BIG == 1 AND LIVER FIRM == 1 AND SPLEEN PALPABLE == 0 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (27.2..+inf) AND ALK PHOSPHATE == (66.4..+inf) AND SGOT == (-inf..16.8] AND ALBUMIN == (-inf..5.8] AND PROTIME == (35.2..+inf) AND HISTOLOGY == 2 THEN target != 2"
+  expl: "IF AGE != (30.6..40.2] THEN target != 2"
+  # hypos left: 1
+  expl: "IF ALBUMIN != (-inf..5.8] THEN target != 2"
+  # hypos left: 1
+  expl: "IF LIVER BIG != 1 THEN target != 2"
+  # hypos left: 1
+  exp time: 0.00
+
+  inst: "IF AGE == (30.6..40.2] AND SEX == 1 AND STEROID == 0 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 0 AND ANOREXIA == 0 AND LIVER BIG == 1 AND LIVER FIRM == 1 AND SPLEEN PALPABLE == 1 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (-inf..6.8] AND ALK PHOSPHATE == (66.4..+inf) AND SGOT == (50.4..67.2] AND ALBUMIN == (23.2..+inf) AND PROTIME == (35.2..+inf) AND HISTOLOGY == 1 THEN target != 2"
+  expl: "IF AGE != (30.6..40.2] THEN target != 2"
+  # hypos left: 1
+  expl: "IF PROTIME != (35.2..+inf) THEN target != 2"
+  # hypos left: 1
+  expl: "IF SGOT != (50.4..67.2] THEN target != 2"
+  # hypos left: 1
+  expl: "IF LIVER BIG != 1 THEN target != 2"
+  # hypos left: 1
+  expl: "IF STEROID != 0 AND SPIDERS != 1 THEN target != 2"
+  # hypos left: 2
+  expl: "IF FATIGUE != 0 AND MALAISE != 0 AND LIVER FIRM != 1 THEN target != 2"
+  # hypos left: 3
+  exp time: 0.00
+
+  inst: "IF AGE == (30.6..40.2] AND SEX == 1 AND STEROID == 0 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 0 AND ANOREXIA == 1 AND LIVER BIG == 0 AND LIVER FIRM == 0 AND SPLEEN PALPABLE == 1 AND SPIDERS == 0 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (20.4..27.2] AND ALK PHOSPHATE == (-inf..16.6] AND SGOT == (16.8..33.6] AND ALBUMIN == (23.2..+inf) AND PROTIME == (35.2..+inf) AND HISTOLOGY == 1 THEN target != 1"
+  expl: "IF BILIRUBIN != (20.4..27.2] THEN target != 1"
+  # hypos left: 1
+  expl: "IF SEX != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF ANTIVIRALS != 2 THEN target != 1"
+  # hypos left: 1
+  expl: "IF FATIGUE != 0 THEN target != 1"
+  # hypos left: 1
+  expl: "IF ALBUMIN != (23.2..+inf) THEN target != 1"
+  # hypos left: 1
+  expl: "IF SGOT != (16.8..33.6] THEN target != 1"
+  # hypos left: 1
+  expl: "IF AGE != (30.6..40.2] THEN target != 1"
+  # hypos left: 1
+  expl: "IF ALK PHOSPHATE != (-inf..16.6] THEN target != 1"
+  # hypos left: 1
+  expl: "IF SPLEEN PALPABLE != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF STEROID != 0 AND SPIDERS != 0 THEN target != 1"
+  # hypos left: 2
+  exp time: 0.00
+
+  inst: "IF AGE == (30.6..40.2] AND SEX == 1 AND STEROID == 0 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 1 AND ANOREXIA == 1 AND LIVER BIG == 1 AND LIVER FIRM == 1 AND SPLEEN PALPABLE == 1 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (6.8..13.6] AND ALK PHOSPHATE == (66.4..+inf) AND SGOT == (16.8..33.6] AND ALBUMIN == (17.4..23.2] AND PROTIME == (17.6..26.4] AND HISTOLOGY == 2 THEN target != 2"
+  expl: "IF BILIRUBIN != (6.8..13.6] THEN target != 2"
+  # hypos left: 1
+  expl: "IF LIVER BIG != 1 THEN target != 2"
+  # hypos left: 1
+  expl: "IF AGE != (30.6..40.2] THEN target != 2"
+  # hypos left: 1
+  expl: "IF SGOT != (16.8..33.6] THEN target != 2"
+  # hypos left: 1
+  expl: "IF PROTIME != (17.6..26.4] THEN target != 2"
+  # hypos left: 1
+  exp time: 0.00
+
+  inst: "IF AGE == (30.6..40.2] AND SEX == 1 AND STEROID == 0 AND ANTIVIRALS == 2 AND FATIGUE == 1 AND MALAISE == 1 AND ANOREXIA == 1 AND LIVER BIG == 1 AND LIVER FIRM == 0 AND SPLEEN PALPABLE == 1 AND SPIDERS == 0 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (-inf..6.8] AND ALK PHOSPHATE == (66.4..+inf) AND SGOT == (67.2..+inf) AND ALBUMIN == (11.6..17.4] AND PROTIME == (35.2..+inf) AND HISTOLOGY == 1 THEN target != 1"
+  expl: "IF BILIRUBIN != (-inf..6.8] THEN target != 1"
+  # hypos left: 1
+  expl: "IF SEX != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF ANTIVIRALS != 2 THEN target != 1"
+  # hypos left: 1
+  expl: "IF FATIGUE != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF ALBUMIN != (11.6..17.4] THEN target != 1"
+  # hypos left: 1
+  expl: "IF LIVER FIRM != 0 THEN target != 1"
+  # hypos left: 1
+  expl: "IF SPLEEN PALPABLE != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF AGE != (30.6..40.2] THEN target != 1"
+  # hypos left: 1
+  expl: "IF LIVER BIG != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF MALAISE != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF ALK PHOSPHATE != (66.4..+inf) THEN target != 1"
+  # hypos left: 1
+  expl: "IF STEROID != 0 AND SPIDERS != 0 THEN target != 1"
+  # hypos left: 2
+  exp time: 0.00
+
+  inst: "IF AGE == (30.6..40.2] AND SEX == 1 AND STEROID == 0 AND ANTIVIRALS == 2 AND FATIGUE == 1 AND MALAISE == 1 AND ANOREXIA == 1 AND LIVER BIG == 1 AND LIVER FIRM == 1 AND SPLEEN PALPABLE == 0 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (-inf..6.8] AND ALK PHOSPHATE == (66.4..+inf) AND SGOT == (50.4..67.2] AND ALBUMIN == (17.4..23.2] AND PROTIME == (35.2..+inf) AND HISTOLOGY == 1 THEN target != 2"
+  expl: "IF AGE != (30.6..40.2] THEN target != 2"
+  # hypos left: 1
+  expl: "IF PROTIME != (35.2..+inf) THEN target != 2"
+  # hypos left: 1
+  expl: "IF LIVER FIRM != 1 THEN target != 2"
+  # hypos left: 1
+  expl: "IF SGOT != (50.4..67.2] THEN target != 2"
+  # hypos left: 1
+  expl: "IF FATIGUE != 1 AND LIVER BIG != 1 THEN target != 2"
+  # hypos left: 2
+  expl: "IF STEROID != 0 AND SPIDERS != 1 THEN target != 2"
+  # hypos left: 2
+  exp time: 0.00
+
+  inst: "IF AGE == (30.6..40.2] AND SEX == 1 AND STEROID == 1 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 0 AND ANOREXIA == 0 AND LIVER BIG == 1 AND LIVER FIRM == 1 AND SPLEEN PALPABLE == 1 AND SPIDERS == 0 AND ASCITES == 1 AND VARICES == 0 AND BILIRUBIN == (20.4..27.2] AND ALK PHOSPHATE == (33.2..49.8] AND SGOT == (50.4..67.2] AND ALBUMIN == (5.8..11.6] AND PROTIME == (-inf..8.8] AND HISTOLOGY == 1 THEN target != 1"
+  expl: "IF SEX != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF ANTIVIRALS != 2 THEN target != 1"
+  # hypos left: 1
+  expl: "IF ALBUMIN != (5.8..11.6] THEN target != 1"
+  # hypos left: 1
+  expl: "IF SPIDERS != 0 THEN target != 1"
+  # hypos left: 1
+  expl: "IF AGE != (30.6..40.2] THEN target != 1"
+  # hypos left: 1
+  expl: "IF FATIGUE != 0 THEN target != 1"
+  # hypos left: 1
+  expl: "IF SPLEEN PALPABLE != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF STEROID != 1 AND PROTIME != (-inf..8.8] THEN target != 1"
+  # hypos left: 2
+  expl: "IF BILIRUBIN != (20.4..27.2] AND PROTIME != (-inf..8.8] THEN target != 1"
+  # hypos left: 2
+  exp time: 0.00
+
+  inst: "IF AGE == (30.6..40.2] AND SEX == 1 AND STEROID == 1 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 1 AND ANOREXIA == 1 AND LIVER BIG == 1 AND LIVER FIRM == 0 AND SPLEEN PALPABLE == 1 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (-inf..6.8] AND ALK PHOSPHATE == (66.4..+inf) AND SGOT == (50.4..67.2] AND ALBUMIN == (17.4..23.2] AND PROTIME == (35.2..+inf) AND HISTOLOGY == 1 THEN target != 2"
+  expl: "IF LIVER BIG != 1 THEN target != 2"
+  # hypos left: 1
+  expl: "IF SPIDERS != 1 THEN target != 2"
+  # hypos left: 1
+  expl: "IF STEROID != 1 AND FATIGUE != 0 THEN target != 2"
+  # hypos left: 2
+  expl: "IF STEROID != 1 AND SGOT != (50.4..67.2] THEN target != 2"
+  # hypos left: 2
+  expl: "IF STEROID != 1 AND PROTIME != (35.2..+inf) THEN target != 2"
+  # hypos left: 2
+  expl: "IF AGE != (30.6..40.2] AND STEROID != 1 THEN target != 2"
+  # hypos left: 2
+  expl: "IF AGE != (30.6..40.2] AND ALBUMIN != (17.4..23.2] THEN target != 2"
+  # hypos left: 2
+  exp time: 0.00
+
+  inst: "IF AGE == (30.6..40.2] AND SEX == 1 AND STEROID == 1 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 1 AND ANOREXIA == 1 AND LIVER BIG == 1 AND LIVER FIRM == 1 AND SPLEEN PALPABLE == 1 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (6.8..13.6] AND ALK PHOSPHATE == (33.2..49.8] AND SGOT == (-inf..16.8] AND ALBUMIN == (11.6..17.4] AND PROTIME == (17.6..26.4] AND HISTOLOGY == 1 THEN target != 2"
+  expl: "IF LIVER BIG != 1 THEN target != 2"
+  # hypos left: 1
+  expl: "IF SPIDERS != 1 THEN target != 2"
+  # hypos left: 1
+  expl: "IF STEROID != 1 THEN target != 2"
+  # hypos left: 1
+  expl: "IF AGE != (30.6..40.2] AND ALBUMIN != (11.6..17.4] THEN target != 2"
+  # hypos left: 2
+  exp time: 0.00
+
+  inst: "IF AGE == (30.6..40.2] AND SEX == 1 AND STEROID == 1 AND ANTIVIRALS == 2 AND FATIGUE == 1 AND MALAISE == 1 AND ANOREXIA == 1 AND LIVER BIG == 1 AND LIVER FIRM == 0 AND SPLEEN PALPABLE == 1 AND SPIDERS == 0 AND ASCITES == 1 AND VARICES == 0 AND BILIRUBIN == (6.8..13.6] AND ALK PHOSPHATE == (-inf..16.6] AND SGOT == (-inf..16.8] AND ALBUMIN == (5.8..11.6] AND PROTIME == (17.6..26.4] AND HISTOLOGY == 2 THEN target != 1"
+  expl: "IF SEX != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF ANTIVIRALS != 2 THEN target != 1"
+  # hypos left: 1
+  expl: "IF SPIDERS != 0 THEN target != 1"
+  # hypos left: 1
+  expl: "IF SPLEEN PALPABLE != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF AGE != (30.6..40.2] THEN target != 1"
+  # hypos left: 1
+  expl: "IF LIVER BIG != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF FATIGUE != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF ALBUMIN != (5.8..11.6] THEN target != 1"
+  # hypos left: 1
+  expl: "IF SGOT != (-inf..16.8] THEN target != 1"
+  # hypos left: 1
+  exp time: 0.00
+
+  inst: "IF AGE == (30.6..40.2] AND SEX == 1 AND STEROID == 1 AND ANTIVIRALS == 2 AND FATIGUE == 1 AND MALAISE == 1 AND ANOREXIA == 1 AND LIVER BIG == 1 AND LIVER FIRM == 1 AND SPLEEN PALPABLE == 1 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (-inf..6.8] AND ALK PHOSPHATE == (33.2..49.8] AND SGOT == (50.4..67.2] AND ALBUMIN == (17.4..23.2] AND PROTIME == (-inf..8.8] AND HISTOLOGY == 1 THEN target != 2"
+  expl: "IF SPIDERS != 1 THEN target != 2"
+  # hypos left: 1
+  expl: "IF STEROID != 1 THEN target != 2"
+  # hypos left: 1
+  expl: "IF AGE != (30.6..40.2] AND ALBUMIN != (17.4..23.2] THEN target != 2"
+  # hypos left: 2
+  expl: "IF FATIGUE != 1 AND LIVER BIG != 1 THEN target != 2"
+  # hypos left: 2
+  exp time: 0.00
+
+  inst: "IF AGE == (30.6..40.2] AND SEX == 1 AND STEROID == 1 AND ANTIVIRALS == 2 AND FATIGUE == 1 AND MALAISE == 1 AND ANOREXIA == 1 AND LIVER BIG == 1 AND LIVER FIRM == 1 AND SPLEEN PALPABLE == 1 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (-inf..6.8] AND ALK PHOSPHATE == (49.8..66.4] AND SGOT == (16.8..33.6] AND ALBUMIN == (17.4..23.2] AND PROTIME == (-inf..8.8] AND HISTOLOGY == 1 THEN target != 2"
+  expl: "IF SPIDERS != 1 THEN target != 2"
+  # hypos left: 1
+  expl: "IF STEROID != 1 THEN target != 2"
+  # hypos left: 1
+  expl: "IF AGE != (30.6..40.2] AND ALBUMIN != (17.4..23.2] THEN target != 2"
+  # hypos left: 2
+  expl: "IF FATIGUE != 1 AND LIVER BIG != 1 THEN target != 2"
+  # hypos left: 2
+  exp time: 0.00
+
+  inst: "IF AGE == (30.6..40.2] AND SEX == 1 AND STEROID == 2 AND ANTIVIRALS == 1 AND FATIGUE == 1 AND MALAISE == 1 AND ANOREXIA == 1 AND LIVER BIG == 1 AND LIVER FIRM == 1 AND SPLEEN PALPABLE == 1 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (-inf..6.8] AND ALK PHOSPHATE == (33.2..49.8] AND SGOT == (50.4..67.2] AND ALBUMIN == (11.6..17.4] AND PROTIME == (35.2..+inf) AND HISTOLOGY == 1 THEN target != 2"
+  expl: "IF ANTIVIRALS != 1 AND SPIDERS != 1 THEN target != 2"
+  # hypos left: 2
+  expl: "IF AGE != (30.6..40.2] AND ALBUMIN != (11.6..17.4] THEN target != 2"
+  # hypos left: 2
+  expl: "IF AGE != (30.6..40.2] AND STEROID != 2 AND ANTIVIRALS != 1 THEN target != 2"
+  # hypos left: 3
+  expl: "IF STEROID != 2 AND ANTIVIRALS != 1 AND PROTIME != (35.2..+inf) THEN target != 2"
+  # hypos left: 3
+  expl: "IF STEROID != 2 AND ANTIVIRALS != 1 AND SGOT != (50.4..67.2] THEN target != 2"
+  # hypos left: 3
+  expl: "IF STEROID != 2 AND ANTIVIRALS != 1 AND LIVER FIRM != 1 THEN target != 2"
+  # hypos left: 3
+  expl: "IF AGE != (30.6..40.2] AND FATIGUE != 1 AND LIVER BIG != 1 THEN target != 2"
+  # hypos left: 3
+  expl: "IF ANTIVIRALS != 1 AND FATIGUE != 1 AND LIVER BIG != 1 THEN target != 2"
+  # hypos left: 3
+  expl: "IF AGE != (30.6..40.2] AND FATIGUE != 1 AND SPIDERS != 1 AND PROTIME != (35.2..+inf) THEN target != 2"
+  # hypos left: 4
+  expl: "IF AGE != (30.6..40.2] AND FATIGUE != 1 AND SPIDERS != 1 AND SGOT != (50.4..67.2] THEN target != 2"
+  # hypos left: 4
+  expl: "IF AGE != (30.6..40.2] AND STEROID != 2 AND FATIGUE != 1 AND PROTIME != (35.2..+inf) THEN target != 2"
+  # hypos left: 4
+  expl: "IF AGE != (30.6..40.2] AND STEROID != 2 AND FATIGUE != 1 AND SGOT != (50.4..67.2] THEN target != 2"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF AGE == (40.2..49.8] AND SEX == 1 AND STEROID == 0 AND ANTIVIRALS == 1 AND FATIGUE == 1 AND MALAISE == 1 AND ANOREXIA == 1 AND LIVER BIG == 1 AND LIVER FIRM == 1 AND SPLEEN PALPABLE == 1 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (27.2..+inf) AND ALK PHOSPHATE == (66.4..+inf) AND SGOT == (50.4..67.2] AND ALBUMIN == (23.2..+inf) AND PROTIME == (35.2..+inf) AND HISTOLOGY == 1 THEN target != 2"
+  expl: "IF ALBUMIN != (23.2..+inf) THEN target != 2"
+  # hypos left: 1
+  expl: "IF ANTIVIRALS != 1 THEN target != 2"
+  # hypos left: 1
+  expl: "IF FATIGUE != 1 AND LIVER BIG != 1 THEN target != 2"
+  # hypos left: 2
+  expl: "IF FATIGUE != 1 AND SGOT != (50.4..67.2] THEN target != 2"
+  # hypos left: 2
+  expl: "IF FATIGUE != 1 AND PROTIME != (35.2..+inf) THEN target != 2"
+  # hypos left: 2
+  exp time: 0.00
+
+  inst: "IF AGE == (40.2..49.8] AND SEX == 1 AND STEROID == 0 AND ANTIVIRALS == 2 AND FATIGUE == 1 AND MALAISE == 1 AND ANOREXIA == 1 AND LIVER BIG == 1 AND LIVER FIRM == 1 AND SPLEEN PALPABLE == 1 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (6.8..13.6] AND ALK PHOSPHATE == (66.4..+inf) AND SGOT == (-inf..16.8] AND ALBUMIN == (11.6..17.4] AND PROTIME == (-inf..8.8] AND HISTOLOGY == 1 THEN target != 1"
+  expl: "IF SEX != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF STEROID != 0 THEN target != 1"
+  # hypos left: 1
+  expl: "IF ANTIVIRALS != 2 THEN target != 1"
+  # hypos left: 1
+  expl: "IF FATIGUE != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF LIVER BIG != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF AGE != (40.2..49.8] THEN target != 1"
+  # hypos left: 1
+  expl: "IF SPLEEN PALPABLE != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF SGOT != (-inf..16.8] AND PROTIME != (-inf..8.8] THEN target != 1"
+  # hypos left: 2
+  exp time: 0.00
+
+  inst: "IF AGE == (40.2..49.8] AND SEX == 1 AND STEROID == 1 AND ANTIVIRALS == 1 AND FATIGUE == 0 AND MALAISE == 1 AND ANOREXIA == 1 AND LIVER BIG == 1 AND LIVER FIRM == 0 AND SPLEEN PALPABLE == 1 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (-inf..6.8] AND ALK PHOSPHATE == (66.4..+inf) AND SGOT == (50.4..67.2] AND ALBUMIN == (11.6..17.4] AND PROTIME == (17.6..26.4] AND HISTOLOGY == 1 THEN target != 2"
+  expl: "IF ALBUMIN != (11.6..17.4] THEN target != 2"
+  # hypos left: 1
+  expl: "IF LIVER BIG != 1 THEN target != 2"
+  # hypos left: 1
+  expl: "IF SPIDERS != 1 AND SGOT != (50.4..67.2] THEN target != 2"
+  # hypos left: 2
+  expl: "IF SPIDERS != 1 AND PROTIME != (17.6..26.4] THEN target != 2"
+  # hypos left: 2
+  expl: "IF STEROID != 1 AND PROTIME != (17.6..26.4] THEN target != 2"
+  # hypos left: 2
+  expl: "IF STEROID != 1 AND SGOT != (50.4..67.2] THEN target != 2"
+  # hypos left: 2
+  expl: "IF ANTIVIRALS != 1 AND SPIDERS != 1 THEN target != 2"
+  # hypos left: 2
+  expl: "IF STEROID != 1 AND ANTIVIRALS != 1 THEN target != 2"
+  # hypos left: 2
+  exp time: 0.00
+
+  inst: "IF AGE == (40.2..49.8] AND SEX == 2 AND STEROID == 0 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 0 AND ANOREXIA == 1 AND LIVER BIG == 1 AND LIVER FIRM == 1 AND SPLEEN PALPABLE == 0 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (6.8..13.6] AND ALK PHOSPHATE == (66.4..+inf) AND SGOT == (67.2..+inf) AND ALBUMIN == (23.2..+inf) AND PROTIME == (35.2..+inf) AND HISTOLOGY == 1 THEN target != 2"
+  expl: "IF SEX != 2 AND BILIRUBIN != (6.8..13.6] THEN target != 2"
+  # hypos left: 2
+  expl: "IF SEX != 2 AND LIVER BIG != 1 THEN target != 2"
+  # hypos left: 2
+  expl: "IF SEX != 2 AND SGOT != (67.2..+inf) THEN target != 2"
+  # hypos left: 2
+  expl: "IF SEX != 2 AND ALBUMIN != (23.2..+inf) THEN target != 2"
+  # hypos left: 2
+  expl: "IF SEX != 2 AND PROTIME != (35.2..+inf) THEN target != 2"
+  # hypos left: 2
+  exp time: 0.00
+
+  inst: "IF AGE == (49.8..60.4] AND SEX == 1 AND STEROID == 0 AND ANTIVIRALS == 1 AND FATIGUE == 1 AND MALAISE == 1 AND ANOREXIA == 1 AND LIVER BIG == 1 AND LIVER FIRM == 1 AND SPLEEN PALPABLE == 1 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (-inf..6.8] AND ALK PHOSPHATE == (66.4..+inf) AND SGOT == (50.4..67.2] AND ALBUMIN == (11.6..17.4] AND PROTIME == (-inf..8.8] AND HISTOLOGY == 1 THEN target != 2"
+  expl: "IF AGE != (49.8..60.4] AND ANTIVIRALS != 1 THEN target != 2"
+  # hypos left: 2
+  expl: "IF AGE != (49.8..60.4] AND ALBUMIN != (11.6..17.4] THEN target != 2"
+  # hypos left: 2
+  expl: "IF AGE != (49.8..60.4] AND FATIGUE != 1 THEN target != 2"
+  # hypos left: 2
+  expl: "IF ANTIVIRALS != 1 AND FATIGUE != 1 AND LIVER BIG != 1 THEN target != 2"
+  # hypos left: 3
+  expl: "IF ANTIVIRALS != 1 AND FATIGUE != 1 AND SPIDERS != 1 THEN target != 2"
+  # hypos left: 3
+  expl: "IF ANTIVIRALS != 1 AND FATIGUE != 1 AND ALBUMIN != (11.6..17.4] THEN target != 2"
+  # hypos left: 3
+  exp time: 0.00
+
+  inst: "IF AGE == (49.8..60.4] AND SEX == 1 AND STEROID == 0 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 0 AND ANOREXIA == 1 AND LIVER BIG == 1 AND LIVER FIRM == 0 AND SPLEEN PALPABLE == 0 AND SPIDERS == 0 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (6.8..13.6] AND ALK PHOSPHATE == (-inf..16.6] AND SGOT == (16.8..33.6] AND ALBUMIN == (11.6..17.4] AND PROTIME == (8.8..17.6] AND HISTOLOGY == 2 THEN target != 2"
+  expl: "IF BILIRUBIN != (6.8..13.6] THEN target != 2"
+  # hypos left: 1
+  expl: "IF LIVER BIG != 1 THEN target != 2"
+  # hypos left: 1
+  expl: "IF SGOT != (16.8..33.6] THEN target != 2"
+  # hypos left: 1
+  expl: "IF ALBUMIN != (11.6..17.4] THEN target != 2"
+  # hypos left: 1
+  expl: "IF PROTIME != (8.8..17.6] THEN target != 2"
+  # hypos left: 1
+  expl: "IF AGE != (49.8..60.4] THEN target != 2"
+  # hypos left: 1
+  exp time: 0.00
+
+  inst: "IF AGE == (49.8..60.4] AND SEX == 1 AND STEROID == 0 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 0 AND ANOREXIA == 1 AND LIVER BIG == 1 AND LIVER FIRM == 1 AND SPLEEN PALPABLE == 1 AND SPIDERS == 0 AND ASCITES == 0 AND VARICES == 1 AND BILIRUBIN == (27.2..+inf) AND ALK PHOSPHATE == (66.4..+inf) AND SGOT == (50.4..67.2] AND ALBUMIN == (5.8..11.6] AND PROTIME == (-inf..8.8] AND HISTOLOGY == 2 THEN target != 1"
+  expl: "IF SEX != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF ANTIVIRALS != 2 THEN target != 1"
+  # hypos left: 1
+  expl: "IF SPIDERS != 0 THEN target != 1"
+  # hypos left: 1
+  expl: "IF SPLEEN PALPABLE != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF PROTIME != (-inf..8.8] THEN target != 1"
+  # hypos left: 1
+  expl: "IF FATIGUE != 0 THEN target != 1"
+  # hypos left: 1
+  expl: "IF AGE != (49.8..60.4] THEN target != 1"
+  # hypos left: 1
+  exp time: 0.00
+
+  inst: "IF AGE == (49.8..60.4] AND SEX == 1 AND STEROID == 0 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 1 AND ANOREXIA == 1 AND LIVER BIG == 0 AND LIVER FIRM == 0 AND SPLEEN PALPABLE == 0 AND SPIDERS == 0 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (27.2..+inf) AND ALK PHOSPHATE == (66.4..+inf) AND SGOT == (50.4..67.2] AND ALBUMIN == (23.2..+inf) AND PROTIME == (35.2..+inf) AND HISTOLOGY == 2 THEN target != 2"
+  expl: "IF PROTIME != (35.2..+inf) THEN target != 2"
+  # hypos left: 1
+  expl: "IF SGOT != (50.4..67.2] THEN target != 2"
+  # hypos left: 1
+  expl: "IF STEROID != 0 THEN target != 2"
+  # hypos left: 1
+  expl: "IF LIVER BIG != 0 THEN target != 2"
+  # hypos left: 1
+  expl: "IF ALBUMIN != (23.2..+inf) THEN target != 2"
+  # hypos left: 1
+  exp time: 0.00
+
+  inst: "IF AGE == (49.8..60.4] AND SEX == 1 AND STEROID == 0 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 1 AND ANOREXIA == 1 AND LIVER BIG == 0 AND LIVER FIRM == 1 AND SPLEEN PALPABLE == 1 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (-inf..6.8] AND ALK PHOSPHATE == (16.6..33.2] AND SGOT == (50.4..67.2] AND ALBUMIN == (5.8..11.6] AND PROTIME == (35.2..+inf) AND HISTOLOGY == 1 THEN target != 2"
+  expl: "IF ALBUMIN != (5.8..11.6] THEN target != 2"
+  # hypos left: 1
+  expl: "IF LIVER BIG != 0 THEN target != 2"
+  # hypos left: 1
+  expl: "IF AGE != (49.8..60.4] AND PROTIME != (35.2..+inf) THEN target != 2"
+  # hypos left: 2
+  expl: "IF AGE != (49.8..60.4] AND SGOT != (50.4..67.2] THEN target != 2"
+  # hypos left: 2
+  expl: "IF SPIDERS != 1 AND SGOT != (50.4..67.2] THEN target != 2"
+  # hypos left: 2
+  expl: "IF STEROID != 0 AND SPIDERS != 1 THEN target != 2"
+  # hypos left: 2
+  expl: "IF SPIDERS != 1 AND PROTIME != (35.2..+inf) THEN target != 2"
+  # hypos left: 2
+  exp time: 0.00
+
+  inst: "IF AGE == (49.8..60.4] AND SEX == 1 AND STEROID == 1 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 1 AND ANOREXIA == 1 AND LIVER BIG == 0 AND LIVER FIRM == 0 AND SPLEEN PALPABLE == 1 AND SPIDERS == 1 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (20.4..27.2] AND ALK PHOSPHATE == (66.4..+inf) AND SGOT == (33.6..50.4] AND ALBUMIN == (11.6..17.4] AND PROTIME == (35.2..+inf) AND HISTOLOGY == 2 THEN target != 2"
+  expl: "IF ALBUMIN != (11.6..17.4] THEN target != 2"
+  # hypos left: 1
+  expl: "IF SPIDERS != 1 THEN target != 2"
+  # hypos left: 1
+  expl: "IF LIVER BIG != 0 THEN target != 2"
+  # hypos left: 1
+  expl: "IF AGE != (49.8..60.4] AND STEROID != 1 AND SGOT != (33.6..50.4] THEN target != 2"
+  # hypos left: 3
+  expl: "IF AGE != (49.8..60.4] AND STEROID != 1 AND PROTIME != (35.2..+inf) THEN target != 2"
+  # hypos left: 3
+  exp time: 0.00
+
+  inst: "IF AGE == (49.8..60.4] AND SEX == 2 AND STEROID == 0 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 1 AND ANOREXIA == 1 AND LIVER BIG == 0 AND LIVER FIRM == 0 AND SPLEEN PALPABLE == 0 AND SPIDERS == 0 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (-inf..6.8] AND ALK PHOSPHATE == (33.2..49.8] AND SGOT == (-inf..16.8] AND ALBUMIN == (5.8..11.6] AND PROTIME == (8.8..17.6] AND HISTOLOGY == 2 THEN target != 2"
+  expl: "IF SEX != 2 THEN target != 2"
+  # hypos left: 1
+  exp time: 0.00
+
+  inst: "IF AGE == (60.4..+inf) AND SEX == 1 AND STEROID == 0 AND ANTIVIRALS == 2 AND FATIGUE == 0 AND MALAISE == 0 AND ANOREXIA == 1 AND LIVER BIG == 2 AND LIVER FIRM == 2 AND SPLEEN PALPABLE == 1 AND SPIDERS == 0 AND ASCITES == 1 AND VARICES == 1 AND BILIRUBIN == (27.2..+inf) AND ALK PHOSPHATE == (66.4..+inf) AND SGOT == (67.2..+inf) AND ALBUMIN == (23.2..+inf) AND PROTIME == (35.2..+inf) AND HISTOLOGY == 2 THEN target != 1"
+  expl: "IF SEX != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF ANTIVIRALS != 2 THEN target != 1"
+  # hypos left: 1
+  expl: "IF SPLEEN PALPABLE != 1 THEN target != 1"
+  # hypos left: 1
+  expl: "IF AGE != (60.4..+inf) THEN target != 1"
+  # hypos left: 1
+  expl: "IF LIVER BIG != 2 THEN target != 1"
+  # hypos left: 1
+  expl: "IF FATIGUE != 0 THEN target != 1"
+  # hypos left: 1
+  exp time: 0.00
+
+exptimes: [0.0010350000000000081, 0.0025129999999999875, 0.0025399999999999867, 0.002980999999999956, 0.0012780000000000014, 0.0013090000000000601, 0.0010050000000000336, 0.002945000000000031, 0.001468999999999998, 0.0011410000000000031, 0.0015199999999999658, 0.0008859999999999979, 0.0006590000000000207, 0.0026690000000000325, 0.0010780000000000234, 0.0011339999999999684, 0.0016320000000000223, 0.0015039999999999498, 0.003300000000000025, 0.0022840000000000082, 0.0013779999999999903, 0.0003769999999999607, 0.0016220000000000123, 0.0013160000000000394, 0.0019600000000000173, 0.0012690000000000201, 0.0035370000000000124, 0.004193000000000002, 0.0033370000000000344, 0.0005159999999999609, 0.0009730000000000572]
+# of insts: 31
+tot # of expls: 198
+min # of expls: 1
+avg # of expls: 6.39
+max # of expls: 12
+
+Min expl sz: 1
+min expl sz: 1.16
+avg expl sz: 1.53
+max expl sz: 2.00
+Max expl sz: 4
+
+tot exp time: 0.06
+min exp time: 0.00
+avg exp time: 0.00
+max exp time: 0.00

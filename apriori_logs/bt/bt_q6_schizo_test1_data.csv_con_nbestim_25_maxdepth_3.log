@@ -1,0 +1,2926 @@
+c XDual: dual explanations for XGBoost models
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (-inf..30.83] AND target = 0 AND gain_ratio_1 = (132.67..165.83] AND gain_ratio_2 = (128.67..160.83] AND gain_ratio_3 = (126.67..158.33] AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (130.67..163.33] AND gain_ratio_6 = (129.33..161.67] AND gain_ratio_7 = (63.33..95.0] AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (124.67..155.83] AND gain_ratio_10 = (130.0..162.5] AND gain_ratio_11 = (99.0..132.0] AND sex = 0 THEN 0"
+  explanation: "IF NOT sex = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_2 = (128.67..160.83] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] AND NOT gain_ratio_3 = (126.67..158.33] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_11 = (99.0..132.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (155.83..+inf) AND NOT gain_ratio_11 = (99.0..132.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (130.67..163.33] AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (155.83..+inf) AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (132.67..165.83] AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (132.67..165.83] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (132.67..165.83] AND NOT gain_ratio_3 = (126.67..158.33] THEN NOT 0"
+  # hypos left: 2
+  exp time: 0.94
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (-inf..30.83] AND target = 0 AND gain_ratio_1 = (132.67..165.83] AND gain_ratio_2 = (64.33..96.5] AND gain_ratio_3 = (31.67..63.33] AND gain_ratio_4 = (67.33..101.0] AND gain_ratio_5 = (32.67..65.33] AND gain_ratio_6 = (32.33..64.67] AND gain_ratio_7 = (-inf..31.67] AND gain_ratio_8 = (93.5..124.67] AND gain_ratio_9 = (93.5..124.67] AND gain_ratio_10 = (130.0..162.5] AND gain_ratio_11 = (99.0..132.0] AND sex = 0 THEN 0"
+  explanation: "IF NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_8 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_6 = (32.33..64.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_2 = (64.33..96.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (32.33..64.67] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_11 = (99.0..132.0] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (93.5..124.67] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (32.33..64.67] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT gain_ratio_6 = (32.33..64.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT gain_ratio_8 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT gain_ratio_4 = (67.33..101.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_8 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_4 = (67.33..101.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_6 = (32.33..64.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (132.67..165.83] AND NOT gain_ratio_4 = (67.33..101.0] THEN NOT 0"
+  # hypos left: 2
+  exp time: 1.36
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (-inf..30.83] AND target = 0 AND gain_ratio_1 = (132.67..165.83] AND gain_ratio_2 = (64.33..96.5] AND gain_ratio_3 = (95.0..126.67] AND gain_ratio_4 = (-inf..33.67] AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (64.67..97.0] AND gain_ratio_7 = (31.67..63.33] AND gain_ratio_8 = (31.17..62.33] AND gain_ratio_9 = (62.33..93.5] AND gain_ratio_10 = (65.0..97.5] AND gain_ratio_11 = (99.0..132.0] AND sex = 1 THEN 1"
+  explanation: "IF NOT ID = (-inf..30.83] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_9 = (62.33..93.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_8 = (31.17..62.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_6 = (64.67..97.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_2 = (64.33..96.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_4 = (-inf..33.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (-inf..33.67] AND NOT gain_ratio_11 = (99.0..132.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (-inf..33.67] AND NOT gain_ratio_8 = (31.17..62.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT gain_ratio_4 = (-inf..33.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (-inf..33.67] AND NOT gain_ratio_5 = (163.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_6 = (64.67..97.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_5 = (163.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_8 = (31.17..62.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT gain_ratio_5 = (163.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (95.0..126.67] AND NOT gain_ratio_5 = (163.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_3 = (95.0..126.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (95.0..126.67] AND NOT gain_ratio_4 = (-inf..33.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT gain_ratio_3 = (95.0..126.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (-inf..33.67] AND NOT gain_ratio_6 = (64.67..97.0] AND NOT gain_ratio_9 = (62.33..93.5] THEN NOT 1"
+  # hypos left: 3
+  exp time: 1.00
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (-inf..30.83] AND target = 0 AND gain_ratio_1 = (99.5..132.67] AND gain_ratio_2 = (32.17..64.33] AND gain_ratio_3 = (63.33..95.0] AND gain_ratio_4 = (33.67..67.33] AND gain_ratio_5 = (32.67..65.33] AND gain_ratio_6 = (64.67..97.0] AND gain_ratio_7 = (31.67..63.33] AND gain_ratio_8 = (31.17..62.33] AND gain_ratio_9 = (62.33..93.5] AND gain_ratio_10 = (-inf..32.5] AND gain_ratio_11 = (-inf..33.0] AND sex = 0 THEN 1"
+  explanation: "IF NOT target = 0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT ID = (-inf..30.83] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (32.67..65.33] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (32.17..64.33] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (99.5..132.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_8 = (31.17..62.33] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (63.33..95.0] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (33.67..67.33] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (62.33..93.5] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_6 = (64.67..97.0] THEN NOT 1"
+  # hypos left: 1
+  exp time: 0.17
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (-inf..30.83] AND target = 0 AND gain_ratio_1 = (99.5..132.67] AND gain_ratio_2 = (96.5..128.67] AND gain_ratio_3 = (-inf..31.67] AND gain_ratio_4 = (33.67..67.33] AND gain_ratio_5 = (65.33..98.0] AND gain_ratio_6 = (-inf..32.33] AND gain_ratio_7 = (63.33..95.0] AND gain_ratio_8 = (-inf..31.17] AND gain_ratio_9 = (-inf..31.17] AND gain_ratio_10 = (65.0..97.5] AND gain_ratio_11 = (66.0..99.0] AND sex = 1 THEN 1"
+  explanation: "IF NOT ID = (-inf..30.83] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (96.5..128.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_6 = (-inf..32.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (99.5..132.67] AND NOT gain_ratio_6 = (-inf..32.33] AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_6 = (-inf..32.33] AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (99.5..132.67] AND NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_6 = (-inf..32.33] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (99.5..132.67] AND NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_5 = (65.33..98.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_5 = (65.33..98.0] AND NOT gain_ratio_8 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_5 = (65.33..98.0] AND NOT gain_ratio_7 = (63.33..95.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_5 = (65.33..98.0] AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_1 = (99.5..132.67] AND NOT gain_ratio_7 = (63.33..95.0] AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_1 = (99.5..132.67] AND NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_7 = (63.33..95.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_7 = (63.33..95.0] AND NOT gain_ratio_8 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_7 = (63.33..95.0] AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 1"
+  # hypos left: 4
+  exp time: 1.73
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (-inf..30.83] AND target = 1 AND gain_ratio_1 = (132.67..165.83] AND gain_ratio_2 = (128.67..160.83] AND gain_ratio_3 = (63.33..95.0] AND gain_ratio_4 = (33.67..67.33] AND gain_ratio_5 = (32.67..65.33] AND gain_ratio_6 = (64.67..97.0] AND gain_ratio_7 = (95.0..126.67] AND gain_ratio_8 = (62.33..93.5] AND gain_ratio_9 = (93.5..124.67] AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (99.0..132.0] AND sex = 1 THEN 1"
+  explanation: "IF NOT target = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT ID = (-inf..30.83] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (32.67..65.33] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_7 = (95.0..126.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (93.5..124.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (63.33..95.0] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (162.5..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_6 = (64.67..97.0] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (33.67..67.33] AND NOT gain_ratio_11 = (99.0..132.0] THEN NOT 1"
+  # hypos left: 2
+  exp time: 0.27
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (-inf..30.83] AND target = 1 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (158.33..+inf) AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (124.67..155.83] AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (165.0..+inf) AND sex = 1 THEN 0"
+  explanation: "IF NOT ID = (-inf..30.83] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_8 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_10 = (162.5..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_3 = (158.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_5 = (163.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_10 = (162.5..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_5 = (163.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  exp time: 0.36
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (-inf..30.83] AND target = 1 AND gain_ratio_1 = (33.17..66.33] AND gain_ratio_2 = (-inf..32.17] AND gain_ratio_3 = (-inf..31.67] AND gain_ratio_4 = (-inf..33.67] AND gain_ratio_5 = (-inf..32.67] AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (-inf..31.17] AND gain_ratio_9 = (-inf..31.17] AND gain_ratio_10 = (-inf..32.5] AND gain_ratio_11 = (-inf..33.0] AND sex = 0 THEN 1"
+  explanation: "IF NOT target = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT ID = (-inf..30.83] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (-inf..32.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (-inf..33.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (-inf..31.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) THEN NOT 1"
+  # hypos left: 1
+  exp time: 0.19
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (-inf..30.83] AND target = 1 AND gain_ratio_1 = (33.17..66.33] AND gain_ratio_2 = (32.17..64.33] AND gain_ratio_3 = (-inf..31.67] AND gain_ratio_4 = (33.67..67.33] AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (-inf..32.33] AND gain_ratio_7 = (-inf..31.67] AND gain_ratio_8 = (-inf..31.17] AND gain_ratio_9 = (-inf..31.17] AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (-inf..33.0] AND sex = 1 THEN 1"
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_2 = (32.17..64.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (32.17..64.33] AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (32.17..64.33] AND NOT gain_ratio_5 = (163.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (32.17..64.33] AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (-inf..32.33] AND NOT gain_ratio_9 = (-inf..31.17] AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_7 = (-inf..31.67] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_7 = (-inf..31.67] AND NOT gain_ratio_8 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_7 = (-inf..31.67] AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_7 = (-inf..31.67] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_7 = (-inf..31.67] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_9 = (-inf..31.17] AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_10 = (162.5..+inf) AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT target = 1 AND NOT gain_ratio_5 = (163.33..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT target = 1 AND NOT gain_ratio_8 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  exp time: 3.30
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (-inf..30.83] AND target = 1 AND gain_ratio_1 = (66.33..99.5] AND gain_ratio_2 = (32.17..64.33] AND gain_ratio_3 = (31.67..63.33] AND gain_ratio_4 = (33.67..67.33] AND gain_ratio_5 = (32.67..65.33] AND gain_ratio_6 = (-inf..32.33] AND gain_ratio_7 = (31.67..63.33] AND gain_ratio_8 = (31.17..62.33] AND gain_ratio_9 = (-inf..31.17] AND gain_ratio_10 = (32.5..65.0] AND gain_ratio_11 = (33.0..66.0] AND sex = 0 THEN 1"
+  explanation: "IF NOT target = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT ID = (-inf..30.83] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (32.17..64.33] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (32.67..65.33] AND NOT gain_ratio_8 = (31.17..62.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (-inf..32.33] AND NOT gain_ratio_8 = (31.17..62.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (32.67..65.33] AND NOT gain_ratio_6 = (-inf..32.33] AND NOT gain_ratio_11 = (33.0..66.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (31.67..63.33] AND NOT gain_ratio_5 = (32.67..65.33] AND NOT gain_ratio_6 = (-inf..32.33] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (31.67..63.33] AND NOT gain_ratio_8 = (31.17..62.33] AND NOT gain_ratio_11 = (33.0..66.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (66.33..99.5] AND NOT gain_ratio_3 = (31.67..63.33] AND NOT gain_ratio_8 = (31.17..62.33] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (66.33..99.5] AND NOT gain_ratio_3 = (31.67..63.33] AND NOT gain_ratio_6 = (-inf..32.33] AND NOT gain_ratio_11 = (33.0..66.0] THEN NOT 1"
+  # hypos left: 4
+  exp time: 1.03
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (-inf..30.83] AND target = 1 AND gain_ratio_1 = (99.5..132.67] AND gain_ratio_2 = (128.67..160.83] AND gain_ratio_3 = (95.0..126.67] AND gain_ratio_4 = (101.0..134.67] AND gain_ratio_5 = (98.0..130.67] AND gain_ratio_6 = (64.67..97.0] AND gain_ratio_7 = (95.0..126.67] AND gain_ratio_8 = (62.33..93.5] AND gain_ratio_9 = (31.17..62.33] AND gain_ratio_10 = (32.5..65.0] AND gain_ratio_11 = (33.0..66.0] AND sex = 0 THEN 0"
+  explanation: "IF NOT ID = (-inf..30.83] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_6 = (64.67..97.0] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_8 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (101.0..134.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (99.5..132.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (32.5..65.0] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (31.17..62.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT sex = 0 THEN NOT 0"
+  # hypos left: 1
+  exp time: 0.33
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (-inf..30.83] AND target = 1 AND gain_ratio_1 = (99.5..132.67] AND gain_ratio_2 = (96.5..128.67] AND gain_ratio_3 = (126.67..158.33] AND gain_ratio_4 = (134.67..168.33] AND gain_ratio_5 = (98.0..130.67] AND gain_ratio_6 = (97.0..129.33] AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (124.67..155.83] AND gain_ratio_9 = (93.5..124.67] AND gain_ratio_10 = (130.0..162.5] AND gain_ratio_11 = (99.0..132.0] AND sex = 0 THEN 0"
+  explanation: "IF NOT ID = (-inf..30.83] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (99.5..132.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (96.5..128.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (134.67..168.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT sex = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_8 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_6 = (97.0..129.33] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_5 = (98.0..130.67] THEN NOT 0"
+  # hypos left: 2
+  exp time: 0.35
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (-inf..30.83] AND target = 2 AND gain_ratio_1 = (-inf..33.17] AND gain_ratio_2 = (-inf..32.17] AND gain_ratio_3 = (-inf..31.67] AND gain_ratio_4 = (-inf..33.67] AND gain_ratio_5 = (-inf..32.67] AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (-inf..33.0] AND sex = 1 THEN 1"
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (-inf..32.17] AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_7 = (158.33..+inf) AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (-inf..32.17] AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_10 = (162.5..+inf) AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_7 = (158.33..+inf) AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (-inf..31.67] AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_10 = (162.5..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_4 = (-inf..33.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (-inf..33.67] AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (-inf..33.67] AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 1"
+  # hypos left: 2
+  exp time: 1.99
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (-inf..30.83] AND target = 2 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (63.33..95.0] AND gain_ratio_4 = (67.33..101.0] AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (64.67..97.0] AND gain_ratio_7 = (63.33..95.0] AND gain_ratio_8 = (93.5..124.67] AND gain_ratio_9 = (62.33..93.5] AND gain_ratio_10 = (65.0..97.5] AND gain_ratio_11 = (33.0..66.0] AND sex = 0 THEN 0"
+  explanation: "IF NOT gain_ratio_9 = (62.33..93.5] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_9 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 2 AND NOT gain_ratio_9 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_11 = (33.0..66.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_9 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (64.67..97.0] AND NOT gain_ratio_10 = (65.0..97.5] AND NOT gain_ratio_11 = (33.0..66.0] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT target = 2 AND NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_6 = (64.67..97.0] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_6 = (64.67..97.0] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_6 = (64.67..97.0] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT target = 2 AND NOT gain_ratio_6 = (64.67..97.0] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_6 = (64.67..97.0] AND NOT gain_ratio_10 = (65.0..97.5] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT target = 2 AND NOT gain_ratio_6 = (64.67..97.0] AND NOT gain_ratio_10 = (65.0..97.5] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT target = 2 AND NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_8 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_8 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_8 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_8 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT target = 2 AND NOT gain_ratio_8 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT ID = (-inf..30.83] AND NOT gain_ratio_6 = (64.67..97.0] AND NOT gain_ratio_8 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_8 = (93.5..124.67] AND NOT gain_ratio_9 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_8 = (93.5..124.67] AND NOT gain_ratio_9 = (62.33..93.5] AND NOT gain_ratio_11 = (33.0..66.0] THEN NOT 0"
+  # hypos left: 3
+  exp time: 4.19
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (137.5..201.33] AND target = 0 AND gain_ratio_1 = (-inf..33.17] AND gain_ratio_2 = (32.17..64.33] AND gain_ratio_3 = (95.0..126.67] AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (130.67..163.33] AND gain_ratio_6 = (97.0..129.33] AND gain_ratio_7 = (126.67..158.33] AND gain_ratio_8 = (62.33..93.5] AND gain_ratio_9 = (93.5..124.67] AND gain_ratio_10 = (97.5..130.0] AND gain_ratio_11 = (132.0..165.0] AND sex = 0 THEN 0"
+  explanation: "IF NOT ID = (137.5..201.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (130.67..163.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_7 = (126.67..158.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (-inf..33.17] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT sex = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (97.5..130.0] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_8 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 2
+  exp time: 0.27
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (137.5..201.33] AND target = 0 AND gain_ratio_1 = (132.67..165.83] AND gain_ratio_2 = (64.33..96.5] AND gain_ratio_3 = (158.33..+inf) AND gain_ratio_4 = (67.33..101.0] AND gain_ratio_5 = (98.0..130.67] AND gain_ratio_6 = (129.33..161.67] AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (165.0..+inf) AND sex = 0 THEN 0"
+  explanation: "IF NOT ID = (137.5..201.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (132.67..165.83] AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (132.67..165.83] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (129.33..161.67] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (129.33..161.67] AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_6 = (129.33..161.67] AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (132.67..165.83] AND NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_6 = (129.33..161.67] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (132.67..165.83] AND NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (132.67..165.83] AND NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_6 = (129.33..161.67] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_5 = (98.0..130.67] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (132.67..165.83] AND NOT gain_ratio_2 = (64.33..96.5] AND NOT gain_ratio_4 = (67.33..101.0] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_6 = (129.33..161.67] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT gain_ratio_5 = (98.0..130.67] AND NOT gain_ratio_6 = (129.33..161.67] THEN NOT 0"
+  # hypos left: 3
+  exp time: 3.24
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (137.5..201.33] AND target = 1 AND gain_ratio_1 = (-inf..33.17] AND gain_ratio_2 = (96.5..128.67] AND gain_ratio_3 = (95.0..126.67] AND gain_ratio_4 = (33.67..67.33] AND gain_ratio_5 = (130.67..163.33] AND gain_ratio_6 = (129.33..161.67] AND gain_ratio_7 = (63.33..95.0] AND gain_ratio_8 = (124.67..155.83] AND gain_ratio_9 = (93.5..124.67] AND gain_ratio_10 = (130.0..162.5] AND gain_ratio_11 = (99.0..132.0] AND sex = 0 THEN 0"
+  explanation: "IF NOT ID = (137.5..201.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT sex = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (33.67..67.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (96.5..128.67] AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (-inf..33.17] AND NOT gain_ratio_2 = (96.5..128.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (96.5..128.67] AND NOT gain_ratio_8 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (96.5..128.67] AND NOT gain_ratio_11 = (99.0..132.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (96.5..128.67] AND NOT gain_ratio_7 = (63.33..95.0] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (-inf..33.17] AND NOT gain_ratio_6 = (129.33..161.67] AND NOT gain_ratio_8 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_8 = (124.67..155.83] AND NOT gain_ratio_9 = (93.5..124.67] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_7 = (63.33..95.0] AND NOT gain_ratio_9 = (93.5..124.67] AND NOT gain_ratio_10 = (130.0..162.5] AND NOT gain_ratio_11 = (99.0..132.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT gain_ratio_5 = (130.67..163.33] AND NOT gain_ratio_9 = (93.5..124.67] AND NOT gain_ratio_10 = (130.0..162.5] AND NOT gain_ratio_11 = (99.0..132.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT gain_ratio_5 = (130.67..163.33] AND NOT gain_ratio_7 = (63.33..95.0] AND NOT gain_ratio_9 = (93.5..124.67] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_5 = (130.67..163.33] AND NOT gain_ratio_9 = (93.5..124.67] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_5 = (130.67..163.33] AND NOT gain_ratio_9 = (93.5..124.67] AND NOT gain_ratio_11 = (99.0..132.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_6 = (129.33..161.67] AND NOT gain_ratio_9 = (93.5..124.67] AND NOT gain_ratio_11 = (99.0..132.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_2 = (96.5..128.67] AND NOT gain_ratio_5 = (130.67..163.33] AND NOT gain_ratio_6 = (129.33..161.67] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT gain_ratio_6 = (129.33..161.67] AND NOT gain_ratio_7 = (63.33..95.0] AND NOT gain_ratio_8 = (124.67..155.83] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT gain_ratio_5 = (130.67..163.33] AND NOT gain_ratio_6 = (129.33..161.67] AND NOT gain_ratio_8 = (124.67..155.83] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_6 = (129.33..161.67] AND NOT gain_ratio_7 = (63.33..95.0] AND NOT gain_ratio_9 = (93.5..124.67] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 5
+  exp time: 3.63
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (137.5..201.33] AND target = 1 AND gain_ratio_1 = (132.67..165.83] AND gain_ratio_2 = (96.5..128.67] AND gain_ratio_3 = (126.67..158.33] AND gain_ratio_4 = (67.33..101.0] AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (129.33..161.67] AND gain_ratio_7 = (126.67..158.33] AND gain_ratio_8 = (124.67..155.83] AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (165.0..+inf) AND sex = 1 THEN 0"
+  explanation: "IF NOT ID = (137.5..201.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (132.67..165.83] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (96.5..128.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_7 = (126.67..158.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_8 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_5 = (163.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (129.33..161.67] AND NOT gain_ratio_8 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_6 = (129.33..161.67] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_6 = (129.33..161.67] AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 3
+  exp time: 0.56
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (137.5..201.33] AND target = 1 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (126.67..158.33] AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (98.0..130.67] AND gain_ratio_6 = (64.67..97.0] AND gain_ratio_7 = (95.0..126.67] AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (62.33..93.5] AND gain_ratio_10 = (130.0..162.5] AND gain_ratio_11 = (33.0..66.0] AND sex = 0 THEN 0"
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT gain_ratio_9 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_9 = (62.33..93.5] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT gain_ratio_2 = (160.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT gain_ratio_1 = (165.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT gain_ratio_6 = (64.67..97.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_11 = (33.0..66.0] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (155.83..+inf) AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (64.67..97.0] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_6 = (64.67..97.0] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_11 = (33.0..66.0] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_9 = (62.33..93.5] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_6 = (64.67..97.0] AND NOT gain_ratio_9 = (62.33..93.5] AND NOT gain_ratio_11 = (33.0..66.0] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_6 = (64.67..97.0] AND NOT gain_ratio_9 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 3
+  exp time: 4.25
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (137.5..201.33] AND target = 1 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (158.33..+inf) AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (31.67..63.33] AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (165.0..+inf) AND sex = 1 THEN 1"
+  explanation: "IF NOT target = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT ID = (137.5..201.33] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_11 = (165.0..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_8 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (162.5..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 1"
+  # hypos left: 2
+  exp time: 0.22
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (137.5..201.33] AND target = 1 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (158.33..+inf) AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (32.33..64.67] AND gain_ratio_7 = (126.67..158.33] AND gain_ratio_8 = (93.5..124.67] AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (165.0..+inf) AND sex = 1 THEN 1"
+  explanation: "IF NOT target = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT ID = (137.5..201.33] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (162.5..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_8 = (93.5..124.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_11 = (165.0..+inf) THEN NOT 1"
+  # hypos left: 1
+  exp time: 0.15
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (137.5..201.33] AND target = 1 AND gain_ratio_1 = (33.17..66.33] AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (-inf..31.67] AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (98.0..130.67] AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (165.0..+inf) AND sex = 0 THEN 0"
+  explanation: "IF NOT ID = (137.5..201.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT sex = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (155.83..+inf) AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_10 = (162.5..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_10 = (162.5..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_10 = (162.5..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 0"
+  # hypos left: 3
+  exp time: 2.61
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (137.5..201.33] AND target = 1 AND gain_ratio_1 = (33.17..66.33] AND gain_ratio_2 = (32.17..64.33] AND gain_ratio_3 = (95.0..126.67] AND gain_ratio_4 = (33.67..67.33] AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (31.17..62.33] AND gain_ratio_10 = (32.5..65.0] AND gain_ratio_11 = (165.0..+inf) AND sex = 0 THEN 0"
+  explanation: "IF NOT ID = (137.5..201.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_7 = (158.33..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (33.67..67.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT sex = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_9 = (31.17..62.33] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_10 = (32.5..65.0] THEN NOT 0"
+  # hypos left: 2
+  exp time: 0.78
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (137.5..201.33] AND target = 2 AND gain_ratio_1 = (66.33..99.5] AND gain_ratio_2 = (32.17..64.33] AND gain_ratio_3 = (-inf..31.67] AND gain_ratio_4 = (33.67..67.33] AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (63.33..95.0] AND gain_ratio_8 = (-inf..31.17] AND gain_ratio_9 = (31.17..62.33] AND gain_ratio_10 = (-inf..32.5] AND gain_ratio_11 = (-inf..33.0] AND sex = 0 THEN 0"
+  explanation: "IF NOT target = 2 AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_11 = (-inf..33.0] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (-inf..31.17] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT gain_ratio_8 = (-inf..31.17] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (33.67..67.33] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT gain_ratio_4 = (33.67..67.33] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (66.33..99.5] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT gain_ratio_10 = (-inf..32.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT gain_ratio_1 = (66.33..99.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT target = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT gain_ratio_9 = (31.17..62.33] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_9 = (31.17..62.33] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_7 = (63.33..95.0] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_7 = (63.33..95.0] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT ID = (137.5..201.33] AND NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (32.17..64.33] AND NOT gain_ratio_7 = (63.33..95.0] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_7 = (63.33..95.0] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 3
+  exp time: 6.60
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (201.33..250.67] AND target = 0 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (158.33..+inf) AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (66.0..99.0] AND sex = 1 THEN 0"
+  explanation: "IF NOT ID = (201.33..250.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_11 = (66.0..99.0] AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_8 = (155.83..+inf) AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_8 = (155.83..+inf) AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_6 = (161.67..+inf) AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_8 = (155.83..+inf) AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_8 = (155.83..+inf) AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_8 = (155.83..+inf) AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_8 = (155.83..+inf) AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 0"
+  # hypos left: 4
+  exp time: 1.16
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (201.33..250.67] AND target = 0 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (158.33..+inf) AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (98.0..130.67] AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (130.0..162.5] AND gain_ratio_11 = (165.0..+inf) AND sex = 1 THEN 0"
+  explanation: "IF NOT ID = (201.33..250.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_5 = (98.0..130.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_3 = (158.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_10 = (130.0..162.5] AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_8 = (155.83..+inf) AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_10 = (130.0..162.5] AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_8 = (155.83..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_8 = (155.83..+inf) AND NOT gain_ratio_11 = (165.0..+inf) AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_8 = (155.83..+inf) AND NOT gain_ratio_10 = (130.0..162.5] AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 4
+  exp time: 1.14
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (201.33..250.67] AND target = 0 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (96.5..128.67] AND gain_ratio_3 = (126.67..158.33] AND gain_ratio_4 = (134.67..168.33] AND gain_ratio_5 = (130.67..163.33] AND gain_ratio_6 = (129.33..161.67] AND gain_ratio_7 = (126.67..158.33] AND gain_ratio_8 = (62.33..93.5] AND gain_ratio_9 = (124.67..155.83] AND gain_ratio_10 = (97.5..130.0] AND gain_ratio_11 = (132.0..165.0] AND sex = 0 THEN 0"
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_1 = (165.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_8 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_9 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_9 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (129.33..161.67] AND NOT gain_ratio_9 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_9 = (124.67..155.83] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (130.67..163.33] AND NOT gain_ratio_9 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (62.33..93.5] AND NOT gain_ratio_9 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_9 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_6 = (129.33..161.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_3 = (126.67..158.33] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_8 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_2 = (96.5..128.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (96.5..128.67] AND NOT gain_ratio_6 = (129.33..161.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (96.5..128.67] AND NOT gain_ratio_9 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_2 = (96.5..128.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (96.5..128.67] AND NOT gain_ratio_3 = (126.67..158.33] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (96.5..128.67] AND NOT gain_ratio_8 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (96.5..128.67] AND NOT gain_ratio_4 = (134.67..168.33] THEN NOT 0"
+  # hypos left: 2
+  exp time: 1.49
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (201.33..250.67] AND target = 1 AND gain_ratio_1 = (-inf..33.17] AND gain_ratio_2 = (32.17..64.33] AND gain_ratio_3 = (-inf..31.67] AND gain_ratio_4 = (33.67..67.33] AND gain_ratio_5 = (-inf..32.67] AND gain_ratio_6 = (-inf..32.33] AND gain_ratio_7 = (-inf..31.67] AND gain_ratio_8 = (-inf..31.17] AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (-inf..32.5] AND gain_ratio_11 = (-inf..33.0] AND sex = 1 THEN 1"
+  explanation: "IF NOT target = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (32.17..64.33] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (-inf..33.17] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_4 = (33.67..67.33] AND NOT gain_ratio_8 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_4 = (33.67..67.33] AND NOT gain_ratio_6 = (-inf..32.33] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_6 = (-inf..32.33] AND NOT gain_ratio_9 = (155.83..+inf) AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_6 = (-inf..32.33] AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_4 = (33.67..67.33] AND NOT gain_ratio_6 = (-inf..32.33] AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_4 = (33.67..67.33] AND NOT gain_ratio_9 = (155.83..+inf) AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_4 = (33.67..67.33] AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_4 = (33.67..67.33] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_4 = (33.67..67.33] AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_4 = (33.67..67.33] AND NOT gain_ratio_5 = (-inf..32.67] AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_4 = (33.67..67.33] AND NOT gain_ratio_10 = (-inf..32.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_10 = (-inf..32.5] AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_6 = (-inf..32.33] AND NOT gain_ratio_10 = (-inf..32.5] AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_4 = (33.67..67.33] AND NOT gain_ratio_10 = (-inf..32.5] AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (-inf..31.67] AND NOT gain_ratio_6 = (-inf..32.33] AND NOT gain_ratio_9 = (155.83..+inf) AND NOT gain_ratio_10 = (-inf..32.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_5 = (-inf..32.67] AND NOT gain_ratio_6 = (-inf..32.33] AND NOT gain_ratio_10 = (-inf..32.5] THEN NOT 1"
+  # hypos left: 4
+  exp time: 2.21
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (201.33..250.67] AND target = 1 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (128.67..160.83] AND gain_ratio_3 = (126.67..158.33] AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (130.67..163.33] AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (95.0..126.67] AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (165.0..+inf) AND sex = 1 THEN 0"
+  explanation: "IF NOT ID = (201.33..250.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] AND NOT gain_ratio_5 = (130.67..163.33] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] AND NOT gain_ratio_3 = (126.67..158.33] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (130.67..163.33] AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (155.83..+inf) AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (130.67..163.33] AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_8 = (155.83..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 3
+  exp time: 0.53
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (201.33..250.67] AND target = 1 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (126.67..158.33] AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (130.67..163.33] AND gain_ratio_6 = (129.33..161.67] AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (124.67..155.83] AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (165.0..+inf) AND sex = 1 THEN 0"
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_3 = (126.67..158.33] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (155.83..+inf) AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_6 = (129.33..161.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_6 = (129.33..161.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_5 = (130.67..163.33] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_5 = (130.67..163.33] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_5 = (130.67..163.33] AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_5 = (130.67..163.33] AND NOT gain_ratio_8 = (155.83..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_5 = (130.67..163.33] AND NOT gain_ratio_6 = (129.33..161.67] AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_5 = (130.67..163.33] AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_5 = (130.67..163.33] AND NOT gain_ratio_11 = (165.0..+inf) AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 3
+  exp time: 0.96
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (201.33..250.67] AND target = 1 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (64.33..96.5] AND gain_ratio_3 = (95.0..126.67] AND gain_ratio_4 = (134.67..168.33] AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (129.33..161.67] AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (124.67..155.83] AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (97.5..130.0] AND gain_ratio_11 = (165.0..+inf) AND sex = 0 THEN 0"
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (134.67..168.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (97.5..130.0] AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT gain_ratio_10 = (97.5..130.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_2 = (64.33..96.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_2 = (64.33..96.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_10 = (97.5..130.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT target = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_1 = (165.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_8 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_2 = (64.33..96.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (129.33..161.67] AND NOT gain_ratio_8 = (124.67..155.83] AND NOT gain_ratio_10 = (97.5..130.0] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_8 = (124.67..155.83] AND NOT gain_ratio_10 = (97.5..130.0] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_7 = (158.33..+inf) AND NOT gain_ratio_8 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_8 = (124.67..155.83] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_7 = (158.33..+inf) AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 3
+  exp time: 1.75
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (201.33..250.67] AND target = 1 AND gain_ratio_1 = (66.33..99.5] AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (126.67..158.33] AND gain_ratio_4 = (134.67..168.33] AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (93.5..124.67] AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (165.0..+inf) AND sex = 0 THEN 0"
+  explanation: "IF NOT gain_ratio_4 = (134.67..168.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_2 = (160.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (155.83..+inf) AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_7 = (158.33..+inf) AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_9 = (93.5..124.67] AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (66.33..99.5] AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_1 = (66.33..99.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (66.33..99.5] AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (66.33..99.5] AND NOT gain_ratio_2 = (160.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_1 = (66.33..99.5] AND NOT gain_ratio_3 = (126.67..158.33] THEN NOT 0"
+  # hypos left: 3
+  exp time: 2.60
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (201.33..250.67] AND target = 1 AND gain_ratio_1 = (66.33..99.5] AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (158.33..+inf) AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (98.0..130.67] AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (95.0..126.67] AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (65.0..97.5] AND gain_ratio_11 = (165.0..+inf) AND sex = 0 THEN 0"
+  explanation: "IF NOT ID = (201.33..250.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (65.0..97.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (66.33..99.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (155.83..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (155.83..+inf) AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_11 = (165.0..+inf) AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_11 = (165.0..+inf) AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 3
+  exp time: 0.73
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (201.33..250.67] AND target = 2 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (158.33..+inf) AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (32.67..65.33] AND gain_ratio_6 = (32.33..64.67] AND gain_ratio_7 = (31.67..63.33] AND gain_ratio_8 = (31.17..62.33] AND gain_ratio_9 = (93.5..124.67] AND gain_ratio_10 = (32.5..65.0] AND gain_ratio_11 = (33.0..66.0] AND sex = 1 THEN 0"
+  explanation: "IF NOT target = 2 AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 2 AND NOT gain_ratio_2 = (160.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 2 AND NOT gain_ratio_1 = (165.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT target = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_7 = (31.67..63.33] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_7 = (31.67..63.33] AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_9 = (93.5..124.67] AND NOT gain_ratio_11 = (33.0..66.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (32.67..65.33] AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_11 = (33.0..66.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 2 AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_6 = (32.33..64.67] AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_6 = (32.33..64.67] AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_6 = (32.33..64.67] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_6 = (32.33..64.67] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_5 = (32.67..65.33] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT ID = (201.33..250.67] AND NOT gain_ratio_5 = (32.67..65.33] AND NOT gain_ratio_6 = (32.33..64.67] THEN NOT 0"
+  # hypos left: 3
+  exp time: 4.43
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (250.67..+inf) AND target = 0 AND gain_ratio_1 = (132.67..165.83] AND gain_ratio_2 = (128.67..160.83] AND gain_ratio_3 = (126.67..158.33] AND gain_ratio_4 = (101.0..134.67] AND gain_ratio_5 = (130.67..163.33] AND gain_ratio_6 = (97.0..129.33] AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (93.5..124.67] AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (66.0..99.0] AND sex = 1 THEN 1"
+  explanation: "IF NOT ID = (250.67..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_6 = (97.0..129.33] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (130.67..163.33] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (101.0..134.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_8 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (93.5..124.67] AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_9 = (93.5..124.67] AND NOT gain_ratio_10 = (162.5..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  exp time: 0.50
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (250.67..+inf) AND target = 0 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (128.67..160.83] AND gain_ratio_3 = (126.67..158.33] AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (130.67..163.33] AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (126.67..158.33] AND gain_ratio_8 = (124.67..155.83] AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (130.0..162.5] AND gain_ratio_11 = (132.0..165.0] AND sex = 0 THEN 1"
+  explanation: "IF NOT ID = (250.67..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (130.67..163.33] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_8 = (124.67..155.83] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_7 = (126.67..158.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_11 = (132.0..165.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_11 = (132.0..165.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_11 = (132.0..165.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_11 = (132.0..165.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_11 = (132.0..165.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 3
+  exp time: 1.09
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (250.67..+inf) AND target = 0 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (95.0..126.67] AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (165.0..+inf) AND sex = 0 THEN 1"
+  explanation: "IF NOT ID = (250.67..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (162.5..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_3 = (95.0..126.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (95.0..126.67] AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (95.0..126.67] AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_9 = (155.83..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_9 = (155.83..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) AND NOT gain_ratio_11 = (165.0..+inf) AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_11 = (165.0..+inf) AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_6 = (161.67..+inf) AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_9 = (155.83..+inf) AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 3
+  exp time: 1.43
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (250.67..+inf) AND target = 0 AND gain_ratio_1 = (33.17..66.33] AND gain_ratio_2 = (64.33..96.5] AND gain_ratio_3 = (158.33..+inf) AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (62.33..93.5] AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (165.0..+inf) AND sex = 1 THEN 1"
+  explanation: "IF NOT ID = (250.67..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_11 = (165.0..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_3 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  exp time: 0.62
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (250.67..+inf) AND target = 0 AND gain_ratio_1 = (33.17..66.33] AND gain_ratio_2 = (64.33..96.5] AND gain_ratio_3 = (158.33..+inf) AND gain_ratio_4 = (67.33..101.0] AND gain_ratio_5 = (65.33..98.0] AND gain_ratio_6 = (32.33..64.67] AND gain_ratio_7 = (63.33..95.0] AND gain_ratio_8 = (93.5..124.67] AND gain_ratio_9 = (93.5..124.67] AND gain_ratio_10 = (130.0..162.5] AND gain_ratio_11 = (66.0..99.0] AND sex = 1 THEN 1"
+  explanation: "IF NOT ID = (250.67..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (130.0..162.5] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_6 = (32.33..64.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT gain_ratio_4 = (67.33..101.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_4 = (67.33..101.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_7 = (63.33..95.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_5 = (65.33..98.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_9 = (93.5..124.67] AND NOT gain_ratio_11 = (66.0..99.0] AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] AND NOT gain_ratio_11 = (66.0..99.0] AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 3
+  exp time: 1.18
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (250.67..+inf) AND target = 1 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (96.5..128.67] AND gain_ratio_3 = (63.33..95.0] AND gain_ratio_4 = (101.0..134.67] AND gain_ratio_5 = (65.33..98.0] AND gain_ratio_6 = (129.33..161.67] AND gain_ratio_7 = (95.0..126.67] AND gain_ratio_8 = (124.67..155.83] AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (130.0..162.5] AND gain_ratio_11 = (165.0..+inf) AND sex = 1 THEN 0"
+  explanation: "IF NOT target = 1 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT ID = (250.67..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (65.33..98.0] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (96.5..128.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (101.0..134.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_10 = (130.0..162.5] AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_10 = (130.0..162.5] AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (129.33..161.67] AND NOT gain_ratio_8 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_8 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (124.67..155.83] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_6 = (129.33..161.67] AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 3
+  exp time: 0.57
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (250.67..+inf) AND target = 1 AND gain_ratio_1 = (66.33..99.5] AND gain_ratio_2 = (-inf..32.17] AND gain_ratio_3 = (31.67..63.33] AND gain_ratio_4 = (-inf..33.67] AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (-inf..32.33] AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (-inf..31.17] AND gain_ratio_9 = (93.5..124.67] AND gain_ratio_10 = (-inf..32.5] AND gain_ratio_11 = (165.0..+inf) AND sex = 1 THEN 1"
+  explanation: "IF NOT gain_ratio_4 = (-inf..33.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT ID = (250.67..+inf) AND NOT gain_ratio_6 = (-inf..32.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT ID = (250.67..+inf) AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT ID = (250.67..+inf) AND NOT gain_ratio_5 = (163.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (66.33..99.5] AND NOT gain_ratio_5 = (163.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_6 = (-inf..32.33] AND NOT gain_ratio_10 = (-inf..32.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_10 = (-inf..32.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_1 = (66.33..99.5] AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_7 = (158.33..+inf) AND NOT gain_ratio_8 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_3 = (31.67..63.33] AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_7 = (158.33..+inf) AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_6 = (-inf..32.33] AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_2 = (-inf..32.17] AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_1 = (66.33..99.5] AND NOT gain_ratio_2 = (-inf..32.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (-inf..32.17] AND NOT gain_ratio_5 = (163.33..+inf) AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_5 = (163.33..+inf) AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_6 = (-inf..32.33] AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (31.67..63.33] AND NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_6 = (-inf..32.33] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_6 = (-inf..32.33] THEN NOT 1"
+  # hypos left: 3
+  exp time: 3.50
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (250.67..+inf) AND target = 1 AND gain_ratio_1 = (66.33..99.5] AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (126.67..158.33] AND gain_ratio_4 = (67.33..101.0] AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (31.67..63.33] AND gain_ratio_8 = (93.5..124.67] AND gain_ratio_9 = (62.33..93.5] AND gain_ratio_10 = (65.0..97.5] AND gain_ratio_11 = (33.0..66.0] AND sex = 1 THEN 0"
+  explanation: "IF NOT gain_ratio_9 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (66.33..99.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_8 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (65.0..97.5] AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_11 = (33.0..66.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_7 = (31.67..63.33] AND NOT gain_ratio_11 = (33.0..66.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_7 = (31.67..63.33] THEN NOT 0"
+  # hypos left: 2
+  exp time: 0.57
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (250.67..+inf) AND target = 1 AND gain_ratio_1 = (99.5..132.67] AND gain_ratio_2 = (96.5..128.67] AND gain_ratio_3 = (95.0..126.67] AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (98.0..130.67] AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (32.5..65.0] AND gain_ratio_11 = (165.0..+inf) AND sex = 0 THEN 1"
+  explanation: "IF NOT ID = (250.67..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (98.0..130.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (95.0..126.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (32.5..65.0] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (99.5..132.67] AND NOT gain_ratio_2 = (96.5..128.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (99.5..132.67] AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (99.5..132.67] AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (96.5..128.67] AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 1"
+  # hypos left: 2
+  exp time: 0.70
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (250.67..+inf) AND target = 2 AND gain_ratio_1 = (-inf..33.17] AND gain_ratio_2 = (96.5..128.67] AND gain_ratio_3 = (-inf..31.67] AND gain_ratio_4 = (-inf..33.67] AND gain_ratio_5 = (32.67..65.33] AND gain_ratio_6 = (32.33..64.67] AND gain_ratio_7 = (31.67..63.33] AND gain_ratio_8 = (-inf..31.17] AND gain_ratio_9 = (31.17..62.33] AND gain_ratio_10 = (-inf..32.5] AND gain_ratio_11 = (-inf..33.0] AND sex = 1 THEN 1"
+  explanation: "IF NOT ID = (250.67..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (32.67..65.33] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (-inf..33.17] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (-inf..32.5] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (-inf..31.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (-inf..33.67] THEN NOT 1"
+  # hypos left: 1
+  exp time: 0.24
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (250.67..+inf) AND target = 2 AND gain_ratio_1 = (132.67..165.83] AND gain_ratio_2 = (32.17..64.33] AND gain_ratio_3 = (63.33..95.0] AND gain_ratio_4 = (67.33..101.0] AND gain_ratio_5 = (32.67..65.33] AND gain_ratio_6 = (64.67..97.0] AND gain_ratio_7 = (63.33..95.0] AND gain_ratio_8 = (62.33..93.5] AND gain_ratio_9 = (31.17..62.33] AND gain_ratio_10 = (65.0..97.5] AND gain_ratio_11 = (99.0..132.0] AND sex = 0 THEN 0"
+  explanation: "IF NOT target = 2 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (132.67..165.83] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (31.17..62.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_4 = (67.33..101.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_5 = (32.67..65.33] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_7 = (63.33..95.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (32.17..64.33] AND NOT gain_ratio_8 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_8 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_7 = (63.33..95.0] AND NOT gain_ratio_8 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (32.67..65.33] AND NOT gain_ratio_8 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_8 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (64.67..97.0] AND NOT gain_ratio_8 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_6 = (64.67..97.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (64.67..97.0] AND NOT gain_ratio_7 = (63.33..95.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (32.67..65.33] AND NOT gain_ratio_6 = (64.67..97.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_6 = (64.67..97.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (62.33..93.5] AND NOT gain_ratio_11 = (99.0..132.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (64.67..97.0] AND NOT gain_ratio_11 = (99.0..132.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (32.67..65.33] AND NOT gain_ratio_11 = (99.0..132.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_7 = (63.33..95.0] AND NOT gain_ratio_11 = (99.0..132.0] THEN NOT 0"
+  # hypos left: 2
+  exp time: 1.15
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (30.83..76.67] AND target = 0 AND gain_ratio_1 = (33.17..66.33] AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (63.33..95.0] AND gain_ratio_4 = (134.67..168.33] AND gain_ratio_5 = (-inf..32.67] AND gain_ratio_6 = (129.33..161.67] AND gain_ratio_7 = (-inf..31.67] AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (-inf..32.5] AND gain_ratio_11 = (165.0..+inf) AND sex = 1 THEN 1"
+  explanation: "IF NOT target = 0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT ID = (30.83..76.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (-inf..32.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (-inf..32.5] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_9 = (155.83..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 1"
+  # hypos left: 3
+  exp time: 0.69
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (30.83..76.67] AND target = 0 AND gain_ratio_1 = (33.17..66.33] AND gain_ratio_2 = (32.17..64.33] AND gain_ratio_3 = (63.33..95.0] AND gain_ratio_4 = (67.33..101.0] AND gain_ratio_5 = (-inf..32.67] AND gain_ratio_6 = (-inf..32.33] AND gain_ratio_7 = (-inf..31.67] AND gain_ratio_8 = (-inf..31.17] AND gain_ratio_9 = (-inf..31.17] AND gain_ratio_10 = (-inf..32.5] AND gain_ratio_11 = (33.0..66.0] AND sex = 1 THEN 1"
+  explanation: "IF NOT ID = (30.83..76.67] AND NOT target = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_7 = (-inf..31.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_1 = (33.17..66.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_6 = (-inf..32.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_4 = (67.33..101.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_2 = (32.17..64.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT ID = (30.83..76.67] AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_10 = (-inf..32.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_5 = (-inf..32.67] AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT ID = (30.83..76.67] AND NOT gain_ratio_9 = (-inf..31.17] AND NOT gain_ratio_10 = (-inf..32.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT ID = (30.83..76.67] AND NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT ID = (30.83..76.67] AND NOT gain_ratio_2 = (32.17..64.33] AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_2 = (32.17..64.33] AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (32.17..64.33] AND NOT gain_ratio_5 = (-inf..32.67] AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (32.17..64.33] AND NOT gain_ratio_9 = (-inf..31.17] AND NOT gain_ratio_10 = (-inf..32.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT ID = (30.83..76.67] AND NOT gain_ratio_2 = (32.17..64.33] AND NOT gain_ratio_4 = (67.33..101.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (32.17..64.33] AND NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_10 = (-inf..32.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (32.17..64.33] AND NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_4 = (67.33..101.0] THEN NOT 1"
+  # hypos left: 3
+  exp time: 4.22
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (30.83..76.67] AND target = 0 AND gain_ratio_1 = (99.5..132.67] AND gain_ratio_2 = (64.33..96.5] AND gain_ratio_3 = (63.33..95.0] AND gain_ratio_4 = (67.33..101.0] AND gain_ratio_5 = (-inf..32.67] AND gain_ratio_6 = (32.33..64.67] AND gain_ratio_7 = (31.67..63.33] AND gain_ratio_8 = (31.17..62.33] AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (32.5..65.0] AND gain_ratio_11 = (-inf..33.0] AND sex = 1 THEN 1"
+  explanation: "IF NOT target = 0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT ID = (30.83..76.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (-inf..32.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (99.5..132.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (32.5..65.0] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_8 = (31.17..62.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (31.17..62.33] AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_8 = (31.17..62.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_6 = (32.33..64.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_4 = (67.33..101.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 2
+  exp time: 0.58
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (30.83..76.67] AND target = 1 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (158.33..+inf) AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (165.0..+inf) AND sex = 1 THEN 1"
+  explanation: "IF NOT ID = (30.83..76.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (162.5..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_11 = (165.0..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 1"
+  # hypos left: 2
+  exp time: 0.50
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (30.83..76.67] AND target = 1 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (158.33..+inf) AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (66.0..99.0] AND sex = 0 THEN 1"
+  explanation: "IF NOT ID = (30.83..76.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (162.5..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_5 = (163.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_11 = (66.0..99.0] AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_6 = (161.67..+inf) AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 1"
+  # hypos left: 3
+  exp time: 0.95
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (30.83..76.67] AND target = 1 AND gain_ratio_1 = (33.17..66.33] AND gain_ratio_2 = (32.17..64.33] AND gain_ratio_3 = (31.67..63.33] AND gain_ratio_4 = (-inf..33.67] AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (-inf..32.33] AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (-inf..31.17] AND gain_ratio_9 = (-inf..31.17] AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (-inf..33.0] AND sex = 1 THEN 1"
+  explanation: "IF NOT gain_ratio_2 = (32.17..64.33] AND NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT ID = (30.83..76.67] AND NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT ID = (30.83..76.67] AND NOT gain_ratio_6 = (-inf..32.33] AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT ID = (30.83..76.67] AND NOT gain_ratio_9 = (-inf..31.17] AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT ID = (30.83..76.67] AND NOT gain_ratio_2 = (32.17..64.33] AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_2 = (32.17..64.33] AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT ID = (30.83..76.67] AND NOT gain_ratio_2 = (32.17..64.33] AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT ID = (30.83..76.67] AND NOT target = 1 AND NOT sex = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT ID = (30.83..76.67] AND NOT target = 1 AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_9 = (-inf..31.17] AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_3 = (31.67..63.33] AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_7 = (158.33..+inf) AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_8 = (-inf..31.17] AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_6 = (-inf..32.33] AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_2 = (32.17..64.33] AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_4 = (-inf..33.67] AND NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (31.67..63.33] AND NOT gain_ratio_4 = (-inf..33.67] AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT ID = (30.83..76.67] AND NOT gain_ratio_4 = (-inf..33.67] AND NOT gain_ratio_9 = (-inf..31.17] THEN NOT 1"
+  # hypos left: 3
+  exp time: 7.48
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (30.83..76.67] AND target = 1 AND gain_ratio_1 = (66.33..99.5] AND gain_ratio_2 = (128.67..160.83] AND gain_ratio_3 = (95.0..126.67] AND gain_ratio_4 = (33.67..67.33] AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (129.33..161.67] AND gain_ratio_7 = (126.67..158.33] AND gain_ratio_8 = (124.67..155.83] AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (99.0..132.0] AND sex = 0 THEN 1"
+  explanation: "IF NOT ID = (30.83..76.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (162.5..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] AND NOT gain_ratio_8 = (124.67..155.83] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (95.0..126.67] AND NOT gain_ratio_4 = (33.67..67.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] AND NOT gain_ratio_3 = (95.0..126.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_7 = (126.67..158.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (33.67..67.33] AND NOT gain_ratio_11 = (99.0..132.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (66.33..99.5] AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (95.0..126.67] AND NOT gain_ratio_6 = (129.33..161.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (129.33..161.67] AND NOT gain_ratio_8 = (124.67..155.83] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_6 = (129.33..161.67] AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_6 = (129.33..161.67] AND NOT gain_ratio_9 = (155.83..+inf) AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_6 = (129.33..161.67] AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_9 = (155.83..+inf) AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_2 = (128.67..160.83] AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_2 = (128.67..160.83] AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (66.33..99.5] AND NOT gain_ratio_2 = (128.67..160.83] AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] AND NOT gain_ratio_9 = (155.83..+inf) AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (95.0..126.67] AND NOT gain_ratio_9 = (155.83..+inf) AND NOT sex = 0 THEN NOT 1"
+  # hypos left: 3
+  exp time: 1.89
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (30.83..76.67] AND target = 1 AND gain_ratio_1 = (66.33..99.5] AND gain_ratio_2 = (96.5..128.67] AND gain_ratio_3 = (31.67..63.33] AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (31.67..63.33] AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (93.5..124.67] AND gain_ratio_10 = (97.5..130.0] AND gain_ratio_11 = (132.0..165.0] AND sex = 0 THEN 0"
+  explanation: "IF NOT ID = (30.83..76.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (96.5..128.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (66.33..99.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (97.5..130.0] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT sex = 0 THEN NOT 0"
+  # hypos left: 1
+  exp time: 0.18
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (30.83..76.67] AND target = 1 AND gain_ratio_1 = (99.5..132.67] AND gain_ratio_2 = (64.33..96.5] AND gain_ratio_3 = (95.0..126.67] AND gain_ratio_4 = (101.0..134.67] AND gain_ratio_5 = (98.0..130.67] AND gain_ratio_6 = (64.67..97.0] AND gain_ratio_7 = (63.33..95.0] AND gain_ratio_8 = (93.5..124.67] AND gain_ratio_9 = (124.67..155.83] AND gain_ratio_10 = (130.0..162.5] AND gain_ratio_11 = (99.0..132.0] AND sex = 0 THEN 0"
+  explanation: "IF NOT gain_ratio_2 = (64.33..96.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (99.5..132.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (101.0..134.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT ID = (30.83..76.67] AND NOT gain_ratio_8 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (30.83..76.67] AND NOT gain_ratio_6 = (64.67..97.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (64.67..97.0] AND NOT gain_ratio_8 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (64.67..97.0] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (30.83..76.67] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (93.5..124.67] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_11 = (99.0..132.0] AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (93.5..124.67] AND NOT gain_ratio_11 = (99.0..132.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (64.67..97.0] AND NOT gain_ratio_11 = (99.0..132.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (30.83..76.67] AND NOT target = 1 AND NOT gain_ratio_3 = (95.0..126.67] AND NOT gain_ratio_5 = (98.0..130.67] AND NOT gain_ratio_11 = (99.0..132.0] THEN NOT 0"
+  # hypos left: 5
+  exp time: 0.62
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (30.83..76.67] AND target = 2 AND gain_ratio_1 = (33.17..66.33] AND gain_ratio_2 = (32.17..64.33] AND gain_ratio_3 = (31.67..63.33] AND gain_ratio_4 = (67.33..101.0] AND gain_ratio_5 = (32.67..65.33] AND gain_ratio_6 = (97.0..129.33] AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (62.33..93.5] AND gain_ratio_9 = (31.17..62.33] AND gain_ratio_10 = (65.0..97.5] AND gain_ratio_11 = (33.0..66.0] AND sex = 0 THEN 0"
+  explanation: "IF NOT target = 2 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT ID = (30.83..76.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (32.67..65.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT sex = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_11 = (33.0..66.0] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (31.17..62.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_10 = (65.0..97.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (32.17..64.33] AND NOT gain_ratio_10 = (65.0..97.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_7 = (158.33..+inf) AND NOT gain_ratio_10 = (65.0..97.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (32.17..64.33] AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (97.0..129.33] AND NOT gain_ratio_8 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (31.67..63.33] AND NOT gain_ratio_10 = (65.0..97.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (31.67..63.33] AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (32.17..64.33] AND NOT gain_ratio_3 = (31.67..63.33] THEN NOT 0"
+  # hypos left: 2
+  exp time: 0.80
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (76.67..137.5] AND target = 0 AND gain_ratio_1 = (132.67..165.83] AND gain_ratio_2 = (-inf..32.17] AND gain_ratio_3 = (126.67..158.33] AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (64.67..97.0] AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (165.0..+inf) AND sex = 1 THEN 0"
+  explanation: "IF NOT gain_ratio_6 = (64.67..97.0] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (132.67..165.83] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (-inf..32.17] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_7 = (158.33..+inf) AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (155.83..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (155.83..+inf) AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (76.67..137.5] AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (76.67..137.5] AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (76.67..137.5] AND NOT gain_ratio_10 = (162.5..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (76.67..137.5] AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (76.67..137.5] AND NOT gain_ratio_3 = (126.67..158.33] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT ID = (76.67..137.5] AND NOT target = 0 AND NOT gain_ratio_5 = (163.33..+inf) THEN NOT 0"
+  # hypos left: 3
+  exp time: 0.55
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (76.67..137.5] AND target = 0 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (96.5..128.67] AND gain_ratio_3 = (63.33..95.0] AND gain_ratio_4 = (33.67..67.33] AND gain_ratio_5 = (-inf..32.67] AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (63.33..95.0] AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (-inf..31.17] AND gain_ratio_10 = (32.5..65.0] AND gain_ratio_11 = (-inf..33.0] AND sex = 0 THEN 0"
+  explanation: "IF NOT ID = (76.67..137.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (96.5..128.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (33.67..67.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT sex = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (32.5..65.0] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (-inf..32.67] AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (-inf..32.67] AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 0"
+  # hypos left: 2
+  exp time: 0.29
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (76.67..137.5] AND target = 0 AND gain_ratio_1 = (66.33..99.5] AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (158.33..+inf) AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (165.0..+inf) AND sex = 0 THEN 0"
+  explanation: "IF NOT ID = (76.67..137.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (66.33..99.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_5 = (163.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 0 AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_7 = (158.33..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_11 = (165.0..+inf) AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (155.83..+inf) AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_7 = (158.33..+inf) AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  exp time: 0.54
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (76.67..137.5] AND target = 1 AND gain_ratio_1 = (132.67..165.83] AND gain_ratio_2 = (96.5..128.67] AND gain_ratio_3 = (158.33..+inf) AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (126.67..158.33] AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (124.67..155.83] AND gain_ratio_10 = (97.5..130.0] AND gain_ratio_11 = (165.0..+inf) AND sex = 1 THEN 1"
+  explanation: "IF NOT ID = (76.67..137.5] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (96.5..128.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_8 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_11 = (165.0..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (124.67..155.83] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (97.5..130.0] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_7 = (126.67..158.33] THEN NOT 1"
+  # hypos left: 2
+  exp time: 0.42
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (76.67..137.5] AND target = 1 AND gain_ratio_1 = (132.67..165.83] AND gain_ratio_2 = (96.5..128.67] AND gain_ratio_3 = (95.0..126.67] AND gain_ratio_4 = (134.67..168.33] AND gain_ratio_5 = (130.67..163.33] AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (126.67..158.33] AND gain_ratio_8 = (124.67..155.83] AND gain_ratio_9 = (124.67..155.83] AND gain_ratio_10 = (130.0..162.5] AND gain_ratio_11 = (132.0..165.0] AND sex = 1 THEN 0"
+  explanation: "IF NOT target = 1 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT ID = (76.67..137.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_11 = (132.0..165.0] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (96.5..128.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (132.67..165.83] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (134.67..168.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) AND NOT gain_ratio_8 = (124.67..155.83] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_10 = (130.0..162.5] AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_7 = (126.67..158.33] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (130.67..163.33] AND NOT gain_ratio_10 = (130.0..162.5] THEN NOT 0"
+  # hypos left: 2
+  exp time: 0.38
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (76.67..137.5] AND target = 1 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (128.67..160.83] AND gain_ratio_3 = (126.67..158.33] AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (65.33..98.0] AND gain_ratio_6 = (-inf..32.33] AND gain_ratio_7 = (126.67..158.33] AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (165.0..+inf) AND sex = 0 THEN 0"
+  explanation: "IF NOT target = 1 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT ID = (76.67..137.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (65.33..98.0] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (126.67..158.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_6 = (-inf..32.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT gain_ratio_8 = (155.83..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (155.83..+inf) AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) AND NOT sex = 0 THEN NOT 0"
+  # hypos left: 2
+  exp time: 0.30
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (76.67..137.5] AND target = 1 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (158.33..+inf) AND gain_ratio_4 = (101.0..134.67] AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (93.5..124.67] AND gain_ratio_9 = (62.33..93.5] AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (99.0..132.0] AND sex = 1 THEN 0"
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_8 = (93.5..124.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (101.0..134.67] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_11 = (99.0..132.0] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT ID = (76.67..137.5] AND NOT sex = 1 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT ID = (76.67..137.5] AND NOT target = 1 THEN NOT 0"
+  # hypos left: 2
+  exp time: 0.24
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (76.67..137.5] AND target = 1 AND gain_ratio_1 = (165.83..+inf) AND gain_ratio_2 = (160.83..+inf) AND gain_ratio_3 = (158.33..+inf) AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (158.33..+inf) AND gain_ratio_8 = (155.83..+inf) AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (165.0..+inf) AND sex = 1 THEN 1"
+  explanation: "IF NOT ID = (76.67..137.5] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (162.5..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (165.83..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (168.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_11 = (165.0..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_3 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (160.83..+inf) AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_7 = (158.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_6 = (161.67..+inf) THEN NOT 1"
+  # hypos left: 2
+  exp time: 0.43
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (76.67..137.5] AND target = 1 AND gain_ratio_1 = (33.17..66.33] AND gain_ratio_2 = (32.17..64.33] AND gain_ratio_3 = (95.0..126.67] AND gain_ratio_4 = (168.33..+inf) AND gain_ratio_5 = (163.33..+inf) AND gain_ratio_6 = (129.33..161.67] AND gain_ratio_7 = (126.67..158.33] AND gain_ratio_8 = (93.5..124.67] AND gain_ratio_9 = (124.67..155.83] AND gain_ratio_10 = (65.0..97.5] AND gain_ratio_11 = (99.0..132.0] AND sex = 0 THEN 1"
+  explanation: "IF NOT ID = (76.67..137.5] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_2 = (32.17..64.33] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_11 = (99.0..132.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_10 = (65.0..97.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_7 = (126.67..158.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_8 = (93.5..124.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_3 = (95.0..126.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_1 = (33.17..66.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_3 = (95.0..126.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_10 = (65.0..97.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_4 = (168.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_6 = (129.33..161.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (95.0..126.67] AND NOT gain_ratio_6 = (129.33..161.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_6 = (129.33..161.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 1 AND NOT gain_ratio_9 = (124.67..155.83] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_9 = (124.67..155.83] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_9 = (124.67..155.83] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_10 = (65.0..97.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (163.33..+inf) AND NOT gain_ratio_6 = (129.33..161.67] THEN NOT 1"
+  # hypos left: 2
+  exp time: 0.93
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (76.67..137.5] AND target = 2 AND gain_ratio_1 = (-inf..33.17] AND gain_ratio_2 = (64.33..96.5] AND gain_ratio_3 = (63.33..95.0] AND gain_ratio_4 = (67.33..101.0] AND gain_ratio_5 = (65.33..98.0] AND gain_ratio_6 = (64.67..97.0] AND gain_ratio_7 = (63.33..95.0] AND gain_ratio_8 = (62.33..93.5] AND gain_ratio_9 = (93.5..124.67] AND gain_ratio_10 = (32.5..65.0] AND gain_ratio_11 = (66.0..99.0] AND sex = 1 THEN 1"
+  explanation: "IF NOT gain_ratio_1 = (-inf..33.17] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_5 = (65.33..98.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (65.33..98.0] AND NOT gain_ratio_6 = (64.67..97.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_5 = (65.33..98.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (65.33..98.0] AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (65.33..98.0] AND NOT gain_ratio_8 = (62.33..93.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (65.33..98.0] AND NOT gain_ratio_9 = (93.5..124.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_5 = (65.33..98.0] AND NOT gain_ratio_7 = (63.33..95.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT ID = (76.67..137.5] AND NOT gain_ratio_5 = (65.33..98.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 2 AND NOT gain_ratio_6 = (64.67..97.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 2 AND NOT gain_ratio_4 = (67.33..101.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 2 AND NOT gain_ratio_3 = (63.33..95.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_4 = (67.33..101.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (64.67..97.0] AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 2 AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (67.33..101.0] AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (64.67..97.0] AND NOT gain_ratio_7 = (63.33..95.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_7 = (63.33..95.0] AND NOT gain_ratio_11 = (66.0..99.0] THEN NOT 1"
+  # hypos left: 2
+  exp time: 1.16
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (76.67..137.5] AND target = 2 AND gain_ratio_1 = (33.17..66.33] AND gain_ratio_2 = (96.5..128.67] AND gain_ratio_3 = (31.67..63.33] AND gain_ratio_4 = (134.67..168.33] AND gain_ratio_5 = (65.33..98.0] AND gain_ratio_6 = (64.67..97.0] AND gain_ratio_7 = (31.67..63.33] AND gain_ratio_8 = (62.33..93.5] AND gain_ratio_9 = (-inf..31.17] AND gain_ratio_10 = (-inf..32.5] AND gain_ratio_11 = (-inf..33.0] AND sex = 0 THEN 0"
+  explanation: "IF NOT sex = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_7 = (31.67..63.33] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_4 = (134.67..168.33] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_2 = (96.5..128.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_6 = (64.67..97.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_8 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_1 = (33.17..66.33] AND NOT gain_ratio_10 = (-inf..32.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_10 = (-inf..32.5] AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_6 = (64.67..97.0] AND NOT gain_ratio_10 = (-inf..32.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (62.33..93.5] AND NOT gain_ratio_10 = (-inf..32.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (62.33..93.5] AND NOT gain_ratio_11 = (-inf..33.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (134.67..168.33] AND NOT gain_ratio_8 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (96.5..128.67] AND NOT gain_ratio_4 = (134.67..168.33] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (134.67..168.33] AND NOT gain_ratio_6 = (64.67..97.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_4 = (134.67..168.33] AND NOT gain_ratio_10 = (-inf..32.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 2 AND NOT gain_ratio_4 = (134.67..168.33] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 2 AND NOT gain_ratio_5 = (65.33..98.0] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 2 AND NOT gain_ratio_2 = (96.5..128.67] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT target = 2 AND NOT gain_ratio_8 = (62.33..93.5] THEN NOT 0"
+  # hypos left: 2
+  exp time: 1.10
+
+Sample of length 14  :  [[1. 1. 2. 2. 3. 0. 3. 3. 0. 2. 2. 2. 2. 1.]]
+Encoded sample of length 77  :  [[0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.
+  1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 1.]]
+Back to sample [array([1., 1., 2., 2., 3., 0., 3., 3., 0., 2., 2., 2., 2., 1.])]
+Readable sample ['(137.5..201.33]' '1' '(165.83..+inf)' '(160.83..+inf)' '(31.67..63.33]'
+ '(-inf..33.67]' '(32.67..65.33]' '(32.33..64.67]' '(-inf..31.67]'
+ '(155.83..+inf)' '(155.83..+inf)' '(162.5..+inf)' '(165.0..+inf)' '1']
+  explaining:  "IF ID = (76.67..137.5] AND target = 2 AND gain_ratio_1 = (99.5..132.67] AND gain_ratio_2 = (128.67..160.83] AND gain_ratio_3 = (63.33..95.0] AND gain_ratio_4 = (101.0..134.67] AND gain_ratio_5 = (98.0..130.67] AND gain_ratio_6 = (161.67..+inf) AND gain_ratio_7 = (95.0..126.67] AND gain_ratio_8 = (124.67..155.83] AND gain_ratio_9 = (155.83..+inf) AND gain_ratio_10 = (162.5..+inf) AND gain_ratio_11 = (165.0..+inf) AND sex = 0 THEN 1"
+  explanation: "IF NOT ID = (76.67..137.5] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_6 = (161.67..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_4 = (101.0..134.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_10 = (162.5..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_7 = (95.0..126.67] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT gain_ratio_9 = (155.83..+inf) AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT target = 2 AND NOT gain_ratio_5 = (98.0..130.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] AND NOT gain_ratio_5 = (98.0..130.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_8 = (124.67..155.83] AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_5 = (98.0..130.67] AND NOT gain_ratio_8 = (124.67..155.83] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_8 = (124.67..155.83] AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_5 = (98.0..130.67] AND NOT gain_ratio_8 = (124.67..155.83] AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (99.5..132.67] AND NOT gain_ratio_8 = (124.67..155.83] AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (99.5..132.67] AND NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_8 = (124.67..155.83] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] AND NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] AND NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_8 = (124.67..155.83] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (99.5..132.67] AND NOT gain_ratio_2 = (128.67..160.83] AND NOT gain_ratio_8 = (124.67..155.83] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] AND NOT gain_ratio_8 = (124.67..155.83] AND NOT gain_ratio_9 = (155.83..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_2 = (128.67..160.83] AND NOT gain_ratio_3 = (63.33..95.0] AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT gain_ratio_1 = (99.5..132.67] AND NOT gain_ratio_2 = (128.67..160.83] AND NOT gain_ratio_11 = (165.0..+inf) THEN NOT 1"
+  # hypos left: 3
+  exp time: 1.89
+
+
+exptimes: [0.9371149999999999, 1.3573509999999995, 1.0013779999999999, 0.17352800000000013, 1.7320989999999998, 0.27438000000000073, 0.3592960000000005, 0.19163700000000006, 3.2993720000000017, 1.027184, 0.3265779999999996, 0.3542719999999999, 1.9862339999999996, 4.185914, 0.2734659999999991, 3.241505, 3.625124999999997, 0.5634189999999997, 4.248724000000003, 0.22240599999999233, 0.15312000000000126, 2.6052510000000026, 0.7834470000000024, 6.598554, 1.1556989999999985, 1.1413269999999969, 1.4914309999999986, 2.2061290000000042, 0.5288919999999919, 0.9550640000000001, 1.7520409999999984, 2.5964469999999977, 0.7347430000000017, 4.428398000000001, 0.5016400000000019, 1.0861620000000016, 1.4303950000000043, 0.6185019999999923, 1.181561000000002, 0.5692589999999882, 3.5031609999999915, 0.5744439999999997, 0.6995570000000129, 0.24294200000001354, 1.1453249999999997, 0.6914799999999843, 4.218548999999996, 0.5816059999999936, 0.4969329999999843, 0.9477480000000043, 7.478245000000001, 1.8922639999999973, 0.17688499999999863, 0.622681, 0.7983519999999942, 0.5498499999999922, 0.28875499999999477, 0.5398080000000078, 0.4247570000000138, 0.38124499999999273, 0.2960109999999929, 0.2378970000000038, 0.43034899999999254, 0.9319549999999879, 1.163757000000004, 1.0991779999999949, 1.8882990000000035]
+all samples: 67
+total exp time: 94.20
+max exp time per instance: 7.48
+min exp time per instance: 0.15
+avg exp time per instance: 1.41
+total oracle calls: 11898
+max oracle calls per instance: 734
+min oracle calls per instance: 37
+avg oracle calls per instance: 177.58
+avg number of explanations per instance: 15.72
+avg explanation size per instance: 1.82
+

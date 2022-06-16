@@ -1,0 +1,1410 @@
+c XDual: dual explanations for XGBoost models
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (-inf..28.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 0 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 0 AND ASCITES = 0 AND VARICES = 1 AND BILIRUBIN = (5.67..11.33] AND ALK PHOSPHATE = (13.83..27.67] AND SGOT = (-inf..14.0] AND ALBUMIN = (4.83..9.67] AND PROTIME = (-inf..7.33] AND HISTOLOGY = 2 THEN 2"
+  explanation: "IF NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT ALBUMIN = (4.83..9.67] THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT AGE = (-inf..28.0] THEN NOT 2"
+  # hypos left: 1
+  exp time: 0.19
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (-inf..28.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..5.67] AND ALK PHOSPHATE = (69.17..+inf) AND SGOT = (56.0..70.0] AND ALBUMIN = (9.67..14.5] AND PROTIME = (-inf..7.33] AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT ASCITES = 1 AND NOT BILIRUBIN = (-inf..5.67] AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT BILIRUBIN = (-inf..5.67] AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT VARICES = 1 AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT VARICES = 1 AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT SPIDERS = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT ASCITES = 1 AND NOT ALK PHOSPHATE = (69.17..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT ASCITES = 1 AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT ASCITES = 1 AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT ASCITES = 1 AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT STEROID = 0 AND NOT LIVER FIRM = 1 AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (-inf..5.67] AND NOT ALBUMIN = (9.67..14.5] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT MALAISE = 0 AND NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT SPLEEN PALPABLE = 1 AND NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT STEROID = 0 AND NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT FATIGUE = 0 AND NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT SPIDERS = 1 AND NOT BILIRUBIN = (-inf..5.67] AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  exp time: 1.48
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (-inf..28.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 2 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (5.67..11.33] AND ALK PHOSPHATE = (69.17..+inf) AND SGOT = (14.0..28.0] AND ALBUMIN = (14.5..19.33] AND PROTIME = (36.67..+inf) AND HISTOLOGY = 2 THEN 2"
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT SPIDERS = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT SPIDERS = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT SPIDERS = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT VARICES = 1 AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT ALBUMIN = (14.5..19.33] AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT LIVER FIRM = 2 AND NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT LIVER FIRM = 2 AND NOT SPLEEN PALPABLE = 1 AND NOT SPIDERS = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT ALBUMIN = (14.5..19.33] AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT SGOT = (14.0..28.0] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT STEROID = 0 AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT ALK PHOSPHATE = (69.17..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT LIVER FIRM = 2 AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT ASCITES = 1 AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT ASCITES = 1 AND NOT ALBUMIN = (14.5..19.33] AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  exp time: 1.42
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (-inf..28.0] AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 0 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND ASCITES = 0 AND VARICES = 0 AND BILIRUBIN = (5.67..11.33] AND ALK PHOSPHATE = (27.67..41.5] AND SGOT = (14.0..28.0] AND ALBUMIN = (19.33..24.17] AND PROTIME = (22.0..29.33] AND HISTOLOGY = 2 THEN 1"
+  explanation: "IF NOT SEX = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT STEROID = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT ALBUMIN = (19.33..24.17] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT ANOREXIA = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT MALAISE = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT VARICES = 0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT ASCITES = 0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT SPIDERS = 0 THEN NOT 1"
+  # hypos left: 1
+  exp time: 0.15
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (-inf..28.0] AND SEX = 2 AND STEROID = 1 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (11.33..17.0] AND ALK PHOSPHATE = (27.67..41.5] AND SGOT = (42.0..56.0] AND ALBUMIN = (4.83..9.67] AND PROTIME = (14.67..22.0] AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF NOT LIVER FIRM = 0 AND NOT SPIDERS = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT PROTIME = (14.67..22.0] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT SPIDERS = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT STEROID = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT ASCITES = 1 AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT ASCITES = 1 AND NOT ALBUMIN = (4.83..9.67] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT ALBUMIN = (4.83..9.67] AND NOT PROTIME = (14.67..22.0] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT PROTIME = (14.67..22.0] AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT ASCITES = 1 AND NOT PROTIME = (14.67..22.0] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT VARICES = 1 AND NOT PROTIME = (14.67..22.0] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT FATIGUE = 0 AND NOT VARICES = 1 AND NOT ALBUMIN = (4.83..9.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT SEX = 2 AND NOT VARICES = 1 AND NOT ALBUMIN = (4.83..9.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT MALAISE = 0 AND NOT VARICES = 1 AND NOT ALBUMIN = (4.83..9.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT SPLEEN PALPABLE = 1 AND NOT VARICES = 1 AND NOT ALBUMIN = (4.83..9.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT VARICES = 1 AND NOT BILIRUBIN = (11.33..17.0] AND NOT ALBUMIN = (4.83..9.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT SEX = 2 AND NOT VARICES = 1 AND NOT BILIRUBIN = (11.33..17.0] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT FATIGUE = 0 AND NOT VARICES = 1 AND NOT BILIRUBIN = (11.33..17.0] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT SPLEEN PALPABLE = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (11.33..17.0] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (-inf..28.0] AND NOT VARICES = 1 AND NOT BILIRUBIN = (11.33..17.0] AND NOT SGOT = (42.0..56.0] THEN NOT 2"
+  # hypos left: 4
+  exp time: 2.41
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (28.0..37.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 0 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..5.67] AND ALK PHOSPHATE = (69.17..+inf) AND SGOT = (56.0..70.0] AND ALBUMIN = (24.17..+inf) AND PROTIME = (36.67..+inf) AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 1 AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPLEEN PALPABLE = 1 AND NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT ANOREXIA = 0 AND NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT MALAISE = 0 AND NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT STEROID = 0 AND NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT ANOREXIA = 0 AND NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPLEEN PALPABLE = 1 AND NOT SPIDERS = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT FATIGUE = 0 AND NOT SPIDERS = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT MALAISE = 0 AND NOT SPIDERS = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ANOREXIA = 0 AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT ALBUMIN = (24.17..+inf) AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT BILIRUBIN = (-inf..5.67] AND NOT ALBUMIN = (24.17..+inf) AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT BILIRUBIN = (-inf..5.67] AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT ALBUMIN = (24.17..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ANOREXIA = 0 AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 4
+  exp time: 2.49
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (28.0..37.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 0 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..22.67] AND ALK PHOSPHATE = (13.83..27.67] AND SGOT = (14.0..28.0] AND ALBUMIN = (24.17..+inf) AND PROTIME = (36.67..+inf) AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT BILIRUBIN = (17.0..22.67] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT LIVER FIRM = 0 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT LIVER FIRM = 0 AND NOT SPLEEN PALPABLE = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPLEEN PALPABLE = 1 AND NOT ALK PHOSPHATE = (13.83..27.67] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT MALAISE = 0 AND NOT SPLEEN PALPABLE = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT LIVER BIG = 0 AND NOT SPLEEN PALPABLE = 1 AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT LIVER BIG = 0 AND NOT PROTIME = (36.67..+inf) AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT FATIGUE = 0 AND NOT MALAISE = 0 AND NOT ALK PHOSPHATE = (13.83..27.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT MALAISE = 0 AND NOT LIVER BIG = 0 AND NOT VARICES = 1 AND NOT BILIRUBIN = (17.0..22.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT FATIGUE = 0 AND NOT LIVER BIG = 0 AND NOT VARICES = 1 AND NOT BILIRUBIN = (17.0..22.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT LIVER BIG = 0 AND NOT SPLEEN PALPABLE = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (17.0..22.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT STEROID = 0 AND NOT SPLEEN PALPABLE = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (17.0..22.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT MALAISE = 0 AND NOT SPLEEN PALPABLE = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (17.0..22.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT LIVER FIRM = 0 AND NOT SPLEEN PALPABLE = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (17.0..22.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT STEROID = 0 AND NOT LIVER FIRM = 0 AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT FATIGUE = 0 AND NOT LIVER FIRM = 0 AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT MALAISE = 0 AND NOT LIVER FIRM = 0 AND NOT VARICES = 1 AND NOT BILIRUBIN = (17.0..22.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT LIVER BIG = 0 AND NOT LIVER FIRM = 0 AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  exp time: 2.43
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (28.0..37.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 0 AND VARICES = 1 AND BILIRUBIN = (-inf..5.67] AND ALK PHOSPHATE = (55.33..69.17] AND SGOT = (70.0..+inf) AND ALBUMIN = (4.83..9.67] AND PROTIME = (-inf..7.33] AND HISTOLOGY = 2 THEN 2"
+  explanation: "IF NOT SPIDERS = 1 THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT LIVER FIRM = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SGOT = (70.0..+inf) THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ALBUMIN = (4.83..9.67] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT BILIRUBIN = (-inf..5.67] AND NOT ALBUMIN = (4.83..9.67] AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT VARICES = 1 AND NOT ALBUMIN = (4.83..9.67] AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT STEROID = 0 AND NOT VARICES = 1 AND NOT SGOT = (70.0..+inf) AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT STEROID = 0 AND NOT LIVER FIRM = 1 AND NOT VARICES = 1 AND NOT ALBUMIN = (4.83..9.67] THEN NOT 2"
+  # hypos left: 4
+  exp time: 0.62
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (28.0..37.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (5.67..11.33] AND ALK PHOSPHATE = (55.33..69.17] AND SGOT = (14.0..28.0] AND ALBUMIN = (14.5..19.33] AND PROTIME = (14.67..22.0] AND HISTOLOGY = 2 THEN 2"
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT BILIRUBIN = (5.67..11.33] AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT PROTIME = (14.67..22.0] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT ASCITES = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT ALBUMIN = (14.5..19.33] AND NOT PROTIME = (14.67..22.0] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT ALBUMIN = (14.5..19.33] AND NOT PROTIME = (14.67..22.0] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT SGOT = (14.0..28.0] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT STEROID = 0 AND NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT FATIGUE = 0 AND NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT LIVER FIRM = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPLEEN PALPABLE = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT BILIRUBIN = (5.67..11.33] AND NOT ALK PHOSPHATE = (55.33..69.17] AND NOT PROTIME = (14.67..22.0] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT BILIRUBIN = (5.67..11.33] AND NOT SGOT = (14.0..28.0] AND NOT PROTIME = (14.67..22.0] THEN NOT 2"
+  # hypos left: 4
+  exp time: 1.56
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (28.0..37.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..5.67] AND ALK PHOSPHATE = (69.17..+inf) AND SGOT = (70.0..+inf) AND ALBUMIN = (9.67..14.5] AND PROTIME = (36.67..+inf) AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT VARICES = 1 AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT LIVER FIRM = 0 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT LIVER FIRM = 0 AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT LIVER FIRM = 0 AND NOT BILIRUBIN = (-inf..5.67] AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT ALBUMIN = (9.67..14.5] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT LIVER FIRM = 0 AND NOT SPLEEN PALPABLE = 1 AND NOT BILIRUBIN = (-inf..5.67] AND NOT ALK PHOSPHATE = (69.17..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT STEROID = 0 AND NOT LIVER FIRM = 0 AND NOT VARICES = 1 AND NOT ALBUMIN = (9.67..14.5] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT LIVER FIRM = 0 AND NOT SPLEEN PALPABLE = 1 AND NOT VARICES = 1 AND NOT ALBUMIN = (9.67..14.5] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT STEROID = 0 AND NOT LIVER FIRM = 0 AND NOT SPLEEN PALPABLE = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT LIVER FIRM = 0 AND NOT SPLEEN PALPABLE = 1 AND NOT ALK PHOSPHATE = (69.17..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT LIVER FIRM = 0 AND NOT SPLEEN PALPABLE = 1 AND NOT ALBUMIN = (9.67..14.5] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT LIVER FIRM = 0 AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 0 AND NOT PROTIME = (36.67..+inf) AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT PROTIME = (36.67..+inf) AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 0 AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPLEEN PALPABLE = 1 AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  exp time: 1.09
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (28.0..37.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 0 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..5.67] AND ALK PHOSPHATE = (69.17..+inf) AND SGOT = (42.0..56.0] AND ALBUMIN = (14.5..19.33] AND PROTIME = (36.67..+inf) AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF NOT SPIDERS = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT SPIDERS = 1 AND NOT BILIRUBIN = (-inf..5.67] AND NOT ALK PHOSPHATE = (69.17..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT STEROID = 0 AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT LIVER FIRM = 1 AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPLEEN PALPABLE = 0 AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT STEROID = 0 AND NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT LIVER FIRM = 1 AND NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT BILIRUBIN = (-inf..5.67] AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT ALBUMIN = (14.5..19.33] AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT BILIRUBIN = (-inf..5.67] AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT BILIRUBIN = (-inf..5.67] AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT ALBUMIN = (14.5..19.33] AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 4
+  exp time: 1.39
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (28.0..37.0] AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..22.67] AND ALK PHOSPHATE = (55.33..69.17] AND SGOT = (-inf..14.0] AND ALBUMIN = (24.17..+inf) AND PROTIME = (36.67..+inf) AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT ALBUMIN = (24.17..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ALBUMIN = (24.17..+inf) AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT BILIRUBIN = (17.0..22.67] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT ALBUMIN = (24.17..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT ALBUMIN = (24.17..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 1 AND NOT BILIRUBIN = (17.0..22.67] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (17.0..22.67] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SGOT = (-inf..14.0] AND NOT PROTIME = (36.67..+inf) AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ALK PHOSPHATE = (55.33..69.17] AND NOT PROTIME = (36.67..+inf) AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT STEROID = 1 AND NOT PROTIME = (36.67..+inf) AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT STEROID = 1 AND NOT ASCITES = 1 AND NOT SGOT = (-inf..14.0] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT BILIRUBIN = (17.0..22.67] AND NOT SGOT = (-inf..14.0] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT STEROID = 1 AND NOT ASCITES = 1 AND NOT BILIRUBIN = (17.0..22.67] THEN NOT 2"
+  # hypos left: 4
+  exp time: 1.62
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (28.0..37.0] AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..5.67] AND ALK PHOSPHATE = (55.33..69.17] AND SGOT = (28.0..42.0] AND ALBUMIN = (14.5..19.33] AND PROTIME = (36.67..+inf) AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF NOT SPLEEN PALPABLE = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT SPLEEN PALPABLE = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT STEROID = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT ASCITES = 1 AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT ASCITES = 1 AND NOT ALK PHOSPHATE = (55.33..69.17] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT ASCITES = 1 AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT VARICES = 1 AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPLEEN PALPABLE = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT STEROID = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT FATIGUE = 0 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ALK PHOSPHATE = (55.33..69.17] AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT FATIGUE = 0 AND NOT VARICES = 1 AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ALBUMIN = (14.5..19.33] AND NOT PROTIME = (36.67..+inf) AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT STEROID = 1 AND NOT SPLEEN PALPABLE = 1 AND NOT ALK PHOSPHATE = (55.33..69.17] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPLEEN PALPABLE = 1 AND NOT ALK PHOSPHATE = (55.33..69.17] AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 4
+  exp time: 1.30
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (28.0..37.0] AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 2 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..5.67] AND ALK PHOSPHATE = (27.67..41.5] AND SGOT = (56.0..70.0] AND ALBUMIN = (19.33..24.17] AND PROTIME = (-inf..7.33] AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT BILIRUBIN = (-inf..5.67] AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT LIVER FIRM = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT ALBUMIN = (19.33..24.17] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 1 AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 1 AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT STEROID = 1 AND NOT SPIDERS = 1 AND NOT BILIRUBIN = (-inf..5.67] AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT STEROID = 1 AND NOT ALBUMIN = (19.33..24.17] AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT STEROID = 1 AND NOT PROTIME = (-inf..7.33] AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT LIVER FIRM = 1 AND NOT ALBUMIN = (19.33..24.17] AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ALBUMIN = (19.33..24.17] AND NOT PROTIME = (-inf..7.33] AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT LIVER FIRM = 1 AND NOT PROTIME = (-inf..7.33] AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  exp time: 1.12
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (28.0..37.0] AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 2 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..5.67] AND ALK PHOSPHATE = (55.33..69.17] AND SGOT = (28.0..42.0] AND ALBUMIN = (14.5..19.33] AND PROTIME = (-inf..7.33] AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 1 AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 1 AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT STEROID = 1 AND NOT SPIDERS = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT BILIRUBIN = (-inf..5.67] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT ALK PHOSPHATE = (55.33..69.17] AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT SPLEEN PALPABLE = 1 AND NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT BILIRUBIN = (-inf..5.67] AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT BILIRUBIN = (-inf..5.67] AND NOT ALBUMIN = (14.5..19.33] AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT BILIRUBIN = (-inf..5.67] AND NOT ALBUMIN = (14.5..19.33] AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT BILIRUBIN = (-inf..5.67] AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT ALBUMIN = (14.5..19.33] AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  exp time: 1.56
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (28.0..37.0] AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 2 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (28.33..+inf) AND ALK PHOSPHATE = (69.17..+inf) AND SGOT = (70.0..+inf) AND ALBUMIN = (24.17..+inf) AND PROTIME = (36.67..+inf) AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT SPIDERS = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT STEROID = 1 AND NOT SPIDERS = 1 AND NOT ALK PHOSPHATE = (69.17..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT LIVER FIRM = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT SGOT = (70.0..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT ALK PHOSPHATE = (69.17..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT ALBUMIN = (24.17..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT BILIRUBIN = (28.33..+inf) AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT BILIRUBIN = (28.33..+inf) AND NOT ALBUMIN = (24.17..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT BILIRUBIN = (28.33..+inf) AND NOT ALBUMIN = (24.17..+inf) AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (28.33..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT BILIRUBIN = (28.33..+inf) AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT STEROID = 1 AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT SGOT = (70.0..+inf) AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT PROTIME = (36.67..+inf) AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT ALBUMIN = (24.17..+inf) AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT STEROID = 1 AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT ALBUMIN = (24.17..+inf) THEN NOT 2"
+  # hypos left: 4
+  exp time: 1.35
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (28.0..37.0] AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 2 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (5.67..11.33] AND ALK PHOSPHATE = (69.17..+inf) AND SGOT = (14.0..28.0] AND ALBUMIN = (14.5..19.33] AND PROTIME = (-inf..7.33] AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT SPIDERS = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT ALBUMIN = (14.5..19.33] AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT SPLEEN PALPABLE = 1 AND NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT ALBUMIN = (14.5..19.33] AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT SGOT = (14.0..28.0] AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT PROTIME = (-inf..7.33] AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT BILIRUBIN = (5.67..11.33] AND NOT ALBUMIN = (14.5..19.33] AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (28.0..37.0] AND NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 4
+  exp time: 1.88
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (37.0..45.0] AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 1 AND FATIGUE = 0 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (5.67..11.33] AND ALK PHOSPHATE = (69.17..+inf) AND SGOT = (56.0..70.0] AND ALBUMIN = (14.5..19.33] AND PROTIME = (14.67..22.0] AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT VARICES = 1 AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT PROTIME = (14.67..22.0] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT FATIGUE = 0 AND NOT VARICES = 1 AND NOT PROTIME = (14.67..22.0] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPLEEN PALPABLE = 1 AND NOT VARICES = 1 AND NOT PROTIME = (14.67..22.0] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT PROTIME = (14.67..22.0] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT VARICES = 1 AND NOT ALBUMIN = (14.5..19.33] AND NOT PROTIME = (14.67..22.0] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT LIVER FIRM = 0 AND NOT SPIDERS = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT VARICES = 1 AND NOT PROTIME = (14.67..22.0] AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT ASCITES = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT PROTIME = (14.67..22.0] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT PROTIME = (14.67..22.0] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT ASCITES = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT ALK PHOSPHATE = (69.17..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT STEROID = 1 AND NOT ASCITES = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT ALK PHOSPHATE = (69.17..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT ASCITES = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT STEROID = 1 AND NOT ASCITES = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT BILIRUBIN = (5.67..11.33] AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT ALBUMIN = (14.5..19.33] AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT FATIGUE = 0 AND NOT BILIRUBIN = (5.67..11.33] AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 4
+  exp time: 1.95
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (37.0..45.0] AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 2 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 0 AND BILIRUBIN = (11.33..17.0] AND ALK PHOSPHATE = (13.83..27.67] AND SGOT = (-inf..14.0] AND ALBUMIN = (9.67..14.5] AND PROTIME = (22.0..29.33] AND HISTOLOGY = 2 THEN 1"
+  explanation: "IF NOT VARICES = 0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT LIVER BIG = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT AGE = (37.0..45.0] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT FATIGUE = 1 AND NOT ANOREXIA = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT ANOREXIA = 1 AND NOT ALK PHOSPHATE = (13.83..27.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT ANOREXIA = 1 AND NOT HISTOLOGY = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT SPLEEN PALPABLE = 1 AND NOT HISTOLOGY = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT FATIGUE = 1 AND NOT HISTOLOGY = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT ALK PHOSPHATE = (13.83..27.67] AND NOT HISTOLOGY = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT ALBUMIN = (9.67..14.5] AND NOT HISTOLOGY = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT SPIDERS = 0 AND NOT ALBUMIN = (9.67..14.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT FATIGUE = 1 AND NOT ALBUMIN = (9.67..14.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT ANOREXIA = 1 AND NOT ALBUMIN = (9.67..14.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT SEX = 1 AND NOT ALBUMIN = (9.67..14.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT SEX = 1 AND NOT ANOREXIA = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT SEX = 1 AND NOT HISTOLOGY = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT STEROID = 1 AND NOT ALBUMIN = (9.67..14.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT STEROID = 1 AND NOT ANOREXIA = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT STEROID = 1 AND NOT HISTOLOGY = 2 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT STEROID = 1 AND NOT BILIRUBIN = (11.33..17.0] THEN NOT 1"
+  # hypos left: 2
+  exp time: 0.63
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (45.0..53.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 1 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (28.33..+inf) AND ALK PHOSPHATE = (69.17..+inf) AND SGOT = (56.0..70.0] AND ALBUMIN = (24.17..+inf) AND PROTIME = (36.67..+inf) AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF NOT SPIDERS = 1 THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT ASCITES = 1 AND NOT BILIRUBIN = (28.33..+inf) AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT ASCITES = 1 AND NOT ALBUMIN = (24.17..+inf) AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT ASCITES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT PROTIME = (36.67..+inf) AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT ALBUMIN = (24.17..+inf) AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT ALBUMIN = (24.17..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT ASCITES = 1 AND NOT ALBUMIN = (24.17..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT VARICES = 1 AND NOT ALK PHOSPHATE = (69.17..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT STEROID = 0 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT LIVER FIRM = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT VARICES = 1 AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT VARICES = 1 AND NOT ALBUMIN = (24.17..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (28.33..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (28.33..+inf) AND NOT ALBUMIN = (24.17..+inf) THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT STEROID = 0 AND NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT ALBUMIN = (24.17..+inf) THEN NOT 2"
+  # hypos left: 4
+  exp time: 0.84
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (45.0..53.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 0 AND ASCITES = 0 AND VARICES = 0 AND BILIRUBIN = (28.33..+inf) AND ALK PHOSPHATE = (-inf..13.83] AND SGOT = (14.0..28.0] AND ALBUMIN = (-inf..4.83] AND PROTIME = (-inf..7.33] AND HISTOLOGY = 2 THEN 1"
+  explanation: "IF NOT SPIDERS = 0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT ASCITES = 0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT ANOREXIA = 1 AND NOT ALBUMIN = (-inf..4.83] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT ALBUMIN = (-inf..4.83] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT VARICES = 0 AND NOT ALBUMIN = (-inf..4.83] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT SEX = 1 AND NOT ALBUMIN = (-inf..4.83] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT LIVER BIG = 1 AND NOT ALBUMIN = (-inf..4.83] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT SEX = 1 AND NOT VARICES = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT SEX = 1 AND NOT ANOREXIA = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT VARICES = 0 AND NOT BILIRUBIN = (28.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT BILIRUBIN = (28.33..+inf) AND NOT ALBUMIN = (-inf..4.83] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT ANOREXIA = 1 AND NOT LIVER BIG = 1 AND NOT BILIRUBIN = (28.33..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT ANOREXIA = 1 AND NOT BILIRUBIN = (28.33..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT SEX = 1 AND NOT LIVER BIG = 1 AND NOT BILIRUBIN = (28.33..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT SEX = 1 AND NOT BILIRUBIN = (28.33..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT SEX = 1 AND NOT LIVER BIG = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT ANOREXIA = 1 AND NOT LIVER BIG = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT LIVER BIG = 1 AND NOT VARICES = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT STEROID = 0 AND NOT VARICES = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT STEROID = 0 AND NOT LIVER BIG = 1 AND NOT VARICES = 0 THEN NOT 1"
+  # hypos left: 3
+  exp time: 0.46
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (45.0..53.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (5.67..11.33] AND ALK PHOSPHATE = (69.17..+inf) AND SGOT = (70.0..+inf) AND ALBUMIN = (9.67..14.5] AND PROTIME = (7.33..14.67] AND HISTOLOGY = 2 THEN 2"
+  explanation: "IF NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT BILIRUBIN = (5.67..11.33] AND NOT ALBUMIN = (9.67..14.5] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT MALAISE = 0 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT BILIRUBIN = (5.67..11.33] AND NOT ALK PHOSPHATE = (69.17..+inf) THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT VARICES = 1 AND NOT ALBUMIN = (9.67..14.5] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT STEROID = 0 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT ALK PHOSPHATE = (69.17..+inf) THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT FATIGUE = 0 AND NOT SPLEEN PALPABLE = 0 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT FATIGUE = 0 AND NOT SPLEEN PALPABLE = 0 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 3
+  exp time: 0.38
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (45.0..53.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 0 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (5.67..11.33] AND ALK PHOSPHATE = (13.83..27.67] AND SGOT = (42.0..56.0] AND ALBUMIN = (9.67..14.5] AND PROTIME = (36.67..+inf) AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT BILIRUBIN = (5.67..11.33] AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT SPIDERS = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPLEEN PALPABLE = 1 AND NOT SPIDERS = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT ALBUMIN = (9.67..14.5] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT LIVER BIG = 0 AND NOT SPIDERS = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT ASCITES = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT ASCITES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT SPIDERS = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (45.0..53.0] AND NOT SPIDERS = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT PROTIME = (36.67..+inf) THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT SPLEEN PALPABLE = 1 AND NOT SPIDERS = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT ALK PHOSPHATE = (13.83..27.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT LIVER BIG = 0 AND NOT SPLEEN PALPABLE = 1 AND NOT SPIDERS = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT STEROID = 0 AND NOT LIVER BIG = 0 AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT LIVER BIG = 0 AND NOT LIVER FIRM = 1 AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 4
+  exp time: 1.32
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (45.0..53.0] AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 0 AND SPIDERS = 1 AND ASCITES = 0 AND VARICES = 0 AND BILIRUBIN = (17.0..22.67] AND ALK PHOSPHATE = (13.83..27.67] AND SGOT = (70.0..+inf) AND ALBUMIN = (-inf..4.83] AND PROTIME = (-inf..7.33] AND HISTOLOGY = 2 THEN 2"
+  explanation: "IF NOT BILIRUBIN = (17.0..22.67] THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT SPIDERS = 1 THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT SGOT = (70.0..+inf) THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT ALBUMIN = (-inf..4.83] THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT AGE = (45.0..53.0] THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT PROTIME = (-inf..7.33] THEN NOT 2"
+  # hypos left: 1
+  exp time: 0.21
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (53.0..62.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (11.33..17.0] AND ALK PHOSPHATE = (-inf..13.83] AND SGOT = (14.0..28.0] AND ALBUMIN = (9.67..14.5] AND PROTIME = (7.33..14.67] AND HISTOLOGY = 2 THEN 2"
+  explanation: "IF NOT AGE = (53.0..62.0] THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT ALK PHOSPHATE = (-inf..13.83] THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT LIVER FIRM = 0 THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT BILIRUBIN = (11.33..17.0] AND NOT PROTIME = (7.33..14.67] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT ALBUMIN = (9.67..14.5] AND NOT PROTIME = (7.33..14.67] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT MALAISE = 0 AND NOT PROTIME = (7.33..14.67] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT MALAISE = 0 AND NOT ALBUMIN = (9.67..14.5] THEN NOT 2"
+  # hypos left: 2
+  exp time: 0.24
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (53.0..62.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 0 AND ASCITES = 0 AND VARICES = 1 AND BILIRUBIN = (28.33..+inf) AND ALK PHOSPHATE = (69.17..+inf) AND SGOT = (56.0..70.0] AND ALBUMIN = (4.83..9.67] AND PROTIME = (-inf..7.33] AND HISTOLOGY = 2 THEN 1"
+  explanation: "IF NOT SPIDERS = 0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT AGE = (53.0..62.0] AND NOT ASCITES = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (53.0..62.0] AND NOT LIVER FIRM = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT ASCITES = 0 AND NOT ALBUMIN = (4.83..9.67] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT STEROID = 0 AND NOT ASCITES = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT SEX = 1 AND NOT ASCITES = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT LIVER FIRM = 1 AND NOT ASCITES = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT SEX = 1 AND NOT LIVER FIRM = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT SEX = 1 AND NOT BILIRUBIN = (28.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT ASCITES = 0 AND NOT BILIRUBIN = (28.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT LIVER FIRM = 1 AND NOT BILIRUBIN = (28.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (53.0..62.0] AND NOT BILIRUBIN = (28.33..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (53.0..62.0] AND NOT SEX = 1 AND NOT ALBUMIN = (4.83..9.67] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (53.0..62.0] AND NOT SEX = 1 AND NOT STEROID = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (53.0..62.0] AND NOT SEX = 1 AND NOT LIVER BIG = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT STEROID = 0 AND NOT LIVER FIRM = 1 AND NOT ALBUMIN = (4.83..9.67] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT BILIRUBIN = (28.33..+inf) AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT ALBUMIN = (4.83..9.67] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT AGE = (53.0..62.0] AND NOT STEROID = 0 AND NOT LIVER BIG = 1 AND NOT ALBUMIN = (4.83..9.67] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT ANOREXIA = 1 AND NOT LIVER FIRM = 1 AND NOT VARICES = 1 AND NOT ALBUMIN = (4.83..9.67] THEN NOT 1"
+  # hypos left: 4
+  exp time: 0.59
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (53.0..62.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 2 AND LIVER FIRM = 2 AND SPLEEN PALPABLE = 0 AND SPIDERS = 1 AND ASCITES = 0 AND VARICES = 1 AND BILIRUBIN = (22.67..28.33] AND ALK PHOSPHATE = (-inf..13.83] AND SGOT = (28.0..42.0] AND ALBUMIN = (9.67..14.5] AND PROTIME = (14.67..22.0] AND HISTOLOGY = 2 THEN 2"
+  explanation: "IF NOT AGE = (53.0..62.0] THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT PROTIME = (14.67..22.0] THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT SPIDERS = 1 THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT LIVER FIRM = 2 THEN NOT 2"
+  # hypos left: 1
+  explanation: "IF NOT STEROID = 0 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT VARICES = 1 AND NOT BILIRUBIN = (22.67..28.33] THEN NOT 2"
+  # hypos left: 2
+  exp time: 0.39
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (53.0..62.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 2 AND LIVER FIRM = 2 AND SPLEEN PALPABLE = 1 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (28.33..+inf) AND ALK PHOSPHATE = (69.17..+inf) AND SGOT = (70.0..+inf) AND ALBUMIN = (24.17..+inf) AND PROTIME = (36.67..+inf) AND HISTOLOGY = 2 THEN 1"
+  explanation: "IF NOT BILIRUBIN = (28.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT SEX = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT SPIDERS = 0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT STEROID = 0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT PROTIME = (36.67..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT AGE = (53.0..62.0] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT ALBUMIN = (24.17..+inf) THEN NOT 1"
+  # hypos left: 1
+  exp time: 0.15
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (53.0..62.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 0 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (28.33..+inf) AND ALK PHOSPHATE = (69.17..+inf) AND SGOT = (42.0..56.0] AND ALBUMIN = (24.17..+inf) AND PROTIME = (36.67..+inf) AND HISTOLOGY = 2 THEN 1"
+  explanation: "IF NOT BILIRUBIN = (28.33..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT PROTIME = (36.67..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT AGE = (53.0..62.0] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT SPIDERS = 0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT SEX = 1 AND NOT SPLEEN PALPABLE = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT SEX = 1 AND NOT STEROID = 0 AND NOT MALAISE = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT MALAISE = 1 AND NOT SPLEEN PALPABLE = 0 AND NOT ALBUMIN = (24.17..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT STEROID = 0 AND NOT MALAISE = 1 AND NOT SPLEEN PALPABLE = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT STEROID = 0 AND NOT SPLEEN PALPABLE = 0 AND NOT ALBUMIN = (24.17..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT SEX = 1 AND NOT MALAISE = 1 AND NOT ALK PHOSPHATE = (69.17..+inf) AND NOT ALBUMIN = (24.17..+inf) THEN NOT 1"
+  # hypos left: 4
+  exp time: 0.33
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (62.0..+inf) AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 0 AND LIVER BIG = 2 AND LIVER FIRM = 2 AND SPLEEN PALPABLE = 2 AND SPIDERS = 2 AND ASCITES = 2 AND VARICES = 2 AND BILIRUBIN = (11.33..17.0] AND ALK PHOSPHATE = (-inf..13.83] AND SGOT = (56.0..70.0] AND ALBUMIN = (4.83..9.67] AND PROTIME = (7.33..14.67] AND HISTOLOGY = 2 THEN 2"
+  explanation: "IF NOT SPIDERS = 2 AND NOT ASCITES = 2 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT ASCITES = 2 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT FATIGUE = 0 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT SPLEEN PALPABLE = 2 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT MALAISE = 0 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT LIVER BIG = 2 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT ALK PHOSPHATE = (-inf..13.83] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT ALBUMIN = (4.83..9.67] THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT SPIDERS = 2 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT VARICES = 2 THEN NOT 2"
+  # hypos left: 2
+  explanation: "IF NOT LIVER BIG = 2 AND NOT ASCITES = 2 AND NOT ALBUMIN = (4.83..9.67] THEN NOT 2"
+  # hypos left: 3
+  explanation: "IF NOT ANOREXIA = 0 AND NOT LIVER FIRM = 2 AND NOT SPIDERS = 2 AND NOT VARICES = 2 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT LIVER BIG = 2 AND NOT LIVER FIRM = 2 AND NOT SPIDERS = 2 AND NOT VARICES = 2 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT LIVER BIG = 2 AND NOT LIVER FIRM = 2 AND NOT SPIDERS = 2 AND NOT ALK PHOSPHATE = (-inf..13.83] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT STEROID = 0 AND NOT ANOREXIA = 0 AND NOT ASCITES = 2 AND NOT VARICES = 2 AND NOT ALBUMIN = (4.83..9.67] THEN NOT 2"
+  # hypos left: 5
+  explanation: "IF NOT STEROID = 0 AND NOT ANOREXIA = 0 AND NOT LIVER BIG = 2 AND NOT ASCITES = 2 AND NOT VARICES = 2 THEN NOT 2"
+  # hypos left: 5
+  explanation: "IF NOT MALAISE = 0 AND NOT LIVER BIG = 2 AND NOT LIVER FIRM = 2 AND NOT SPLEEN PALPABLE = 2 AND NOT SPIDERS = 2 THEN NOT 2"
+  # hypos left: 5
+  explanation: "IF NOT FATIGUE = 0 AND NOT MALAISE = 0 AND NOT LIVER BIG = 2 AND NOT LIVER FIRM = 2 AND NOT SPIDERS = 2 THEN NOT 2"
+  # hypos left: 5
+  explanation: "IF NOT FATIGUE = 0 AND NOT MALAISE = 0 AND NOT LIVER FIRM = 2 AND NOT SPIDERS = 2 AND NOT ALK PHOSPHATE = (-inf..13.83] THEN NOT 2"
+  # hypos left: 5
+  explanation: "IF NOT STEROID = 0 AND NOT FATIGUE = 0 AND NOT LIVER FIRM = 2 AND NOT SPIDERS = 2 AND NOT VARICES = 2 THEN NOT 2"
+  # hypos left: 5
+  exp time: 1.16
+
+Sample of length 19  :  [[1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 5. 3. 5. 2. 2. 0.]]
+Encoded sample of length 72  :  [[0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1.
+  0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 5., 3., 5., 2.,
+       2., 0.])]
+Readable sample ['(28.0..37.0]' '1' '1' '2' '1' '1' '1' '1' '1' '1' '1' '1' '1'
+ '(5.67..11.33]' '(41.5..55.33]' '(70.0..+inf)' '(19.33..24.17]'
+ '(22.0..29.33]' '1']
+  explaining:  "IF AGE = (62.0..+inf) AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 1 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 0 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (5.67..11.33] AND ALK PHOSPHATE = (69.17..+inf) AND SGOT = (42.0..56.0] AND ALBUMIN = (14.5..19.33] AND PROTIME = (29.33..36.67] AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT PROTIME = (29.33..36.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT LIVER FIRM = 0 AND NOT SPIDERS = 1 AND NOT ASCITES = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT PROTIME = (29.33..36.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT LIVER FIRM = 0 AND NOT SPIDERS = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT LIVER FIRM = 0 AND NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT LIVER FIRM = 0 AND NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT LIVER FIRM = 0 AND NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT LIVER FIRM = 0 AND NOT SPIDERS = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT VARICES = 1 THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT ALBUMIN = (14.5..19.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT ALBUMIN = (14.5..19.33] AND NOT PROTIME = (29.33..36.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT VARICES = 1 AND NOT ALBUMIN = (14.5..19.33] AND NOT PROTIME = (29.33..36.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT SPIDERS = 1 AND NOT VARICES = 1 AND NOT PROTIME = (29.33..36.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT SPIDERS = 1 AND NOT ASCITES = 1 AND NOT VARICES = 1 AND NOT PROTIME = (29.33..36.67] THEN NOT 2"
+  # hypos left: 4
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT PROTIME = (29.33..36.67] AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 5
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT LIVER BIG = 0 AND NOT VARICES = 1 AND NOT BILIRUBIN = (5.67..11.33] AND NOT PROTIME = (29.33..36.67] THEN NOT 2"
+  # hypos left: 5
+  explanation: "IF NOT AGE = (62.0..+inf) AND NOT FATIGUE = 0 AND NOT VARICES = 1 AND NOT PROTIME = (29.33..36.67] AND NOT HISTOLOGY = 1 THEN NOT 2"
+  # hypos left: 5
+  exp time: 3.74
+
+
+exptimes: [0.18893500000000008, 1.484743, 1.4227090000000002, 0.146509, 2.407668, 2.4935659999999986, 2.433480999999997, 0.6208300000000015, 1.5550700000000006, 1.0944270000000014, 1.3914390000000019, 1.6164159999999974, 1.298926999999999, 1.1180800000000026, 1.5558730000000018, 1.3483859999999979, 1.8845150000000004, 1.948715, 0.632716000000002, 0.8437629999999992, 0.4607159999999979, 0.3786330000000042, 1.321204999999999, 0.20643699999999754, 0.23993600000000015, 0.592806000000003, 0.3877829999999989, 0.14600300000000743, 0.3322900000000004, 1.158059999999999, 3.742053999999996]
+all samples: 31
+total exp time: 36.45
+max exp time per instance: 3.74
+min exp time per instance: 0.15
+avg exp time per instance: 1.18
+total oracle calls: 8148
+max oracle calls per instance: 800
+min oracle calls per instance: 37
+avg oracle calls per instance: 262.84
+avg number of explanations per instance: 16.48
+avg explanation size per instance: 2.72
+

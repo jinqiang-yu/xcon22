@@ -1,0 +1,2035 @@
+c XDual: dual explanations for XGBoost models
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (79.04..90.07] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.02..0.03] AND x10 = (0.19..0.24] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.03..0.04] AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.56..0.62] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  explanation: "IF NOT x22 = (0.23..0.28] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x17 = (0.56..0.62] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.19..0.24] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x3 = (79.04..90.07] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.31..+inf) AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x18 = (0.77..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x15 = (0.01..0.02] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.19..0.24] AND NOT x17 = (0.56..0.62] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x17 = (0.56..0.62] AND NOT x18 = (0.77..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x17 = (0.56..0.62] AND NOT x18 = (0.77..+inf) AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x16 = (20.41..22.08] AND NOT x17 = (0.56..0.62] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x3 = (79.04..90.07] AND NOT x17 = (0.56..0.62] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (-inf..128.75] AND NOT x3 = (79.04..90.07] AND NOT x17 = (0.56..0.62] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x17 = (0.56..0.62] AND NOT x19 = (-5.33..-4.6] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.19..0.24] AND NOT x17 = (0.56..0.62] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x3 = (79.04..90.07] AND NOT x17 = (0.56..0.62] AND NOT x20 = (0.31..+inf) AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x3 = (79.04..90.07] AND NOT x14 = (0.03..0.04] AND NOT x17 = (0.56..0.62] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x3 = (79.04..90.07] AND NOT x16 = (20.41..22.08] AND NOT x17 = (0.56..0.62] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x2 = (-inf..128.75] AND NOT x3 = (79.04..90.07] AND NOT x17 = (0.56..0.62] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (-inf..128.75] AND NOT x3 = (79.04..90.07] AND NOT x14 = (0.03..0.04] AND NOT x17 = (0.56..0.62] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 5
+  exp time: 2.84
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (79.04..90.07] AND x4 = (0.01..+inf) AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.01..+inf) AND x9 = (0.03..0.05] AND x10 = (0.33..0.46] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.02..0.03] AND x14 = (0.05..0.07] AND x15 = (0.02..0.03] AND x16 = (18.48..20.41] AND x17 = (0.56..0.62] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  explanation: "IF NOT x22 = (0.23..0.28] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.56..0.62] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x17 = (0.56..0.62] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x13 = (0.02..0.03] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x17 = (0.56..0.62] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.56..0.62] AND NOT x18 = (0.77..+inf) AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.33..0.46] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.56..0.62] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x13 = (0.02..0.03] AND NOT x14 = (0.05..0.07] AND NOT x17 = (0.56..0.62] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x3 = (79.04..90.07] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.56..0.62] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (-inf..128.75] AND NOT x3 = (79.04..90.07] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.56..0.62] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.56..0.62] AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x13 = (0.02..0.03] AND NOT x15 = (0.02..0.03] AND NOT x19 = (-5.33..-4.6] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x3 = (79.04..90.07] AND NOT x13 = (0.02..0.03] AND NOT x19 = (-5.33..-4.6] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.33..0.46] AND NOT x13 = (0.02..0.03] AND NOT x19 = (-5.33..-4.6] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x17 = (0.56..0.62] AND NOT x18 = (0.77..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x18 = (0.77..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x16 = (18.48..20.41] AND NOT x17 = (0.56..0.62] AND NOT x18 = (0.77..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x17 = (0.56..0.62] AND NOT x18 = (0.77..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.33..0.46] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x14 = (0.05..0.07] AND NOT x17 = (0.56..0.62] AND NOT x18 = (0.77..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 5
+  exp time: 4.15
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.0..0.01] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x18 = (0.74..0.77] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x21 = (-inf..2.01] AND x22 = (0.16..0.19] THEN 0"
+  explanation: "IF NOT x13 = (0.01..0.02] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x10 = (-inf..0.14] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x2 = (-inf..128.75] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x3 = (90.07..104.32] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x1 = (-inf..114.66] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x17 = (-inf..0.4] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x21 = (-inf..2.01] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x15 = (0.0..0.01] AND NOT x20 = (0.19..0.22] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT x14 = (0.02..0.03] AND NOT x20 = (0.19..0.22] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT x20 = (0.19..0.22] AND NOT x22 = (0.16..0.19] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT x16 = (25.89..+inf) AND NOT x18 = (0.74..0.77] AND NOT x20 = (0.19..0.22] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x16 = (25.89..+inf) AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.19..0.22] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x14 = (0.02..0.03] AND NOT x18 = (0.74..0.77] AND NOT x22 = (0.16..0.19] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x14 = (0.02..0.03] AND NOT x15 = (0.0..0.01] AND NOT x22 = (0.16..0.19] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x14 = (0.02..0.03] AND NOT x15 = (0.0..0.01] AND NOT x16 = (25.89..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x14 = (0.02..0.03] AND NOT x15 = (0.0..0.01] AND NOT x18 = (0.74..0.77] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x15 = (0.0..0.01] AND NOT x16 = (25.89..+inf) AND NOT x18 = (0.74..0.77] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x15 = (0.0..0.01] AND NOT x18 = (0.74..0.77] AND NOT x22 = (0.16..0.19] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x15 = (0.0..0.01] AND NOT x16 = (25.89..+inf) AND NOT x22 = (0.16..0.19] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x16 = (25.89..+inf) AND NOT x18 = (0.74..0.77] AND NOT x19 = (-6.19..-5.72] AND NOT x22 = (0.16..0.19] THEN NOT 0"
+  # hypos left: 4
+  exp time: 0.49
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.02..0.03] AND x10 = (0.24..0.33] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.02..0.03] AND x14 = (0.04..0.05] AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.5..0.56] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  explanation: "IF NOT x22 = (0.23..0.28] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x17 = (0.5..0.56] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x17 = (0.5..0.56] AND NOT x18 = (0.77..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.5..0.56] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (-inf..128.75] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.5..0.56] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x14 = (0.04..0.05] AND NOT x17 = (0.5..0.56] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x17 = (0.5..0.56] AND NOT x20 = (0.31..+inf) AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x18 = (0.77..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.31..+inf) AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x17 = (0.5..0.56] AND NOT x18 = (0.77..+inf) AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x16 = (20.41..22.08] AND NOT x17 = (0.5..0.56] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x15 = (0.01..0.02] AND NOT x17 = (0.5..0.56] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.5..0.56] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (-inf..128.75] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.5..0.56] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x14 = (0.04..0.05] AND NOT x17 = (0.5..0.56] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x17 = (0.5..0.56] AND NOT x19 = (-5.33..-4.6] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (90.07..104.32] AND NOT x10 = (0.24..0.33] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.5..0.56] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x10 = (0.24..0.33] AND NOT x13 = (0.02..0.03] AND NOT x15 = (0.01..0.02] AND NOT x17 = (0.5..0.56] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x15 = (0.01..0.02] AND NOT x16 = (20.41..22.08] AND NOT x17 = (0.5..0.56] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x10 = (0.24..0.33] AND NOT x15 = (0.01..0.02] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.31..+inf) AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  exp time: 3.41
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.03..0.05] AND x10 = (0.24..0.33] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.02..0.03] AND x14 = (0.05..0.07] AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.62..+inf) AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.22..0.26] AND x21 = (2.01..2.19] AND x22 = (0.23..0.28] THEN 1"
+  explanation: "IF NOT x22 = (0.23..0.28] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x17 = (0.62..+inf) AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x17 = (0.62..+inf) AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x17 = (0.62..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x10 = (0.24..0.33] AND NOT x13 = (0.02..0.03] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x10 = (0.24..0.33] AND NOT x13 = (0.02..0.03] AND NOT x15 = (0.01..0.02] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (90.07..104.32] AND NOT x10 = (0.24..0.33] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x10 = (0.24..0.33] AND NOT x15 = (0.01..0.02] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x15 = (0.01..0.02] AND NOT x18 = (0.77..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x18 = (0.77..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.22..0.26] AND NOT x21 = (2.01..2.19] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x10 = (0.24..0.33] AND NOT x18 = (0.77..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x14 = (0.05..0.07] AND NOT x15 = (0.01..0.02] AND NOT x18 = (0.77..+inf) AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x13 = (0.02..0.03] AND NOT x14 = (0.05..0.07] AND NOT x18 = (0.77..+inf) AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x13 = (0.02..0.03] AND NOT x15 = (0.01..0.02] AND NOT x18 = (0.77..+inf) AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x13 = (0.02..0.03] AND NOT x14 = (0.05..0.07] AND NOT x15 = (0.01..0.02] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (-inf..128.75] AND NOT x13 = (0.02..0.03] AND NOT x14 = (0.05..0.07] AND NOT x15 = (0.01..0.02] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x2 = (-inf..128.75] AND NOT x13 = (0.02..0.03] AND NOT x15 = (0.01..0.02] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (-inf..128.75] AND NOT x13 = (0.02..0.03] AND NOT x15 = (0.01..0.02] AND NOT x18 = (0.77..+inf) AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x2 = (-inf..128.75] AND NOT x13 = (0.02..0.03] AND NOT x14 = (0.05..0.07] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 5
+  exp time: 2.24
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.01..+inf) AND x9 = (0.02..0.03] AND x10 = (0.19..0.24] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.04..0.05] AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.5..0.56] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x20 = (-inf..0.15] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  explanation: "IF NOT x22 = (0.23..0.28] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x10 = (0.19..0.24] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x15 = (0.01..0.02] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x19 = (-5.33..-4.6] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x17 = (0.5..0.56] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x2 = (-inf..128.75] AND NOT x18 = (0.77..+inf) AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x14 = (0.04..0.05] AND NOT x18 = (0.77..+inf) AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x10 = (0.19..0.24] AND NOT x14 = (0.04..0.05] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x10 = (0.19..0.24] AND NOT x18 = (0.77..+inf) AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x10 = (0.19..0.24] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x10 = (0.19..0.24] AND NOT x15 = (0.01..0.02] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x14 = (0.04..0.05] AND NOT x17 = (0.5..0.56] AND NOT x18 = (0.77..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x10 = (0.19..0.24] AND NOT x14 = (0.04..0.05] AND NOT x17 = (0.5..0.56] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (-inf..128.75] AND NOT x14 = (0.04..0.05] AND NOT x17 = (0.5..0.56] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x14 = (0.04..0.05] AND NOT x17 = (0.5..0.56] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x14 = (0.04..0.05] AND NOT x17 = (0.5..0.56] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (90.07..104.32] AND NOT x10 = (0.19..0.24] AND NOT x17 = (0.5..0.56] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (-inf..128.75] AND NOT x10 = (0.19..0.24] AND NOT x17 = (0.5..0.56] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x10 = (0.19..0.24] AND NOT x15 = (0.01..0.02] AND NOT x17 = (0.5..0.56] THEN NOT 1"
+  # hypos left: 3
+  exp time: 1.64
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (128.75..144.29] AND x3 = (79.04..90.07] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.01..+inf) AND x9 = (0.02..0.03] AND x10 = (0.24..0.33] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.02..0.03] AND x14 = (0.04..0.05] AND x15 = (0.03..+inf) AND x16 = (-inf..18.48] AND x17 = (0.62..+inf) AND x18 = (0.66..0.69] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x21 = (2.5..2.7] AND x22 = (0.28..+inf) THEN 1"
+  explanation: "IF NOT x22 = (0.28..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.62..+inf) AND NOT x19 = (-4.6..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x13 = (0.02..0.03] AND NOT x19 = (-4.6..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x19 = (-4.6..+inf) AND NOT x20 = (0.31..+inf) AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.24..0.33] AND NOT x19 = (-4.6..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.24..0.33] AND NOT x13 = (0.02..0.03] AND NOT x19 = (-4.6..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.24..0.33] AND NOT x13 = (0.02..0.03] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x13 = (0.02..0.03] AND NOT x20 = (0.31..+inf) AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.62..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.24..0.33] AND NOT x17 = (0.62..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x17 = (0.62..+inf) AND NOT x19 = (-4.6..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (128.75..144.29] AND NOT x17 = (0.62..+inf) AND NOT x19 = (-4.6..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x17 = (0.62..+inf) AND NOT x18 = (0.66..0.69] AND NOT x19 = (-4.6..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x15 = (0.03..+inf) AND NOT x17 = (0.62..+inf) AND NOT x19 = (-4.6..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x16 = (-inf..18.48] AND NOT x17 = (0.62..+inf) AND NOT x19 = (-4.6..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x14 = (0.04..0.05] AND NOT x17 = (0.62..+inf) AND NOT x19 = (-4.6..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x17 = (0.62..+inf) AND NOT x19 = (-4.6..+inf) AND NOT x20 = (0.31..+inf) AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x17 = (0.62..+inf) AND NOT x19 = (-4.6..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x13 = (0.02..0.03] AND NOT x14 = (0.04..0.05] AND NOT x17 = (0.62..+inf) AND NOT x19 = (-4.6..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (128.75..144.29] AND NOT x13 = (0.02..0.03] AND NOT x14 = (0.04..0.05] AND NOT x17 = (0.62..+inf) AND NOT x19 = (-4.6..+inf) THEN NOT 1"
+  # hypos left: 5
+  exp time: 2.76
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (128.75..144.29] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (0.14..0.19] AND x11 = (-inf..0.01] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.5..0.56] AND x18 = (0.66..0.69] AND x19 = (-5.72..-5.33] AND x20 = (0.15..0.19] AND x21 = (-inf..2.01] AND x22 = (0.19..0.23] THEN 1"
+  explanation: "IF NOT x22 = (0.19..0.23] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x17 = (0.5..0.56] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x20 = (0.15..0.19] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x10 = (0.14..0.19] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x10 = (0.14..0.19] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x3 = (90.07..104.32] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x14 = (0.02..0.03] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x3 = (90.07..104.32] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x15 = (0.01..0.02] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x10 = (0.14..0.19] AND NOT x15 = (0.01..0.02] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x3 = (90.07..104.32] AND NOT x15 = (0.01..0.02] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x15 = (0.01..0.02] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x14 = (0.02..0.03] AND NOT x15 = (0.01..0.02] AND NOT x21 = (-inf..2.01] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (90.07..104.32] AND NOT x14 = (0.02..0.03] AND NOT x21 = (-inf..2.01] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x14 = (0.02..0.03] AND NOT x21 = (-inf..2.01] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (128.75..144.29] AND NOT x19 = (-5.72..-5.33] AND NOT x21 = (-inf..2.01] THEN NOT 1"
+  # hypos left: 3
+  exp time: 0.58
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (128.75..144.29] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.05..+inf) AND x10 = (0.46..+inf) AND x11 = (0.02..0.03] AND x12 = (0.03..+inf) AND x13 = (0.04..+inf) AND x14 = (0.07..+inf) AND x15 = (0.03..+inf) AND x16 = (-inf..18.48] AND x17 = (0.62..+inf) AND x18 = (0.69..0.72] AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x21 = (2.5..2.7] AND x22 = (0.23..0.28] THEN 1"
+  explanation: "IF NOT x22 = (0.23..0.28] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x13 = (0.04..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.04..+inf) AND NOT x17 = (0.62..+inf) AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.04..+inf) AND NOT x17 = (0.62..+inf) AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x17 = (0.62..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (90.07..104.32] AND NOT x10 = (0.46..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x10 = (0.46..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x18 = (0.69..0.72] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x15 = (0.03..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x10 = (0.46..+inf) AND NOT x15 = (0.03..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (128.75..144.29] AND NOT x14 = (0.07..+inf) AND NOT x17 = (0.62..+inf) AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x14 = (0.07..+inf) AND NOT x17 = (0.62..+inf) AND NOT x18 = (0.69..0.72] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x14 = (0.07..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x13 = (0.04..+inf) AND NOT x14 = (0.07..+inf) AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x13 = (0.04..+inf) AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x10 = (0.46..+inf) AND NOT x13 = (0.04..+inf) AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x13 = (0.04..+inf) AND NOT x15 = (0.03..+inf) AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x10 = (0.46..+inf) AND NOT x13 = (0.04..+inf) AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (90.07..104.32] AND NOT x10 = (0.46..+inf) AND NOT x13 = (0.04..+inf) AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x10 = (0.46..+inf) AND NOT x13 = (0.04..+inf) AND NOT x15 = (0.03..+inf) AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  exp time: 2.54
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (128.75..144.29] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.01..+inf) AND x9 = (0.02..0.03] AND x10 = (0.24..0.33] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.02..0.03] AND x14 = (0.04..0.05] AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.5..0.56] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.19..0.22] AND x21 = (-inf..2.01] AND x22 = (0.28..+inf) THEN 1"
+  explanation: "IF NOT x22 = (0.28..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x10 = (0.24..0.33] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x10 = (0.24..0.33] AND NOT x13 = (0.02..0.03] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x17 = (0.5..0.56] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x18 = (0.77..+inf) AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x13 = (0.02..0.03] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x14 = (0.04..0.05] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x15 = (0.01..0.02] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x15 = (0.01..0.02] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x18 = (0.77..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x17 = (0.5..0.56] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x15 = (0.01..0.02] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x13 = (0.02..0.03] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x18 = (0.77..+inf) AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x10 = (0.24..0.33] AND NOT x13 = (0.02..0.03] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x17 = (0.5..0.56] AND NOT x18 = (0.77..+inf) AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x17 = (0.5..0.56] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x13 = (0.02..0.03] AND NOT x15 = (0.01..0.02] AND NOT x17 = (0.5..0.56] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x14 = (0.04..0.05] AND NOT x15 = (0.01..0.02] AND NOT x17 = (0.5..0.56] THEN NOT 1"
+  # hypos left: 4
+  exp time: 1.46
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (175.83..209.86] AND x3 = (-inf..79.04] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.03..0.05] AND x10 = (0.33..0.46] AND x11 = (0.01..0.02] AND x12 = (0.02..0.03] AND x13 = (0.03..0.04] AND x14 = (0.05..0.07] AND x15 = (0.02..0.03] AND x16 = (20.41..22.08] AND x17 = (0.5..0.56] AND x18 = (0.72..0.74] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x21 = (2.7..+inf) AND x22 = (0.19..0.23] THEN 1"
+  explanation: "IF NOT x22 = (0.19..0.23] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x13 = (0.03..0.04] AND NOT x17 = (0.5..0.56] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x13 = (0.03..0.04] AND NOT x17 = (0.5..0.56] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x17 = (0.5..0.56] AND NOT x18 = (0.72..0.74] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x17 = (0.5..0.56] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x10 = (0.33..0.46] AND NOT x13 = (0.03..0.04] AND NOT x18 = (0.72..0.74] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x10 = (0.33..0.46] AND NOT x13 = (0.03..0.04] AND NOT x15 = (0.02..0.03] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x10 = (0.33..0.46] AND NOT x13 = (0.03..0.04] AND NOT x19 = (-5.72..-5.33] AND NOT x21 = (2.7..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (-inf..114.66] AND NOT x3 = (-inf..79.04] AND NOT x10 = (0.33..0.46] AND NOT x13 = (0.03..0.04] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x3 = (-inf..79.04] AND NOT x10 = (0.33..0.46] AND NOT x13 = (0.03..0.04] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x10 = (0.33..0.46] AND NOT x13 = (0.03..0.04] AND NOT x14 = (0.05..0.07] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x10 = (0.33..0.46] AND NOT x13 = (0.03..0.04] AND NOT x17 = (0.5..0.56] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x10 = (0.33..0.46] AND NOT x17 = (0.5..0.56] AND NOT x18 = (0.72..0.74] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x10 = (0.33..0.46] AND NOT x18 = (0.72..0.74] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x14 = (0.05..0.07] AND NOT x18 = (0.72..0.74] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x15 = (0.02..0.03] AND NOT x18 = (0.72..0.74] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x3 = (-inf..79.04] AND NOT x18 = (0.72..0.74] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x18 = (0.72..0.74] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.22..0.26] AND NOT x21 = (2.7..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x13 = (0.03..0.04] AND NOT x14 = (0.05..0.07] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x13 = (0.03..0.04] AND NOT x18 = (0.72..0.74] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 5
+  exp time: 3.35
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (114.66..122.38] AND x2 = (-inf..128.75] AND x3 = (104.32..114.72] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x15 = (0.0..0.01] AND x16 = (24.46..25.89] AND x17 = (0.45..0.5] AND x18 = (0.72..0.74] AND x19 = (-6.79..-6.19] AND x20 = (0.15..0.19] AND x21 = (2.01..2.19] AND x22 = (0.12..0.16] THEN 1"
+  explanation: "IF NOT x22 = (0.12..0.16] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x10 = (-inf..0.14] AND NOT x13 = (-inf..0.01] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x3 = (104.32..114.72] AND NOT x13 = (-inf..0.01] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x13 = (-inf..0.01] AND NOT x21 = (2.01..2.19] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x2 = (-inf..128.75] AND NOT x13 = (-inf..0.01] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x13 = (-inf..0.01] AND NOT x14 = (-inf..0.02] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x13 = (-inf..0.01] AND NOT x20 = (0.15..0.19] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x13 = (-inf..0.01] AND NOT x17 = (0.45..0.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x18 = (0.72..0.74] AND NOT x20 = (0.15..0.19] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x17 = (0.45..0.5] AND NOT x20 = (0.15..0.19] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x17 = (0.45..0.5] AND NOT x21 = (2.01..2.19] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x14 = (-inf..0.02] AND NOT x17 = (0.45..0.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x17 = (0.45..0.5] AND NOT x18 = (0.72..0.74] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x2 = (-inf..128.75] AND NOT x17 = (0.45..0.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x10 = (-inf..0.14] AND NOT x14 = (-inf..0.02] AND NOT x18 = (0.72..0.74] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (-inf..128.75] AND NOT x10 = (-inf..0.14] AND NOT x18 = (0.72..0.74] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (-inf..128.75] AND NOT x10 = (-inf..0.14] AND NOT x14 = (-inf..0.02] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (-inf..128.75] AND NOT x10 = (-inf..0.14] AND NOT x20 = (0.15..0.19] THEN NOT 1"
+  # hypos left: 3
+  exp time: 0.52
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (114.66..122.38] AND x2 = (-inf..128.75] AND x3 = (104.32..114.72] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x15 = (0.0..0.01] AND x16 = (25.89..+inf) AND x17 = (0.45..0.5] AND x18 = (0.69..0.72] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x21 = (2.01..2.19] AND x22 = (0.16..0.19] THEN 1"
+  explanation: "IF NOT x22 = (0.16..0.19] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x3 = (104.32..114.72] AND NOT x13 = (-inf..0.01] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (104.32..114.72] AND NOT x13 = (-inf..0.01] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (104.32..114.72] AND NOT x13 = (-inf..0.01] AND NOT x17 = (0.45..0.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (104.32..114.72] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x10 = (-inf..0.14] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (-inf..128.75] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x17 = (0.45..0.5] AND NOT x20 = (0.19..0.22] AND NOT x21 = (2.01..2.19] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x17 = (0.45..0.5] AND NOT x18 = (0.69..0.72] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x14 = (-inf..0.02] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] AND NOT x21 = (2.01..2.19] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (-inf..128.75] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.19..0.22] AND NOT x21 = (2.01..2.19] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x18 = (0.69..0.72] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (-inf..128.75] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x10 = (-inf..0.14] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (-inf..0.01] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (-inf..0.01] AND NOT x17 = (0.45..0.5] AND NOT x21 = (2.01..2.19] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (-inf..0.01] AND NOT x14 = (-inf..0.02] AND NOT x17 = (0.45..0.5] THEN NOT 1"
+  # hypos left: 3
+  exp time: 1.16
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (114.66..122.38] AND x2 = (-inf..128.75] AND x3 = (104.32..114.72] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x15 = (0.01..0.02] AND x16 = (25.89..+inf) AND x17 = (0.45..0.5] AND x18 = (0.69..0.72] AND x19 = (-inf..-6.79] AND x20 = (0.15..0.19] AND x21 = (2.19..2.36] AND x22 = (-inf..0.12] THEN 0"
+  explanation: "IF NOT x18 = (0.69..0.72] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x3 = (104.32..114.72] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x1 = (114.66..122.38] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x22 = (-inf..0.12] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x21 = (2.19..2.36] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x20 = (0.15..0.19] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x2 = (-inf..128.75] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x10 = (-inf..0.14] AND NOT x19 = (-inf..-6.79] THEN NOT 0"
+  # hypos left: 2
+  exp time: 0.19
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (114.66..122.38] AND x2 = (-inf..128.75] AND x3 = (114.72..162.82] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (0.14..0.19] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.0..0.01] AND x16 = (22.08..24.46] AND x17 = (0.56..0.62] AND x18 = (0.72..0.74] AND x19 = (-6.79..-6.19] AND x20 = (0.26..0.31] AND x21 = (2.01..2.19] AND x22 = (0.12..0.16] THEN 1"
+  explanation: "IF NOT x22 = (0.12..0.16] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x3 = (114.72..162.82] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x14 = (0.02..0.03] AND NOT x17 = (0.56..0.62] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x18 = (0.72..0.74] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x2 = (-inf..128.75] AND NOT x14 = (0.02..0.03] AND NOT x16 = (22.08..24.46] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x10 = (0.14..0.19] AND NOT x14 = (0.02..0.03] AND NOT x16 = (22.08..24.46] AND NOT x21 = (2.01..2.19] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x10 = (0.14..0.19] AND NOT x16 = (22.08..24.46] AND NOT x17 = (0.56..0.62] AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.01..2.19] THEN NOT 1"
+  # hypos left: 5
+  exp time: 0.50
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (114.66..122.38] AND x2 = (128.75..144.29] AND x3 = (104.32..114.72] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.01..+inf) AND x9 = (0.05..+inf) AND x10 = (0.46..+inf) AND x11 = (0.02..0.03] AND x12 = (0.03..+inf) AND x13 = (0.03..0.04] AND x14 = (0.07..+inf) AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.4..0.45] AND x18 = (0.77..+inf) AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.28..+inf) THEN 1"
+  explanation: "IF NOT x22 = (0.28..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x19 = (-4.6..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x13 = (0.03..0.04] AND NOT x19 = (-4.6..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x18 = (0.77..+inf) AND NOT x19 = (-4.6..+inf) AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.03..0.04] AND NOT x20 = (0.31..+inf) AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.03..0.04] AND NOT x15 = (0.01..0.02] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.03..0.04] AND NOT x16 = (20.41..22.08] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (104.32..114.72] AND NOT x13 = (0.03..0.04] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (128.75..144.29] AND NOT x13 = (0.03..0.04] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.03..0.04] AND NOT x18 = (0.77..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.03..0.04] AND NOT x14 = (0.07..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x10 = (0.46..+inf) AND NOT x17 = (0.4..0.45] AND NOT x18 = (0.77..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x10 = (0.46..+inf) AND NOT x13 = (0.03..0.04] AND NOT x17 = (0.4..0.45] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (128.75..144.29] AND NOT x14 = (0.07..+inf) AND NOT x18 = (0.77..+inf) AND NOT x19 = (-4.6..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x10 = (0.46..+inf) AND NOT x16 = (20.41..22.08] AND NOT x18 = (0.77..+inf) AND NOT x20 = (0.31..+inf) AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x15 = (0.01..0.02] AND NOT x17 = (0.4..0.45] AND NOT x18 = (0.77..+inf) AND NOT x20 = (0.31..+inf) AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (128.75..144.29] AND NOT x14 = (0.07..+inf) AND NOT x18 = (0.77..+inf) AND NOT x20 = (0.31..+inf) AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (104.32..114.72] AND NOT x14 = (0.07..+inf) AND NOT x18 = (0.77..+inf) AND NOT x20 = (0.31..+inf) AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x10 = (0.46..+inf) AND NOT x14 = (0.07..+inf) AND NOT x18 = (0.77..+inf) AND NOT x20 = (0.31..+inf) AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x10 = (0.46..+inf) AND NOT x13 = (0.03..0.04] AND NOT x14 = (0.07..+inf) AND NOT x18 = (0.77..+inf) AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  exp time: 2.43
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (114.66..122.38] AND x2 = (128.75..144.29] AND x3 = (104.32..114.72] AND x4 = (0.01..+inf) AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.01..+inf) AND x9 = (0.05..+inf) AND x10 = (0.46..+inf) AND x11 = (0.02..0.03] AND x12 = (0.03..+inf) AND x13 = (0.03..0.04] AND x14 = (0.07..+inf) AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.4..0.45] AND x18 = (0.77..+inf) AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x21 = (2.19..2.36] AND x22 = (0.28..+inf) THEN 1"
+  explanation: "IF NOT x22 = (0.28..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x13 = (0.03..0.04] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x13 = (0.03..0.04] AND NOT x19 = (-4.6..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x19 = (-4.6..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x18 = (0.77..+inf) AND NOT x19 = (-4.6..+inf) AND NOT x21 = (2.19..2.36] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (128.75..144.29] AND NOT x16 = (20.41..22.08] AND NOT x18 = (0.77..+inf) AND NOT x19 = (-4.6..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x14 = (0.07..+inf) AND NOT x16 = (20.41..22.08] AND NOT x18 = (0.77..+inf) AND NOT x19 = (-4.6..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x14 = (0.07..+inf) AND NOT x15 = (0.01..0.02] AND NOT x18 = (0.77..+inf) AND NOT x19 = (-4.6..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (104.32..114.72] AND NOT x14 = (0.07..+inf) AND NOT x18 = (0.77..+inf) AND NOT x19 = (-4.6..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (128.75..144.29] AND NOT x14 = (0.07..+inf) AND NOT x18 = (0.77..+inf) AND NOT x19 = (-4.6..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (128.75..144.29] AND NOT x14 = (0.07..+inf) AND NOT x18 = (0.77..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x10 = (0.46..+inf) AND NOT x17 = (0.4..0.45] AND NOT x18 = (0.77..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (128.75..144.29] AND NOT x10 = (0.46..+inf) AND NOT x13 = (0.03..0.04] AND NOT x17 = (0.4..0.45] AND NOT x18 = (0.77..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x10 = (0.46..+inf) AND NOT x13 = (0.03..0.04] AND NOT x15 = (0.01..0.02] AND NOT x17 = (0.4..0.45] AND NOT x18 = (0.77..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x10 = (0.46..+inf) AND NOT x13 = (0.03..0.04] AND NOT x17 = (0.4..0.45] AND NOT x18 = (0.77..+inf) AND NOT x21 = (2.19..2.36] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x13 = (0.03..0.04] AND NOT x15 = (0.01..0.02] AND NOT x17 = (0.4..0.45] AND NOT x18 = (0.77..+inf) AND NOT x21 = (2.19..2.36] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x10 = (0.46..+inf) AND NOT x13 = (0.03..0.04] AND NOT x15 = (0.01..0.02] AND NOT x17 = (0.4..0.45] AND NOT x21 = (2.19..2.36] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (128.75..144.29] AND NOT x10 = (0.46..+inf) AND NOT x13 = (0.03..0.04] AND NOT x15 = (0.01..0.02] AND NOT x17 = (0.4..0.45] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (128.75..144.29] AND NOT x10 = (0.46..+inf) AND NOT x15 = (0.01..0.02] AND NOT x17 = (0.4..0.45] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (128.75..144.29] AND NOT x3 = (104.32..114.72] AND NOT x16 = (20.41..22.08] AND NOT x18 = (0.77..+inf) AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 5
+  exp time: 2.07
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (114.66..122.38] AND x2 = (128.75..144.29] AND x3 = (114.72..162.82] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.0..0.01] AND x16 = (24.46..25.89] AND x17 = (0.56..0.62] AND x18 = (0.74..0.77] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x21 = (-inf..2.01] AND x22 = (0.19..0.23] THEN 1"
+  explanation: "IF NOT x22 = (0.19..0.23] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x17 = (0.56..0.62] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x10 = (-inf..0.14] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x14 = (0.02..0.03] AND NOT x17 = (0.56..0.62] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 3
+  exp time: 0.34
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (114.66..122.38] AND x2 = (144.29..175.83] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (0.14..0.19] AND x11 = (-inf..0.01] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.0..0.01] AND x16 = (24.46..25.89] AND x17 = (-inf..0.4] AND x18 = (0.74..0.77] AND x19 = (-6.19..-5.72] AND x20 = (0.22..0.26] AND x21 = (-inf..2.01] AND x22 = (0.16..0.19] THEN 1"
+  explanation: "IF NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x22 = (0.16..0.19] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x2 = (144.29..175.83] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x14 = (0.02..0.03] AND NOT x17 = (-inf..0.4] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (90.07..104.32] AND NOT x14 = (0.02..0.03] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x10 = (0.14..0.19] AND NOT x14 = (0.02..0.03] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x10 = (0.14..0.19] AND NOT x16 = (24.46..25.89] AND NOT x17 = (-inf..0.4] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 4
+  exp time: 0.56
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (114.66..122.38] AND x2 = (239.85..+inf) AND x3 = (79.04..90.07] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (0.14..0.19] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.01..0.02] AND x16 = (22.08..24.46] AND x17 = (0.56..0.62] AND x18 = (0.66..0.69] AND x19 = (-6.79..-6.19] AND x20 = (0.15..0.19] AND x21 = (2.01..2.19] AND x22 = (0.12..0.16] THEN 1"
+  explanation: "IF NOT x20 = (0.15..0.19] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x22 = (0.12..0.16] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x3 = (79.04..90.07] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x14 = (0.02..0.03] AND NOT x17 = (0.56..0.62] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x14 = (0.02..0.03] AND NOT x15 = (0.01..0.02] AND NOT x16 = (22.08..24.46] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x10 = (0.14..0.19] AND NOT x15 = (0.01..0.02] AND NOT x16 = (22.08..24.46] AND NOT x17 = (0.56..0.62] AND NOT x21 = (2.01..2.19] THEN NOT 1"
+  # hypos left: 5
+  exp time: 0.38
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (122.38..148.79] AND x2 = (144.29..175.83] AND x3 = (114.72..162.82] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (-inf..0.02] AND x15 = (0.0..0.01] AND x16 = (24.46..25.89] AND x17 = (0.45..0.5] AND x18 = (-inf..0.66] AND x19 = (-6.79..-6.19] AND x20 = (0.15..0.19] AND x21 = (2.01..2.19] AND x22 = (0.12..0.16] THEN 1"
+  explanation: "IF NOT x22 = (0.12..0.16] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x20 = (0.15..0.19] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x17 = (0.45..0.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x17 = (0.45..0.5] AND NOT x20 = (0.15..0.19] AND NOT x21 = (2.01..2.19] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.15..0.19] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x14 = (-inf..0.02] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.15..0.19] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.15..0.19] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x10 = (-inf..0.14] AND NOT x20 = (0.15..0.19] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x2 = (144.29..175.83] AND NOT x20 = (0.15..0.19] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x14 = (-inf..0.02] AND NOT x20 = (0.15..0.19] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x3 = (114.72..162.82] AND NOT x21 = (2.01..2.19] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x3 = (114.72..162.82] AND NOT x10 = (-inf..0.14] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x2 = (144.29..175.83] AND NOT x3 = (114.72..162.82] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x3 = (114.72..162.82] AND NOT x14 = (-inf..0.02] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x17 = (0.45..0.5] AND NOT x21 = (2.01..2.19] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x2 = (144.29..175.83] AND NOT x17 = (0.45..0.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x14 = (-inf..0.02] AND NOT x17 = (0.45..0.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x3 = (114.72..162.82] AND NOT x10 = (-inf..0.14] AND NOT x21 = (2.01..2.19] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x3 = (114.72..162.82] AND NOT x14 = (-inf..0.02] AND NOT x21 = (2.01..2.19] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x3 = (114.72..162.82] AND NOT x10 = (-inf..0.14] AND NOT x14 = (-inf..0.02] THEN NOT 1"
+  # hypos left: 4
+  exp time: 0.78
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (122.38..148.79] AND x2 = (144.29..175.83] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.01..+inf) AND x9 = (0.02..0.03] AND x10 = (0.24..0.33] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.02..0.03] AND x14 = (0.04..0.05] AND x15 = (0.03..+inf) AND x16 = (20.41..22.08] AND x17 = (0.62..+inf) AND x18 = (-inf..0.66] AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x21 = (2.7..+inf) AND x22 = (0.23..0.28] THEN 1"
+  explanation: "IF NOT x22 = (0.23..0.28] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x17 = (0.62..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x17 = (0.62..+inf) AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x14 = (0.04..0.05] AND NOT x17 = (0.62..+inf) AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x10 = (0.24..0.33] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.62..+inf) AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x14 = (0.04..0.05] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x10 = (0.24..0.33] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.7..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (90.07..104.32] AND NOT x10 = (0.24..0.33] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x10 = (0.24..0.33] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x15 = (0.03..+inf) AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.7..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.62..+inf) AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.62..+inf) AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x17 = (0.62..+inf) AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.7..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x2 = (144.29..175.83] AND NOT x13 = (0.02..0.03] AND NOT x14 = (0.04..0.05] AND NOT x17 = (0.62..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x2 = (144.29..175.83] AND NOT x13 = (0.02..0.03] AND NOT x14 = (0.04..0.05] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x13 = (0.02..0.03] AND NOT x14 = (0.04..0.05] AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.7..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x13 = (0.02..0.03] AND NOT x14 = (0.04..0.05] AND NOT x15 = (0.03..+inf) AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x13 = (0.02..0.03] AND NOT x15 = (0.03..+inf) AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.7..+inf) THEN NOT 1"
+  # hypos left: 5
+  exp time: 2.60
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (122.38..148.79] AND x2 = (175.83..209.86] AND x3 = (-inf..79.04] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (0.14..0.19] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.01..0.02] AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x18 = (0.66..0.69] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x21 = (2.5..2.7] AND x22 = (0.19..0.23] THEN 1"
+  explanation: "IF NOT x22 = (0.19..0.23] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x2 = (175.83..209.86] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x14 = (0.02..0.03] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x17 = (0.4..0.45] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x17 = (0.4..0.45] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x15 = (0.01..0.02] AND NOT x17 = (0.4..0.45] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x3 = (-inf..79.04] AND NOT x17 = (0.4..0.45] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x19 = (-5.72..-5.33] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x3 = (-inf..79.04] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x14 = (0.02..0.03] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x14 = (0.02..0.03] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x3 = (-inf..79.04] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x14 = (0.02..0.03] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x16 = (24.46..25.89] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x15 = (0.01..0.02] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x14 = (0.02..0.03] AND NOT x16 = (24.46..25.89] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x15 = (0.01..0.02] AND NOT x16 = (24.46..25.89] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x3 = (-inf..79.04] AND NOT x15 = (0.01..0.02] AND NOT x17 = (0.4..0.45] THEN NOT 1"
+  # hypos left: 4
+  exp time: 1.16
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (122.38..148.79] AND x2 = (175.83..209.86] AND x3 = (79.04..90.07] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.01..+inf) AND x9 = (0.02..0.03] AND x10 = (0.19..0.24] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.03..0.04] AND x15 = (0.01..0.02] AND x16 = (18.48..20.41] AND x17 = (0.62..+inf) AND x18 = (0.72..0.74] AND x19 = (-5.72..-5.33] AND x20 = (-inf..0.15] AND x21 = (-inf..2.01] AND x22 = (0.19..0.23] THEN 1"
+  explanation: "IF NOT x22 = (0.19..0.23] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.19..0.24] AND NOT x18 = (0.72..0.74] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x15 = (0.01..0.02] AND NOT x18 = (0.72..0.74] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x3 = (79.04..90.07] AND NOT x18 = (0.72..0.74] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x3 = (79.04..90.07] AND NOT x18 = (0.72..0.74] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x17 = (0.62..+inf) AND NOT x18 = (0.72..0.74] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.19..0.24] AND NOT x17 = (0.62..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x17 = (0.62..+inf) AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x10 = (0.19..0.24] AND NOT x17 = (0.62..+inf) AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x10 = (0.19..0.24] AND NOT x18 = (0.72..0.74] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x17 = (0.62..+inf) AND NOT x18 = (0.72..0.74] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x15 = (0.01..0.02] AND NOT x18 = (0.72..0.74] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x2 = (175.83..209.86] AND NOT x18 = (0.72..0.74] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x3 = (79.04..90.07] AND NOT x17 = (0.62..+inf) AND NOT x20 = (-inf..0.15] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x2 = (175.83..209.86] AND NOT x3 = (79.04..90.07] AND NOT x17 = (0.62..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x17 = (0.62..+inf) AND NOT x19 = (-5.72..-5.33] AND NOT x21 = (-inf..2.01] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x16 = (18.48..20.41] AND NOT x17 = (0.62..+inf) AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x15 = (0.01..0.02] AND NOT x18 = (0.72..0.74] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x15 = (0.01..0.02] AND NOT x17 = (0.62..+inf) AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 4
+  exp time: 1.42
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (122.38..148.79] AND x2 = (239.85..+inf) AND x3 = (79.04..90.07] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.02..0.03] AND x10 = (0.19..0.24] AND x11 = (-inf..0.01] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.02..0.03] AND x16 = (24.46..25.89] AND x17 = (0.45..0.5] AND x18 = (0.66..0.69] AND x19 = (-6.19..-5.72] AND x20 = (0.26..0.31] AND x21 = (2.5..2.7] AND x22 = (0.12..0.16] THEN 1"
+  explanation: "IF NOT x22 = (0.12..0.16] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.19..0.24] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.19..0.24] AND NOT x17 = (0.45..0.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x14 = (0.02..0.03] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.19..0.24] AND NOT x14 = (0.02..0.03] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.19..0.24] AND NOT x15 = (0.02..0.03] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.19..0.24] AND NOT x19 = (-6.19..-5.72] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x3 = (79.04..90.07] AND NOT x10 = (0.19..0.24] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x3 = (79.04..90.07] AND NOT x14 = (0.02..0.03] AND NOT x17 = (0.45..0.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x10 = (0.19..0.24] AND NOT x15 = (0.02..0.03] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x10 = (0.19..0.24] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x10 = (0.19..0.24] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x15 = (0.02..0.03] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (122.38..148.79] AND NOT x3 = (79.04..90.07] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x14 = (0.02..0.03] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x10 = (0.19..0.24] AND NOT x14 = (0.02..0.03] AND NOT x15 = (0.02..0.03] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 5
+  exp time: 1.62
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x3 = (-inf..79.04] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (0.14..0.19] AND x11 = (0.01..0.02] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (0.03..0.04] AND x15 = (0.0..0.01] AND x16 = (24.46..25.89] AND x17 = (0.45..0.5] AND x18 = (-inf..0.66] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x21 = (2.01..2.19] AND x22 = (0.16..0.19] THEN 1"
+  explanation: "IF NOT x1 = (148.79..170.85] AND NOT x22 = (0.16..0.19] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x22 = (0.16..0.19] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x17 = (0.45..0.5] AND NOT x22 = (0.16..0.19] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] AND NOT x22 = (0.16..0.19] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (148.79..170.85] AND NOT x3 = (-inf..79.04] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (148.79..170.85] AND NOT x3 = (-inf..79.04] AND NOT x17 = (0.45..0.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x3 = (-inf..79.04] AND NOT x17 = (0.45..0.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x3 = (-inf..79.04] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (148.79..170.85] AND NOT x2 = (144.29..175.83] AND NOT x3 = (-inf..79.04] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (148.79..170.85] AND NOT x2 = (144.29..175.83] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x3 = (-inf..79.04] AND NOT x14 = (0.03..0.04] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x16 = (24.46..25.89] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (148.79..170.85] AND NOT x2 = (144.29..175.83] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (148.79..170.85] AND NOT x2 = (144.29..175.83] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (148.79..170.85] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x10 = (0.14..0.19] AND NOT x17 = (0.45..0.5] AND NOT x21 = (2.01..2.19] AND NOT x22 = (0.16..0.19] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x17 = (0.45..0.5] AND NOT x20 = (0.19..0.22] AND NOT x21 = (2.01..2.19] AND NOT x22 = (0.16..0.19] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x14 = (0.03..0.04] AND NOT x21 = (2.01..2.19] AND NOT x22 = (0.16..0.19] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x19 = (-6.19..-5.72] AND NOT x21 = (2.01..2.19] AND NOT x22 = (0.16..0.19] THEN NOT 1"
+  # hypos left: 4
+  exp time: 1.43
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x3 = (114.72..162.82] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x15 = (0.0..0.01] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x18 = (0.66..0.69] AND x19 = (-6.79..-6.19] AND x20 = (0.15..0.19] AND x21 = (2.19..2.36] AND x22 = (-inf..0.12] THEN 1"
+  explanation: "IF NOT x1 = (148.79..170.85] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x13 = (-inf..0.01] AND NOT x17 = (-inf..0.4] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x13 = (-inf..0.01] AND NOT x16 = (25.89..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x13 = (-inf..0.01] AND NOT x16 = (25.89..+inf) AND NOT x21 = (2.19..2.36] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x16 = (25.89..+inf) AND NOT x21 = (2.19..2.36] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x16 = (25.89..+inf) AND NOT x21 = (2.19..2.36] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x16 = (25.89..+inf) AND NOT x17 = (-inf..0.4] AND NOT x21 = (2.19..2.36] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x10 = (-inf..0.14] AND NOT x16 = (25.89..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x16 = (25.89..+inf) AND NOT x20 = (0.15..0.19] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x3 = (114.72..162.82] AND NOT x16 = (25.89..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x16 = (25.89..+inf) AND NOT x17 = (-inf..0.4] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x3 = (114.72..162.82] AND NOT x21 = (2.19..2.36] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x17 = (-inf..0.4] AND NOT x21 = (2.19..2.36] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x14 = (-inf..0.02] AND NOT x17 = (-inf..0.4] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x14 = (-inf..0.02] AND NOT x21 = (2.19..2.36] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x3 = (114.72..162.82] AND NOT x17 = (-inf..0.4] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x17 = (-inf..0.4] AND NOT x20 = (0.15..0.19] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (144.29..175.83] AND NOT x14 = (-inf..0.02] AND NOT x17 = (-inf..0.4] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x14 = (-inf..0.02] AND NOT x16 = (25.89..+inf) AND NOT x17 = (-inf..0.4] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x14 = (-inf..0.02] AND NOT x16 = (25.89..+inf) AND NOT x21 = (2.19..2.36] THEN NOT 1"
+  # hypos left: 3
+  exp time: 1.11
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (148.79..170.85] AND x2 = (175.83..209.86] AND x3 = (-inf..79.04] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (0.14..0.19] AND x11 = (-inf..0.01] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.01..0.02] AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x18 = (0.72..0.74] AND x19 = (-6.79..-6.19] AND x20 = (0.19..0.22] AND x21 = (-inf..2.01] AND x22 = (0.12..0.16] THEN 1"
+  explanation: "IF NOT x22 = (0.12..0.16] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x1 = (148.79..170.85] AND NOT x14 = (0.02..0.03] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x1 = (148.79..170.85] AND NOT x3 = (-inf..79.04] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x14 = (0.02..0.03] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x14 = (0.02..0.03] AND NOT x18 = (0.72..0.74] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x3 = (-inf..79.04] AND NOT x16 = (24.46..25.89] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x18 = (0.72..0.74] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x10 = (0.14..0.19] AND NOT x16 = (24.46..25.89] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x10 = (0.14..0.19] AND NOT x15 = (0.01..0.02] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x3 = (-inf..79.04] AND NOT x10 = (0.14..0.19] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (148.79..170.85] AND NOT x10 = (0.14..0.19] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (148.79..170.85] AND NOT x10 = (0.14..0.19] AND NOT x16 = (24.46..25.89] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (148.79..170.85] AND NOT x2 = (175.83..209.86] AND NOT x10 = (0.14..0.19] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (148.79..170.85] AND NOT x18 = (0.72..0.74] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (148.79..170.85] AND NOT x2 = (175.83..209.86] AND NOT x16 = (24.46..25.89] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (148.79..170.85] AND NOT x2 = (175.83..209.86] AND NOT x15 = (0.01..0.02] AND NOT x16 = (24.46..25.89] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x10 = (0.14..0.19] AND NOT x16 = (24.46..25.89] AND NOT x18 = (0.72..0.74] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x10 = (0.14..0.19] AND NOT x18 = (0.72..0.74] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (148.79..170.85] AND NOT x2 = (175.83..209.86] AND NOT x20 = (0.19..0.22] AND NOT x21 = (-inf..2.01] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (148.79..170.85] AND NOT x2 = (175.83..209.86] AND NOT x15 = (0.01..0.02] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 4
+  exp time: 1.27
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (170.85..201.21] AND x2 = (175.83..209.86] AND x3 = (79.04..90.07] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.03..0.05] AND x10 = (0.33..0.46] AND x11 = (0.02..0.03] AND x12 = (0.02..0.03] AND x13 = (0.03..0.04] AND x14 = (0.05..0.07] AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.5..0.56] AND x18 = (0.66..0.69] AND x19 = (-5.33..-4.6] AND x20 = (0.19..0.22] AND x21 = (2.5..2.7] AND x22 = (0.23..0.28] THEN 1"
+  explanation: "IF NOT x22 = (0.23..0.28] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x13 = (0.03..0.04] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.33..0.46] AND NOT x13 = (0.03..0.04] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.33..0.46] AND NOT x13 = (0.03..0.04] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.33..0.46] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x13 = (0.03..0.04] AND NOT x17 = (0.5..0.56] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x13 = (0.03..0.04] AND NOT x17 = (0.5..0.56] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x13 = (0.03..0.04] AND NOT x17 = (0.5..0.56] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x17 = (0.5..0.56] AND NOT x19 = (-5.33..-4.6] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.33..0.46] AND NOT x14 = (0.05..0.07] AND NOT x17 = (0.5..0.56] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x3 = (79.04..90.07] AND NOT x10 = (0.33..0.46] AND NOT x17 = (0.5..0.56] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.33..0.46] AND NOT x17 = (0.5..0.56] AND NOT x18 = (0.66..0.69] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.33..0.46] AND NOT x17 = (0.5..0.56] AND NOT x20 = (0.19..0.22] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (170.85..201.21] AND NOT x3 = (79.04..90.07] AND NOT x13 = (0.03..0.04] AND NOT x20 = (0.19..0.22] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x13 = (0.03..0.04] AND NOT x14 = (0.05..0.07] AND NOT x20 = (0.19..0.22] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (170.85..201.21] AND NOT x13 = (0.03..0.04] AND NOT x17 = (0.5..0.56] AND NOT x19 = (-5.33..-4.6] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (170.85..201.21] AND NOT x3 = (79.04..90.07] AND NOT x13 = (0.03..0.04] AND NOT x19 = (-5.33..-4.6] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (170.85..201.21] AND NOT x3 = (79.04..90.07] AND NOT x13 = (0.03..0.04] AND NOT x14 = (0.05..0.07] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (170.85..201.21] AND NOT x13 = (0.03..0.04] AND NOT x14 = (0.05..0.07] AND NOT x17 = (0.5..0.56] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x13 = (0.03..0.04] AND NOT x14 = (0.05..0.07] AND NOT x17 = (0.5..0.56] AND NOT x19 = (-5.33..-4.6] THEN NOT 1"
+  # hypos left: 5
+  exp time: 3.28
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (170.85..201.21] AND x2 = (175.83..209.86] AND x3 = (79.04..90.07] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.01..+inf) AND x9 = (0.03..0.05] AND x10 = (0.24..0.33] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.02..0.03] AND x14 = (0.05..0.07] AND x15 = (0.0..0.01] AND x16 = (20.41..22.08] AND x17 = (0.45..0.5] AND x18 = (0.74..0.77] AND x19 = (-6.19..-5.72] AND x20 = (0.26..0.31] AND x21 = (2.5..2.7] AND x22 = (0.16..0.19] THEN 1"
+  explanation: "IF NOT x22 = (0.16..0.19] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x13 = (0.02..0.03] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.24..0.33] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x3 = (79.04..90.07] AND NOT x15 = (0.0..0.01] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x3 = (79.04..90.07] AND NOT x14 = (0.05..0.07] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (170.85..201.21] AND NOT x2 = (175.83..209.86] AND NOT x3 = (79.04..90.07] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x3 = (79.04..90.07] AND NOT x17 = (0.45..0.5] AND NOT x18 = (0.74..0.77] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x14 = (0.05..0.07] AND NOT x17 = (0.45..0.5] AND NOT x18 = (0.74..0.77] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.24..0.33] AND NOT x17 = (0.45..0.5] AND NOT x18 = (0.74..0.77] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.24..0.33] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.26..0.31] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (170.85..201.21] AND NOT x3 = (79.04..90.07] AND NOT x10 = (0.24..0.33] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x10 = (0.24..0.33] AND NOT x14 = (0.05..0.07] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (175.83..209.86] AND NOT x3 = (79.04..90.07] AND NOT x10 = (0.24..0.33] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (170.85..201.21] AND NOT x17 = (0.45..0.5] AND NOT x18 = (0.74..0.77] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (170.85..201.21] AND NOT x14 = (0.05..0.07] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.26..0.31] THEN NOT 1"
+  # hypos left: 5
+  exp time: 3.43
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (170.85..201.21] AND x2 = (209.86..239.85] AND x3 = (114.72..162.82] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.03..0.05] AND x10 = (0.24..0.33] AND x11 = (0.02..0.03] AND x12 = (0.02..0.03] AND x13 = (0.02..0.03] AND x14 = (0.05..0.07] AND x15 = (0.01..0.02] AND x16 = (18.48..20.41] AND x17 = (0.56..0.62] AND x18 = (0.66..0.69] AND x19 = (-5.72..-5.33] AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.19..0.23] THEN 1"
+  explanation: "IF NOT x22 = (0.19..0.23] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x10 = (0.24..0.33] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x17 = (0.56..0.62] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x10 = (0.24..0.33] AND NOT x17 = (0.56..0.62] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.56..0.62] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x10 = (0.24..0.33] AND NOT x13 = (0.02..0.03] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x13 = (0.02..0.03] AND NOT x20 = (0.31..+inf) AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x10 = (0.24..0.33] AND NOT x13 = (0.02..0.03] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x13 = (0.02..0.03] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x13 = (0.02..0.03] AND NOT x17 = (0.56..0.62] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.56..0.62] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x17 = (0.56..0.62] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.31..+inf) AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x17 = (0.56..0.62] AND NOT x18 = (0.66..0.69] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x14 = (0.05..0.07] AND NOT x17 = (0.56..0.62] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.31..+inf) AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x14 = (0.05..0.07] AND NOT x18 = (0.66..0.69] AND NOT x19 = (-5.72..-5.33] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x10 = (0.24..0.33] AND NOT x18 = (0.66..0.69] AND NOT x20 = (0.31..+inf) AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x10 = (0.24..0.33] AND NOT x14 = (0.05..0.07] AND NOT x20 = (0.31..+inf) AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (114.72..162.82] AND NOT x10 = (0.24..0.33] AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.56..0.62] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (170.85..201.21] AND NOT x3 = (114.72..162.82] AND NOT x13 = (0.02..0.03] AND NOT x14 = (0.05..0.07] AND NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 5
+  exp time: 3.03
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x3 = (162.82..+inf) AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x15 = (0.0..0.01] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x18 = (0.74..0.77] AND x19 = (-inf..-6.79] AND x20 = (0.15..0.19] AND x21 = (2.36..2.5] AND x22 = (-inf..0.12] THEN 0"
+  explanation: "IF NOT x1 = (201.21..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x22 = (-inf..0.12] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x2 = (209.86..239.85] AND NOT x3 = (162.82..+inf) AND NOT x17 = (-inf..0.4] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x15 = (0.0..0.01] AND NOT x20 = (0.15..0.19] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (209.86..239.85] AND NOT x3 = (162.82..+inf) AND NOT x20 = (0.15..0.19] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x10 = (-inf..0.14] AND NOT x17 = (-inf..0.4] AND NOT x20 = (0.15..0.19] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (209.86..239.85] AND NOT x3 = (162.82..+inf) AND NOT x10 = (-inf..0.14] AND NOT x18 = (0.74..0.77] THEN NOT 0"
+  # hypos left: 4
+  exp time: 0.28
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x3 = (79.04..90.07] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (0.14..0.19] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.03..0.04] AND x15 = (0.02..0.03] AND x16 = (18.48..20.41] AND x17 = (0.5..0.56] AND x18 = (-inf..0.66] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x21 = (2.36..2.5] AND x22 = (0.16..0.19] THEN 1"
+  explanation: "IF NOT x22 = (0.16..0.19] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x17 = (0.5..0.56] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x2 = (209.86..239.85] AND NOT x3 = (79.04..90.07] AND NOT x17 = (0.5..0.56] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x2 = (209.86..239.85] AND NOT x3 = (79.04..90.07] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x15 = (0.02..0.03] AND NOT x17 = (0.5..0.56] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x15 = (0.02..0.03] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x3 = (79.04..90.07] AND NOT x17 = (0.5..0.56] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (79.04..90.07] AND NOT x17 = (0.5..0.56] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x3 = (79.04..90.07] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x2 = (209.86..239.85] AND NOT x3 = (79.04..90.07] AND NOT x15 = (0.02..0.03] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (209.86..239.85] AND NOT x15 = (0.02..0.03] AND NOT x17 = (0.5..0.56] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x15 = (0.02..0.03] AND NOT x17 = (0.5..0.56] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (209.86..239.85] AND NOT x17 = (0.5..0.56] AND NOT x20 = (0.19..0.22] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x15 = (0.02..0.03] AND NOT x17 = (0.5..0.56] AND NOT x20 = (0.19..0.22] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x17 = (0.5..0.56] AND NOT x20 = (0.19..0.22] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x2 = (209.86..239.85] AND NOT x17 = (0.5..0.56] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x2 = (209.86..239.85] AND NOT x15 = (0.02..0.03] AND NOT x19 = (-6.19..-5.72] AND NOT x21 = (2.36..2.5] THEN NOT 1"
+  # hypos left: 5
+  exp time: 1.22
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.0..0.01] AND x16 = (24.46..25.89] AND x17 = (0.45..0.5] AND x18 = (-inf..0.66] AND x19 = (-5.72..-5.33] AND x20 = (0.31..+inf) AND x21 = (2.7..+inf) AND x22 = (0.19..0.23] THEN 1"
+  explanation: "IF NOT x22 = (0.19..0.23] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x20 = (0.31..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x17 = (0.45..0.5] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x17 = (0.45..0.5] AND NOT x21 = (2.7..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x3 = (90.07..104.32] AND NOT x10 = (-inf..0.14] AND NOT x17 = (0.45..0.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x10 = (-inf..0.14] AND NOT x17 = (0.45..0.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x19 = (-5.72..-5.33] AND NOT x21 = (2.7..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x10 = (-inf..0.14] AND NOT x14 = (0.02..0.03] AND NOT x17 = (0.45..0.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x14 = (0.02..0.03] AND NOT x17 = (0.45..0.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x14 = (0.02..0.03] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x10 = (-inf..0.14] AND NOT x14 = (0.02..0.03] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x14 = (0.02..0.03] AND NOT x19 = (-5.72..-5.33] AND NOT x21 = (2.7..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x3 = (90.07..104.32] AND NOT x10 = (-inf..0.14] AND NOT x19 = (-5.72..-5.33] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (90.07..104.32] AND NOT x10 = (-inf..0.14] AND NOT x19 = (-5.72..-5.33] AND NOT x21 = (2.7..+inf) THEN NOT 1"
+  # hypos left: 4
+  exp time: 0.61
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.02..0.03] AND x10 = (0.19..0.24] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.03..0.04] AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (-inf..0.4] AND x18 = (0.69..0.72] AND x19 = (-6.79..-6.19] AND x20 = (0.15..0.19] AND x21 = (2.7..+inf) AND x22 = (-inf..0.12] THEN 0"
+  explanation: "IF NOT x1 = (201.21..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x22 = (-inf..0.12] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x2 = (209.86..239.85] AND NOT x14 = (0.03..0.04] AND NOT x16 = (20.41..22.08] AND NOT x20 = (0.15..0.19] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (209.86..239.85] AND NOT x14 = (0.03..0.04] AND NOT x16 = (20.41..22.08] AND NOT x17 = (-inf..0.4] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT x14 = (0.03..0.04] AND NOT x16 = (20.41..22.08] AND NOT x17 = (-inf..0.4] AND NOT x20 = (0.15..0.19] AND NOT x21 = (2.7..+inf) THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x14 = (0.03..0.04] AND NOT x16 = (20.41..22.08] AND NOT x17 = (-inf..0.4] AND NOT x19 = (-6.79..-6.19] AND NOT x20 = (0.15..0.19] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (90.07..104.32] AND NOT x14 = (0.03..0.04] AND NOT x16 = (20.41..22.08] AND NOT x17 = (-inf..0.4] AND NOT x20 = (0.15..0.19] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (90.07..104.32] AND NOT x13 = (0.01..0.02] AND NOT x14 = (0.03..0.04] AND NOT x16 = (20.41..22.08] AND NOT x20 = (0.15..0.19] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x14 = (0.03..0.04] AND NOT x16 = (20.41..22.08] AND NOT x19 = (-6.79..-6.19] AND NOT x20 = (0.15..0.19] AND NOT x21 = (2.7..+inf) THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x13 = (0.01..0.02] AND NOT x14 = (0.03..0.04] AND NOT x16 = (20.41..22.08] AND NOT x19 = (-6.79..-6.19] AND NOT x20 = (0.15..0.19] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (90.07..104.32] AND NOT x14 = (0.03..0.04] AND NOT x16 = (20.41..22.08] AND NOT x19 = (-6.79..-6.19] AND NOT x20 = (0.15..0.19] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (209.86..239.85] AND NOT x16 = (20.41..22.08] AND NOT x17 = (-inf..0.4] AND NOT x18 = (0.69..0.72] AND NOT x20 = (0.15..0.19] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (209.86..239.85] AND NOT x16 = (20.41..22.08] AND NOT x17 = (-inf..0.4] AND NOT x19 = (-6.79..-6.19] AND NOT x20 = (0.15..0.19] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (209.86..239.85] AND NOT x13 = (0.01..0.02] AND NOT x16 = (20.41..22.08] AND NOT x18 = (0.69..0.72] AND NOT x20 = (0.15..0.19] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (209.86..239.85] AND NOT x16 = (20.41..22.08] AND NOT x18 = (0.69..0.72] AND NOT x19 = (-6.79..-6.19] AND NOT x20 = (0.15..0.19] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (209.86..239.85] AND NOT x13 = (0.01..0.02] AND NOT x16 = (20.41..22.08] AND NOT x19 = (-6.79..-6.19] AND NOT x20 = (0.15..0.19] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (209.86..239.85] AND NOT x13 = (0.01..0.02] AND NOT x14 = (0.03..0.04] AND NOT x16 = (20.41..22.08] AND NOT x18 = (0.69..0.72] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x13 = (0.01..0.02] AND NOT x14 = (0.03..0.04] AND NOT x16 = (20.41..22.08] AND NOT x18 = (0.69..0.72] AND NOT x20 = (0.15..0.19] AND NOT x21 = (2.7..+inf) THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT x13 = (0.01..0.02] AND NOT x16 = (20.41..22.08] AND NOT x18 = (0.69..0.72] AND NOT x19 = (-6.79..-6.19] AND NOT x20 = (0.15..0.19] AND NOT x21 = (2.7..+inf) THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT x3 = (90.07..104.32] AND NOT x13 = (0.01..0.02] AND NOT x16 = (20.41..22.08] AND NOT x18 = (0.69..0.72] AND NOT x19 = (-6.79..-6.19] AND NOT x20 = (0.15..0.19] THEN NOT 0"
+  # hypos left: 6
+  exp time: 0.82
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (201.21..+inf) AND x2 = (239.85..+inf) AND x3 = (-inf..79.04] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (0.14..0.19] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.03..0.04] AND x15 = (0.03..+inf) AND x16 = (20.41..22.08] AND x17 = (0.45..0.5] AND x18 = (0.66..0.69] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x21 = (2.5..2.7] AND x22 = (0.12..0.16] THEN 1"
+  explanation: "IF NOT x22 = (0.12..0.16] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x17 = (0.45..0.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x17 = (0.45..0.5] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x3 = (-inf..79.04] AND NOT x20 = (0.19..0.22] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x3 = (-inf..79.04] AND NOT x15 = (0.03..+inf) THEN NOT 1"
+  # hypos left: 3
+  exp time: 0.44
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (201.21..+inf) AND x2 = (239.85..+inf) AND x3 = (162.82..+inf) AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.0..0.01] AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x18 = (-inf..0.66] AND x19 = (-inf..-6.79] AND x20 = (-inf..0.15] AND x21 = (2.19..2.36] AND x22 = (-inf..0.12] THEN 0"
+  explanation: "IF NOT x22 = (-inf..0.12] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x2 = (239.85..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x14 = (0.02..0.03] AND NOT x17 = (0.4..0.45] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x17 = (0.4..0.45] AND NOT x21 = (2.19..2.36] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x10 = (-inf..0.14] AND NOT x17 = (0.4..0.45] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x15 = (0.0..0.01] AND NOT x17 = (0.4..0.45] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x3 = (162.82..+inf) AND NOT x17 = (0.4..0.45] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x16 = (24.46..25.89] AND NOT x17 = (0.4..0.45] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x3 = (162.82..+inf) AND NOT x16 = (24.46..25.89] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x17 = (0.4..0.45] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x3 = (162.82..+inf) AND NOT x18 = (-inf..0.66] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x3 = (162.82..+inf) AND NOT x15 = (0.0..0.01] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x3 = (162.82..+inf) AND NOT x13 = (0.01..0.02] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x3 = (162.82..+inf) AND NOT x14 = (0.02..0.03] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x14 = (0.02..0.03] AND NOT x16 = (24.46..25.89] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x16 = (24.46..25.89] AND NOT x20 = (-inf..0.15] AND NOT x21 = (2.19..2.36] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x13 = (0.01..0.02] AND NOT x16 = (24.46..25.89] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (239.85..+inf) AND NOT x3 = (162.82..+inf) AND NOT x14 = (0.02..0.03] AND NOT x16 = (24.46..25.89] AND NOT x17 = (0.4..0.45] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (239.85..+inf) AND NOT x3 = (162.82..+inf) AND NOT x16 = (24.46..25.89] AND NOT x17 = (0.4..0.45] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x13 = (0.01..0.02] AND NOT x14 = (0.02..0.03] AND NOT x20 = (-inf..0.15] AND NOT x21 = (2.19..2.36] THEN NOT 0"
+  # hypos left: 5
+  exp time: 1.28
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (201.21..+inf) AND x2 = (239.85..+inf) AND x3 = (162.82..+inf) AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.0..0.01] AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x18 = (-inf..0.66] AND x19 = (-inf..-6.79] AND x20 = (-inf..0.15] AND x21 = (2.36..2.5] AND x22 = (-inf..0.12] THEN 0"
+  explanation: "IF NOT x22 = (-inf..0.12] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x2 = (239.85..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x17 = (0.4..0.45] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x16 = (24.46..25.89] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x3 = (162.82..+inf) AND NOT x16 = (24.46..25.89] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x13 = (0.01..0.02] AND NOT x14 = (0.02..0.03] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x14 = (0.02..0.03] AND NOT x15 = (0.0..0.01] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x14 = (0.02..0.03] AND NOT x18 = (-inf..0.66] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x3 = (162.82..+inf) AND NOT x14 = (0.02..0.03] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x3 = (162.82..+inf) AND NOT x15 = (0.0..0.01] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x3 = (162.82..+inf) AND NOT x13 = (0.01..0.02] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x3 = (162.82..+inf) AND NOT x18 = (-inf..0.66] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT x2 = (239.85..+inf) AND NOT x3 = (162.82..+inf) AND NOT x14 = (0.02..0.03] AND NOT x16 = (24.46..25.89] AND NOT x17 = (0.4..0.45] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (239.85..+inf) AND NOT x3 = (162.82..+inf) AND NOT x16 = (24.46..25.89] AND NOT x17 = (0.4..0.45] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x13 = (0.01..0.02] AND NOT x15 = (0.0..0.01] AND NOT x18 = (-inf..0.66] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x3 = (162.82..+inf) AND NOT x13 = (0.01..0.02] AND NOT x14 = (0.02..0.03] AND NOT x18 = (-inf..0.66] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x14 = (0.02..0.03] AND NOT x15 = (0.0..0.01] AND NOT x16 = (24.46..25.89] AND NOT x18 = (-inf..0.66] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x1 = (201.21..+inf) AND NOT x13 = (0.01..0.02] AND NOT x14 = (0.02..0.03] AND NOT x16 = (24.46..25.89] AND NOT x18 = (-inf..0.66] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT x2 = (239.85..+inf) AND NOT x3 = (162.82..+inf) AND NOT x13 = (0.01..0.02] AND NOT x14 = (0.02..0.03] AND NOT x16 = (24.46..25.89] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x10 = (-inf..0.14] AND NOT x14 = (0.02..0.03] AND NOT x15 = (0.0..0.01] AND NOT x16 = (24.46..25.89] AND NOT x17 = (0.4..0.45] AND NOT x20 = (-inf..0.15] THEN NOT 0"
+  # hypos left: 7
+  exp time: 0.99
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (201.21..+inf) AND x2 = (239.85..+inf) AND x3 = (162.82..+inf) AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.02..0.03] AND x10 = (0.19..0.24] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.02..0.03] AND x14 = (0.04..0.05] AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.45..0.5] AND x18 = (-inf..0.66] AND x19 = (-6.19..-5.72] AND x20 = (0.22..0.26] AND x21 = (2.5..2.7] AND x22 = (0.12..0.16] THEN 1"
+  explanation: "IF NOT x22 = (0.12..0.16] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x10 = (0.19..0.24] AND NOT x13 = (0.02..0.03] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x14 = (0.04..0.05] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x16 = (20.41..22.08] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x10 = (0.19..0.24] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x13 = (0.02..0.03] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x13 = (0.02..0.03] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x15 = (0.01..0.02] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x14 = (0.04..0.05] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.22..0.26] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x14 = (0.04..0.05] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x10 = (0.19..0.24] AND NOT x19 = (-6.19..-5.72] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x10 = (0.19..0.24] AND NOT x14 = (0.04..0.05] AND NOT x20 = (0.22..0.26] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x10 = (0.19..0.24] AND NOT x15 = (0.01..0.02] AND NOT x20 = (0.22..0.26] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x10 = (0.19..0.24] AND NOT x14 = (0.04..0.05] AND NOT x15 = (0.01..0.02] AND NOT x20 = (0.22..0.26] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x15 = (0.01..0.02] AND NOT x17 = (0.45..0.5] AND NOT x20 = (0.22..0.26] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x10 = (0.19..0.24] AND NOT x17 = (0.45..0.5] AND NOT x19 = (-6.19..-5.72] AND NOT x21 = (2.5..2.7] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT x3 = (162.82..+inf) AND NOT x10 = (0.19..0.24] AND NOT x13 = (0.02..0.03] AND NOT x14 = (0.04..0.05] AND NOT x19 = (-6.19..-5.72] THEN NOT 1"
+  # hypos left: 5
+  exp time: 2.15
+
+
+exptimes: [2.837415, 4.153502, 0.4889120000000009, 3.407758000000001, 2.2397150000000003, 1.6442819999999987, 2.7610959999999984, 0.5766899999999993, 2.5370220000000003, 1.4612610000000004, 3.349855999999999, 0.5199350000000038, 1.1593029999999978, 0.19119500000000045, 0.503544999999999, 2.4299050000000015, 2.065398000000002, 0.34016900000000305, 0.5557310000000015, 0.37957099999999855, 0.7821890000000025, 2.600794999999991, 1.156889999999997, 1.418213999999999, 1.6178999999999988, 1.4333189999999973, 1.105173999999998, 1.2687090000000012, 3.284036999999998, 3.428750000000001, 3.030738999999997, 0.284561999999994, 1.2155240000000092, 0.611536000000001, 0.8225340000000045, 0.4431160000000034, 1.2790719999999922, 0.9898640000000043, 2.1524340000000066]
+all samples: 39
+total exp time: 62.53
+max exp time per instance: 4.15
+min exp time per instance: 0.19
+avg exp time per instance: 1.60
+total oracle calls: 14455
+max oracle calls per instance: 879
+min oracle calls per instance: 55
+avg oracle calls per instance: 370.64
+avg number of explanations per instance: 17.38
+avg explanation size per instance: 3.26
+

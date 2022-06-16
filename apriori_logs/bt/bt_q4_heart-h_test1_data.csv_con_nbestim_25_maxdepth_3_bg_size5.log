@@ -1,0 +1,1978 @@
+c XDual: dual explanations for XGBoost models
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (-inf..37.25] AND sex = 0 AND chest_pain = 0 AND trestbps = (15.5..23.25] AND chol = (-inf..38.25] AND fbs = 1 AND restecg = 2 AND thalach = (35.5..53.25] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT age = (-inf..37.25] AND NOT sex = 0 AND NOT trestbps = (15.5..23.25] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 0 AND NOT thalach = (35.5..53.25] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (-inf..37.25] AND NOT sex = 0 AND NOT chest_pain = 0 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (-inf..37.25] AND NOT sex = 0 AND NOT chol = (-inf..38.25] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT trestbps = (15.5..23.25] AND NOT chol = (-inf..38.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (-inf..38.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (-inf..37.25] AND NOT sex = 0 AND NOT chol = (-inf..38.25] AND NOT thalach = (35.5..53.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chol = (-inf..38.25] AND NOT thalach = (35.5..53.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chol = (-inf..38.25] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 0 AND NOT chol = (-inf..38.25] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (-inf..37.25] AND NOT trestbps = (15.5..23.25] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (-inf..37.25] AND NOT sex = 0 AND NOT chol = (-inf..38.25] AND NOT fbs = 1 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  exp time: 1.66
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (-inf..37.25] AND sex = 0 AND chest_pain = 3 AND trestbps = (23.25..+inf) AND chol = (38.25..76.5] AND fbs = 1 AND restecg = 3 AND thalach = (35.5..53.25] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 1 THEN 1"
+  explanation: "IF NOT age = (-inf..37.25] AND NOT sex = 0 AND NOT trestbps = (23.25..+inf) AND NOT chol = (38.25..76.5] AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT trestbps = (23.25..+inf) AND NOT chol = (38.25..76.5] AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (-inf..37.25] AND NOT sex = 0 AND NOT chest_pain = 3 AND NOT trestbps = (23.25..+inf) AND NOT chol = (38.25..76.5] AND NOT restecg = 3 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (-inf..37.25] AND NOT sex = 0 AND NOT chest_pain = 3 AND NOT trestbps = (23.25..+inf) AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT chest_pain = 3 AND NOT trestbps = (23.25..+inf) AND NOT restecg = 3 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 3 AND NOT chol = (38.25..76.5] AND NOT restecg = 3 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (-inf..37.25] AND NOT sex = 0 AND NOT chest_pain = 3 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT age = (-inf..37.25] AND NOT sex = 0 AND NOT chest_pain = 3 AND NOT trestbps = (23.25..+inf) AND NOT restecg = 3 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 3 AND NOT trestbps = (23.25..+inf) AND NOT chol = (38.25..76.5] AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 3 AND NOT trestbps = (23.25..+inf) AND NOT chol = (38.25..76.5] AND NOT restecg = 3 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 3 AND NOT trestbps = (23.25..+inf) AND NOT chol = (38.25..76.5] AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT age = (-inf..37.25] AND NOT sex = 0 AND NOT chest_pain = 3 AND NOT chol = (38.25..76.5] AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 9
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 3 AND NOT trestbps = (23.25..+inf) AND NOT chol = (38.25..76.5] AND NOT fbs = 1 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 10
+  exp time: 1.98
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (-inf..37.25] AND sex = 1 AND chest_pain = 1 AND trestbps = (-inf..7.75] AND chol = (76.5..114.75] AND fbs = 1 AND restecg = 2 AND thalach = (17.75..35.5] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT thalach = (17.75..35.5] AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT fbs = 1 AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT chol = (76.5..114.75] AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT chol = (76.5..114.75] AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT restecg = 2 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT trestbps = (-inf..7.75] AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT chol = (76.5..114.75] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT chol = (76.5..114.75] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (-inf..37.25] AND NOT sex = 1 AND NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT exang = 1 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (-inf..37.25] AND NOT trestbps = (-inf..7.75] AND NOT restecg = 2 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 1 AND NOT chol = (76.5..114.75] AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 1 AND NOT chol = (76.5..114.75] AND NOT thalach = (17.75..35.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT chol = (76.5..114.75] AND NOT restecg = 2 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT age = (-inf..37.25] AND NOT sex = 1 AND NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT chol = (76.5..114.75] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 8
+  exp time: 1.67
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (-inf..37.25] AND sex = 1 AND chest_pain = 1 AND trestbps = (15.5..23.25] AND chol = (38.25..76.5] AND fbs = 1 AND restecg = 3 AND thalach = (35.5..53.25] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT chest_pain = 1 AND NOT chol = (38.25..76.5] AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT restecg = 3 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT trestbps = (15.5..23.25] AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT chol = (38.25..76.5] AND NOT restecg = 3 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chol = (38.25..76.5] AND NOT restecg = 3 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chol = (38.25..76.5] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 1 AND NOT trestbps = (15.5..23.25] AND NOT restecg = 3 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT trestbps = (15.5..23.25] AND NOT restecg = 3 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 7
+  exp time: 1.67
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (-inf..37.25] AND sex = 1 AND chest_pain = 1 AND trestbps = (23.25..+inf) AND chol = (38.25..76.5] AND fbs = 1 AND restecg = 2 AND thalach = (35.5..53.25] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT trestbps = (23.25..+inf) AND NOT thalach = (35.5..53.25] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (23.25..+inf) AND NOT chol = (38.25..76.5] AND NOT thalach = (35.5..53.25] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT trestbps = (23.25..+inf) AND NOT chol = (38.25..76.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT trestbps = (23.25..+inf) AND NOT chol = (38.25..76.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT trestbps = (23.25..+inf) AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 1 AND NOT trestbps = (23.25..+inf) AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (-inf..37.25] AND NOT sex = 1 AND NOT chest_pain = 1 AND NOT chol = (38.25..76.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT chol = (38.25..76.5] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 AND NOT restecg = 2 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (-inf..37.25] AND NOT sex = 1 AND NOT chol = (38.25..76.5] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 8
+  exp time: 1.50
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (-inf..37.25] AND sex = 1 AND chest_pain = 1 AND trestbps = (7.75..15.5] AND chol = (76.5..114.75] AND fbs = 1 AND restecg = 2 AND thalach = (35.5..53.25] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT age = (-inf..37.25] AND NOT chest_pain = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] AND NOT thalach = (35.5..53.25] THEN NOT 1"
+  # hypos left: 4
+  exp time: 0.86
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (37.25..46.5] AND sex = 0 AND chest_pain = 1 AND trestbps = (15.5..23.25] AND chol = (-inf..38.25] AND fbs = 1 AND restecg = 2 AND thalach = (35.5..53.25] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (15.5..23.25] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (37.25..46.5] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT thalach = (35.5..53.25] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (37.25..46.5] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT chol = (-inf..38.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 1 AND NOT trestbps = (15.5..23.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 1 AND NOT chol = (-inf..38.25] AND NOT thalach = (35.5..53.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (37.25..46.5] AND NOT sex = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (-inf..38.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 1 AND NOT chol = (-inf..38.25] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT chol = (-inf..38.25] AND NOT fbs = 1 AND NOT thalach = (35.5..53.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (37.25..46.5] AND NOT sex = 0 AND NOT restecg = 2 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 1 AND NOT chol = (-inf..38.25] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (37.25..46.5] AND NOT trestbps = (15.5..23.25] AND NOT chol = (-inf..38.25] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 8
+  exp time: 1.87
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (37.25..46.5] AND sex = 0 AND chest_pain = 1 AND trestbps = (7.75..15.5] AND chol = (76.5..114.75] AND fbs = 1 AND restecg = 2 AND thalach = (-inf..17.75] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT chol = (76.5..114.75] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT thalach = (-inf..17.75] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (37.25..46.5] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT restecg = 2 AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (37.25..46.5] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT fbs = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (37.25..46.5] AND NOT sex = 0 AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT trestbps = (7.75..15.5] AND NOT thalach = (-inf..17.75] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT thalach = (-inf..17.75] AND NOT exang = 1 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 1 AND NOT chol = (76.5..114.75] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (37.25..46.5] AND NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 7
+  exp time: 2.41
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (37.25..46.5] AND sex = 1 AND chest_pain = 0 AND trestbps = (15.5..23.25] AND chol = (114.75..+inf) AND fbs = 1 AND restecg = 2 AND thalach = (17.75..35.5] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT age = (37.25..46.5] AND NOT trestbps = (15.5..23.25] AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (37.25..46.5] AND NOT thalach = (17.75..35.5] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT trestbps = (15.5..23.25] AND NOT chol = (114.75..+inf) AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chol = (114.75..+inf) AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chol = (114.75..+inf) AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 0 AND NOT chol = (114.75..+inf) AND NOT restecg = 2 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 0 AND NOT chol = (114.75..+inf) AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT trestbps = (15.5..23.25] AND NOT chol = (114.75..+inf) AND NOT restecg = 2 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chol = (114.75..+inf) AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT trestbps = (15.5..23.25] AND NOT thalach = (17.75..35.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (37.25..46.5] AND NOT trestbps = (15.5..23.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (114.75..+inf) AND NOT fbs = 1 AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  exp time: 2.71
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (37.25..46.5] AND sex = 1 AND chest_pain = 0 AND trestbps = (15.5..23.25] AND chol = (38.25..76.5] AND fbs = 1 AND restecg = 2 AND thalach = (17.75..35.5] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT age = (37.25..46.5] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT trestbps = (15.5..23.25] AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT restecg = 2 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (37.25..46.5] AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chol = (38.25..76.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT trestbps = (15.5..23.25] AND NOT fbs = 1 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT trestbps = (15.5..23.25] AND NOT restecg = 2 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT restecg = 2 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT chol = (38.25..76.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT fbs = 1 AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  exp time: 1.71
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (37.25..46.5] AND sex = 1 AND chest_pain = 0 AND trestbps = (15.5..23.25] AND chol = (38.25..76.5] AND fbs = 1 AND restecg = 2 AND thalach = (17.75..35.5] AND exang = 2 AND oldpeak = (1.75..2.88] AND slope = 2 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT trestbps = (15.5..23.25] AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (1.75..2.88] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (37.25..46.5] AND NOT thalach = (17.75..35.5] AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT chol = (38.25..76.5] AND NOT thalach = (17.75..35.5] AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chol = (38.25..76.5] AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (37.25..46.5] AND NOT sex = 1 AND NOT chest_pain = 0 AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT restecg = 2 AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (37.25..46.5] AND NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT thalach = (17.75..35.5] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (37.25..46.5] AND NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 AND NOT thal = 0 THEN NOT 0"
+  # hypos left: 7
+  exp time: 1.46
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (37.25..46.5] AND sex = 1 AND chest_pain = 0 AND trestbps = (23.25..+inf) AND chol = (76.5..114.75] AND fbs = 1 AND restecg = 3 AND thalach = (-inf..17.75] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 0 AND NOT chol = (76.5..114.75] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (76.5..114.75] AND NOT restecg = 3 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT trestbps = (23.25..+inf) AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1 AND NOT trestbps = (23.25..+inf) AND NOT chol = (76.5..114.75] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT thalach = (-inf..17.75] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (37.25..46.5] AND NOT sex = 1 AND NOT trestbps = (23.25..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT restecg = 3 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (37.25..46.5] AND NOT trestbps = (23.25..+inf) AND NOT chol = (76.5..114.75] AND NOT restecg = 3 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 0 AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT trestbps = (23.25..+inf) AND NOT chol = (76.5..114.75] AND NOT thalach = (-inf..17.75] AND NOT thal = 0 THEN NOT 0"
+  # hypos left: 4
+  exp time: 1.44
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (37.25..46.5] AND sex = 1 AND chest_pain = 0 AND trestbps = (7.75..15.5] AND chol = (38.25..76.5] AND fbs = 1 AND restecg = 2 AND thalach = (-inf..17.75] AND exang = 2 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT thalach = (-inf..17.75] AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (37.25..46.5] AND NOT trestbps = (7.75..15.5] AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (7.75..15.5] AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1 AND NOT restecg = 2 AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 0 AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (7.75..15.5] AND NOT chol = (38.25..76.5] AND NOT thalach = (-inf..17.75] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 0 AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (37.25..46.5] AND NOT sex = 1 AND NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT restecg = 2 AND NOT slope = 0 THEN NOT 0"
+  # hypos left: 6
+  exp time: 1.31
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (37.25..46.5] AND sex = 1 AND chest_pain = 1 AND trestbps = (15.5..23.25] AND chol = (38.25..76.5] AND fbs = 2 AND restecg = 2 AND thalach = (-inf..17.75] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (15.5..23.25] AND NOT fbs = 2 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 1 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 1 AND NOT fbs = 2 AND NOT thalach = (-inf..17.75] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 1 AND NOT fbs = 2 AND NOT exang = 1 AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 1 AND NOT fbs = 2 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 1 AND NOT chol = (38.25..76.5] AND NOT fbs = 2 AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 1 AND NOT chol = (38.25..76.5] AND NOT fbs = 2 AND NOT thalach = (-inf..17.75] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 1 AND NOT chol = (38.25..76.5] AND NOT restecg = 2 AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 1 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 1 AND NOT chol = (38.25..76.5] AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT chol = (38.25..76.5] AND NOT fbs = 2 AND NOT thalach = (-inf..17.75] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (37.25..46.5] AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT fbs = 2 AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (37.25..46.5] AND NOT sex = 1 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT fbs = 2 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 9
+  exp time: 2.03
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (37.25..46.5] AND sex = 1 AND chest_pain = 1 AND trestbps = (15.5..23.25] AND chol = (76.5..114.75] AND fbs = 1 AND restecg = 2 AND thalach = (35.5..53.25] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (15.5..23.25] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (37.25..46.5] AND NOT trestbps = (15.5..23.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 1 AND NOT restecg = 2 AND NOT thalach = (35.5..53.25] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 1 AND NOT chol = (76.5..114.75] AND NOT thalach = (35.5..53.25] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 1 AND NOT chol = (76.5..114.75] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 1 AND NOT fbs = 1 AND NOT thalach = (35.5..53.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (37.25..46.5] AND NOT sex = 1 AND NOT chest_pain = 1 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 1 AND NOT chol = (76.5..114.75] AND NOT thalach = (35.5..53.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 7
+  exp time: 1.56
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (37.25..46.5] AND sex = 1 AND chest_pain = 1 AND trestbps = (7.75..15.5] AND chol = (114.75..+inf) AND fbs = 1 AND restecg = 2 AND thalach = (-inf..17.75] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT chest_pain = 1 AND NOT chol = (114.75..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT chest_pain = 1 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chol = (114.75..+inf) AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT trestbps = (7.75..15.5] AND NOT chol = (114.75..+inf) AND NOT thalach = (-inf..17.75] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (37.25..46.5] AND NOT sex = 1 AND NOT trestbps = (7.75..15.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 7
+  exp time: 1.40
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (37.25..46.5] AND sex = 1 AND chest_pain = 1 AND trestbps = (7.75..15.5] AND chol = (76.5..114.75] AND fbs = 1 AND restecg = 2 AND thalach = (35.5..53.25] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT chest_pain = 1 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT age = (37.25..46.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT trestbps = (7.75..15.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 4
+  exp time: 0.79
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (37.25..46.5] AND sex = 1 AND chest_pain = 2 AND trestbps = (15.5..23.25] AND chol = (76.5..114.75] AND fbs = 1 AND restecg = 2 AND thalach = (17.75..35.5] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT chest_pain = 2 AND NOT trestbps = (15.5..23.25] AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 2 AND NOT restecg = 2 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 2 AND NOT chol = (76.5..114.75] AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chest_pain = 2 AND NOT chol = (76.5..114.75] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (37.25..46.5] AND NOT sex = 1 AND NOT exang = 1 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 2 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (37.25..46.5] AND NOT chol = (76.5..114.75] AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 2 AND NOT fbs = 1 AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 2 AND NOT chol = (76.5..114.75] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 2 AND NOT trestbps = (15.5..23.25] AND NOT chol = (76.5..114.75] AND NOT restecg = 2 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (37.25..46.5] AND NOT trestbps = (15.5..23.25] AND NOT chol = (76.5..114.75] AND NOT thalach = (17.75..35.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 7
+  exp time: 2.33
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 0 AND chest_pain = 0 AND trestbps = (-inf..7.75] AND chol = (-inf..38.25] AND fbs = 1 AND restecg = 2 AND thalach = (53.25..+inf) AND exang = 1 AND oldpeak = (1.75..2.88] AND slope = 3 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 0 AND NOT trestbps = (-inf..7.75] AND NOT thalach = (53.25..+inf) THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (-inf..7.75] AND NOT thalach = (53.25..+inf) AND NOT oldpeak = (1.75..2.88] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 0 AND NOT thalach = (53.25..+inf) AND NOT oldpeak = (1.75..2.88] AND NOT slope = 3 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (-inf..7.75] AND NOT chol = (-inf..38.25] AND NOT oldpeak = (1.75..2.88] AND NOT slope = 3 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT trestbps = (-inf..7.75] AND NOT thalach = (53.25..+inf) AND NOT oldpeak = (1.75..2.88] AND NOT slope = 3 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (-inf..7.75] AND NOT restecg = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 3 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (-inf..7.75] AND NOT oldpeak = (1.75..2.88] AND NOT slope = 3 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (-inf..7.75] AND NOT chol = (-inf..38.25] AND NOT thalach = (53.25..+inf) AND NOT exang = 1 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (-inf..7.75] AND NOT chol = (-inf..38.25] AND NOT thalach = (53.25..+inf) AND NOT slope = 3 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (-inf..7.75] AND NOT chol = (-inf..38.25] AND NOT restecg = 2 AND NOT exang = 1 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 0 AND NOT chol = (-inf..38.25] AND NOT oldpeak = (1.75..2.88] AND NOT slope = 3 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT restecg = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 3 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT trestbps = (-inf..7.75] AND NOT chol = (-inf..38.25] AND NOT restecg = 2 AND NOT thalach = (53.25..+inf) AND NOT oldpeak = (1.75..2.88] AND NOT slope = 3 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chol = (-inf..38.25] AND NOT thalach = (53.25..+inf) AND NOT oldpeak = (1.75..2.88] AND NOT slope = 3 THEN NOT 0"
+  # hypos left: 6
+  exp time: 1.56
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 0 AND chest_pain = 0 AND trestbps = (7.75..15.5] AND chol = (-inf..38.25] AND fbs = 1 AND restecg = 2 AND thalach = (17.75..35.5] AND exang = 2 AND oldpeak = (0.85..1.75] AND slope = 2 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT chol = (-inf..38.25] AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT trestbps = (7.75..15.5] AND NOT chol = (-inf..38.25] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT thalach = (17.75..35.5] AND NOT oldpeak = (0.85..1.75] AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0 AND NOT trestbps = (7.75..15.5] AND NOT oldpeak = (0.85..1.75] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT trestbps = (7.75..15.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chol = (-inf..38.25] AND NOT fbs = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chol = (-inf..38.25] AND NOT restecg = 2 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chol = (-inf..38.25] AND NOT fbs = 1 AND NOT restecg = 2 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chol = (-inf..38.25] AND NOT oldpeak = (0.85..1.75] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT thalach = (17.75..35.5] AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (7.75..15.5] AND NOT thalach = (17.75..35.5] AND NOT exang = 2 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0 AND NOT thalach = (17.75..35.5] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT restecg = 2 AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] THEN NOT 1"
+  # hypos left: 5
+  exp time: 1.66
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 0 AND chest_pain = 1 AND trestbps = (-inf..7.75] AND chol = (114.75..+inf) AND fbs = 0 AND restecg = 2 AND thalach = (17.75..35.5] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT chol = (114.75..+inf) AND NOT fbs = 0 AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT fbs = 0 AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT chol = (114.75..+inf) AND NOT fbs = 0 AND NOT restecg = 2 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT chol = (114.75..+inf) AND NOT fbs = 0 AND NOT exang = 1 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT chol = (114.75..+inf) AND NOT fbs = 0 AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT fbs = 0 AND NOT thalach = (17.75..35.5] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT chol = (114.75..+inf) AND NOT fbs = 0 AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT fbs = 0 AND NOT thalach = (17.75..35.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT fbs = 0 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT fbs = 0 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT chol = (114.75..+inf) AND NOT fbs = 0 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT chol = (114.75..+inf) AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT fbs = 0 AND NOT restecg = 2 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (-inf..7.75] AND NOT fbs = 0 AND NOT thalach = (17.75..35.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 1 AND NOT chol = (114.75..+inf) AND NOT fbs = 0 AND NOT thalach = (17.75..35.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT fbs = 0 AND NOT thalach = (17.75..35.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT fbs = 0 AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT trestbps = (-inf..7.75] AND NOT chol = (114.75..+inf) AND NOT fbs = 0 AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT thalach = (17.75..35.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 9
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT trestbps = (-inf..7.75] AND NOT chol = (114.75..+inf) AND NOT fbs = 0 AND NOT restecg = 2 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 9
+  exp time: 2.59
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 0 AND chest_pain = 1 AND trestbps = (-inf..7.75] AND chol = (114.75..+inf) AND fbs = 1 AND restecg = 2 AND thalach = (35.5..53.25] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT chol = (114.75..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT chol = (114.75..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT chol = (114.75..+inf) AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT thalach = (35.5..53.25] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT chol = (114.75..+inf) AND NOT fbs = 1 AND NOT thalach = (35.5..53.25] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT trestbps = (-inf..7.75] AND NOT chol = (114.75..+inf) AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 1 AND NOT chol = (114.75..+inf) AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT chol = (114.75..+inf) AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (-inf..7.75] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 1 AND NOT trestbps = (-inf..7.75] AND NOT thalach = (35.5..53.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT thalach = (35.5..53.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 7
+  exp time: 1.91
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 0 AND chest_pain = 1 AND trestbps = (15.5..23.25] AND chol = (38.25..76.5] AND fbs = 1 AND restecg = 2 AND thalach = (17.75..35.5] AND exang = 2 AND oldpeak = (1.75..2.88] AND slope = 2 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (15.5..23.25] AND NOT thalach = (17.75..35.5] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (1.75..2.88] THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chol = (38.25..76.5] AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (15.5..23.25] AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (1.75..2.88] THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT restecg = 2 AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (1.75..2.88] THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT restecg = 2 AND NOT thalach = (17.75..35.5] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT restecg = 2 AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 AND NOT thal = 0 THEN NOT 0"
+  # hypos left: 8
+  exp time: 1.85
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 0 AND chest_pain = 1 AND trestbps = (23.25..+inf) AND chol = (-inf..38.25] AND fbs = 1 AND restecg = 2 AND thalach = (35.5..53.25] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT chest_pain = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (23.25..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT chol = (-inf..38.25] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT trestbps = (23.25..+inf) AND NOT chol = (-inf..38.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (23.25..+inf) AND NOT chol = (-inf..38.25] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chol = (-inf..38.25] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT trestbps = (23.25..+inf) AND NOT restecg = 2 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 8
+  exp time: 1.64
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 0 AND chest_pain = 1 AND trestbps = (7.75..15.5] AND chol = (114.75..+inf) AND fbs = 2 AND restecg = 3 AND thalach = (35.5..53.25] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT chol = (114.75..+inf) AND NOT fbs = 2 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT chol = (114.75..+inf) AND NOT fbs = 2 AND NOT restecg = 3 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 1 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT chol = (114.75..+inf) AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT chol = (114.75..+inf) AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT fbs = 2 AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT fbs = 2 AND NOT restecg = 3 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT chol = (114.75..+inf) AND NOT fbs = 2 AND NOT restecg = 3 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT chest_pain = 1 AND NOT fbs = 2 AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chol = (114.75..+inf) AND NOT fbs = 2 AND NOT restecg = 3 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT fbs = 2 AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT restecg = 3 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT chol = (114.75..+inf) AND NOT fbs = 2 AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT trestbps = (7.75..15.5] AND NOT chol = (114.75..+inf) AND NOT fbs = 2 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 9
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (7.75..15.5] AND NOT fbs = 2 AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 9
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT fbs = 2 AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 9
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT fbs = 2 AND NOT restecg = 3 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 9
+  exp time: 3.04
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 0 AND chest_pain = 1 AND trestbps = (7.75..15.5] AND chol = (76.5..114.75] AND fbs = 1 AND restecg = 2 AND thalach = (35.5..53.25] AND exang = 1 AND oldpeak = (0.85..1.75] AND slope = 2 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT oldpeak = (0.85..1.75] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 1 AND NOT chol = (76.5..114.75] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT chol = (76.5..114.75] AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT chol = (76.5..114.75] AND NOT exang = 1 AND NOT slope = 2 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT trestbps = (7.75..15.5] AND NOT restecg = 2 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT fbs = 1 AND NOT thalach = (35.5..53.25] AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT restecg = 2 AND NOT thalach = (35.5..53.25] AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT fbs = 1 AND NOT restecg = 2 AND NOT exang = 1 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 7
+  exp time: 1.97
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 0 AND chest_pain = 2 AND trestbps = (7.75..15.5] AND chol = (76.5..114.75] AND fbs = 1 AND restecg = 2 AND thalach = (17.75..35.5] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT trestbps = (7.75..15.5] AND NOT exang = 1 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chest_pain = 2 AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 2 AND NOT chol = (76.5..114.75] AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT restecg = 2 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT fbs = 1 AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chest_pain = 2 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 2 AND NOT chol = (76.5..114.75] AND NOT thalach = (17.75..35.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 0 AND NOT chol = (76.5..114.75] AND NOT thalach = (17.75..35.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 2 AND NOT thalach = (17.75..35.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 0 AND NOT chest_pain = 2 AND NOT chol = (76.5..114.75] AND NOT restecg = 2 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 2 AND NOT chol = (76.5..114.75] AND NOT fbs = 1 AND NOT restecg = 2 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 8
+  exp time: 2.57
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 0 AND trestbps = (-inf..7.75] AND chol = (114.75..+inf) AND fbs = 1 AND restecg = 3 AND thalach = (53.25..+inf) AND exang = 2 AND oldpeak = (0.85..1.75] AND slope = 2 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (-inf..7.75] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (-inf..7.75] AND NOT restecg = 3 AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (114.75..+inf) AND NOT restecg = 3 AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 0 AND NOT restecg = 3 AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT trestbps = (-inf..7.75] AND NOT restecg = 3 AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (-inf..7.75] AND NOT chol = (114.75..+inf) AND NOT restecg = 3 AND NOT thalach = (53.25..+inf) THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (-inf..7.75] AND NOT chol = (114.75..+inf) AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (-inf..7.75] AND NOT chol = (114.75..+inf) AND NOT thalach = (53.25..+inf) AND NOT oldpeak = (0.85..1.75] THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 1 AND NOT chest_pain = 0 AND NOT chol = (114.75..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chol = (114.75..+inf) AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 AND NOT thal = 0 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chol = (114.75..+inf) AND NOT restecg = 3 AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (-inf..7.75] AND NOT restecg = 3 AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (-inf..7.75] AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (-inf..7.75] AND NOT chol = (114.75..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 1 AND NOT trestbps = (-inf..7.75] AND NOT chol = (114.75..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 1 AND NOT trestbps = (-inf..7.75] AND NOT chol = (114.75..+inf) AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  exp time: 2.20
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 0 AND trestbps = (15.5..23.25] AND chol = (114.75..+inf) AND fbs = 1 AND restecg = 3 AND thalach = (-inf..17.75] AND exang = 2 AND oldpeak = (1.75..2.88] AND slope = 2 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (114.75..+inf) AND NOT oldpeak = (1.75..2.88] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT restecg = 3 AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT trestbps = (15.5..23.25] AND NOT chol = (114.75..+inf) AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT restecg = 3 AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT restecg = 3 AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (114.75..+inf) AND NOT restecg = 3 AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chol = (114.75..+inf) AND NOT restecg = 3 AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (114.75..+inf) AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (114.75..+inf) AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (114.75..+inf) AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (114.75..+inf) AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (1.75..2.88] THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT chol = (114.75..+inf) AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT fbs = 1 AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (114.75..+inf) AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (15.5..23.25] AND NOT chol = (114.75..+inf) AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 AND NOT thal = 0 THEN NOT 0"
+  # hypos left: 8
+  exp time: 2.09
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 0 AND trestbps = (15.5..23.25] AND chol = (114.75..+inf) AND fbs = 1 AND restecg = 3 AND thalach = (17.75..35.5] AND exang = 1 AND oldpeak = (0.85..1.75] AND slope = 3 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT restecg = 3 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 3 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (114.75..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT chol = (114.75..+inf) AND NOT restecg = 3 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT oldpeak = (0.85..1.75] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT fbs = 1 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 3 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (114.75..+inf) AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (0.85..1.75] AND NOT slope = 3 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT chol = (114.75..+inf) AND NOT restecg = 3 AND NOT thalach = (17.75..35.5] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (15.5..23.25] AND NOT chol = (114.75..+inf) AND NOT oldpeak = (0.85..1.75] AND NOT slope = 3 AND NOT thal = 0 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT trestbps = (15.5..23.25] AND NOT chol = (114.75..+inf) AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (0.85..1.75] AND NOT slope = 3 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (0.85..1.75] AND NOT slope = 3 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT thalach = (17.75..35.5] AND NOT exang = 1 AND NOT oldpeak = (0.85..1.75] THEN NOT 0"
+  # hypos left: 6
+  exp time: 1.63
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 0 AND trestbps = (15.5..23.25] AND chol = (38.25..76.5] AND fbs = 1 AND restecg = 2 AND thalach = (-inf..17.75] AND exang = 1 AND oldpeak = (0.85..1.75] AND slope = 2 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT age = (46.5..55.75] AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest_pain = 0 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT trestbps = (15.5..23.25] AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT chol = (38.25..76.5] AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT thalach = (-inf..17.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT thalach = (-inf..17.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT thalach = (-inf..17.75] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT thalach = (-inf..17.75] AND NOT exang = 1 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT thalach = (-inf..17.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT restecg = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT restecg = 2 AND NOT thalach = (-inf..17.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (0.85..1.75] THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT restecg = 2 AND NOT exang = 1 AND NOT oldpeak = (0.85..1.75] THEN NOT 0"
+  # hypos left: 7
+  exp time: 1.63
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 0 AND trestbps = (15.5..23.25] AND chol = (38.25..76.5] AND fbs = 1 AND restecg = 2 AND thalach = (35.5..53.25] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT thalach = (35.5..53.25] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT thalach = (35.5..53.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (15.5..23.25] AND NOT thalach = (35.5..53.25] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT restecg = 2 AND NOT thalach = (35.5..53.25] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT thalach = (35.5..53.25] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 1 AND NOT trestbps = (15.5..23.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chol = (38.25..76.5] AND NOT fbs = 1 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  exp time: 1.65
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 0 AND trestbps = (15.5..23.25] AND chol = (38.25..76.5] AND fbs = 1 AND restecg = 2 AND thalach = (53.25..+inf) AND exang = 2 AND oldpeak = (0.85..1.75] AND slope = 2 AND ca = 0 AND thal = 3 THEN 0"
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT thalach = (53.25..+inf) AND NOT ca = 0 AND NOT thal = 3 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 0 AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 AND NOT ca = 0 AND NOT thal = 3 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 AND NOT ca = 0 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chol = (38.25..76.5] AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 AND NOT thal = 3 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT chol = (38.25..76.5] AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 AND NOT ca = 0 AND NOT thal = 3 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT trestbps = (15.5..23.25] AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 AND NOT ca = 0 AND NOT thal = 3 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 AND NOT ca = 0 AND NOT thal = 3 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT thalach = (53.25..+inf) AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 AND NOT ca = 0 AND NOT thal = 3 THEN NOT 0"
+  # hypos left: 8
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 AND NOT ca = 0 AND NOT thal = 3 THEN NOT 0"
+  # hypos left: 8
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 1 AND NOT trestbps = (15.5..23.25] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 AND NOT ca = 0 AND NOT thal = 3 THEN NOT 0"
+  # hypos left: 8
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 AND NOT thal = 3 THEN NOT 0"
+  # hypos left: 8
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT thalach = (53.25..+inf) AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 AND NOT ca = 0 AND NOT thal = 3 THEN NOT 0"
+  # hypos left: 8
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT slope = 2 AND NOT ca = 0 AND NOT thal = 3 THEN NOT 0"
+  # hypos left: 8
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT slope = 2 AND NOT ca = 0 AND NOT thal = 3 THEN NOT 0"
+  # hypos left: 8
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT slope = 2 AND NOT ca = 0 AND NOT thal = 3 THEN NOT 0"
+  # hypos left: 8
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 AND NOT ca = 0 AND NOT thal = 3 THEN NOT 0"
+  # hypos left: 8
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 AND NOT ca = 0 AND NOT thal = 3 THEN NOT 0"
+  # hypos left: 8
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT ca = 0 AND NOT thal = 3 THEN NOT 0"
+  # hypos left: 9
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT restecg = 2 AND NOT thalach = (53.25..+inf) AND NOT oldpeak = (0.85..1.75] AND NOT ca = 0 AND NOT thal = 3 THEN NOT 0"
+  # hypos left: 9
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (38.25..76.5] AND NOT restecg = 2 AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT slope = 2 AND NOT ca = 0 AND NOT thal = 3 THEN NOT 0"
+  # hypos left: 9
+  exp time: 2.48
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 0 AND trestbps = (15.5..23.25] AND chol = (76.5..114.75] AND fbs = 1 AND restecg = 2 AND thalach = (35.5..53.25] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (76.5..114.75] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest_pain = 0 AND NOT restecg = 2 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chol = (76.5..114.75] AND NOT thalach = (35.5..53.25] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT trestbps = (15.5..23.25] AND NOT thalach = (35.5..53.25] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chol = (76.5..114.75] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT thalach = (35.5..53.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 0"
+  # hypos left: 5
+  exp time: 0.83
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 0 AND trestbps = (15.5..23.25] AND chol = (76.5..114.75] AND fbs = 2 AND restecg = 2 AND thalach = (-inf..17.75] AND exang = 2 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT fbs = 2 AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (76.5..114.75] AND NOT fbs = 2 AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chol = (76.5..114.75] AND NOT fbs = 2 AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT trestbps = (15.5..23.25] AND NOT fbs = 2 AND NOT thalach = (-inf..17.75] AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT chol = (76.5..114.75] AND NOT fbs = 2 AND NOT thalach = (-inf..17.75] AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT fbs = 2 AND NOT thalach = (-inf..17.75] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT thal = 0 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT chol = (76.5..114.75] AND NOT thalach = (-inf..17.75] AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 0 AND NOT fbs = 2 AND NOT restecg = 2 AND NOT thalach = (-inf..17.75] AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT thal = 0 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT trestbps = (15.5..23.25] AND NOT fbs = 2 AND NOT restecg = 2 AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT fbs = 2 AND NOT restecg = 2 AND NOT slope = 0 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (76.5..114.75] AND NOT thalach = (-inf..17.75] AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT fbs = 2 AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (15.5..23.25] AND NOT chol = (76.5..114.75] AND NOT fbs = 2 AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 0"
+  # hypos left: 8
+  exp time: 1.72
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 0 AND trestbps = (23.25..+inf) AND chol = (114.75..+inf) AND fbs = 1 AND restecg = 2 AND thalach = (53.25..+inf) AND exang = 2 AND oldpeak = (0.85..1.75] AND slope = 2 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT chest_pain = 0 AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT trestbps = (23.25..+inf) AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT chol = (114.75..+inf) AND NOT thalach = (53.25..+inf) THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (114.75..+inf) AND NOT restecg = 2 AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT chol = (114.75..+inf) AND NOT thalach = (53.25..+inf) AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT chol = (114.75..+inf) AND NOT thalach = (53.25..+inf) AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT chol = (114.75..+inf) AND NOT restecg = 2 AND NOT thalach = (53.25..+inf) AND NOT oldpeak = (0.85..1.75] THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 1 AND NOT trestbps = (23.25..+inf) AND NOT chol = (114.75..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  exp time: 1.43
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 0 AND trestbps = (23.25..+inf) AND chol = (76.5..114.75] AND fbs = 1 AND restecg = 3 AND thalach = (-inf..17.75] AND exang = 2 AND oldpeak = (0.85..1.75] AND slope = 2 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT oldpeak = (0.85..1.75] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (76.5..114.75] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (76.5..114.75] AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT trestbps = (23.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT restecg = 3 AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 0 AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT trestbps = (23.25..+inf) AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT chol = (76.5..114.75] AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] AND NOT slope = 2 AND NOT thal = 0 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (23.25..+inf) AND NOT chol = (76.5..114.75] AND NOT restecg = 3 AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (23.25..+inf) AND NOT chol = (76.5..114.75] AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 AND NOT thal = 0 THEN NOT 0"
+  # hypos left: 8
+  exp time: 1.75
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 0 AND trestbps = (23.25..+inf) AND chol = (76.5..114.75] AND fbs = 1 AND restecg = 3 AND thalach = (35.5..53.25] AND exang = 2 AND oldpeak = (2.88..+inf) AND slope = 2 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT thalach = (35.5..53.25] AND NOT oldpeak = (2.88..+inf) THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 0 AND NOT restecg = 3 AND NOT exang = 2 AND NOT oldpeak = (2.88..+inf) AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (2.88..+inf) AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (76.5..114.75] AND NOT thalach = (35.5..53.25] AND NOT exang = 2 AND NOT oldpeak = (2.88..+inf) AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT trestbps = (23.25..+inf) AND NOT thalach = (35.5..53.25] AND NOT exang = 2 AND NOT oldpeak = (2.88..+inf) AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT chol = (76.5..114.75] AND NOT restecg = 3 AND NOT oldpeak = (2.88..+inf) THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT restecg = 3 AND NOT oldpeak = (2.88..+inf) AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT trestbps = (23.25..+inf) AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT exang = 2 AND NOT oldpeak = (2.88..+inf) AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (23.25..+inf) AND NOT chol = (76.5..114.75] AND NOT restecg = 3 AND NOT exang = 2 AND NOT oldpeak = (2.88..+inf) AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT chol = (76.5..114.75] AND NOT restecg = 3 AND NOT oldpeak = (2.88..+inf) AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (23.25..+inf) AND NOT chol = (76.5..114.75] AND NOT thalach = (35.5..53.25] AND NOT exang = 2 AND NOT oldpeak = (2.88..+inf) AND NOT slope = 2 AND NOT thal = 0 THEN NOT 0"
+  # hypos left: 8
+  exp time: 1.39
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 0 AND trestbps = (7.75..15.5] AND chol = (-inf..38.25] AND fbs = 1 AND restecg = 2 AND thalach = (35.5..53.25] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT chest_pain = 0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chol = (-inf..38.25] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chol = (-inf..38.25] AND NOT thalach = (35.5..53.25] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT trestbps = (7.75..15.5] AND NOT thalach = (35.5..53.25] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 1 AND NOT restecg = 2 AND NOT thalach = (35.5..53.25] THEN NOT 0"
+  # hypos left: 4
+  exp time: 0.68
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 0 AND trestbps = (7.75..15.5] AND chol = (38.25..76.5] AND fbs = 1 AND restecg = 2 AND thalach = (-inf..17.75] AND exang = 1 AND oldpeak = (1.75..2.88] AND slope = 2 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT thalach = (-inf..17.75] AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest_pain = 0 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT thalach = (-inf..17.75] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT thalach = (-inf..17.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (7.75..15.5] AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 1 AND NOT restecg = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT chol = (38.25..76.5] AND NOT restecg = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (1.75..2.88] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT thalach = (-inf..17.75] AND NOT exang = 1 AND NOT oldpeak = (1.75..2.88] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT thalach = (-inf..17.75] AND NOT exang = 1 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT restecg = 2 AND NOT exang = 1 AND NOT oldpeak = (1.75..2.88] THEN NOT 0"
+  # hypos left: 6
+  exp time: 1.47
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 0 AND trestbps = (7.75..15.5] AND chol = (38.25..76.5] AND fbs = 1 AND restecg = 2 AND thalach = (-inf..17.75] AND exang = 2 AND oldpeak = (1.75..2.88] AND slope = 2 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (1.75..2.88] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT thalach = (-inf..17.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 0 AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT restecg = 2 AND NOT oldpeak = (1.75..2.88] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (7.75..15.5] AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT thalach = (-inf..17.75] AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (38.25..76.5] AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT chol = (38.25..76.5] AND NOT restecg = 2 AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 1 AND NOT restecg = 2 AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  exp time: 1.76
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 0 AND trestbps = (7.75..15.5] AND chol = (76.5..114.75] AND fbs = 0 AND restecg = 2 AND thalach = (17.75..35.5] AND exang = 1 AND oldpeak = (0.85..1.75] AND slope = 2 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT fbs = 0 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT chol = (76.5..114.75] AND NOT fbs = 0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT chol = (76.5..114.75] AND NOT fbs = 0 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (7.75..15.5] AND NOT fbs = 0 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 1 AND NOT chest_pain = 0 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT chol = (76.5..114.75] AND NOT fbs = 0 AND NOT oldpeak = (0.85..1.75] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 0 AND NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] AND NOT fbs = 0 AND NOT restecg = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT fbs = 0 AND NOT exang = 1 AND NOT slope = 2 AND NOT thal = 0 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (7.75..15.5] AND NOT fbs = 0 AND NOT thalach = (17.75..35.5] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] AND NOT restecg = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT fbs = 0 AND NOT restecg = 2 AND NOT thalach = (17.75..35.5] AND NOT exang = 1 AND NOT oldpeak = (0.85..1.75] THEN NOT 0"
+  # hypos left: 7
+  exp time: 1.52
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 0 AND trestbps = (7.75..15.5] AND chol = (76.5..114.75] AND fbs = 1 AND restecg = 2 AND thalach = (-inf..17.75] AND exang = 1 AND oldpeak = (1.75..2.88] AND slope = 2 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT thalach = (-inf..17.75] AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest_pain = 0 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest_pain = 0 AND NOT chol = (76.5..114.75] AND NOT thalach = (-inf..17.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1 AND NOT restecg = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT chol = (76.5..114.75] AND NOT thalach = (-inf..17.75] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 0 AND NOT restecg = 2 AND NOT exang = 1 AND NOT oldpeak = (1.75..2.88] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 0 AND NOT chol = (76.5..114.75] AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (1.75..2.88] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  exp time: 1.33
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 1 AND trestbps = (15.5..23.25] AND chol = (-inf..38.25] AND fbs = 1 AND restecg = 2 AND thalach = (17.75..35.5] AND exang = 2 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT chest_pain = 1 AND NOT chol = (-inf..38.25] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT chest_pain = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (15.5..23.25] AND NOT thalach = (17.75..35.5] AND NOT exang = 2 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 1 AND NOT thalach = (17.75..35.5] AND NOT exang = 2 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 1 AND NOT trestbps = (15.5..23.25] AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chol = (-inf..38.25] AND NOT restecg = 2 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chol = (-inf..38.25] AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT restecg = 2 AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  exp time: 1.24
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 1 AND trestbps = (23.25..+inf) AND chol = (76.5..114.75] AND fbs = 2 AND restecg = 2 AND thalach = (17.75..35.5] AND exang = 2 AND oldpeak = (1.75..2.88] AND slope = 2 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT trestbps = (23.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 AND NOT thal = 0 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT fbs = 2 AND NOT thalach = (17.75..35.5] AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT chol = (76.5..114.75] AND NOT fbs = 2 AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT chol = (76.5..114.75] AND NOT fbs = 2 AND NOT restecg = 2 AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT trestbps = (23.25..+inf) AND NOT chol = (76.5..114.75] AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (23.25..+inf) AND NOT fbs = 2 AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (23.25..+inf) AND NOT chol = (76.5..114.75] AND NOT fbs = 2 AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (1.75..2.88] THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (23.25..+inf) AND NOT fbs = 2 AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (23.25..+inf) AND NOT fbs = 2 AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT trestbps = (23.25..+inf) AND NOT fbs = 2 AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (23.25..+inf) AND NOT chol = (76.5..114.75] AND NOT fbs = 2 AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 1 AND NOT trestbps = (23.25..+inf) AND NOT chol = (76.5..114.75] AND NOT fbs = 2 AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (23.25..+inf) AND NOT chol = (76.5..114.75] AND NOT fbs = 2 AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT trestbps = (23.25..+inf) AND NOT chol = (76.5..114.75] AND NOT fbs = 2 AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (23.25..+inf) AND NOT chol = (76.5..114.75] AND NOT fbs = 2 AND NOT restecg = 2 AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 1 AND NOT chol = (76.5..114.75] AND NOT fbs = 2 AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 1 AND NOT chol = (76.5..114.75] AND NOT thalach = (17.75..35.5] AND NOT exang = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 1 AND NOT chol = (76.5..114.75] AND NOT fbs = 2 AND NOT restecg = 2 AND NOT thalach = (17.75..35.5] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 1 AND NOT trestbps = (23.25..+inf) AND NOT fbs = 2 AND NOT restecg = 2 AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (1.75..2.88] THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 1 AND NOT trestbps = (23.25..+inf) AND NOT fbs = 2 AND NOT oldpeak = (1.75..2.88] AND NOT slope = 2 AND NOT thal = 0 THEN NOT 0"
+  # hypos left: 7
+  exp time: 2.07
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 1 AND trestbps = (7.75..15.5] AND chol = (38.25..76.5] AND fbs = 1 AND restecg = 2 AND thalach = (35.5..53.25] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT chest_pain = 1 AND NOT chol = (38.25..76.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT chest_pain = 1 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 1 AND NOT thalach = (35.5..53.25] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest_pain = 1 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chol = (38.25..76.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT thalach = (35.5..53.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 1 AND NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  exp time: 1.35
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 2 AND trestbps = (15.5..23.25] AND chol = (-inf..38.25] AND fbs = 1 AND restecg = 2 AND thalach = (17.75..35.5] AND exang = 2 AND oldpeak = (0.85..1.75] AND slope = 2 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (15.5..23.25] AND NOT chol = (-inf..38.25] AND NOT thalach = (17.75..35.5] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 2 AND NOT trestbps = (15.5..23.25] AND NOT thalach = (17.75..35.5] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 2 AND NOT trestbps = (15.5..23.25] AND NOT exang = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 2 AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT trestbps = (15.5..23.25] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT chol = (-inf..38.25] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT thalach = (17.75..35.5] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1 AND NOT trestbps = (15.5..23.25] AND NOT chol = (-inf..38.25] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 2 AND NOT trestbps = (15.5..23.25] AND NOT restecg = 2 AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 2 AND NOT chol = (-inf..38.25] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (15.5..23.25] AND NOT chol = (-inf..38.25] AND NOT slope = 2 AND NOT thal = 0 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT trestbps = (15.5..23.25] AND NOT chol = (-inf..38.25] AND NOT restecg = 2 AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (0.85..1.75] THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT sex = 1 AND NOT trestbps = (15.5..23.25] AND NOT chol = (-inf..38.25] AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 2 AND NOT chol = (-inf..38.25] AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 2 AND NOT chol = (-inf..38.25] AND NOT thalach = (17.75..35.5] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  exp time: 1.75
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 2 AND trestbps = (15.5..23.25] AND chol = (114.75..+inf) AND fbs = 1 AND restecg = 2 AND thalach = (-inf..17.75] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT chest_pain = 2 AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 2 AND NOT trestbps = (15.5..23.25] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chol = (114.75..+inf) AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 2 AND NOT chol = (114.75..+inf) AND NOT thalach = (-inf..17.75] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 2 AND NOT trestbps = (15.5..23.25] AND NOT chol = (114.75..+inf) AND NOT fbs = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 2 AND NOT trestbps = (15.5..23.25] AND NOT chol = (114.75..+inf) AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 2 AND NOT trestbps = (15.5..23.25] AND NOT chol = (114.75..+inf) AND NOT thalach = (-inf..17.75] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 2 AND NOT chol = (114.75..+inf) AND NOT restecg = 2 AND NOT thalach = (-inf..17.75] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 2 AND NOT chol = (114.75..+inf) AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1 AND NOT chol = (114.75..+inf) AND NOT thalach = (-inf..17.75] AND NOT exang = 1 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT trestbps = (15.5..23.25] AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT trestbps = (15.5..23.25] AND NOT chol = (114.75..+inf) AND NOT thalach = (-inf..17.75] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 1 AND NOT chest_pain = 2 AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 7
+  exp time: 1.68
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (46.5..55.75] AND sex = 1 AND chest_pain = 2 AND trestbps = (7.75..15.5] AND chol = (38.25..76.5] AND fbs = 1 AND restecg = 2 AND thalach = (17.75..35.5] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 2 AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest_pain = 2 AND NOT thalach = (17.75..35.5] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest_pain = 2 AND NOT chol = (38.25..76.5] AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT chol = (38.25..76.5] AND NOT restecg = 2 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT thalach = (17.75..35.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 1 AND NOT trestbps = (7.75..15.5] AND NOT chol = (38.25..76.5] AND NOT exang = 1 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT trestbps = (7.75..15.5] AND NOT chol = (38.25..76.5] AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 2 AND NOT chol = (38.25..76.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 2 AND NOT fbs = 1 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 2 AND NOT restecg = 2 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT chest_pain = 2 AND NOT chol = (38.25..76.5] AND NOT restecg = 2 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (46.5..55.75] AND NOT sex = 1 AND NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT chol = (38.25..76.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 8
+  exp time: 1.98
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (55.75..+inf) AND sex = 0 AND chest_pain = 0 AND trestbps = (23.25..+inf) AND chol = (114.75..+inf) AND fbs = 1 AND restecg = 3 AND thalach = (17.75..35.5] AND exang = 2 AND oldpeak = (-inf..0.85] AND slope = 2 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT sex = 0 AND NOT trestbps = (23.25..+inf) AND NOT restecg = 3 AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 0 AND NOT restecg = 3 AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT chol = (114.75..+inf) AND NOT thalach = (17.75..35.5] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT chol = (114.75..+inf) AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT thalach = (17.75..35.5] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 0 AND NOT thalach = (17.75..35.5] AND NOT exang = 2 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT fbs = 1 AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT trestbps = (23.25..+inf) AND NOT chol = (114.75..+inf) AND NOT thalach = (17.75..35.5] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT trestbps = (23.25..+inf) AND NOT chol = (114.75..+inf) AND NOT restecg = 3 AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT restecg = 3 AND NOT exang = 2 AND NOT oldpeak = (-inf..0.85] THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT exang = 2 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 0 AND NOT chol = (114.75..+inf) AND NOT exang = 2 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 0 AND NOT chol = (114.75..+inf) AND NOT restecg = 3 AND NOT thalach = (17.75..35.5] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 0 AND NOT chol = (114.75..+inf) AND NOT fbs = 1 AND NOT thalach = (17.75..35.5] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 0 AND NOT chol = (114.75..+inf) AND NOT thalach = (17.75..35.5] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT trestbps = (23.25..+inf) AND NOT chol = (114.75..+inf) AND NOT exang = 2 AND NOT slope = 2 AND NOT thal = 0 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 0 AND NOT trestbps = (23.25..+inf) AND NOT chol = (114.75..+inf) AND NOT restecg = 3 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 2 AND NOT thal = 0 THEN NOT 0"
+  # hypos left: 8
+  exp time: 1.85
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (55.75..+inf) AND sex = 0 AND chest_pain = 0 AND trestbps = (7.75..15.5] AND chol = (76.5..114.75] AND fbs = 1 AND restecg = 3 AND thalach = (-inf..17.75] AND exang = 2 AND oldpeak = (0.85..1.75] AND slope = 2 AND ca = 1 AND thal = 0 THEN 0"
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 0 AND NOT oldpeak = (0.85..1.75] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (55.75..+inf) AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 0 AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] AND NOT slope = 2 AND NOT thal = 0 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 0 AND NOT chol = (76.5..114.75] AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 0 AND NOT trestbps = (7.75..15.5] AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 0 AND NOT chol = (76.5..114.75] AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 0 AND NOT trestbps = (7.75..15.5] AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 0 AND NOT chol = (76.5..114.75] AND NOT restecg = 3 AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 0 AND NOT chol = (76.5..114.75] AND NOT restecg = 3 AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT sex = 0 AND NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] AND NOT restecg = 3 AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 0 AND NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 8
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 0 AND NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] AND NOT fbs = 1 AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 9
+  exp time: 1.62
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (55.75..+inf) AND sex = 0 AND chest_pain = 1 AND trestbps = (7.75..15.5] AND chol = (-inf..38.25] AND fbs = 1 AND restecg = 2 AND thalach = (-inf..17.75] AND exang = 1 AND oldpeak = (0.85..1.75] AND slope = 2 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT trestbps = (7.75..15.5] AND NOT chol = (-inf..38.25] AND NOT exang = 1 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT chol = (-inf..38.25] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 1 AND NOT chol = (-inf..38.25] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT thalach = (-inf..17.75] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT chol = (-inf..38.25] AND NOT restecg = 2 AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chol = (-inf..38.25] AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (0.85..1.75] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT exang = 1 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT chol = (-inf..38.25] AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT trestbps = (7.75..15.5] AND NOT chol = (-inf..38.25] AND NOT restecg = 2 AND NOT thalach = (-inf..17.75] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 1 AND NOT chol = (-inf..38.25] AND NOT fbs = 1 AND NOT restecg = 2 AND NOT thalach = (-inf..17.75] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 1 AND NOT thalach = (-inf..17.75] AND NOT exang = 1 AND NOT oldpeak = (0.85..1.75] AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT restecg = 2 AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (0.85..1.75] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT chol = (-inf..38.25] AND NOT thalach = (-inf..17.75] AND NOT exang = 1 AND NOT oldpeak = (0.85..1.75] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 0 AND NOT trestbps = (7.75..15.5] AND NOT restecg = 2 AND NOT thalach = (-inf..17.75] AND NOT exang = 1 AND NOT oldpeak = (0.85..1.75] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT exang = 1 AND NOT oldpeak = (0.85..1.75] THEN NOT 1"
+  # hypos left: 6
+  exp time: 2.64
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (55.75..+inf) AND sex = 0 AND chest_pain = 1 AND trestbps = (7.75..15.5] AND chol = (76.5..114.75] AND fbs = 1 AND restecg = 2 AND thalach = (35.5..53.25] AND exang = 1 AND oldpeak = (0.85..1.75] AND slope = 2 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT oldpeak = (0.85..1.75] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 1 AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (0.85..1.75] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT restecg = 2 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT trestbps = (7.75..15.5] AND NOT restecg = 2 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] AND NOT thalach = (35.5..53.25] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 1 AND NOT chol = (76.5..114.75] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 1 AND NOT chol = (76.5..114.75] AND NOT fbs = 1 AND NOT restecg = 2 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT chol = (76.5..114.75] AND NOT thalach = (35.5..53.25] AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT chol = (76.5..114.75] AND NOT fbs = 1 AND NOT exang = 1 AND NOT oldpeak = (0.85..1.75] THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 1 AND NOT trestbps = (7.75..15.5] AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 8
+  exp time: 2.23
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (55.75..+inf) AND sex = 0 AND chest_pain = 2 AND trestbps = (7.75..15.5] AND chol = (38.25..76.5] AND fbs = 0 AND restecg = 3 AND thalach = (35.5..53.25] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 3 THEN 1"
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 2 AND NOT chol = (38.25..76.5] AND NOT fbs = 0 AND NOT thal = 3 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT fbs = 0 AND NOT restecg = 3 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT trestbps = (7.75..15.5] AND NOT chol = (38.25..76.5] AND NOT fbs = 0 AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 2 AND NOT chol = (38.25..76.5] AND NOT fbs = 0 AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 2 AND NOT chol = (38.25..76.5] AND NOT fbs = 0 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT thal = 3 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 2 AND NOT fbs = 0 AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT thal = 3 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 2 AND NOT chol = (38.25..76.5] AND NOT fbs = 0 AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT thal = 3 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT chest_pain = 2 AND NOT chol = (38.25..76.5] AND NOT fbs = 0 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 3 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT age = (55.75..+inf) AND NOT trestbps = (7.75..15.5] AND NOT chol = (38.25..76.5] AND NOT fbs = 0 AND NOT restecg = 3 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 3 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT chol = (38.25..76.5] AND NOT fbs = 0 AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 9
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT fbs = 0 AND NOT restecg = 3 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 3 THEN NOT 1"
+  # hypos left: 9
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 2 AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 3 THEN NOT 1"
+  # hypos left: 9
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 2 AND NOT fbs = 0 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 3 THEN NOT 1"
+  # hypos left: 9
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 2 AND NOT chol = (38.25..76.5] AND NOT restecg = 3 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 3 THEN NOT 1"
+  # hypos left: 9
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT fbs = 0 AND NOT thalach = (35.5..53.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 3 THEN NOT 1"
+  # hypos left: 9
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT fbs = 0 AND NOT restecg = 3 AND NOT thalach = (35.5..53.25] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 3 THEN NOT 1"
+  # hypos left: 9
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT chol = (38.25..76.5] AND NOT fbs = 0 AND NOT restecg = 3 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 3 THEN NOT 1"
+  # hypos left: 10
+  exp time: 3.13
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (55.75..+inf) AND sex = 0 AND chest_pain = 3 AND trestbps = (23.25..+inf) AND chol = (-inf..38.25] AND fbs = 1 AND restecg = 2 AND thalach = (-inf..17.75] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT trestbps = (23.25..+inf) AND NOT thalach = (-inf..17.75] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 3 AND NOT trestbps = (23.25..+inf) AND NOT chol = (-inf..38.25] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 3 AND NOT thalach = (-inf..17.75] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 3 AND NOT trestbps = (23.25..+inf) AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 3 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 3 AND NOT chol = (-inf..38.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 3 AND NOT chol = (-inf..38.25] AND NOT thalach = (-inf..17.75] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 3 AND NOT chol = (-inf..38.25] AND NOT fbs = 1 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 3 AND NOT chol = (-inf..38.25] AND NOT restecg = 2 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 3 AND NOT trestbps = (23.25..+inf) AND NOT chol = (-inf..38.25] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 3 AND NOT trestbps = (23.25..+inf) AND NOT chol = (-inf..38.25] AND NOT thalach = (-inf..17.75] AND NOT exang = 1 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 3 AND NOT trestbps = (23.25..+inf) AND NOT restecg = 2 AND NOT thalach = (-inf..17.75] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT chest_pain = 3 AND NOT trestbps = (23.25..+inf) AND NOT chol = (-inf..38.25] AND NOT fbs = 1 AND NOT restecg = 2 AND NOT thalach = (-inf..17.75] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 9
+  exp time: 2.14
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (55.75..+inf) AND sex = 0 AND chest_pain = 3 AND trestbps = (7.75..15.5] AND chol = (114.75..+inf) AND fbs = 1 AND restecg = 2 AND thalach = (53.25..+inf) AND exang = 1 AND oldpeak = (0.85..1.75] AND slope = 2 AND ca = 1 AND thal = 0 THEN 1"
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 3 AND NOT trestbps = (7.75..15.5] AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 3 AND NOT thalach = (53.25..+inf) AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 3 AND NOT thalach = (53.25..+inf) AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 3 AND NOT trestbps = (7.75..15.5] AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 3 AND NOT chol = (114.75..+inf) AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 3 AND NOT fbs = 1 AND NOT restecg = 2 AND NOT thalach = (53.25..+inf) AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 3 AND NOT trestbps = (7.75..15.5] AND NOT thalach = (53.25..+inf) AND NOT exang = 1 AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 3 AND NOT trestbps = (7.75..15.5] AND NOT chol = (114.75..+inf) AND NOT thalach = (53.25..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 3 AND NOT trestbps = (7.75..15.5] AND NOT chol = (114.75..+inf) AND NOT thalach = (53.25..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chest_pain = 3 AND NOT chol = (114.75..+inf) AND NOT thalach = (53.25..+inf) AND NOT oldpeak = (0.85..1.75] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 3 AND NOT chol = (114.75..+inf) AND NOT thalach = (53.25..+inf) AND NOT exang = 1 AND NOT oldpeak = (0.85..1.75] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT sex = 0 AND NOT chest_pain = 3 AND NOT chol = (114.75..+inf) AND NOT restecg = 2 AND NOT thalach = (53.25..+inf) AND NOT exang = 1 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 3 AND NOT chol = (114.75..+inf) AND NOT exang = 1 AND NOT oldpeak = (0.85..1.75] AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 3 AND NOT trestbps = (7.75..15.5] AND NOT thalach = (53.25..+inf) AND NOT oldpeak = (0.85..1.75] AND NOT thal = 0 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT trestbps = (7.75..15.5] AND NOT chol = (114.75..+inf) AND NOT fbs = 1 AND NOT oldpeak = (0.85..1.75] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT trestbps = (7.75..15.5] AND NOT chol = (114.75..+inf) AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 0 AND NOT chol = (114.75..+inf) AND NOT restecg = 2 AND NOT thalach = (53.25..+inf) AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 1"
+  # hypos left: 7
+  exp time: 2.44
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (55.75..+inf) AND sex = 1 AND chest_pain = 2 AND trestbps = (7.75..15.5] AND chol = (114.75..+inf) AND fbs = 1 AND restecg = 2 AND thalach = (-inf..17.75] AND exang = 2 AND oldpeak = (0.85..1.75] AND slope = 2 AND ca = 1 AND thal = 2 THEN 0"
+  explanation: "IF NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 AND NOT thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT chol = (114.75..+inf) AND NOT thalach = (-inf..17.75] AND NOT slope = 2 AND NOT thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chol = (114.75..+inf) AND NOT thalach = (-inf..17.75] AND NOT thal = 2 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 1 AND NOT chol = (114.75..+inf) AND NOT restecg = 2 AND NOT oldpeak = (0.85..1.75] AND NOT thal = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 1 AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT thal = 2 THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 2 AND NOT chol = (114.75..+inf) AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 1 AND NOT trestbps = (7.75..15.5] AND NOT thalach = (-inf..17.75] AND NOT exang = 2 AND NOT oldpeak = (0.85..1.75] AND NOT slope = 2 THEN NOT 0"
+  # hypos left: 7
+  exp time: 1.19
+
+Sample of length 13  :  [[1. 1. 0. 0. 2. 1. 3. 1. 1. 0. 0. 1. 2.]]
+Encoded sample of length 46  :  [[0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 1. 0. 0. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 1. 0.]]
+Back to sample [array([1., 1., 0., 0., 2., 1., 3., 1., 1., 0., 0., 1., 2.])]
+Readable sample ['(37.25..46.5]' '1' '0' '(-inf..7.75]' '(38.25..76.5]' '1' '3'
+ '(17.75..35.5]' '1' '(-inf..0.85]' '0' '1' '2']
+  explaining:  "IF age = (55.75..+inf) AND sex = 1 AND chest_pain = 2 AND trestbps = (7.75..15.5] AND chol = (38.25..76.5] AND fbs = 1 AND restecg = 3 AND thalach = (17.75..35.5] AND exang = 1 AND oldpeak = (-inf..0.85] AND slope = 0 AND ca = 1 AND thal = 1 THEN 1"
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 2 AND NOT chol = (38.25..76.5] AND NOT thalach = (17.75..35.5] AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 2 AND NOT chol = (38.25..76.5] AND NOT thalach = (17.75..35.5] AND NOT exang = 1 AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 2 AND NOT restecg = 3 AND NOT thalach = (17.75..35.5] AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT chest_pain = 2 AND NOT chol = (38.25..76.5] AND NOT restecg = 3 AND NOT thalach = (17.75..35.5] AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT chol = (38.25..76.5] AND NOT restecg = 3 AND NOT thalach = (17.75..35.5] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT restecg = 3 AND NOT thalach = (17.75..35.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT chol = (38.25..76.5] AND NOT restecg = 3 AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 2 AND NOT chol = (38.25..76.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 2 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT restecg = 3 AND NOT exang = 1 AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT restecg = 3 AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT thalach = (17.75..35.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT chest_pain = 2 AND NOT chol = (38.25..76.5] AND NOT restecg = 3 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 1 AND NOT trestbps = (7.75..15.5] AND NOT chol = (38.25..76.5] AND NOT restecg = 3 AND NOT exang = 1 AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT chol = (38.25..76.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 7
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 1 AND NOT chest_pain = 2 AND NOT trestbps = (7.75..15.5] AND NOT chol = (38.25..76.5] AND NOT restecg = 3 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT sex = 1 AND NOT chest_pain = 2 AND NOT chol = (38.25..76.5] AND NOT fbs = 1 AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT age = (55.75..+inf) AND NOT trestbps = (7.75..15.5] AND NOT chol = (38.25..76.5] AND NOT restecg = 3 AND NOT thalach = (17.75..35.5] AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 AND NOT thal = 1 THEN NOT 1"
+  # hypos left: 8
+  explanation: "IF NOT age = (55.75..+inf) AND NOT chest_pain = 2 AND NOT chol = (38.25..76.5] AND NOT fbs = 1 AND NOT restecg = 3 AND NOT thalach = (17.75..35.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 9
+  explanation: "IF NOT age = (55.75..+inf) AND NOT sex = 1 AND NOT chest_pain = 2 AND NOT chol = (38.25..76.5] AND NOT restecg = 3 AND NOT thalach = (17.75..35.5] AND NOT exang = 1 AND NOT oldpeak = (-inf..0.85] AND NOT slope = 0 THEN NOT 1"
+  # hypos left: 9
+  exp time: 2.87
+
+
+exptimes: [1.6596739999999999, 1.9809640000000002, 1.6665679999999998, 1.6656700000000022, 1.500273, 0.8640350000000012, 1.8697370000000006, 2.407513999999999, 2.7125989999999973, 1.7063929999999985, 1.4633819999999957, 1.4363440000000054, 1.3101020000000076, 2.0302230000000066, 1.5571379999999948, 1.3979130000000026, 0.7917199999999838, 2.3284380000000056, 1.5606070000000187, 1.662468000000004, 2.5854599999999976, 1.9062769999999887, 1.8474670000000089, 1.6424970000000059, 3.039508999999981, 1.9745110000000068, 2.5694929999999943, 2.1954139999999995, 2.0902370000000303, 1.627896000000021, 1.6320550000000082, 1.6461520000000007, 2.480115000000012, 0.8341170000000204, 1.7161979999999915, 1.428859999999986, 1.7499529999999766, 1.3918600000000083, 0.6806130000000223, 1.4656039999999848, 1.7560139999999933, 1.5219679999999869, 1.3253579999999943, 1.2368669999999895, 2.0727670000000273, 1.3485239999999976, 1.7541259999999852, 1.682159999999982, 1.978334999999987, 1.8484669999999994, 1.6222209999999677, 2.6364209999999844, 2.225768999999957, 3.128233000000023, 2.1428810000000453, 2.440025999999932, 1.1896320000000173, 2.8689899999999398]
+all samples: 58
+total exp time: 104.85
+max exp time per instance: 3.13
+min exp time per instance: 0.68
+avg exp time per instance: 1.81
+total oracle calls: 13518
+max oracle calls per instance: 463
+min oracle calls per instance: 44
+avg oracle calls per instance: 233.07
+avg number of explanations per instance: 12.41
+avg explanation size per instance: 5.17
+

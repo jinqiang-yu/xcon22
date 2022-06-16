@@ -1,0 +1,2082 @@
+c XDual: dual explanations for XGBoost models
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (-inf..44.0] AND sex = 0.0 AND chest = 2.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (290.75..+inf) AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT age = (-inf..44.0] AND NOT chest = 2.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 2.0 AND NOT oldpeak = (-inf..0.95] AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 2.0 AND NOT resting_blood_pressure = (117.5..134.0] AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 2.0 AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT chest = 2.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 2.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (-inf..44.0] AND NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 2.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT chest = 2.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT exercise_induced_angina = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT serum_cholestoral = (290.75..+inf) AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..44.0] AND NOT sex = 0.0 AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..44.0] AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT chest = 2.0 AND NOT resting_blood_pressure = (117.5..134.0] AND NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT resting_blood_pressure = (117.5..134.0] AND NOT resting_electrocardiographic_results = 0.0 AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  exp time: 1.76
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (-inf..44.0] AND sex = 0.0 AND chest = 4.0 AND resting_blood_pressure = (-inf..117.5] AND serum_cholestoral = (247.5..290.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (-inf..123.25] AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 2.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT age = (-inf..44.0] AND NOT sex = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT sex = 0.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (-inf..44.0] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (-inf..44.0] AND NOT serum_cholestoral = (247.5..290.75] AND NOT resting_electrocardiographic_results = 2.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT slope = 2.0 THEN NOT 0"
+  # hypos left: 5
+  exp time: 0.66
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (-inf..44.0] AND sex = 1.0 AND chest = 2.0 AND resting_blood_pressure = (-inf..117.5] AND serum_cholestoral = (209.75..247.5] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT chest = 2.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (-inf..44.0] AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (-inf..44.0] AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_blood_pressure = (-inf..117.5] AND NOT slope = 1.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (-inf..44.0] AND NOT resting_electrocardiographic_results = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT resting_electrocardiographic_results = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (-inf..44.0] AND NOT serum_cholestoral = (209.75..247.5] AND NOT resting_electrocardiographic_results = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (-inf..44.0] AND NOT serum_cholestoral = (209.75..247.5] AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT slope = 1.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (-inf..44.0] AND NOT chest = 2.0 AND NOT resting_blood_pressure = (-inf..117.5] AND NOT serum_cholestoral = (209.75..247.5] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..44.0] AND NOT chest = 2.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..44.0] AND NOT chest = 2.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  exp time: 1.27
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (-inf..44.0] AND sex = 1.0 AND chest = 2.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (209.75..247.5] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (168.75..+inf) AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT chest = 2.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 2.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (-inf..44.0] AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (-inf..44.0] AND NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..44.0] AND NOT resting_blood_pressure = (117.5..134.0] AND NOT serum_cholestoral = (209.75..247.5] AND NOT maximum_heart_rate_achieved = (168.75..+inf) THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT resting_blood_pressure = (117.5..134.0] AND NOT serum_cholestoral = (209.75..247.5] AND NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..44.0] AND NOT chest = 2.0 AND NOT serum_cholestoral = (209.75..247.5] AND NOT maximum_heart_rate_achieved = (168.75..+inf) THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..44.0] AND NOT chest = 2.0 AND NOT serum_cholestoral = (209.75..247.5] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT resting_blood_pressure = (117.5..134.0] AND NOT serum_cholestoral = (209.75..247.5] AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..44.0] AND NOT chest = 2.0 AND NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..44.0] AND NOT chest = 2.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..44.0] AND NOT sex = 1.0 AND NOT chest = 2.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..44.0] AND NOT chest = 2.0 AND NOT resting_blood_pressure = (117.5..134.0] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  exp time: 1.66
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (-inf..44.0] AND sex = 1.0 AND chest = 2.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (290.75..+inf) AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT chest = 2.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_blood_pressure = (117.5..134.0] AND NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_blood_pressure = (117.5..134.0] AND NOT resting_electrocardiographic_results = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (-inf..44.0] AND NOT resting_blood_pressure = (117.5..134.0] AND NOT resting_electrocardiographic_results = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (290.75..+inf) AND NOT slope = 1.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (-inf..44.0] AND NOT serum_cholestoral = (290.75..+inf) AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (-inf..44.0] AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (290.75..+inf) AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (-inf..44.0] AND NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_blood_pressure = (117.5..134.0] AND NOT slope = 1.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (-inf..44.0] AND NOT resting_blood_pressure = (117.5..134.0] AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (-inf..44.0] AND NOT chest = 2.0 AND NOT resting_blood_pressure = (117.5..134.0] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (290.75..+inf) AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (-inf..44.0] AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_blood_pressure = (117.5..134.0] AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  exp time: 0.99
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (-inf..44.0] AND sex = 1.0 AND chest = 2.0 AND resting_blood_pressure = (134.0..153.5] AND serum_cholestoral = (-inf..209.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (123.25..146.5] AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 2.0 AND number_of_major_vessels = 0.0 AND thal = 6.0 THEN 0"
+  explanation: "IF NOT serum_cholestoral = (-inf..209.75] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT chest = 2.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT thal = 6.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 2.0 AND NOT oldpeak = (-inf..0.95] AND NOT thal = 6.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 2.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT oldpeak = (-inf..0.95] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 2.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT resting_electrocardiographic_results = 0.0 AND NOT slope = 2.0 THEN NOT 0"
+  # hypos left: 4
+  exp time: 0.61
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (-inf..44.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (-inf..117.5] AND serum_cholestoral = (247.5..290.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 1.0 AND thal = 3.0 THEN 1"
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT chest = 4.0 AND NOT resting_blood_pressure = (-inf..117.5] THEN NOT 1"
+  # hypos left: 2
+  exp time: 0.25
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (-inf..44.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (134.0..153.5] AND serum_cholestoral = (209.75..247.5] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (168.75..+inf) AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 0.0 AND thal = 7.0 THEN 0"
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT maximum_heart_rate_achieved = (168.75..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT age = (-inf..44.0] AND NOT oldpeak = (-inf..0.95] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (-inf..44.0] AND NOT serum_cholestoral = (209.75..247.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_blood_pressure = (134.0..153.5] AND NOT oldpeak = (-inf..0.95] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT oldpeak = (-inf..0.95] THEN NOT 0"
+  # hypos left: 2
+  exp time: 0.39
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (-inf..44.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (134.0..153.5] AND serum_cholestoral = (209.75..247.5] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (168.75..+inf) AND exercise_induced_angina = 0.0 AND oldpeak = (0.95..2.0] AND slope = 1.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (-inf..44.0] AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_blood_pressure = (134.0..153.5] AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT slope = 1.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (-inf..44.0] AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT exercise_induced_angina = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (-inf..44.0] AND NOT resting_blood_pressure = (134.0..153.5] AND NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..44.0] AND NOT serum_cholestoral = (209.75..247.5] AND NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..44.0] AND NOT sex = 1.0 AND NOT serum_cholestoral = (209.75..247.5] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (-inf..44.0] AND NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  exp time: 1.54
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (44.0..54.0] AND sex = 0.0 AND chest = 3.0 AND resting_blood_pressure = (-inf..117.5] AND serum_cholestoral = (247.5..290.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT sex = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (44.0..54.0] AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 3.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 3.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_blood_pressure = (-inf..117.5] AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (44.0..54.0] AND NOT sex = 0.0 AND NOT resting_electrocardiographic_results = 2.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (44.0..54.0] AND NOT sex = 0.0 AND NOT resting_blood_pressure = (-inf..117.5] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (44.0..54.0] AND NOT sex = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (44.0..54.0] AND NOT sex = 0.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT exercise_induced_angina = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT resting_blood_pressure = (-inf..117.5] AND NOT serum_cholestoral = (247.5..290.75] AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT chest = 3.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (44.0..54.0] AND NOT sex = 0.0 AND NOT chest = 3.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (44.0..54.0] AND NOT chest = 3.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (44.0..54.0] AND NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 4
+  exp time: 1.63
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (44.0..54.0] AND sex = 0.0 AND chest = 3.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (247.5..290.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT age = (44.0..54.0] AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT sex = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 3.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_blood_pressure = (117.5..134.0] AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (44.0..54.0] AND NOT sex = 0.0 AND NOT resting_blood_pressure = (117.5..134.0] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_blood_pressure = (117.5..134.0] AND NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT exercise_induced_angina = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT resting_blood_pressure = (117.5..134.0] AND NOT serum_cholestoral = (247.5..290.75] AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (44.0..54.0] AND NOT chest = 3.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT resting_blood_pressure = (117.5..134.0] AND NOT slope = 1.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT resting_blood_pressure = (117.5..134.0] AND NOT resting_electrocardiographic_results = 2.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (44.0..54.0] AND NOT sex = 0.0 AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 4
+  exp time: 1.76
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (44.0..54.0] AND sex = 0.0 AND chest = 3.0 AND resting_blood_pressure = (134.0..153.5] AND serum_cholestoral = (-inf..209.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (168.75..+inf) AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 2.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT age = (44.0..54.0] AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT serum_cholestoral = (-inf..209.75] AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT sex = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 3.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT slope = 2.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT oldpeak = (-inf..0.95] AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (44.0..54.0] AND NOT chest = 3.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT chest = 3.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT serum_cholestoral = (-inf..209.75] AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (44.0..54.0] AND NOT chest = 3.0 AND NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT serum_cholestoral = (-inf..209.75] AND NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT serum_cholestoral = (-inf..209.75] AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (44.0..54.0] AND NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (44.0..54.0] AND NOT serum_cholestoral = (-inf..209.75] AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (44.0..54.0] AND NOT serum_cholestoral = (-inf..209.75] AND NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  exp time: 1.68
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (44.0..54.0] AND sex = 0.0 AND chest = 3.0 AND resting_blood_pressure = (134.0..153.5] AND serum_cholestoral = (290.75..+inf) AND fasting_blood_sugar = 1.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (168.75..+inf) AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT age = (44.0..54.0] AND NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (44.0..54.0] AND NOT chest = 3.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT slope = 1.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT oldpeak = (-inf..0.95] AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (44.0..54.0] AND NOT chest = 3.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (44.0..54.0] AND NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (44.0..54.0] AND NOT serum_cholestoral = (290.75..+inf) AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT serum_cholestoral = (290.75..+inf) AND NOT resting_electrocardiographic_results = 0.0 AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT fasting_blood_sugar = 1.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT serum_cholestoral = (290.75..+inf) AND NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  exp time: 1.92
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (44.0..54.0] AND sex = 0.0 AND chest = 4.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (247.5..290.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (123.25..146.5] AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 2.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT age = (44.0..54.0] AND NOT sex = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT sex = 0.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (44.0..54.0] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_blood_pressure = (117.5..134.0] AND NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (44.0..54.0] AND NOT serum_cholestoral = (247.5..290.75] AND NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 2.0 THEN NOT 0"
+  # hypos left: 4
+  exp time: 0.58
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (44.0..54.0] AND sex = 1.0 AND chest = 3.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (209.75..247.5] AND fasting_blood_sugar = 1.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (168.75..+inf) AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 3.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT chest = 3.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT maximum_heart_rate_achieved = (168.75..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT age = (44.0..54.0] AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT slope = 1.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_blood_pressure = (117.5..134.0] AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT fasting_blood_sugar = 1.0 AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  exp time: 0.45
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (44.0..54.0] AND sex = 1.0 AND chest = 3.0 AND resting_blood_pressure = (134.0..153.5] AND serum_cholestoral = (209.75..247.5] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 0.0 AND oldpeak = (3.05..+inf) AND slope = 2.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT age = (44.0..54.0] AND NOT serum_cholestoral = (209.75..247.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 3.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (44.0..54.0] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT exercise_induced_angina = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (44.0..54.0] AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 3.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_blood_pressure = (134.0..153.5] AND NOT serum_cholestoral = (209.75..247.5] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_blood_pressure = (134.0..153.5] AND NOT serum_cholestoral = (209.75..247.5] AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (44.0..54.0] AND NOT chest = 3.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT resting_electrocardiographic_results = 0.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT slope = 2.0 THEN NOT 0"
+  # hypos left: 6
+  exp time: 0.88
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (44.0..54.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (-inf..117.5] AND serum_cholestoral = (-inf..209.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (123.25..146.5] AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT exercise_induced_angina = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT serum_cholestoral = (-inf..209.75] AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT oldpeak = (-inf..0.95] AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (44.0..54.0] AND NOT serum_cholestoral = (-inf..209.75] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (-inf..209.75] AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (44.0..54.0] AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (44.0..54.0] AND NOT serum_cholestoral = (-inf..209.75] AND NOT resting_electrocardiographic_results = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (-inf..209.75] AND NOT resting_electrocardiographic_results = 0.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (44.0..54.0] AND NOT resting_electrocardiographic_results = 0.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (44.0..54.0] AND NOT chest = 4.0 AND NOT resting_blood_pressure = (-inf..117.5] AND NOT serum_cholestoral = (-inf..209.75] AND NOT maximum_heart_rate_achieved = (123.25..146.5] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (44.0..54.0] AND NOT chest = 4.0 AND NOT resting_blood_pressure = (-inf..117.5] AND NOT serum_cholestoral = (-inf..209.75] AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT age = (44.0..54.0] AND NOT chest = 4.0 AND NOT serum_cholestoral = (-inf..209.75] AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 5
+  exp time: 1.00
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (44.0..54.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (-inf..117.5] AND serum_cholestoral = (-inf..209.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (-inf..123.25] AND exercise_induced_angina = 1.0 AND oldpeak = (-inf..0.95] AND slope = 2.0 AND number_of_major_vessels = 1.0 AND thal = 3.0 THEN 1"
+  explanation: "IF NOT chest = 4.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT sex = 1.0 AND NOT exercise_induced_angina = 1.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 1.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT sex = 1.0 AND NOT resting_electrocardiographic_results = 2.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT serum_cholestoral = (-inf..209.75] AND NOT fasting_blood_sugar = 0.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (-inf..209.75] AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT exercise_induced_angina = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT resting_blood_pressure = (-inf..117.5] AND NOT serum_cholestoral = (-inf..209.75] AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT resting_blood_pressure = (-inf..117.5] AND NOT serum_cholestoral = (-inf..209.75] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT resting_blood_pressure = (-inf..117.5] AND NOT serum_cholestoral = (-inf..209.75] AND NOT fasting_blood_sugar = 0.0 AND NOT exercise_induced_angina = 1.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT resting_blood_pressure = (-inf..117.5] AND NOT fasting_blood_sugar = 0.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT exercise_induced_angina = 1.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 5
+  exp time: 0.62
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (44.0..54.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (-inf..117.5] AND serum_cholestoral = (209.75..247.5] AND fasting_blood_sugar = 1.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 3.0 AND thal = 7.0 THEN 1"
+  explanation: "IF NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT number_of_major_vessels = 3.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT chest = 4.0 THEN NOT 1"
+  # hypos left: 1
+  exp time: 0.29
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (44.0..54.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (247.5..290.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 1.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 1.0 AND thal = 7.0 THEN 1"
+  explanation: "IF NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT chest = 4.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT fasting_blood_sugar = 0.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 4
+  exp time: 0.63
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (44.0..54.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (247.5..290.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (-inf..123.25] AND exercise_induced_angina = 1.0 AND oldpeak = (2.0..3.05] AND slope = 2.0 AND number_of_major_vessels = 1.0 AND thal = 7.0 THEN 1"
+  explanation: "IF NOT sex = 1.0 AND NOT chest = 4.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT serum_cholestoral = (247.5..290.75] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT serum_cholestoral = (247.5..290.75] AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT chest = 4.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT slope = 2.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT slope = 2.0 AND NOT number_of_major_vessels = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 2.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT number_of_major_vessels = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT number_of_major_vessels = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT number_of_major_vessels = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT exercise_induced_angina = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT chest = 4.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT serum_cholestoral = (247.5..290.75] AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT number_of_major_vessels = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  exp time: 1.75
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (44.0..54.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (247.5..290.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 2.0 AND number_of_major_vessels = 0.0 AND thal = 7.0 THEN 1"
+  explanation: "IF NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT chest = 4.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1.0 AND NOT serum_cholestoral = (247.5..290.75] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT resting_electrocardiographic_results = 2.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT sex = 1.0 AND NOT resting_electrocardiographic_results = 2.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT age = (44.0..54.0] AND NOT serum_cholestoral = (247.5..290.75] AND NOT fasting_blood_sugar = 0.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT fasting_blood_sugar = 0.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (44.0..54.0] AND NOT serum_cholestoral = (247.5..290.75] AND NOT maximum_heart_rate_achieved = (146.5..168.75] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  exp time: 0.67
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (44.0..54.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (134.0..153.5] AND serum_cholestoral = (-inf..209.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (123.25..146.5] AND exercise_induced_angina = 1.0 AND oldpeak = (-inf..0.95] AND slope = 2.0 AND number_of_major_vessels = 0.0 AND thal = 7.0 THEN 1"
+  explanation: "IF NOT chest = 4.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1.0 AND NOT exercise_induced_angina = 1.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 1.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT age = (44.0..54.0] AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT exercise_induced_angina = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT fasting_blood_sugar = 0.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT exercise_induced_angina = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT fasting_blood_sugar = 0.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 2.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 1"
+  # hypos left: 4
+  exp time: 0.48
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (44.0..54.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (134.0..153.5] AND serum_cholestoral = (209.75..247.5] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (-inf..123.25] AND exercise_induced_angina = 1.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 0.0 AND thal = 7.0 THEN 1"
+  explanation: "IF NOT chest = 4.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 1.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT sex = 1.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT number_of_major_vessels = 0.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT serum_cholestoral = (209.75..247.5] AND NOT resting_electrocardiographic_results = 2.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT serum_cholestoral = (209.75..247.5] AND NOT resting_electrocardiographic_results = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT serum_cholestoral = (209.75..247.5] AND NOT resting_electrocardiographic_results = 2.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT fasting_blood_sugar = 0.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT serum_cholestoral = (209.75..247.5] AND NOT exercise_induced_angina = 1.0 AND NOT slope = 1.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT serum_cholestoral = (209.75..247.5] AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT exercise_induced_angina = 1.0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT fasting_blood_sugar = 0.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT exercise_induced_angina = 1.0 AND NOT slope = 1.0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (44.0..54.0] AND NOT serum_cholestoral = (209.75..247.5] AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT exercise_induced_angina = 1.0 AND NOT slope = 1.0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (44.0..54.0] AND NOT serum_cholestoral = (209.75..247.5] AND NOT fasting_blood_sugar = 0.0 AND NOT exercise_induced_angina = 1.0 AND NOT slope = 1.0 THEN NOT 1"
+  # hypos left: 5
+  exp time: 0.81
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 0.0 AND chest = 2.0 AND resting_blood_pressure = (134.0..153.5] AND serum_cholestoral = (-inf..209.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (168.75..+inf) AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 2.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 2.0 AND NOT resting_electrocardiographic_results = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT maximum_heart_rate_achieved = (168.75..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 2.0 AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_blood_pressure = (134.0..153.5] AND NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT resting_electrocardiographic_results = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_blood_pressure = (134.0..153.5] AND NOT serum_cholestoral = (-inf..209.75] AND NOT resting_electrocardiographic_results = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT serum_cholestoral = (-inf..209.75] AND NOT resting_electrocardiographic_results = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (-inf..209.75] AND NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (-inf..209.75] AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT slope = 1.0 AND NOT number_of_major_vessels = 2.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT oldpeak = (-inf..0.95] AND NOT slope = 1.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (-inf..209.75] AND NOT slope = 1.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 2.0 AND NOT slope = 1.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT slope = 1.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 2.0 AND NOT oldpeak = (-inf..0.95] AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 2.0 AND NOT serum_cholestoral = (-inf..209.75] AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  exp time: 1.33
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 0.0 AND chest = 3.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (247.5..290.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (-inf..123.25] AND exercise_induced_angina = 0.0 AND oldpeak = (0.95..2.0] AND slope = 2.0 AND number_of_major_vessels = 1.0 AND thal = 7.0 THEN 1"
+  explanation: "IF NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT age = (54.0..64.0] AND NOT serum_cholestoral = (247.5..290.75] AND NOT resting_electrocardiographic_results = 0.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT serum_cholestoral = (247.5..290.75] AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT oldpeak = (0.95..2.0] THEN NOT 1"
+  # hypos left: 4
+  exp time: 0.43
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 0.0 AND chest = 3.0 AND resting_blood_pressure = (134.0..153.5] AND serum_cholestoral = (290.75..+inf) AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (123.25..146.5] AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 0.0 AND thal = 7.0 THEN 0"
+  explanation: "IF NOT chest = 3.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT sex = 0.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT serum_cholestoral = (290.75..+inf) AND NOT resting_electrocardiographic_results = 0.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT resting_electrocardiographic_results = 0.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT resting_blood_pressure = (134.0..153.5] AND NOT serum_cholestoral = (290.75..+inf) AND NOT resting_electrocardiographic_results = 0.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT serum_cholestoral = (290.75..+inf) AND NOT resting_electrocardiographic_results = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT resting_electrocardiographic_results = 0.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT resting_blood_pressure = (134.0..153.5] AND NOT resting_electrocardiographic_results = 0.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT thal = 7.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT serum_cholestoral = (290.75..+inf) AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 0.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT serum_cholestoral = (290.75..+inf) AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT serum_cholestoral = (290.75..+inf) AND NOT slope = 1.0 AND NOT thal = 7.0 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT serum_cholestoral = (290.75..+inf) AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT sex = 0.0 AND NOT serum_cholestoral = (290.75..+inf) AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT slope = 1.0 AND NOT thal = 7.0 THEN NOT 0"
+  # hypos left: 5
+  exp time: 1.03
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 0.0 AND chest = 4.0 AND resting_blood_pressure = (-inf..117.5] AND serum_cholestoral = (247.5..290.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (168.75..+inf) AND exercise_induced_angina = 1.0 AND oldpeak = (0.95..2.0] AND slope = 2.0 AND number_of_major_vessels = 2.0 AND thal = 3.0 THEN 1"
+  explanation: "IF NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT maximum_heart_rate_achieved = (168.75..+inf) THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT exercise_induced_angina = 1.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT chest = 4.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT age = (54.0..64.0] THEN NOT 1"
+  # hypos left: 1
+  exp time: 0.39
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 0.0 AND chest = 4.0 AND resting_blood_pressure = (134.0..153.5] AND serum_cholestoral = (290.75..+inf) AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 0.0 AND oldpeak = (0.95..2.0] AND slope = 2.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT sex = 0.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT serum_cholestoral = (290.75..+inf) AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT sex = 0.0 AND NOT chest = 4.0 AND NOT serum_cholestoral = (290.75..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT serum_cholestoral = (290.75..+inf) AND NOT maximum_heart_rate_achieved = (146.5..168.75] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT slope = 2.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT chest = 4.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT slope = 2.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT chest = 4.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT resting_electrocardiographic_results = 2.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT resting_blood_pressure = (134.0..153.5] AND NOT resting_electrocardiographic_results = 2.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT oldpeak = (0.95..2.0] AND NOT slope = 2.0 THEN NOT 0"
+  # hypos left: 5
+  exp time: 0.89
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 1.0 AND chest = 1.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (209.75..247.5] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (123.25..146.5] AND exercise_induced_angina = 0.0 AND oldpeak = (2.0..3.05] AND slope = 2.0 AND number_of_major_vessels = 2.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT chest = 1.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 1.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 1.0 AND NOT resting_blood_pressure = (117.5..134.0] AND NOT maximum_heart_rate_achieved = (123.25..146.5] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT resting_blood_pressure = (117.5..134.0] AND NOT exercise_induced_angina = 0.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 0"
+  # hypos left: 4
+  exp time: 0.48
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 1.0 AND chest = 1.0 AND resting_blood_pressure = (134.0..153.5] AND serum_cholestoral = (209.75..247.5] AND fasting_blood_sugar = 1.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 0.0 AND oldpeak = (2.0..3.05] AND slope = 3.0 AND number_of_major_vessels = 0.0 AND thal = 6.0 THEN 0"
+  explanation: "IF NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT chest = 1.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 1.0 AND NOT thal = 6.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 1.0 AND NOT serum_cholestoral = (209.75..247.5] AND NOT resting_electrocardiographic_results = 2.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT chest = 1.0 AND NOT serum_cholestoral = (209.75..247.5] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 1.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT serum_cholestoral = (209.75..247.5] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 1.0 AND NOT serum_cholestoral = (209.75..247.5] AND NOT slope = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 1.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 1.0 AND NOT fasting_blood_sugar = 1.0 AND NOT slope = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 1.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT slope = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT chest = 1.0 AND NOT fasting_blood_sugar = 1.0 AND NOT resting_electrocardiographic_results = 2.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT resting_blood_pressure = (134.0..153.5] AND NOT serum_cholestoral = (209.75..247.5] AND NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 3.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT resting_blood_pressure = (134.0..153.5] AND NOT serum_cholestoral = (209.75..247.5] AND NOT resting_electrocardiographic_results = 2.0 AND NOT thal = 6.0 THEN NOT 0"
+  # hypos left: 4
+  exp time: 0.89
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 1.0 AND chest = 2.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (247.5..290.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT chest = 2.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_blood_pressure = (117.5..134.0] AND NOT resting_electrocardiographic_results = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 2.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 2.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 2.0 AND NOT resting_blood_pressure = (117.5..134.0] AND NOT serum_cholestoral = (247.5..290.75] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 2.0 AND NOT resting_blood_pressure = (117.5..134.0] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_blood_pressure = (117.5..134.0] AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  exp time: 0.91
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 1.0 AND chest = 2.0 AND resting_blood_pressure = (134.0..153.5] AND serum_cholestoral = (209.75..247.5] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 1.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 2.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_blood_pressure = (134.0..153.5] AND NOT resting_electrocardiographic_results = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 2.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 2.0 AND NOT serum_cholestoral = (209.75..247.5] AND NOT maximum_heart_rate_achieved = (146.5..168.75] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 2.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT maximum_heart_rate_achieved = (146.5..168.75] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 2.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT serum_cholestoral = (209.75..247.5] THEN NOT 0"
+  # hypos left: 3
+  exp time: 0.64
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 1.0 AND chest = 3.0 AND resting_blood_pressure = (-inf..117.5] AND serum_cholestoral = (209.75..247.5] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 0.0 AND oldpeak = (2.0..3.05] AND slope = 2.0 AND number_of_major_vessels = 1.0 AND thal = 7.0 THEN 1"
+  explanation: "IF NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT sex = 1.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT resting_blood_pressure = (-inf..117.5] AND NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 0.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT fasting_blood_sugar = 0.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 2.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT resting_blood_pressure = (-inf..117.5] AND NOT slope = 2.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT slope = 2.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT chest = 3.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT slope = 2.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT resting_electrocardiographic_results = 2.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT fasting_blood_sugar = 0.0 AND NOT exercise_induced_angina = 0.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT resting_blood_pressure = (-inf..117.5] AND NOT fasting_blood_sugar = 0.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 4
+  exp time: 1.21
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 1.0 AND chest = 3.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (290.75..+inf) AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (123.25..146.5] AND exercise_induced_angina = 1.0 AND oldpeak = (0.95..2.0] AND slope = 2.0 AND number_of_major_vessels = 0.0 AND thal = 7.0 THEN 1"
+  explanation: "IF NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT exercise_induced_angina = 1.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT sex = 1.0 AND NOT resting_electrocardiographic_results = 0.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT serum_cholestoral = (290.75..+inf) AND NOT maximum_heart_rate_achieved = (123.25..146.5] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT fasting_blood_sugar = 0.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT age = (54.0..64.0] AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT chest = 3.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT sex = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT serum_cholestoral = (290.75..+inf) AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT fasting_blood_sugar = 0.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT chest = 3.0 AND NOT serum_cholestoral = (290.75..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT serum_cholestoral = (290.75..+inf) AND NOT oldpeak = (0.95..2.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT resting_blood_pressure = (117.5..134.0] AND NOT serum_cholestoral = (290.75..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT resting_blood_pressure = (117.5..134.0] AND NOT serum_cholestoral = (290.75..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT serum_cholestoral = (290.75..+inf) AND NOT oldpeak = (0.95..2.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT serum_cholestoral = (290.75..+inf) THEN NOT 1"
+  # hypos left: 3
+  exp time: 0.74
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 1.0 AND chest = 3.0 AND resting_blood_pressure = (134.0..153.5] AND serum_cholestoral = (209.75..247.5] AND fasting_blood_sugar = 1.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (123.25..146.5] AND exercise_induced_angina = 1.0 AND oldpeak = (0.95..2.0] AND slope = 2.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT fasting_blood_sugar = 1.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT resting_blood_pressure = (134.0..153.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT maximum_heart_rate_achieved = (123.25..146.5] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT chest = 3.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 1
+  exp time: 0.20
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (-inf..117.5] AND serum_cholestoral = (-inf..209.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (123.25..146.5] AND exercise_induced_angina = 1.0 AND oldpeak = (0.95..2.0] AND slope = 2.0 AND number_of_major_vessels = 0.0 AND thal = 6.0 THEN 1"
+  explanation: "IF NOT chest = 4.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT exercise_induced_angina = 1.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT age = (54.0..64.0] AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT slope = 2.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT sex = 1.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT oldpeak = (0.95..2.0] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT fasting_blood_sugar = 0.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT resting_blood_pressure = (-inf..117.5] AND NOT fasting_blood_sugar = 0.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT fasting_blood_sugar = 0.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT resting_blood_pressure = (-inf..117.5] AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT oldpeak = (0.95..2.0] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT oldpeak = (0.95..2.0] THEN NOT 1"
+  # hypos left: 5
+  exp time: 0.92
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (-inf..117.5] AND serum_cholestoral = (209.75..247.5] AND fasting_blood_sugar = 1.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 1.0 AND oldpeak = (0.95..2.0] AND slope = 1.0 AND number_of_major_vessels = 2.0 AND thal = 7.0 THEN 1"
+  explanation: "IF NOT chest = 4.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1.0 AND NOT serum_cholestoral = (209.75..247.5] AND NOT oldpeak = (0.95..2.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT oldpeak = (0.95..2.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT exercise_induced_angina = 1.0 AND NOT oldpeak = (0.95..2.0] AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT resting_blood_pressure = (-inf..117.5] AND NOT exercise_induced_angina = 1.0 AND NOT oldpeak = (0.95..2.0] AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT exercise_induced_angina = 1.0 AND NOT oldpeak = (0.95..2.0] AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT resting_blood_pressure = (-inf..117.5] AND NOT exercise_induced_angina = 1.0 AND NOT oldpeak = (0.95..2.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT exercise_induced_angina = 1.0 AND NOT oldpeak = (0.95..2.0] AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT resting_blood_pressure = (-inf..117.5] AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT resting_blood_pressure = (-inf..117.5] AND NOT serum_cholestoral = (209.75..247.5] AND NOT exercise_induced_angina = 1.0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (54.0..64.0] AND NOT resting_blood_pressure = (-inf..117.5] AND NOT serum_cholestoral = (209.75..247.5] AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT oldpeak = (0.95..2.0] AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 6
+  exp time: 1.14
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (-inf..209.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (-inf..123.25] AND exercise_induced_angina = 1.0 AND oldpeak = (2.0..3.05] AND slope = 2.0 AND number_of_major_vessels = 1.0 AND thal = 6.0 THEN 1"
+  explanation: "IF NOT chest = 4.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT age = (54.0..64.0] AND NOT number_of_major_vessels = 1.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT number_of_major_vessels = 1.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT chest = 4.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 2.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT slope = 2.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT oldpeak = (2.0..3.05] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT chest = 4.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT resting_blood_pressure = (117.5..134.0] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT serum_cholestoral = (-inf..209.75] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT slope = 2.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT exercise_induced_angina = 1.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT exercise_induced_angina = 1.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 1.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest = 4.0 AND NOT fasting_blood_sugar = 0.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 4
+  exp time: 2.42
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (247.5..290.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (-inf..123.25] AND exercise_induced_angina = 1.0 AND oldpeak = (-inf..0.95] AND slope = 2.0 AND number_of_major_vessels = 1.0 AND thal = 7.0 THEN 1"
+  explanation: "IF NOT slope = 2.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT chest = 4.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT chest = 4.0 AND NOT serum_cholestoral = (247.5..290.75] AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT serum_cholestoral = (247.5..290.75] AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT chest = 4.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT exercise_induced_angina = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT exercise_induced_angina = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT number_of_major_vessels = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT exercise_induced_angina = 1.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT exercise_induced_angina = 1.0 AND NOT slope = 2.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT exercise_induced_angina = 1.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT exercise_induced_angina = 1.0 AND NOT slope = 2.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 4
+  exp time: 2.07
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (247.5..290.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (123.25..146.5] AND exercise_induced_angina = 1.0 AND oldpeak = (3.05..+inf) AND slope = 2.0 AND number_of_major_vessels = 1.0 AND thal = 7.0 THEN 1"
+  explanation: "IF NOT chest = 4.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT slope = 2.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT chest = 4.0 AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT serum_cholestoral = (247.5..290.75] AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT exercise_induced_angina = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT chest = 4.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT exercise_induced_angina = 1.0 AND NOT oldpeak = (3.05..+inf) AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest = 4.0 AND NOT serum_cholestoral = (247.5..290.75] AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT chest = 4.0 AND NOT serum_cholestoral = (247.5..290.75] AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest = 4.0 AND NOT resting_blood_pressure = (117.5..134.0] AND NOT serum_cholestoral = (247.5..290.75] AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest = 4.0 AND NOT serum_cholestoral = (247.5..290.75] AND NOT fasting_blood_sugar = 0.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest = 4.0 AND NOT serum_cholestoral = (247.5..290.75] AND NOT oldpeak = (3.05..+inf) AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest = 4.0 AND NOT serum_cholestoral = (247.5..290.75] AND NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT exercise_induced_angina = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT exercise_induced_angina = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT fasting_blood_sugar = 0.0 AND NOT exercise_induced_angina = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 4
+  exp time: 2.50
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (247.5..290.75] AND fasting_blood_sugar = 1.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (-inf..123.25] AND exercise_induced_angina = 1.0 AND oldpeak = (0.95..2.0] AND slope = 3.0 AND number_of_major_vessels = 0.0 AND thal = 7.0 THEN 1"
+  explanation: "IF NOT exercise_induced_angina = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT chest = 4.0 AND NOT serum_cholestoral = (247.5..290.75] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT chest = 4.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT chest = 4.0 AND NOT exercise_induced_angina = 1.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT sex = 1.0 AND NOT chest = 4.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT chest = 4.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT chest = 4.0 AND NOT slope = 3.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 3.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT resting_blood_pressure = (117.5..134.0] AND NOT slope = 3.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT slope = 3.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT slope = 3.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT slope = 3.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT serum_cholestoral = (247.5..290.75] AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT slope = 3.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT exercise_induced_angina = 1.0 AND NOT oldpeak = (0.95..2.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT exercise_induced_angina = 1.0 AND NOT oldpeak = (0.95..2.0] THEN NOT 1"
+  # hypos left: 4
+  exp time: 1.43
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (290.75..+inf) AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (168.75..+inf) AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 2.0 AND thal = 7.0 THEN 1"
+  explanation: "IF NOT chest = 4.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT number_of_major_vessels = 2.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT chest = 4.0 AND NOT resting_electrocardiographic_results = 2.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT chest = 4.0 AND NOT serum_cholestoral = (290.75..+inf) THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT age = (54.0..64.0] AND NOT chest = 4.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT chest = 4.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT fasting_blood_sugar = 0.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (290.75..+inf) AND NOT slope = 1.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (290.75..+inf) AND NOT resting_electrocardiographic_results = 2.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT serum_cholestoral = (290.75..+inf) AND NOT resting_electrocardiographic_results = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT resting_electrocardiographic_results = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT resting_electrocardiographic_results = 2.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT fasting_blood_sugar = 0.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT resting_blood_pressure = (117.5..134.0] AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT chest = 4.0 AND NOT resting_blood_pressure = (117.5..134.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT chest = 4.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT serum_cholestoral = (290.75..+inf) AND NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT serum_cholestoral = (290.75..+inf) AND NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT resting_blood_pressure = (117.5..134.0] AND NOT serum_cholestoral = (290.75..+inf) AND NOT maximum_heart_rate_achieved = (168.75..+inf) AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 4
+  exp time: 1.47
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (134.0..153.5] AND serum_cholestoral = (209.75..247.5] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 2.0 AND number_of_major_vessels = 0.0 AND thal = 7.0 THEN 1"
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT chest = 4.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT maximum_heart_rate_achieved = (146.5..168.75] THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT sex = 1.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT age = (54.0..64.0] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT fasting_blood_sugar = 0.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT sex = 1.0 AND NOT resting_blood_pressure = (134.0..153.5] THEN NOT 1"
+  # hypos left: 2
+  exp time: 0.34
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (134.0..153.5] AND serum_cholestoral = (209.75..247.5] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (123.25..146.5] AND exercise_induced_angina = 0.0 AND oldpeak = (0.95..2.0] AND slope = 2.0 AND number_of_major_vessels = 2.0 AND thal = 6.0 THEN 1"
+  explanation: "IF NOT number_of_major_vessels = 2.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT chest = 4.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT chest = 4.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT chest = 4.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT fasting_blood_sugar = 0.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT chest = 4.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT chest = 4.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT slope = 2.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT oldpeak = (0.95..2.0] AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT serum_cholestoral = (209.75..247.5] AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT fasting_blood_sugar = 0.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT oldpeak = (0.95..2.0] AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT fasting_blood_sugar = 0.0 AND NOT oldpeak = (0.95..2.0] AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT resting_electrocardiographic_results = 2.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT oldpeak = (0.95..2.0] AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 2.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 3
+  exp time: 1.37
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (134.0..153.5] AND serum_cholestoral = (247.5..290.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (-inf..123.25] AND exercise_induced_angina = 1.0 AND oldpeak = (-inf..0.95] AND slope = 2.0 AND number_of_major_vessels = 1.0 AND thal = 6.0 THEN 1"
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 2.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT slope = 2.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT serum_cholestoral = (247.5..290.75] AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT serum_cholestoral = (247.5..290.75] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT exercise_induced_angina = 1.0 AND NOT slope = 2.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT serum_cholestoral = (247.5..290.75] AND NOT number_of_major_vessels = 1.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT number_of_major_vessels = 1.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT number_of_major_vessels = 1.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT number_of_major_vessels = 1.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT slope = 2.0 AND NOT number_of_major_vessels = 1.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT slope = 2.0 AND NOT number_of_major_vessels = 1.0 AND NOT thal = 6.0 THEN NOT 1"
+  # hypos left: 4
+  exp time: 2.39
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (54.0..64.0] AND sex = 1.0 AND chest = 4.0 AND resting_blood_pressure = (153.5..+inf) AND serum_cholestoral = (247.5..290.75] AND fasting_blood_sugar = 1.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (123.25..146.5] AND exercise_induced_angina = 0.0 AND oldpeak = (0.95..2.0] AND slope = 2.0 AND number_of_major_vessels = 3.0 AND thal = 7.0 THEN 1"
+  explanation: "IF NOT chest = 4.0 AND NOT number_of_major_vessels = 3.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT chest = 4.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT serum_cholestoral = (247.5..290.75] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT number_of_major_vessels = 3.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT number_of_major_vessels = 3.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT number_of_major_vessels = 3.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT slope = 2.0 AND NOT number_of_major_vessels = 3.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 2.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT sex = 1.0 AND NOT number_of_major_vessels = 3.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT resting_electrocardiographic_results = 2.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT number_of_major_vessels = 3.0 AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (54.0..64.0] AND NOT chest = 4.0 AND NOT serum_cholestoral = (247.5..290.75] AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT serum_cholestoral = (247.5..290.75] AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (54.0..64.0] AND NOT sex = 1.0 AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT serum_cholestoral = (247.5..290.75] AND NOT oldpeak = (0.95..2.0] AND NOT number_of_major_vessels = 3.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT maximum_heart_rate_achieved = (123.25..146.5] AND NOT oldpeak = (0.95..2.0] AND NOT number_of_major_vessels = 3.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT sex = 1.0 AND NOT chest = 4.0 AND NOT serum_cholestoral = (247.5..290.75] AND NOT resting_electrocardiographic_results = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT resting_electrocardiographic_results = 2.0 AND NOT slope = 2.0 AND NOT number_of_major_vessels = 3.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT serum_cholestoral = (247.5..290.75] AND NOT resting_electrocardiographic_results = 2.0 AND NOT oldpeak = (0.95..2.0] AND NOT number_of_major_vessels = 3.0 THEN NOT 1"
+  # hypos left: 4
+  exp time: 2.34
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (64.0..+inf) AND sex = 0.0 AND chest = 3.0 AND resting_blood_pressure = (-inf..117.5] AND serum_cholestoral = (247.5..290.75] AND fasting_blood_sugar = 1.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (123.25..146.5] AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 1.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT sex = 0.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT age = (64.0..+inf) AND NOT chest = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 3.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 3.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT slope = 1.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (64.0..+inf) AND NOT number_of_major_vessels = 1.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (64.0..+inf) AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT resting_blood_pressure = (-inf..117.5] AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  exp time: 0.55
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (64.0..+inf) AND sex = 0.0 AND chest = 3.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (209.75..247.5] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (-inf..123.25] AND exercise_induced_angina = 0.0 AND oldpeak = (0.95..2.0] AND slope = 2.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT chest = 3.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (64.0..+inf) AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT sex = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 3.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_blood_pressure = (117.5..134.0] AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT chest = 3.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (64.0..+inf) AND NOT chest = 3.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (64.0..+inf) AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (64.0..+inf) AND NOT sex = 0.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (64.0..+inf) AND NOT sex = 0.0 AND NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (64.0..+inf) AND NOT sex = 0.0 AND NOT serum_cholestoral = (209.75..247.5] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (64.0..+inf) AND NOT serum_cholestoral = (209.75..247.5] AND NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (64.0..+inf) AND NOT sex = 0.0 AND NOT chest = 3.0 AND NOT serum_cholestoral = (209.75..247.5] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT chest = 3.0 AND NOT resting_blood_pressure = (117.5..134.0] AND NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  exp time: 1.61
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (64.0..+inf) AND sex = 0.0 AND chest = 3.0 AND resting_blood_pressure = (134.0..153.5] AND serum_cholestoral = (-inf..209.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 1.0 AND maximum_heart_rate_achieved = (-inf..123.25] AND exercise_induced_angina = 0.0 AND oldpeak = (0.95..2.0] AND slope = 2.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 3.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 3.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT sex = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (64.0..+inf) AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT serum_cholestoral = (-inf..209.75] AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT exercise_induced_angina = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (64.0..+inf) AND NOT chest = 3.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT chest = 3.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (64.0..+inf) AND NOT serum_cholestoral = (-inf..209.75] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT serum_cholestoral = (-inf..209.75] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (64.0..+inf) AND NOT sex = 0.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT serum_cholestoral = (-inf..209.75] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (64.0..+inf) AND NOT sex = 0.0 AND NOT serum_cholestoral = (-inf..209.75] AND NOT maximum_heart_rate_achieved = (-inf..123.25] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (64.0..+inf) AND NOT sex = 0.0 AND NOT chest = 3.0 AND NOT serum_cholestoral = (-inf..209.75] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT serum_cholestoral = (-inf..209.75] AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT serum_cholestoral = (-inf..209.75] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT age = (64.0..+inf) AND NOT sex = 0.0 AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT sex = 0.0 AND NOT resting_blood_pressure = (134.0..153.5] AND NOT serum_cholestoral = (-inf..209.75] AND NOT maximum_heart_rate_achieved = (-inf..123.25] AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 5
+  exp time: 1.14
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (64.0..+inf) AND sex = 0.0 AND chest = 3.0 AND resting_blood_pressure = (134.0..153.5] AND serum_cholestoral = (290.75..+inf) AND fasting_blood_sugar = 1.0 AND resting_electrocardiographic_results = 2.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 1.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT chest = 3.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (64.0..+inf) AND NOT number_of_major_vessels = 1.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT slope = 1.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (64.0..+inf) AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT age = (64.0..+inf) AND NOT sex = 0.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT sex = 0.0 AND NOT serum_cholestoral = (290.75..+inf) THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT sex = 0.0 AND NOT resting_blood_pressure = (134.0..153.5] THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT sex = 0.0 AND NOT fasting_blood_sugar = 1.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT sex = 0.0 AND NOT chest = 3.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT sex = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT sex = 0.0 AND NOT number_of_major_vessels = 1.0 THEN NOT 0"
+  # hypos left: 2
+  explanation: "IF NOT chest = 3.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 2.0 AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (64.0..+inf) AND NOT chest = 3.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (64.0..+inf) AND NOT chest = 3.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT serum_cholestoral = (290.75..+inf) AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 4
+  exp time: 0.74
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (64.0..+inf) AND sex = 0.0 AND chest = 3.0 AND resting_blood_pressure = (153.5..+inf) AND serum_cholestoral = (247.5..290.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 0.0 AND oldpeak = (-inf..0.95] AND slope = 1.0 AND number_of_major_vessels = 0.0 AND thal = 3.0 THEN 0"
+  explanation: "IF NOT sex = 0.0 AND NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (64.0..+inf) AND NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (64.0..+inf) AND NOT sex = 0.0 AND NOT resting_electrocardiographic_results = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (64.0..+inf) AND NOT sex = 0.0 AND NOT serum_cholestoral = (247.5..290.75] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (64.0..+inf) AND NOT sex = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (64.0..+inf) AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT age = (64.0..+inf) AND NOT sex = 0.0 AND NOT exercise_induced_angina = 0.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT chest = 3.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT slope = 1.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT slope = 1.0 AND NOT number_of_major_vessels = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT sex = 0.0 AND NOT exercise_induced_angina = 0.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT exercise_induced_angina = 0.0 AND NOT slope = 1.0 AND NOT thal = 3.0 THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT chest = 3.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT number_of_major_vessels = 0.0 THEN NOT 0"
+  # hypos left: 4
+  exp time: 1.66
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (64.0..+inf) AND sex = 0.0 AND chest = 4.0 AND resting_blood_pressure = (153.5..+inf) AND serum_cholestoral = (209.75..247.5] AND fasting_blood_sugar = 1.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 1.0 AND oldpeak = (0.95..2.0] AND slope = 2.0 AND number_of_major_vessels = 2.0 AND thal = 7.0 THEN 1"
+  explanation: "IF NOT thal = 7.0 THEN NOT 1"
+  # hypos left: 1
+  explanation: "IF NOT chest = 4.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT oldpeak = (0.95..2.0] AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT chest = 4.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT exercise_induced_angina = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT resting_blood_pressure = (153.5..+inf) AND NOT exercise_induced_angina = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT serum_cholestoral = (209.75..247.5] AND NOT exercise_induced_angina = 1.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT chest = 4.0 AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT exercise_induced_angina = 1.0 AND NOT oldpeak = (0.95..2.0] AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT exercise_induced_angina = 1.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT serum_cholestoral = (209.75..247.5] AND NOT exercise_induced_angina = 1.0 AND NOT slope = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT exercise_induced_angina = 1.0 AND NOT slope = 2.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT age = (64.0..+inf) AND NOT chest = 4.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest = 4.0 AND NOT resting_blood_pressure = (153.5..+inf) AND NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest = 4.0 AND NOT resting_electrocardiographic_results = 0.0 AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest = 4.0 AND NOT serum_cholestoral = (209.75..247.5] AND NOT resting_electrocardiographic_results = 0.0 AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT chest = 4.0 AND NOT resting_blood_pressure = (153.5..+inf) AND NOT serum_cholestoral = (209.75..247.5] AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT age = (64.0..+inf) AND NOT chest = 4.0 AND NOT serum_cholestoral = (209.75..247.5] AND NOT oldpeak = (0.95..2.0] AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (64.0..+inf) AND NOT chest = 4.0 AND NOT serum_cholestoral = (209.75..247.5] AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT chest = 4.0 AND NOT serum_cholestoral = (209.75..247.5] AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT oldpeak = (0.95..2.0] AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT age = (64.0..+inf) AND NOT chest = 4.0 AND NOT resting_blood_pressure = (153.5..+inf) AND NOT maximum_heart_rate_achieved = (146.5..168.75] AND NOT number_of_major_vessels = 2.0 THEN NOT 1"
+  # hypos left: 5
+  exp time: 1.43
+
+Sample of length 13  :  [[3. 1. 0. 2. 2. 1. 2. 3. 0. 1. 1. 1. 0.]]
+Encoded sample of length 43  :  [[0. 0. 0. 1. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0.
+  0. 0. 1. 1. 0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0.]]
+Back to sample [array([3., 1., 0., 2., 2., 1., 2., 3., 0., 1., 1., 1., 0.])]
+Readable sample ['(64.0..+inf)' '1.0' '1.0' '(134.0..153.5]' '(247.5..290.75]' '1.0' '2.0'
+ '(168.75..+inf)' '0.0' '(0.95..2.0]' '2.0' '1.0' '3.0']
+  explaining:  "IF age = (64.0..+inf) AND sex = 1.0 AND chest = 3.0 AND resting_blood_pressure = (117.5..134.0] AND serum_cholestoral = (247.5..290.75] AND fasting_blood_sugar = 0.0 AND resting_electrocardiographic_results = 0.0 AND maximum_heart_rate_achieved = (146.5..168.75] AND exercise_induced_angina = 0.0 AND oldpeak = (0.95..2.0] AND slope = 1.0 AND number_of_major_vessels = 1.0 AND thal = 7.0 THEN 0"
+  explanation: "IF NOT resting_electrocardiographic_results = 0.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT resting_blood_pressure = (117.5..134.0] THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT slope = 1.0 THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT age = (64.0..+inf) THEN NOT 0"
+  # hypos left: 1
+  explanation: "IF NOT chest = 3.0 THEN NOT 0"
+  # hypos left: 1
+  exp time: 0.19
+
+
+exptimes: [1.7553679999999998, 0.6564500000000004, 1.2685240000000007, 1.6639809999999997, 0.9916669999999996, 0.606520999999999, 0.25108399999999875, 0.3944080000000003, 1.5428819999999988, 1.6299970000000013, 1.7563510000000004, 1.679831, 1.9210589999999996, 0.5844730000000027, 0.45109300000000374, 0.8794170000000001, 1.003268000000002, 0.6224950000000007, 0.2917419999999993, 0.6289260000000034, 1.7539339999999974, 0.666640000000001, 0.4805589999999995, 0.8062859999999965, 1.329577999999998, 0.4320809999999966, 1.034488999999997, 0.39152299999999585, 0.8883430000000025, 0.4836779999999976, 0.886446000000003, 0.9110860000000045, 0.6429090000000031, 1.2078679999999977, 0.7423319999999975, 0.20141799999999677, 0.9173870000000051, 1.1430819999999997, 2.4207619999999963, 2.0700379999999967, 2.4973820000000018, 1.4281289999999984, 1.465524000000002, 0.3394890000000004, 1.3728119999999961, 2.389439000000003, 2.3424149999999955, 0.5489989999999949, 1.6061259999999962, 1.1432739999999981, 0.7385379999999984, 1.6649389999999968, 1.4330659999999966, 0.19459700000000169]
+all samples: 54
+total exp time: 59.15
+max exp time per instance: 2.50
+min exp time per instance: 0.19
+avg exp time per instance: 1.10
+total oracle calls: 9504
+max oracle calls per instance: 461
+min oracle calls per instance: 28
+avg oracle calls per instance: 176.00
+avg number of explanations per instance: 14.63
+avg explanation size per instance: 2.62
+

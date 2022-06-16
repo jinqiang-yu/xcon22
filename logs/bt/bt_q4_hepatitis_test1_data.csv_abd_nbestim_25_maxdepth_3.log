@@ -1,0 +1,1308 @@
+c XDual: dual explanations for XGBoost models
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (-inf..33.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 1 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (41.5..62.25] AND SGOT = (42.0..63.0] AND ALBUMIN = (14.5..21.75] AND PROTIME = (22.0..33.0] AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF SPIDERS = 1 AND ALBUMIN = (14.5..21.75] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF STEROID = 0 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND PROTIME = (22.0..33.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF AGE = (-inf..33.0] AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 1 AND SPIDERS = 1 AND BILIRUBIN = (-inf..8.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF AGE = (-inf..33.0] AND STEROID = 0 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND STEROID = 0 AND LIVER FIRM = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND STEROID = 0 AND SPIDERS = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPIDERS = 1 AND ASCITES = 1 AND SGOT = (42.0..63.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND SGOT = (42.0..63.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND SGOT = (42.0..63.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  exp time: 1.88
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (-inf..33.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (42.0..63.0] AND ALBUMIN = (7.25..14.5] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF STEROID = 0 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF AGE = (-inf..33.0] AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND PROTIME = (-inf..11.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ALK PHOSPHATE = (62.25..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ALBUMIN = (7.25..14.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 1 AND SPIDERS = 1 AND BILIRUBIN = (-inf..8.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) THEN 2"
+  # hypos left: 4
+  explanation: "IF STEROID = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (7.25..14.5] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND SGOT = (42.0..63.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALBUMIN = (7.25..14.5] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND SGOT = (42.0..63.0] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND PROTIME = (-inf..11.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND SGOT = (42.0..63.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND STEROID = 0 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND STEROID = 0 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  exp time: 1.82
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (-inf..33.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..25.5] AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (21.0..42.0] AND ALBUMIN = (-inf..7.25] AND PROTIME = (22.0..33.0] AND HISTOLOGY = 2 THEN 2"
+  explanation: "IF AGE = (-inf..33.0] AND LIVER FIRM = 0 AND ASCITES = 1 AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 4
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 4
+  explanation: "IF AGE = (-inf..33.0] AND MALAISE = 1 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND MALAISE = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND SGOT = (21.0..42.0] AND PROTIME = (22.0..33.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND SGOT = (21.0..42.0] AND ALBUMIN = (-inf..7.25] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND MALAISE = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND MALAISE = 1 AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND ANOREXIA = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND ANOREXIA = 1 AND SPIDERS = 1 AND ASCITES = 1 AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND MALAISE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND SGOT = (21.0..42.0] AND PROTIME = (22.0..33.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF MALAISE = 1 AND LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  exp time: 1.74
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (-inf..33.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (8.5..17.0] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (21.0..42.0] AND ALBUMIN = (14.5..21.75] AND PROTIME = (11.0..22.0] AND HISTOLOGY = 2 THEN 2"
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND SGOT = (21.0..42.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) THEN 2"
+  # hypos left: 4
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 4
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (21.0..42.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF STEROID = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND MALAISE = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF LIVER FIRM = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF MALAISE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF MALAISE = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND ANOREXIA = 1 AND SPIDERS = 1 AND ASCITES = 1 AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND ANOREXIA = 1 AND ASCITES = 1 AND SGOT = (21.0..42.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND MALAISE = 1 AND ASCITES = 1 AND SGOT = (21.0..42.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND MALAISE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPIDERS = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF MALAISE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  exp time: 2.28
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (-inf..33.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (-inf..20.75] AND SGOT = (42.0..63.0] AND ALBUMIN = (14.5..21.75] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF AGE = (-inf..33.0] AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND PROTIME = (-inf..11.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF STEROID = 0 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ALBUMIN = (14.5..21.75] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 1 AND SPIDERS = 1 AND BILIRUBIN = (-inf..8.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND STEROID = 0 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND STEROID = 0 AND LIVER FIRM = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND STEROID = 0 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND STEROID = 0 AND BILIRUBIN = (-inf..8.5] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND STEROID = 0 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND ALBUMIN = (14.5..21.75] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND PROTIME = (-inf..11.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND SGOT = (42.0..63.0] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND SGOT = (42.0..63.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  exp time: 2.15
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (-inf..33.0] AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 2 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (21.0..42.0] AND ALBUMIN = (14.5..21.75] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF SPIDERS = 1 AND ALBUMIN = (14.5..21.75] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF AGE = (-inf..33.0] AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ALK PHOSPHATE = (62.25..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND PROTIME = (-inf..11.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) THEN 2"
+  # hypos left: 4
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND SGOT = (21.0..42.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 4
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 4
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF SPIDERS = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 1 AND SPIDERS = 1 AND BILIRUBIN = (-inf..8.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF SPIDERS = 1 AND BILIRUBIN = (-inf..8.5] AND SGOT = (21.0..42.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF SPIDERS = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND VARICES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPIDERS = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  exp time: 2.34
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (-inf..33.0] AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 2 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) AND ALBUMIN = (21.75..+inf) AND PROTIME = (33.0..+inf) AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF AGE = (-inf..33.0] AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ALBUMIN = (21.75..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ALK PHOSPHATE = (62.25..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF LIVER FIRM = 1 AND SPIDERS = 1 AND BILIRUBIN = (-inf..8.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) THEN 2"
+  # hypos left: 4
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND SGOT = (63.0..+inf) THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND MALAISE = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALBUMIN = (21.75..+inf) THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND SGOT = (63.0..+inf) THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND SGOT = (63.0..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND ALBUMIN = (21.75..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 6
+  explanation: "IF AGE = (-inf..33.0] AND ANOREXIA = 1 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (63.0..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 6
+  explanation: "IF AGE = (-inf..33.0] AND ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND VARICES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 6
+  explanation: "IF AGE = (-inf..33.0] AND ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] THEN 2"
+  # hypos left: 6
+  explanation: "IF AGE = (-inf..33.0] AND MALAISE = 1 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] THEN 2"
+  # hypos left: 6
+  exp time: 2.92
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (-inf..33.0] AND SEX = 2 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 0 AND LIVER BIG = 0 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..25.5] AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (63.0..+inf) AND ALBUMIN = (14.5..21.75] AND PROTIME = (33.0..+inf) AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND ALK PHOSPHATE = (20.75..41.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF AGE = (-inf..33.0] AND LIVER FIRM = 0 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND SGOT = (63.0..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND ALBUMIN = (14.5..21.75] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF AGE = (-inf..33.0] AND LIVER FIRM = 0 AND ASCITES = 1 AND SGOT = (63.0..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND ALK PHOSPHATE = (20.75..41.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND SGOT = (63.0..+inf) AND ALBUMIN = (14.5..21.75] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND ALBUMIN = (14.5..21.75] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND ALK PHOSPHATE = (20.75..41.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND SGOT = (63.0..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..25.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 0 AND ASCITES = 1 AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (63.0..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (63.0..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND SGOT = (63.0..+inf) AND ALBUMIN = (14.5..21.75] AND PROTIME = (33.0..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF LIVER FIRM = 0 AND SPLEEN PALPABLE = 0 AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND SGOT = (63.0..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..25.5] AND SGOT = (63.0..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF AGE = (-inf..33.0] AND LIVER FIRM = 0 AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND ALBUMIN = (14.5..21.75] AND PROTIME = (33.0..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF AGE = (-inf..33.0] AND LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..25.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..25.5] AND SGOT = (63.0..+inf) AND ALBUMIN = (14.5..21.75] AND PROTIME = (33.0..+inf) THEN 2"
+  # hypos left: 7
+  exp time: 1.13
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (-inf..33.0] AND SEX = 2 AND STEROID = 1 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (8.5..17.0] AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (42.0..63.0] AND ALBUMIN = (7.25..14.5] AND PROTIME = (11.0..22.0] AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ALBUMIN = (7.25..14.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF AGE = (-inf..33.0] AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND PROTIME = (11.0..22.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF AGE = (-inf..33.0] AND LIVER FIRM = 0 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND PROTIME = (11.0..22.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND BILIRUBIN = (8.5..17.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND SGOT = (42.0..63.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND ALK PHOSPHATE = (20.75..41.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND SGOT = (42.0..63.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND SGOT = (42.0..63.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND SGOT = (42.0..63.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALBUMIN = (7.25..14.5] THEN 2"
+  # hypos left: 5
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND ALK PHOSPHATE = (20.75..41.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF ANOREXIA = 1 AND LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND ASCITES = 1 AND SGOT = (42.0..63.0] AND PROTIME = (11.0..22.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND PROTIME = (11.0..22.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (-inf..33.0] AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND BILIRUBIN = (8.5..17.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  exp time: 2.07
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (33.0..45.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 1 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..25.5] AND ALK PHOSPHATE = (41.5..62.25] AND SGOT = (63.0..+inf) AND ALBUMIN = (7.25..14.5] AND PROTIME = (11.0..22.0] AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ALBUMIN = (7.25..14.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF STEROID = 0 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND PROTIME = (11.0..22.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND PROTIME = (11.0..22.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND SGOT = (63.0..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF ANOREXIA = 1 AND LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF ANOREXIA = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (63.0..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND SGOT = (63.0..+inf) AND ALBUMIN = (7.25..14.5] THEN 2"
+  # hypos left: 6
+  explanation: "IF ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (63.0..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALBUMIN = (7.25..14.5] THEN 2"
+  # hypos left: 6
+  explanation: "IF ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..25.5] THEN 2"
+  # hypos left: 6
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND SGOT = (63.0..+inf) AND ALBUMIN = (7.25..14.5] AND PROTIME = (11.0..22.0] THEN 2"
+  # hypos left: 7
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..25.5] AND SGOT = (63.0..+inf) AND PROTIME = (11.0..22.0] THEN 2"
+  # hypos left: 7
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..25.5] AND SGOT = (63.0..+inf) AND ALBUMIN = (7.25..14.5] THEN 2"
+  # hypos left: 7
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..25.5] AND ALBUMIN = (7.25..14.5] AND PROTIME = (11.0..22.0] THEN 2"
+  # hypos left: 7
+  explanation: "IF LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..25.5] AND SGOT = (63.0..+inf) THEN 2"
+  # hypos left: 7
+  exp time: 1.19
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (33.0..45.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 1 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 0 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (8.5..17.0] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (42.0..63.0] AND ALBUMIN = (14.5..21.75] AND PROTIME = (33.0..+inf) AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF SPIDERS = 1 AND ALK PHOSPHATE = (62.25..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ALBUMIN = (14.5..21.75] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF STEROID = 0 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND ALBUMIN = (14.5..21.75] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND SGOT = (42.0..63.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND BILIRUBIN = (8.5..17.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF ANOREXIA = 1 AND LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF MALAISE = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (8.5..17.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (8.5..17.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF STEROID = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF SPIDERS = 1 AND VARICES = 1 AND BILIRUBIN = (8.5..17.0] AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF STEROID = 0 AND SPIDERS = 1 AND BILIRUBIN = (8.5..17.0] AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (8.5..17.0] AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (42.0..63.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF MALAISE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND BILIRUBIN = (8.5..17.0] AND SGOT = (42.0..63.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  exp time: 1.80
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (33.0..45.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 0 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) AND ALBUMIN = (21.75..+inf) AND PROTIME = (33.0..+inf) AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF SPIDERS = 1 AND ALBUMIN = (21.75..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF STEROID = 0 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ALK PHOSPHATE = (62.25..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 1 AND SPIDERS = 1 AND BILIRUBIN = (-inf..8.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF STEROID = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (21.75..+inf) THEN 2"
+  # hypos left: 5
+  explanation: "IF STEROID = 0 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF STEROID = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND VARICES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF STEROID = 0 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND VARICES = 1 AND ALK PHOSPHATE = (62.25..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND VARICES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (21.75..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND VARICES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) AND ALBUMIN = (21.75..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND SGOT = (63.0..+inf) AND ALBUMIN = (21.75..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (21.75..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (63.0..+inf) AND ALBUMIN = (21.75..+inf) THEN 2"
+  # hypos left: 7
+  explanation: "IF LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (21.75..+inf) AND PROTIME = (33.0..+inf) THEN 2"
+  # hypos left: 7
+  explanation: "IF LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND SGOT = (63.0..+inf) AND PROTIME = (33.0..+inf) THEN 2"
+  # hypos left: 7
+  explanation: "IF LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND SGOT = (63.0..+inf) THEN 2"
+  # hypos left: 7
+  explanation: "IF LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND PROTIME = (33.0..+inf) THEN 2"
+  # hypos left: 7
+  exp time: 1.08
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (33.0..45.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 0 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..25.5] AND ALK PHOSPHATE = (-inf..20.75] AND SGOT = (21.0..42.0] AND ALBUMIN = (21.75..+inf) AND PROTIME = (33.0..+inf) AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND SGOT = (21.0..42.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF ANOREXIA = 1 AND LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (21.0..42.0] AND ALBUMIN = (21.75..+inf) THEN 2"
+  # hypos left: 5
+  explanation: "IF LIVER FIRM = 0 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF ANOREXIA = 1 AND LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND SGOT = (21.0..42.0] AND ALBUMIN = (21.75..+inf) THEN 2"
+  # hypos left: 5
+  explanation: "IF LIVER FIRM = 0 AND SPIDERS = 0 AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND BILIRUBIN = (17.0..25.5] AND SGOT = (21.0..42.0] AND PROTIME = (33.0..+inf) THEN 2"
+  # hypos left: 5
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..25.5] AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF ANOREXIA = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..25.5] AND ALBUMIN = (21.75..+inf) AND PROTIME = (33.0..+inf) THEN 2"
+  # hypos left: 8
+  explanation: "IF ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..25.5] AND ALK PHOSPHATE = (-inf..20.75] AND SGOT = (21.0..42.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 8
+  exp time: 0.76
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (33.0..45.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 0 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..25.5] AND ALK PHOSPHATE = (-inf..20.75] AND SGOT = (63.0..+inf) AND ALBUMIN = (7.25..14.5] AND PROTIME = (33.0..+inf) AND HISTOLOGY = 2 THEN 2"
+  explanation: "IF ANOREXIA = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (63.0..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (17.0..25.5] AND SGOT = (63.0..+inf) AND PROTIME = (33.0..+inf) THEN 2"
+  # hypos left: 7
+  exp time: 0.13
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (33.0..45.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) AND ALBUMIN = (7.25..14.5] AND PROTIME = (33.0..+inf) AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND SGOT = (63.0..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF ANOREXIA = 1 AND LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF ANOREXIA = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (63.0..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF MALAISE = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND VARICES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) THEN 2"
+  # hypos left: 7
+  explanation: "IF MALAISE = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) THEN 2"
+  # hypos left: 7
+  explanation: "IF MALAISE = 1 AND ANOREXIA = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND VARICES = 1 AND ALK PHOSPHATE = (62.25..+inf) THEN 2"
+  # hypos left: 7
+  explanation: "IF LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) THEN 2"
+  # hypos left: 7
+  explanation: "IF LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) AND PROTIME = (33.0..+inf) THEN 2"
+  # hypos left: 7
+  explanation: "IF MALAISE = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND SGOT = (63.0..+inf) THEN 2"
+  # hypos left: 7
+  explanation: "IF MALAISE = 1 AND ANOREXIA = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] THEN 2"
+  # hypos left: 7
+  explanation: "IF LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND SGOT = (63.0..+inf) AND PROTIME = (33.0..+inf) THEN 2"
+  # hypos left: 7
+  explanation: "IF MALAISE = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND SGOT = (63.0..+inf) AND PROTIME = (33.0..+inf) THEN 2"
+  # hypos left: 7
+  explanation: "IF ANOREXIA = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND PROTIME = (33.0..+inf) THEN 2"
+  # hypos left: 8
+  explanation: "IF STEROID = 0 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 8
+  explanation: "IF MALAISE = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND PROTIME = (33.0..+inf) THEN 2"
+  # hypos left: 8
+  explanation: "IF MALAISE = 1 AND ANOREXIA = 1 AND LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) THEN 2"
+  # hypos left: 8
+  exp time: 1.08
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (33.0..45.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 0 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (42.0..63.0] AND ALBUMIN = (14.5..21.75] AND PROTIME = (33.0..+inf) AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF SPIDERS = 1 AND ALK PHOSPHATE = (62.25..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF STEROID = 0 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ALBUMIN = (14.5..21.75] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 1 AND SPIDERS = 1 AND BILIRUBIN = (-inf..8.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF SPIDERS = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF MALAISE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (42.0..63.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF STEROID = 0 AND LIVER FIRM = 1 AND SPIDERS = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF STEROID = 0 AND LIVER FIRM = 1 AND SPIDERS = 1 AND VARICES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF ANOREXIA = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF AGE = (33.0..45.0] AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF MALAISE = 1 AND ANOREXIA = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF ANOREXIA = 1 AND LIVER FIRM = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF ANOREXIA = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (42.0..63.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF ANOREXIA = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (42.0..63.0] THEN 2"
+  # hypos left: 7
+  explanation: "IF MALAISE = 1 AND ANOREXIA = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) THEN 2"
+  # hypos left: 7
+  explanation: "IF MALAISE = 1 AND LIVER FIRM = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (42.0..63.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 7
+  exp time: 1.21
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (33.0..45.0] AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 1 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 0 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (-inf..20.75] AND SGOT = (63.0..+inf) AND ALBUMIN = (14.5..21.75] AND PROTIME = (33.0..+inf) AND HISTOLOGY = 1 THEN 1"
+  explanation: "IF AGE = (33.0..45.0] AND ANOREXIA = 0 AND LIVER FIRM = 1 AND SPIDERS = 0 AND ALK PHOSPHATE = (-inf..20.75] AND PROTIME = (33.0..+inf) AND HISTOLOGY = 1 THEN 1"
+  # hypos left: 7
+  exp time: 0.06
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (33.0..45.0] AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 1 AND FATIGUE = 0 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) AND ALBUMIN = (14.5..21.75] AND PROTIME = (11.0..22.0] AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF SPIDERS = 1 AND PROTIME = (11.0..22.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ALBUMIN = (14.5..21.75] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ALK PHOSPHATE = (62.25..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND SGOT = (63.0..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND PROTIME = (11.0..22.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND ALBUMIN = (14.5..21.75] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF SPIDERS = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) THEN 2"
+  # hypos left: 4
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND SGOT = (63.0..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF MALAISE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF MALAISE = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF ANOREXIA = 1 AND LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 5
+  exp time: 1.72
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (33.0..45.0] AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 2 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 0 AND BILIRUBIN = (8.5..17.0] AND ALK PHOSPHATE = (-inf..20.75] AND SGOT = (-inf..21.0] AND ALBUMIN = (7.25..14.5] AND PROTIME = (22.0..33.0] AND HISTOLOGY = 2 THEN 1"
+  explanation: "IF AGE = (33.0..45.0] AND SPIDERS = 0 AND VARICES = 0 AND ALK PHOSPHATE = (-inf..20.75] AND SGOT = (-inf..21.0] AND ALBUMIN = (7.25..14.5] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 7
+  exp time: 0.07
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (33.0..45.0] AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 2 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (63.0..+inf) AND ALBUMIN = (14.5..21.75] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF SPIDERS = 1 AND ALBUMIN = (14.5..21.75] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND PROTIME = (-inf..11.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF LIVER FIRM = 1 AND SPIDERS = 1 AND BILIRUBIN = (-inf..8.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND SGOT = (63.0..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF MALAISE = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] THEN 2"
+  # hypos left: 6
+  explanation: "IF STEROID = 1 AND ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 THEN 2"
+  # hypos left: 6
+  explanation: "IF ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (63.0..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF MALAISE = 1 AND ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 THEN 2"
+  # hypos left: 6
+  explanation: "IF MALAISE = 1 AND ANOREXIA = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF STEROID = 1 AND ANOREXIA = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF ANOREXIA = 1 AND LIVER FIRM = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF ANOREXIA = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (63.0..+inf) AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF ANOREXIA = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (20.75..41.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  exp time: 1.42
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (33.0..45.0] AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 2 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (41.5..62.25] AND SGOT = (21.0..42.0] AND ALBUMIN = (14.5..21.75] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND PROTIME = (-inf..11.0] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ALBUMIN = (14.5..21.75] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND SGOT = (21.0..42.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 1 AND SPIDERS = 1 AND BILIRUBIN = (-inf..8.5] AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 4
+  explanation: "IF SPIDERS = 1 AND BILIRUBIN = (-inf..8.5] AND SGOT = (21.0..42.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF MALAISE = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF MALAISE = 1 AND ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 THEN 2"
+  # hypos left: 6
+  explanation: "IF STEROID = 1 AND ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 THEN 2"
+  # hypos left: 6
+  explanation: "IF MALAISE = 1 AND ANOREXIA = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF ANOREXIA = 1 AND LIVER FIRM = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF STEROID = 1 AND ANOREXIA = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] THEN 2"
+  # hypos left: 6
+  explanation: "IF ANOREXIA = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 6
+  exp time: 1.37
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (33.0..45.0] AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 2 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (41.5..62.25] AND SGOT = (42.0..63.0] AND ALBUMIN = (14.5..21.75] AND PROTIME = (33.0..+inf) AND HISTOLOGY = 2 THEN 2"
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF MALAISE = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND SGOT = (42.0..63.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 5
+  explanation: "IF ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] THEN 2"
+  # hypos left: 6
+  explanation: "IF STEROID = 1 AND ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 THEN 2"
+  # hypos left: 6
+  explanation: "IF MALAISE = 1 AND ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 THEN 2"
+  # hypos left: 6
+  explanation: "IF MALAISE = 1 AND ANOREXIA = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF STEROID = 1 AND ANOREXIA = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF ANOREXIA = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (42.0..63.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF ANOREXIA = 1 AND LIVER FIRM = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 6
+  explanation: "IF MALAISE = 1 AND LIVER FIRM = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (42.0..63.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 7
+  explanation: "IF STEROID = 1 AND MALAISE = 1 AND LIVER FIRM = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 7
+  explanation: "IF STEROID = 1 AND LIVER FIRM = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (42.0..63.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 7
+  explanation: "IF STEROID = 1 AND MALAISE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (42.0..63.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 7
+  explanation: "IF ANOREXIA = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (42.0..63.0] THEN 2"
+  # hypos left: 7
+  explanation: "IF STEROID = 1 AND MALAISE = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 THEN 2"
+  # hypos left: 7
+  explanation: "IF MALAISE = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] THEN 2"
+  # hypos left: 7
+  exp time: 1.51
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (33.0..45.0] AND SEX = 2 AND STEROID = 1 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 0 AND LIVER BIG = 0 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (21.0..42.0] AND ALBUMIN = (14.5..21.75] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 2 THEN 2"
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND SPLEEN PALPABLE = 1 AND ASCITES = 1 AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND SGOT = (21.0..42.0] AND ALBUMIN = (14.5..21.75] THEN 2"
+  # hypos left: 4
+  explanation: "IF LIVER FIRM = 0 AND SPIDERS = 0 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF STEROID = 1 AND LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF LIVER FIRM = 0 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND SGOT = (21.0..42.0] THEN 2"
+  # hypos left: 5
+  explanation: "IF LIVER FIRM = 0 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND SGOT = (21.0..42.0] AND ALBUMIN = (14.5..21.75] AND HISTOLOGY = 2 THEN 2"
+  # hypos left: 6
+  explanation: "IF LIVER FIRM = 0 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (21.0..42.0] AND ALBUMIN = (14.5..21.75] AND HISTOLOGY = 2 THEN 2"
+  # hypos left: 6
+  explanation: "IF STEROID = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND SGOT = (21.0..42.0] AND ALBUMIN = (14.5..21.75] AND HISTOLOGY = 2 THEN 2"
+  # hypos left: 7
+  exp time: 0.82
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (45.0..58.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 1 AND FATIGUE = 1 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (25.5..+inf) AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) AND ALBUMIN = (21.75..+inf) AND PROTIME = (33.0..+inf) AND HISTOLOGY = 1 THEN 2"
+  explanation: "IF SPIDERS = 1 AND ALK PHOSPHATE = (62.25..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF STEROID = 0 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ASCITES = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPIDERS = 1 AND ALBUMIN = (21.75..+inf) AND HISTOLOGY = 1 THEN 2"
+  # hypos left: 3
+  explanation: "IF SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) THEN 2"
+  # hypos left: 4
+  explanation: "IF STEROID = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (21.75..+inf) THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (45.0..58.0] AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND SGOT = (63.0..+inf) THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (45.0..58.0] AND MALAISE = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (45.0..58.0] AND ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (45.0..58.0] AND STEROID = 0 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ALK PHOSPHATE = (62.25..+inf) THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (45.0..58.0] AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND ALBUMIN = (21.75..+inf) THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (45.0..58.0] AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 THEN 2"
+  # hypos left: 5
+  explanation: "IF AGE = (45.0..58.0] AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (21.75..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF AGE = (45.0..58.0] AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND VARICES = 1 AND ALK PHOSPHATE = (62.25..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF AGE = (45.0..58.0] AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND VARICES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (21.75..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF STEROID = 0 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND VARICES = 1 AND ALK PHOSPHATE = (62.25..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND VARICES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (21.75..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 AND ALBUMIN = (21.75..+inf) THEN 2"
+  # hypos left: 6
+  explanation: "IF MALAISE = 1 AND ANOREXIA = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 1 AND ASCITES = 1 AND VARICES = 1 THEN 2"
+  # hypos left: 6
+  exp time: 1.51
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (45.0..58.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (8.5..17.0] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) AND ALBUMIN = (7.25..14.5] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 2 THEN 1"
+  explanation: "IF AGE = (45.0..58.0] AND STEROID = 0 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) AND ALBUMIN = (7.25..14.5] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 9
+  explanation: "IF AGE = (45.0..58.0] AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) AND ALBUMIN = (7.25..14.5] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 9
+  explanation: "IF AGE = (45.0..58.0] AND MALAISE = 0 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) AND ALBUMIN = (7.25..14.5] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 9
+  explanation: "IF AGE = (45.0..58.0] AND STEROID = 0 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND BILIRUBIN = (8.5..17.0] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) AND PROTIME = (-inf..11.0] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 10
+  explanation: "IF AGE = (45.0..58.0] AND STEROID = 0 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND BILIRUBIN = (8.5..17.0] AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (7.25..14.5] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 10
+  explanation: "IF AGE = (45.0..58.0] AND MALAISE = 0 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND BILIRUBIN = (8.5..17.0] AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (7.25..14.5] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 10
+  explanation: "IF AGE = (45.0..58.0] AND STEROID = 0 AND MALAISE = 0 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND BILIRUBIN = (8.5..17.0] AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (7.25..14.5] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 10
+  explanation: "IF AGE = (45.0..58.0] AND STEROID = 0 AND MALAISE = 0 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND SGOT = (63.0..+inf) AND ALBUMIN = (7.25..14.5] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 10
+  explanation: "IF AGE = (45.0..58.0] AND MALAISE = 0 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND BILIRUBIN = (8.5..17.0] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) AND PROTIME = (-inf..11.0] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 10
+  explanation: "IF AGE = (45.0..58.0] AND STEROID = 0 AND MALAISE = 0 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND BILIRUBIN = (8.5..17.0] AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 10
+  explanation: "IF AGE = (45.0..58.0] AND STEROID = 0 AND MALAISE = 0 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND ASCITES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (7.25..14.5] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 11
+  exp time: 0.40
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (45.0..58.0] AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 1 AND SPLEEN PALPABLE = 1 AND SPIDERS = 0 AND ASCITES = 0 AND VARICES = 1 AND BILIRUBIN = (25.5..+inf) AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) AND ALBUMIN = (7.25..14.5] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 2 THEN 1"
+  explanation: "IF SPIDERS = 0 AND ASCITES = 0 AND BILIRUBIN = (25.5..+inf) AND SGOT = (63.0..+inf) AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 5
+  explanation: "IF LIVER FIRM = 1 AND SPIDERS = 0 AND ASCITES = 0 AND BILIRUBIN = (25.5..+inf) AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 5
+  explanation: "IF AGE = (45.0..58.0] AND LIVER FIRM = 1 AND SPIDERS = 0 AND ASCITES = 0 AND BILIRUBIN = (25.5..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF AGE = (45.0..58.0] AND LIVER FIRM = 1 AND SPIDERS = 0 AND ASCITES = 0 AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF AGE = (45.0..58.0] AND LIVER FIRM = 1 AND SPIDERS = 0 AND ASCITES = 0 AND ALK PHOSPHATE = (62.25..+inf) AND ALBUMIN = (7.25..14.5] THEN 1"
+  # hypos left: 6
+  explanation: "IF AGE = (45.0..58.0] AND LIVER FIRM = 1 AND SPIDERS = 0 AND ASCITES = 0 AND ALBUMIN = (7.25..14.5] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 6
+  explanation: "IF AGE = (45.0..58.0] AND LIVER FIRM = 1 AND SPIDERS = 0 AND BILIRUBIN = (25.5..+inf) AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 7
+  explanation: "IF AGE = (45.0..58.0] AND STEROID = 0 AND MALAISE = 0 AND LIVER FIRM = 1 AND SPIDERS = 0 AND BILIRUBIN = (25.5..+inf) AND ALK PHOSPHATE = (62.25..+inf) AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 8
+  explanation: "IF AGE = (45.0..58.0] AND STEROID = 0 AND MALAISE = 0 AND LIVER FIRM = 1 AND SPIDERS = 0 AND BILIRUBIN = (25.5..+inf) AND SGOT = (63.0..+inf) AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 8
+  exp time: 0.58
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (45.0..58.0] AND SEX = 1 AND STEROID = 1 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 0 AND SPIDERS = 1 AND ASCITES = 0 AND VARICES = 0 AND BILIRUBIN = (17.0..25.5] AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (63.0..+inf) AND ALBUMIN = (-inf..7.25] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 2 THEN 1"
+  explanation: "IF STEROID = 1 AND ASCITES = 0 AND VARICES = 0 AND ALK PHOSPHATE = (20.75..41.5] AND ALBUMIN = (-inf..7.25] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 6
+  explanation: "IF SPLEEN PALPABLE = 0 AND ASCITES = 0 AND VARICES = 0 AND ALK PHOSPHATE = (20.75..41.5] AND ALBUMIN = (-inf..7.25] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 6
+  explanation: "IF ASCITES = 0 AND VARICES = 0 AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (63.0..+inf) AND ALBUMIN = (-inf..7.25] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 6
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 0 AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (63.0..+inf) AND ALBUMIN = (-inf..7.25] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 6
+  explanation: "IF SPLEEN PALPABLE = 0 AND ASCITES = 0 AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (63.0..+inf) AND ALBUMIN = (-inf..7.25] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 6
+  explanation: "IF SPLEEN PALPABLE = 0 AND SPIDERS = 1 AND ASCITES = 0 AND ALK PHOSPHATE = (20.75..41.5] AND ALBUMIN = (-inf..7.25] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 6
+  explanation: "IF STEROID = 1 AND SPLEEN PALPABLE = 0 AND ASCITES = 0 AND ALK PHOSPHATE = (20.75..41.5] AND ALBUMIN = (-inf..7.25] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 6
+  explanation: "IF STEROID = 1 AND ASCITES = 0 AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (63.0..+inf) AND ALBUMIN = (-inf..7.25] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 6
+  explanation: "IF STEROID = 1 AND ASCITES = 0 AND BILIRUBIN = (17.0..25.5] AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (63.0..+inf) AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 6
+  explanation: "IF STEROID = 1 AND ASCITES = 0 AND VARICES = 0 AND BILIRUBIN = (17.0..25.5] AND ALK PHOSPHATE = (20.75..41.5] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 6
+  explanation: "IF ASCITES = 0 AND VARICES = 0 AND BILIRUBIN = (17.0..25.5] AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (63.0..+inf) AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 6
+  explanation: "IF LIVER FIRM = 0 AND ASCITES = 0 AND BILIRUBIN = (17.0..25.5] AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (63.0..+inf) AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 6
+  explanation: "IF ASCITES = 0 AND BILIRUBIN = (17.0..25.5] AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (63.0..+inf) AND ALBUMIN = (-inf..7.25] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 6
+  explanation: "IF SPLEEN PALPABLE = 0 AND ASCITES = 0 AND BILIRUBIN = (17.0..25.5] AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (63.0..+inf) AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 6
+  explanation: "IF STEROID = 1 AND SPLEEN PALPABLE = 0 AND ASCITES = 0 AND VARICES = 0 AND BILIRUBIN = (17.0..25.5] AND SGOT = (63.0..+inf) AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 7
+  explanation: "IF STEROID = 1 AND SPLEEN PALPABLE = 0 AND ASCITES = 0 AND VARICES = 0 AND SGOT = (63.0..+inf) AND ALBUMIN = (-inf..7.25] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 7
+  explanation: "IF STEROID = 1 AND SPLEEN PALPABLE = 0 AND ASCITES = 0 AND VARICES = 0 AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (63.0..+inf) AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 7
+  explanation: "IF STEROID = 1 AND LIVER FIRM = 0 AND ASCITES = 0 AND VARICES = 0 AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (63.0..+inf) AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 7
+  explanation: "IF AGE = (45.0..58.0] AND STEROID = 1 AND ASCITES = 0 AND VARICES = 0 AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (63.0..+inf) AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 7
+  explanation: "IF STEROID = 1 AND LIVER FIRM = 0 AND ASCITES = 0 AND VARICES = 0 AND BILIRUBIN = (17.0..25.5] AND SGOT = (63.0..+inf) AND ALBUMIN = (-inf..7.25] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 8
+  exp time: 1.08
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (45.0..58.0] AND SEX = 2 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 0 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (20.75..41.5] AND SGOT = (-inf..21.0] AND ALBUMIN = (7.25..14.5] AND PROTIME = (11.0..22.0] AND HISTOLOGY = 2 THEN 2"
+  explanation: "IF AGE = (45.0..58.0] AND ANOREXIA = 1 AND LIVER FIRM = 0 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] THEN 2"
+  # hypos left: 7
+  explanation: "IF AGE = (45.0..58.0] AND ANOREXIA = 1 AND LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (7.25..14.5] AND PROTIME = (11.0..22.0] THEN 2"
+  # hypos left: 8
+  explanation: "IF AGE = (45.0..58.0] AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND PROTIME = (11.0..22.0] THEN 2"
+  # hypos left: 8
+  explanation: "IF AGE = (45.0..58.0] AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER FIRM = 0 AND SPIDERS = 0 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (20.75..41.5] THEN 2"
+  # hypos left: 8
+  explanation: "IF AGE = (45.0..58.0] AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER FIRM = 0 AND SPIDERS = 0 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND PROTIME = (11.0..22.0] THEN 2"
+  # hypos left: 8
+  explanation: "IF AGE = (45.0..58.0] AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALBUMIN = (7.25..14.5] THEN 2"
+  # hypos left: 8
+  explanation: "IF AGE = (45.0..58.0] AND MALAISE = 1 AND LIVER FIRM = 0 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (20.75..41.5] THEN 2"
+  # hypos left: 8
+  explanation: "IF AGE = (45.0..58.0] AND MALAISE = 1 AND LIVER FIRM = 0 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (-inf..8.5] AND PROTIME = (11.0..22.0] THEN 2"
+  # hypos left: 8
+  explanation: "IF AGE = (45.0..58.0] AND MALAISE = 1 AND LIVER FIRM = 0 AND SPIDERS = 0 AND ASCITES = 1 AND BILIRUBIN = (-inf..8.5] AND ALK PHOSPHATE = (20.75..41.5] AND PROTIME = (11.0..22.0] THEN 2"
+  # hypos left: 8
+  exp time: 0.34
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (58.0..+inf) AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 1 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (8.5..17.0] AND ALK PHOSPHATE = (-inf..20.75] AND SGOT = (-inf..21.0] AND ALBUMIN = (7.25..14.5] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 2 THEN 1"
+  explanation: "IF AGE = (58.0..+inf) AND STEROID = 0 AND MALAISE = 0 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND ALK PHOSPHATE = (-inf..20.75] AND SGOT = (-inf..21.0] AND ALBUMIN = (7.25..14.5] AND PROTIME = (-inf..11.0] AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 10
+  exp time: 0.08
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (58.0..+inf) AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 0 AND ANOREXIA = 1 AND LIVER BIG = 2 AND LIVER FIRM = 2 AND SPLEEN PALPABLE = 1 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (25.5..+inf) AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (63.0..+inf) AND ALBUMIN = (21.75..+inf) AND PROTIME = (33.0..+inf) AND HISTOLOGY = 2 THEN 1"
+  explanation: "IF AGE = (58.0..+inf) AND MALAISE = 0 AND LIVER FIRM = 2 AND SPIDERS = 0 AND BILIRUBIN = (25.5..+inf) AND SGOT = (63.0..+inf) AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 7
+  explanation: "IF AGE = (58.0..+inf) AND STEROID = 0 AND LIVER FIRM = 2 AND SPIDERS = 0 AND BILIRUBIN = (25.5..+inf) AND SGOT = (63.0..+inf) AND HISTOLOGY = 2 THEN 1"
+  # hypos left: 7
+  exp time: 0.09
+
+Sample of length 19  :  [[1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 3. 3. 2. 1. 0. 0.]]
+Encoded sample of length 60  :  [[0. 1. 0. 0. 1. 0. 0. 1. 0. 1. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 1.
+  0. 0. 1. 0. 0. 0. 1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0.
+  1. 0. 0. 1. 0. 0. 1. 0. 0. 0. 1. 0.]]
+Back to sample [array([1., 0., 1., 0., 0., 1., 1., 1., 0., 0., 1., 1., 1., 3., 3., 2., 1.,
+       0., 0.])]
+Readable sample ['(33.0..45.0]' '1' '1' '1' '0' '1' '1' '1' '0' '0' '1' '1' '1'
+ '(8.5..17.0]' '(62.25..+inf)' '(42.0..63.0]' '(14.5..21.75]'
+ '(-inf..11.0]' '1']
+  explaining:  "IF AGE = (58.0..+inf) AND SEX = 1 AND STEROID = 0 AND ANTIVIRALS = 2 AND FATIGUE = 0 AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER BIG = 0 AND LIVER FIRM = 0 AND SPLEEN PALPABLE = 0 AND SPIDERS = 0 AND ASCITES = 1 AND VARICES = 1 AND BILIRUBIN = (25.5..+inf) AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (42.0..63.0] AND ALBUMIN = (21.75..+inf) AND PROTIME = (33.0..+inf) AND HISTOLOGY = 2 THEN 2"
+  explanation: "IF AGE = (58.0..+inf) AND MALAISE = 1 AND ANOREXIA = 1 AND LIVER FIRM = 0 AND ASCITES = 1 AND VARICES = 1 AND ALK PHOSPHATE = (62.25..+inf) AND SGOT = (42.0..63.0] THEN 2"
+  # hypos left: 8
+  exp time: 0.08
+
+
+exptimes: [1.881541, 1.8249970000000002, 1.743411, 2.2825439999999997, 2.1507799999999992, 2.335685, 2.9211490000000015, 1.1301309999999987, 2.0680229999999966, 1.1889569999999985, 1.8039539999999974, 1.0754330000000039, 0.7634739999999987, 0.13209699999999813, 1.080769, 1.206660000000003, 0.05711999999999762, 1.7178960000000032, 0.07098200000000077, 1.423527, 1.365666000000001, 1.5051690000000022, 0.8150589999999909, 1.509198000000005, 0.4025490000000005, 0.5750069999999994, 1.084220000000002, 0.3366200000000106, 0.08095299999999384, 0.08923200000000975, 0.0790140000000008]
+all samples: 31
+total exp time: 36.70
+max exp time per instance: 2.92
+min exp time per instance: 0.06
+avg exp time per instance: 1.18
+total oracle calls: 11834
+max oracle calls per instance: 947
+min oracle calls per instance: 21
+avg oracle calls per instance: 381.74
+avg number of explanations per instance: 14.84
+avg explanation size per instance: 5.70
+

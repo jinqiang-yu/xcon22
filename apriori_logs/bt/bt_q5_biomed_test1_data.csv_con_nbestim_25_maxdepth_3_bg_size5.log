@@ -1,0 +1,976 @@
+c XDual: dual explanations for XGBoost models
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (-inf..819.0] AND Age_of_patient = (-inf..26.4] AND Date_that_blood_sample_was_taken = (30078.0..60079.0] AND ml = (-inf..35.6] AND m2 = (71.4..95.2] AND m3 = (12.42..16.44] AND m4 = (-inf..25.0] THEN 1"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (-inf..35.6] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT m2 = (71.4..95.2] AND NOT m3 = (12.42..16.44] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (-inf..35.6] AND NOT m3 = (12.42..16.44] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 5
+  exp time: 0.28
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (-inf..819.0] AND Age_of_patient = (-inf..26.4] AND Date_that_blood_sample_was_taken = (30078.0..60079.0] AND ml = (35.6..57.2] AND m2 = (47.6..71.4] AND m3 = (12.42..16.44] AND m4 = (25.0..50.0] THEN 1"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (35.6..57.2] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (35.6..57.2] AND NOT m2 = (47.6..71.4] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT m2 = (47.6..71.4] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT m2 = (47.6..71.4] AND NOT m3 = (12.42..16.44] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (35.6..57.2] AND NOT m2 = (47.6..71.4] AND NOT m3 = (12.42..16.44] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 6
+  exp time: 0.30
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (-inf..819.0] AND Age_of_patient = (-inf..26.4] AND Date_that_blood_sample_was_taken = (30078.0..60079.0] AND ml = (35.6..57.2] AND m2 = (47.6..71.4] AND m3 = (16.44..21.84] AND m4 = (-inf..25.0] THEN 1"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT m2 = (47.6..71.4] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (35.6..57.2] AND NOT m2 = (47.6..71.4] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT m2 = (47.6..71.4] AND NOT m3 = (16.44..21.84] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (35.6..57.2] AND NOT m3 = (16.44..21.84] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (35.6..57.2] AND NOT m2 = (47.6..71.4] AND NOT m3 = (16.44..21.84] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (35.6..57.2] AND NOT m2 = (47.6..71.4] AND NOT m3 = (16.44..21.84] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 6
+  exp time: 0.35
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (-inf..819.0] AND Age_of_patient = (-inf..26.4] AND Date_that_blood_sample_was_taken = (60079.0..90078.0] AND ml = (-inf..35.6] AND m2 = (-inf..23.8] AND m3 = (9.16..12.42] AND m4 = (25.0..50.0] THEN 1"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (-inf..35.6] AND NOT m3 = (9.16..12.42] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT m2 = (-inf..23.8] AND NOT m3 = (9.16..12.42] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (-inf..23.8] AND NOT m3 = (9.16..12.42] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 6
+  exp time: 0.30
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (-inf..819.0] AND Age_of_patient = (-inf..26.4] AND Date_that_blood_sample_was_taken = (60079.0..90078.0] AND ml = (-inf..35.6] AND m2 = (23.8..47.6] AND m3 = (9.16..12.42] AND m4 = (-inf..25.0] THEN 1"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT m2 = (23.8..47.6] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (23.8..47.6] AND NOT m3 = (9.16..12.42] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (-inf..35.6] AND NOT m3 = (9.16..12.42] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 6
+  exp time: 0.30
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (-inf..819.0] AND Age_of_patient = (-inf..26.4] AND Date_that_blood_sample_was_taken = (90078.0..110077.0] AND ml = (-inf..35.6] AND m2 = (95.2..+inf) AND m3 = (9.16..12.42] AND m4 = (100.0..+inf) THEN 1"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT m3 = (9.16..12.42] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (-inf..35.6] AND NOT m3 = (9.16..12.42] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT m4 = (100.0..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (95.2..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (-inf..35.6] AND NOT m2 = (95.2..+inf) AND NOT m3 = (9.16..12.42] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (-inf..35.6] AND NOT m3 = (9.16..12.42] AND NOT m4 = (100.0..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (95.2..+inf) AND NOT m3 = (9.16..12.42] AND NOT m4 = (100.0..+inf) THEN NOT 1"
+  # hypos left: 5
+  exp time: 0.33
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (-inf..819.0] AND Age_of_patient = (26.4..32.8] AND Date_that_blood_sample_was_taken = (60079.0..90078.0] AND ml = (35.6..57.2] AND m2 = (23.8..47.6] AND m3 = (12.42..16.44] AND m4 = (25.0..50.0] THEN 1"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT m2 = (23.8..47.6] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT m3 = (12.42..16.44] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 4
+  exp time: 0.21
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (-inf..819.0] AND Age_of_patient = (26.4..32.8] AND Date_that_blood_sample_was_taken = (90078.0..110077.0] AND ml = (-inf..35.6] AND m2 = (71.4..95.2] AND m3 = (12.42..16.44] AND m4 = (-inf..25.0] THEN 1"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (-inf..35.6] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (71.4..95.2] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT ml = (-inf..35.6] AND NOT m3 = (12.42..16.44] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (-inf..819.0] AND NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT m2 = (71.4..95.2] AND NOT m3 = (12.42..16.44] THEN NOT 1"
+  # hypos left: 5
+  exp time: 0.30
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND Age_of_patient = (-inf..26.4] AND Date_that_blood_sample_was_taken = (60079.0..90078.0] AND ml = (-inf..35.6] AND m2 = (23.8..47.6] AND m3 = (-inf..9.16] AND m4 = (25.0..50.0] THEN 1"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (-inf..35.6] AND NOT m2 = (23.8..47.6] AND NOT m3 = (-inf..9.16] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT m2 = (23.8..47.6] AND NOT m3 = (-inf..9.16] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT m2 = (23.8..47.6] AND NOT m3 = (-inf..9.16] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT m2 = (23.8..47.6] AND NOT m3 = (-inf..9.16] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (23.8..47.6] AND NOT m3 = (-inf..9.16] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (23.8..47.6] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (-inf..35.6] AND NOT m3 = (-inf..9.16] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (23.8..47.6] AND NOT m3 = (-inf..9.16] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (23.8..47.6] THEN NOT 1"
+  # hypos left: 6
+  exp time: 0.49
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND Age_of_patient = (26.4..32.8] AND Date_that_blood_sample_was_taken = (30078.0..60079.0] AND ml = (209.4..+inf) AND m2 = (47.6..71.4] AND m3 = (21.84..+inf) AND m4 = (75.0..100.0] THEN 0"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT ml = (209.4..+inf) AND NOT m3 = (21.84..+inf) AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (209.4..+inf) AND NOT m3 = (21.84..+inf) AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (209.4..+inf) AND NOT m2 = (47.6..71.4] AND NOT m3 = (21.84..+inf) THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (209.4..+inf) AND NOT m2 = (47.6..71.4] AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 6
+  exp time: 0.28
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND Age_of_patient = (32.8..39.2] AND Date_that_blood_sample_was_taken = (-inf..30078.0] AND ml = (98.7..209.4] AND m2 = (47.6..71.4] AND m3 = (21.84..+inf) AND m4 = (75.0..100.0] THEN 0"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Age_of_patient = (32.8..39.2] AND NOT m3 = (21.84..+inf) AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT ml = (98.7..209.4] AND NOT m3 = (21.84..+inf) AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT ml = (98.7..209.4] AND NOT m2 = (47.6..71.4] AND NOT m3 = (21.84..+inf) AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Age_of_patient = (32.8..39.2] AND NOT ml = (98.7..209.4] AND NOT m2 = (47.6..71.4] AND NOT m3 = (21.84..+inf) THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Age_of_patient = (32.8..39.2] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT ml = (98.7..209.4] AND NOT m2 = (47.6..71.4] AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 6
+  exp time: 0.34
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND Age_of_patient = (39.2..46.8] AND Date_that_blood_sample_was_taken = (30078.0..60079.0] AND ml = (98.7..209.4] AND m2 = (95.2..+inf) AND m3 = (16.44..21.84] AND m4 = (25.0..50.0] THEN 0"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Age_of_patient = (39.2..46.8] AND NOT ml = (98.7..209.4] AND NOT m3 = (16.44..21.84] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Age_of_patient = (39.2..46.8] AND NOT ml = (98.7..209.4] AND NOT m2 = (95.2..+inf) THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Age_of_patient = (39.2..46.8] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT m2 = (95.2..+inf) AND NOT m4 = (25.0..50.0] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Age_of_patient = (39.2..46.8] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (98.7..209.4] AND NOT m2 = (95.2..+inf) AND NOT m4 = (25.0..50.0] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Age_of_patient = (39.2..46.8] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (98.7..209.4] AND NOT m2 = (95.2..+inf) AND NOT m3 = (16.44..21.84] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Age_of_patient = (39.2..46.8] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (98.7..209.4] AND NOT m3 = (16.44..21.84] AND NOT m4 = (25.0..50.0] THEN NOT 0"
+  # hypos left: 5
+  exp time: 0.29
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND Age_of_patient = (-inf..26.4] AND Date_that_blood_sample_was_taken = (30078.0..60079.0] AND ml = (209.4..+inf) AND m2 = (71.4..95.2] AND m3 = (21.84..+inf) AND m4 = (100.0..+inf) THEN 0"
+  explanation: "IF NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (209.4..+inf) AND NOT m2 = (71.4..95.2] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT ml = (209.4..+inf) AND NOT m3 = (21.84..+inf) AND NOT m4 = (100.0..+inf) THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (209.4..+inf) AND NOT m3 = (21.84..+inf) THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (209.4..+inf) AND NOT m3 = (21.84..+inf) THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (209.4..+inf) AND NOT m3 = (21.84..+inf) AND NOT m4 = (100.0..+inf) THEN NOT 0"
+  # hypos left: 5
+  exp time: 0.26
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND Age_of_patient = (-inf..26.4] AND Date_that_blood_sample_was_taken = (60079.0..90078.0] AND ml = (-inf..35.6] AND m2 = (-inf..23.8] AND m3 = (-inf..9.16] AND m4 = (75.0..100.0] THEN 1"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (-inf..26.4] AND NOT m3 = (-inf..9.16] AND NOT m4 = (75.0..100.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT ml = (-inf..35.6] AND NOT m3 = (-inf..9.16] AND NOT m4 = (75.0..100.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (-inf..35.6] AND NOT m3 = (-inf..9.16] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT ml = (-inf..35.6] AND NOT m2 = (-inf..23.8] AND NOT m3 = (-inf..9.16] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (-inf..23.8] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT m2 = (-inf..23.8] AND NOT m3 = (-inf..9.16] AND NOT m4 = (75.0..100.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (-inf..23.8] AND NOT m3 = (-inf..9.16] AND NOT m4 = (75.0..100.0] THEN NOT 1"
+  # hypos left: 6
+  exp time: 0.39
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND Age_of_patient = (-inf..26.4] AND Date_that_blood_sample_was_taken = (60079.0..90078.0] AND ml = (35.6..57.2] AND m2 = (-inf..23.8] AND m3 = (16.44..21.84] AND m4 = (25.0..50.0] THEN 1"
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT m3 = (16.44..21.84] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (-inf..26.4] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (35.6..57.2] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (35.6..57.2] AND NOT m2 = (-inf..23.8] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT m2 = (-inf..23.8] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT m2 = (-inf..23.8] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (35.6..57.2] AND NOT m2 = (-inf..23.8] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (35.6..57.2] AND NOT m2 = (-inf..23.8] AND NOT m3 = (16.44..21.84] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 6
+  exp time: 0.45
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND Age_of_patient = (-inf..26.4] AND Date_that_blood_sample_was_taken = (90078.0..110077.0] AND ml = (-inf..35.6] AND m2 = (47.6..71.4] AND m3 = (-inf..9.16] AND m4 = (50.0..75.0] THEN 1"
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (-inf..35.6] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT ml = (-inf..35.6] AND NOT m2 = (47.6..71.4] AND NOT m3 = (-inf..9.16] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (-inf..35.6] AND NOT m3 = (-inf..9.16] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT m2 = (47.6..71.4] AND NOT m3 = (-inf..9.16] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT m2 = (47.6..71.4] AND NOT m3 = (-inf..9.16] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT ml = (-inf..35.6] AND NOT m2 = (47.6..71.4] AND NOT m3 = (-inf..9.16] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (-inf..35.6] AND NOT m3 = (-inf..9.16] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (47.6..71.4] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (47.6..71.4] AND NOT m3 = (-inf..9.16] THEN NOT 1"
+  # hypos left: 6
+  exp time: 0.43
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND Age_of_patient = (26.4..32.8] AND Date_that_blood_sample_was_taken = (110077.0..+inf) AND ml = (209.4..+inf) AND m2 = (95.2..+inf) AND m3 = (21.84..+inf) AND m4 = (75.0..100.0] THEN 0"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT ml = (209.4..+inf) AND NOT m3 = (21.84..+inf) AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (110077.0..+inf) AND NOT ml = (209.4..+inf) AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (26.4..32.8] AND NOT ml = (209.4..+inf) AND NOT m2 = (95.2..+inf) AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Date_that_blood_sample_was_taken = (110077.0..+inf) AND NOT ml = (209.4..+inf) AND NOT m2 = (95.2..+inf) AND NOT m3 = (21.84..+inf) THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT Date_that_blood_sample_was_taken = (110077.0..+inf) AND NOT ml = (209.4..+inf) AND NOT m2 = (95.2..+inf) AND NOT m3 = (21.84..+inf) AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 6
+  exp time: 0.32
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND Age_of_patient = (26.4..32.8] AND Date_that_blood_sample_was_taken = (90078.0..110077.0] AND ml = (-inf..35.6] AND m2 = (71.4..95.2] AND m3 = (21.84..+inf) AND m4 = (50.0..75.0] THEN 1"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (26.4..32.8] AND NOT ml = (-inf..35.6] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT ml = (-inf..35.6] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT m3 = (21.84..+inf) AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT ml = (-inf..35.6] AND NOT m2 = (71.4..95.2] AND NOT m3 = (21.84..+inf) AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (-inf..35.6] AND NOT m3 = (21.84..+inf) AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT Age_of_patient = (26.4..32.8] AND NOT ml = (-inf..35.6] AND NOT m2 = (71.4..95.2] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (-inf..35.6] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (71.4..95.2] AND NOT m3 = (21.84..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (71.4..95.2] AND NOT m3 = (21.84..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT m2 = (71.4..95.2] AND NOT m3 = (21.84..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT m2 = (71.4..95.2] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 5
+  exp time: 0.47
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND Age_of_patient = (32.8..39.2] AND Date_that_blood_sample_was_taken = (30078.0..60079.0] AND ml = (209.4..+inf) AND m2 = (-inf..23.8] AND m3 = (9.16..12.42] AND m4 = (75.0..100.0] THEN 0"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT ml = (209.4..+inf) AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (209.4..+inf) AND NOT m3 = (9.16..12.42] AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (32.8..39.2] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (209.4..+inf) AND NOT m2 = (-inf..23.8] AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (32.8..39.2] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (209.4..+inf) AND NOT m2 = (-inf..23.8] AND NOT m3 = (9.16..12.42] THEN NOT 0"
+  # hypos left: 6
+  exp time: 0.27
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND Age_of_patient = (32.8..39.2] AND Date_that_blood_sample_was_taken = (90078.0..110077.0] AND ml = (-inf..35.6] AND m2 = (23.8..47.6] AND m3 = (9.16..12.42] AND m4 = (25.0..50.0] THEN 1"
+  explanation: "IF NOT Age_of_patient = (32.8..39.2] AND NOT ml = (-inf..35.6] AND NOT m2 = (23.8..47.6] AND NOT m3 = (9.16..12.42] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT m2 = (23.8..47.6] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (32.8..39.2] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT m2 = (23.8..47.6] AND NOT m3 = (9.16..12.42] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (23.8..47.6] AND NOT m3 = (9.16..12.42] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT ml = (-inf..35.6] AND NOT m2 = (23.8..47.6] AND NOT m3 = (9.16..12.42] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Age_of_patient = (32.8..39.2] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (23.8..47.6] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT Age_of_patient = (32.8..39.2] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT m2 = (23.8..47.6] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (23.8..47.6] AND NOT m3 = (9.16..12.42] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT ml = (-inf..35.6] AND NOT m2 = (23.8..47.6] AND NOT m3 = (9.16..12.42] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (32.8..39.2] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (-inf..35.6] AND NOT m3 = (9.16..12.42] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 6
+  exp time: 0.44
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND Age_of_patient = (32.8..39.2] AND Date_that_blood_sample_was_taken = (90078.0..110077.0] AND ml = (35.6..57.2] AND m2 = (47.6..71.4] AND m3 = (16.44..21.84] AND m4 = (50.0..75.0] THEN 1"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (32.8..39.2] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT m2 = (47.6..71.4] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT m2 = (47.6..71.4] AND NOT m3 = (16.44..21.84] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT ml = (35.6..57.2] AND NOT m3 = (16.44..21.84] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT ml = (35.6..57.2] AND NOT m3 = (16.44..21.84] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (32.8..39.2] AND NOT m2 = (47.6..71.4] AND NOT m3 = (16.44..21.84] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (35.6..57.2] AND NOT m2 = (47.6..71.4] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT m2 = (47.6..71.4] AND NOT m3 = (16.44..21.84] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT m2 = (47.6..71.4] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (32.8..39.2] AND NOT ml = (35.6..57.2] AND NOT m2 = (47.6..71.4] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT ml = (35.6..57.2] AND NOT m2 = (47.6..71.4] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (35.6..57.2] AND NOT m2 = (47.6..71.4] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (32.8..39.2] AND NOT ml = (35.6..57.2] AND NOT m2 = (47.6..71.4] AND NOT m3 = (16.44..21.84] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT Age_of_patient = (32.8..39.2] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT m2 = (47.6..71.4] AND NOT m3 = (16.44..21.84] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Age_of_patient = (32.8..39.2] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (35.6..57.2] AND NOT m3 = (16.44..21.84] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 5
+  exp time: 0.53
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND Age_of_patient = (39.2..46.8] AND Date_that_blood_sample_was_taken = (90078.0..110077.0] AND ml = (98.7..209.4] AND m2 = (47.6..71.4] AND m3 = (21.84..+inf) AND m4 = (50.0..75.0] THEN 0"
+  explanation: "IF NOT Age_of_patient = (39.2..46.8] AND NOT ml = (98.7..209.4] AND NOT m3 = (21.84..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age_of_patient = (39.2..46.8] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (98.7..209.4] AND NOT m2 = (47.6..71.4] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (39.2..46.8] AND NOT ml = (98.7..209.4] AND NOT m2 = (47.6..71.4] AND NOT m4 = (50.0..75.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (39.2..46.8] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT m3 = (21.84..+inf) THEN NOT 0"
+  # hypos left: 4
+  exp time: 0.23
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND Age_of_patient = (46.8..+inf) AND Date_that_blood_sample_was_taken = (60079.0..90078.0] AND ml = (57.2..98.7] AND m2 = (71.4..95.2] AND m3 = (9.16..12.42] AND m4 = (75.0..100.0] THEN 0"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (46.8..+inf) AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (46.8..+inf) AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT m2 = (71.4..95.2] AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (46.8..+inf) AND NOT m2 = (71.4..95.2] AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (46.8..+inf) AND NOT ml = (57.2..98.7] AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (46.8..+inf) AND NOT ml = (57.2..98.7] AND NOT m3 = (9.16..12.42] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (46.8..+inf) AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (57.2..98.7] AND NOT m3 = (9.16..12.42] AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 5
+  exp time: 0.27
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (819.0..947.0] AND Age_of_patient = (-inf..26.4] AND Date_that_blood_sample_was_taken = (-inf..30078.0] AND ml = (-inf..35.6] AND m2 = (47.6..71.4] AND m3 = (12.42..16.44] AND m4 = (-inf..25.0] THEN 1"
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT m2 = (47.6..71.4] AND NOT m3 = (12.42..16.44] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT m2 = (47.6..71.4] AND NOT m3 = (12.42..16.44] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (-inf..35.6] AND NOT m2 = (47.6..71.4] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT m2 = (47.6..71.4] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (47.6..71.4] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT ml = (-inf..35.6] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (47.6..71.4] AND NOT m3 = (12.42..16.44] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 6
+  exp time: 0.48
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (819.0..947.0] AND Age_of_patient = (-inf..26.4] AND Date_that_blood_sample_was_taken = (-inf..30078.0] AND ml = (35.6..57.2] AND m2 = (47.6..71.4] AND m3 = (9.16..12.42] AND m4 = (25.0..50.0] THEN 1"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT m2 = (47.6..71.4] AND NOT m3 = (9.16..12.42] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (35.6..57.2] AND NOT m2 = (47.6..71.4] AND NOT m3 = (9.16..12.42] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT ml = (35.6..57.2] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT m2 = (47.6..71.4] AND NOT m3 = (9.16..12.42] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT ml = (35.6..57.2] AND NOT m2 = (47.6..71.4] AND NOT m3 = (9.16..12.42] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (35.6..57.2] AND NOT m2 = (47.6..71.4] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT m2 = (47.6..71.4] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT ml = (35.6..57.2] AND NOT m2 = (47.6..71.4] AND NOT m3 = (9.16..12.42] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 6
+  exp time: 0.54
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (819.0..947.0] AND Age_of_patient = (-inf..26.4] AND Date_that_blood_sample_was_taken = (30078.0..60079.0] AND ml = (35.6..57.2] AND m2 = (71.4..95.2] AND m3 = (21.84..+inf) AND m4 = (25.0..50.0] THEN 1"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT m3 = (21.84..+inf) AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT m2 = (71.4..95.2] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (35.6..57.2] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT ml = (35.6..57.2] AND NOT m2 = (71.4..95.2] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (35.6..57.2] AND NOT m3 = (21.84..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT m3 = (21.84..+inf) THEN NOT 1"
+  # hypos left: 4
+  exp time: 0.34
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (819.0..947.0] AND Age_of_patient = (26.4..32.8] AND Date_that_blood_sample_was_taken = (-inf..30078.0] AND ml = (57.2..98.7] AND m2 = (47.6..71.4] AND m3 = (-inf..9.16] AND m4 = (50.0..75.0] THEN 1"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT m2 = (47.6..71.4] AND NOT m3 = (-inf..9.16] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT m2 = (47.6..71.4] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT ml = (57.2..98.7] AND NOT m2 = (47.6..71.4] AND NOT m3 = (-inf..9.16] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT m2 = (47.6..71.4] AND NOT m3 = (-inf..9.16] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT ml = (57.2..98.7] AND NOT m2 = (47.6..71.4] AND NOT m3 = (-inf..9.16] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT ml = (57.2..98.7] AND NOT m2 = (47.6..71.4] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (26.4..32.8] AND NOT m2 = (47.6..71.4] AND NOT m3 = (-inf..9.16] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT ml = (57.2..98.7] AND NOT m3 = (-inf..9.16] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 6
+  exp time: 0.42
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (819.0..947.0] AND Age_of_patient = (26.4..32.8] AND Date_that_blood_sample_was_taken = (30078.0..60079.0] AND ml = (-inf..35.6] AND m2 = (71.4..95.2] AND m3 = (16.44..21.84] AND m4 = (-inf..25.0] THEN 1"
+  explanation: "IF NOT Age_of_patient = (26.4..32.8] AND NOT m2 = (71.4..95.2] AND NOT m3 = (16.44..21.84] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT ml = (-inf..35.6] AND NOT m3 = (16.44..21.84] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (26.4..32.8] AND NOT ml = (-inf..35.6] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (26.4..32.8] AND NOT m3 = (16.44..21.84] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT ml = (-inf..35.6] AND NOT m2 = (71.4..95.2] AND NOT m3 = (16.44..21.84] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (71.4..95.2] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT m2 = (71.4..95.2] AND NOT m4 = (-inf..25.0] THEN NOT 1"
+  # hypos left: 5
+  exp time: 0.37
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (819.0..947.0] AND Age_of_patient = (32.8..39.2] AND Date_that_blood_sample_was_taken = (30078.0..60079.0] AND ml = (35.6..57.2] AND m2 = (95.2..+inf) AND m3 = (12.42..16.44] AND m4 = (75.0..100.0] THEN 1"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT m3 = (12.42..16.44] AND NOT m4 = (75.0..100.0] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age_of_patient = (32.8..39.2] AND NOT ml = (35.6..57.2] AND NOT m3 = (12.42..16.44] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT ml = (35.6..57.2] AND NOT m2 = (95.2..+inf) AND NOT m3 = (12.42..16.44] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT m2 = (95.2..+inf) THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (32.8..39.2] AND NOT ml = (35.6..57.2] AND NOT m2 = (95.2..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT m3 = (12.42..16.44] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (32.8..39.2] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (35.6..57.2] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (32.8..39.2] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT m4 = (75.0..100.0] THEN NOT 1"
+  # hypos left: 4
+  exp time: 0.37
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (819.0..947.0] AND Age_of_patient = (32.8..39.2] AND Date_that_blood_sample_was_taken = (30078.0..60079.0] AND ml = (57.2..98.7] AND m2 = (-inf..23.8] AND m3 = (16.44..21.84] AND m4 = (75.0..100.0] THEN 1"
+  explanation: "IF NOT ml = (57.2..98.7] AND NOT m3 = (16.44..21.84] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT ml = (57.2..98.7] AND NOT m2 = (-inf..23.8] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (57.2..98.7] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Age_of_patient = (32.8..39.2] AND NOT m2 = (-inf..23.8] AND NOT m3 = (16.44..21.84] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (32.8..39.2] AND NOT m2 = (-inf..23.8] THEN NOT 1"
+  # hypos left: 3
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (32.8..39.2] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT m4 = (75.0..100.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (32.8..39.2] AND NOT ml = (57.2..98.7] AND NOT m4 = (75.0..100.0] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (819.0..947.0] AND NOT Age_of_patient = (32.8..39.2] AND NOT m3 = (16.44..21.84] AND NOT m4 = (75.0..100.0] THEN NOT 1"
+  # hypos left: 4
+  exp time: 0.29
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND Age_of_patient = (-inf..26.4] AND Date_that_blood_sample_was_taken = (30078.0..60079.0] AND ml = (57.2..98.7] AND m2 = (23.8..47.6] AND m3 = (9.16..12.42] AND m4 = (100.0..+inf) THEN 1"
+  explanation: "IF NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (57.2..98.7] AND NOT m2 = (23.8..47.6] AND NOT m3 = (9.16..12.42] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (57.2..98.7] AND NOT m2 = (23.8..47.6] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT m2 = (23.8..47.6] AND NOT m3 = (9.16..12.42] AND NOT m4 = (100.0..+inf) THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT m2 = (23.8..47.6] AND NOT m4 = (100.0..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (57.2..98.7] AND NOT m2 = (23.8..47.6] AND NOT m4 = (100.0..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT ml = (57.2..98.7] AND NOT m2 = (23.8..47.6] AND NOT m3 = (9.16..12.42] AND NOT m4 = (100.0..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT m2 = (23.8..47.6] AND NOT m3 = (9.16..12.42] AND NOT m4 = (100.0..+inf) THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (57.2..98.7] AND NOT m2 = (23.8..47.6] AND NOT m3 = (9.16..12.42] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (57.2..98.7] AND NOT m3 = (9.16..12.42] AND NOT m4 = (100.0..+inf) THEN NOT 1"
+  # hypos left: 6
+  exp time: 0.44
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND Age_of_patient = (32.8..39.2] AND Date_that_blood_sample_was_taken = (-inf..30078.0] AND ml = (98.7..209.4] AND m2 = (95.2..+inf) AND m3 = (16.44..21.84] AND m4 = (50.0..75.0] THEN 0"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (32.8..39.2] AND NOT m2 = (95.2..+inf) THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Age_of_patient = (32.8..39.2] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT ml = (98.7..209.4] AND NOT m2 = (95.2..+inf) THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT ml = (98.7..209.4] AND NOT m3 = (16.44..21.84] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT ml = (98.7..209.4] AND NOT m2 = (95.2..+inf) THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT ml = (98.7..209.4] AND NOT m2 = (95.2..+inf) AND NOT m4 = (50.0..75.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT Date_that_blood_sample_was_taken = (-inf..30078.0] AND NOT ml = (98.7..209.4] AND NOT m3 = (16.44..21.84] AND NOT m4 = (50.0..75.0] THEN NOT 0"
+  # hypos left: 5
+  exp time: 0.35
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND Age_of_patient = (32.8..39.2] AND Date_that_blood_sample_was_taken = (30078.0..60079.0] AND ml = (35.6..57.2] AND m2 = (71.4..95.2] AND m3 = (-inf..9.16] AND m4 = (25.0..50.0] THEN 1"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT m3 = (-inf..9.16] THEN NOT 1"
+  # hypos left: 2
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (32.8..39.2] AND NOT ml = (35.6..57.2] AND NOT m3 = (-inf..9.16] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Observation_number = (-inf..2.2] AND NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (32.8..39.2] AND NOT ml = (35.6..57.2] THEN NOT 1"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (32.8..39.2] AND NOT ml = (35.6..57.2] AND NOT m2 = (71.4..95.2] AND NOT m3 = (-inf..9.16] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 5
+  exp time: 0.33
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND Age_of_patient = (39.2..46.8] AND Date_that_blood_sample_was_taken = (60079.0..90078.0] AND ml = (209.4..+inf) AND m2 = (-inf..23.8] AND m3 = (16.44..21.84] AND m4 = (75.0..100.0] THEN 0"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (39.2..46.8] AND NOT ml = (209.4..+inf) AND NOT m2 = (-inf..23.8] AND NOT m3 = (16.44..21.84] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (39.2..46.8] AND NOT ml = (209.4..+inf) AND NOT m2 = (-inf..23.8] AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Age_of_patient = (39.2..46.8] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (209.4..+inf) AND NOT m2 = (-inf..23.8] AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (39.2..46.8] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (209.4..+inf) AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (39.2..46.8] AND NOT ml = (209.4..+inf) AND NOT m3 = (16.44..21.84] AND NOT m4 = (75.0..100.0] THEN NOT 0"
+  # hypos left: 5
+  exp time: 0.27
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (-inf..2.2] AND Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND Age_of_patient = (39.2..46.8] AND Date_that_blood_sample_was_taken = (60079.0..90078.0] AND ml = (98.7..209.4] AND m2 = (71.4..95.2] AND m3 = (16.44..21.84] AND m4 = (100.0..+inf) THEN 0"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (39.2..46.8] AND NOT ml = (98.7..209.4] AND NOT m4 = (100.0..+inf) THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (39.2..46.8] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT m2 = (71.4..95.2] AND NOT m4 = (100.0..+inf) THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (39.2..46.8] AND NOT ml = (98.7..209.4] AND NOT m2 = (71.4..95.2] AND NOT m3 = (16.44..21.84] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (39.2..46.8] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (98.7..209.4] AND NOT m3 = (16.44..21.84] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Age_of_patient = (39.2..46.8] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (98.7..209.4] AND NOT m3 = (16.44..21.84] AND NOT m4 = (100.0..+inf) THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Age_of_patient = (39.2..46.8] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (98.7..209.4] AND NOT m2 = (71.4..95.2] AND NOT m4 = (100.0..+inf) THEN NOT 0"
+  # hypos left: 5
+  exp time: 0.30
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (2.2..3.4] AND Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND Age_of_patient = (-inf..26.4] AND Date_that_blood_sample_was_taken = (60079.0..90078.0] AND ml = (-inf..35.6] AND m2 = (47.6..71.4] AND m3 = (9.16..12.42] AND m4 = (25.0..50.0] THEN 1"
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (-inf..35.6] AND NOT m2 = (47.6..71.4] AND NOT m3 = (9.16..12.42] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT m2 = (47.6..71.4] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT ml = (-inf..35.6] AND NOT m2 = (47.6..71.4] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT m2 = (47.6..71.4] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (-inf..35.6] AND NOT m3 = (9.16..12.42] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (-inf..35.6] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT m2 = (47.6..71.4] AND NOT m3 = (9.16..12.42] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT m2 = (47.6..71.4] AND NOT m3 = (9.16..12.42] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (47.6..71.4] AND NOT m3 = (9.16..12.42] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (47.6..71.4] AND NOT m3 = (9.16..12.42] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Age_of_patient = (-inf..26.4] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (-inf..35.6] AND NOT m3 = (9.16..12.42] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (-inf..35.6] AND NOT m2 = (47.6..71.4] AND NOT m3 = (9.16..12.42] AND NOT m4 = (25.0..50.0] THEN NOT 1"
+  # hypos left: 7
+  exp time: 0.53
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (2.2..3.4] AND Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND Age_of_patient = (26.4..32.8] AND Date_that_blood_sample_was_taken = (30078.0..60079.0] AND ml = (209.4..+inf) AND m2 = (71.4..95.2] AND m3 = (21.84..+inf) AND m4 = (100.0..+inf) THEN 0"
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT ml = (209.4..+inf) AND NOT m3 = (21.84..+inf) THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT ml = (209.4..+inf) AND NOT m3 = (21.84..+inf) AND NOT m4 = (100.0..+inf) THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (209.4..+inf) AND NOT m3 = (21.84..+inf) AND NOT m4 = (100.0..+inf) THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (209.4..+inf) AND NOT m2 = (71.4..95.2] AND NOT m3 = (21.84..+inf) THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (1124.0..1281.0] AND NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (209.4..+inf) AND NOT m2 = (71.4..95.2] THEN NOT 0"
+  # hypos left: 6
+  exp time: 0.28
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (2.2..3.4] AND Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND Age_of_patient = (26.4..32.8] AND Date_that_blood_sample_was_taken = (60079.0..90078.0] AND ml = (35.6..57.2] AND m2 = (71.4..95.2] AND m3 = (12.42..16.44] AND m4 = (50.0..75.0] THEN 0"
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (26.4..32.8] AND NOT m2 = (71.4..95.2] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT ml = (35.6..57.2] AND NOT m4 = (50.0..75.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT m2 = (71.4..95.2] AND NOT m4 = (50.0..75.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (26.4..32.8] AND NOT m3 = (12.42..16.44] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (35.6..57.2] AND NOT m2 = (71.4..95.2] AND NOT m4 = (50.0..75.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT ml = (35.6..57.2] AND NOT m3 = (12.42..16.44] AND NOT m4 = (50.0..75.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT m3 = (12.42..16.44] AND NOT m4 = (50.0..75.0] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT m3 = (12.42..16.44] AND NOT m4 = (50.0..75.0] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (35.6..57.2] AND NOT m3 = (12.42..16.44] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT m2 = (71.4..95.2] AND NOT m3 = (12.42..16.44] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT ml = (35.6..57.2] AND NOT m2 = (71.4..95.2] AND NOT m3 = (12.42..16.44] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (60079.0..90078.0] AND NOT ml = (35.6..57.2] AND NOT m2 = (71.4..95.2] AND NOT m3 = (12.42..16.44] THEN NOT 0"
+  # hypos left: 6
+  exp time: 0.59
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (2.2..3.4] AND Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND Age_of_patient = (32.8..39.2] AND Date_that_blood_sample_was_taken = (90078.0..110077.0] AND ml = (98.7..209.4] AND m2 = (-inf..23.8] AND m3 = (16.44..21.84] AND m4 = (50.0..75.0] THEN 0"
+  explanation: "IF NOT ml = (98.7..209.4] AND NOT m2 = (-inf..23.8] AND NOT m4 = (50.0..75.0] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT ml = (98.7..209.4] AND NOT m3 = (16.44..21.84] THEN NOT 0"
+  # hypos left: 3
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (98.7..209.4] AND NOT m2 = (-inf..23.8] AND NOT m3 = (16.44..21.84] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (32.8..39.2] AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT m2 = (-inf..23.8] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (98.7..209.4] AND NOT m2 = (-inf..23.8] THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Date_that_blood_sample_was_taken = (90078.0..110077.0] AND NOT ml = (98.7..209.4] AND NOT m4 = (50.0..75.0] THEN NOT 0"
+  # hypos left: 5
+  exp time: 0.36
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (2.2..3.4] AND Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND Age_of_patient = (26.4..32.8] AND Date_that_blood_sample_was_taken = (30078.0..60079.0] AND ml = (35.6..57.2] AND m2 = (47.6..71.4] AND m3 = (9.16..12.42] AND m4 = (50.0..75.0] THEN 1"
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (26.4..32.8] AND NOT m2 = (47.6..71.4] AND NOT m3 = (9.16..12.42] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT m2 = (47.6..71.4] AND NOT m3 = (9.16..12.42] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT ml = (35.6..57.2] AND NOT m2 = (47.6..71.4] AND NOT m3 = (9.16..12.42] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (26.4..32.8] AND NOT ml = (35.6..57.2] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT m2 = (47.6..71.4] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT m2 = (47.6..71.4] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT m2 = (47.6..71.4] AND NOT m3 = (9.16..12.42] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (35.6..57.2] AND NOT m2 = (47.6..71.4] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (35.6..57.2] AND NOT m2 = (47.6..71.4] AND NOT m3 = (9.16..12.42] THEN NOT 1"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (35.6..57.2] AND NOT m3 = (9.16..12.42] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT Observation_number = (2.2..3.4] AND NOT Age_of_patient = (26.4..32.8] AND NOT ml = (35.6..57.2] AND NOT m2 = (47.6..71.4] AND NOT m3 = (9.16..12.42] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 6
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (947.0..1124.0] AND NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (30078.0..60079.0] AND NOT ml = (35.6..57.2] AND NOT m3 = (9.16..12.42] AND NOT m4 = (50.0..75.0] THEN NOT 1"
+  # hypos left: 6
+  exp time: 0.63
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (3.4..4.6] AND Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND Age_of_patient = (26.4..32.8] AND Date_that_blood_sample_was_taken = (110077.0..+inf) AND ml = (209.4..+inf) AND m2 = (95.2..+inf) AND m3 = (21.84..+inf) AND m4 = (100.0..+inf) THEN 0"
+  explanation: "IF NOT Observation_number = (3.4..4.6] AND NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (110077.0..+inf) AND NOT ml = (209.4..+inf) THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Observation_number = (3.4..4.6] AND NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Date_that_blood_sample_was_taken = (110077.0..+inf) AND NOT ml = (209.4..+inf) AND NOT m3 = (21.84..+inf) THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (3.4..4.6] AND NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (26.4..32.8] AND NOT ml = (209.4..+inf) AND NOT m3 = (21.84..+inf) THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (3.4..4.6] AND NOT Age_of_patient = (26.4..32.8] AND NOT ml = (209.4..+inf) AND NOT m2 = (95.2..+inf) AND NOT m4 = (100.0..+inf) THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (3.4..4.6] AND NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT ml = (209.4..+inf) AND NOT m3 = (21.84..+inf) AND NOT m4 = (100.0..+inf) THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (3.4..4.6] AND NOT Date_that_blood_sample_was_taken = (110077.0..+inf) AND NOT ml = (209.4..+inf) AND NOT m2 = (95.2..+inf) AND NOT m3 = (21.84..+inf) AND NOT m4 = (100.0..+inf) THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (26.4..32.8] AND NOT Date_that_blood_sample_was_taken = (110077.0..+inf) AND NOT ml = (209.4..+inf) AND NOT m2 = (95.2..+inf) AND NOT m3 = (21.84..+inf) THEN NOT 0"
+  # hypos left: 6
+  exp time: 0.34
+
+Sample of length 8  :  [[0. 3. 0. 0. 2. 2. 1. 2.]]
+Encoded sample of length 40  :  [[1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]]
+Back to sample [array([0., 3., 0., 0., 2., 2., 1., 2.])]
+Readable sample ['(-inf..2.2]' '(819.0..947.0]' '(-inf..26.4]' '(-inf..30078.0]'
+ '(35.6..57.2]' '(47.6..71.4]' '(12.42..16.44]' '(25.0..50.0]']
+  explaining:  "IF Observation_number = (3.4..4.6] AND Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND Age_of_patient = (32.8..39.2] AND Date_that_blood_sample_was_taken = (110077.0..+inf) AND ml = (98.7..209.4] AND m2 = (95.2..+inf) AND m3 = (21.84..+inf) AND m4 = (100.0..+inf) THEN 0"
+  explanation: "IF NOT Observation_number = (3.4..4.6] AND NOT Age_of_patient = (32.8..39.2] AND NOT Date_that_blood_sample_was_taken = (110077.0..+inf) AND NOT ml = (98.7..209.4] THEN NOT 0"
+  # hypos left: 4
+  explanation: "IF NOT Observation_number = (3.4..4.6] AND NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (32.8..39.2] AND NOT ml = (98.7..209.4] AND NOT m3 = (21.84..+inf) THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (3.4..4.6] AND NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT ml = (98.7..209.4] AND NOT m2 = (95.2..+inf) AND NOT m3 = (21.84..+inf) THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (3.4..4.6] AND NOT Age_of_patient = (32.8..39.2] AND NOT ml = (98.7..209.4] AND NOT m2 = (95.2..+inf) AND NOT m4 = (100.0..+inf) THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Observation_number = (3.4..4.6] AND NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Date_that_blood_sample_was_taken = (110077.0..+inf) AND NOT ml = (98.7..209.4] AND NOT m3 = (21.84..+inf) THEN NOT 0"
+  # hypos left: 5
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Date_that_blood_sample_was_taken = (110077.0..+inf) AND NOT ml = (98.7..209.4] AND NOT m2 = (95.2..+inf) AND NOT m3 = (21.84..+inf) AND NOT m4 = (100.0..+inf) THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT Observation_number = (3.4..4.6] AND NOT Date_that_blood_sample_was_taken = (110077.0..+inf) AND NOT ml = (98.7..209.4] AND NOT m2 = (95.2..+inf) AND NOT m3 = (21.84..+inf) AND NOT m4 = (100.0..+inf) THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (32.8..39.2] AND NOT Date_that_blood_sample_was_taken = (110077.0..+inf) AND NOT ml = (98.7..209.4] AND NOT m2 = (95.2..+inf) AND NOT m3 = (21.84..+inf) THEN NOT 0"
+  # hypos left: 6
+  explanation: "IF NOT Observation_number = (3.4..4.6] AND NOT Hospital_identification_number_for_blood_sample = (1281.0..+inf) AND NOT Age_of_patient = (32.8..39.2] AND NOT Date_that_blood_sample_was_taken = (110077.0..+inf) AND NOT m2 = (95.2..+inf) AND NOT m3 = (21.84..+inf) AND NOT m4 = (100.0..+inf) THEN NOT 0"
+  # hypos left: 7
+  exp time: 0.47
+
+
+exptimes: [0.27659500000000037, 0.2966389999999999, 0.3492790000000001, 0.30165500000000023, 0.3042739999999995, 0.32860599999999707, 0.20995699999999928, 0.2953589999999995, 0.492189999999999, 0.27582400000000007, 0.34018199999999865, 0.29259899999999917, 0.2632690000000011, 0.3936680000000017, 0.4476699999999987, 0.4285400000000017, 0.32422599999999946, 0.4714199999999984, 0.2693599999999954, 0.4401730000000015, 0.5284010000000023, 0.22720199999999124, 0.2744200000000063, 0.4835039999999964, 0.5412990000000022, 0.3400650000000027, 0.4204369999999997, 0.37395899999999926, 0.37451599999999274, 0.2917419999999922, 0.4384780000000106, 0.3536410000000032, 0.32906900000000405, 0.2676919999999967, 0.3009309999999985, 0.5265150000000034, 0.2787009999999981, 0.5900980000000118, 0.3603120000000075, 0.6279190000000057, 0.33711599999999464, 0.4718939999999918]
+all samples: 42
+total exp time: 15.54
+max exp time per instance: 0.63
+min exp time per instance: 0.21
+avg exp time per instance: 0.37
+total oracle calls: 3258
+max oracle calls per instance: 180
+min oracle calls per instance: 31
+avg oracle calls per instance: 77.57
+avg number of explanations per instance: 6.93
+avg explanation size per instance: 4.51
+

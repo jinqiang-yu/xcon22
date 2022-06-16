@@ -1,0 +1,2319 @@
+MODEL:
+IF restecg == 0 THEN target == 0
+IF exang == 0 THEN target == 1
+IF slope == 1 THEN target == 0
+IF slope == 3 THEN target == 1
+IF ca == 0 THEN target == 1
+IF thal == 2 THEN target == 1
+IF oldpeak == (1.75..2.88], age != (46.5..55.75] THEN target == 0
+IF chest_pain == 1, age == (46.5..55.75] THEN target == 1
+IF chest_pain == 1, trestbps == (-inf..7.75] THEN target == 1
+IF oldpeak == (1.75..2.88], sex != 0 THEN target == 0
+IF chest_pain == 1, chol == (38.25..76.5] THEN target == 1
+IF oldpeak == (2.88..+inf), age != (46.5..55.75] THEN target == 0
+IF chest_pain == 1, age != (55.75..+inf) THEN target == 1
+IF oldpeak == (0.85..1.75], age == (55.75..+inf) THEN target == 0
+IF chest_pain == 1 THEN target == 1
+IF oldpeak == (0.85..1.75], age == (-inf..37.25] THEN target == 0
+IF oldpeak == (0.85..1.75], trestbps == (23.25..+inf) THEN target == 0
+IF fbs == 2, age != (37.25..46.5] THEN target == 0
+IF fbs == 2 THEN target == 1
+IF restecg == 1 THEN target == 1
+IF chest_pain == 2, age != (46.5..55.75] THEN target == 1
+IF trestbps == (23.25..+inf) THEN target == 0
+IF fbs == 0 THEN target == 0
+IF oldpeak == (0.85..1.75], age != (46.5..55.75] THEN target == 0
+IF sex == 0, age != (46.5..55.75] THEN target == 1
+IF thalach == (53.25..+inf) THEN target == 0
+IF oldpeak == (1.75..2.88] THEN target == 1
+IF oldpeak == (0.85..1.75], sex != 0 THEN target == 0
+IF chest_pain == 2, trestbps == (-inf..7.75] THEN target == 1
+IF thal == 1 THEN target == 0
+IF thalach == (17.75..35.5], age == (55.75..+inf) THEN target == 1
+IF sex == 0, chol == (114.75..+inf) THEN target == 1
+IF chest_pain == 2, chol == (114.75..+inf) THEN target == 0
+IF chest_pain == 2, sex != 0 THEN target == 1
+IF thalach == (17.75..35.5], age == (-inf..37.25] THEN target == 0
+IF age == (-inf..37.25] THEN target == 1
+IF thalach == (17.75..35.5], age != (46.5..55.75] THEN target == 1
+IF age == (37.25..46.5], chest_pain != 0 THEN target == 0
+IF chest_pain == 3 THEN target == 1
+IF trestbps == (-inf..7.75] THEN target == 0
+IF restecg != 2, age != (46.5..55.75] THEN target == 1
+IF age == (55.75..+inf), trestbps != (15.5..23.25] THEN target == 0
+IF chol == (114.75..+inf), age != (46.5..55.75] THEN target == 1
+IF age == (37.25..46.5] THEN target == 0
+IF thalach == (35.5..53.25] THEN target == 0
+IF exang == 1, sex == 0 THEN target == 1
+IF chest_pain != 0 THEN target == 0
+IF chol == (76.5..114.75] THEN target == 1
+IF restecg != 2 THEN target == 0
+IF oldpeak == (2.88..+inf) THEN target == 0
+IF chol == (-inf..38.25] THEN target == 1
+IF trestbps == (7.75..15.5] THEN target == 0
+IF thalach == (17.75..35.5] THEN target == 1
+IF sex == 0 THEN target == 0
+IF chol != (38.25..76.5] THEN target == 0
+IF age == (46.5..55.75] THEN target == 1
+IF age == (55.75..+inf) THEN target == 0
+IF TRUE THEN target == 1
+
+ENCODINDS:
+# of classes: 2
+min # of vars: 71
+avg # of vars: 71.00
+max # of vars: 71
+min # of clauses: 181
+avg # of clauses: 181.00
+max # of clauses: 181
+
+EXPLANATIONS:
+  inst: "IF age == (-inf..37.25] AND sex == 0 AND chest_pain == 0 AND trestbps == (15.5..23.25] AND chol == (-inf..38.25] AND fbs == 1 AND restecg == 2 AND thalach == (35.5..53.25] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF age == (-inf..37.25] AND thalach == (35.5..53.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND thalach == (35.5..53.25] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND chol == (-inf..38.25] AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND sex == 0 AND chol == (-inf..38.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chol == (-inf..38.25] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND sex == 0 AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND sex == 0 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chol == (-inf..38.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND sex == 0 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND sex == 0 AND trestbps == (15.5..23.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (15.5..23.25] AND chol == (-inf..38.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND trestbps == (15.5..23.25] AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 0 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 0 AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 0 AND chol == (-inf..38.25] AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND chest_pain == 0 AND chol == (-inf..38.25] AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND chest_pain == 0 AND exang == 1 AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND fbs == 1 AND exang == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND fbs == 1 AND slope == 0 AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND fbs == 1 AND exang == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (-inf..37.25] AND sex == 0 AND chest_pain == 3 AND trestbps == (23.25..+inf) AND chol == (38.25..76.5] AND fbs == 1 AND restecg == 3 AND thalach == (35.5..53.25] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 1 THEN target == 0"
+  expl: "IF trestbps == (23.25..+inf) AND thal == 1 THEN target == 0"
+  # hypos left: 2
+  expl: "IF restecg == 3 AND thal == 1 THEN target == 0"
+  # hypos left: 2
+  expl: "IF thalach == (35.5..53.25] AND thal == 1 THEN target == 0"
+  # hypos left: 2
+  expl: "IF age == (-inf..37.25] AND trestbps == (23.25..+inf) THEN target == 0"
+  # hypos left: 2
+  expl: "IF age == (-inf..37.25] AND thal == 1 THEN target == 0"
+  # hypos left: 2
+  expl: "IF chest_pain == 3 AND trestbps == (23.25..+inf) THEN target == 0"
+  # hypos left: 2
+  expl: "IF sex == 0 AND thal == 1 THEN target == 0"
+  # hypos left: 2
+  expl: "IF chest_pain == 3 AND thal == 1 THEN target == 0"
+  # hypos left: 2
+  expl: "IF age == (-inf..37.25] AND chest_pain == 3 AND thalach == (35.5..53.25] THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND chest_pain == 3 AND chol == (38.25..76.5] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 3 AND chol == (38.25..76.5] AND restecg == 3 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 3 AND thalach == (35.5..53.25] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 3 AND restecg == 3 AND thalach == (35.5..53.25] THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND chol == (38.25..76.5] AND thalach == (35.5..53.25] THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND restecg == 3 AND thalach == (35.5..53.25] THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND chol == (38.25..76.5] AND restecg == 3 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (23.25..+inf) AND chol == (38.25..76.5] THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (23.25..+inf) AND thalach == (35.5..53.25] THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (23.25..+inf) AND restecg == 3 AND exang == 1 THEN target == 0"
+  # hypos left: 4
+  expl: "IF sex == 0 AND trestbps == (23.25..+inf) AND restecg == 3 AND oldpeak == (-inf..0.85] THEN target == 0"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (-inf..37.25] AND sex == 1 AND chest_pain == 1 AND trestbps == (-inf..7.75] AND chol == (76.5..114.75] AND fbs == 1 AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF chest_pain == 1 AND trestbps == (-inf..7.75] THEN target == 1"
+  # hypos left: 2
+  expl: "IF trestbps == (-inf..7.75] AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 2
+  expl: "IF age == (-inf..37.25] AND chol == (76.5..114.75] AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND restecg == 2 AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND thalach == (17.75..35.5] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND chest_pain == 1 AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND chol == (76.5..114.75] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND chol == (76.5..114.75] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND trestbps == (-inf..7.75] AND chol == (76.5..114.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND sex == 1 AND trestbps == (-inf..7.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND trestbps == (-inf..7.75] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND trestbps == (-inf..7.75] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND trestbps == (-inf..7.75] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF chol == (76.5..114.75] AND restecg == 2 AND thalach == (17.75..35.5] AND slope == 0 AND thal == 0 THEN target == 1"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chol == (76.5..114.75] AND restecg == 2 AND thalach == (17.75..35.5] AND slope == 0 THEN target == 1"
+  # hypos left: 5
+  expl: "IF chol == (76.5..114.75] AND restecg == 2 AND thalach == (17.75..35.5] AND oldpeak == (-inf..0.85] AND thal == 0 THEN target == 1"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chol == (76.5..114.75] AND restecg == 2 AND thalach == (17.75..35.5] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 5
+  exp time: 0.01
+
+  inst: "IF age == (-inf..37.25] AND sex == 1 AND chest_pain == 1 AND trestbps == (15.5..23.25] AND chol == (38.25..76.5] AND fbs == 1 AND restecg == 3 AND thalach == (35.5..53.25] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF age == (-inf..37.25] AND restecg == 3 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND chol == (38.25..76.5] THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND restecg == 3 AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND restecg == 3 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND restecg == 3 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND restecg == 3 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND restecg == 3 AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND restecg == 3 AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chol == (38.25..76.5] AND restecg == 3 AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND chol == (38.25..76.5] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND sex == 1 AND chol == (38.25..76.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND trestbps == (15.5..23.25] AND chol == (38.25..76.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND trestbps == (15.5..23.25] AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND thalach == (35.5..53.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND chol == (38.25..76.5] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND thalach == (35.5..53.25] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND chol == (38.25..76.5] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (15.5..23.25] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  exp time: 0.01
+
+  inst: "IF age == (-inf..37.25] AND sex == 1 AND chest_pain == 1 AND trestbps == (23.25..+inf) AND chol == (38.25..76.5] AND fbs == 1 AND restecg == 2 AND thalach == (35.5..53.25] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF chest_pain == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 2
+  expl: "IF age == (-inf..37.25] AND trestbps == (23.25..+inf) THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND chol == (38.25..76.5] THEN target == 1"
+  # hypos left: 2
+  expl: "IF sex == 1 AND chest_pain == 1 AND trestbps == (23.25..+inf) THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (23.25..+inf) AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (23.25..+inf) AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (23.25..+inf) AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND fbs == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND restecg == 2 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND chol == (38.25..76.5] AND restecg == 2 THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND chol == (38.25..76.5] AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 1 AND trestbps == (23.25..+inf) AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND thalach == (35.5..53.25] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND thalach == (35.5..53.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND thalach == (35.5..53.25] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND chol == (38.25..76.5] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND chol == (38.25..76.5] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND sex == 1 AND chol == (38.25..76.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND chol == (38.25..76.5] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  exp time: 0.01
+
+  inst: "IF age == (-inf..37.25] AND sex == 1 AND chest_pain == 1 AND trestbps == (7.75..15.5] AND chol == (76.5..114.75] AND fbs == 1 AND restecg == 2 AND thalach == (35.5..53.25] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF chest_pain == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 2
+  expl: "IF age == (-inf..37.25] AND thalach == (35.5..53.25] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND chol == (76.5..114.75] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND thalach == (35.5..53.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (-inf..37.25] AND chol == (76.5..114.75] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  exp time: 0.00
+
+  inst: "IF age == (37.25..46.5] AND sex == 0 AND chest_pain == 1 AND trestbps == (15.5..23.25] AND chol == (-inf..38.25] AND fbs == 1 AND restecg == 2 AND thalach == (35.5..53.25] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF chest_pain == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND chol == (-inf..38.25] AND restecg == 2 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND chol == (-inf..38.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (15.5..23.25] AND chol == (-inf..38.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND trestbps == (15.5..23.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (15.5..23.25] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND chol == (-inf..38.25] AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND chol == (-inf..38.25] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND chest_pain == 1 AND chol == (-inf..38.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND chest_pain == 1 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND sex == 0 AND chest_pain == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND chol == (-inf..38.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND sex == 0 AND chol == (-inf..38.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND sex == 0 AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND sex == 0 AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND sex == 0 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  exp time: 0.01
+
+  inst: "IF age == (37.25..46.5] AND sex == 0 AND chest_pain == 1 AND trestbps == (7.75..15.5] AND chol == (76.5..114.75] AND fbs == 1 AND restecg == 2 AND thalach == (-inf..17.75] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF chest_pain == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 2
+  expl: "IF age == (37.25..46.5] AND chest_pain == 1 AND trestbps == (7.75..15.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (7.75..15.5] AND thalach == (-inf..17.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND sex == 0 AND trestbps == (7.75..15.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND sex == 0 AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND sex == 0 AND chol == (76.5..114.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND sex == 0 AND thalach == (-inf..17.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND sex == 0 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND thalach == (-inf..17.75] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chol == (76.5..114.75] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND thalach == (-inf..17.75] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND sex == 0 AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND trestbps == (7.75..15.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND chol == (76.5..114.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND sex == 0 AND chest_pain == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  exp time: 0.01
+
+  inst: "IF age == (37.25..46.5] AND sex == 1 AND chest_pain == 0 AND trestbps == (15.5..23.25] AND chol == (114.75..+inf) AND fbs == 1 AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF age == (37.25..46.5] AND chol == (114.75..+inf) AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND chol == (114.75..+inf) AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND thalach == (17.75..35.5] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND thalach == (17.75..35.5] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND trestbps == (15.5..23.25] AND thalach == (17.75..35.5] AND slope == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF chest_pain == 0 AND trestbps == (15.5..23.25] AND thalach == (17.75..35.5] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND sex == 1 AND chol == (114.75..+inf) AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND chol == (114.75..+inf) AND thalach == (17.75..35.5] AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND chol == (114.75..+inf) AND exang == 1 AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND sex == 1 AND chol == (114.75..+inf) AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND chol == (114.75..+inf) AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND sex == 1 AND trestbps == (15.5..23.25] AND chol == (114.75..+inf) THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 1 AND thal == 0 THEN target == 1"
+  # hypos left: 5
+  expl: "IF age == (37.25..46.5] AND sex == 1 AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 1 THEN target == 1"
+  # hypos left: 5
+  expl: "IF age == (37.25..46.5] AND sex == 1 AND trestbps == (15.5..23.25] AND thalach == (17.75..35.5] AND exang == 1 THEN target == 1"
+  # hypos left: 5
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND thalach == (17.75..35.5] AND exang == 1 AND thal == 0 THEN target == 1"
+  # hypos left: 5
+  expl: "IF age == (37.25..46.5] AND sex == 1 AND trestbps == (15.5..23.25] AND fbs == 1 AND exang == 1 THEN target == 1"
+  # hypos left: 5
+  expl: "IF age == (37.25..46.5] AND sex == 1 AND chest_pain == 0 AND trestbps == (15.5..23.25] AND exang == 1 THEN target == 1"
+  # hypos left: 5
+  exp time: 0.01
+
+  inst: "IF age == (37.25..46.5] AND sex == 1 AND chest_pain == 0 AND trestbps == (15.5..23.25] AND chol == (38.25..76.5] AND fbs == 1 AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF age == (37.25..46.5] AND thalach == (17.75..35.5] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND thalach == (17.75..35.5] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND chol == (38.25..76.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND trestbps == (15.5..23.25] AND thalach == (17.75..35.5] AND slope == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF chest_pain == 0 AND trestbps == (15.5..23.25] AND thalach == (17.75..35.5] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND chol == (38.25..76.5] AND thalach == (17.75..35.5] AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF trestbps == (15.5..23.25] AND chol == (38.25..76.5] AND thalach == (17.75..35.5] AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF trestbps == (15.5..23.25] AND chol == (38.25..76.5] AND thalach == (17.75..35.5] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  expl: "IF trestbps == (15.5..23.25] AND chol == (38.25..76.5] AND thalach == (17.75..35.5] AND slope == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 1 AND chest_pain == 0 AND trestbps == (15.5..23.25] AND thalach == (17.75..35.5] AND exang == 1 THEN target == 1"
+  # hypos left: 5
+  expl: "IF chest_pain == 0 AND trestbps == (15.5..23.25] AND thalach == (17.75..35.5] AND exang == 1 AND thal == 0 THEN target == 1"
+  # hypos left: 5
+  expl: "IF age == (37.25..46.5] AND sex == 1 AND trestbps == (15.5..23.25] AND thalach == (17.75..35.5] AND exang == 1 THEN target == 1"
+  # hypos left: 5
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND thalach == (17.75..35.5] AND exang == 1 AND thal == 0 THEN target == 1"
+  # hypos left: 5
+  expl: "IF age == (37.25..46.5] AND sex == 1 AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 1 THEN target == 1"
+  # hypos left: 5
+  expl: "IF age == (37.25..46.5] AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 1 AND thal == 0 THEN target == 1"
+  # hypos left: 5
+  expl: "IF age == (37.25..46.5] AND sex == 1 AND trestbps == (15.5..23.25] AND fbs == 1 AND exang == 1 THEN target == 1"
+  # hypos left: 5
+  expl: "IF age == (37.25..46.5] AND sex == 1 AND chest_pain == 0 AND trestbps == (15.5..23.25] AND exang == 1 THEN target == 1"
+  # hypos left: 5
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND fbs == 1 AND exang == 1 AND thal == 0 THEN target == 1"
+  # hypos left: 5
+  exp time: 0.01
+
+  inst: "IF age == (37.25..46.5] AND sex == 1 AND chest_pain == 0 AND trestbps == (15.5..23.25] AND chol == (38.25..76.5] AND fbs == 1 AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 2 AND oldpeak == (1.75..2.88] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF chest_pain == 0 AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 2
+  expl: "IF trestbps == (15.5..23.25] AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 2
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND chol == (38.25..76.5] THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND oldpeak == (1.75..2.88] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND exang == 2 AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 3
+  expl: "IF thalach == (17.75..35.5] AND exang == 2 AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (38.25..76.5] AND thalach == (17.75..35.5] AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND chol == (38.25..76.5] AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (38.25..76.5] AND oldpeak == (1.75..2.88] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF exang == 2 AND oldpeak == (1.75..2.88] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND oldpeak == (1.75..2.88] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND restecg == 2 AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND exang == 2 AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND chol == (38.25..76.5] AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND trestbps == (15.5..23.25] AND thalach == (17.75..35.5] AND slope == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND thalach == (17.75..35.5] AND exang == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND chest_pain == 0 AND trestbps == (15.5..23.25] AND thalach == (17.75..35.5] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND chest_pain == 0 AND trestbps == (15.5..23.25] AND exang == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND chest_pain == 0 AND restecg == 2 AND exang == 2 THEN target == 0"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (37.25..46.5] AND sex == 1 AND chest_pain == 0 AND trestbps == (23.25..+inf) AND chol == (76.5..114.75] AND fbs == 1 AND restecg == 3 AND thalach == (-inf..17.75] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF chest_pain == 0 AND trestbps == (23.25..+inf) THEN target == 0"
+  # hypos left: 2
+  expl: "IF age == (37.25..46.5] AND chol == (76.5..114.75] AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND trestbps == (23.25..+inf) AND chol == (76.5..114.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND trestbps == (23.25..+inf) AND restecg == 3 THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND chol == (76.5..114.75] AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND chol == (76.5..114.75] AND restecg == 3 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND sex == 1 AND chest_pain == 0 AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND sex == 1 AND restecg == 3 AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND chest_pain == 0 AND chol == (76.5..114.75] AND restecg == 3 THEN target == 0"
+  # hypos left: 4
+  expl: "IF sex == 1 AND chest_pain == 0 AND restecg == 3 AND exang == 1 AND thal == 0 THEN target == 0"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chest_pain == 0 AND chol == (76.5..114.75] AND restecg == 3 AND exang == 1 THEN target == 0"
+  # hypos left: 5
+  expl: "IF age == (37.25..46.5] AND sex == 1 AND chest_pain == 0 AND restecg == 3 AND thal == 0 THEN target == 0"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chest_pain == 0 AND thalach == (-inf..17.75] AND exang == 1 AND thal == 0 THEN target == 0"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chest_pain == 0 AND restecg == 3 AND thalach == (-inf..17.75] AND exang == 1 THEN target == 0"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chest_pain == 0 AND chol == (76.5..114.75] AND thalach == (-inf..17.75] AND exang == 1 THEN target == 0"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chol == (76.5..114.75] AND restecg == 3 AND thalach == (-inf..17.75] AND exang == 1 THEN target == 0"
+  # hypos left: 5
+  exp time: 0.01
+
+  inst: "IF age == (37.25..46.5] AND sex == 1 AND chest_pain == 0 AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND fbs == 1 AND restecg == 2 AND thalach == (-inf..17.75] AND exang == 2 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF age == (37.25..46.5] AND thalach == (-inf..17.75] AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND sex == 1 AND trestbps == (7.75..15.5] AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND chest_pain == 0 AND trestbps == (7.75..15.5] AND exang == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND trestbps == (7.75..15.5] AND exang == 2 AND oldpeak == (-inf..0.85] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND trestbps == (7.75..15.5] AND exang == 2 AND slope == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND trestbps == (7.75..15.5] AND restecg == 2 AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND sex == 1 AND chest_pain == 0 AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND chest_pain == 0 AND restecg == 2 AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND chest_pain == 0 AND exang == 2 AND thal == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND chest_pain == 0 AND exang == 2 AND oldpeak == (-inf..0.85] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND chest_pain == 0 AND exang == 2 AND slope == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND chol == (38.25..76.5] AND exang == 2 AND oldpeak == (-inf..0.85] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND chol == (38.25..76.5] AND exang == 2 AND slope == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND chest_pain == 0 AND restecg == 2 AND exang == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF chest_pain == 0 AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND exang == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF chol == (38.25..76.5] AND thalach == (-inf..17.75] AND exang == 2 AND slope == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND thalach == (-inf..17.75] AND exang == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND exang == 2 AND slope == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND exang == 2 AND oldpeak == (-inf..0.85] THEN target == 0"
+  # hypos left: 4
+  expl: "IF trestbps == (7.75..15.5] AND restecg == 2 AND exang == 2 AND oldpeak == (-inf..0.85] THEN target == 0"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (37.25..46.5] AND sex == 1 AND chest_pain == 1 AND trestbps == (15.5..23.25] AND chol == (38.25..76.5] AND fbs == 2 AND restecg == 2 AND thalach == (-inf..17.75] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF chest_pain == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND fbs == 2 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND chol == (38.25..76.5] THEN target == 1"
+  # hypos left: 2
+  expl: "IF age == (37.25..46.5] AND chol == (38.25..76.5] AND fbs == 2 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND chol == (38.25..76.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND fbs == 2 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND fbs == 2 AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND fbs == 2 AND thalach == (-inf..17.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND thalach == (-inf..17.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND thalach == (-inf..17.75] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 1 AND chest_pain == 1 AND thalach == (-inf..17.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND thalach == (-inf..17.75] AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (15.5..23.25] AND thalach == (-inf..17.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (15.5..23.25] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND chest_pain == 1 AND thalach == (-inf..17.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND chest_pain == 1 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND fbs == 2 AND thalach == (-inf..17.75] AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (37.25..46.5] AND sex == 1 AND chest_pain == 1 AND trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND fbs == 1 AND restecg == 2 AND thalach == (35.5..53.25] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF chest_pain == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 2
+  expl: "IF age == (37.25..46.5] AND chest_pain == 1 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (15.5..23.25] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND thalach == (35.5..53.25] AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND thalach == (35.5..53.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  expl: "IF trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND thalach == (35.5..53.25] AND slope == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 1 AND trestbps == (15.5..23.25] AND thalach == (35.5..53.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  expl: "IF trestbps == (15.5..23.25] AND fbs == 1 AND thalach == (35.5..53.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  expl: "IF trestbps == (15.5..23.25] AND fbs == 1 AND thalach == (35.5..53.25] AND slope == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 1 AND trestbps == (15.5..23.25] AND thalach == (35.5..53.25] AND slope == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND thalach == (35.5..53.25] AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND restecg == 2 AND exang == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 5
+  expl: "IF trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND restecg == 2 AND oldpeak == (-inf..0.85] AND thal == 0 THEN target == 1"
+  # hypos left: 5
+  expl: "IF sex == 1 AND trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND restecg == 2 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 5
+  expl: "IF trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND restecg == 2 AND exang == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 5
+  expl: "IF trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND fbs == 1 AND restecg == 2 AND exang == 1 THEN target == 1"
+  # hypos left: 5
+  expl: "IF trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND restecg == 2 AND slope == 0 AND thal == 0 THEN target == 1"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF age == (37.25..46.5] AND sex == 1 AND chest_pain == 1 AND trestbps == (7.75..15.5] AND chol == (114.75..+inf) AND fbs == 1 AND restecg == 2 AND thalach == (-inf..17.75] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF chest_pain == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 2
+  expl: "IF age == (37.25..46.5] AND chest_pain == 1 AND trestbps == (7.75..15.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND chest_pain == 1 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND chest_pain == 1 AND thalach == (-inf..17.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND chest_pain == 1 AND chol == (114.75..+inf) THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND chol == (114.75..+inf) AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND chol == (114.75..+inf) AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND chol == (114.75..+inf) AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND chol == (114.75..+inf) AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 1 AND chest_pain == 1 AND chol == (114.75..+inf) THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND thalach == (-inf..17.75] AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 1 AND chest_pain == 1 AND thalach == (-inf..17.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND thalach == (-inf..17.75] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (7.75..15.5] AND thalach == (-inf..17.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (7.75..15.5] AND chol == (114.75..+inf) THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND trestbps == (7.75..15.5] AND chol == (114.75..+inf) AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND chol == (114.75..+inf) AND thalach == (-inf..17.75] AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND chol == (114.75..+inf) AND exang == 1 AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (37.25..46.5] AND sex == 1 AND chol == (114.75..+inf) AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (37.25..46.5] AND sex == 1 AND chest_pain == 1 AND trestbps == (7.75..15.5] AND chol == (76.5..114.75] AND fbs == 1 AND restecg == 2 AND thalach == (35.5..53.25] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF chest_pain == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 2
+  expl: "IF age == (37.25..46.5] AND chest_pain == 1 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND chest_pain == 1 AND trestbps == (7.75..15.5] THEN target == 1"
+  # hypos left: 3
+  exp time: 0.00
+
+  inst: "IF age == (37.25..46.5] AND sex == 1 AND chest_pain == 2 AND trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND fbs == 1 AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF age == (37.25..46.5] AND chest_pain == 2 THEN target == 1"
+  # hypos left: 2
+  expl: "IF age == (37.25..46.5] AND thalach == (17.75..35.5] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND thalach == (17.75..35.5] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND trestbps == (15.5..23.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (37.25..46.5] AND chol == (76.5..114.75] AND thalach == (17.75..35.5] AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF chol == (76.5..114.75] AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF chest_pain == 2 AND chol == (76.5..114.75] AND thalach == (17.75..35.5] AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 1 AND chest_pain == 2 AND chol == (76.5..114.75] AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 4
+  expl: "IF chest_pain == 2 AND chol == (76.5..114.75] AND thalach == (17.75..35.5] AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 1 AND chest_pain == 2 AND trestbps == (15.5..23.25] AND chol == (76.5..114.75] THEN target == 1"
+  # hypos left: 4
+  expl: "IF chest_pain == 2 AND trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF chest_pain == 2 AND trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND restecg == 2 AND slope == 0 AND thal == 0 THEN target == 1"
+  # hypos left: 5
+  expl: "IF trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND restecg == 2 AND oldpeak == (-inf..0.85] AND thal == 0 THEN target == 1"
+  # hypos left: 5
+  expl: "IF sex == 1 AND trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND restecg == 2 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 5
+  expl: "IF sex == 1 AND trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND restecg == 2 AND slope == 0 THEN target == 1"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chol == (76.5..114.75] AND restecg == 2 AND thalach == (17.75..35.5] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chol == (76.5..114.75] AND restecg == 2 AND thalach == (17.75..35.5] AND slope == 0 THEN target == 1"
+  # hypos left: 5
+  expl: "IF chol == (76.5..114.75] AND restecg == 2 AND thalach == (17.75..35.5] AND slope == 0 AND thal == 0 THEN target == 1"
+  # hypos left: 5
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 0 AND chest_pain == 0 AND trestbps == (-inf..7.75] AND chol == (-inf..38.25] AND fbs == 1 AND restecg == 2 AND thalach == (53.25..+inf) AND exang == 1 AND oldpeak == (1.75..2.88] AND slope == 3 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF slope == 3 THEN target == 1"
+  # hypos left: 1
+  expl: "IF trestbps == (-inf..7.75] AND oldpeak == (1.75..2.88] THEN target == 1"
+  # hypos left: 2
+  expl: "IF sex == 0 AND thalach == (53.25..+inf) AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND thalach == (53.25..+inf) AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND thalach == (53.25..+inf) AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND oldpeak == (1.75..2.88] AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (-inf..7.75] AND thalach == (53.25..+inf) THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (-inf..7.75] AND chol == (-inf..38.25] AND thalach == (53.25..+inf) THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND trestbps == (-inf..7.75] AND thalach == (53.25..+inf) THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND trestbps == (-inf..7.75] AND chol == (-inf..38.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (-inf..7.75] AND chol == (-inf..38.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (-inf..7.75] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND sex == 0 AND trestbps == (-inf..7.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND chest_pain == 0 AND trestbps == (-inf..7.75] AND fbs == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND chol == (-inf..38.25] AND exang == 1 AND oldpeak == (1.75..2.88] THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND chest_pain == 0 AND chol == (-inf..38.25] AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND chest_pain == 0 AND exang == 1 AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND chest_pain == 0 AND chol == (-inf..38.25] AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF chest_pain == 0 AND chol == (-inf..38.25] AND thalach == (53.25..+inf) AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chol == (-inf..38.25] AND thalach == (53.25..+inf) AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 0 AND chest_pain == 0 AND trestbps == (7.75..15.5] AND chol == (-inf..38.25] AND fbs == 1 AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 2 AND oldpeak == (0.85..1.75] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF sex == 0 AND chol == (-inf..38.25] AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND restecg == 2 AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND fbs == 1 AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 0 AND chest_pain == 0 AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 0 AND thalach == (17.75..35.5] AND slope == 2 THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 0 AND thalach == (17.75..35.5] AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 0 AND trestbps == (7.75..15.5] AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND restecg == 2 AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND trestbps == (7.75..15.5] AND thalach == (17.75..35.5] AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND trestbps == (7.75..15.5] AND thalach == (17.75..35.5] AND exang == 2 THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND trestbps == (7.75..15.5] AND thalach == (17.75..35.5] AND slope == 2 THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 0 AND trestbps == (7.75..15.5] AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND restecg == 2 AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND fbs == 1 AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND restecg == 2 AND thalach == (17.75..35.5] AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND fbs == 1 AND thalach == (17.75..35.5] AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND restecg == 2 AND thalach == (17.75..35.5] AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND fbs == 1 AND thalach == (17.75..35.5] AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 0 AND thalach == (17.75..35.5] AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND chest_pain == 0 AND chol == (-inf..38.25] AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 0 AND chest_pain == 1 AND trestbps == (-inf..7.75] AND chol == (114.75..+inf) AND fbs == 0 AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF chest_pain == 1 AND trestbps == (-inf..7.75] THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND fbs == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF age == (46.5..55.75] AND chest_pain == 1 THEN target == 1"
+  # hypos left: 2
+  expl: "IF fbs == 0 AND exang == 1 THEN target == 1"
+  # hypos left: 2
+  expl: "IF fbs == 0 AND slope == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF age == (46.5..55.75] AND fbs == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF fbs == 0 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 2
+  expl: "IF sex == 0 AND fbs == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF trestbps == (-inf..7.75] AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 2
+  expl: "IF trestbps == (-inf..7.75] AND fbs == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF sex == 0 AND trestbps == (-inf..7.75] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (-inf..7.75] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (-inf..7.75] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (-inf..7.75] AND chol == (114.75..+inf) THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chol == (114.75..+inf) AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chol == (114.75..+inf) AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (-inf..7.75] AND chol == (114.75..+inf) AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND trestbps == (-inf..7.75] AND chol == (114.75..+inf) THEN target == 1"
+  # hypos left: 3
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 0 AND chest_pain == 1 AND trestbps == (-inf..7.75] AND chol == (114.75..+inf) AND fbs == 1 AND restecg == 2 AND thalach == (35.5..53.25] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF chest_pain == 1 AND trestbps == (-inf..7.75] THEN target == 1"
+  # hypos left: 2
+  expl: "IF age == (46.5..55.75] AND chest_pain == 1 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chol == (114.75..+inf) AND thalach == (35.5..53.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chol == (114.75..+inf) AND thalach == (35.5..53.25] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chol == (114.75..+inf) AND thalach == (35.5..53.25] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chol == (114.75..+inf) AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chol == (114.75..+inf) AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND chol == (114.75..+inf) AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND chol == (114.75..+inf) AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND chol == (114.75..+inf) AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (-inf..7.75] AND chol == (114.75..+inf) THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (-inf..7.75] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (-inf..7.75] AND chol == (114.75..+inf) AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (-inf..7.75] AND chol == (114.75..+inf) AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (-inf..7.75] AND chol == (114.75..+inf) AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 0 AND chest_pain == 1 AND trestbps == (15.5..23.25] AND chol == (38.25..76.5] AND fbs == 1 AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 2 AND oldpeak == (1.75..2.88] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF age == (46.5..55.75] AND chest_pain == 1 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND chol == (38.25..76.5] THEN target == 1"
+  # hypos left: 2
+  expl: "IF sex == 0 AND chol == (38.25..76.5] AND oldpeak == (1.75..2.88] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chol == (38.25..76.5] AND thalach == (17.75..35.5] AND oldpeak == (1.75..2.88] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND restecg == 2 AND oldpeak == (1.75..2.88] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND trestbps == (15.5..23.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND restecg == 2 AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND oldpeak == (1.75..2.88] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND thalach == (17.75..35.5] AND oldpeak == (1.75..2.88] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND oldpeak == (1.75..2.88] AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chol == (38.25..76.5] AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (15.5..23.25] AND exang == 2 AND oldpeak == (1.75..2.88] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 0 AND trestbps == (15.5..23.25] AND oldpeak == (1.75..2.88] THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND thalach == (17.75..35.5] AND exang == 2 AND oldpeak == (1.75..2.88] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 0 AND thalach == (17.75..35.5] AND oldpeak == (1.75..2.88] THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND fbs == 1 AND thalach == (17.75..35.5] AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND restecg == 2 AND thalach == (17.75..35.5] AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND trestbps == (15.5..23.25] AND thalach == (17.75..35.5] AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 0 AND chest_pain == 1 AND trestbps == (23.25..+inf) AND chol == (-inf..38.25] AND fbs == 1 AND restecg == 2 AND thalach == (35.5..53.25] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF age == (46.5..55.75] AND chest_pain == 1 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND trestbps == (23.25..+inf) AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (23.25..+inf) AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (23.25..+inf) AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (23.25..+inf) AND chol == (-inf..38.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND chol == (-inf..38.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND chol == (-inf..38.25] AND restecg == 2 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND chol == (-inf..38.25] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND chol == (-inf..38.25] AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chol == (-inf..38.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (23.25..+inf) AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND trestbps == (23.25..+inf) AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND fbs == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND restecg == 2 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND thalach == (35.5..53.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 0 AND chest_pain == 1 AND trestbps == (7.75..15.5] AND chol == (114.75..+inf) AND fbs == 2 AND restecg == 3 AND thalach == (35.5..53.25] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF age == (46.5..55.75] AND chest_pain == 1 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND fbs == 2 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND chol == (114.75..+inf) AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND chol == (114.75..+inf) AND restecg == 3 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (7.75..15.5] AND chol == (114.75..+inf) THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND chol == (114.75..+inf) AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND restecg == 3 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND restecg == 3 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND trestbps == (7.75..15.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (7.75..15.5] AND restecg == 3 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND restecg == 3 AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND chol == (114.75..+inf) AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND restecg == 3 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND restecg == 3 AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND restecg == 3 AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 0 AND chest_pain == 1 AND trestbps == (7.75..15.5] AND chol == (76.5..114.75] AND fbs == 1 AND restecg == 2 AND thalach == (35.5..53.25] AND exang == 1 AND oldpeak == (0.85..1.75] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF age == (46.5..55.75] AND chest_pain == 1 THEN target == 1"
+  # hypos left: 2
+  expl: "IF sex == 0 AND chol == (76.5..114.75] AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND exang == 1 AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (7.75..15.5] AND exang == 1 AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chol == (76.5..114.75] AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chol == (76.5..114.75] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND chol == (76.5..114.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND trestbps == (7.75..15.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (7.75..15.5] AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND exang == 1 AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND thalach == (35.5..53.25] AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND chol == (76.5..114.75] AND thalach == (35.5..53.25] AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND trestbps == (7.75..15.5] AND thalach == (35.5..53.25] AND slope == 2 THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chol == (76.5..114.75] AND fbs == 1 AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chol == (76.5..114.75] AND restecg == 2 AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 0 AND chest_pain == 2 AND trestbps == (7.75..15.5] AND chol == (76.5..114.75] AND fbs == 1 AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND trestbps == (7.75..15.5] AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND trestbps == (7.75..15.5] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chol == (76.5..114.75] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND thalach == (17.75..35.5] AND exang == 1 AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 0 AND thalach == (17.75..35.5] AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND thalach == (17.75..35.5] AND slope == 0 AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND fbs == 1 AND thalach == (17.75..35.5] AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND restecg == 2 AND thalach == (17.75..35.5] AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 0 AND thalach == (17.75..35.5] AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND fbs == 1 AND slope == 0 AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND fbs == 1 AND exang == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND thalach == (17.75..35.5] AND exang == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND restecg == 2 AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND fbs == 1 AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 0 AND trestbps == (7.75..15.5] AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND thalach == (17.75..35.5] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND restecg == 2 AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND restecg == 2 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 0 AND trestbps == (-inf..7.75] AND chol == (114.75..+inf) AND fbs == 1 AND restecg == 3 AND thalach == (53.25..+inf) AND exang == 2 AND oldpeak == (0.85..1.75] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF thalach == (53.25..+inf) AND exang == 2 THEN target == 0"
+  # hypos left: 2
+  expl: "IF chest_pain == 0 AND chol == (114.75..+inf) AND restecg == 3 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (114.75..+inf) AND restecg == 3 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (114.75..+inf) AND restecg == 3 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND trestbps == (-inf..7.75] AND chol == (114.75..+inf) THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND chol == (114.75..+inf) AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (-inf..7.75] AND chol == (114.75..+inf) AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (114.75..+inf) AND restecg == 3 AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (-inf..7.75] AND exang == 2 AND thal == 0 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND trestbps == (-inf..7.75] AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (-inf..7.75] AND slope == 2 AND thal == 0 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND trestbps == (-inf..7.75] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (-inf..7.75] AND oldpeak == (0.85..1.75] AND thal == 0 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND chest_pain == 0 AND trestbps == (-inf..7.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND trestbps == (-inf..7.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND chol == (114.75..+inf) AND thalach == (53.25..+inf) THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND chest_pain == 0 AND thalach == (53.25..+inf) THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND chest_pain == 0 AND thalach == (53.25..+inf) THEN target == 0"
+  # hypos left: 3
+  expl: "IF restecg == 3 AND thalach == (53.25..+inf) AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF restecg == 3 AND thalach == (53.25..+inf) AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 0 AND trestbps == (15.5..23.25] AND chol == (114.75..+inf) AND fbs == 1 AND restecg == 3 AND thalach == (-inf..17.75] AND exang == 2 AND oldpeak == (1.75..2.88] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF trestbps == (15.5..23.25] AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 2
+  expl: "IF chest_pain == 0 AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 2
+  expl: "IF thalach == (-inf..17.75] AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 2
+  expl: "IF trestbps == (15.5..23.25] AND restecg == 3 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND trestbps == (15.5..23.25] AND restecg == 3 THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND restecg == 3 AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND restecg == 3 AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND chol == (114.75..+inf) AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND chol == (114.75..+inf) AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND oldpeak == (1.75..2.88] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND chol == (114.75..+inf) AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (114.75..+inf) AND exang == 2 AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 3
+  expl: "IF exang == 2 AND oldpeak == (1.75..2.88] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND exang == 2 AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 3
+  expl: "IF restecg == 3 AND exang == 2 AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 3
+  expl: "IF restecg == 3 AND oldpeak == (1.75..2.88] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (114.75..+inf) AND restecg == 3 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (114.75..+inf) AND restecg == 3 AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND chol == (114.75..+inf) AND restecg == 3 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (114.75..+inf) AND restecg == 3 AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 0 AND trestbps == (15.5..23.25] AND chol == (114.75..+inf) AND fbs == 1 AND restecg == 3 AND thalach == (17.75..35.5] AND exang == 1 AND oldpeak == (0.85..1.75] AND slope == 3 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF slope == 3 THEN target == 1"
+  # hypos left: 1
+  expl: "IF trestbps == (15.5..23.25] AND chol == (114.75..+inf) AND restecg == 3 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND chol == (114.75..+inf) AND restecg == 3 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chol == (114.75..+inf) AND restecg == 3 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND restecg == 3 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND restecg == 3 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND exang == 1 AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chol == (114.75..+inf) AND exang == 1 AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF thalach == (17.75..35.5] AND exang == 1 AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF restecg == 3 AND exang == 1 AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND restecg == 3 AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chol == (114.75..+inf) AND fbs == 1 AND restecg == 3 AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 1 AND chol == (114.75..+inf) AND restecg == 3 AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 4
+  expl: "IF chol == (114.75..+inf) AND fbs == 1 AND restecg == 3 AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 1 AND chol == (114.75..+inf) AND restecg == 3 AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chest_pain == 0 AND exang == 1 AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND exang == 1 AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chest_pain == 0 AND chol == (114.75..+inf) AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF trestbps == (15.5..23.25] AND chol == (114.75..+inf) AND thalach == (17.75..35.5] AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND trestbps == (15.5..23.25] AND chol == (114.75..+inf) AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 0 AND trestbps == (15.5..23.25] AND chol == (38.25..76.5] AND fbs == 1 AND restecg == 2 AND thalach == (-inf..17.75] AND exang == 1 AND oldpeak == (0.85..1.75] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF chest_pain == 0 AND exang == 1 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF thalach == (-inf..17.75] AND exang == 1 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF thalach == (-inf..17.75] AND exang == 1 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND exang == 1 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (38.25..76.5] AND exang == 1 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (38.25..76.5] AND thalach == (-inf..17.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND thalach == (-inf..17.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND thalach == (-inf..17.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND exang == 1 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND trestbps == (15.5..23.25] AND chol == (38.25..76.5] AND exang == 1 THEN target == 0"
+  # hypos left: 4
+  expl: "IF chest_pain == 0 AND trestbps == (15.5..23.25] AND thalach == (-inf..17.75] AND exang == 1 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND trestbps == (15.5..23.25] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF sex == 1 AND chest_pain == 0 AND trestbps == (15.5..23.25] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF sex == 1 AND trestbps == (15.5..23.25] AND oldpeak == (0.85..1.75] AND slope == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF sex == 1 AND trestbps == (15.5..23.25] AND chol == (38.25..76.5] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF trestbps == (15.5..23.25] AND chol == (38.25..76.5] AND exang == 1 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND chol == (38.25..76.5] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND restecg == 2 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND oldpeak == (0.85..1.75] AND slope == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 0 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 0 AND trestbps == (15.5..23.25] AND chol == (38.25..76.5] AND fbs == 1 AND restecg == 2 AND thalach == (35.5..53.25] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF age == (46.5..55.75] AND chest_pain == 0 AND thalach == (35.5..53.25] THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND chol == (38.25..76.5] AND thalach == (35.5..53.25] AND thal == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF chest_pain == 0 AND chol == (38.25..76.5] AND thalach == (35.5..53.25] AND thal == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF chest_pain == 0 AND trestbps == (15.5..23.25] AND chol == (38.25..76.5] AND exang == 1 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chest_pain == 0 AND chol == (38.25..76.5] AND exang == 1 THEN target == 0"
+  # hypos left: 4
+  expl: "IF chest_pain == 0 AND trestbps == (15.5..23.25] AND chol == (38.25..76.5] AND thalach == (35.5..53.25] THEN target == 0"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 0 AND trestbps == (15.5..23.25] AND chol == (38.25..76.5] AND fbs == 1 AND restecg == 2 AND thalach == (53.25..+inf) AND exang == 2 AND oldpeak == (0.85..1.75] AND slope == 2 AND ca == 0 AND thal == 3 THEN target == 1"
+  expl: "IF ca == 0 THEN target == 1"
+  # hypos left: 1
+  exp time: 0.00
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 0 AND trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND fbs == 1 AND restecg == 2 AND thalach == (35.5..53.25] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF age == (46.5..55.75] AND chest_pain == 0 AND thalach == (35.5..53.25] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND chol == (76.5..114.75] AND thalach == (35.5..53.25] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND trestbps == (15.5..23.25] AND chol == (76.5..114.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND restecg == 2 AND thalach == (35.5..53.25] THEN target == 0"
+  # hypos left: 5
+  expl: "IF age == (46.5..55.75] AND trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND restecg == 2 AND oldpeak == (-inf..0.85] THEN target == 0"
+  # hypos left: 5
+  expl: "IF age == (46.5..55.75] AND trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND restecg == 2 AND slope == 0 THEN target == 0"
+  # hypos left: 5
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND restecg == 2 THEN target == 0"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 0 AND trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND fbs == 2 AND restecg == 2 AND thalach == (-inf..17.75] AND exang == 2 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF fbs == 2 AND exang == 2 THEN target == 0"
+  # hypos left: 2
+  expl: "IF fbs == 2 AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 2
+  expl: "IF chest_pain == 0 AND fbs == 2 THEN target == 0"
+  # hypos left: 2
+  expl: "IF chest_pain == 0 AND trestbps == (15.5..23.25] AND chol == (76.5..114.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND trestbps == (15.5..23.25] AND fbs == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND fbs == 2 AND thal == 0 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND fbs == 2 AND thal == 0 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND fbs == 2 AND thal == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chol == (76.5..114.75] AND restecg == 2 AND exang == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chol == (76.5..114.75] AND exang == 2 AND oldpeak == (-inf..0.85] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chol == (76.5..114.75] AND exang == 2 AND slope == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF chest_pain == 0 AND chol == (76.5..114.75] AND restecg == 2 AND exang == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF chol == (76.5..114.75] AND restecg == 2 AND thalach == (-inf..17.75] AND exang == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF restecg == 2 AND thalach == (-inf..17.75] AND exang == 2 AND slope == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF chest_pain == 0 AND chol == (76.5..114.75] AND restecg == 2 AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF chest_pain == 0 AND trestbps == (15.5..23.25] AND thalach == (-inf..17.75] AND slope == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND thalach == (-inf..17.75] AND exang == 2 AND slope == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF trestbps == (15.5..23.25] AND thalach == (-inf..17.75] AND exang == 2 AND slope == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND trestbps == (15.5..23.25] AND chol == (76.5..114.75] AND exang == 2 THEN target == 0"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 0 AND trestbps == (23.25..+inf) AND chol == (114.75..+inf) AND fbs == 1 AND restecg == 2 AND thalach == (53.25..+inf) AND exang == 2 AND oldpeak == (0.85..1.75] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF thalach == (53.25..+inf) AND exang == 2 THEN target == 0"
+  # hypos left: 2
+  expl: "IF trestbps == (23.25..+inf) AND slope == 2 THEN target == 0"
+  # hypos left: 2
+  expl: "IF trestbps == (23.25..+inf) AND exang == 2 THEN target == 0"
+  # hypos left: 2
+  expl: "IF chest_pain == 0 AND trestbps == (23.25..+inf) THEN target == 0"
+  # hypos left: 2
+  expl: "IF sex == 1 AND chest_pain == 0 AND thalach == (53.25..+inf) THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND chest_pain == 0 AND thalach == (53.25..+inf) THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND thalach == (53.25..+inf) AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND thalach == (53.25..+inf) AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND chol == (114.75..+inf) AND thalach == (53.25..+inf) THEN target == 0"
+  # hypos left: 3
+  expl: "IF thalach == (53.25..+inf) AND oldpeak == (0.85..1.75] AND thal == 0 THEN target == 0"
+  # hypos left: 3
+  expl: "IF thalach == (53.25..+inf) AND slope == 2 AND thal == 0 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND thalach == (53.25..+inf) AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND thalach == (53.25..+inf) AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND chol == (114.75..+inf) AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND restecg == 2 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND chol == (114.75..+inf) AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND thalach == (53.25..+inf) AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND restecg == 2 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND oldpeak == (0.85..1.75] AND slope == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND chol == (114.75..+inf) AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 0 AND trestbps == (23.25..+inf) AND chol == (76.5..114.75] AND fbs == 1 AND restecg == 3 AND thalach == (-inf..17.75] AND exang == 2 AND oldpeak == (0.85..1.75] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF chest_pain == 0 AND trestbps == (23.25..+inf) THEN target == 0"
+  # hypos left: 2
+  expl: "IF trestbps == (23.25..+inf) AND slope == 2 THEN target == 0"
+  # hypos left: 2
+  expl: "IF trestbps == (23.25..+inf) AND exang == 2 THEN target == 0"
+  # hypos left: 2
+  expl: "IF trestbps == (23.25..+inf) AND chol == (76.5..114.75] AND restecg == 3 THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND chol == (76.5..114.75] AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND chol == (76.5..114.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND restecg == 3 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND thalach == (-inf..17.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND thalach == (-inf..17.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF restecg == 3 AND thalach == (-inf..17.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND oldpeak == (0.85..1.75] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND chol == (76.5..114.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND thalach == (-inf..17.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND exang == 2 AND oldpeak == (0.85..1.75] AND thal == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chol == (76.5..114.75] AND exang == 2 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND chol == (76.5..114.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND exang == 2 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND restecg == 3 AND exang == 2 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF restecg == 3 AND exang == 2 AND oldpeak == (0.85..1.75] AND thal == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF restecg == 3 AND oldpeak == (0.85..1.75] AND slope == 2 AND thal == 0 THEN target == 0"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 0 AND trestbps == (23.25..+inf) AND chol == (76.5..114.75] AND fbs == 1 AND restecg == 3 AND thalach == (35.5..53.25] AND exang == 2 AND oldpeak == (2.88..+inf) AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF thalach == (35.5..53.25] AND oldpeak == (2.88..+inf) THEN target == 0"
+  # hypos left: 2
+  expl: "IF trestbps == (23.25..+inf) AND exang == 2 THEN target == 0"
+  # hypos left: 2
+  expl: "IF chest_pain == 0 AND trestbps == (23.25..+inf) THEN target == 0"
+  # hypos left: 2
+  expl: "IF trestbps == (23.25..+inf) AND slope == 2 THEN target == 0"
+  # hypos left: 2
+  expl: "IF trestbps == (23.25..+inf) AND oldpeak == (2.88..+inf) THEN target == 0"
+  # hypos left: 2
+  expl: "IF trestbps == (23.25..+inf) AND chol == (76.5..114.75] AND restecg == 3 THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND restecg == 3 AND thalach == (35.5..53.25] THEN target == 0"
+  # hypos left: 3
+  expl: "IF restecg == 3 AND thalach == (35.5..53.25] AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND restecg == 3 AND thalach == (35.5..53.25] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND thalach == (35.5..53.25] AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND chest_pain == 0 AND thalach == (35.5..53.25] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND chol == (76.5..114.75] AND thalach == (35.5..53.25] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND thalach == (35.5..53.25] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND thalach == (35.5..53.25] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND thalach == (35.5..53.25] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF restecg == 3 AND thalach == (35.5..53.25] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND thalach == (35.5..53.25] AND exang == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chol == (76.5..114.75] AND thalach == (35.5..53.25] AND exang == 2 THEN target == 0"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 0 AND trestbps == (7.75..15.5] AND chol == (-inf..38.25] AND fbs == 1 AND restecg == 2 AND thalach == (35.5..53.25] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF chest_pain == 0 AND chol == (-inf..38.25] AND thalach == (35.5..53.25] THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND chest_pain == 0 AND thalach == (35.5..53.25] THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND chest_pain == 0 AND trestbps == (7.75..15.5] AND chol == (-inf..38.25] AND thal == 0 THEN target == 0"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chest_pain == 0 AND trestbps == (7.75..15.5] AND chol == (-inf..38.25] AND thal == 0 THEN target == 0"
+  # hypos left: 5
+  expl: "IF chest_pain == 0 AND trestbps == (7.75..15.5] AND chol == (-inf..38.25] AND restecg == 2 AND thal == 0 THEN target == 0"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 0 AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND fbs == 1 AND restecg == 2 AND thalach == (-inf..17.75] AND exang == 1 AND oldpeak == (1.75..2.88] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF thalach == (-inf..17.75] AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 2
+  expl: "IF chest_pain == 0 AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 2
+  expl: "IF thalach == (-inf..17.75] AND exang == 1 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND exang == 1 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (38.25..76.5] AND exang == 1 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (38.25..76.5] AND oldpeak == (1.75..2.88] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (38.25..76.5] AND exang == 1 AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND chol == (38.25..76.5] AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND oldpeak == (1.75..2.88] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND exang == 1 AND slope == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND thalach == (-inf..17.75] AND slope == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chest_pain == 0 AND chol == (38.25..76.5] AND exang == 1 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chest_pain == 0 AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] THEN target == 0"
+  # hypos left: 4
+  expl: "IF chest_pain == 0 AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND slope == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND slope == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF chest_pain == 0 AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND restecg == 2 AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chest_pain == 0 AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 5
+  expl: "IF chest_pain == 0 AND chol == (38.25..76.5] AND restecg == 2 AND thalach == (-inf..17.75] AND exang == 1 THEN target == 0"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chest_pain == 0 AND chol == (38.25..76.5] AND thalach == (-inf..17.75] AND exang == 1 THEN target == 0"
+  # hypos left: 5
+  expl: "IF chest_pain == 0 AND restecg == 2 AND thalach == (-inf..17.75] AND exang == 1 AND thal == 0 THEN target == 0"
+  # hypos left: 5
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 0 AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND fbs == 1 AND restecg == 2 AND thalach == (-inf..17.75] AND exang == 2 AND oldpeak == (1.75..2.88] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF chest_pain == 0 AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 2
+  expl: "IF thalach == (-inf..17.75] AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 2
+  expl: "IF sex == 1 AND chol == (38.25..76.5] AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND oldpeak == (1.75..2.88] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND exang == 2 AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (38.25..76.5] AND oldpeak == (1.75..2.88] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF exang == 2 AND oldpeak == (1.75..2.88] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND slope == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chest_pain == 0 AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND slope == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND thalach == (-inf..17.75] AND slope == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND thalach == (-inf..17.75] AND exang == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF chest_pain == 0 AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND exang == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND trestbps == (7.75..15.5] AND restecg == 2 AND slope == 2 THEN target == 0"
+  # hypos left: 5
+  expl: "IF sex == 1 AND trestbps == (7.75..15.5] AND restecg == 2 AND thalach == (-inf..17.75] AND slope == 2 THEN target == 0"
+  # hypos left: 5
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND exang == 2 THEN target == 0"
+  # hypos left: 5
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND trestbps == (7.75..15.5] AND restecg == 2 AND exang == 2 THEN target == 0"
+  # hypos left: 5
+  expl: "IF sex == 1 AND trestbps == (7.75..15.5] AND restecg == 2 AND thalach == (-inf..17.75] AND exang == 2 THEN target == 0"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chest_pain == 0 AND trestbps == (7.75..15.5] AND restecg == 2 AND exang == 2 THEN target == 0"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chest_pain == 0 AND trestbps == (7.75..15.5] AND restecg == 2 AND slope == 2 THEN target == 0"
+  # hypos left: 5
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 0 AND trestbps == (7.75..15.5] AND chol == (76.5..114.75] AND fbs == 0 AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 1 AND oldpeak == (0.85..1.75] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF chest_pain == 0 AND fbs == 0 THEN target == 0"
+  # hypos left: 2
+  expl: "IF fbs == 0 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 2
+  expl: "IF fbs == 0 AND slope == 2 THEN target == 0"
+  # hypos left: 2
+  expl: "IF chest_pain == 0 AND chol == (76.5..114.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND exang == 1 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND exang == 1 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND exang == 1 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND thalach == (17.75..35.5] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND oldpeak == (0.85..1.75] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND restecg == 2 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND chol == (76.5..114.75] AND fbs == 0 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND chol == (76.5..114.75] AND fbs == 0 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND trestbps == (7.75..15.5] AND fbs == 0 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND fbs == 0 AND restecg == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND fbs == 0 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND fbs == 0 AND thalach == (17.75..35.5] THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND trestbps == (7.75..15.5] AND fbs == 0 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND restecg == 2 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND trestbps == (7.75..15.5] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND trestbps == (7.75..15.5] AND chol == (76.5..114.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 0 AND trestbps == (7.75..15.5] AND chol == (76.5..114.75] AND fbs == 1 AND restecg == 2 AND thalach == (-inf..17.75] AND exang == 1 AND oldpeak == (1.75..2.88] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF chol == (76.5..114.75] AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 2
+  expl: "IF chest_pain == 0 AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 2
+  expl: "IF thalach == (-inf..17.75] AND oldpeak == (1.75..2.88] THEN target == 0"
+  # hypos left: 2
+  expl: "IF sex == 1 AND oldpeak == (1.75..2.88] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND restecg == 2 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND exang == 1 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND exang == 1 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF thalach == (-inf..17.75] AND exang == 1 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND chol == (76.5..114.75] AND restecg == 2 AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND exang == 1 AND slope == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF sex == 1 AND trestbps == (7.75..15.5] AND restecg == 2 AND thalach == (-inf..17.75] AND slope == 2 THEN target == 0"
+  # hypos left: 5
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND trestbps == (7.75..15.5] AND restecg == 2 AND slope == 2 THEN target == 0"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chest_pain == 0 AND trestbps == (7.75..15.5] AND restecg == 2 AND slope == 2 THEN target == 0"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chest_pain == 0 AND thalach == (-inf..17.75] AND exang == 1 AND thal == 0 THEN target == 0"
+  # hypos left: 5
+  expl: "IF chest_pain == 0 AND restecg == 2 AND thalach == (-inf..17.75] AND exang == 1 AND thal == 0 THEN target == 0"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chest_pain == 0 AND chol == (76.5..114.75] AND thalach == (-inf..17.75] AND exang == 1 THEN target == 0"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chest_pain == 0 AND trestbps == (7.75..15.5] AND restecg == 2 AND thalach == (-inf..17.75] AND thal == 0 THEN target == 0"
+  # hypos left: 6
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 1 AND trestbps == (15.5..23.25] AND chol == (-inf..38.25] AND fbs == 1 AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 2 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF age == (46.5..55.75] AND chest_pain == 1 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND restecg == 2 AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND chol == (-inf..38.25] AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND chol == (-inf..38.25] AND restecg == 2 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chol == (-inf..38.25] AND thalach == (17.75..35.5] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chol == (-inf..38.25] AND thalach == (17.75..35.5] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 1 AND thalach == (17.75..35.5] AND exang == 2 AND slope == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF thalach == (17.75..35.5] AND exang == 2 AND slope == 0 AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF thalach == (17.75..35.5] AND exang == 2 AND oldpeak == (-inf..0.85] AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 1 AND thalach == (17.75..35.5] AND exang == 2 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chol == (-inf..38.25] AND exang == 2 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  expl: "IF trestbps == (15.5..23.25] AND chol == (-inf..38.25] AND exang == 2 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND trestbps == (15.5..23.25] AND chol == (-inf..38.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND trestbps == (15.5..23.25] AND chol == (-inf..38.25] AND slope == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chol == (-inf..38.25] AND exang == 2 AND slope == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF trestbps == (15.5..23.25] AND chol == (-inf..38.25] AND exang == 2 AND slope == 0 THEN target == 1"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 1 AND trestbps == (23.25..+inf) AND chol == (76.5..114.75] AND fbs == 2 AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 2 AND oldpeak == (1.75..2.88] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF age == (46.5..55.75] AND chest_pain == 1 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND fbs == 2 THEN target == 1"
+  # hypos left: 2
+  expl: "IF trestbps == (23.25..+inf) AND chol == (76.5..114.75] AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND fbs == 2 AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (23.25..+inf) AND chol == (76.5..114.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND chol == (76.5..114.75] AND oldpeak == (1.75..2.88] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND restecg == 2 AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND thalach == (17.75..35.5] AND oldpeak == (1.75..2.88] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND restecg == 2 AND oldpeak == (1.75..2.88] THEN target == 1"
+  # hypos left: 3
+  expl: "IF fbs == 2 AND thalach == (17.75..35.5] AND oldpeak == (1.75..2.88] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 1 AND fbs == 2 AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF fbs == 2 AND restecg == 2 AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND fbs == 2 AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND trestbps == (23.25..+inf) AND fbs == 2 THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (23.25..+inf) AND fbs == 2 AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 1 AND chest_pain == 1 AND trestbps == (23.25..+inf) THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (23.25..+inf) AND thal == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (23.25..+inf) AND oldpeak == (1.75..2.88] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND trestbps == (23.25..+inf) AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND trestbps == (23.25..+inf) AND chol == (76.5..114.75] AND oldpeak == (1.75..2.88] THEN target == 1"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 1 AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND fbs == 1 AND restecg == 2 AND thalach == (35.5..53.25] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF chest_pain == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND slope == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF age == (46.5..55.75] AND chest_pain == 1 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND chol == (38.25..76.5] THEN target == 1"
+  # hypos left: 2
+  expl: "IF trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND thalach == (35.5..53.25] AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 1 AND chol == (38.25..76.5] AND thalach == (35.5..53.25] AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 1 AND chol == (38.25..76.5] AND thalach == (35.5..53.25] AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 1 AND chol == (38.25..76.5] AND thalach == (35.5..53.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  expl: "IF chol == (38.25..76.5] AND fbs == 1 AND thalach == (35.5..53.25] AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND thalach == (35.5..53.25] AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF chol == (38.25..76.5] AND fbs == 1 AND thalach == (35.5..53.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  expl: "IF trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND thalach == (35.5..53.25] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  expl: "IF chol == (38.25..76.5] AND fbs == 1 AND thalach == (35.5..53.25] AND slope == 0 AND thal == 0 THEN target == 1"
+  # hypos left: 5
+  expl: "IF age == (46.5..55.75] AND chol == (38.25..76.5] AND fbs == 1 AND thalach == (35.5..53.25] AND thal == 0 THEN target == 1"
+  # hypos left: 5
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 2 AND trestbps == (15.5..23.25] AND chol == (-inf..38.25] AND fbs == 1 AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 2 AND oldpeak == (0.85..1.75] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF age == (46.5..55.75] AND chest_pain == 2 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND trestbps == (15.5..23.25] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND trestbps == (15.5..23.25] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND trestbps == (15.5..23.25] AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND chol == (-inf..38.25] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND chol == (-inf..38.25] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (15.5..23.25] AND chol == (-inf..38.25] AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND chol == (-inf..38.25] AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (46.5..55.75] AND chol == (-inf..38.25] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND chol == (-inf..38.25] AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND chol == (-inf..38.25] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND chol == (-inf..38.25] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (-inf..38.25] AND thalach == (17.75..35.5] AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND trestbps == (15.5..23.25] AND thalach == (17.75..35.5] THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 1 AND trestbps == (15.5..23.25] AND thalach == (17.75..35.5] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF sex == 1 AND trestbps == (15.5..23.25] AND exang == 2 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF sex == 1 AND trestbps == (15.5..23.25] AND oldpeak == (0.85..1.75] AND slope == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND trestbps == (15.5..23.25] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF sex == 1 AND trestbps == (15.5..23.25] AND thalach == (17.75..35.5] AND slope == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND thalach == (17.75..35.5] AND slope == 2 THEN target == 0"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 2 AND trestbps == (15.5..23.25] AND chol == (114.75..+inf) AND fbs == 1 AND restecg == 2 AND thalach == (-inf..17.75] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 2 AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chest_pain == 2 AND chol == (114.75..+inf) AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND trestbps == (15.5..23.25] AND chol == (114.75..+inf) AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chest_pain == 2 AND chol == (114.75..+inf) AND oldpeak == (-inf..0.85] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chest_pain == 2 AND chol == (114.75..+inf) AND slope == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 2 AND chol == (114.75..+inf) THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chest_pain == 2 AND trestbps == (15.5..23.25] AND chol == (114.75..+inf) THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND chest_pain == 2 AND trestbps == (15.5..23.25] AND thalach == (-inf..17.75] AND slope == 0 THEN target == 0"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 2 AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND fbs == 1 AND restecg == 2 AND thalach == (17.75..35.5] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 1"
+  expl: "IF chest_pain == 2 AND chol == (38.25..76.5] AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND trestbps == (7.75..15.5] AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND trestbps == (7.75..15.5] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 1 AND chest_pain == 2 AND trestbps == (7.75..15.5] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  expl: "IF chest_pain == 2 AND trestbps == (7.75..15.5] AND restecg == 2 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  expl: "IF chest_pain == 2 AND trestbps == (7.75..15.5] AND oldpeak == (-inf..0.85] AND slope == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF chest_pain == 2 AND chol == (38.25..76.5] AND fbs == 1 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 4
+  expl: "IF chest_pain == 2 AND chol == (38.25..76.5] AND fbs == 1 AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF chest_pain == 2 AND chol == (38.25..76.5] AND fbs == 1 AND exang == 1 THEN target == 1"
+  # hypos left: 4
+  expl: "IF chest_pain == 2 AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF chest_pain == 2 AND trestbps == (7.75..15.5] AND slope == 0 AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF chest_pain == 2 AND trestbps == (7.75..15.5] AND restecg == 2 AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 1 AND chest_pain == 2 AND trestbps == (7.75..15.5] AND thal == 0 THEN target == 1"
+  # hypos left: 4
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 2 AND chol == (38.25..76.5] AND thal == 0 THEN target == 1"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chest_pain == 2 AND chol == (38.25..76.5] AND restecg == 2 AND thal == 0 THEN target == 1"
+  # hypos left: 5
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 2 AND chol == (38.25..76.5] AND exang == 1 THEN target == 1"
+  # hypos left: 5
+  expl: "IF age == (46.5..55.75] AND sex == 1 AND chest_pain == 2 AND chol == (38.25..76.5] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chest_pain == 2 AND chol == (38.25..76.5] AND restecg == 2 AND exang == 1 THEN target == 1"
+  # hypos left: 5
+  expl: "IF sex == 1 AND chest_pain == 2 AND chol == (38.25..76.5] AND restecg == 2 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF age == (55.75..+inf) AND sex == 0 AND chest_pain == 0 AND trestbps == (23.25..+inf) AND chol == (114.75..+inf) AND fbs == 1 AND restecg == 3 AND thalach == (17.75..35.5] AND exang == 2 AND oldpeak == (-inf..0.85] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF age == (55.75..+inf) AND sex == 0 THEN target == 0"
+  # hypos left: 2
+  expl: "IF chest_pain == 0 AND trestbps == (23.25..+inf) THEN target == 0"
+  # hypos left: 2
+  expl: "IF trestbps == (23.25..+inf) AND exang == 2 THEN target == 0"
+  # hypos left: 2
+  expl: "IF age == (55.75..+inf) AND slope == 2 THEN target == 0"
+  # hypos left: 2
+  expl: "IF trestbps == (23.25..+inf) AND slope == 2 THEN target == 0"
+  # hypos left: 2
+  expl: "IF age == (55.75..+inf) AND trestbps == (23.25..+inf) AND thalach == (17.75..35.5] THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND trestbps == (23.25..+inf) AND restecg == 3 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND trestbps == (23.25..+inf) AND chol == (114.75..+inf) THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND restecg == 3 AND thalach == (17.75..35.5] THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND chol == (114.75..+inf) AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND chol == (114.75..+inf) AND restecg == 3 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND chol == (114.75..+inf) AND restecg == 3 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (114.75..+inf) AND restecg == 3 AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (114.75..+inf) AND exang == 2 AND oldpeak == (-inf..0.85] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (114.75..+inf) AND thalach == (17.75..35.5] AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND exang == 2 AND oldpeak == (-inf..0.85] THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND restecg == 3 AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF restecg == 3 AND oldpeak == (-inf..0.85] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF thalach == (17.75..35.5] AND oldpeak == (-inf..0.85] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND restecg == 3 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  exp time: 0.01
+
+  inst: "IF age == (55.75..+inf) AND sex == 0 AND chest_pain == 0 AND trestbps == (7.75..15.5] AND chol == (76.5..114.75] AND fbs == 1 AND restecg == 3 AND thalach == (-inf..17.75] AND exang == 2 AND oldpeak == (0.85..1.75] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF age == (55.75..+inf) AND sex == 0 THEN target == 0"
+  # hypos left: 2
+  expl: "IF age == (55.75..+inf) AND slope == 2 THEN target == 0"
+  # hypos left: 2
+  expl: "IF age == (55.75..+inf) AND chest_pain == 0 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND restecg == 3 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND restecg == 3 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (7.75..15.5] AND restecg == 3 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 0 AND chol == (76.5..114.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND thalach == (-inf..17.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF restecg == 3 AND thalach == (-inf..17.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND thalach == (-inf..17.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND oldpeak == (0.85..1.75] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND restecg == 3 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chol == (76.5..114.75] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chol == (76.5..114.75] AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND restecg == 3 AND exang == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND restecg == 3 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND chol == (76.5..114.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF trestbps == (7.75..15.5] AND chol == (76.5..114.75] AND oldpeak == (0.85..1.75] AND thal == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF chol == (76.5..114.75] AND exang == 2 AND oldpeak == (0.85..1.75] AND thal == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF chest_pain == 0 AND restecg == 3 AND oldpeak == (0.85..1.75] AND thal == 0 THEN target == 0"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (55.75..+inf) AND sex == 0 AND chest_pain == 1 AND trestbps == (7.75..15.5] AND chol == (-inf..38.25] AND fbs == 1 AND restecg == 2 AND thalach == (-inf..17.75] AND exang == 1 AND oldpeak == (0.85..1.75] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF age == (55.75..+inf) AND slope == 2 THEN target == 0"
+  # hypos left: 2
+  expl: "IF age == (55.75..+inf) AND sex == 0 THEN target == 0"
+  # hypos left: 2
+  expl: "IF chest_pain == 1 AND thalach == (-inf..17.75] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chol == (-inf..38.25] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF thalach == (-inf..17.75] AND exang == 1 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF thalach == (-inf..17.75] AND exang == 1 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (-inf..38.25] AND thalach == (-inf..17.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND thalach == (-inf..17.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (-inf..38.25] AND thalach == (-inf..17.75] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND thalach == (-inf..17.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND chol == (-inf..38.25] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chol == (-inf..38.25] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND exang == 1 AND oldpeak == (0.85..1.75] AND slope == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (55.75..+inf) AND trestbps == (7.75..15.5] AND exang == 1 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (55.75..+inf) AND trestbps == (7.75..15.5] AND oldpeak == (0.85..1.75] AND thal == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (55.75..+inf) AND chest_pain == 1 AND trestbps == (7.75..15.5] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF sex == 0 AND chest_pain == 1 AND chol == (-inf..38.25] AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (55.75..+inf) AND sex == 0 AND chest_pain == 1 AND trestbps == (7.75..15.5] AND chol == (76.5..114.75] AND fbs == 1 AND restecg == 2 AND thalach == (35.5..53.25] AND exang == 1 AND oldpeak == (0.85..1.75] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF age == (55.75..+inf) AND sex == 0 THEN target == 0"
+  # hypos left: 2
+  expl: "IF age == (55.75..+inf) AND slope == 2 THEN target == 0"
+  # hypos left: 2
+  expl: "IF sex == 0 AND chol == (76.5..114.75] AND thalach == (35.5..53.25] THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND thalach == (35.5..53.25] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND exang == 1 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND thalach == (35.5..53.25] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF thalach == (35.5..53.25] AND exang == 1 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 1 AND chol == (76.5..114.75] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND restecg == 2 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF chol == (76.5..114.75] AND oldpeak == (0.85..1.75] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chol == (76.5..114.75] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND thalach == (35.5..53.25] AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chest_pain == 1 AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND exang == 1 AND oldpeak == (0.85..1.75] AND slope == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND chol == (76.5..114.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF trestbps == (7.75..15.5] AND chol == (76.5..114.75] AND oldpeak == (0.85..1.75] AND thal == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF trestbps == (7.75..15.5] AND chol == (76.5..114.75] AND exang == 1 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF chest_pain == 1 AND trestbps == (7.75..15.5] AND chol == (76.5..114.75] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF trestbps == (7.75..15.5] AND chol == (76.5..114.75] AND thalach == (35.5..53.25] AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF trestbps == (7.75..15.5] AND thalach == (35.5..53.25] AND exang == 1 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (55.75..+inf) AND sex == 0 AND chest_pain == 2 AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND fbs == 0 AND restecg == 3 AND thalach == (35.5..53.25] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 3 THEN target == 1"
+  expl: "IF age == (55.75..+inf) AND fbs == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chest_pain == 2 AND fbs == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF fbs == 0 AND thal == 3 THEN target == 1"
+  # hypos left: 2
+  expl: "IF sex == 0 AND fbs == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF fbs == 0 AND slope == 0 THEN target == 1"
+  # hypos left: 2
+  expl: "IF fbs == 0 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 2
+  expl: "IF fbs == 0 AND exang == 1 THEN target == 1"
+  # hypos left: 2
+  expl: "IF fbs == 0 AND restecg == 3 THEN target == 1"
+  # hypos left: 2
+  expl: "IF restecg == 3 AND thal == 3 THEN target == 1"
+  # hypos left: 2
+  expl: "IF age == (55.75..+inf) AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND chest_pain == 2 AND trestbps == (7.75..15.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND sex == 0 AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND sex == 0 AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND sex == 0 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND restecg == 3 AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND restecg == 3 AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND restecg == 3 AND thalach == (35.5..53.25] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 0 AND chol == (38.25..76.5] AND restecg == 3 THEN target == 1"
+  # hypos left: 3
+  exp time: 0.01
+
+  inst: "IF age == (55.75..+inf) AND sex == 0 AND chest_pain == 3 AND trestbps == (23.25..+inf) AND chol == (-inf..38.25] AND fbs == 1 AND restecg == 2 AND thalach == (-inf..17.75] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF chest_pain == 3 AND trestbps == (23.25..+inf) THEN target == 0"
+  # hypos left: 2
+  expl: "IF age == (55.75..+inf) AND sex == 0 THEN target == 0"
+  # hypos left: 2
+  expl: "IF age == (55.75..+inf) AND chest_pain == 3 THEN target == 0"
+  # hypos left: 2
+  expl: "IF chest_pain == 3 AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 2
+  expl: "IF sex == 0 AND trestbps == (23.25..+inf) AND chol == (-inf..38.25] THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND trestbps == (23.25..+inf) AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND trestbps == (23.25..+inf) AND chol == (-inf..38.25] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 3 AND chol == (-inf..38.25] AND restecg == 2 AND oldpeak == (-inf..0.85] THEN target == 0"
+  # hypos left: 4
+  expl: "IF chest_pain == 3 AND chol == (-inf..38.25] AND restecg == 2 AND slope == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF sex == 0 AND chest_pain == 3 AND chol == (-inf..38.25] AND restecg == 2 THEN target == 0"
+  # hypos left: 4
+  expl: "IF trestbps == (23.25..+inf) AND chol == (-inf..38.25] AND restecg == 2 AND thalach == (-inf..17.75] THEN target == 0"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (55.75..+inf) AND sex == 0 AND chest_pain == 3 AND trestbps == (7.75..15.5] AND chol == (114.75..+inf) AND fbs == 1 AND restecg == 2 AND thalach == (53.25..+inf) AND exang == 1 AND oldpeak == (0.85..1.75] AND slope == 2 AND ca == 1 AND thal == 0 THEN target == 0"
+  expl: "IF age == (55.75..+inf) AND chest_pain == 3 THEN target == 0"
+  # hypos left: 2
+  expl: "IF chest_pain == 3 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 2
+  expl: "IF chest_pain == 3 AND slope == 2 THEN target == 0"
+  # hypos left: 2
+  expl: "IF chest_pain == 3 AND chol == (114.75..+inf) THEN target == 0"
+  # hypos left: 2
+  expl: "IF age == (55.75..+inf) AND sex == 0 THEN target == 0"
+  # hypos left: 2
+  expl: "IF age == (55.75..+inf) AND thalach == (53.25..+inf) THEN target == 0"
+  # hypos left: 2
+  expl: "IF age == (55.75..+inf) AND slope == 2 THEN target == 0"
+  # hypos left: 2
+  expl: "IF age == (55.75..+inf) AND chol == (114.75..+inf) AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (7.75..15.5] AND thalach == (53.25..+inf) AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF thalach == (53.25..+inf) AND oldpeak == (0.85..1.75] AND thal == 0 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND thalach == (53.25..+inf) AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 3
+  expl: "IF chest_pain == 3 AND restecg == 2 AND thalach == (53.25..+inf) THEN target == 0"
+  # hypos left: 3
+  expl: "IF thalach == (53.25..+inf) AND slope == 2 AND thal == 0 THEN target == 0"
+  # hypos left: 3
+  expl: "IF sex == 0 AND thalach == (53.25..+inf) AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF trestbps == (7.75..15.5] AND thalach == (53.25..+inf) AND slope == 2 THEN target == 0"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND trestbps == (7.75..15.5] AND oldpeak == (0.85..1.75] AND thal == 0 THEN target == 0"
+  # hypos left: 4
+  expl: "IF age == (55.75..+inf) AND trestbps == (7.75..15.5] AND exang == 1 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF trestbps == (7.75..15.5] AND chol == (114.75..+inf) AND exang == 1 AND oldpeak == (0.85..1.75] THEN target == 0"
+  # hypos left: 4
+  expl: "IF trestbps == (7.75..15.5] AND chol == (114.75..+inf) AND restecg == 2 AND thalach == (53.25..+inf) THEN target == 0"
+  # hypos left: 4
+  expl: "IF sex == 0 AND trestbps == (7.75..15.5] AND chol == (114.75..+inf) AND thalach == (53.25..+inf) THEN target == 0"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (55.75..+inf) AND sex == 1 AND chest_pain == 2 AND trestbps == (7.75..15.5] AND chol == (114.75..+inf) AND fbs == 1 AND restecg == 2 AND thalach == (-inf..17.75] AND exang == 2 AND oldpeak == (0.85..1.75] AND slope == 2 AND ca == 1 AND thal == 2 THEN target == 1"
+  expl: "IF thal == 2 THEN target == 1"
+  # hypos left: 1
+  expl: "IF age == (55.75..+inf) AND chest_pain == 2 AND trestbps == (7.75..15.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND chest_pain == 2 AND chol == (114.75..+inf) THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND chest_pain == 2 AND fbs == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND chest_pain == 2 AND restecg == 2 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND chest_pain == 2 AND exang == 2 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND chol == (114.75..+inf) AND exang == 2 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND chest_pain == 2 AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND chol == (114.75..+inf) AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND trestbps == (7.75..15.5] AND chol == (114.75..+inf) THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND chest_pain == 2 AND slope == 2 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND chol == (114.75..+inf) AND slope == 2 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND restecg == 2 AND thalach == (-inf..17.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 1 AND chest_pain == 2 AND thalach == (-inf..17.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND chest_pain == 2 AND thalach == (-inf..17.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND chol == (114.75..+inf) AND thalach == (-inf..17.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND thalach == (-inf..17.75] AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND trestbps == (7.75..15.5] AND restecg == 2 AND oldpeak == (0.85..1.75] THEN target == 1"
+  # hypos left: 4
+  expl: "IF chest_pain == 2 AND trestbps == (7.75..15.5] AND restecg == 2 AND slope == 2 THEN target == 1"
+  # hypos left: 4
+  expl: "IF sex == 1 AND chest_pain == 2 AND trestbps == (7.75..15.5] AND slope == 2 THEN target == 1"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF age == (55.75..+inf) AND sex == 1 AND chest_pain == 2 AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] AND fbs == 1 AND restecg == 3 AND thalach == (17.75..35.5] AND exang == 1 AND oldpeak == (-inf..0.85] AND slope == 0 AND ca == 1 AND thal == 1 THEN target == 1"
+  expl: "IF chest_pain == 2 AND thal == 1 THEN target == 1"
+  # hypos left: 2
+  expl: "IF age == (55.75..+inf) AND thal == 1 THEN target == 1"
+  # hypos left: 2
+  expl: "IF chol == (38.25..76.5] AND thal == 1 THEN target == 1"
+  # hypos left: 2
+  expl: "IF restecg == 3 AND thal == 1 THEN target == 1"
+  # hypos left: 2
+  expl: "IF trestbps == (7.75..15.5] AND oldpeak == (-inf..0.85] AND thal == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (7.75..15.5] AND slope == 0 AND thal == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND trestbps == (7.75..15.5] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND chest_pain == 2 AND fbs == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND chest_pain == 2 AND trestbps == (7.75..15.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (7.75..15.5] AND exang == 1 AND thal == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF sex == 1 AND thalach == (17.75..35.5] AND thal == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF thalach == (17.75..35.5] AND oldpeak == (-inf..0.85] AND thal == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF thalach == (17.75..35.5] AND slope == 0 AND thal == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF trestbps == (7.75..15.5] AND thalach == (17.75..35.5] AND thal == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND thalach == (17.75..35.5] AND exang == 1 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND thalach == (17.75..35.5] AND oldpeak == (-inf..0.85] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND thalach == (17.75..35.5] AND slope == 0 THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND chol == (38.25..76.5] AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF age == (55.75..+inf) AND trestbps == (7.75..15.5] AND chol == (38.25..76.5] THEN target == 1"
+  # hypos left: 3
+  expl: "IF chest_pain == 2 AND chol == (38.25..76.5] AND thalach == (17.75..35.5] THEN target == 1"
+  # hypos left: 3
+  exp time: 0.01
+
+exptimes: [0.007021000000000055, 0.00856900000000027, 0.007810000000000317, 0.007855999999999863, 0.008075999999999972, 0.004176999999999875, 0.010721000000000203, 0.009906999999999888, 0.007537999999999823, 0.008569000000000049, 0.009907999999999806, 0.008376000000000605, 0.0066189999999997085, 0.008150000000000102, 0.0046159999999999535, 0.007074000000000247, 0.0031799999999999606, 0.008756999999999682, 0.010112999999999595, 0.010633000000000337, 0.009147000000000016, 0.00842099999999979, 0.008242999999999778, 0.007785999999999849, 0.008770999999999862, 0.009577999999999864, 0.009211999999999776, 0.009740000000000304, 0.00863099999999939, 0.00856699999999977, 0.008551999999999893, 0.004220999999999808, 0.0015730000000004907, 0.004469000000000278, 0.008462000000000636, 0.007131999999999472, 0.004970000000000141, 0.006429999999999936, 0.003222000000000058, 0.007526999999999617, 0.008007000000000097, 0.008145999999999987, 0.0067219999999990065, 0.006074999999999164, 0.007432000000000549, 0.005319000000000074, 0.008097999999999494, 0.004106000000000165, 0.004990999999999524, 0.010005999999999737, 0.007544999999999469, 0.006897000000000375, 0.008136999999999617, 0.01035499999999967, 0.005054000000000336, 0.007858999999999838, 0.008741999999999805, 0.009546000000000276]
+# of insts: 58
+tot # of expls: 1029
+min # of expls: 1
+avg # of expls: 17.74
+max # of expls: 20
+
+Min expl sz: 1
+min expl sz: 2.17
+avg expl sz: 3.24
+max expl sz: 3.95
+Max expl sz: 6
+
+tot exp time: 0.44
+min exp time: 0.00
+avg exp time: 0.01
+max exp time: 0.01

@@ -1,0 +1,976 @@
+c XDual: dual explanations for XGBoost models
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (-inf..12.69] AND Magnesium = (-inf..2.89] AND Aluminum = (1.28..1.44] AND Silicon = (73.12..+inf) AND Potassium = (0.48..0.57] AND Calcium = (8.99..9.75] AND Barium = (-inf..0.07] AND Iron = (0.19..0.25] THEN 1"
+  explanation: "IF Sodium = (-inf..12.69] AND Iron = (0.19..0.25] THEN 1"
+  # hypos left: 2
+  explanation: "IF Calcium = (8.99..9.75] AND Iron = (0.19..0.25] THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (-inf..2.89] AND Iron = (0.19..0.25] THEN 1"
+  # hypos left: 2
+  exp time: 0.05
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (-inf..12.69] AND Magnesium = (3.4..3.53] AND Aluminum = (1.63..+inf) AND Silicon = (73.12..+inf) AND Potassium = (0.57..0.66] AND Calcium = (-inf..8.1] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 1"
+  explanation: "IF Sodium = (-inf..12.69] AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.4..3.53] AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.63..+inf) AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 2
+  explanation: "IF Silicon = (73.12..+inf) AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 2
+  exp time: 0.06
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (-inf..12.69] AND Magnesium = (3.66..3.8] AND Aluminum = (1.13..1.28] AND Silicon = (72.89..73.12] AND Potassium = (0.57..0.66] AND Calcium = (8.64..8.99] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 0"
+  explanation: "IF Sodium = (-inf..12.69] AND Calcium = (8.64..8.99] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Magnesium = (3.66..3.8] AND Calcium = (8.64..8.99] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (1.13..1.28] AND Calcium = (8.64..8.99] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (-inf..12.69] AND Aluminum = (1.13..1.28] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (-inf..12.69] AND Magnesium = (3.66..3.8] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (-inf..12.69] AND Potassium = (0.57..0.66] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Silicon = (72.89..73.12] AND Calcium = (8.64..8.99] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 4
+  explanation: "IF Potassium = (0.57..0.66] AND Calcium = (8.64..8.99] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 4
+  explanation: "IF Refractive Index = (-inf..1.52] AND Sodium = (-inf..12.69] AND Silicon = (72.89..73.12] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 4
+  exp time: 0.08
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (12.69..12.93] AND Magnesium = (3.4..3.53] AND Aluminum = (0.82..1.13] AND Silicon = (72.89..73.12] AND Potassium = (0.57..0.66] AND Calcium = (8.64..8.99] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 0"
+  explanation: "IF Magnesium = (3.4..3.53] AND Aluminum = (0.82..1.13] THEN 0"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.4..3.53] AND Calcium = (8.64..8.99] THEN 0"
+  # hypos left: 2
+  explanation: "IF Sodium = (12.69..12.93] AND Magnesium = (3.4..3.53] AND Potassium = (0.57..0.66] THEN 0"
+  # hypos left: 3
+  explanation: "IF Magnesium = (3.4..3.53] AND Silicon = (72.89..73.12] AND Potassium = (0.57..0.66] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.69..12.93] AND Aluminum = (0.82..1.13] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.69..12.93] AND Aluminum = (0.82..1.13] AND Silicon = (72.89..73.12] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.69..12.93] AND Calcium = (8.64..8.99] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.69..12.93] AND Silicon = (72.89..73.12] AND Calcium = (8.64..8.99] THEN 0"
+  # hypos left: 3
+  exp time: 0.09
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (12.69..12.93] AND Magnesium = (3.4..3.53] AND Aluminum = (1.28..1.44] AND Silicon = (72.89..73.12] AND Potassium = (0.48..0.57] AND Calcium = (8.39..8.64] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 0"
+  explanation: "IF Silicon = (72.89..73.12] AND Calcium = (8.39..8.64] THEN 0"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.4..3.53] AND Potassium = (0.48..0.57] THEN 0"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.4..3.53] AND Calcium = (8.39..8.64] THEN 0"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.28..1.44] AND Calcium = (8.39..8.64] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.69..12.93] AND Aluminum = (1.28..1.44] AND Calcium = (8.39..8.64] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.69..12.93] AND Calcium = (8.39..8.64] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.69..12.93] AND Potassium = (0.48..0.57] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.69..12.93] AND Aluminum = (1.28..1.44] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.69..12.93] AND Aluminum = (1.28..1.44] AND Silicon = (72.89..73.12] THEN 0"
+  # hypos left: 3
+  explanation: "IF Magnesium = (3.4..3.53] AND Aluminum = (1.28..1.44] AND Silicon = (72.89..73.12] THEN 0"
+  # hypos left: 3
+  explanation: "IF Refractive Index = (-inf..1.52] AND Potassium = (0.48..0.57] AND Calcium = (8.39..8.64] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 4
+  exp time: 0.13
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (12.69..12.93] AND Magnesium = (3.4..3.53] AND Aluminum = (1.44..1.63] AND Silicon = (73.12..+inf) AND Potassium = (0.57..0.66] AND Calcium = (-inf..8.1] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 1"
+  explanation: "IF Sodium = (12.69..12.93] AND Aluminum = (1.44..1.63] THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.44..1.63] AND Silicon = (73.12..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Silicon = (73.12..+inf) AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.4..3.53] AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 2
+  explanation: "IF Sodium = (12.69..12.93] AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.44..1.63] AND Potassium = (0.57..0.66] AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 3
+  exp time: 0.12
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (12.69..12.93] AND Magnesium = (3.53..3.66] AND Aluminum = (1.28..1.44] AND Silicon = (72.89..73.12] AND Potassium = (0.57..0.66] AND Calcium = (8.39..8.64] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 0"
+  explanation: "IF Magnesium = (3.53..3.66] AND Aluminum = (1.28..1.44] THEN 0"
+  # hypos left: 2
+  explanation: "IF Silicon = (72.89..73.12] AND Calcium = (8.39..8.64] THEN 0"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.28..1.44] AND Potassium = (0.57..0.66] AND Calcium = (8.39..8.64] THEN 0"
+  # hypos left: 3
+  explanation: "IF Potassium = (0.57..0.66] AND Calcium = (8.39..8.64] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.69..12.93] AND Calcium = (8.39..8.64] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (1.28..1.44] AND Calcium = (8.39..8.64] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.69..12.93] AND Aluminum = (1.28..1.44] AND Calcium = (8.39..8.64] THEN 0"
+  # hypos left: 3
+  explanation: "IF Magnesium = (3.53..3.66] AND Calcium = (8.39..8.64] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.69..12.93] AND Aluminum = (1.28..1.44] AND Potassium = (0.57..0.66] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.69..12.93] AND Aluminum = (1.28..1.44] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.69..12.93] AND Aluminum = (1.28..1.44] AND Silicon = (72.89..73.12] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (1.28..1.44] AND Silicon = (72.89..73.12] AND Potassium = (0.57..0.66] AND Barium = (-inf..0.07] THEN 0"
+  # hypos left: 4
+  explanation: "IF Aluminum = (1.28..1.44] AND Silicon = (72.89..73.12] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 4
+  exp time: 0.13
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (12.93..13.22] AND Magnesium = (-inf..2.89] AND Aluminum = (1.28..1.44] AND Silicon = (72.89..73.12] AND Potassium = (0.48..0.57] AND Calcium = (8.99..9.75] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 0"
+  explanation: "IF Silicon = (72.89..73.12] AND Calcium = (8.99..9.75] THEN 0"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.28..1.44] AND Calcium = (8.99..9.75] THEN 0"
+  # hypos left: 2
+  explanation: "IF Sodium = (12.93..13.22] AND Magnesium = (-inf..2.89] THEN 0"
+  # hypos left: 2
+  explanation: "IF Sodium = (12.93..13.22] AND Calcium = (8.99..9.75] THEN 0"
+  # hypos left: 2
+  explanation: "IF Silicon = (72.89..73.12] AND Potassium = (0.48..0.57] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Magnesium = (-inf..2.89] AND Aluminum = (1.28..1.44] AND Silicon = (72.89..73.12] THEN 0"
+  # hypos left: 3
+  explanation: "IF Magnesium = (-inf..2.89] AND Silicon = (72.89..73.12] AND Potassium = (0.48..0.57] THEN 0"
+  # hypos left: 3
+  explanation: "IF Magnesium = (-inf..2.89] AND Potassium = (0.48..0.57] AND Calcium = (8.99..9.75] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (1.28..1.44] AND Silicon = (72.89..73.12] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 4
+  explanation: "IF Sodium = (12.93..13.22] AND Aluminum = (1.28..1.44] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 4
+  explanation: "IF Sodium = (12.93..13.22] AND Aluminum = (1.28..1.44] AND Potassium = (0.48..0.57] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 4
+  explanation: "IF Refractive Index = (-inf..1.52] AND Sodium = (12.93..13.22] AND Potassium = (0.48..0.57] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 4
+  exp time: 0.13
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (12.93..13.22] AND Magnesium = (2.89..3.4] AND Aluminum = (1.13..1.28] AND Silicon = (72.35..72.66] AND Potassium = (0.57..0.66] AND Calcium = (8.99..9.75] AND Barium = (-inf..0.07] AND Iron = (0.09..0.14] THEN 1"
+  explanation: "IF Silicon = (72.35..72.66] AND Iron = (0.09..0.14] THEN 1"
+  # hypos left: 2
+  explanation: "IF Calcium = (8.99..9.75] AND Iron = (0.09..0.14] THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (2.89..3.4] AND Iron = (0.09..0.14] THEN 1"
+  # hypos left: 2
+  explanation: "IF Sodium = (12.93..13.22] AND Aluminum = (1.13..1.28] AND Iron = (0.09..0.14] THEN 1"
+  # hypos left: 3
+  explanation: "IF Aluminum = (1.13..1.28] AND Potassium = (0.57..0.66] AND Iron = (0.09..0.14] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.93..13.22] AND Potassium = (0.57..0.66] AND Iron = (0.09..0.14] THEN 1"
+  # hypos left: 3
+  exp time: 0.05
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (12.93..13.22] AND Magnesium = (2.89..3.4] AND Aluminum = (1.13..1.28] AND Silicon = (72.66..72.89] AND Potassium = (0.48..0.57] AND Calcium = (8.64..8.99] AND Barium = (-inf..0.07] AND Iron = (0.14..0.19] THEN 1"
+  explanation: "IF Sodium = (12.93..13.22] AND Magnesium = (2.89..3.4] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.93..13.22] AND Potassium = (0.48..0.57] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.93..13.22] AND Calcium = (8.64..8.99] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.93..13.22] AND Aluminum = (1.13..1.28] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.93..13.22] AND Silicon = (72.66..72.89] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 3
+  exp time: 0.05
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (12.93..13.22] AND Magnesium = (2.89..3.4] AND Aluminum = (1.28..1.44] AND Silicon = (72.66..72.89] AND Potassium = (0.57..0.66] AND Calcium = (8.39..8.64] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 1"
+  explanation: "IF Magnesium = (2.89..3.4] AND Silicon = (72.66..72.89] AND Calcium = (8.39..8.64] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.93..13.22] AND Magnesium = (2.89..3.4] AND Silicon = (72.66..72.89] THEN 1"
+  # hypos left: 3
+  explanation: "IF Magnesium = (2.89..3.4] AND Potassium = (0.57..0.66] AND Calcium = (8.39..8.64] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.93..13.22] AND Magnesium = (2.89..3.4] AND Potassium = (0.57..0.66] THEN 1"
+  # hypos left: 3
+  explanation: "IF Magnesium = (2.89..3.4] AND Aluminum = (1.28..1.44] AND Calcium = (8.39..8.64] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.93..13.22] AND Magnesium = (2.89..3.4] AND Aluminum = (1.28..1.44] THEN 1"
+  # hypos left: 3
+  explanation: "IF Magnesium = (2.89..3.4] AND Aluminum = (1.28..1.44] AND Silicon = (72.66..72.89] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.93..13.22] AND Aluminum = (1.28..1.44] AND Silicon = (72.66..72.89] THEN 1"
+  # hypos left: 3
+  explanation: "IF Aluminum = (1.28..1.44] AND Silicon = (72.66..72.89] AND Potassium = (0.57..0.66] AND Calcium = (8.39..8.64] THEN 1"
+  # hypos left: 4
+  exp time: 0.10
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (12.93..13.22] AND Magnesium = (3.4..3.53] AND Aluminum = (0.82..1.13] AND Silicon = (72.89..73.12] AND Potassium = (0.57..0.66] AND Calcium = (8.1..8.39] AND Barium = (-inf..0.07] AND Iron = (0.3..+inf) THEN 1"
+  explanation: "IF Sodium = (12.93..13.22] AND Iron = (0.3..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Refractive Index = (-inf..1.52] AND Iron = (0.3..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Calcium = (8.1..8.39] AND Iron = (0.3..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Potassium = (0.57..0.66] AND Iron = (0.3..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Silicon = (72.89..73.12] AND Iron = (0.3..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.4..3.53] AND Iron = (0.3..+inf) THEN 1"
+  # hypos left: 2
+  exp time: 0.05
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (12.93..13.22] AND Magnesium = (3.4..3.53] AND Aluminum = (1.44..1.63] AND Silicon = (72.66..72.89] AND Potassium = (0.66..+inf) AND Calcium = (-inf..8.1] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 1"
+  explanation: "IF Aluminum = (1.44..1.63] AND Silicon = (72.66..72.89] THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.44..1.63] AND Potassium = (0.66..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Potassium = (0.66..+inf) AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 2
+  explanation: "IF Silicon = (72.66..72.89] AND Potassium = (0.66..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.4..3.53] AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 2
+  explanation: "IF Sodium = (12.93..13.22] AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 2
+  explanation: "IF Sodium = (12.93..13.22] AND Potassium = (0.66..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Sodium = (12.93..13.22] AND Aluminum = (1.44..1.63] THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.4..3.53] AND Potassium = (0.66..+inf) AND Iron = (-inf..0.09] THEN 1"
+  # hypos left: 3
+  exp time: 0.10
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (12.93..13.22] AND Magnesium = (3.4..3.53] AND Aluminum = (1.44..1.63] AND Silicon = (73.12..+inf) AND Potassium = (-inf..0.11] AND Calcium = (8.1..8.39] AND Barium = (-inf..0.07] AND Iron = (0.14..0.19] THEN 1"
+  explanation: "IF Sodium = (12.93..13.22] AND Potassium = (-inf..0.11] THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.4..3.53] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 2
+  explanation: "IF Sodium = (12.93..13.22] AND Aluminum = (1.44..1.63] THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.44..1.63] AND Potassium = (-inf..0.11] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 3
+  explanation: "IF Silicon = (73.12..+inf) AND Potassium = (-inf..0.11] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 3
+  explanation: "IF Refractive Index = (-inf..1.52] AND Potassium = (-inf..0.11] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 3
+  explanation: "IF Potassium = (-inf..0.11] AND Calcium = (8.1..8.39] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.93..13.22] AND Magnesium = (3.4..3.53] AND Calcium = (8.1..8.39] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.93..13.22] AND Magnesium = (3.4..3.53] AND Silicon = (73.12..+inf) THEN 1"
+  # hypos left: 3
+  exp time: 0.10
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (12.93..13.22] AND Magnesium = (3.4..3.53] AND Aluminum = (1.63..+inf) AND Silicon = (72.35..72.66] AND Potassium = (0.57..0.66] AND Calcium = (8.1..8.39] AND Barium = (-inf..0.07] AND Iron = (0.14..0.19] THEN 1"
+  explanation: "IF Magnesium = (3.4..3.53] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 2
+  explanation: "IF Silicon = (72.35..72.66] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.63..+inf) AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.63..+inf) AND Calcium = (8.1..8.39] THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.63..+inf) AND Potassium = (0.57..0.66] THEN 1"
+  # hypos left: 2
+  explanation: "IF Sodium = (12.93..13.22] AND Aluminum = (1.63..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.63..+inf) AND Silicon = (72.35..72.66] THEN 1"
+  # hypos left: 2
+  explanation: "IF Potassium = (0.57..0.66] AND Calcium = (8.1..8.39] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.93..13.22] AND Calcium = (8.1..8.39] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 3
+  exp time: 0.09
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (12.93..13.22] AND Magnesium = (3.53..3.66] AND Aluminum = (1.44..1.63] AND Silicon = (72.66..72.89] AND Potassium = (0.57..0.66] AND Calcium = (-inf..8.1] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 1"
+  explanation: "IF Sodium = (12.93..13.22] AND Aluminum = (1.44..1.63] THEN 1"
+  # hypos left: 2
+  explanation: "IF Sodium = (12.93..13.22] AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.44..1.63] AND Silicon = (72.66..72.89] THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.44..1.63] AND Potassium = (0.57..0.66] AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 3
+  explanation: "IF Magnesium = (3.53..3.66] AND Aluminum = (1.44..1.63] AND Potassium = (0.57..0.66] THEN 1"
+  # hypos left: 3
+  explanation: "IF Magnesium = (3.53..3.66] AND Potassium = (0.57..0.66] AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 3
+  explanation: "IF Silicon = (72.66..72.89] AND Potassium = (0.57..0.66] AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.93..13.22] AND Magnesium = (3.53..3.66] AND Silicon = (72.66..72.89] AND Potassium = (0.57..0.66] THEN 1"
+  # hypos left: 4
+  exp time: 0.12
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (12.93..13.22] AND Magnesium = (3.53..3.66] AND Aluminum = (1.63..+inf) AND Silicon = (72.66..72.89] AND Potassium = (0.48..0.57] AND Calcium = (8.39..8.64] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 1"
+  explanation: "IF Sodium = (12.93..13.22] AND Aluminum = (1.63..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.53..3.66] AND Aluminum = (1.63..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.63..+inf) AND Potassium = (0.48..0.57] THEN 1"
+  # hypos left: 2
+  exp time: 0.05
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (12.93..13.22] AND Magnesium = (3.8..+inf) AND Aluminum = (1.13..1.28] AND Silicon = (72.35..72.66] AND Potassium = (0.57..0.66] AND Calcium = (8.39..8.64] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 1"
+  explanation: "IF Magnesium = (3.8..+inf) AND Aluminum = (1.13..1.28] THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.8..+inf) AND Potassium = (0.57..0.66] THEN 1"
+  # hypos left: 2
+  explanation: "IF Sodium = (12.93..13.22] AND Magnesium = (3.8..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.8..+inf) AND Calcium = (8.39..8.64] THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.8..+inf) AND Silicon = (72.35..72.66] THEN 1"
+  # hypos left: 2
+  explanation: "IF Refractive Index = (-inf..1.52] AND Magnesium = (3.8..+inf) AND Iron = (-inf..0.09] THEN 1"
+  # hypos left: 3
+  explanation: "IF Aluminum = (1.13..1.28] AND Silicon = (72.35..72.66] AND Potassium = (0.57..0.66] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (12.93..13.22] AND Aluminum = (1.13..1.28] AND Silicon = (72.35..72.66] THEN 1"
+  # hypos left: 3
+  explanation: "IF Aluminum = (1.13..1.28] AND Silicon = (72.35..72.66] AND Calcium = (8.39..8.64] THEN 1"
+  # hypos left: 3
+  exp time: 0.08
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (13.22..13.47] AND Magnesium = (3.4..3.53] AND Aluminum = (1.13..1.28] AND Silicon = (72.66..72.89] AND Potassium = (0.48..0.57] AND Calcium = (8.39..8.64] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 0"
+  explanation: "IF Magnesium = (3.4..3.53] AND Potassium = (0.48..0.57] THEN 0"
+  # hypos left: 2
+  explanation: "IF Sodium = (13.22..13.47] AND Calcium = (8.39..8.64] THEN 0"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.4..3.53] AND Calcium = (8.39..8.64] THEN 0"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.4..3.53] AND Aluminum = (1.13..1.28] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.22..13.47] AND Magnesium = (3.4..3.53] AND Aluminum = (1.13..1.28] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.22..13.47] AND Magnesium = (3.4..3.53] AND Silicon = (72.66..72.89] THEN 0"
+  # hypos left: 3
+  explanation: "IF Refractive Index = (-inf..1.52] AND Aluminum = (1.13..1.28] AND Calcium = (8.39..8.64] THEN 0"
+  # hypos left: 3
+  explanation: "IF Refractive Index = (-inf..1.52] AND Aluminum = (1.13..1.28] AND Silicon = (72.66..72.89] AND Potassium = (0.48..0.57] THEN 0"
+  # hypos left: 4
+  explanation: "IF Refractive Index = (-inf..1.52] AND Aluminum = (1.13..1.28] AND Potassium = (0.48..0.57] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 4
+  explanation: "IF Sodium = (13.22..13.47] AND Aluminum = (1.13..1.28] AND Potassium = (0.48..0.57] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 4
+  explanation: "IF Sodium = (13.22..13.47] AND Aluminum = (1.13..1.28] AND Silicon = (72.66..72.89] AND Potassium = (0.48..0.57] THEN 0"
+  # hypos left: 4
+  explanation: "IF Refractive Index = (-inf..1.52] AND Potassium = (0.48..0.57] AND Calcium = (8.39..8.64] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 4
+  explanation: "IF Refractive Index = (-inf..1.52] AND Silicon = (72.66..72.89] AND Calcium = (8.39..8.64] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 4
+  exp time: 0.13
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (13.22..13.47] AND Magnesium = (3.53..3.66] AND Aluminum = (1.13..1.28] AND Silicon = (72.89..73.12] AND Potassium = (0.57..0.66] AND Calcium = (8.1..8.39] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 0"
+  explanation: "IF Aluminum = (1.13..1.28] AND Silicon = (72.89..73.12] AND Calcium = (8.1..8.39] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.22..13.47] AND Silicon = (72.89..73.12] AND Potassium = (0.57..0.66] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.22..13.47] AND Aluminum = (1.13..1.28] AND Silicon = (72.89..73.12] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (1.13..1.28] AND Silicon = (72.89..73.12] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Magnesium = (3.53..3.66] AND Aluminum = (1.13..1.28] AND Silicon = (72.89..73.12] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.22..13.47] AND Magnesium = (3.53..3.66] AND Silicon = (72.89..73.12] THEN 0"
+  # hypos left: 3
+  explanation: "IF Magnesium = (3.53..3.66] AND Aluminum = (1.13..1.28] AND Potassium = (0.57..0.66] THEN 0"
+  # hypos left: 3
+  explanation: "IF Magnesium = (3.53..3.66] AND Aluminum = (1.13..1.28] AND Calcium = (8.1..8.39] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.22..13.47] AND Magnesium = (3.53..3.66] AND Potassium = (0.57..0.66] AND Calcium = (8.1..8.39] THEN 0"
+  # hypos left: 4
+  exp time: 0.11
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (13.22..13.47] AND Magnesium = (3.53..3.66] AND Aluminum = (1.44..1.63] AND Silicon = (72.35..72.66] AND Potassium = (0.57..0.66] AND Calcium = (-inf..8.1] AND Barium = (-inf..0.07] AND Iron = (0.25..0.3] THEN 1"
+  explanation: "IF Silicon = (72.35..72.66] AND Iron = (0.25..0.3] THEN 1"
+  # hypos left: 2
+  explanation: "IF Sodium = (13.22..13.47] AND Iron = (0.25..0.3] THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.53..3.66] AND Iron = (0.25..0.3] THEN 1"
+  # hypos left: 2
+  explanation: "IF Silicon = (72.35..72.66] AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 2
+  explanation: "IF Calcium = (-inf..8.1] AND Iron = (0.25..0.3] THEN 1"
+  # hypos left: 2
+  explanation: "IF Sodium = (13.22..13.47] AND Aluminum = (1.44..1.63] THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.44..1.63] AND Silicon = (72.35..72.66] THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.44..1.63] AND Iron = (0.25..0.3] THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.53..3.66] AND Aluminum = (1.44..1.63] AND Potassium = (0.57..0.66] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.22..13.47] AND Magnesium = (3.53..3.66] AND Potassium = (0.57..0.66] THEN 1"
+  # hypos left: 3
+  explanation: "IF Magnesium = (3.53..3.66] AND Potassium = (0.57..0.66] AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.22..13.47] AND Potassium = (0.57..0.66] AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.22..13.47] AND Silicon = (72.35..72.66] AND Potassium = (0.57..0.66] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.22..13.47] AND Magnesium = (3.53..3.66] AND Silicon = (72.35..72.66] THEN 1"
+  # hypos left: 3
+  explanation: "IF Aluminum = (1.44..1.63] AND Potassium = (0.57..0.66] AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 3
+  exp time: 0.14
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (13.22..13.47] AND Magnesium = (3.66..3.8] AND Aluminum = (1.28..1.44] AND Silicon = (72.35..72.66] AND Potassium = (0.57..0.66] AND Calcium = (8.39..8.64] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 0"
+  explanation: "IF Sodium = (13.22..13.47] AND Calcium = (8.39..8.64] THEN 0"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.66..3.8] AND Aluminum = (1.28..1.44] THEN 0"
+  # hypos left: 2
+  explanation: "IF Sodium = (13.22..13.47] AND Magnesium = (3.66..3.8] THEN 0"
+  # hypos left: 2
+  explanation: "IF Silicon = (72.35..72.66] AND Calcium = (8.39..8.64] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Potassium = (0.57..0.66] AND Calcium = (8.39..8.64] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Refractive Index = (-inf..1.52] AND Magnesium = (3.66..3.8] AND Calcium = (8.39..8.64] THEN 0"
+  # hypos left: 3
+  explanation: "IF Magnesium = (3.66..3.8] AND Potassium = (0.57..0.66] AND Calcium = (8.39..8.64] THEN 0"
+  # hypos left: 3
+  explanation: "IF Magnesium = (3.66..3.8] AND Silicon = (72.35..72.66] AND Calcium = (8.39..8.64] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (1.28..1.44] AND Calcium = (8.39..8.64] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (1.28..1.44] AND Potassium = (0.57..0.66] AND Calcium = (8.39..8.64] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (1.28..1.44] AND Silicon = (72.35..72.66] AND Calcium = (8.39..8.64] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (1.28..1.44] AND Silicon = (72.35..72.66] AND Potassium = (0.57..0.66] THEN 0"
+  # hypos left: 3
+  explanation: "IF Magnesium = (3.66..3.8] AND Silicon = (72.35..72.66] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  exp time: 0.12
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (13.22..13.47] AND Magnesium = (3.8..+inf) AND Aluminum = (1.13..1.28] AND Silicon = (72.66..72.89] AND Potassium = (0.48..0.57] AND Calcium = (8.1..8.39] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 1"
+  explanation: "IF Sodium = (13.22..13.47] AND Magnesium = (3.8..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.8..+inf) AND Aluminum = (1.13..1.28] THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.8..+inf) AND Silicon = (72.66..72.89] THEN 1"
+  # hypos left: 2
+  exp time: 0.05
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (13.47..13.8] AND Magnesium = (-inf..2.89] AND Aluminum = (-inf..0.82] AND Silicon = (73.12..+inf) AND Potassium = (-inf..0.11] AND Calcium = (9.75..+inf) AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 1"
+  explanation: "IF Magnesium = (-inf..2.89] AND Calcium = (9.75..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (-inf..2.89] AND Silicon = (73.12..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (-inf..2.89] AND Aluminum = (-inf..0.82] AND Potassium = (-inf..0.11] THEN 1"
+  # hypos left: 3
+  exp time: 0.07
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (13.47..13.8] AND Magnesium = (3.66..3.8] AND Aluminum = (1.63..+inf) AND Silicon = (71.95..72.35] AND Potassium = (0.57..0.66] AND Calcium = (-inf..8.1] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 1"
+  explanation: "IF Aluminum = (1.63..+inf) AND Silicon = (71.95..72.35] THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.63..+inf) AND Potassium = (0.57..0.66] THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.63..+inf) AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 2
+  explanation: "IF Sodium = (13.47..13.8] AND Aluminum = (1.63..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.66..3.8] AND Aluminum = (1.63..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Silicon = (71.95..72.35] AND Calcium = (-inf..8.1] THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.66..3.8] AND Silicon = (71.95..72.35] AND Potassium = (0.57..0.66] THEN 1"
+  # hypos left: 3
+  explanation: "IF Refractive Index = (-inf..1.52] AND Sodium = (13.47..13.8] AND Magnesium = (3.66..3.8] AND Silicon = (71.95..72.35] THEN 1"
+  # hypos left: 4
+  exp time: 0.10
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (-inf..1.52] AND Sodium = (13.8..+inf) AND Magnesium = (3.53..3.66] AND Aluminum = (1.28..1.44] AND Silicon = (72.66..72.89] AND Potassium = (0.23..0.48] AND Calcium = (-inf..8.1] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 0"
+  explanation: "IF Sodium = (13.8..+inf) AND Magnesium = (3.53..3.66] AND Potassium = (0.23..0.48] THEN 0"
+  # hypos left: 3
+  explanation: "IF Magnesium = (3.53..3.66] AND Aluminum = (1.28..1.44] AND Potassium = (0.23..0.48] THEN 0"
+  # hypos left: 3
+  exp time: 0.05
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (1.52..+inf) AND Sodium = (13.47..13.8] AND Magnesium = (-inf..2.89] AND Aluminum = (1.28..1.44] AND Silicon = (-inf..71.95] AND Potassium = (0.11..0.23] AND Calcium = (9.75..+inf) AND Barium = (-inf..0.07] AND Iron = (0.09..0.14] THEN 1"
+  explanation: "IF Magnesium = (-inf..2.89] AND Potassium = (0.11..0.23] THEN 1"
+  # hypos left: 2
+  explanation: "IF Potassium = (0.11..0.23] AND Iron = (0.09..0.14] THEN 1"
+  # hypos left: 2
+  explanation: "IF Refractive Index = (1.52..+inf) AND Magnesium = (-inf..2.89] THEN 1"
+  # hypos left: 2
+  explanation: "IF Refractive Index = (1.52..+inf) AND Aluminum = (1.28..1.44] THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (-inf..2.89] AND Silicon = (-inf..71.95] THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (-inf..2.89] AND Calcium = (9.75..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.28..1.44] AND Calcium = (9.75..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Calcium = (9.75..+inf) AND Iron = (0.09..0.14] THEN 1"
+  # hypos left: 2
+  explanation: "IF Sodium = (13.47..13.8] AND Iron = (0.09..0.14] THEN 1"
+  # hypos left: 2
+  explanation: "IF Silicon = (-inf..71.95] AND Iron = (0.09..0.14] THEN 1"
+  # hypos left: 2
+  explanation: "IF Refractive Index = (1.52..+inf) AND Iron = (0.09..0.14] THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (-inf..2.89] AND Iron = (0.09..0.14] THEN 1"
+  # hypos left: 2
+  explanation: "IF Silicon = (-inf..71.95] AND Potassium = (0.11..0.23] AND Calcium = (9.75..+inf) THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.47..13.8] AND Potassium = (0.11..0.23] AND Calcium = (9.75..+inf) THEN 1"
+  # hypos left: 3
+  explanation: "IF Aluminum = (1.28..1.44] AND Silicon = (-inf..71.95] AND Potassium = (0.11..0.23] AND Barium = (-inf..0.07] THEN 1"
+  # hypos left: 4
+  explanation: "IF Sodium = (13.47..13.8] AND Aluminum = (1.28..1.44] AND Silicon = (-inf..71.95] AND Potassium = (0.11..0.23] THEN 1"
+  # hypos left: 4
+  exp time: 0.11
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (1.52..+inf) AND Sodium = (13.47..13.8] AND Magnesium = (-inf..2.89] AND Aluminum = (1.28..1.44] AND Silicon = (71.95..72.35] AND Potassium = (0.48..0.57] AND Calcium = (9.75..+inf) AND Barium = (-inf..0.07] AND Iron = (0.14..0.19] THEN 1"
+  explanation: "IF Magnesium = (-inf..2.89] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.28..1.44] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 2
+  explanation: "IF Refractive Index = (1.52..+inf) AND Aluminum = (1.28..1.44] THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.28..1.44] AND Calcium = (9.75..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (-inf..2.89] AND Calcium = (9.75..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Refractive Index = (1.52..+inf) AND Magnesium = (-inf..2.89] THEN 1"
+  # hypos left: 2
+  explanation: "IF Refractive Index = (1.52..+inf) AND Potassium = (0.48..0.57] THEN 1"
+  # hypos left: 2
+  explanation: "IF Potassium = (0.48..0.57] AND Calcium = (9.75..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Sodium = (13.47..13.8] AND Silicon = (71.95..72.35] AND Calcium = (9.75..+inf) THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.47..13.8] AND Silicon = (71.95..72.35] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.47..13.8] AND Potassium = (0.48..0.57] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 3
+  explanation: "IF Silicon = (71.95..72.35] AND Potassium = (0.48..0.57] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 3
+  exp time: 0.09
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (1.52..+inf) AND Sodium = (13.47..13.8] AND Magnesium = (-inf..2.89] AND Aluminum = (1.63..+inf) AND Silicon = (71.95..72.35] AND Potassium = (0.48..0.57] AND Calcium = (8.99..9.75] AND Barium = (0.19..0.55] AND Iron = (0.14..0.19] THEN 1"
+  explanation: "IF Aluminum = (1.63..+inf) AND Silicon = (71.95..72.35] THEN 1"
+  # hypos left: 2
+  explanation: "IF Sodium = (13.47..13.8] AND Aluminum = (1.63..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (-inf..2.89] AND Aluminum = (1.63..+inf) THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.63..+inf) AND Barium = (0.19..0.55] THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.63..+inf) AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 2
+  explanation: "IF Refractive Index = (1.52..+inf) AND Magnesium = (-inf..2.89] THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (-inf..2.89] AND Barium = (0.19..0.55] THEN 1"
+  # hypos left: 2
+  explanation: "IF Calcium = (8.99..9.75] AND Barium = (0.19..0.55] THEN 1"
+  # hypos left: 2
+  explanation: "IF Magnesium = (-inf..2.89] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 2
+  explanation: "IF Refractive Index = (1.52..+inf) AND Potassium = (0.48..0.57] THEN 1"
+  # hypos left: 2
+  explanation: "IF Aluminum = (1.63..+inf) AND Potassium = (0.48..0.57] THEN 1"
+  # hypos left: 2
+  explanation: "IF Silicon = (71.95..72.35] AND Potassium = (0.48..0.57] AND Calcium = (8.99..9.75] THEN 1"
+  # hypos left: 3
+  explanation: "IF Potassium = (0.48..0.57] AND Calcium = (8.99..9.75] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 3
+  explanation: "IF Silicon = (71.95..72.35] AND Potassium = (0.48..0.57] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.47..13.8] AND Potassium = (0.48..0.57] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 3
+  explanation: "IF Potassium = (0.48..0.57] AND Barium = (0.19..0.55] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 3
+  explanation: "IF Silicon = (71.95..72.35] AND Potassium = (0.48..0.57] AND Barium = (0.19..0.55] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.47..13.8] AND Silicon = (71.95..72.35] AND Barium = (0.19..0.55] THEN 1"
+  # hypos left: 3
+  explanation: "IF Refractive Index = (1.52..+inf) AND Sodium = (13.47..13.8] AND Barium = (0.19..0.55] THEN 1"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.47..13.8] AND Barium = (0.19..0.55] AND Iron = (0.14..0.19] THEN 1"
+  # hypos left: 3
+  exp time: 0.14
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (1.52..+inf) AND Sodium = (13.47..13.8] AND Magnesium = (3.8..+inf) AND Aluminum = (0.82..1.13] AND Silicon = (-inf..71.95] AND Potassium = (-inf..0.11] AND Calcium = (8.64..8.99] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 0"
+  explanation: "IF Sodium = (13.47..13.8] AND Potassium = (-inf..0.11] THEN 0"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.8..+inf) AND Aluminum = (0.82..1.13] THEN 0"
+  # hypos left: 2
+  explanation: "IF Sodium = (13.47..13.8] AND Aluminum = (0.82..1.13] THEN 0"
+  # hypos left: 2
+  explanation: "IF Sodium = (13.47..13.8] AND Calcium = (8.64..8.99] THEN 0"
+  # hypos left: 2
+  explanation: "IF Refractive Index = (1.52..+inf) AND Sodium = (13.47..13.8] AND Magnesium = (3.8..+inf) THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.47..13.8] AND Magnesium = (3.8..+inf) AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Refractive Index = (1.52..+inf) AND Sodium = (13.47..13.8] AND Silicon = (-inf..71.95] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.47..13.8] AND Silicon = (-inf..71.95] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (0.82..1.13] AND Silicon = (-inf..71.95] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (0.82..1.13] AND Silicon = (-inf..71.95] AND Potassium = (-inf..0.11] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (0.82..1.13] AND Silicon = (-inf..71.95] AND Calcium = (8.64..8.99] THEN 0"
+  # hypos left: 3
+  explanation: "IF Refractive Index = (1.52..+inf) AND Aluminum = (0.82..1.13] AND Calcium = (8.64..8.99] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (0.82..1.13] AND Calcium = (8.64..8.99] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (0.82..1.13] AND Potassium = (-inf..0.11] AND Calcium = (8.64..8.99] THEN 0"
+  # hypos left: 3
+  exp time: 0.11
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (1.52..+inf) AND Sodium = (13.47..13.8] AND Magnesium = (3.8..+inf) AND Aluminum = (0.82..1.13] AND Silicon = (-inf..71.95] AND Potassium = (0.11..0.23] AND Calcium = (8.99..9.75] AND Barium = (-inf..0.07] AND Iron = (0.09..0.14] THEN 0"
+  explanation: "IF Refractive Index = (1.52..+inf) AND Magnesium = (3.8..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF Sodium = (13.47..13.8] AND Aluminum = (0.82..1.13] THEN 0"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.8..+inf) AND Aluminum = (0.82..1.13] THEN 0"
+  # hypos left: 2
+  explanation: "IF Sodium = (13.47..13.8] AND Potassium = (0.11..0.23] THEN 0"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.8..+inf) AND Potassium = (0.11..0.23] THEN 0"
+  # hypos left: 2
+  explanation: "IF Refractive Index = (1.52..+inf) AND Calcium = (8.99..9.75] THEN 0"
+  # hypos left: 2
+  explanation: "IF Potassium = (0.11..0.23] AND Calcium = (8.99..9.75] THEN 0"
+  # hypos left: 2
+  explanation: "IF Sodium = (13.47..13.8] AND Calcium = (8.99..9.75] THEN 0"
+  # hypos left: 2
+  explanation: "IF Calcium = (8.99..9.75] AND Iron = (0.09..0.14] THEN 0"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.8..+inf) AND Calcium = (8.99..9.75] THEN 0"
+  # hypos left: 2
+  explanation: "IF Refractive Index = (1.52..+inf) AND Sodium = (13.47..13.8] AND Silicon = (-inf..71.95] THEN 0"
+  # hypos left: 3
+  explanation: "IF Refractive Index = (1.52..+inf) AND Sodium = (13.47..13.8] AND Iron = (0.09..0.14] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.47..13.8] AND Silicon = (-inf..71.95] AND Iron = (0.09..0.14] THEN 0"
+  # hypos left: 3
+  explanation: "IF Refractive Index = (1.52..+inf) AND Potassium = (0.11..0.23] AND Iron = (0.09..0.14] THEN 0"
+  # hypos left: 3
+  explanation: "IF Magnesium = (3.8..+inf) AND Silicon = (-inf..71.95] AND Iron = (0.09..0.14] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (0.82..1.13] AND Silicon = (-inf..71.95] AND Iron = (0.09..0.14] THEN 0"
+  # hypos left: 3
+  explanation: "IF Refractive Index = (1.52..+inf) AND Aluminum = (0.82..1.13] AND Iron = (0.09..0.14] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (0.82..1.13] AND Potassium = (0.11..0.23] AND Iron = (0.09..0.14] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (0.82..1.13] AND Silicon = (-inf..71.95] AND Calcium = (8.99..9.75] THEN 0"
+  # hypos left: 3
+  exp time: 0.12
+
+Sample of length 9  :  [[0. 3. 3. 2. 3. 3. 1. 0. 1.]]
+Encoded sample of length 50  :  [[1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1. 0. 0.
+  0. 0.]]
+Back to sample [array([0., 3., 3., 2., 3., 3., 1., 0., 1.])]
+Readable sample ['(-inf..1.52]' '(13.22..13.47]' '(3.53..3.66]' '(1.13..1.28]'
+ '(72.66..72.89]' '(0.48..0.57]' '(8.1..8.39]' '(-inf..0.07]'
+ '(0.09..0.14]']
+  explaining:  "IF Refractive Index = (1.52..+inf) AND Sodium = (13.8..+inf) AND Magnesium = (3.8..+inf) AND Aluminum = (0.82..1.13] AND Silicon = (-inf..71.95] AND Potassium = (0.11..0.23] AND Calcium = (8.99..9.75] AND Barium = (-inf..0.07] AND Iron = (-inf..0.09] THEN 0"
+  explanation: "IF Magnesium = (3.8..+inf) AND Aluminum = (0.82..1.13] THEN 0"
+  # hypos left: 2
+  explanation: "IF Refractive Index = (1.52..+inf) AND Calcium = (8.99..9.75] THEN 0"
+  # hypos left: 2
+  explanation: "IF Sodium = (13.8..+inf) AND Calcium = (8.99..9.75] THEN 0"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.8..+inf) AND Calcium = (8.99..9.75] THEN 0"
+  # hypos left: 2
+  explanation: "IF Refractive Index = (1.52..+inf) AND Magnesium = (3.8..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF Sodium = (13.8..+inf) AND Magnesium = (3.8..+inf) THEN 0"
+  # hypos left: 2
+  explanation: "IF Magnesium = (3.8..+inf) AND Potassium = (0.11..0.23] THEN 0"
+  # hypos left: 2
+  explanation: "IF Potassium = (0.11..0.23] AND Calcium = (8.99..9.75] THEN 0"
+  # hypos left: 2
+  explanation: "IF Aluminum = (0.82..1.13] AND Potassium = (0.11..0.23] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (0.82..1.13] AND Silicon = (-inf..71.95] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (0.82..1.13] AND Calcium = (8.99..9.75] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Aluminum = (0.82..1.13] AND Silicon = (-inf..71.95] AND Calcium = (8.99..9.75] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.8..+inf) AND Aluminum = (0.82..1.13] AND Silicon = (-inf..71.95] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.8..+inf) AND Aluminum = (0.82..1.13] AND Potassium = (0.11..0.23] THEN 0"
+  # hypos left: 3
+  explanation: "IF Refractive Index = (1.52..+inf) AND Sodium = (13.8..+inf) AND Potassium = (0.11..0.23] THEN 0"
+  # hypos left: 3
+  explanation: "IF Sodium = (13.8..+inf) AND Potassium = (0.11..0.23] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Silicon = (-inf..71.95] AND Potassium = (0.11..0.23] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  explanation: "IF Magnesium = (3.8..+inf) AND Silicon = (-inf..71.95] AND Iron = (-inf..0.09] THEN 0"
+  # hypos left: 3
+  exp time: 0.11
+
+
+exptimes: [0.049000000000000044, 0.060580999999999996, 0.08303199999999977, 0.08755900000000016, 0.12758100000000017, 0.11538700000000057, 0.12613999999999992, 0.12643199999999988, 0.053821999999999814, 0.04552999999999985, 0.09707800000000066, 0.046177000000000135, 0.10373499999999947, 0.09772900000000018, 0.08832600000000035, 0.12443099999999951, 0.0511020000000002, 0.08144699999999983, 0.12521700000000013, 0.10801600000000011, 0.137702, 0.11718600000000023, 0.05354799999999926, 0.07034800000000008, 0.09546800000000033, 0.04610500000000073, 0.10858900000000027, 0.09425199999999911, 0.14379500000000078, 0.11054100000000133, 0.12394799999999861, 0.1103449999999988]
+all samples: 32
+total exp time: 3.01
+max exp time per instance: 0.14
+min exp time per instance: 0.05
+avg exp time per instance: 0.09
+total oracle calls: 1613
+max oracle calls per instance: 105
+min oracle calls per instance: 16
+avg oracle calls per instance: 50.41
+avg number of explanations per instance: 9.50
+avg explanation size per instance: 2.56
+

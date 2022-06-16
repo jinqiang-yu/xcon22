@@ -1,0 +1,442 @@
+c XDual: dual explanations for XGBoost models
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 0 AND feathers = 0 AND eggs = 1 AND milk = 0 AND airborne = 0 AND aquatic = 1 AND predator = 0 AND toothed = 1 AND backbone = 1 AND breathes = 0 AND venomous = 0 AND fins = 1 AND legs = (-inf..2.5] AND tail = 1 AND domestic = 0 AND catsize = 0 THEN fish"
+  explanation: "IF NOT predator = 0 AND NOT breathes = 0 AND NOT fins = 1 AND NOT legs = (-inf..2.5] THEN NOT fish"
+  # hypos left: 4
+  explanation: "IF NOT eggs = 1 AND NOT predator = 0 AND NOT venomous = 0 AND NOT fins = 1 THEN NOT fish"
+  # hypos left: 4
+  explanation: "IF NOT aquatic = 1 AND NOT predator = 0 AND NOT breathes = 0 AND NOT fins = 1 THEN NOT fish"
+  # hypos left: 4
+  explanation: "IF NOT breathes = 0 AND NOT fins = 1 AND NOT legs = (-inf..2.5] AND NOT tail = 1 THEN NOT fish"
+  # hypos left: 4
+  explanation: "IF NOT feathers = 0 AND NOT airborne = 0 AND NOT toothed = 1 AND NOT breathes = 0 AND NOT fins = 1 THEN NOT fish"
+  # hypos left: 5
+  explanation: "IF NOT eggs = 1 AND NOT milk = 0 AND NOT predator = 0 AND NOT breathes = 0 AND NOT catsize = 0 THEN NOT fish"
+  # hypos left: 5
+  explanation: "IF NOT hair = 0 AND NOT eggs = 1 AND NOT milk = 0 AND NOT aquatic = 1 AND NOT breathes = 0 AND NOT fins = 1 THEN NOT fish"
+  # hypos left: 6
+  explanation: "IF NOT aquatic = 1 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT breathes = 0 AND NOT fins = 1 AND NOT tail = 1 THEN NOT fish"
+  # hypos left: 6
+  explanation: "IF NOT aquatic = 1 AND NOT toothed = 1 AND NOT breathes = 0 AND NOT fins = 1 AND NOT legs = (-inf..2.5] AND NOT catsize = 0 THEN NOT fish"
+  # hypos left: 6
+  explanation: "IF NOT predator = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT venomous = 0 AND NOT fins = 1 AND NOT tail = 1 THEN NOT fish"
+  # hypos left: 6
+  explanation: "IF NOT aquatic = 1 AND NOT predator = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT fins = 1 AND NOT tail = 1 THEN NOT fish"
+  # hypos left: 6
+  explanation: "IF NOT predator = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT fins = 1 AND NOT legs = (-inf..2.5] AND NOT tail = 1 THEN NOT fish"
+  # hypos left: 6
+  exp time: 2.18
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 0 AND feathers = 0 AND eggs = 1 AND milk = 0 AND airborne = 0 AND aquatic = 1 AND predator = 0 AND toothed = 1 AND backbone = 1 AND breathes = 0 AND venomous = 0 AND fins = 1 AND legs = (-inf..2.5] AND tail = 1 AND domestic = 1 AND catsize = 0 THEN fish"
+  explanation: "IF NOT eggs = 1 AND NOT predator = 0 AND NOT venomous = 0 AND NOT fins = 1 AND NOT domestic = 1 THEN NOT fish"
+  # hypos left: 5
+  explanation: "IF NOT eggs = 1 AND NOT milk = 0 AND NOT predator = 0 AND NOT breathes = 0 AND NOT catsize = 0 THEN NOT fish"
+  # hypos left: 5
+  explanation: "IF NOT feathers = 0 AND NOT airborne = 0 AND NOT toothed = 1 AND NOT breathes = 0 AND NOT fins = 1 THEN NOT fish"
+  # hypos left: 5
+  explanation: "IF NOT breathes = 0 AND NOT fins = 1 AND NOT legs = (-inf..2.5] AND NOT tail = 1 AND NOT domestic = 1 THEN NOT fish"
+  # hypos left: 5
+  explanation: "IF NOT predator = 0 AND NOT breathes = 0 AND NOT fins = 1 AND NOT legs = (-inf..2.5] AND NOT domestic = 1 THEN NOT fish"
+  # hypos left: 5
+  explanation: "IF NOT aquatic = 1 AND NOT predator = 0 AND NOT breathes = 0 AND NOT fins = 1 AND NOT domestic = 1 THEN NOT fish"
+  # hypos left: 5
+  explanation: "IF NOT aquatic = 1 AND NOT toothed = 1 AND NOT breathes = 0 AND NOT fins = 1 AND NOT legs = (-inf..2.5] AND NOT catsize = 0 THEN NOT fish"
+  # hypos left: 6
+  explanation: "IF NOT hair = 0 AND NOT eggs = 1 AND NOT milk = 0 AND NOT aquatic = 1 AND NOT breathes = 0 AND NOT fins = 1 AND NOT domestic = 1 THEN NOT fish"
+  # hypos left: 7
+  explanation: "IF NOT aquatic = 1 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT breathes = 0 AND NOT fins = 1 AND NOT tail = 1 AND NOT domestic = 1 THEN NOT fish"
+  # hypos left: 7
+  explanation: "IF NOT feathers = 0 AND NOT aquatic = 1 AND NOT predator = 0 AND NOT toothed = 1 AND NOT breathes = 0 AND NOT fins = 1 AND NOT catsize = 0 THEN NOT fish"
+  # hypos left: 7
+  explanation: "IF NOT predator = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT venomous = 0 AND NOT fins = 1 AND NOT tail = 1 AND NOT domestic = 1 THEN NOT fish"
+  # hypos left: 7
+  explanation: "IF NOT aquatic = 1 AND NOT predator = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT fins = 1 AND NOT tail = 1 AND NOT domestic = 1 THEN NOT fish"
+  # hypos left: 7
+  explanation: "IF NOT predator = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT fins = 1 AND NOT legs = (-inf..2.5] AND NOT tail = 1 AND NOT domestic = 1 THEN NOT fish"
+  # hypos left: 7
+  explanation: "IF NOT hair = 0 AND NOT milk = 0 AND NOT predator = 0 AND NOT toothed = 1 AND NOT breathes = 0 AND NOT fins = 1 AND NOT legs = (-inf..2.5] AND NOT catsize = 0 THEN NOT fish"
+  # hypos left: 8
+  explanation: "IF NOT hair = 0 AND NOT eggs = 1 AND NOT milk = 0 AND NOT aquatic = 1 AND NOT breathes = 0 AND NOT fins = 1 AND NOT legs = (-inf..2.5] AND NOT catsize = 0 THEN NOT fish"
+  # hypos left: 8
+  explanation: "IF NOT hair = 0 AND NOT airborne = 0 AND NOT aquatic = 1 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT breathes = 0 AND NOT venomous = 0 AND NOT fins = 1 AND NOT legs = (-inf..2.5] AND NOT tail = 1 THEN NOT fish"
+  # hypos left: 10
+  exp time: 2.99
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 0 AND feathers = 0 AND eggs = 1 AND milk = 0 AND airborne = 0 AND aquatic = 1 AND predator = 1 AND toothed = 0 AND backbone = 0 AND breathes = 0 AND venomous = 0 AND fins = 0 AND legs = (5.75..+inf) AND tail = 0 AND domestic = 0 AND catsize = 0 THEN invertebrate"
+  explanation: "IF NOT aquatic = 1 AND NOT predator = 1 AND NOT breathes = 0 THEN NOT invertebrate"
+  # hypos left: 3
+  explanation: "IF NOT toothed = 0 AND NOT backbone = 0 AND NOT breathes = 0 AND NOT legs = (5.75..+inf) THEN NOT invertebrate"
+  # hypos left: 4
+  explanation: "IF NOT toothed = 0 AND NOT backbone = 0 AND NOT fins = 0 AND NOT legs = (5.75..+inf) AND NOT tail = 0 THEN NOT invertebrate"
+  # hypos left: 5
+  explanation: "IF NOT feathers = 0 AND NOT aquatic = 1 AND NOT backbone = 0 AND NOT breathes = 0 AND NOT legs = (5.75..+inf) AND NOT tail = 0 THEN NOT invertebrate"
+  # hypos left: 6
+  explanation: "IF NOT feathers = 0 AND NOT airborne = 0 AND NOT backbone = 0 AND NOT breathes = 0 AND NOT legs = (5.75..+inf) AND NOT tail = 0 THEN NOT invertebrate"
+  # hypos left: 6
+  explanation: "IF NOT eggs = 1 AND NOT toothed = 0 AND NOT backbone = 0 AND NOT venomous = 0 AND NOT legs = (5.75..+inf) AND NOT tail = 0 THEN NOT invertebrate"
+  # hypos left: 6
+  explanation: "IF NOT hair = 0 AND NOT milk = 0 AND NOT backbone = 0 AND NOT breathes = 0 AND NOT legs = (5.75..+inf) AND NOT tail = 0 AND NOT catsize = 0 THEN NOT invertebrate"
+  # hypos left: 7
+  exp time: 0.90
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 0 AND feathers = 0 AND eggs = 1 AND milk = 0 AND airborne = 0 AND aquatic = 1 AND predator = 1 AND toothed = 1 AND backbone = 1 AND breathes = 0 AND venomous = 1 AND fins = 1 AND legs = (-inf..2.5] AND tail = 1 AND domestic = 0 AND catsize = 1 THEN reptile"
+  explanation: "IF NOT venomous = 1 THEN NOT reptile"
+  # hypos left: 1
+  explanation: "IF NOT toothed = 1 AND NOT backbone = 1 AND NOT tail = 1 AND NOT catsize = 1 THEN NOT reptile"
+  # hypos left: 4
+  explanation: "IF NOT breathes = 0 AND NOT fins = 1 AND NOT legs = (-inf..2.5] AND NOT tail = 1 AND NOT catsize = 1 THEN NOT reptile"
+  # hypos left: 5
+  explanation: "IF NOT eggs = 1 AND NOT aquatic = 1 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT breathes = 0 AND NOT fins = 1 AND NOT legs = (-inf..2.5] AND NOT catsize = 1 THEN NOT reptile"
+  # hypos left: 8
+  exp time: 0.60
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 0 AND feathers = 1 AND eggs = 1 AND milk = 0 AND airborne = 0 AND aquatic = 0 AND predator = 0 AND toothed = 0 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (-inf..2.5] AND tail = 1 AND domestic = 0 AND catsize = 1 THEN bird"
+  explanation: "IF NOT feathers = 1 AND NOT legs = (-inf..2.5] THEN NOT bird"
+  # hypos left: 2
+  explanation: "IF NOT feathers = 1 AND NOT backbone = 1 AND NOT tail = 1 AND NOT catsize = 1 THEN NOT bird"
+  # hypos left: 4
+  explanation: "IF NOT feathers = 1 AND NOT predator = 0 AND NOT toothed = 0 AND NOT catsize = 1 THEN NOT bird"
+  # hypos left: 4
+  explanation: "IF NOT hair = 0 AND NOT feathers = 1 AND NOT eggs = 1 AND NOT milk = 0 AND NOT toothed = 0 THEN NOT bird"
+  # hypos left: 5
+  explanation: "IF NOT feathers = 1 AND NOT aquatic = 0 AND NOT toothed = 0 AND NOT breathes = 1 AND NOT fins = 0 AND NOT catsize = 1 THEN NOT bird"
+  # hypos left: 6
+  explanation: "IF NOT feathers = 1 AND NOT aquatic = 0 AND NOT predator = 0 AND NOT toothed = 0 AND NOT breathes = 1 AND NOT fins = 0 THEN NOT bird"
+  # hypos left: 6
+  explanation: "IF NOT feathers = 1 AND NOT eggs = 1 AND NOT milk = 0 AND NOT aquatic = 0 AND NOT predator = 0 AND NOT toothed = 0 AND NOT fins = 0 THEN NOT bird"
+  # hypos left: 7
+  exp time: 1.50
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 0 AND feathers = 1 AND eggs = 1 AND milk = 0 AND airborne = 0 AND aquatic = 1 AND predator = 1 AND toothed = 0 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (-inf..2.5] AND tail = 1 AND domestic = 0 AND catsize = 1 THEN bird"
+  explanation: "IF NOT feathers = 1 AND NOT toothed = 0 AND NOT legs = (-inf..2.5] AND NOT catsize = 1 THEN NOT bird"
+  # hypos left: 4
+  explanation: "IF NOT feathers = 1 AND NOT toothed = 0 AND NOT breathes = 1 AND NOT fins = 0 THEN NOT bird"
+  # hypos left: 4
+  explanation: "IF NOT hair = 0 AND NOT feathers = 1 AND NOT milk = 0 AND NOT legs = (-inf..2.5] THEN NOT bird"
+  # hypos left: 4
+  explanation: "IF NOT feathers = 1 AND NOT aquatic = 1 AND NOT toothed = 0 AND NOT catsize = 1 THEN NOT bird"
+  # hypos left: 4
+  explanation: "IF NOT feathers = 1 AND NOT aquatic = 1 AND NOT predator = 1 AND NOT legs = (-inf..2.5] THEN NOT bird"
+  # hypos left: 4
+  explanation: "IF NOT feathers = 1 AND NOT backbone = 1 AND NOT breathes = 1 AND NOT legs = (-inf..2.5] AND NOT tail = 1 THEN NOT bird"
+  # hypos left: 5
+  explanation: "IF NOT feathers = 1 AND NOT eggs = 1 AND NOT milk = 0 AND NOT toothed = 0 AND NOT fins = 0 THEN NOT bird"
+  # hypos left: 5
+  explanation: "IF NOT feathers = 1 AND NOT aquatic = 1 AND NOT predator = 1 AND NOT backbone = 1 AND NOT tail = 1 AND NOT catsize = 1 THEN NOT bird"
+  # hypos left: 6
+  explanation: "IF NOT feathers = 1 AND NOT backbone = 1 AND NOT breathes = 1 AND NOT venomous = 0 AND NOT tail = 1 AND NOT catsize = 1 THEN NOT bird"
+  # hypos left: 6
+  explanation: "IF NOT feathers = 1 AND NOT aquatic = 1 AND NOT backbone = 1 AND NOT breathes = 1 AND NOT tail = 1 AND NOT catsize = 1 THEN NOT bird"
+  # hypos left: 6
+  explanation: "IF NOT feathers = 1 AND NOT eggs = 1 AND NOT toothed = 0 AND NOT breathes = 1 AND NOT venomous = 0 AND NOT catsize = 1 THEN NOT bird"
+  # hypos left: 6
+  explanation: "IF NOT feathers = 1 AND NOT eggs = 1 AND NOT aquatic = 1 AND NOT backbone = 1 AND NOT venomous = 0 AND NOT legs = (-inf..2.5] AND NOT catsize = 1 THEN NOT bird"
+  # hypos left: 7
+  explanation: "IF NOT feathers = 1 AND NOT airborne = 0 AND NOT aquatic = 1 AND NOT backbone = 1 AND NOT legs = (-inf..2.5] AND NOT tail = 1 AND NOT catsize = 1 THEN NOT bird"
+  # hypos left: 7
+  explanation: "IF NOT feathers = 1 AND NOT aquatic = 1 AND NOT backbone = 1 AND NOT venomous = 0 AND NOT legs = (-inf..2.5] AND NOT tail = 1 AND NOT catsize = 1 THEN NOT bird"
+  # hypos left: 7
+  explanation: "IF NOT hair = 0 AND NOT feathers = 1 AND NOT eggs = 1 AND NOT milk = 0 AND NOT aquatic = 1 AND NOT predator = 1 AND NOT toothed = 0 THEN NOT bird"
+  # hypos left: 7
+  explanation: "IF NOT hair = 0 AND NOT feathers = 1 AND NOT eggs = 1 AND NOT milk = 0 AND NOT aquatic = 1 AND NOT toothed = 0 AND NOT tail = 1 AND NOT domestic = 0 THEN NOT bird"
+  # hypos left: 8
+  exp time: 2.03
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 0 AND feathers = 1 AND eggs = 1 AND milk = 0 AND airborne = 1 AND aquatic = 0 AND predator = 0 AND toothed = 0 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (-inf..2.5] AND tail = 1 AND domestic = 1 AND catsize = 0 THEN bird"
+  explanation: "IF NOT feathers = 1 AND NOT airborne = 1 AND NOT backbone = 1 AND NOT tail = 1 AND NOT domestic = 1 THEN NOT bird"
+  # hypos left: 5
+  explanation: "IF NOT feathers = 1 AND NOT backbone = 1 AND NOT legs = (-inf..2.5] AND NOT tail = 1 AND NOT domestic = 1 THEN NOT bird"
+  # hypos left: 5
+  explanation: "IF NOT feathers = 1 AND NOT airborne = 1 AND NOT legs = (-inf..2.5] AND NOT domestic = 1 AND NOT catsize = 0 THEN NOT bird"
+  # hypos left: 5
+  explanation: "IF NOT feathers = 1 AND NOT airborne = 1 AND NOT predator = 0 AND NOT toothed = 0 AND NOT domestic = 1 THEN NOT bird"
+  # hypos left: 5
+  explanation: "IF NOT hair = 0 AND NOT feathers = 1 AND NOT eggs = 1 AND NOT milk = 0 AND NOT toothed = 0 AND NOT domestic = 1 THEN NOT bird"
+  # hypos left: 6
+  explanation: "IF NOT hair = 0 AND NOT feathers = 1 AND NOT backbone = 1 AND NOT venomous = 0 AND NOT legs = (-inf..2.5] AND NOT tail = 1 THEN NOT bird"
+  # hypos left: 6
+  explanation: "IF NOT feathers = 1 AND NOT airborne = 1 AND NOT aquatic = 0 AND NOT toothed = 0 AND NOT breathes = 1 AND NOT fins = 0 AND NOT domestic = 1 THEN NOT bird"
+  # hypos left: 7
+  explanation: "IF NOT feathers = 1 AND NOT airborne = 1 AND NOT aquatic = 0 AND NOT toothed = 0 AND NOT legs = (-inf..2.5] AND NOT tail = 1 AND NOT domestic = 1 THEN NOT bird"
+  # hypos left: 7
+  explanation: "IF NOT hair = 0 AND NOT feathers = 1 AND NOT eggs = 1 AND NOT milk = 0 AND NOT airborne = 1 AND NOT toothed = 0 AND NOT legs = (-inf..2.5] AND NOT catsize = 0 THEN NOT bird"
+  # hypos left: 8
+  explanation: "IF NOT feathers = 1 AND NOT eggs = 1 AND NOT airborne = 1 AND NOT predator = 0 AND NOT backbone = 1 AND NOT venomous = 0 AND NOT legs = (-inf..2.5] AND NOT domestic = 1 THEN NOT bird"
+  # hypos left: 8
+  explanation: "IF NOT hair = 0 AND NOT feathers = 1 AND NOT eggs = 1 AND NOT milk = 0 AND NOT airborne = 1 AND NOT predator = 0 AND NOT toothed = 0 AND NOT tail = 1 AND NOT catsize = 0 THEN NOT bird"
+  # hypos left: 9
+  exp time: 2.60
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 0 AND feathers = 1 AND eggs = 1 AND milk = 0 AND airborne = 1 AND aquatic = 1 AND predator = 1 AND toothed = 0 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (-inf..2.5] AND tail = 1 AND domestic = 0 AND catsize = 0 THEN bird"
+  explanation: "IF NOT feathers = 1 AND NOT airborne = 1 AND NOT aquatic = 1 AND NOT toothed = 0 THEN NOT bird"
+  # hypos left: 4
+  explanation: "IF NOT feathers = 1 AND NOT airborne = 1 AND NOT toothed = 0 AND NOT legs = (-inf..2.5] THEN NOT bird"
+  # hypos left: 4
+  explanation: "IF NOT feathers = 1 AND NOT airborne = 1 AND NOT toothed = 0 AND NOT breathes = 1 AND NOT fins = 0 THEN NOT bird"
+  # hypos left: 5
+  explanation: "IF NOT feathers = 1 AND NOT aquatic = 1 AND NOT backbone = 1 AND NOT legs = (-inf..2.5] AND NOT tail = 1 THEN NOT bird"
+  # hypos left: 5
+  explanation: "IF NOT feathers = 1 AND NOT airborne = 1 AND NOT backbone = 1 AND NOT breathes = 1 AND NOT legs = (-inf..2.5] AND NOT tail = 1 THEN NOT bird"
+  # hypos left: 6
+  explanation: "IF NOT hair = 0 AND NOT feathers = 1 AND NOT milk = 0 AND NOT airborne = 1 AND NOT legs = (-inf..2.5] AND NOT catsize = 0 THEN NOT bird"
+  # hypos left: 6
+  explanation: "IF NOT feathers = 1 AND NOT airborne = 1 AND NOT aquatic = 1 AND NOT predator = 1 AND NOT legs = (-inf..2.5] AND NOT catsize = 0 THEN NOT bird"
+  # hypos left: 6
+  explanation: "IF NOT feathers = 1 AND NOT airborne = 1 AND NOT aquatic = 1 AND NOT predator = 1 AND NOT backbone = 1 AND NOT tail = 1 THEN NOT bird"
+  # hypos left: 6
+  explanation: "IF NOT feathers = 1 AND NOT airborne = 1 AND NOT aquatic = 1 AND NOT backbone = 1 AND NOT breathes = 1 AND NOT tail = 1 THEN NOT bird"
+  # hypos left: 6
+  explanation: "IF NOT feathers = 1 AND NOT airborne = 1 AND NOT backbone = 1 AND NOT breathes = 1 AND NOT venomous = 0 AND NOT tail = 1 THEN NOT bird"
+  # hypos left: 6
+  explanation: "IF NOT feathers = 1 AND NOT eggs = 1 AND NOT airborne = 1 AND NOT toothed = 0 AND NOT breathes = 1 AND NOT venomous = 0 THEN NOT bird"
+  # hypos left: 6
+  explanation: "IF NOT feathers = 1 AND NOT eggs = 1 AND NOT airborne = 1 AND NOT aquatic = 1 AND NOT backbone = 1 AND NOT venomous = 0 AND NOT legs = (-inf..2.5] THEN NOT bird"
+  # hypos left: 7
+  explanation: "IF NOT hair = 0 AND NOT feathers = 1 AND NOT eggs = 1 AND NOT milk = 0 AND NOT aquatic = 1 AND NOT predator = 1 AND NOT toothed = 0 THEN NOT bird"
+  # hypos left: 7
+  explanation: "IF NOT feathers = 1 AND NOT eggs = 1 AND NOT milk = 0 AND NOT airborne = 1 AND NOT toothed = 0 AND NOT fins = 0 AND NOT catsize = 0 THEN NOT bird"
+  # hypos left: 7
+  exp time: 1.57
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 1 AND feathers = 0 AND eggs = 0 AND milk = 1 AND airborne = 0 AND aquatic = 0 AND predator = 0 AND toothed = 1 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (2.5..4.5] AND tail = 0 AND domestic = 1 AND catsize = 0 THEN mammal"
+  explanation: "IF NOT eggs = 0 AND NOT milk = 1 AND NOT predator = 0 AND NOT domestic = 1 THEN NOT mammal"
+  # hypos left: 4
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT domestic = 1 THEN NOT mammal"
+  # hypos left: 5
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT domestic = 1 THEN NOT mammal"
+  # hypos left: 6
+  explanation: "IF NOT hair = 1 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT predator = 0 AND NOT venomous = 0 AND NOT tail = 0 AND NOT domestic = 1 THEN NOT mammal"
+  # hypos left: 7
+  explanation: "IF NOT eggs = 0 AND NOT milk = 1 AND NOT airborne = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT legs = (2.5..4.5] AND NOT domestic = 1 THEN NOT mammal"
+  # hypos left: 7
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT toothed = 1 AND NOT tail = 0 AND NOT domestic = 1 AND NOT catsize = 0 THEN NOT mammal"
+  # hypos left: 7
+  explanation: "IF NOT eggs = 0 AND NOT milk = 1 AND NOT airborne = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT venomous = 0 AND NOT legs = (2.5..4.5] THEN NOT mammal"
+  # hypos left: 7
+  explanation: "IF NOT hair = 1 AND NOT feathers = 0 AND NOT eggs = 0 AND NOT milk = 1 AND NOT airborne = 0 AND NOT toothed = 1 AND NOT legs = (2.5..4.5] AND NOT tail = 0 THEN NOT mammal"
+  # hypos left: 8
+  explanation: "IF NOT hair = 1 AND NOT milk = 1 AND NOT predator = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT venomous = 0 AND NOT legs = (2.5..4.5] AND NOT tail = 0 AND NOT domestic = 1 THEN NOT mammal"
+  # hypos left: 9
+  exp time: 1.02
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 1 AND feathers = 0 AND eggs = 0 AND milk = 1 AND airborne = 0 AND aquatic = 0 AND predator = 0 AND toothed = 1 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (2.5..4.5] AND tail = 1 AND domestic = 0 AND catsize = 1 THEN mammal"
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT toothed = 1 THEN NOT mammal"
+  # hypos left: 4
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT predator = 0 AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 5
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT tail = 1 AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 6
+  explanation: "IF NOT hair = 1 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT predator = 0 AND NOT venomous = 0 AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 6
+  explanation: "IF NOT hair = 1 AND NOT milk = 1 AND NOT predator = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT venomous = 0 AND NOT legs = (2.5..4.5] AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 8
+  explanation: "IF NOT eggs = 0 AND NOT milk = 1 AND NOT airborne = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT legs = (2.5..4.5] AND NOT tail = 1 AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 8
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT breathes = 1 AND NOT fins = 0 AND NOT legs = (2.5..4.5] AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 8
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT predator = 0 AND NOT breathes = 1 AND NOT fins = 0 AND NOT legs = (2.5..4.5] THEN NOT mammal"
+  # hypos left: 8
+  exp time: 0.81
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 1 AND feathers = 0 AND eggs = 0 AND milk = 1 AND airborne = 0 AND aquatic = 0 AND predator = 0 AND toothed = 1 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (2.5..4.5] AND tail = 1 AND domestic = 1 AND catsize = 0 THEN mammal"
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT predator = 0 AND NOT domestic = 1 THEN NOT mammal"
+  # hypos left: 5
+  explanation: "IF NOT hair = 1 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT predator = 0 AND NOT venomous = 0 AND NOT domestic = 1 THEN NOT mammal"
+  # hypos left: 6
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT tail = 1 AND NOT domestic = 1 THEN NOT mammal"
+  # hypos left: 6
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT toothed = 1 AND NOT domestic = 1 AND NOT catsize = 0 THEN NOT mammal"
+  # hypos left: 6
+  explanation: "IF NOT hair = 1 AND NOT feathers = 0 AND NOT eggs = 0 AND NOT milk = 1 AND NOT airborne = 0 AND NOT toothed = 1 AND NOT legs = (2.5..4.5] THEN NOT mammal"
+  # hypos left: 7
+  explanation: "IF NOT eggs = 0 AND NOT milk = 1 AND NOT airborne = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT venomous = 0 AND NOT legs = (2.5..4.5] AND NOT tail = 1 THEN NOT mammal"
+  # hypos left: 8
+  explanation: "IF NOT hair = 1 AND NOT milk = 1 AND NOT predator = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT venomous = 0 AND NOT legs = (2.5..4.5] AND NOT domestic = 1 THEN NOT mammal"
+  # hypos left: 8
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT breathes = 1 AND NOT fins = 0 AND NOT legs = (2.5..4.5] AND NOT domestic = 1 THEN NOT mammal"
+  # hypos left: 8
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT legs = (2.5..4.5] AND NOT tail = 1 AND NOT domestic = 1 THEN NOT mammal"
+  # hypos left: 8
+  explanation: "IF NOT eggs = 0 AND NOT milk = 1 AND NOT airborne = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT legs = (2.5..4.5] AND NOT tail = 1 AND NOT domestic = 1 THEN NOT mammal"
+  # hypos left: 8
+  exp time: 1.26
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 1 AND feathers = 0 AND eggs = 0 AND milk = 1 AND airborne = 0 AND aquatic = 0 AND predator = 0 AND toothed = 1 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (2.5..4.5] AND tail = 1 AND domestic = 1 AND catsize = 1 THEN mammal"
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT toothed = 1 AND NOT domestic = 1 THEN NOT mammal"
+  # hypos left: 5
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT predator = 0 AND NOT domestic = 1 AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 6
+  explanation: "IF NOT hair = 1 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT predator = 0 AND NOT venomous = 0 AND NOT domestic = 1 AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 7
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT tail = 1 AND NOT domestic = 1 AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 7
+  explanation: "IF NOT hair = 1 AND NOT feathers = 0 AND NOT eggs = 0 AND NOT milk = 1 AND NOT airborne = 0 AND NOT toothed = 1 AND NOT legs = (2.5..4.5] AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 8
+  explanation: "IF NOT eggs = 0 AND NOT milk = 1 AND NOT airborne = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT venomous = 0 AND NOT legs = (2.5..4.5] AND NOT tail = 1 AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 9
+  explanation: "IF NOT eggs = 0 AND NOT milk = 1 AND NOT airborne = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT legs = (2.5..4.5] AND NOT tail = 1 AND NOT domestic = 1 AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 9
+  explanation: "IF NOT hair = 1 AND NOT milk = 1 AND NOT predator = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT venomous = 0 AND NOT legs = (2.5..4.5] AND NOT domestic = 1 AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 9
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT breathes = 1 AND NOT fins = 0 AND NOT legs = (2.5..4.5] AND NOT domestic = 1 AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 9
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT predator = 0 AND NOT breathes = 1 AND NOT fins = 0 AND NOT legs = (2.5..4.5] AND NOT domestic = 1 THEN NOT mammal"
+  # hypos left: 9
+  exp time: 1.06
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 1 AND feathers = 0 AND eggs = 0 AND milk = 1 AND airborne = 0 AND aquatic = 0 AND predator = 1 AND toothed = 1 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (2.5..4.5] AND tail = 0 AND domestic = 0 AND catsize = 1 THEN mammal"
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT tail = 0 AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 5
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 5
+  explanation: "IF NOT hair = 1 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT venomous = 0 AND NOT tail = 0 AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 6
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT predator = 1 AND NOT toothed = 1 AND NOT tail = 0 THEN NOT mammal"
+  # hypos left: 6
+  explanation: "IF NOT hair = 1 AND NOT feathers = 0 AND NOT eggs = 0 AND NOT milk = 1 AND NOT toothed = 1 AND NOT legs = (2.5..4.5] AND NOT tail = 0 THEN NOT mammal"
+  # hypos left: 7
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT breathes = 1 AND NOT legs = (2.5..4.5] THEN NOT mammal"
+  # hypos left: 8
+  explanation: "IF NOT eggs = 0 AND NOT milk = 1 AND NOT airborne = 0 AND NOT predator = 1 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT legs = (2.5..4.5] AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 8
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT predator = 1 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT legs = (2.5..4.5] AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 8
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT venomous = 0 AND NOT legs = (2.5..4.5] AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 8
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT breathes = 1 AND NOT legs = (2.5..4.5] AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 8
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT airborne = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT legs = (2.5..4.5] AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 8
+  explanation: "IF NOT hair = 1 AND NOT milk = 1 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT venomous = 0 AND NOT legs = (2.5..4.5] AND NOT tail = 0 AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 8
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT breathes = 1 AND NOT fins = 0 AND NOT legs = (2.5..4.5] AND NOT tail = 0 THEN NOT mammal"
+  # hypos left: 8
+  exp time: 1.18
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 1 AND feathers = 0 AND eggs = 0 AND milk = 1 AND airborne = 0 AND aquatic = 0 AND predator = 1 AND toothed = 1 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (2.5..4.5] AND tail = 1 AND domestic = 0 AND catsize = 1 THEN mammal"
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 4
+  explanation: "IF NOT hair = 1 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT venomous = 0 AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 5
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT predator = 1 AND NOT toothed = 1 THEN NOT mammal"
+  # hypos left: 5
+  explanation: "IF NOT hair = 1 AND NOT feathers = 0 AND NOT eggs = 0 AND NOT milk = 1 AND NOT toothed = 1 AND NOT legs = (2.5..4.5] THEN NOT mammal"
+  # hypos left: 6
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT breathes = 1 AND NOT fins = 0 AND NOT legs = (2.5..4.5] THEN NOT mammal"
+  # hypos left: 7
+  explanation: "IF NOT hair = 1 AND NOT milk = 1 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT venomous = 0 AND NOT legs = (2.5..4.5] AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 7
+  explanation: "IF NOT eggs = 0 AND NOT milk = 1 AND NOT airborne = 0 AND NOT predator = 1 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT legs = (2.5..4.5] AND NOT tail = 1 AND NOT catsize = 1 THEN NOT mammal"
+  # hypos left: 9
+  explanation: "IF NOT hair = 1 AND NOT eggs = 0 AND NOT milk = 1 AND NOT aquatic = 0 AND NOT toothed = 1 AND NOT backbone = 1 AND NOT breathes = 1 AND NOT legs = (2.5..4.5] AND NOT tail = 1 THEN NOT mammal"
+  # hypos left: 9
+  exp time: 0.92
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 1 AND feathers = 0 AND eggs = 1 AND milk = 0 AND airborne = 1 AND aquatic = 0 AND predator = 0 AND toothed = 0 AND backbone = 0 AND breathes = 1 AND venomous = 1 AND fins = 0 AND legs = (5.75..+inf) AND tail = 0 AND domestic = 0 AND catsize = 0 THEN bug"
+  explanation: "IF NOT hair = 1 AND NOT predator = 0 AND NOT venomous = 1 THEN NOT bug"
+  # hypos left: 3
+  explanation: "IF NOT hair = 1 AND NOT airborne = 1 AND NOT predator = 0 THEN NOT bug"
+  # hypos left: 3
+  explanation: "IF NOT hair = 1 AND NOT airborne = 1 AND NOT venomous = 1 AND NOT legs = (5.75..+inf) THEN NOT bug"
+  # hypos left: 4
+  explanation: "IF NOT hair = 1 AND NOT feathers = 0 AND NOT backbone = 0 AND NOT venomous = 1 AND NOT legs = (5.75..+inf) AND NOT tail = 0 THEN NOT bug"
+  # hypos left: 6
+  explanation: "IF NOT eggs = 1 AND NOT milk = 0 AND NOT toothed = 0 AND NOT backbone = 0 AND NOT venomous = 1 AND NOT legs = (5.75..+inf) AND NOT tail = 0 THEN NOT bug"
+  # hypos left: 7
+  explanation: "IF NOT eggs = 1 AND NOT milk = 0 AND NOT airborne = 1 AND NOT toothed = 0 AND NOT backbone = 0 AND NOT venomous = 1 AND NOT tail = 0 THEN NOT bug"
+  # hypos left: 7
+  explanation: "IF NOT eggs = 1 AND NOT milk = 0 AND NOT airborne = 1 AND NOT toothed = 0 AND NOT backbone = 0 AND NOT venomous = 1 AND NOT legs = (5.75..+inf) AND NOT catsize = 0 THEN NOT bug"
+  # hypos left: 8
+  explanation: "IF NOT milk = 0 AND NOT airborne = 1 AND NOT aquatic = 0 AND NOT predator = 0 AND NOT backbone = 0 AND NOT venomous = 1 AND NOT legs = (5.75..+inf) AND NOT tail = 0 AND NOT catsize = 0 THEN NOT bug"
+  # hypos left: 9
+  exp time: 1.18
+
+
+exptimes: [2.1823129999999997, 2.9923900000000003, 0.9049529999999999, 0.5963069999999995, 1.4954230000000006, 2.032930999999998, 2.598224000000002, 1.5747750000000007, 1.0249240000000022, 0.8147040000000025, 1.2648720000000004, 1.0576080000000019, 1.1833159999999978, 0.9169280000000022, 1.1845399999999984]
+all samples: 15
+total exp time: 21.82
+max exp time per instance: 2.99
+min exp time per instance: 0.60
+avg exp time per instance: 1.45
+total oracle calls: 4163
+max oracle calls per instance: 593
+min oracle calls per instance: 85
+avg oracle calls per instance: 277.53
+avg number of explanations per instance: 10.20
+avg explanation size per instance: 6.12
+

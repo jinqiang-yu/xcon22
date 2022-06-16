@@ -1,0 +1,511 @@
+MODEL:
+IF Barium == (0.14..0.27] THEN target == 0
+IF Magnesium == (-inf..3.33], Refractive Index != (-inf..1.52] THEN target == 1
+IF Barium == (0.27..+inf) THEN target == 0
+IF Refractive Index == (1.52..+inf), Sodium != (12.81..13.22] THEN target == 0
+IF Magnesium == (3.73..+inf), Aluminum == (1.28..1.54] THEN target == 1
+IF Calcium == (-inf..8.24], Magnesium == (-inf..3.33] THEN target == 1
+IF Calcium == (-inf..8.24], Silicon == (-inf..72.15] THEN target == 1
+IF Silicon == (-inf..72.15], Sodium != (13.63..+inf) THEN target == 0
+IF Aluminum == (1.54..+inf), Sodium == (13.22..13.63] THEN target == 1
+IF Aluminum == (1.54..+inf), Magnesium != (3.33..3.53] THEN target == 1
+IF Sodium == (-inf..12.81], Magnesium == (3.53..3.73] THEN target == 0
+IF Calcium == (-inf..8.24], Iron == (0.11..0.19] THEN target == 1
+IF Refractive Index == (1.52..+inf), Aluminum != (1.02..1.28] THEN target == 0
+IF Refractive Index == (1.52..+inf) THEN target == 1
+IF Calcium == (9.27..+inf) THEN target == 1
+IF Aluminum == (-inf..1.02] THEN target == 0
+IF Magnesium == (3.73..+inf), Sodium != (13.22..13.63] THEN target == 1
+IF Sodium == (13.63..+inf) THEN target == 0
+IF Barium == (0.09..0.14] THEN target == 1
+IF Calcium == (8.24..8.64], Sodium != (12.81..13.22] THEN target == 0
+IF Potassium == (0.16..0.48], Sodium != (13.22..13.63] THEN target == 1
+IF Calcium == (8.24..8.64], Aluminum == (1.28..1.54] THEN target == 0
+IF Calcium == (-inf..8.24], Iron == (0.28..+inf) THEN target == 1
+IF Magnesium == (-inf..3.33], Sodium != (12.81..13.22] THEN target == 0
+IF Aluminum == (1.28..1.54], Silicon == (73.02..+inf) THEN target == 1
+IF Sodium == (-inf..12.81], Aluminum == (1.28..1.54] THEN target == 0
+IF Sodium == (-inf..12.81], Aluminum != (1.54..+inf) THEN target == 0
+IF Potassium == (0.61..+inf), Sodium == (13.22..13.63] THEN target == 1
+IF Iron == (0.11..0.19], Magnesium != (3.33..3.53] THEN target == 1
+IF Silicon == (72.15..72.66], Magnesium == (3.33..3.53] THEN target == 0
+IF Iron == (0.11..0.19] THEN target == 1
+IF Potassium == (-inf..0.16] THEN target == 0
+IF Calcium == (8.24..8.64], Magnesium != (3.53..3.73] THEN target == 0
+IF Iron == (0.28..+inf) THEN target == 1
+IF Magnesium == (3.33..3.53], Sodium != (-inf..12.81] THEN target == 1
+IF Silicon == (72.15..72.66], Sodium != (12.81..13.22] THEN target == 1
+IF Silicon == (72.15..72.66] THEN target == 0
+IF Magnesium == (-inf..3.33] THEN target == 1
+IF Iron == (0.19..0.28] THEN target == 0
+IF Sodium == (-inf..12.81] THEN target == 1
+IF Silicon != (72.66..73.02] THEN target == 0
+IF Potassium == (0.61..+inf) THEN target == 0
+IF Sodium == (12.81..13.22] THEN target == 1
+IF Magnesium == (3.53..3.73], Potassium != (0.16..0.48] THEN target == 1
+IF Refractive Index == (-inf..1.52] THEN target == 0
+IF TRUE THEN target == 1
+
+ENCODINDS:
+# of classes: 2
+min # of vars: 60
+avg # of vars: 60.00
+max # of vars: 60
+min # of clauses: 158
+avg # of clauses: 160.00
+max # of clauses: 162
+
+EXPLANATIONS:
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (-inf..12.81] AND Magnesium == (-inf..3.33] AND Aluminum == (1.02..1.28] AND Silicon == (73.02..+inf) AND Potassium == (0.61..+inf) AND Calcium == (8.64..9.27] AND Barium == (-inf..0.09] AND Iron == (0.19..0.28] THEN target == 0"
+  expl: "IF Sodium != (-inf..12.81] AND Magnesium != (-inf..3.33] AND Silicon != (73.02..+inf) THEN target != 0"
+  # hypos left: 3
+  expl: "IF Sodium != (-inf..12.81] AND Silicon != (73.02..+inf) AND Potassium != (0.61..+inf) THEN target != 0"
+  # hypos left: 3
+  expl: "IF Aluminum != (1.02..1.28] AND Potassium != (0.61..+inf) AND Calcium != (8.64..9.27] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Aluminum != (1.02..1.28] AND Potassium != (0.61..+inf) AND Barium != (-inf..0.09] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Aluminum != (1.02..1.28] AND Calcium != (8.64..9.27] AND Iron != (0.19..0.28] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Sodium != (-inf..12.81] AND Magnesium != (-inf..3.33] AND Potassium != (0.61..+inf) AND Calcium != (8.64..9.27] AND Iron != (0.19..0.28] THEN target != 0"
+  # hypos left: 5
+  exp time: 0.01
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (-inf..12.81] AND Magnesium == (-inf..3.33] AND Aluminum == (1.54..+inf) AND Silicon == (72.66..73.02] AND Potassium == (0.61..+inf) AND Calcium == (8.64..9.27] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target == 1"
+  expl: "IF Magnesium != (-inf..3.33] AND Aluminum != (1.54..+inf) THEN target != 1"
+  # hypos left: 2
+  expl: "IF Sodium != (-inf..12.81] AND Aluminum != (1.54..+inf) AND Potassium != (0.61..+inf) THEN target != 1"
+  # hypos left: 3
+  expl: "IF Aluminum != (1.54..+inf) AND Silicon != (72.66..73.02] AND Potassium != (0.61..+inf) AND Iron != (-inf..0.11] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Magnesium != (-inf..3.33] AND Silicon != (72.66..73.02] AND Calcium != (8.64..9.27] AND Iron != (-inf..0.11] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Sodium != (-inf..12.81] AND Magnesium != (-inf..3.33] AND Silicon != (72.66..73.02] AND Potassium != (0.61..+inf) THEN target != 1"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (-inf..12.81] AND Magnesium == (3.53..3.73] AND Aluminum == (1.28..1.54] AND Silicon == (72.66..73.02] AND Potassium == (0.48..0.61] AND Calcium == (8.64..9.27] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 0"
+  expl: "IF Sodium != (-inf..12.81] AND Calcium != (8.64..9.27] THEN target != 0"
+  # hypos left: 2
+  expl: "IF Sodium != (-inf..12.81] AND Magnesium != (3.53..3.73] AND Barium != (-inf..0.09] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Magnesium != (3.53..3.73] AND Silicon != (72.66..73.02] AND Barium != (-inf..0.09] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Sodium != (-inf..12.81] AND Magnesium != (3.53..3.73] AND Aluminum != (1.28..1.54] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Magnesium != (3.53..3.73] AND Silicon != (72.66..73.02] AND Potassium != (0.48..0.61] AND Calcium != (8.64..9.27] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Sodium != (-inf..12.81] AND Aluminum != (1.28..1.54] AND Silicon != (72.66..73.02] AND Potassium != (0.48..0.61] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (-inf..12.81] AND Magnesium == (3.53..3.73] AND Aluminum == (1.28..1.54] AND Silicon == (72.66..73.02] AND Potassium == (0.61..+inf) AND Calcium == (8.24..8.64] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 0"
+  expl: "IF Sodium != (-inf..12.81] AND Aluminum != (1.28..1.54] AND Calcium != (8.24..8.64] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Sodium != (-inf..12.81] AND Aluminum != (1.28..1.54] AND Potassium != (0.61..+inf) THEN target != 0"
+  # hypos left: 3
+  expl: "IF Sodium != (-inf..12.81] AND Potassium != (0.61..+inf) AND Calcium != (8.24..8.64] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Sodium != (-inf..12.81] AND Silicon != (72.66..73.02] AND Calcium != (8.24..8.64] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Magnesium != (3.53..3.73] AND Silicon != (72.66..73.02] AND Calcium != (8.24..8.64] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Magnesium != (3.53..3.73] AND Aluminum != (1.28..1.54] AND Silicon != (72.66..73.02] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Sodium != (-inf..12.81] AND Magnesium != (3.53..3.73] AND Silicon != (72.66..73.02] AND Potassium != (0.61..+inf) THEN target != 0"
+  # hypos left: 4
+  expl: "IF Sodium != (-inf..12.81] AND Magnesium != (3.53..3.73] AND Calcium != (8.24..8.64] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (-inf..12.81] AND Magnesium == (3.53..3.73] AND Aluminum == (1.54..+inf) AND Silicon == (72.66..73.02] AND Potassium == (0.61..+inf) AND Calcium == (-inf..8.24] AND Barium == (-inf..0.09] AND Iron == (0.19..0.28] THEN target != 1"
+  expl: "IF Magnesium != (3.53..3.73] AND Silicon != (72.66..73.02] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Magnesium != (3.53..3.73] AND Aluminum != (1.54..+inf) AND Calcium != (-inf..8.24] AND Iron != (0.19..0.28] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Sodium != (-inf..12.81] AND Aluminum != (1.54..+inf) AND Potassium != (0.61..+inf) AND Iron != (0.19..0.28] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Sodium != (-inf..12.81] AND Aluminum != (1.54..+inf) AND Calcium != (-inf..8.24] AND Iron != (0.19..0.28] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Aluminum != (1.54..+inf) AND Potassium != (0.61..+inf) AND Calcium != (-inf..8.24] AND Iron != (0.19..0.28] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Sodium != (-inf..12.81] AND Magnesium != (3.53..3.73] AND Aluminum != (1.54..+inf) AND Potassium != (0.61..+inf) AND Calcium != (-inf..8.24] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Sodium != (-inf..12.81] AND Aluminum != (1.54..+inf) AND Silicon != (72.66..73.02] AND Potassium != (0.61..+inf) AND Calcium != (-inf..8.24] AND Barium != (-inf..0.09] THEN target != 1"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (12.81..13.22] AND Magnesium == (-inf..3.33] AND Aluminum == (1.02..1.28] AND Silicon == (72.66..73.02] AND Potassium == (0.48..0.61] AND Calcium == (8.64..9.27] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 1"
+  expl: "IF Silicon != (72.66..73.02] THEN target != 1"
+  # hypos left: 1
+  expl: "IF Sodium != (12.81..13.22] THEN target != 1"
+  # hypos left: 1
+  expl: "IF Magnesium != (-inf..3.33] AND Calcium != (8.64..9.27] THEN target != 1"
+  # hypos left: 2
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (12.81..13.22] AND Magnesium == (-inf..3.33] AND Aluminum == (1.28..1.54] AND Silicon == (72.66..73.02] AND Potassium == (0.48..0.61] AND Calcium == (8.64..9.27] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 1"
+  expl: "IF Aluminum != (1.28..1.54] AND Silicon != (72.66..73.02] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Sodium != (12.81..13.22] AND Aluminum != (1.28..1.54] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Magnesium != (-inf..3.33] AND Calcium != (8.64..9.27] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Sodium != (12.81..13.22] AND Magnesium != (-inf..3.33] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Magnesium != (-inf..3.33] AND Silicon != (72.66..73.02] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Sodium != (12.81..13.22] AND Silicon != (72.66..73.02] AND Iron != (-inf..0.11] THEN target != 1"
+  # hypos left: 3
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (12.81..13.22] AND Magnesium == (3.33..3.53] AND Aluminum == (1.02..1.28] AND Silicon == (72.66..73.02] AND Potassium == (0.48..0.61] AND Calcium == (8.24..8.64] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 0"
+  expl: "IF Magnesium != (3.33..3.53] THEN target != 0"
+  # hypos left: 1
+  expl: "IF Aluminum != (1.02..1.28] AND Calcium != (8.24..8.64] THEN target != 0"
+  # hypos left: 2
+  expl: "IF Aluminum != (1.02..1.28] AND Silicon != (72.66..73.02] AND Potassium != (0.48..0.61] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Sodium != (12.81..13.22] AND Potassium != (0.48..0.61] AND Calcium != (8.24..8.64] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (12.81..13.22] AND Magnesium == (3.33..3.53] AND Aluminum == (1.02..1.28] AND Silicon == (72.66..73.02] AND Potassium == (0.48..0.61] AND Calcium == (8.64..9.27] AND Barium == (-inf..0.09] AND Iron == (0.11..0.19] THEN target != 1"
+  expl: "IF Calcium != (8.64..9.27] AND Iron != (0.11..0.19] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Magnesium != (3.33..3.53] AND Silicon != (72.66..73.02] AND Iron != (0.11..0.19] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Sodium != (12.81..13.22] AND Potassium != (0.48..0.61] AND Iron != (0.11..0.19] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Sodium != (12.81..13.22] AND Magnesium != (3.33..3.53] AND Iron != (0.11..0.19] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Sodium != (12.81..13.22] AND Silicon != (72.66..73.02] AND Iron != (0.11..0.19] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Aluminum != (1.02..1.28] AND Silicon != (72.66..73.02] AND Calcium != (8.64..9.27] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Magnesium != (3.33..3.53] AND Aluminum != (1.02..1.28] AND Calcium != (8.64..9.27] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Sodium != (12.81..13.22] AND Magnesium != (3.33..3.53] AND Aluminum != (1.02..1.28] AND Silicon != (72.66..73.02] THEN target != 1"
+  # hypos left: 4
+  exp time: 0.01
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (12.81..13.22] AND Magnesium == (3.33..3.53] AND Aluminum == (1.28..1.54] AND Silicon == (72.66..73.02] AND Potassium == (0.48..0.61] AND Calcium == (8.24..8.64] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 0"
+  expl: "IF Calcium != (8.24..8.64] THEN target != 0"
+  # hypos left: 1
+  expl: "IF Silicon != (72.66..73.02] AND Potassium != (0.48..0.61] THEN target != 0"
+  # hypos left: 2
+  expl: "IF Magnesium != (3.33..3.53] AND Aluminum != (1.28..1.54] THEN target != 0"
+  # hypos left: 2
+  expl: "IF Magnesium != (3.33..3.53] AND Silicon != (72.66..73.02] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Sodium != (12.81..13.22] AND Magnesium != (3.33..3.53] AND Silicon != (72.66..73.02] THEN target != 0"
+  # hypos left: 3
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (12.81..13.22] AND Magnesium == (3.33..3.53] AND Aluminum == (1.28..1.54] AND Silicon == (73.02..+inf) AND Potassium == (0.61..+inf) AND Calcium == (-inf..8.24] AND Barium == (-inf..0.09] AND Iron == (0.19..0.28] THEN target != 1"
+  expl: "IF Sodium != (12.81..13.22] AND Aluminum != (1.28..1.54] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Potassium != (0.61..+inf) AND Calcium != (-inf..8.24] AND Iron != (0.19..0.28] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Magnesium != (3.33..3.53] AND Aluminum != (1.28..1.54] AND Potassium != (0.61..+inf) AND Iron != (0.19..0.28] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Aluminum != (1.28..1.54] AND Silicon != (73.02..+inf) AND Potassium != (0.61..+inf) AND Calcium != (-inf..8.24] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Magnesium != (3.33..3.53] AND Silicon != (73.02..+inf) AND Potassium != (0.61..+inf) AND Iron != (0.19..0.28] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Sodium != (12.81..13.22] AND Silicon != (73.02..+inf) AND Calcium != (-inf..8.24] AND Iron != (0.19..0.28] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Sodium != (12.81..13.22] AND Magnesium != (3.33..3.53] AND Potassium != (0.61..+inf) AND Calcium != (-inf..8.24] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Aluminum != (1.28..1.54] AND Silicon != (73.02..+inf) AND Calcium != (-inf..8.24] AND Iron != (0.19..0.28] THEN target != 1"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (12.81..13.22] AND Magnesium == (3.33..3.53] AND Aluminum == (1.54..+inf) AND Silicon == (72.15..72.66] AND Potassium == (0.61..+inf) AND Calcium == (-inf..8.24] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 0"
+  expl: "IF Sodium != (12.81..13.22] THEN target != 0"
+  # hypos left: 1
+  expl: "IF Silicon != (72.15..72.66] THEN target != 0"
+  # hypos left: 1
+  expl: "IF Magnesium != (3.33..3.53] AND Aluminum != (1.54..+inf) AND Calcium != (-inf..8.24] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (12.81..13.22] AND Magnesium == (3.33..3.53] AND Aluminum == (1.54..+inf) AND Silicon == (72.66..73.02] AND Potassium == (0.61..+inf) AND Calcium == (-inf..8.24] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 1"
+  expl: "IF Sodium != (12.81..13.22] AND Aluminum != (1.54..+inf) AND Calcium != (-inf..8.24] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Aluminum != (1.54..+inf) AND Calcium != (-inf..8.24] AND Iron != (-inf..0.11] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Magnesium != (3.33..3.53] AND Aluminum != (1.54..+inf) AND Calcium != (-inf..8.24] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Aluminum != (1.54..+inf) AND Potassium != (0.61..+inf) AND Calcium != (-inf..8.24] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Sodium != (12.81..13.22] AND Silicon != (72.66..73.02] AND Iron != (-inf..0.11] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Silicon != (72.66..73.02] AND Potassium != (0.61..+inf) AND Calcium != (-inf..8.24] AND Iron != (-inf..0.11] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Sodium != (12.81..13.22] AND Silicon != (72.66..73.02] AND Potassium != (0.61..+inf) AND Calcium != (-inf..8.24] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Sodium != (12.81..13.22] AND Magnesium != (3.33..3.53] AND Aluminum != (1.54..+inf) AND Potassium != (0.61..+inf) THEN target != 1"
+  # hypos left: 4
+  expl: "IF Magnesium != (3.33..3.53] AND Aluminum != (1.54..+inf) AND Silicon != (72.66..73.02] AND Potassium != (0.61..+inf) THEN target != 1"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (12.81..13.22] AND Magnesium == (3.53..3.73] AND Aluminum == (1.02..1.28] AND Silicon == (73.02..+inf) AND Potassium == (0.48..0.61] AND Calcium == (8.24..8.64] AND Barium == (-inf..0.09] AND Iron == (0.11..0.19] THEN target != 1"
+  expl: "IF Calcium != (8.24..8.64] AND Iron != (0.11..0.19] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Sodium != (12.81..13.22] AND Iron != (0.11..0.19] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Aluminum != (1.02..1.28] AND Silicon != (73.02..+inf) THEN target != 1"
+  # hypos left: 2
+  expl: "IF Magnesium != (3.53..3.73] AND Iron != (0.11..0.19] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Silicon != (73.02..+inf) AND Potassium != (0.48..0.61] AND Iron != (0.11..0.19] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Sodium != (12.81..13.22] AND Aluminum != (1.02..1.28] AND Calcium != (8.24..8.64] THEN target != 1"
+  # hypos left: 3
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (12.81..13.22] AND Magnesium == (3.53..3.73] AND Aluminum == (1.28..1.54] AND Silicon == (72.66..73.02] AND Potassium == (0.48..0.61] AND Calcium == (-inf..8.24] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 1"
+  expl: "IF Calcium != (-inf..8.24] THEN target != 1"
+  # hypos left: 1
+  expl: "IF Silicon != (72.66..73.02] THEN target != 1"
+  # hypos left: 1
+  expl: "IF Sodium != (12.81..13.22] AND Potassium != (0.48..0.61] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Sodium != (12.81..13.22] AND Magnesium != (3.53..3.73] AND Aluminum != (1.28..1.54] THEN target != 1"
+  # hypos left: 3
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (12.81..13.22] AND Magnesium == (3.53..3.73] AND Aluminum == (1.54..+inf) AND Silicon == (72.15..72.66] AND Potassium == (0.48..0.61] AND Calcium == (8.24..8.64] AND Barium == (-inf..0.09] AND Iron == (0.11..0.19] THEN target != 1"
+  expl: "IF Magnesium != (3.53..3.73] THEN target != 1"
+  # hypos left: 1
+  expl: "IF Aluminum != (1.54..+inf) AND Silicon != (72.15..72.66] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Aluminum != (1.54..+inf) AND Calcium != (8.24..8.64] AND Iron != (0.11..0.19] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Refractive Index != (-inf..1.52] AND Aluminum != (1.54..+inf) AND Potassium != (0.48..0.61] AND Calcium != (8.24..8.64] THEN target != 1"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (12.81..13.22] AND Magnesium == (3.53..3.73] AND Aluminum == (1.54..+inf) AND Silicon == (72.66..73.02] AND Potassium == (0.48..0.61] AND Calcium == (8.24..8.64] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 1"
+  expl: "IF Aluminum != (1.54..+inf) THEN target != 1"
+  # hypos left: 1
+  expl: "IF Magnesium != (3.53..3.73] AND Silicon != (72.66..73.02] AND Iron != (-inf..0.11] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Sodium != (12.81..13.22] AND Magnesium != (3.53..3.73] AND Silicon != (72.66..73.02] AND Calcium != (8.24..8.64] THEN target != 1"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (12.81..13.22] AND Magnesium == (3.73..+inf) AND Aluminum == (1.02..1.28] AND Silicon == (72.15..72.66] AND Potassium == (0.48..0.61] AND Calcium == (8.24..8.64] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 1"
+  expl: "IF Magnesium != (3.73..+inf) AND Aluminum != (1.02..1.28] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Magnesium != (3.73..+inf) AND Calcium != (8.24..8.64] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Magnesium != (3.73..+inf) AND Silicon != (72.15..72.66] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Sodium != (12.81..13.22] AND Silicon != (72.15..72.66] AND Calcium != (8.24..8.64] THEN target != 1"
+  # hypos left: 3
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (13.22..13.63] AND Magnesium == (3.33..3.53] AND Aluminum == (1.02..1.28] AND Silicon == (72.66..73.02] AND Potassium == (0.48..0.61] AND Calcium == (8.24..8.64] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 0"
+  expl: "IF Sodium != (13.22..13.63] AND Magnesium != (3.33..3.53] THEN target != 0"
+  # hypos left: 2
+  expl: "IF Sodium != (13.22..13.63] AND Aluminum != (1.02..1.28] AND Calcium != (8.24..8.64] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Aluminum != (1.02..1.28] AND Silicon != (72.66..73.02] AND Calcium != (8.24..8.64] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Magnesium != (3.33..3.53] AND Aluminum != (1.02..1.28] AND Silicon != (72.66..73.02] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Magnesium != (3.33..3.53] AND Aluminum != (1.02..1.28] AND Calcium != (8.24..8.64] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Magnesium != (3.33..3.53] AND Silicon != (72.66..73.02] AND Calcium != (8.24..8.64] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Magnesium != (3.33..3.53] AND Potassium != (0.48..0.61] AND Calcium != (8.24..8.64] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Sodium != (13.22..13.63] AND Potassium != (0.48..0.61] AND Calcium != (8.24..8.64] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Sodium != (13.22..13.63] AND Aluminum != (1.02..1.28] AND Silicon != (72.66..73.02] AND Potassium != (0.48..0.61] THEN target != 0"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (13.22..13.63] AND Magnesium == (3.33..3.53] AND Aluminum == (1.28..1.54] AND Silicon == (-inf..72.15] AND Potassium == (0.48..0.61] AND Calcium == (8.64..9.27] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 0"
+  expl: "IF Silicon != (-inf..72.15] AND Calcium != (8.64..9.27] THEN target != 0"
+  # hypos left: 2
+  expl: "IF Sodium != (13.22..13.63] AND Magnesium != (3.33..3.53] AND Silicon != (-inf..72.15] AND Barium != (-inf..0.09] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Sodium != (13.22..13.63] AND Magnesium != (3.33..3.53] AND Calcium != (8.64..9.27] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Refractive Index != (-inf..1.52] AND Sodium != (13.22..13.63] AND Magnesium != (3.33..3.53] AND Potassium != (0.48..0.61] AND Calcium != (8.64..9.27] THEN target != 0"
+  # hypos left: 5
+  expl: "IF Sodium != (13.22..13.63] AND Magnesium != (3.33..3.53] AND Aluminum != (1.28..1.54] AND Silicon != (-inf..72.15] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (13.22..13.63] AND Magnesium == (3.33..3.53] AND Aluminum == (1.28..1.54] AND Silicon == (72.15..72.66] AND Potassium == (0.48..0.61] AND Calcium == (8.24..8.64] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 0"
+  expl: "IF Magnesium != (3.33..3.53] THEN target != 0"
+  # hypos left: 1
+  expl: "IF Potassium != (0.48..0.61] AND Calcium != (8.24..8.64] THEN target != 0"
+  # hypos left: 2
+  expl: "IF Silicon != (72.15..72.66] AND Calcium != (8.24..8.64] THEN target != 0"
+  # hypos left: 2
+  expl: "IF Sodium != (13.22..13.63] AND Silicon != (72.15..72.66] AND Potassium != (0.48..0.61] THEN target != 0"
+  # hypos left: 3
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (13.22..13.63] AND Magnesium == (3.53..3.73] AND Aluminum == (1.02..1.28] AND Silicon == (73.02..+inf) AND Potassium == (0.48..0.61] AND Calcium == (-inf..8.24] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 0"
+  expl: "IF Silicon != (73.02..+inf) AND Potassium != (0.48..0.61] THEN target != 0"
+  # hypos left: 2
+  expl: "IF Magnesium != (3.53..3.73] AND Silicon != (73.02..+inf) THEN target != 0"
+  # hypos left: 2
+  expl: "IF Magnesium != (3.53..3.73] AND Aluminum != (1.02..1.28] THEN target != 0"
+  # hypos left: 2
+  expl: "IF Aluminum != (1.02..1.28] AND Silicon != (73.02..+inf) THEN target != 0"
+  # hypos left: 2
+  expl: "IF Sodium != (13.22..13.63] AND Silicon != (73.02..+inf) AND Calcium != (-inf..8.24] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Sodium != (13.22..13.63] AND Aluminum != (1.02..1.28] AND Potassium != (0.48..0.61] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Sodium != (13.22..13.63] AND Magnesium != (3.53..3.73] AND Calcium != (-inf..8.24] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (13.63..+inf) AND Magnesium == (3.53..3.73] AND Aluminum == (-inf..1.02] AND Silicon == (72.66..73.02] AND Potassium == (-inf..0.16] AND Calcium == (8.64..9.27] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 0"
+  expl: "IF Refractive Index != (-inf..1.52] AND Magnesium != (3.53..3.73] AND Calcium != (8.64..9.27] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Magnesium != (3.53..3.73] AND Silicon != (72.66..73.02] AND Calcium != (8.64..9.27] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Sodium != (13.63..+inf) AND Aluminum != (-inf..1.02] AND Potassium != (-inf..0.16] AND Calcium != (8.64..9.27] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Aluminum != (-inf..1.02] AND Silicon != (72.66..73.02] AND Calcium != (8.64..9.27] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Sodium != (13.63..+inf) AND Aluminum != (-inf..1.02] AND Silicon != (72.66..73.02] AND Potassium != (-inf..0.16] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 5
+  expl: "IF Sodium != (13.63..+inf) AND Magnesium != (3.53..3.73] AND Aluminum != (-inf..1.02] AND Potassium != (-inf..0.16] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 5
+  expl: "IF Sodium != (13.63..+inf) AND Magnesium != (3.53..3.73] AND Aluminum != (-inf..1.02] AND Potassium != (-inf..0.16] AND Barium != (-inf..0.09] THEN target != 0"
+  # hypos left: 5
+  expl: "IF Magnesium != (3.53..3.73] AND Aluminum != (-inf..1.02] AND Potassium != (-inf..0.16] AND Calcium != (8.64..9.27] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (13.63..+inf) AND Magnesium == (3.53..3.73] AND Aluminum == (1.02..1.28] AND Silicon == (-inf..72.15] AND Potassium == (-inf..0.16] AND Calcium == (8.64..9.27] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 0"
+  expl: "IF Aluminum != (1.02..1.28] AND Calcium != (8.64..9.27] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Refractive Index != (-inf..1.52] AND Magnesium != (3.53..3.73] AND Calcium != (8.64..9.27] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Sodium != (13.63..+inf) AND Silicon != (-inf..72.15] AND Potassium != (-inf..0.16] AND Calcium != (8.64..9.27] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Magnesium != (3.53..3.73] AND Potassium != (-inf..0.16] AND Calcium != (8.64..9.27] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Magnesium != (3.53..3.73] AND Aluminum != (1.02..1.28] AND Silicon != (-inf..72.15] AND Calcium != (8.64..9.27] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Sodium != (13.63..+inf) AND Silicon != (-inf..72.15] AND Potassium != (-inf..0.16] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Sodium != (13.63..+inf) AND Magnesium != (3.53..3.73] AND Aluminum != (1.02..1.28] AND Silicon != (-inf..72.15] AND Potassium != (-inf..0.16] AND Barium != (-inf..0.09] THEN target != 0"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (13.63..+inf) AND Magnesium == (3.53..3.73] AND Aluminum == (1.02..1.28] AND Silicon == (72.66..73.02] AND Potassium == (-inf..0.16] AND Calcium == (8.24..8.64] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 0"
+  expl: "IF Sodium != (13.63..+inf) AND Potassium != (-inf..0.16] THEN target != 0"
+  # hypos left: 2
+  expl: "IF Magnesium != (3.53..3.73] AND Potassium != (-inf..0.16] AND Calcium != (8.24..8.64] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Magnesium != (3.53..3.73] AND Silicon != (72.66..73.02] AND Potassium != (-inf..0.16] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Refractive Index != (-inf..1.52] AND Magnesium != (3.53..3.73] AND Silicon != (72.66..73.02] AND Calcium != (8.24..8.64] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Magnesium != (3.53..3.73] AND Aluminum != (1.02..1.28] AND Silicon != (72.66..73.02] AND Calcium != (8.24..8.64] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Aluminum != (1.02..1.28] AND Silicon != (72.66..73.02] AND Calcium != (8.24..8.64] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Refractive Index != (-inf..1.52] AND Magnesium != (3.53..3.73] AND Aluminum != (1.02..1.28] AND Calcium != (8.24..8.64] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Sodium != (13.63..+inf) AND Magnesium != (3.53..3.73] AND Aluminum != (1.02..1.28] AND Silicon != (72.66..73.02] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (-inf..1.52] AND Sodium == (13.63..+inf) AND Magnesium == (3.53..3.73] AND Aluminum == (1.54..+inf) AND Silicon == (-inf..72.15] AND Potassium == (0.61..+inf) AND Calcium == (-inf..8.24] AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 1"
+  expl: "IF Aluminum != (1.54..+inf) AND Potassium != (0.61..+inf) AND Calcium != (-inf..8.24] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Aluminum != (1.54..+inf) AND Silicon != (-inf..72.15] AND Potassium != (0.61..+inf) THEN target != 1"
+  # hypos left: 3
+  expl: "IF Sodium != (13.63..+inf) AND Magnesium != (3.53..3.73] AND Potassium != (0.61..+inf) AND Calcium != (-inf..8.24] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Sodium != (13.63..+inf) AND Magnesium != (3.53..3.73] AND Silicon != (-inf..72.15] AND Iron != (-inf..0.11] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Sodium != (13.63..+inf) AND Aluminum != (1.54..+inf) AND Silicon != (-inf..72.15] AND Calcium != (-inf..8.24] THEN target != 1"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (1.52..+inf) AND Sodium == (12.81..13.22] AND Magnesium == (3.73..+inf) AND Aluminum == (-inf..1.02] AND Silicon == (-inf..72.15] AND Potassium == (-inf..0.16] AND Calcium == (9.27..+inf) AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 0"
+  expl: "IF Sodium != (12.81..13.22] AND Magnesium != (3.73..+inf) THEN target != 0"
+  # hypos left: 2
+  expl: "IF Magnesium != (3.73..+inf) AND Aluminum != (-inf..1.02] AND Silicon != (-inf..72.15] AND Potassium != (-inf..0.16] AND Calcium != (9.27..+inf) THEN target != 0"
+  # hypos left: 5
+  expl: "IF Refractive Index != (1.52..+inf) AND Magnesium != (3.73..+inf) AND Aluminum != (-inf..1.02] AND Silicon != (-inf..72.15] AND Calcium != (9.27..+inf) AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 6
+  expl: "IF Refractive Index != (1.52..+inf) AND Aluminum != (-inf..1.02] AND Silicon != (-inf..72.15] AND Potassium != (-inf..0.16] AND Calcium != (9.27..+inf) AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 6
+  expl: "IF Refractive Index != (1.52..+inf) AND Sodium != (12.81..13.22] AND Aluminum != (-inf..1.02] AND Silicon != (-inf..72.15] AND Potassium != (-inf..0.16] AND Calcium != (9.27..+inf) THEN target != 0"
+  # hypos left: 6
+  expl: "IF Refractive Index != (1.52..+inf) AND Sodium != (12.81..13.22] AND Aluminum != (-inf..1.02] AND Potassium != (-inf..0.16] AND Calcium != (9.27..+inf) AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (1.52..+inf) AND Sodium == (13.22..13.63] AND Magnesium == (-inf..3.33] AND Aluminum == (1.54..+inf) AND Silicon == (72.15..72.66] AND Potassium == (0.48..0.61] AND Calcium == (9.27..+inf) AND Barium == (0.14..0.27] AND Iron == (0.11..0.19] THEN target != 0"
+  expl: "IF Sodium != (13.22..13.63] AND Aluminum != (1.54..+inf) AND Silicon != (72.15..72.66] AND Barium != (0.14..0.27] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Sodium != (13.22..13.63] AND Potassium != (0.48..0.61] AND Barium != (0.14..0.27] AND Iron != (0.11..0.19] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Sodium != (13.22..13.63] AND Silicon != (72.15..72.66] AND Potassium != (0.48..0.61] AND Barium != (0.14..0.27] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Sodium != (13.22..13.63] AND Silicon != (72.15..72.66] AND Barium != (0.14..0.27] AND Iron != (0.11..0.19] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Refractive Index != (1.52..+inf) AND Magnesium != (-inf..3.33] AND Aluminum != (1.54..+inf) AND Calcium != (9.27..+inf) AND Barium != (0.14..0.27] THEN target != 0"
+  # hypos left: 5
+  expl: "IF Refractive Index != (1.52..+inf) AND Magnesium != (-inf..3.33] AND Potassium != (0.48..0.61] AND Calcium != (9.27..+inf) AND Barium != (0.14..0.27] AND Iron != (0.11..0.19] THEN target != 0"
+  # hypos left: 6
+  expl: "IF Refractive Index != (1.52..+inf) AND Magnesium != (-inf..3.33] AND Silicon != (72.15..72.66] AND Calcium != (9.27..+inf) AND Barium != (0.14..0.27] AND Iron != (0.11..0.19] THEN target != 0"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (1.52..+inf) AND Sodium == (13.63..+inf) AND Magnesium == (3.73..+inf) AND Aluminum == (-inf..1.02] AND Silicon == (-inf..72.15] AND Potassium == (-inf..0.16] AND Calcium == (9.27..+inf) AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 0"
+  expl: "IF Magnesium != (3.73..+inf) THEN target != 0"
+  # hypos left: 1
+  expl: "IF Refractive Index != (1.52..+inf) AND Aluminum != (-inf..1.02] AND Potassium != (-inf..0.16] AND Calcium != (9.27..+inf) AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 5
+  expl: "IF Refractive Index != (1.52..+inf) AND Sodium != (13.63..+inf) AND Aluminum != (-inf..1.02] AND Silicon != (-inf..72.15] AND Potassium != (-inf..0.16] AND Calcium != (9.27..+inf) THEN target != 0"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Refractive Index == (1.52..+inf) AND Sodium == (13.63..+inf) AND Magnesium == (3.73..+inf) AND Aluminum == (-inf..1.02] AND Silicon == (-inf..72.15] AND Potassium == (0.16..0.48] AND Calcium == (9.27..+inf) AND Barium == (-inf..0.09] AND Iron == (-inf..0.11] THEN target != 0"
+  expl: "IF Magnesium != (3.73..+inf) AND Aluminum != (-inf..1.02] THEN target != 0"
+  # hypos left: 2
+  expl: "IF Magnesium != (3.73..+inf) AND Potassium != (0.16..0.48] THEN target != 0"
+  # hypos left: 2
+  expl: "IF Refractive Index != (1.52..+inf) AND Sodium != (13.63..+inf) AND Magnesium != (3.73..+inf) AND Silicon != (-inf..72.15] AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 5
+  expl: "IF Refractive Index != (1.52..+inf) AND Aluminum != (-inf..1.02] AND Potassium != (0.16..0.48] AND Calcium != (9.27..+inf) AND Iron != (-inf..0.11] THEN target != 0"
+  # hypos left: 5
+  expl: "IF Refractive Index != (1.52..+inf) AND Sodium != (13.63..+inf) AND Aluminum != (-inf..1.02] AND Silicon != (-inf..72.15] AND Potassium != (0.16..0.48] AND Calcium != (9.27..+inf) THEN target != 0"
+  # hypos left: 6
+  exp time: 0.00
+
+exptimes: [0.006346000000000074, 0.003218999999999972, 0.004591000000000012, 0.004383000000000026, 0.003826000000000107, 0.0020300000000000873, 0.0025300000000000322, 0.0026929999999999454, 0.005671999999999899, 0.0025169999999999915, 0.004753999999999925, 0.0024490000000000345, 0.0042680000000000495, 0.004351000000000105, 0.002162999999999915, 0.0023139999999999272, 0.0020329999999999515, 0.0024340000000000472, 0.00332599999999994, 0.003901999999999961, 0.0024980000000000002, 0.0028839999999999977, 0.004064999999999874, 0.00494899999999987, 0.00400300000000009, 0.0028720000000000967, 0.0028489999999999904, 0.0034079999999999666, 0.0019220000000000903, 0.0027810000000000334]
+# of insts: 30
+tot # of expls: 173
+min # of expls: 3
+avg # of expls: 5.77
+max # of expls: 9
+
+Min expl sz: 1
+min expl sz: 1.97
+avg expl sz: 3.16
+max expl sz: 4.30
+Max expl sz: 6
+
+tot exp time: 0.10
+min exp time: 0.00
+avg exp time: 0.00
+max exp time: 0.01

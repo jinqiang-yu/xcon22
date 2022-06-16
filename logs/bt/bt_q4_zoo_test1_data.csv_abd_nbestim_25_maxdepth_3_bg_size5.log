@@ -1,0 +1,724 @@
+c XDual: dual explanations for XGBoost models
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 0 AND feathers = 0 AND eggs = 1 AND milk = 0 AND airborne = 0 AND aquatic = 1 AND predator = 0 AND toothed = 1 AND backbone = 1 AND breathes = 0 AND venomous = 0 AND fins = 1 AND legs = (-inf..2.5] AND tail = 1 AND domestic = 0 AND catsize = 0 THEN fish"
+  explanation: "IF breathes = 0 AND fins = 1 THEN fish"
+  # hypos left: 2
+  explanation: "IF predator = 0 AND breathes = 0 THEN fish"
+  # hypos left: 2
+  explanation: "IF fins = 1 AND catsize = 0 THEN fish"
+  # hypos left: 2
+  explanation: "IF milk = 0 AND fins = 1 THEN fish"
+  # hypos left: 2
+  explanation: "IF eggs = 1 AND fins = 1 THEN fish"
+  # hypos left: 2
+  explanation: "IF predator = 0 AND fins = 1 THEN fish"
+  # hypos left: 2
+  explanation: "IF eggs = 1 AND breathes = 0 AND tail = 1 THEN fish"
+  # hypos left: 3
+  explanation: "IF eggs = 1 AND backbone = 1 AND breathes = 0 THEN fish"
+  # hypos left: 3
+  explanation: "IF backbone = 1 AND breathes = 0 AND venomous = 0 THEN fish"
+  # hypos left: 3
+  explanation: "IF breathes = 0 AND venomous = 0 AND tail = 1 THEN fish"
+  # hypos left: 3
+  explanation: "IF toothed = 1 AND breathes = 0 AND venomous = 0 THEN fish"
+  # hypos left: 3
+  explanation: "IF eggs = 1 AND toothed = 1 AND breathes = 0 THEN fish"
+  # hypos left: 3
+  explanation: "IF eggs = 1 AND aquatic = 1 AND toothed = 1 AND legs = (-inf..2.5] THEN fish"
+  # hypos left: 4
+  explanation: "IF aquatic = 1 AND breathes = 0 AND venomous = 0 AND legs = (-inf..2.5] THEN fish"
+  # hypos left: 4
+  explanation: "IF airborne = 0 AND aquatic = 1 AND predator = 0 AND legs = (-inf..2.5] THEN fish"
+  # hypos left: 4
+  explanation: "IF feathers = 0 AND aquatic = 1 AND predator = 0 AND legs = (-inf..2.5] THEN fish"
+  # hypos left: 4
+  explanation: "IF feathers = 0 AND aquatic = 1 AND predator = 0 AND tail = 1 THEN fish"
+  # hypos left: 4
+  explanation: "IF airborne = 0 AND aquatic = 1 AND predator = 0 AND tail = 1 THEN fish"
+  # hypos left: 4
+  explanation: "IF eggs = 1 AND predator = 0 AND toothed = 1 AND legs = (-inf..2.5] THEN fish"
+  # hypos left: 4
+  explanation: "IF milk = 0 AND predator = 0 AND toothed = 1 AND legs = (-inf..2.5] THEN fish"
+  # hypos left: 4
+  exp time: 0.62
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 0 AND feathers = 0 AND eggs = 1 AND milk = 0 AND airborne = 0 AND aquatic = 1 AND predator = 0 AND toothed = 1 AND backbone = 1 AND breathes = 0 AND venomous = 0 AND fins = 1 AND legs = (-inf..2.5] AND tail = 1 AND domestic = 1 AND catsize = 0 THEN fish"
+  explanation: "IF predator = 0 AND fins = 1 THEN fish"
+  # hypos left: 2
+  explanation: "IF predator = 0 AND breathes = 0 THEN fish"
+  # hypos left: 2
+  explanation: "IF eggs = 1 AND fins = 1 THEN fish"
+  # hypos left: 2
+  explanation: "IF milk = 0 AND fins = 1 THEN fish"
+  # hypos left: 2
+  explanation: "IF fins = 1 AND catsize = 0 THEN fish"
+  # hypos left: 2
+  explanation: "IF breathes = 0 AND fins = 1 THEN fish"
+  # hypos left: 2
+  explanation: "IF breathes = 0 AND domestic = 1 THEN fish"
+  # hypos left: 2
+  explanation: "IF eggs = 1 AND breathes = 0 AND tail = 1 THEN fish"
+  # hypos left: 3
+  explanation: "IF eggs = 1 AND toothed = 1 AND breathes = 0 THEN fish"
+  # hypos left: 3
+  explanation: "IF eggs = 1 AND backbone = 1 AND breathes = 0 THEN fish"
+  # hypos left: 3
+  explanation: "IF breathes = 0 AND venomous = 0 AND tail = 1 THEN fish"
+  # hypos left: 3
+  explanation: "IF backbone = 1 AND breathes = 0 AND venomous = 0 THEN fish"
+  # hypos left: 3
+  explanation: "IF toothed = 1 AND breathes = 0 AND venomous = 0 THEN fish"
+  # hypos left: 3
+  explanation: "IF airborne = 0 AND domestic = 1 AND catsize = 0 THEN fish"
+  # hypos left: 3
+  explanation: "IF toothed = 1 AND domestic = 1 AND catsize = 0 THEN fish"
+  # hypos left: 3
+  explanation: "IF milk = 0 AND toothed = 1 AND domestic = 1 THEN fish"
+  # hypos left: 3
+  explanation: "IF eggs = 1 AND toothed = 1 AND domestic = 1 THEN fish"
+  # hypos left: 3
+  explanation: "IF aquatic = 1 AND breathes = 0 AND venomous = 0 AND legs = (-inf..2.5] THEN fish"
+  # hypos left: 4
+  explanation: "IF feathers = 0 AND venomous = 0 AND domestic = 1 AND catsize = 0 THEN fish"
+  # hypos left: 4
+  explanation: "IF feathers = 0 AND backbone = 1 AND domestic = 1 AND catsize = 0 THEN fish"
+  # hypos left: 4
+  exp time: 0.49
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 0 AND feathers = 0 AND eggs = 1 AND milk = 0 AND airborne = 0 AND aquatic = 1 AND predator = 1 AND toothed = 0 AND backbone = 0 AND breathes = 0 AND venomous = 0 AND fins = 0 AND legs = (5.75..+inf) AND tail = 0 AND domestic = 0 AND catsize = 0 THEN invertebrate"
+  explanation: "IF predator = 1 AND legs = (5.75..+inf) THEN invertebrate"
+  # hypos left: 2
+  explanation: "IF predator = 1 AND backbone = 0 THEN invertebrate"
+  # hypos left: 2
+  explanation: "IF aquatic = 1 AND legs = (5.75..+inf) THEN invertebrate"
+  # hypos left: 2
+  explanation: "IF aquatic = 1 AND backbone = 0 THEN invertebrate"
+  # hypos left: 2
+  explanation: "IF toothed = 0 AND breathes = 0 THEN invertebrate"
+  # hypos left: 2
+  explanation: "IF breathes = 0 AND tail = 0 THEN invertebrate"
+  # hypos left: 2
+  explanation: "IF breathes = 0 AND legs = (5.75..+inf) THEN invertebrate"
+  # hypos left: 2
+  explanation: "IF backbone = 0 AND breathes = 0 THEN invertebrate"
+  # hypos left: 2
+  explanation: "IF breathes = 0 AND venomous = 0 AND fins = 0 THEN invertebrate"
+  # hypos left: 3
+  explanation: "IF eggs = 1 AND breathes = 0 AND fins = 0 THEN invertebrate"
+  # hypos left: 3
+  explanation: "IF aquatic = 1 AND toothed = 0 AND tail = 0 THEN invertebrate"
+  # hypos left: 3
+  explanation: "IF predator = 1 AND toothed = 0 AND tail = 0 THEN invertebrate"
+  # hypos left: 3
+  explanation: "IF hair = 0 AND feathers = 0 AND aquatic = 1 AND toothed = 0 THEN invertebrate"
+  # hypos left: 4
+  explanation: "IF feathers = 0 AND aquatic = 1 AND toothed = 0 AND catsize = 0 THEN invertebrate"
+  # hypos left: 4
+  explanation: "IF feathers = 0 AND milk = 0 AND aquatic = 1 AND toothed = 0 THEN invertebrate"
+  # hypos left: 4
+  explanation: "IF airborne = 0 AND aquatic = 1 AND toothed = 0 AND catsize = 0 THEN invertebrate"
+  # hypos left: 4
+  explanation: "IF hair = 0 AND airborne = 0 AND aquatic = 1 AND toothed = 0 THEN invertebrate"
+  # hypos left: 4
+  explanation: "IF milk = 0 AND airborne = 0 AND aquatic = 1 AND toothed = 0 THEN invertebrate"
+  # hypos left: 4
+  explanation: "IF hair = 0 AND feathers = 0 AND predator = 1 AND toothed = 0 THEN invertebrate"
+  # hypos left: 4
+  explanation: "IF feathers = 0 AND milk = 0 AND predator = 1 AND toothed = 0 THEN invertebrate"
+  # hypos left: 4
+  exp time: 0.66
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 0 AND feathers = 0 AND eggs = 1 AND milk = 0 AND airborne = 0 AND aquatic = 1 AND predator = 1 AND toothed = 1 AND backbone = 1 AND breathes = 0 AND venomous = 1 AND fins = 1 AND legs = (-inf..2.5] AND tail = 1 AND domestic = 0 AND catsize = 1 THEN reptile"
+  explanation: "IF venomous = 1 AND catsize = 1 THEN reptile"
+  # hypos left: 2
+  explanation: "IF toothed = 1 AND venomous = 1 AND legs = (-inf..2.5] THEN reptile"
+  # hypos left: 3
+  explanation: "IF backbone = 1 AND venomous = 1 AND legs = (-inf..2.5] THEN reptile"
+  # hypos left: 3
+  explanation: "IF venomous = 1 AND legs = (-inf..2.5] AND tail = 1 THEN reptile"
+  # hypos left: 3
+  explanation: "IF eggs = 1 AND venomous = 1 AND tail = 1 THEN reptile"
+  # hypos left: 3
+  explanation: "IF aquatic = 1 AND venomous = 1 AND tail = 1 THEN reptile"
+  # hypos left: 3
+  explanation: "IF breathes = 0 AND venomous = 1 AND tail = 1 THEN reptile"
+  # hypos left: 3
+  explanation: "IF venomous = 1 AND fins = 1 AND tail = 1 THEN reptile"
+  # hypos left: 3
+  explanation: "IF backbone = 1 AND venomous = 1 AND tail = 1 THEN reptile"
+  # hypos left: 3
+  explanation: "IF backbone = 1 AND venomous = 1 AND fins = 1 THEN reptile"
+  # hypos left: 3
+  explanation: "IF backbone = 1 AND breathes = 0 AND venomous = 1 THEN reptile"
+  # hypos left: 3
+  explanation: "IF toothed = 1 AND venomous = 1 AND fins = 1 THEN reptile"
+  # hypos left: 3
+  explanation: "IF toothed = 1 AND breathes = 0 AND venomous = 1 THEN reptile"
+  # hypos left: 3
+  explanation: "IF toothed = 1 AND venomous = 1 AND tail = 1 THEN reptile"
+  # hypos left: 3
+  exp time: 0.17
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 0 AND feathers = 1 AND eggs = 1 AND milk = 0 AND airborne = 0 AND aquatic = 0 AND predator = 0 AND toothed = 0 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (-inf..2.5] AND tail = 1 AND domestic = 0 AND catsize = 1 THEN bird"
+  explanation: "IF feathers = 1 THEN bird"
+  # hypos left: 1
+  explanation: "IF toothed = 0 AND legs = (-inf..2.5] AND catsize = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF toothed = 0 AND legs = (-inf..2.5] AND tail = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF toothed = 0 AND backbone = 1 AND legs = (-inf..2.5] THEN bird"
+  # hypos left: 3
+  explanation: "IF hair = 0 AND predator = 0 AND legs = (-inf..2.5] AND catsize = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF hair = 0 AND aquatic = 0 AND legs = (-inf..2.5] AND catsize = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF milk = 0 AND predator = 0 AND legs = (-inf..2.5] AND catsize = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF eggs = 1 AND predator = 0 AND legs = (-inf..2.5] AND catsize = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF eggs = 1 AND aquatic = 0 AND legs = (-inf..2.5] AND catsize = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF milk = 0 AND aquatic = 0 AND legs = (-inf..2.5] AND catsize = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF eggs = 1 AND fins = 0 AND legs = (-inf..2.5] AND catsize = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF milk = 0 AND fins = 0 AND legs = (-inf..2.5] AND catsize = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF hair = 0 AND fins = 0 AND legs = (-inf..2.5] AND catsize = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF eggs = 1 AND breathes = 1 AND legs = (-inf..2.5] AND catsize = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF milk = 0 AND breathes = 1 AND legs = (-inf..2.5] AND catsize = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF hair = 0 AND predator = 0 AND backbone = 1 AND fins = 0 AND legs = (-inf..2.5] THEN bird"
+  # hypos left: 5
+  explanation: "IF eggs = 1 AND predator = 0 AND backbone = 1 AND fins = 0 AND legs = (-inf..2.5] THEN bird"
+  # hypos left: 5
+  explanation: "IF milk = 0 AND predator = 0 AND backbone = 1 AND fins = 0 AND legs = (-inf..2.5] THEN bird"
+  # hypos left: 5
+  explanation: "IF hair = 0 AND predator = 0 AND fins = 0 AND legs = (-inf..2.5] AND tail = 1 THEN bird"
+  # hypos left: 5
+  explanation: "IF milk = 0 AND predator = 0 AND fins = 0 AND legs = (-inf..2.5] AND tail = 1 THEN bird"
+  # hypos left: 5
+  exp time: 0.48
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 0 AND feathers = 1 AND eggs = 1 AND milk = 0 AND airborne = 0 AND aquatic = 1 AND predator = 1 AND toothed = 0 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (-inf..2.5] AND tail = 1 AND domestic = 0 AND catsize = 1 THEN bird"
+  explanation: "IF feathers = 1 THEN bird"
+  # hypos left: 1
+  explanation: "IF toothed = 0 AND legs = (-inf..2.5] AND tail = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF toothed = 0 AND backbone = 1 AND legs = (-inf..2.5] THEN bird"
+  # hypos left: 3
+  explanation: "IF toothed = 0 AND legs = (-inf..2.5] AND catsize = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF hair = 0 AND aquatic = 1 AND toothed = 0 AND tail = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF milk = 0 AND aquatic = 1 AND toothed = 0 AND tail = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF hair = 0 AND predator = 1 AND toothed = 0 AND backbone = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF milk = 0 AND predator = 1 AND toothed = 0 AND backbone = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF hair = 0 AND aquatic = 1 AND toothed = 0 AND backbone = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF milk = 0 AND aquatic = 1 AND toothed = 0 AND backbone = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF hair = 0 AND aquatic = 1 AND toothed = 0 AND breathes = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF milk = 0 AND aquatic = 1 AND toothed = 0 AND breathes = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF milk = 0 AND aquatic = 1 AND breathes = 1 AND catsize = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF milk = 0 AND predator = 1 AND breathes = 1 AND catsize = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF aquatic = 1 AND venomous = 0 AND fins = 0 AND legs = (-inf..2.5] THEN bird"
+  # hypos left: 4
+  explanation: "IF aquatic = 1 AND fins = 0 AND legs = (-inf..2.5] AND catsize = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF hair = 0 AND fins = 0 AND legs = (-inf..2.5] AND catsize = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF milk = 0 AND fins = 0 AND legs = (-inf..2.5] AND catsize = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF milk = 0 AND breathes = 1 AND legs = (-inf..2.5] AND catsize = 1 THEN bird"
+  # hypos left: 4
+  explanation: "IF eggs = 1 AND fins = 0 AND legs = (-inf..2.5] AND catsize = 1 THEN bird"
+  # hypos left: 4
+  exp time: 0.40
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 0 AND feathers = 1 AND eggs = 1 AND milk = 0 AND airborne = 1 AND aquatic = 0 AND predator = 0 AND toothed = 0 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (-inf..2.5] AND tail = 1 AND domestic = 1 AND catsize = 0 THEN bird"
+  explanation: "IF feathers = 1 THEN bird"
+  # hypos left: 1
+  explanation: "IF hair = 0 AND domestic = 1 THEN bird"
+  # hypos left: 2
+  explanation: "IF hair = 0 AND airborne = 1 AND legs = (-inf..2.5] THEN bird"
+  # hypos left: 3
+  explanation: "IF eggs = 1 AND airborne = 1 AND legs = (-inf..2.5] THEN bird"
+  # hypos left: 3
+  explanation: "IF milk = 0 AND airborne = 1 AND legs = (-inf..2.5] THEN bird"
+  # hypos left: 3
+  explanation: "IF milk = 0 AND airborne = 1 AND tail = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF eggs = 1 AND airborne = 1 AND tail = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF hair = 0 AND airborne = 1 AND tail = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF hair = 0 AND airborne = 1 AND backbone = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF milk = 0 AND airborne = 1 AND backbone = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF eggs = 1 AND airborne = 1 AND backbone = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF airborne = 1 AND toothed = 0 AND backbone = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF airborne = 1 AND toothed = 0 AND legs = (-inf..2.5] THEN bird"
+  # hypos left: 3
+  explanation: "IF airborne = 1 AND toothed = 0 AND tail = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF toothed = 0 AND backbone = 1 AND catsize = 0 THEN bird"
+  # hypos left: 3
+  explanation: "IF toothed = 0 AND backbone = 1 AND legs = (-inf..2.5] THEN bird"
+  # hypos left: 3
+  explanation: "IF toothed = 0 AND legs = (-inf..2.5] AND tail = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF legs = (-inf..2.5] AND tail = 1 AND domestic = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF predator = 0 AND legs = (-inf..2.5] AND domestic = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF legs = (-inf..2.5] AND domestic = 1 AND catsize = 0 THEN bird"
+  # hypos left: 3
+  exp time: 0.42
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 0 AND feathers = 1 AND eggs = 1 AND milk = 0 AND airborne = 1 AND aquatic = 1 AND predator = 1 AND toothed = 0 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (-inf..2.5] AND tail = 1 AND domestic = 0 AND catsize = 0 THEN bird"
+  explanation: "IF feathers = 1 THEN bird"
+  # hypos left: 1
+  explanation: "IF airborne = 1 AND aquatic = 1 THEN bird"
+  # hypos left: 2
+  explanation: "IF toothed = 0 AND legs = (-inf..2.5] AND tail = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF airborne = 1 AND toothed = 0 AND tail = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF airborne = 1 AND predator = 1 AND tail = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF hair = 0 AND airborne = 1 AND tail = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF milk = 0 AND airborne = 1 AND tail = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF airborne = 1 AND predator = 1 AND backbone = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF airborne = 1 AND toothed = 0 AND backbone = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF hair = 0 AND airborne = 1 AND backbone = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF milk = 0 AND airborne = 1 AND backbone = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF airborne = 1 AND predator = 1 AND legs = (-inf..2.5] THEN bird"
+  # hypos left: 3
+  explanation: "IF airborne = 1 AND toothed = 0 AND legs = (-inf..2.5] THEN bird"
+  # hypos left: 3
+  explanation: "IF hair = 0 AND airborne = 1 AND legs = (-inf..2.5] THEN bird"
+  # hypos left: 3
+  explanation: "IF milk = 0 AND airborne = 1 AND legs = (-inf..2.5] THEN bird"
+  # hypos left: 3
+  explanation: "IF toothed = 0 AND backbone = 1 AND catsize = 0 THEN bird"
+  # hypos left: 3
+  explanation: "IF toothed = 0 AND backbone = 1 AND legs = (-inf..2.5] THEN bird"
+  # hypos left: 3
+  explanation: "IF eggs = 1 AND airborne = 1 AND backbone = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF eggs = 1 AND airborne = 1 AND tail = 1 THEN bird"
+  # hypos left: 3
+  explanation: "IF eggs = 1 AND airborne = 1 AND legs = (-inf..2.5] THEN bird"
+  # hypos left: 3
+  exp time: 0.35
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 1 AND feathers = 0 AND eggs = 0 AND milk = 1 AND airborne = 0 AND aquatic = 0 AND predator = 0 AND toothed = 1 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (2.5..4.5] AND tail = 0 AND domestic = 1 AND catsize = 0 THEN mammal"
+  explanation: "IF milk = 1 THEN mammal"
+  # hypos left: 1
+  explanation: "IF eggs = 0 AND domestic = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF eggs = 0 AND tail = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF eggs = 0 AND venomous = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND eggs = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF eggs = 0 AND predator = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF legs = (2.5..4.5] AND domestic = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF toothed = 1 AND domestic = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF airborne = 0 AND domestic = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF backbone = 1 AND tail = 0 AND domestic = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF venomous = 0 AND tail = 0 AND domestic = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF feathers = 0 AND backbone = 1 AND domestic = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF feathers = 0 AND venomous = 0 AND domestic = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF hair = 1 AND backbone = 1 AND domestic = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF hair = 1 AND venomous = 0 AND domestic = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF hair = 1 AND predator = 0 AND backbone = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF hair = 1 AND airborne = 0 AND predator = 0 THEN mammal"
+  # hypos left: 3
+  explanation: "IF hair = 1 AND predator = 0 AND legs = (2.5..4.5] THEN mammal"
+  # hypos left: 3
+  explanation: "IF aquatic = 0 AND predator = 0 AND toothed = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF eggs = 0 AND aquatic = 0 AND toothed = 1 THEN mammal"
+  # hypos left: 3
+  exp time: 0.43
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 1 AND feathers = 0 AND eggs = 0 AND milk = 1 AND airborne = 0 AND aquatic = 0 AND predator = 0 AND toothed = 1 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (2.5..4.5] AND tail = 1 AND domestic = 0 AND catsize = 1 THEN mammal"
+  explanation: "IF milk = 1 THEN mammal"
+  # hypos left: 1
+  explanation: "IF eggs = 0 AND venomous = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF eggs = 0 AND predator = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND tail = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND legs = (2.5..4.5] THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND backbone = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND airborne = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND eggs = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND catsize = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF eggs = 0 AND catsize = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND toothed = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF eggs = 0 AND aquatic = 0 AND toothed = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF aquatic = 0 AND predator = 0 AND toothed = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF eggs = 0 AND aquatic = 0 AND backbone = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF eggs = 0 AND aquatic = 0 AND legs = (2.5..4.5] THEN mammal"
+  # hypos left: 3
+  explanation: "IF aquatic = 0 AND toothed = 1 AND catsize = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF toothed = 1 AND fins = 0 AND catsize = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF toothed = 1 AND breathes = 1 AND catsize = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF predator = 0 AND toothed = 1 AND catsize = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF toothed = 1 AND legs = (2.5..4.5] AND catsize = 1 THEN mammal"
+  # hypos left: 3
+  exp time: 0.39
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 1 AND feathers = 0 AND eggs = 0 AND milk = 1 AND airborne = 0 AND aquatic = 0 AND predator = 0 AND toothed = 1 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (2.5..4.5] AND tail = 1 AND domestic = 1 AND catsize = 0 THEN mammal"
+  explanation: "IF milk = 1 THEN mammal"
+  # hypos left: 1
+  explanation: "IF eggs = 0 AND venomous = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF eggs = 0 AND domestic = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND eggs = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF eggs = 0 AND predator = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF airborne = 0 AND domestic = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF toothed = 1 AND domestic = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF legs = (2.5..4.5] AND domestic = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND airborne = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND backbone = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND tail = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND legs = (2.5..4.5] THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND toothed = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF eggs = 0 AND aquatic = 0 AND backbone = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF eggs = 0 AND aquatic = 0 AND legs = (2.5..4.5] THEN mammal"
+  # hypos left: 3
+  explanation: "IF eggs = 0 AND aquatic = 0 AND toothed = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF feathers = 0 AND venomous = 0 AND domestic = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF feathers = 0 AND backbone = 1 AND domestic = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF feathers = 0 AND tail = 1 AND domestic = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF hair = 1 AND venomous = 0 AND domestic = 1 THEN mammal"
+  # hypos left: 3
+  exp time: 0.38
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 1 AND feathers = 0 AND eggs = 0 AND milk = 1 AND airborne = 0 AND aquatic = 0 AND predator = 0 AND toothed = 1 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (2.5..4.5] AND tail = 1 AND domestic = 1 AND catsize = 1 THEN mammal"
+  explanation: "IF milk = 1 THEN mammal"
+  # hypos left: 1
+  explanation: "IF eggs = 0 AND predator = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF eggs = 0 AND venomous = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF eggs = 0 AND catsize = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND eggs = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND backbone = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND tail = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND airborne = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND legs = (2.5..4.5] THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND toothed = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF airborne = 0 AND domestic = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF legs = (2.5..4.5] AND domestic = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF eggs = 0 AND domestic = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF toothed = 1 AND domestic = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF domestic = 1 AND catsize = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND catsize = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF eggs = 0 AND aquatic = 0 AND backbone = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF eggs = 0 AND aquatic = 0 AND legs = (2.5..4.5] THEN mammal"
+  # hypos left: 3
+  explanation: "IF feathers = 0 AND tail = 1 AND domestic = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF feathers = 0 AND backbone = 1 AND domestic = 1 THEN mammal"
+  # hypos left: 3
+  exp time: 0.39
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 1 AND feathers = 0 AND eggs = 0 AND milk = 1 AND airborne = 0 AND aquatic = 0 AND predator = 1 AND toothed = 1 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (2.5..4.5] AND tail = 0 AND domestic = 0 AND catsize = 1 THEN mammal"
+  explanation: "IF milk = 1 THEN mammal"
+  # hypos left: 1
+  explanation: "IF hair = 1 AND eggs = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND predator = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND toothed = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND backbone = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND legs = (2.5..4.5] THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND airborne = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF eggs = 0 AND venomous = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF eggs = 0 AND tail = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF eggs = 0 AND catsize = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND catsize = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF aquatic = 0 AND toothed = 1 AND catsize = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF toothed = 1 AND fins = 0 AND catsize = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF toothed = 1 AND breathes = 1 AND catsize = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF toothed = 1 AND legs = (2.5..4.5] AND catsize = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF predator = 1 AND legs = (2.5..4.5] AND catsize = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF eggs = 0 AND aquatic = 0 AND legs = (2.5..4.5] THEN mammal"
+  # hypos left: 3
+  explanation: "IF eggs = 0 AND aquatic = 0 AND backbone = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF eggs = 0 AND aquatic = 0 AND toothed = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF aquatic = 0 AND backbone = 1 AND tail = 0 THEN mammal"
+  # hypos left: 3
+  exp time: 0.37
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 1 AND feathers = 0 AND eggs = 0 AND milk = 1 AND airborne = 0 AND aquatic = 0 AND predator = 1 AND toothed = 1 AND backbone = 1 AND breathes = 1 AND venomous = 0 AND fins = 0 AND legs = (2.5..4.5] AND tail = 1 AND domestic = 0 AND catsize = 1 THEN mammal"
+  explanation: "IF milk = 1 THEN mammal"
+  # hypos left: 1
+  explanation: "IF eggs = 0 AND venomous = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND eggs = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND tail = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND airborne = 0 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND predator = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND toothed = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND legs = (2.5..4.5] THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND backbone = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND catsize = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF eggs = 0 AND catsize = 1 THEN mammal"
+  # hypos left: 2
+  explanation: "IF aquatic = 0 AND toothed = 1 AND catsize = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF toothed = 1 AND fins = 0 AND catsize = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF toothed = 1 AND breathes = 1 AND catsize = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF eggs = 0 AND aquatic = 0 AND backbone = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF eggs = 0 AND aquatic = 0 AND toothed = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF eggs = 0 AND aquatic = 0 AND legs = (2.5..4.5] THEN mammal"
+  # hypos left: 3
+  explanation: "IF predator = 1 AND legs = (2.5..4.5] AND catsize = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF toothed = 1 AND legs = (2.5..4.5] AND catsize = 1 THEN mammal"
+  # hypos left: 3
+  explanation: "IF feathers = 0 AND predator = 1 AND breathes = 1 AND catsize = 1 THEN mammal"
+  # hypos left: 4
+  exp time: 0.36
+
+Sample of length 16  :  [[0. 1. 1. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 1.]]
+Encoded sample of length 34  :  [[1. 0. 0. 1. 0. 1. 1. 0. 0. 1. 1. 0. 1. 0. 1. 0. 0. 1. 0. 1. 1. 0. 1. 0.
+  1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]]
+Back to sample [array([0., 1., 1., 0., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 0., 1.])]
+Readable sample ['0' '1' '1' '0' '1' '0' '0' '0' '1' '1' '0' '0' '(-inf..2.5]' '1' '0' '1']
+  explaining:  "IF hair = 1 AND feathers = 0 AND eggs = 1 AND milk = 0 AND airborne = 1 AND aquatic = 0 AND predator = 0 AND toothed = 0 AND backbone = 0 AND breathes = 1 AND venomous = 1 AND fins = 0 AND legs = (5.75..+inf) AND tail = 0 AND domestic = 0 AND catsize = 0 THEN bug"
+  explanation: "IF airborne = 1 AND venomous = 1 THEN bug"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND venomous = 1 THEN bug"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND milk = 0 THEN bug"
+  # hypos left: 2
+  explanation: "IF hair = 1 AND backbone = 0 THEN bug"
+  # hypos left: 2
+  explanation: "IF predator = 0 AND venomous = 1 THEN bug"
+  # hypos left: 2
+  explanation: "IF predator = 0 AND legs = (5.75..+inf) AND tail = 0 THEN bug"
+  # hypos left: 3
+  explanation: "IF predator = 0 AND backbone = 0 AND legs = (5.75..+inf) THEN bug"
+  # hypos left: 3
+  explanation: "IF predator = 0 AND toothed = 0 AND legs = (5.75..+inf) THEN bug"
+  # hypos left: 3
+  explanation: "IF airborne = 1 AND predator = 0 AND legs = (5.75..+inf) THEN bug"
+  # hypos left: 3
+  explanation: "IF airborne = 1 AND predator = 0 AND tail = 0 THEN bug"
+  # hypos left: 3
+  explanation: "IF airborne = 1 AND predator = 0 AND backbone = 0 THEN bug"
+  # hypos left: 3
+  explanation: "IF hair = 1 AND predator = 0 AND toothed = 0 THEN bug"
+  # hypos left: 3
+  explanation: "IF hair = 1 AND eggs = 1 AND predator = 0 THEN bug"
+  # hypos left: 3
+  explanation: "IF hair = 1 AND eggs = 1 AND catsize = 0 THEN bug"
+  # hypos left: 3
+  explanation: "IF hair = 1 AND eggs = 1 AND aquatic = 0 THEN bug"
+  # hypos left: 3
+  explanation: "IF hair = 1 AND eggs = 1 AND tail = 0 THEN bug"
+  # hypos left: 3
+  explanation: "IF hair = 1 AND aquatic = 0 AND toothed = 0 THEN bug"
+  # hypos left: 3
+  explanation: "IF hair = 1 AND toothed = 0 AND catsize = 0 THEN bug"
+  # hypos left: 3
+  explanation: "IF hair = 1 AND toothed = 0 AND tail = 0 THEN bug"
+  # hypos left: 3
+  explanation: "IF hair = 1 AND tail = 0 AND catsize = 0 THEN bug"
+  # hypos left: 3
+  exp time: 0.39
+
+
+exptimes: [0.618468, 0.4920039999999999, 0.6646450000000002, 0.171446, 0.4784100000000002, 0.399181, 0.42493600000000065, 0.34557199999999977, 0.4290580000000004, 0.3897250000000003, 0.379613, 0.39373199999999997, 0.37021700000000024, 0.3585450000000012, 0.3874070000000014]
+all samples: 15
+total exp time: 6.30
+max exp time per instance: 0.66
+min exp time per instance: 0.17
+avg exp time per instance: 0.42
+total oracle calls: 1644
+max oracle calls per instance: 139
+min oracle calls per instance: 51
+avg oracle calls per instance: 109.60
+avg number of explanations per instance: 19.60
+avg explanation size per instance: 2.81
+

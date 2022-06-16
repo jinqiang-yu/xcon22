@@ -1,0 +1,1921 @@
+c XDual: dual explanations for XGBoost models
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (79.04..90.07] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.02..0.03] AND x10 = (0.19..0.24] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.03..0.04] AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.56..0.62] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  explanation: "IF x3 = (79.04..90.07] AND x18 = (0.77..+inf) AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x1 = (-inf..114.66] AND x3 = (79.04..90.07] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x17 = (0.56..0.62] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x10 = (0.19..0.24] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x17 = (0.56..0.62] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x10 = (0.19..0.24] AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x10 = (0.19..0.24] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x10 = (0.19..0.24] AND x17 = (0.56..0.62] AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x10 = (0.19..0.24] AND x17 = (0.56..0.62] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (-inf..114.66] AND x3 = (79.04..90.07] AND x10 = (0.19..0.24] AND x17 = (0.56..0.62] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x10 = (0.19..0.24] AND x15 = (0.01..0.02] AND x17 = (0.56..0.62] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (-inf..114.66] AND x3 = (79.04..90.07] AND x15 = (0.01..0.02] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x15 = (0.01..0.02] AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (-inf..128.75] AND x3 = (79.04..90.07] AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (-inf..114.66] AND x3 = (79.04..90.07] AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x17 = (0.56..0.62] AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (-inf..128.75] AND x17 = (0.56..0.62] AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (-inf..114.66] AND x17 = (0.56..0.62] AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x15 = (0.01..0.02] AND x17 = (0.56..0.62] AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  exp time: 1.83
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (79.04..90.07] AND x4 = (0.01..+inf) AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.01..+inf) AND x9 = (0.03..0.05] AND x10 = (0.33..0.46] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.02..0.03] AND x14 = (0.05..0.07] AND x15 = (0.02..0.03] AND x16 = (18.48..20.41] AND x17 = (0.56..0.62] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  explanation: "IF x3 = (79.04..90.07] AND x13 = (0.02..0.03] AND x17 = (0.56..0.62] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x13 = (0.02..0.03] AND x18 = (0.77..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x17 = (0.56..0.62] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x13 = (0.02..0.03] AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x13 = (0.02..0.03] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.02..0.03] AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.02..0.03] AND x18 = (0.77..+inf) AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x17 = (0.56..0.62] AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x1 = (-inf..114.66] AND x3 = (79.04..90.07] AND x18 = (0.77..+inf) AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (-inf..114.66] AND x3 = (79.04..90.07] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (-inf..128.75] AND x3 = (79.04..90.07] AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x10 = (0.33..0.46] AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x14 = (0.05..0.07] AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x15 = (0.02..0.03] AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x10 = (0.33..0.46] AND x15 = (0.02..0.03] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x10 = (0.33..0.46] AND x14 = (0.05..0.07] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x14 = (0.05..0.07] AND x15 = (0.02..0.03] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (-inf..114.66] AND x3 = (79.04..90.07] AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  exp time: 2.96
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.0..0.01] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x18 = (0.74..0.77] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x21 = (-inf..2.01] AND x22 = (0.16..0.19] THEN 0"
+  explanation: "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (90.07..104.32] AND x10 = (-inf..0.14] AND x13 = (0.01..0.02] AND x15 = (0.0..0.01] AND x17 = (-inf..0.4] AND x20 = (0.19..0.22] AND x21 = (-inf..2.01] AND x22 = (0.16..0.19] THEN 0"
+  # hypos left: 10
+  explanation: "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (90.07..104.32] AND x10 = (-inf..0.14] AND x13 = (0.01..0.02] AND x15 = (0.0..0.01] AND x17 = (-inf..0.4] AND x18 = (0.74..0.77] AND x20 = (0.19..0.22] AND x21 = (-inf..2.01] THEN 0"
+  # hypos left: 10
+  explanation: "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (90.07..104.32] AND x10 = (-inf..0.14] AND x13 = (0.01..0.02] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x18 = (0.74..0.77] AND x20 = (0.19..0.22] AND x21 = (-inf..2.01] AND x22 = (0.16..0.19] THEN 0"
+  # hypos left: 11
+  explanation: "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (90.07..104.32] AND x10 = (-inf..0.14] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x17 = (-inf..0.4] AND x18 = (0.74..0.77] AND x20 = (0.19..0.22] AND x21 = (-inf..2.01] AND x22 = (0.16..0.19] THEN 0"
+  # hypos left: 11
+  explanation: "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (90.07..104.32] AND x10 = (-inf..0.14] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x20 = (0.19..0.22] AND x21 = (-inf..2.01] AND x22 = (0.16..0.19] THEN 0"
+  # hypos left: 11
+  explanation: "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (90.07..104.32] AND x10 = (-inf..0.14] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x18 = (0.74..0.77] AND x20 = (0.19..0.22] AND x21 = (-inf..2.01] THEN 0"
+  # hypos left: 11
+  explanation: "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (90.07..104.32] AND x10 = (-inf..0.14] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.0..0.01] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x20 = (0.19..0.22] AND x21 = (-inf..2.01] THEN 0"
+  # hypos left: 11
+  explanation: "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (90.07..104.32] AND x10 = (-inf..0.14] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.0..0.01] AND x17 = (-inf..0.4] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x21 = (-inf..2.01] THEN 0"
+  # hypos left: 11
+  explanation: "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (90.07..104.32] AND x10 = (-inf..0.14] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.0..0.01] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x21 = (-inf..2.01] AND x22 = (0.16..0.19] THEN 0"
+  # hypos left: 11
+  explanation: "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (90.07..104.32] AND x10 = (-inf..0.14] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.0..0.01] AND x17 = (-inf..0.4] AND x18 = (0.74..0.77] AND x19 = (-6.19..-5.72] AND x21 = (-inf..2.01] AND x22 = (0.16..0.19] THEN 0"
+  # hypos left: 12
+  exp time: 0.29
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.02..0.03] AND x10 = (0.24..0.33] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.02..0.03] AND x14 = (0.04..0.05] AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.5..0.56] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  explanation: "IF x13 = (0.02..0.03] AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.02..0.03] AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.02..0.03] AND x18 = (0.77..+inf) AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x15 = (0.01..0.02] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (-inf..114.66] AND x10 = (0.24..0.33] AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x14 = (0.04..0.05] AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x14 = (0.04..0.05] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (-inf..128.75] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (90.07..104.32] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (-inf..114.66] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x15 = (0.01..0.02] AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x15 = (0.01..0.02] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x17 = (0.5..0.56] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (-inf..114.66] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x17 = (0.5..0.56] AND x20 = (0.31..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  exp time: 2.37
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.03..0.05] AND x10 = (0.24..0.33] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.02..0.03] AND x14 = (0.05..0.07] AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.62..+inf) AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.22..0.26] AND x21 = (2.01..2.19] AND x22 = (0.23..0.28] THEN 1"
+  explanation: "IF x17 = (0.62..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.22..0.26] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x10 = (0.24..0.33] AND x19 = (-5.33..-4.6] AND x20 = (0.22..0.26] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.02..0.03] AND x19 = (-5.33..-4.6] AND x20 = (0.22..0.26] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.02..0.03] AND x15 = (0.01..0.02] AND x20 = (0.22..0.26] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.02..0.03] AND x16 = (20.41..22.08] AND x20 = (0.22..0.26] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.02..0.03] AND x20 = (0.22..0.26] AND x21 = (2.01..2.19] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.02..0.03] AND x17 = (0.62..+inf) AND x20 = (0.22..0.26] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.02..0.03] AND x18 = (0.77..+inf) AND x20 = (0.22..0.26] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x20 = (0.22..0.26] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.02..0.03] AND x14 = (0.05..0.07] AND x20 = (0.22..0.26] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (90.07..104.32] AND x15 = (0.01..0.02] AND x19 = (-5.33..-4.6] AND x20 = (0.22..0.26] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (-inf..114.66] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.22..0.26] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (-inf..114.66] AND x3 = (90.07..104.32] AND x19 = (-5.33..-4.6] AND x20 = (0.22..0.26] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x15 = (0.01..0.02] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.22..0.26] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (-inf..114.66] AND x15 = (0.01..0.02] AND x19 = (-5.33..-4.6] AND x20 = (0.22..0.26] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.02..0.03] AND x17 = (0.62..+inf) AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (90.07..104.32] AND x13 = (0.02..0.03] AND x17 = (0.62..+inf) AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x17 = (0.62..+inf) AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x15 = (0.01..0.02] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x14 = (0.05..0.07] AND x15 = (0.01..0.02] AND x19 = (-5.33..-4.6] AND x20 = (0.22..0.26] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  exp time: 1.53
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.01..+inf) AND x9 = (0.02..0.03] AND x10 = (0.19..0.24] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.04..0.05] AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.5..0.56] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x20 = (-inf..0.15] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  explanation: "IF x10 = (0.19..0.24] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (-inf..114.66] AND x10 = (0.19..0.24] AND x14 = (0.04..0.05] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (-inf..114.66] AND x10 = (0.19..0.24] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 6
+  explanation: "IF x10 = (0.19..0.24] AND x14 = (0.04..0.05] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (-inf..114.66] AND x10 = (0.19..0.24] AND x17 = (0.5..0.56] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 6
+  explanation: "IF x10 = (0.19..0.24] AND x14 = (0.04..0.05] AND x17 = (0.5..0.56] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 6
+  explanation: "IF x10 = (0.19..0.24] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (-inf..114.66] AND x14 = (0.04..0.05] AND x17 = (0.5..0.56] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x17 = (0.5..0.56] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x10 = (0.19..0.24] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (-inf..114.66] AND x10 = (0.19..0.24] AND x14 = (0.04..0.05] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x10 = (0.19..0.24] AND x14 = (0.04..0.05] AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 7
+  explanation: "IF x14 = (0.04..0.05] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 7
+  explanation: "IF x2 = (-inf..128.75] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (-inf..114.66] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (-inf..114.66] AND x10 = (0.19..0.24] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x18 = (0.77..+inf) AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x10 = (0.19..0.24] AND x14 = (0.04..0.05] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 8
+  explanation: "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x10 = (0.19..0.24] AND x14 = (0.04..0.05] AND x15 = (0.01..0.02] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 8
+  explanation: "IF x2 = (-inf..128.75] AND x3 = (90.07..104.32] AND x14 = (0.04..0.05] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x21 = (2.36..2.5] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 8
+  explanation: "IF x1 = (-inf..114.66] AND x2 = (-inf..128.75] AND x14 = (0.04..0.05] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 8
+  exp time: 1.48
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (128.75..144.29] AND x3 = (79.04..90.07] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.01..+inf) AND x9 = (0.02..0.03] AND x10 = (0.24..0.33] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.02..0.03] AND x14 = (0.04..0.05] AND x15 = (0.03..+inf) AND x16 = (-inf..18.48] AND x17 = (0.62..+inf) AND x18 = (0.66..0.69] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x21 = (2.5..2.7] AND x22 = (0.28..+inf) THEN 1"
+  explanation: "IF x3 = (79.04..90.07] AND x13 = (0.02..0.03] AND x19 = (-4.6..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x13 = (0.02..0.03] AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.02..0.03] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x17 = (0.62..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 4
+  explanation: "IF x1 = (-inf..114.66] AND x3 = (79.04..90.07] AND x14 = (0.04..0.05] AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (128.75..144.29] AND x3 = (79.04..90.07] AND x17 = (0.62..+inf) AND x19 = (-4.6..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x10 = (0.24..0.33] AND x17 = (0.62..+inf) AND x19 = (-4.6..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x15 = (0.03..+inf) AND x17 = (0.62..+inf) AND x19 = (-4.6..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x14 = (0.04..0.05] AND x17 = (0.62..+inf) AND x19 = (-4.6..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x17 = (0.62..+inf) AND x19 = (-4.6..+inf) AND x21 = (2.5..2.7] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.02..0.03] AND x15 = (0.03..+inf) AND x17 = (0.62..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x17 = (0.62..+inf) AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x17 = (0.62..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x17 = (0.62..+inf) AND x19 = (-4.6..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (-inf..114.66] AND x3 = (79.04..90.07] AND x10 = (0.24..0.33] AND x19 = (-4.6..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (-inf..114.66] AND x3 = (79.04..90.07] AND x17 = (0.62..+inf) AND x19 = (-4.6..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x13 = (0.02..0.03] AND x17 = (0.62..+inf) AND x21 = (2.5..2.7] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x13 = (0.02..0.03] AND x17 = (0.62..+inf) AND x18 = (0.66..0.69] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x13 = (0.02..0.03] AND x14 = (0.04..0.05] AND x17 = (0.62..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  exp time: 2.73
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (128.75..144.29] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (0.14..0.19] AND x11 = (-inf..0.01] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.5..0.56] AND x18 = (0.66..0.69] AND x19 = (-5.72..-5.33] AND x20 = (0.15..0.19] AND x21 = (-inf..2.01] AND x22 = (0.19..0.23] THEN 1"
+  explanation: "IF x1 = (-inf..114.66] AND x3 = (90.07..104.32] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x19 = (-5.72..-5.33] AND x20 = (0.15..0.19] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (-inf..114.66] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x19 = (-5.72..-5.33] AND x20 = (0.15..0.19] AND x21 = (-inf..2.01] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (-inf..114.66] AND x14 = (0.02..0.03] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x19 = (-5.72..-5.33] AND x20 = (0.15..0.19] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 7
+  explanation: "IF x3 = (90.07..104.32] AND x10 = (0.14..0.19] AND x14 = (0.02..0.03] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x19 = (-5.72..-5.33] AND x20 = (0.15..0.19] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 8
+  explanation: "IF x3 = (90.07..104.32] AND x10 = (0.14..0.19] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x19 = (-5.72..-5.33] AND x20 = (0.15..0.19] AND x21 = (-inf..2.01] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 8
+  explanation: "IF x1 = (-inf..114.66] AND x3 = (90.07..104.32] AND x10 = (0.14..0.19] AND x17 = (0.5..0.56] AND x19 = (-5.72..-5.33] AND x20 = (0.15..0.19] AND x21 = (-inf..2.01] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 8
+  explanation: "IF x1 = (-inf..114.66] AND x3 = (90.07..104.32] AND x10 = (0.14..0.19] AND x14 = (0.02..0.03] AND x17 = (0.5..0.56] AND x19 = (-5.72..-5.33] AND x20 = (0.15..0.19] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 8
+  explanation: "IF x1 = (-inf..114.66] AND x3 = (90.07..104.32] AND x10 = (0.14..0.19] AND x14 = (0.02..0.03] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x20 = (0.15..0.19] AND x21 = (-inf..2.01] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 9
+  explanation: "IF x1 = (-inf..114.66] AND x2 = (128.75..144.29] AND x3 = (90.07..104.32] AND x10 = (0.14..0.19] AND x14 = (0.02..0.03] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x20 = (0.15..0.19] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 9
+  exp time: 0.41
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (128.75..144.29] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.05..+inf) AND x10 = (0.46..+inf) AND x11 = (0.02..0.03] AND x12 = (0.03..+inf) AND x13 = (0.04..+inf) AND x14 = (0.07..+inf) AND x15 = (0.03..+inf) AND x16 = (-inf..18.48] AND x17 = (0.62..+inf) AND x18 = (0.69..0.72] AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x21 = (2.5..2.7] AND x22 = (0.23..0.28] THEN 1"
+  explanation: "IF x13 = (0.04..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x10 = (0.46..+inf) AND x17 = (0.62..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.46..+inf) AND x13 = (0.04..+inf) AND x18 = (0.69..0.72] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.04..+inf) AND x15 = (0.03..+inf) AND x17 = (0.62..+inf) AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (90.07..104.32] AND x13 = (0.04..+inf) AND x17 = (0.62..+inf) AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.46..+inf) AND x13 = (0.04..+inf) AND x17 = (0.62..+inf) AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.46..+inf) AND x13 = (0.04..+inf) AND x15 = (0.03..+inf) AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.46..+inf) AND x13 = (0.04..+inf) AND x14 = (0.07..+inf) AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.46..+inf) AND x13 = (0.04..+inf) AND x17 = (0.62..+inf) AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (90.07..104.32] AND x13 = (0.04..+inf) AND x17 = (0.62..+inf) AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (128.75..144.29] AND x13 = (0.04..+inf) AND x15 = (0.03..+inf) AND x17 = (0.62..+inf) AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 6
+  explanation: "IF x3 = (90.07..104.32] AND x15 = (0.03..+inf) AND x17 = (0.62..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (128.75..144.29] AND x15 = (0.03..+inf) AND x17 = (0.62..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (-inf..114.66] AND x15 = (0.03..+inf) AND x17 = (0.62..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 6
+  explanation: "IF x13 = (0.04..+inf) AND x15 = (0.03..+inf) AND x17 = (0.62..+inf) AND x18 = (0.69..0.72] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 6
+  explanation: "IF x3 = (90.07..104.32] AND x13 = (0.04..+inf) AND x15 = (0.03..+inf) AND x18 = (0.69..0.72] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (-inf..114.66] AND x10 = (0.46..+inf) AND x15 = (0.03..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 6
+  explanation: "IF x3 = (90.07..104.32] AND x13 = (0.04..+inf) AND x15 = (0.03..+inf) AND x19 = (-5.33..-4.6] AND x21 = (2.5..2.7] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (128.75..144.29] AND x13 = (0.04..+inf) AND x18 = (0.69..0.72] AND x20 = (0.26..0.31] AND x21 = (2.5..2.7] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (-inf..114.66] AND x10 = (0.46..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x21 = (2.5..2.7] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 6
+  exp time: 2.24
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (128.75..144.29] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.01..+inf) AND x9 = (0.02..0.03] AND x10 = (0.24..0.33] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.02..0.03] AND x14 = (0.04..0.05] AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.5..0.56] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.19..0.22] AND x21 = (-inf..2.01] AND x22 = (0.28..+inf) THEN 1"
+  explanation: "IF x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x20 = (0.19..0.22] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.02..0.03] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x20 = (0.19..0.22] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.02..0.03] AND x17 = (0.5..0.56] AND x18 = (0.77..+inf) AND x20 = (0.19..0.22] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.02..0.03] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.19..0.22] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.02..0.03] AND x19 = (-5.33..-4.6] AND x20 = (0.19..0.22] AND x21 = (-inf..2.01] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (128.75..144.29] AND x13 = (0.02..0.03] AND x19 = (-5.33..-4.6] AND x20 = (0.19..0.22] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.02..0.03] AND x14 = (0.04..0.05] AND x19 = (-5.33..-4.6] AND x20 = (0.19..0.22] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (90.07..104.32] AND x13 = (0.02..0.03] AND x19 = (-5.33..-4.6] AND x20 = (0.19..0.22] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.02..0.03] AND x16 = (20.41..22.08] AND x18 = (0.77..+inf) AND x20 = (0.19..0.22] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.02..0.03] AND x15 = (0.01..0.02] AND x19 = (-5.33..-4.6] AND x20 = (0.19..0.22] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x18 = (0.77..+inf) AND x19 = (-5.33..-4.6] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x17 = (0.5..0.56] AND x20 = (0.19..0.22] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x19 = (-5.33..-4.6] AND x20 = (0.19..0.22] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.02..0.03] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x21 = (-inf..2.01] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x3 = (90.07..104.32] AND x13 = (0.02..0.03] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x3 = (90.07..104.32] AND x13 = (0.02..0.03] AND x14 = (0.04..0.05] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x3 = (90.07..104.32] AND x13 = (0.02..0.03] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x20 = (0.19..0.22] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x13 = (0.02..0.03] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x20 = (0.19..0.22] AND x21 = (-inf..2.01] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x13 = (0.02..0.03] AND x14 = (0.04..0.05] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x20 = (0.19..0.22] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  exp time: 1.62
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (-inf..114.66] AND x2 = (175.83..209.86] AND x3 = (-inf..79.04] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.03..0.05] AND x10 = (0.33..0.46] AND x11 = (0.01..0.02] AND x12 = (0.02..0.03] AND x13 = (0.03..0.04] AND x14 = (0.05..0.07] AND x15 = (0.02..0.03] AND x16 = (20.41..22.08] AND x17 = (0.5..0.56] AND x18 = (0.72..0.74] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x21 = (2.7..+inf) AND x22 = (0.19..0.23] THEN 1"
+  explanation: "IF x13 = (0.03..0.04] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (-inf..79.04] AND x13 = (0.03..0.04] AND x18 = (0.72..0.74] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (-inf..79.04] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (-inf..79.04] AND x17 = (0.5..0.56] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (-inf..79.04] AND x13 = (0.03..0.04] AND x19 = (-5.72..-5.33] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (-inf..79.04] AND x13 = (0.03..0.04] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (-inf..79.04] AND x10 = (0.33..0.46] AND x13 = (0.03..0.04] AND x17 = (0.5..0.56] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.03..0.04] AND x14 = (0.05..0.07] AND x17 = (0.5..0.56] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.03..0.04] AND x17 = (0.5..0.56] AND x20 = (0.22..0.26] AND x21 = (2.7..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.33..0.46] AND x13 = (0.03..0.04] AND x17 = (0.5..0.56] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (175.83..209.86] AND x13 = (0.03..0.04] AND x17 = (0.5..0.56] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.33..0.46] AND x13 = (0.03..0.04] AND x17 = (0.5..0.56] AND x19 = (-5.72..-5.33] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.33..0.46] AND x13 = (0.03..0.04] AND x14 = (0.05..0.07] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (175.83..209.86] AND x10 = (0.33..0.46] AND x13 = (0.03..0.04] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (175.83..209.86] AND x13 = (0.03..0.04] AND x20 = (0.22..0.26] AND x21 = (2.7..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.03..0.04] AND x14 = (0.05..0.07] AND x20 = (0.22..0.26] AND x21 = (2.7..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (175.83..209.86] AND x10 = (0.33..0.46] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (-inf..114.66] AND x10 = (0.33..0.46] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.33..0.46] AND x14 = (0.05..0.07] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.03..0.04] AND x14 = (0.05..0.07] AND x18 = (0.72..0.74] AND x19 = (-5.72..-5.33] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  exp time: 3.11
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (114.66..122.38] AND x2 = (-inf..128.75] AND x3 = (104.32..114.72] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x15 = (0.0..0.01] AND x16 = (24.46..25.89] AND x17 = (0.45..0.5] AND x18 = (0.72..0.74] AND x19 = (-6.79..-6.19] AND x20 = (0.15..0.19] AND x21 = (2.01..2.19] AND x22 = (0.12..0.16] THEN 1"
+  explanation: "IF x10 = (-inf..0.14] AND x13 = (-inf..0.01] AND x17 = (0.45..0.5] AND x20 = (0.15..0.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (-inf..128.75] AND x13 = (-inf..0.01] AND x17 = (0.45..0.5] AND x18 = (0.72..0.74] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (-inf..0.14] AND x13 = (-inf..0.01] AND x17 = (0.45..0.5] AND x18 = (0.72..0.74] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (-inf..128.75] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x17 = (0.45..0.5] AND x20 = (0.15..0.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x17 = (0.45..0.5] AND x18 = (0.72..0.74] AND x20 = (0.15..0.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (-inf..128.75] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x18 = (0.72..0.74] AND x20 = (0.15..0.19] AND x21 = (2.01..2.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 7
+  explanation: "IF x2 = (-inf..128.75] AND x3 = (104.32..114.72] AND x10 = (-inf..0.14] AND x14 = (-inf..0.02] AND x17 = (0.45..0.5] AND x20 = (0.15..0.19] AND x21 = (2.01..2.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 8
+  exp time: 0.55
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (114.66..122.38] AND x2 = (-inf..128.75] AND x3 = (104.32..114.72] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x15 = (0.0..0.01] AND x16 = (25.89..+inf) AND x17 = (0.45..0.5] AND x18 = (0.69..0.72] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x21 = (2.01..2.19] AND x22 = (0.16..0.19] THEN 1"
+  explanation: "IF x10 = (-inf..0.14] AND x13 = (-inf..0.01] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x14 = (-inf..0.02] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (-inf..0.14] AND x13 = (-inf..0.01] AND x17 = (0.45..0.5] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (-inf..0.14] AND x13 = (-inf..0.01] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (-inf..128.75] AND x13 = (-inf..0.01] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (-inf..0.01] AND x18 = (0.69..0.72] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (-inf..0.01] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (-inf..0.14] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (-inf..128.75] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x21 = (2.01..2.19] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (-inf..128.75] AND x13 = (-inf..0.01] AND x17 = (0.45..0.5] AND x18 = (0.69..0.72] AND x19 = (-6.19..-5.72] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (-inf..128.75] AND x13 = (-inf..0.01] AND x17 = (0.45..0.5] AND x18 = (0.69..0.72] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 6
+  explanation: "IF x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x17 = (0.45..0.5] AND x18 = (0.69..0.72] AND x19 = (-6.19..-5.72] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (-inf..128.75] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 6
+  explanation: "IF x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x17 = (0.45..0.5] AND x18 = (0.69..0.72] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (-inf..128.75] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x17 = (0.45..0.5] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (-inf..128.75] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x18 = (0.69..0.72] AND x20 = (0.19..0.22] AND x21 = (2.01..2.19] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 7
+  explanation: "IF x2 = (-inf..128.75] AND x3 = (104.32..114.72] AND x10 = (-inf..0.14] AND x13 = (-inf..0.01] AND x18 = (0.69..0.72] AND x19 = (-6.19..-5.72] AND x21 = (2.01..2.19] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 8
+  explanation: "IF x2 = (-inf..128.75] AND x3 = (104.32..114.72] AND x10 = (-inf..0.14] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x19 = (-6.19..-5.72] AND x21 = (2.01..2.19] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 8
+  explanation: "IF x2 = (-inf..128.75] AND x10 = (-inf..0.14] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x18 = (0.69..0.72] AND x19 = (-6.19..-5.72] AND x21 = (2.01..2.19] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 8
+  exp time: 1.22
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (114.66..122.38] AND x2 = (-inf..128.75] AND x3 = (104.32..114.72] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x15 = (0.01..0.02] AND x16 = (25.89..+inf) AND x17 = (0.45..0.5] AND x18 = (0.69..0.72] AND x19 = (-inf..-6.79] AND x20 = (0.15..0.19] AND x21 = (2.19..2.36] AND x22 = (-inf..0.12] THEN 0"
+  explanation: "IF x1 = (114.66..122.38] AND x2 = (-inf..128.75] AND x3 = (104.32..114.72] AND x18 = (0.69..0.72] AND x19 = (-inf..-6.79] AND x20 = (0.15..0.19] AND x21 = (2.19..2.36] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 8
+  explanation: "IF x1 = (114.66..122.38] AND x2 = (-inf..128.75] AND x3 = (104.32..114.72] AND x10 = (-inf..0.14] AND x18 = (0.69..0.72] AND x20 = (0.15..0.19] AND x21 = (2.19..2.36] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 8
+  exp time: 0.07
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (114.66..122.38] AND x2 = (-inf..128.75] AND x3 = (114.72..162.82] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (0.14..0.19] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.0..0.01] AND x16 = (22.08..24.46] AND x17 = (0.56..0.62] AND x18 = (0.72..0.74] AND x19 = (-6.79..-6.19] AND x20 = (0.26..0.31] AND x21 = (2.01..2.19] AND x22 = (0.12..0.16] THEN 1"
+  explanation: "IF x3 = (114.72..162.82] AND x14 = (0.02..0.03] AND x20 = (0.26..0.31] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (114.72..162.82] AND x14 = (0.02..0.03] AND x17 = (0.56..0.62] AND x18 = (0.72..0.74] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (114.72..162.82] AND x16 = (22.08..24.46] AND x17 = (0.56..0.62] AND x18 = (0.72..0.74] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (114.72..162.82] AND x16 = (22.08..24.46] AND x17 = (0.56..0.62] AND x20 = (0.26..0.31] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (114.72..162.82] AND x14 = (0.02..0.03] AND x16 = (22.08..24.46] AND x18 = (0.72..0.74] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (114.72..162.82] AND x14 = (0.02..0.03] AND x18 = (0.72..0.74] AND x21 = (2.01..2.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (114.72..162.82] AND x10 = (0.14..0.19] AND x14 = (0.02..0.03] AND x18 = (0.72..0.74] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (-inf..128.75] AND x3 = (114.72..162.82] AND x10 = (0.14..0.19] AND x17 = (0.56..0.62] AND x18 = (0.72..0.74] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (-inf..128.75] AND x3 = (114.72..162.82] AND x17 = (0.56..0.62] AND x18 = (0.72..0.74] AND x21 = (2.01..2.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (-inf..128.75] AND x3 = (114.72..162.82] AND x17 = (0.56..0.62] AND x20 = (0.26..0.31] AND x21 = (2.01..2.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (-inf..128.75] AND x3 = (114.72..162.82] AND x10 = (0.14..0.19] AND x17 = (0.56..0.62] AND x20 = (0.26..0.31] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  exp time: 0.26
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (114.66..122.38] AND x2 = (128.75..144.29] AND x3 = (104.32..114.72] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.01..+inf) AND x9 = (0.05..+inf) AND x10 = (0.46..+inf) AND x11 = (0.02..0.03] AND x12 = (0.03..+inf) AND x13 = (0.03..0.04] AND x14 = (0.07..+inf) AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.4..0.45] AND x18 = (0.77..+inf) AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.28..+inf) THEN 1"
+  explanation: "IF x13 = (0.03..0.04] AND x18 = (0.77..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.03..0.04] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.03..0.04] AND x17 = (0.4..0.45] AND x18 = (0.77..+inf) AND x19 = (-4.6..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.03..0.04] AND x14 = (0.07..+inf) AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (128.75..144.29] AND x13 = (0.03..0.04] AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.46..+inf) AND x13 = (0.03..0.04] AND x18 = (0.77..+inf) AND x19 = (-4.6..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (128.75..144.29] AND x10 = (0.46..+inf) AND x13 = (0.03..0.04] AND x19 = (-4.6..+inf) AND x21 = (2.36..2.5] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x3 = (104.32..114.72] AND x10 = (0.46..+inf) AND x13 = (0.03..0.04] AND x19 = (-4.6..+inf) AND x21 = (2.36..2.5] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x3 = (104.32..114.72] AND x10 = (0.46..+inf) AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x3 = (104.32..114.72] AND x10 = (0.46..+inf) AND x17 = (0.4..0.45] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x3 = (104.32..114.72] AND x10 = (0.46..+inf) AND x15 = (0.01..0.02] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x3 = (104.32..114.72] AND x14 = (0.07..+inf) AND x17 = (0.4..0.45] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x3 = (104.32..114.72] AND x17 = (0.4..0.45] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x14 = (0.07..+inf) AND x15 = (0.01..0.02] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x14 = (0.07..+inf) AND x17 = (0.4..0.45] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x16 = (20.41..22.08] AND x17 = (0.4..0.45] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (128.75..144.29] AND x17 = (0.4..0.45] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x15 = (0.01..0.02] AND x17 = (0.4..0.45] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x14 = (0.07..+inf) AND x16 = (20.41..22.08] AND x17 = (0.4..0.45] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x10 = (0.46..+inf) AND x14 = (0.07..+inf) AND x17 = (0.4..0.45] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  exp time: 1.56
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (114.66..122.38] AND x2 = (128.75..144.29] AND x3 = (104.32..114.72] AND x4 = (0.01..+inf) AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.01..+inf) AND x9 = (0.05..+inf) AND x10 = (0.46..+inf) AND x11 = (0.02..0.03] AND x12 = (0.03..+inf) AND x13 = (0.03..0.04] AND x14 = (0.07..+inf) AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.4..0.45] AND x18 = (0.77..+inf) AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x21 = (2.19..2.36] AND x22 = (0.28..+inf) THEN 1"
+  explanation: "IF x13 = (0.03..0.04] AND x18 = (0.77..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.03..0.04] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.03..0.04] AND x17 = (0.4..0.45] AND x18 = (0.77..+inf) AND x19 = (-4.6..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.46..+inf) AND x13 = (0.03..0.04] AND x18 = (0.77..+inf) AND x19 = (-4.6..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.03..0.04] AND x14 = (0.07..+inf) AND x16 = (20.41..22.08] AND x20 = (0.31..+inf) AND x21 = (2.19..2.36] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (128.75..144.29] AND x13 = (0.03..0.04] AND x14 = (0.07..+inf) AND x20 = (0.31..+inf) AND x21 = (2.19..2.36] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x3 = (104.32..114.72] AND x17 = (0.4..0.45] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x21 = (2.19..2.36] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (128.75..144.29] AND x17 = (0.4..0.45] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x21 = (2.19..2.36] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x3 = (104.32..114.72] AND x10 = (0.46..+inf) AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x21 = (2.19..2.36] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (128.75..144.29] AND x10 = (0.46..+inf) AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x21 = (2.19..2.36] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x3 = (104.32..114.72] AND x10 = (0.46..+inf) AND x15 = (0.01..0.02] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x3 = (104.32..114.72] AND x10 = (0.46..+inf) AND x17 = (0.4..0.45] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x10 = (0.46..+inf) AND x14 = (0.07..+inf) AND x17 = (0.4..0.45] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x10 = (0.46..+inf) AND x14 = (0.07..+inf) AND x15 = (0.01..0.02] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x14 = (0.07..+inf) AND x16 = (20.41..22.08] AND x17 = (0.4..0.45] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x3 = (104.32..114.72] AND x14 = (0.07..+inf) AND x17 = (0.4..0.45] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x14 = (0.07..+inf) AND x17 = (0.4..0.45] AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x21 = (2.19..2.36] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x10 = (0.46..+inf) AND x14 = (0.07..+inf) AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x21 = (2.19..2.36] AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x10 = (0.46..+inf) AND x14 = (0.07..+inf) AND x18 = (0.77..+inf) AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  explanation: "IF x14 = (0.07..+inf) AND x15 = (0.01..0.02] AND x18 = (0.77..+inf) AND x19 = (-4.6..+inf) AND x20 = (0.31..+inf) AND x22 = (0.28..+inf) THEN 1"
+  # hypos left: 6
+  exp time: 1.37
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (114.66..122.38] AND x2 = (128.75..144.29] AND x3 = (114.72..162.82] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.0..0.01] AND x16 = (24.46..25.89] AND x17 = (0.56..0.62] AND x18 = (0.74..0.77] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x21 = (-inf..2.01] AND x22 = (0.19..0.23] THEN 1"
+  explanation: "IF x3 = (114.72..162.82] AND x17 = (0.56..0.62] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (114.72..162.82] AND x14 = (0.02..0.03] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (114.72..162.82] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 4
+  explanation: "IF x10 = (-inf..0.14] AND x17 = (0.56..0.62] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  exp time: 0.36
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (114.66..122.38] AND x2 = (144.29..175.83] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (0.14..0.19] AND x11 = (-inf..0.01] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.0..0.01] AND x16 = (24.46..25.89] AND x17 = (-inf..0.4] AND x18 = (0.74..0.77] AND x19 = (-6.19..-5.72] AND x20 = (0.22..0.26] AND x21 = (-inf..2.01] AND x22 = (0.16..0.19] THEN 1"
+  explanation: "IF x2 = (144.29..175.83] AND x19 = (-6.19..-5.72] AND x20 = (0.22..0.26] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 4
+  explanation: "IF x2 = (144.29..175.83] AND x10 = (0.14..0.19] AND x14 = (0.02..0.03] AND x20 = (0.22..0.26] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (144.29..175.83] AND x14 = (0.02..0.03] AND x17 = (-inf..0.4] AND x20 = (0.22..0.26] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (144.29..175.83] AND x14 = (0.02..0.03] AND x16 = (24.46..25.89] AND x20 = (0.22..0.26] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (144.29..175.83] AND x3 = (90.07..104.32] AND x10 = (0.14..0.19] AND x17 = (-inf..0.4] AND x20 = (0.22..0.26] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 6
+  exp time: 0.25
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (114.66..122.38] AND x2 = (239.85..+inf) AND x3 = (79.04..90.07] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (0.14..0.19] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.01..0.02] AND x16 = (22.08..24.46] AND x17 = (0.56..0.62] AND x18 = (0.66..0.69] AND x19 = (-6.79..-6.19] AND x20 = (0.15..0.19] AND x21 = (2.01..2.19] AND x22 = (0.12..0.16] THEN 1"
+  explanation: "IF x3 = (79.04..90.07] AND x14 = (0.02..0.03] AND x17 = (0.56..0.62] AND x20 = (0.15..0.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x16 = (22.08..24.46] AND x17 = (0.56..0.62] AND x20 = (0.15..0.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x15 = (0.01..0.02] AND x17 = (0.56..0.62] AND x20 = (0.15..0.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x10 = (0.14..0.19] AND x14 = (0.02..0.03] AND x20 = (0.15..0.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x14 = (0.02..0.03] AND x20 = (0.15..0.19] AND x21 = (2.01..2.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x14 = (0.02..0.03] AND x16 = (22.08..24.46] AND x20 = (0.15..0.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x14 = (0.02..0.03] AND x15 = (0.01..0.02] AND x20 = (0.15..0.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  exp time: 0.19
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (122.38..148.79] AND x2 = (144.29..175.83] AND x3 = (114.72..162.82] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (-inf..0.02] AND x15 = (0.0..0.01] AND x16 = (24.46..25.89] AND x17 = (0.45..0.5] AND x18 = (-inf..0.66] AND x19 = (-6.79..-6.19] AND x20 = (0.15..0.19] AND x21 = (2.01..2.19] AND x22 = (0.12..0.16] THEN 1"
+  explanation: "IF x2 = (144.29..175.83] AND x3 = (114.72..162.82] AND x20 = (0.15..0.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (114.72..162.82] AND x17 = (0.45..0.5] AND x20 = (0.15..0.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 4
+  explanation: "IF x2 = (144.29..175.83] AND x3 = (114.72..162.82] AND x17 = (0.45..0.5] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 4
+  explanation: "IF x1 = (122.38..148.79] AND x2 = (144.29..175.83] AND x17 = (0.45..0.5] AND x20 = (0.15..0.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (144.29..175.83] AND x10 = (-inf..0.14] AND x17 = (0.45..0.5] AND x20 = (0.15..0.19] AND x21 = (2.01..2.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (144.29..175.83] AND x10 = (-inf..0.14] AND x14 = (-inf..0.02] AND x17 = (0.45..0.5] AND x20 = (0.15..0.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (144.29..175.83] AND x14 = (-inf..0.02] AND x17 = (0.45..0.5] AND x20 = (0.15..0.19] AND x21 = (2.01..2.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (122.38..148.79] AND x2 = (144.29..175.83] AND x3 = (114.72..162.82] AND x14 = (-inf..0.02] AND x21 = (2.01..2.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (122.38..148.79] AND x3 = (114.72..162.82] AND x10 = (-inf..0.14] AND x14 = (-inf..0.02] AND x17 = (0.45..0.5] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (122.38..148.79] AND x3 = (114.72..162.82] AND x14 = (-inf..0.02] AND x20 = (0.15..0.19] AND x21 = (2.01..2.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (122.38..148.79] AND x10 = (-inf..0.14] AND x14 = (-inf..0.02] AND x17 = (0.45..0.5] AND x20 = (0.15..0.19] AND x21 = (2.01..2.19] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 7
+  exp time: 0.67
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (122.38..148.79] AND x2 = (144.29..175.83] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.01..+inf) AND x9 = (0.02..0.03] AND x10 = (0.24..0.33] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.02..0.03] AND x14 = (0.04..0.05] AND x15 = (0.03..+inf) AND x16 = (20.41..22.08] AND x17 = (0.62..+inf) AND x18 = (-inf..0.66] AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x21 = (2.7..+inf) AND x22 = (0.23..0.28] THEN 1"
+  explanation: "IF x2 = (144.29..175.83] AND x13 = (0.02..0.03] AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.02..0.03] AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x2 = (144.29..175.83] AND x17 = (0.62..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (122.38..148.79] AND x2 = (144.29..175.83] AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (144.29..175.83] AND x10 = (0.24..0.33] AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x17 = (0.62..+inf) AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (144.29..175.83] AND x13 = (0.02..0.03] AND x19 = (-5.33..-4.6] AND x21 = (2.7..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x17 = (0.62..+inf) AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (90.07..104.32] AND x13 = (0.02..0.03] AND x17 = (0.62..+inf) AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x14 = (0.04..0.05] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x15 = (0.03..+inf) AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (144.29..175.83] AND x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (144.29..175.83] AND x3 = (90.07..104.32] AND x13 = (0.02..0.03] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (144.29..175.83] AND x13 = (0.02..0.03] AND x17 = (0.62..+inf) AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (144.29..175.83] AND x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x17 = (0.62..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (144.29..175.83] AND x13 = (0.02..0.03] AND x14 = (0.04..0.05] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x17 = (0.62..+inf) AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (90.07..104.32] AND x13 = (0.02..0.03] AND x17 = (0.62..+inf) AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.02..0.03] AND x15 = (0.03..+inf) AND x17 = (0.62..+inf) AND x20 = (0.26..0.31] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (144.29..175.83] AND x19 = (-5.33..-4.6] AND x20 = (0.26..0.31] AND x21 = (2.7..+inf) AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  exp time: 2.12
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (122.38..148.79] AND x2 = (175.83..209.86] AND x3 = (-inf..79.04] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (0.14..0.19] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.01..0.02] AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x18 = (0.66..0.69] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x21 = (2.5..2.7] AND x22 = (0.19..0.23] THEN 1"
+  explanation: "IF x3 = (-inf..79.04] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (-inf..79.04] AND x14 = (0.02..0.03] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 4
+  explanation: "IF x1 = (122.38..148.79] AND x17 = (0.4..0.45] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (175.83..209.86] AND x17 = (0.4..0.45] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (122.38..148.79] AND x2 = (175.83..209.86] AND x3 = (-inf..79.04] AND x17 = (0.4..0.45] AND x19 = (-5.72..-5.33] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x14 = (0.02..0.03] AND x17 = (0.4..0.45] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x21 = (2.5..2.7] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x10 = (0.14..0.19] AND x14 = (0.02..0.03] AND x17 = (0.4..0.45] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x14 = (0.02..0.03] AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x15 = (0.01..0.02] AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x10 = (0.14..0.19] AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x21 = (2.5..2.7] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (122.38..148.79] AND x15 = (0.01..0.02] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x21 = (2.5..2.7] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (122.38..148.79] AND x2 = (175.83..209.86] AND x3 = (-inf..79.04] AND x20 = (0.22..0.26] AND x21 = (2.5..2.7] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (122.38..148.79] AND x2 = (175.83..209.86] AND x3 = (-inf..79.04] AND x10 = (0.14..0.19] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (122.38..148.79] AND x2 = (175.83..209.86] AND x3 = (-inf..79.04] AND x16 = (24.46..25.89] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (122.38..148.79] AND x2 = (175.83..209.86] AND x15 = (0.01..0.02] AND x19 = (-5.72..-5.33] AND x20 = (0.22..0.26] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (122.38..148.79] AND x2 = (175.83..209.86] AND x14 = (0.02..0.03] AND x16 = (24.46..25.89] AND x20 = (0.22..0.26] AND x21 = (2.5..2.7] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (122.38..148.79] AND x2 = (175.83..209.86] AND x14 = (0.02..0.03] AND x15 = (0.01..0.02] AND x20 = (0.22..0.26] AND x21 = (2.5..2.7] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (122.38..148.79] AND x2 = (175.83..209.86] AND x3 = (-inf..79.04] AND x10 = (0.14..0.19] AND x15 = (0.01..0.02] AND x19 = (-5.72..-5.33] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (122.38..148.79] AND x2 = (175.83..209.86] AND x3 = (-inf..79.04] AND x14 = (0.02..0.03] AND x15 = (0.01..0.02] AND x19 = (-5.72..-5.33] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 7
+  exp time: 1.12
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (122.38..148.79] AND x2 = (175.83..209.86] AND x3 = (79.04..90.07] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.01..+inf) AND x9 = (0.02..0.03] AND x10 = (0.19..0.24] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.03..0.04] AND x15 = (0.01..0.02] AND x16 = (18.48..20.41] AND x17 = (0.62..+inf) AND x18 = (0.72..0.74] AND x19 = (-5.72..-5.33] AND x20 = (-inf..0.15] AND x21 = (-inf..2.01] AND x22 = (0.19..0.23] THEN 1"
+  explanation: "IF x3 = (79.04..90.07] AND x18 = (0.72..0.74] AND x19 = (-5.72..-5.33] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x10 = (0.19..0.24] AND x19 = (-5.72..-5.33] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 4
+  explanation: "IF x1 = (122.38..148.79] AND x3 = (79.04..90.07] AND x17 = (0.62..+inf) AND x18 = (0.72..0.74] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.19..0.24] AND x17 = (0.62..+inf) AND x18 = (0.72..0.74] AND x19 = (-5.72..-5.33] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x10 = (0.19..0.24] AND x17 = (0.62..+inf) AND x18 = (0.72..0.74] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x17 = (0.62..+inf) AND x19 = (-5.72..-5.33] AND x21 = (-inf..2.01] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (122.38..148.79] AND x3 = (79.04..90.07] AND x17 = (0.62..+inf) AND x19 = (-5.72..-5.33] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (175.83..209.86] AND x3 = (79.04..90.07] AND x17 = (0.62..+inf) AND x19 = (-5.72..-5.33] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x15 = (0.01..0.02] AND x17 = (0.62..+inf) AND x19 = (-5.72..-5.33] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x15 = (0.01..0.02] AND x17 = (0.62..+inf) AND x18 = (0.72..0.74] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (122.38..148.79] AND x2 = (175.83..209.86] AND x3 = (79.04..90.07] AND x10 = (0.19..0.24] AND x17 = (0.62..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (122.38..148.79] AND x3 = (79.04..90.07] AND x15 = (0.01..0.02] AND x19 = (-5.72..-5.33] AND x21 = (-inf..2.01] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (122.38..148.79] AND x2 = (175.83..209.86] AND x3 = (79.04..90.07] AND x15 = (0.01..0.02] AND x19 = (-5.72..-5.33] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (122.38..148.79] AND x3 = (79.04..90.07] AND x10 = (0.19..0.24] AND x15 = (0.01..0.02] AND x17 = (0.62..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (175.83..209.86] AND x3 = (79.04..90.07] AND x10 = (0.19..0.24] AND x15 = (0.01..0.02] AND x17 = (0.62..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (122.38..148.79] AND x2 = (175.83..209.86] AND x10 = (0.19..0.24] AND x18 = (0.72..0.74] AND x19 = (-5.72..-5.33] AND x20 = (-inf..0.15] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (122.38..148.79] AND x2 = (175.83..209.86] AND x10 = (0.19..0.24] AND x15 = (0.01..0.02] AND x18 = (0.72..0.74] AND x19 = (-5.72..-5.33] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (122.38..148.79] AND x10 = (0.19..0.24] AND x15 = (0.01..0.02] AND x18 = (0.72..0.74] AND x19 = (-5.72..-5.33] AND x20 = (-inf..0.15] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (122.38..148.79] AND x10 = (0.19..0.24] AND x15 = (0.01..0.02] AND x18 = (0.72..0.74] AND x19 = (-5.72..-5.33] AND x21 = (-inf..2.01] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (122.38..148.79] AND x15 = (0.01..0.02] AND x17 = (0.62..+inf) AND x18 = (0.72..0.74] AND x19 = (-5.72..-5.33] AND x21 = (-inf..2.01] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 7
+  exp time: 1.32
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (122.38..148.79] AND x2 = (239.85..+inf) AND x3 = (79.04..90.07] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.02..0.03] AND x10 = (0.19..0.24] AND x11 = (-inf..0.01] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.02..0.03] AND x16 = (24.46..25.89] AND x17 = (0.45..0.5] AND x18 = (0.66..0.69] AND x19 = (-6.19..-5.72] AND x20 = (0.26..0.31] AND x21 = (2.5..2.7] AND x22 = (0.12..0.16] THEN 1"
+  explanation: "IF x3 = (79.04..90.07] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x10 = (0.19..0.24] AND x19 = (-6.19..-5.72] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x19 = (-6.19..-5.72] AND x20 = (0.26..0.31] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x17 = (0.45..0.5] AND x20 = (0.26..0.31] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 4
+  explanation: "IF x1 = (122.38..148.79] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x20 = (0.26..0.31] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (122.38..148.79] AND x10 = (0.19..0.24] AND x19 = (-6.19..-5.72] AND x20 = (0.26..0.31] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.19..0.24] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x20 = (0.26..0.31] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.19..0.24] AND x14 = (0.02..0.03] AND x17 = (0.45..0.5] AND x20 = (0.26..0.31] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.19..0.24] AND x15 = (0.02..0.03] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (122.38..148.79] AND x10 = (0.19..0.24] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x14 = (0.02..0.03] AND x20 = (0.26..0.31] AND x21 = (2.5..2.7] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (122.38..148.79] AND x3 = (79.04..90.07] AND x14 = (0.02..0.03] AND x20 = (0.26..0.31] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x14 = (0.02..0.03] AND x15 = (0.02..0.03] AND x20 = (0.26..0.31] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x14 = (0.02..0.03] AND x16 = (24.46..25.89] AND x20 = (0.26..0.31] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x10 = (0.19..0.24] AND x14 = (0.02..0.03] AND x20 = (0.26..0.31] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x15 = (0.02..0.03] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x20 = (0.26..0.31] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x14 = (0.02..0.03] AND x15 = (0.02..0.03] AND x17 = (0.45..0.5] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x10 = (0.19..0.24] AND x15 = (0.02..0.03] AND x17 = (0.45..0.5] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (122.38..148.79] AND x3 = (79.04..90.07] AND x14 = (0.02..0.03] AND x17 = (0.45..0.5] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x14 = (0.02..0.03] AND x17 = (0.45..0.5] AND x21 = (2.5..2.7] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  exp time: 1.31
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x3 = (-inf..79.04] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (0.14..0.19] AND x11 = (0.01..0.02] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (0.03..0.04] AND x15 = (0.0..0.01] AND x16 = (24.46..25.89] AND x17 = (0.45..0.5] AND x18 = (-inf..0.66] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x21 = (2.01..2.19] AND x22 = (0.16..0.19] THEN 1"
+  explanation: "IF x1 = (148.79..170.85] AND x3 = (-inf..79.04] AND x17 = (0.45..0.5] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 4
+  explanation: "IF x2 = (144.29..175.83] AND x3 = (-inf..79.04] AND x17 = (0.45..0.5] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 4
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x17 = (0.45..0.5] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 4
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x3 = (-inf..79.04] AND x17 = (0.45..0.5] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (-inf..79.04] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 4
+  explanation: "IF x1 = (148.79..170.85] AND x3 = (-inf..79.04] AND x19 = (-6.19..-5.72] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 4
+  explanation: "IF x2 = (144.29..175.83] AND x3 = (-inf..79.04] AND x19 = (-6.19..-5.72] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (-inf..79.04] AND x17 = (0.45..0.5] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (-inf..79.04] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 4
+  explanation: "IF x1 = (148.79..170.85] AND x3 = (-inf..79.04] AND x16 = (24.46..25.89] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x3 = (-inf..79.04] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x3 = (-inf..79.04] AND x21 = (2.01..2.19] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x3 = (-inf..79.04] AND x10 = (0.14..0.19] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (144.29..175.83] AND x3 = (-inf..79.04] AND x10 = (0.14..0.19] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (144.29..175.83] AND x3 = (-inf..79.04] AND x20 = (0.19..0.22] AND x21 = (2.01..2.19] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x16 = (24.46..25.89] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x10 = (0.14..0.19] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x20 = (0.19..0.22] AND x21 = (2.01..2.19] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x17 = (0.45..0.5] AND x20 = (0.19..0.22] AND x21 = (2.01..2.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x21 = (2.01..2.19] THEN 1"
+  # hypos left: 5
+  exp time: 1.33
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x3 = (114.72..162.82] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x15 = (0.0..0.01] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x18 = (0.66..0.69] AND x19 = (-6.79..-6.19] AND x20 = (0.15..0.19] AND x21 = (2.19..2.36] AND x22 = (-inf..0.12] THEN 1"
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x3 = (114.72..162.82] AND x16 = (25.89..+inf) THEN 1"
+  # hypos left: 4
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x10 = (-inf..0.14] AND x17 = (-inf..0.4] AND x21 = (2.19..2.36] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (148.79..170.85] AND x3 = (114.72..162.82] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x21 = (2.19..2.36] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x3 = (114.72..162.82] AND x17 = (-inf..0.4] AND x21 = (2.19..2.36] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (148.79..170.85] AND x3 = (114.72..162.82] AND x14 = (-inf..0.02] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x14 = (-inf..0.02] AND x16 = (25.89..+inf) AND x20 = (0.15..0.19] AND x21 = (2.19..2.36] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x21 = (2.19..2.36] AND x22 = (-inf..0.12] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x20 = (0.15..0.19] AND x21 = (2.19..2.36] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x13 = (-inf..0.01] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x21 = (2.19..2.36] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x20 = (0.15..0.19] AND x21 = (2.19..2.36] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x3 = (114.72..162.82] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x21 = (2.19..2.36] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x3 = (114.72..162.82] AND x14 = (-inf..0.02] AND x20 = (0.15..0.19] AND x21 = (2.19..2.36] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x3 = (114.72..162.82] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x17 = (-inf..0.4] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x16 = (25.89..+inf) AND x21 = (2.19..2.36] AND x22 = (-inf..0.12] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x14 = (-inf..0.02] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x19 = (-6.79..-6.19] AND x22 = (-inf..0.12] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x14 = (-inf..0.02] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x19 = (-6.79..-6.19] AND x20 = (0.15..0.19] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x18 = (0.66..0.69] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x10 = (-inf..0.14] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x22 = (-inf..0.12] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (144.29..175.83] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x20 = (0.15..0.19] THEN 1"
+  # hypos left: 7
+  exp time: 1.37
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (148.79..170.85] AND x2 = (175.83..209.86] AND x3 = (-inf..79.04] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (0.14..0.19] AND x11 = (-inf..0.01] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.01..0.02] AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x18 = (0.72..0.74] AND x19 = (-6.79..-6.19] AND x20 = (0.19..0.22] AND x21 = (-inf..2.01] AND x22 = (0.12..0.16] THEN 1"
+  explanation: "IF x1 = (148.79..170.85] AND x3 = (-inf..79.04] AND x14 = (0.02..0.03] AND x20 = (0.19..0.22] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (148.79..170.85] AND x3 = (-inf..79.04] AND x14 = (0.02..0.03] AND x18 = (0.72..0.74] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (175.83..209.86] AND x3 = (-inf..79.04] AND x20 = (0.19..0.22] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (175.83..209.86] AND x3 = (-inf..79.04] AND x18 = (0.72..0.74] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (148.79..170.85] AND x3 = (-inf..79.04] AND x16 = (24.46..25.89] AND x20 = (0.19..0.22] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (-inf..79.04] AND x10 = (0.14..0.19] AND x14 = (0.02..0.03] AND x16 = (24.46..25.89] AND x20 = (0.19..0.22] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (175.83..209.86] AND x3 = (-inf..79.04] AND x10 = (0.14..0.19] AND x14 = (0.02..0.03] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (175.83..209.86] AND x3 = (-inf..79.04] AND x14 = (0.02..0.03] AND x16 = (24.46..25.89] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (148.79..170.85] AND x3 = (-inf..79.04] AND x10 = (0.14..0.19] AND x18 = (0.72..0.74] AND x21 = (-inf..2.01] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (148.79..170.85] AND x3 = (-inf..79.04] AND x10 = (0.14..0.19] AND x20 = (0.19..0.22] AND x21 = (-inf..2.01] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (148.79..170.85] AND x3 = (-inf..79.04] AND x10 = (0.14..0.19] AND x15 = (0.01..0.02] AND x20 = (0.19..0.22] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x3 = (-inf..79.04] AND x10 = (0.14..0.19] AND x14 = (0.02..0.03] AND x15 = (0.01..0.02] AND x20 = (0.19..0.22] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (175.83..209.86] AND x3 = (-inf..79.04] AND x10 = (0.14..0.19] AND x14 = (0.02..0.03] AND x20 = (0.19..0.22] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (175.83..209.86] AND x3 = (-inf..79.04] AND x14 = (0.02..0.03] AND x16 = (24.46..25.89] AND x20 = (0.19..0.22] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (175.83..209.86] AND x3 = (-inf..79.04] AND x10 = (0.14..0.19] AND x14 = (0.02..0.03] AND x18 = (0.72..0.74] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (175.83..209.86] AND x10 = (0.14..0.19] AND x14 = (0.02..0.03] AND x18 = (0.72..0.74] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (148.79..170.85] AND x2 = (175.83..209.86] AND x10 = (0.14..0.19] AND x14 = (0.02..0.03] AND x20 = (0.19..0.22] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (148.79..170.85] AND x3 = (-inf..79.04] AND x10 = (0.14..0.19] AND x15 = (0.01..0.02] AND x16 = (24.46..25.89] AND x18 = (0.72..0.74] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (148.79..170.85] AND x3 = (-inf..79.04] AND x10 = (0.14..0.19] AND x14 = (0.02..0.03] AND x15 = (0.01..0.02] AND x21 = (-inf..2.01] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (148.79..170.85] AND x3 = (-inf..79.04] AND x10 = (0.14..0.19] AND x14 = (0.02..0.03] AND x16 = (24.46..25.89] AND x21 = (-inf..2.01] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 7
+  exp time: 1.22
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (170.85..201.21] AND x2 = (175.83..209.86] AND x3 = (79.04..90.07] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.03..0.05] AND x10 = (0.33..0.46] AND x11 = (0.02..0.03] AND x12 = (0.02..0.03] AND x13 = (0.03..0.04] AND x14 = (0.05..0.07] AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.5..0.56] AND x18 = (0.66..0.69] AND x19 = (-5.33..-4.6] AND x20 = (0.19..0.22] AND x21 = (2.5..2.7] AND x22 = (0.23..0.28] THEN 1"
+  explanation: "IF x3 = (79.04..90.07] AND x13 = (0.03..0.04] AND x17 = (0.5..0.56] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x13 = (0.03..0.04] AND x20 = (0.19..0.22] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x17 = (0.5..0.56] AND x20 = (0.19..0.22] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x1 = (170.85..201.21] AND x3 = (79.04..90.07] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x13 = (0.03..0.04] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x19 = (-5.33..-4.6] AND x20 = (0.19..0.22] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.03..0.04] AND x19 = (-5.33..-4.6] AND x20 = (0.19..0.22] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.03..0.04] AND x15 = (0.01..0.02] AND x17 = (0.5..0.56] AND x20 = (0.19..0.22] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (170.85..201.21] AND x3 = (79.04..90.07] AND x14 = (0.05..0.07] AND x20 = (0.19..0.22] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (170.85..201.21] AND x3 = (79.04..90.07] AND x10 = (0.33..0.46] AND x17 = (0.5..0.56] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.33..0.46] AND x13 = (0.03..0.04] AND x17 = (0.5..0.56] AND x20 = (0.19..0.22] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.33..0.46] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x20 = (0.19..0.22] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (170.85..201.21] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x20 = (0.19..0.22] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (170.85..201.21] AND x10 = (0.33..0.46] AND x19 = (-5.33..-4.6] AND x20 = (0.19..0.22] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x10 = (0.33..0.46] AND x15 = (0.01..0.02] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x14 = (0.05..0.07] AND x15 = (0.01..0.02] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x10 = (0.33..0.46] AND x14 = (0.05..0.07] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.33..0.46] AND x13 = (0.03..0.04] AND x17 = (0.5..0.56] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.33..0.46] AND x13 = (0.03..0.04] AND x18 = (0.66..0.69] AND x19 = (-5.33..-4.6] AND x22 = (0.23..0.28] THEN 1"
+  # hypos left: 5
+  exp time: 2.99
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (170.85..201.21] AND x2 = (175.83..209.86] AND x3 = (79.04..90.07] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.01..+inf) AND x9 = (0.03..0.05] AND x10 = (0.24..0.33] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.02..0.03] AND x14 = (0.05..0.07] AND x15 = (0.0..0.01] AND x16 = (20.41..22.08] AND x17 = (0.45..0.5] AND x18 = (0.74..0.77] AND x19 = (-6.19..-5.72] AND x20 = (0.26..0.31] AND x21 = (2.5..2.7] AND x22 = (0.16..0.19] THEN 1"
+  explanation: "IF x3 = (79.04..90.07] AND x13 = (0.02..0.03] AND x17 = (0.45..0.5] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x13 = (0.02..0.03] AND x19 = (-6.19..-5.72] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x19 = (-6.19..-5.72] AND x20 = (0.26..0.31] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x13 = (0.02..0.03] AND x20 = (0.26..0.31] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x17 = (0.45..0.5] AND x20 = (0.26..0.31] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 4
+  explanation: "IF x1 = (170.85..201.21] AND x10 = (0.24..0.33] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x20 = (0.26..0.31] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x17 = (0.45..0.5] AND x20 = (0.26..0.31] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (170.85..201.21] AND x3 = (79.04..90.07] AND x10 = (0.24..0.33] AND x17 = (0.45..0.5] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (170.85..201.21] AND x3 = (79.04..90.07] AND x17 = (0.45..0.5] AND x21 = (2.5..2.7] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (170.85..201.21] AND x3 = (79.04..90.07] AND x14 = (0.05..0.07] AND x17 = (0.45..0.5] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (170.85..201.21] AND x2 = (175.83..209.86] AND x3 = (79.04..90.07] AND x17 = (0.45..0.5] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (175.83..209.86] AND x13 = (0.02..0.03] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (170.85..201.21] AND x3 = (79.04..90.07] AND x19 = (-6.19..-5.72] AND x21 = (2.5..2.7] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (170.85..201.21] AND x2 = (175.83..209.86] AND x3 = (79.04..90.07] AND x19 = (-6.19..-5.72] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (170.85..201.21] AND x3 = (79.04..90.07] AND x14 = (0.05..0.07] AND x19 = (-6.19..-5.72] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (170.85..201.21] AND x3 = (79.04..90.07] AND x10 = (0.24..0.33] AND x19 = (-6.19..-5.72] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (175.83..209.86] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x20 = (0.26..0.31] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  exp time: 2.85
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (170.85..201.21] AND x2 = (209.86..239.85] AND x3 = (114.72..162.82] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.03..0.05] AND x10 = (0.24..0.33] AND x11 = (0.02..0.03] AND x12 = (0.02..0.03] AND x13 = (0.02..0.03] AND x14 = (0.05..0.07] AND x15 = (0.01..0.02] AND x16 = (18.48..20.41] AND x17 = (0.56..0.62] AND x18 = (0.66..0.69] AND x19 = (-5.72..-5.33] AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.19..0.23] THEN 1"
+  explanation: "IF x3 = (114.72..162.82] AND x13 = (0.02..0.03] AND x20 = (0.31..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (114.72..162.82] AND x17 = (0.56..0.62] AND x20 = (0.31..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (114.72..162.82] AND x13 = (0.02..0.03] AND x19 = (-5.72..-5.33] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (114.72..162.82] AND x19 = (-5.72..-5.33] AND x20 = (0.31..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.02..0.03] AND x19 = (-5.72..-5.33] AND x20 = (0.31..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.02..0.03] AND x17 = (0.56..0.62] AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.02..0.03] AND x15 = (0.01..0.02] AND x17 = (0.56..0.62] AND x20 = (0.31..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.02..0.03] AND x14 = (0.05..0.07] AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.02..0.03] AND x18 = (0.66..0.69] AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x17 = (0.56..0.62] AND x20 = (0.31..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (170.85..201.21] AND x3 = (114.72..162.82] AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (170.85..201.21] AND x3 = (114.72..162.82] AND x13 = (0.02..0.03] AND x17 = (0.56..0.62] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (114.72..162.82] AND x10 = (0.24..0.33] AND x13 = (0.02..0.03] AND x17 = (0.56..0.62] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (114.72..162.82] AND x13 = (0.02..0.03] AND x15 = (0.01..0.02] AND x17 = (0.56..0.62] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (114.72..162.82] AND x13 = (0.02..0.03] AND x17 = (0.56..0.62] AND x21 = (2.36..2.5] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (114.72..162.82] AND x13 = (0.02..0.03] AND x14 = (0.05..0.07] AND x17 = (0.56..0.62] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (114.72..162.82] AND x13 = (0.02..0.03] AND x17 = (0.56..0.62] AND x18 = (0.66..0.69] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (170.85..201.21] AND x10 = (0.24..0.33] AND x19 = (-5.72..-5.33] AND x20 = (0.31..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (114.72..162.82] AND x14 = (0.05..0.07] AND x20 = (0.31..+inf) AND x21 = (2.36..2.5] AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (170.85..201.21] AND x3 = (114.72..162.82] AND x14 = (0.05..0.07] AND x20 = (0.31..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 5
+  exp time: 2.95
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x3 = (162.82..+inf) AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (-inf..0.01] AND x14 = (-inf..0.02] AND x15 = (0.0..0.01] AND x16 = (25.89..+inf) AND x17 = (-inf..0.4] AND x18 = (0.74..0.77] AND x19 = (-inf..-6.79] AND x20 = (0.15..0.19] AND x21 = (2.36..2.5] AND x22 = (-inf..0.12] THEN 0"
+  explanation: "IF x1 = (201.21..+inf) AND x3 = (162.82..+inf) AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 3
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x20 = (0.15..0.19] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x15 = (0.0..0.01] AND x17 = (-inf..0.4] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 5
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x10 = (-inf..0.14] AND x15 = (0.0..0.01] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 5
+  explanation: "IF x1 = (201.21..+inf) AND x17 = (-inf..0.4] AND x18 = (0.74..0.77] AND x20 = (0.15..0.19] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 5
+  explanation: "IF x1 = (201.21..+inf) AND x10 = (-inf..0.14] AND x17 = (-inf..0.4] AND x20 = (0.15..0.19] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 5
+  exp time: 0.22
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x3 = (79.04..90.07] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (0.14..0.19] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.03..0.04] AND x15 = (0.02..0.03] AND x16 = (18.48..20.41] AND x17 = (0.5..0.56] AND x18 = (-inf..0.66] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x21 = (2.36..2.5] AND x22 = (0.16..0.19] THEN 1"
+  explanation: "IF x3 = (79.04..90.07] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (79.04..90.07] AND x15 = (0.02..0.03] AND x17 = (0.5..0.56] AND x19 = (-6.19..-5.72] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (201.21..+inf) AND x3 = (79.04..90.07] AND x17 = (0.5..0.56] AND x19 = (-6.19..-5.72] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x2 = (209.86..239.85] AND x3 = (79.04..90.07] AND x17 = (0.5..0.56] AND x19 = (-6.19..-5.72] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (201.21..+inf) AND x3 = (79.04..90.07] AND x17 = (0.5..0.56] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x15 = (0.02..0.03] AND x17 = (0.5..0.56] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x17 = (0.5..0.56] AND x19 = (-6.19..-5.72] AND x21 = (2.36..2.5] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (79.04..90.07] AND x17 = (0.5..0.56] AND x20 = (0.19..0.22] AND x21 = (2.36..2.5] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (201.21..+inf) AND x17 = (0.5..0.56] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x21 = (2.36..2.5] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (209.86..239.85] AND x17 = (0.5..0.56] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x21 = (2.36..2.5] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 6
+  explanation: "IF x15 = (0.02..0.03] AND x17 = (0.5..0.56] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x21 = (2.36..2.5] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (209.86..239.85] AND x3 = (79.04..90.07] AND x15 = (0.02..0.03] AND x19 = (-6.19..-5.72] AND x21 = (2.36..2.5] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (201.21..+inf) AND x3 = (79.04..90.07] AND x15 = (0.02..0.03] AND x19 = (-6.19..-5.72] AND x21 = (2.36..2.5] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x3 = (79.04..90.07] AND x19 = (-6.19..-5.72] AND x21 = (2.36..2.5] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x3 = (79.04..90.07] AND x15 = (0.02..0.03] AND x19 = (-6.19..-5.72] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 6
+  explanation: "IF x2 = (209.86..239.85] AND x3 = (79.04..90.07] AND x10 = (0.14..0.19] AND x17 = (0.5..0.56] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x15 = (0.02..0.03] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x21 = (2.36..2.5] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 7
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x15 = (0.02..0.03] AND x17 = (0.5..0.56] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x22 = (0.16..0.19] THEN 1"
+  # hypos left: 7
+  exp time: 0.95
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.0..0.01] AND x16 = (24.46..25.89] AND x17 = (0.45..0.5] AND x18 = (-inf..0.66] AND x19 = (-5.72..-5.33] AND x20 = (0.31..+inf) AND x21 = (2.7..+inf) AND x22 = (0.19..0.23] THEN 1"
+  explanation: "IF x17 = (0.45..0.5] AND x19 = (-5.72..-5.33] AND x20 = (0.31..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 4
+  explanation: "IF x10 = (-inf..0.14] AND x14 = (0.02..0.03] AND x17 = (0.45..0.5] AND x20 = (0.31..+inf) AND x21 = (2.7..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (201.21..+inf) AND x10 = (-inf..0.14] AND x14 = (0.02..0.03] AND x17 = (0.45..0.5] AND x20 = (0.31..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (201.21..+inf) AND x10 = (-inf..0.14] AND x17 = (0.45..0.5] AND x20 = (0.31..+inf) AND x21 = (2.7..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (201.21..+inf) AND x10 = (-inf..0.14] AND x19 = (-5.72..-5.33] AND x20 = (0.31..+inf) AND x21 = (2.7..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x10 = (-inf..0.14] AND x14 = (0.02..0.03] AND x19 = (-5.72..-5.33] AND x20 = (0.31..+inf) AND x21 = (2.7..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (201.21..+inf) AND x14 = (0.02..0.03] AND x17 = (0.45..0.5] AND x20 = (0.31..+inf) AND x21 = (2.7..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (201.21..+inf) AND x3 = (90.07..104.32] AND x14 = (0.02..0.03] AND x17 = (0.45..0.5] AND x20 = (0.31..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x3 = (90.07..104.32] AND x14 = (0.02..0.03] AND x17 = (0.45..0.5] AND x20 = (0.31..+inf) AND x21 = (2.7..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 6
+  explanation: "IF x1 = (201.21..+inf) AND x3 = (90.07..104.32] AND x14 = (0.02..0.03] AND x19 = (-5.72..-5.33] AND x20 = (0.31..+inf) AND x21 = (2.7..+inf) AND x22 = (0.19..0.23] THEN 1"
+  # hypos left: 7
+  exp time: 0.47
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x3 = (90.07..104.32] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.02..0.03] AND x10 = (0.19..0.24] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.03..0.04] AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (-inf..0.4] AND x18 = (0.69..0.72] AND x19 = (-6.79..-6.19] AND x20 = (0.15..0.19] AND x21 = (2.7..+inf) AND x22 = (-inf..0.12] THEN 0"
+  explanation: "IF x1 = (201.21..+inf) AND x16 = (20.41..22.08] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 3
+  explanation: "IF x1 = (201.21..+inf) AND x14 = (0.03..0.04] AND x20 = (0.15..0.19] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x20 = (0.15..0.19] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x14 = (0.03..0.04] AND x18 = (0.69..0.72] AND x19 = (-6.79..-6.19] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 5
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x14 = (0.03..0.04] AND x18 = (0.69..0.72] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 5
+  explanation: "IF x1 = (201.21..+inf) AND x17 = (-inf..0.4] AND x18 = (0.69..0.72] AND x20 = (0.15..0.19] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 5
+  explanation: "IF x1 = (201.21..+inf) AND x13 = (0.01..0.02] AND x17 = (-inf..0.4] AND x20 = (0.15..0.19] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 5
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x14 = (0.03..0.04] AND x19 = (-6.79..-6.19] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 5
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x3 = (90.07..104.32] AND x14 = (0.03..0.04] AND x21 = (2.7..+inf) AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 6
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x13 = (0.01..0.02] AND x14 = (0.03..0.04] AND x17 = (-inf..0.4] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 6
+  explanation: "IF x1 = (201.21..+inf) AND x13 = (0.01..0.02] AND x14 = (0.03..0.04] AND x17 = (-inf..0.4] AND x19 = (-6.79..-6.19] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 6
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x13 = (0.01..0.02] AND x17 = (-inf..0.4] AND x19 = (-6.79..-6.19] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 6
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x3 = (90.07..104.32] AND x19 = (-6.79..-6.19] AND x21 = (2.7..+inf) AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 6
+  explanation: "IF x1 = (201.21..+inf) AND x13 = (0.01..0.02] AND x14 = (0.03..0.04] AND x17 = (-inf..0.4] AND x18 = (0.69..0.72] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 6
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x3 = (90.07..104.32] AND x17 = (-inf..0.4] AND x18 = (0.69..0.72] AND x19 = (-6.79..-6.19] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 7
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (209.86..239.85] AND x3 = (90.07..104.32] AND x13 = (0.01..0.02] AND x17 = (-inf..0.4] AND x21 = (2.7..+inf) AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 7
+  exp time: 0.70
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (201.21..+inf) AND x2 = (239.85..+inf) AND x3 = (-inf..79.04] AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (0.14..0.19] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.01..0.02] AND x14 = (0.03..0.04] AND x15 = (0.03..+inf) AND x16 = (20.41..22.08] AND x17 = (0.45..0.5] AND x18 = (0.66..0.69] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x21 = (2.5..2.7] AND x22 = (0.12..0.16] THEN 1"
+  explanation: "IF x3 = (-inf..79.04] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (-inf..79.04] AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (-inf..79.04] AND x17 = (0.45..0.5] AND x20 = (0.19..0.22] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 4
+  explanation: "IF x15 = (0.03..+inf) AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x1 = (201.21..+inf) AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x20 = (0.19..0.22] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  exp time: 0.43
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (201.21..+inf) AND x2 = (239.85..+inf) AND x3 = (162.82..+inf) AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.0..0.01] AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x18 = (-inf..0.66] AND x19 = (-inf..-6.79] AND x20 = (-inf..0.15] AND x21 = (2.19..2.36] AND x22 = (-inf..0.12] THEN 0"
+  explanation: "IF x1 = (201.21..+inf) AND x3 = (162.82..+inf) AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 3
+  explanation: "IF x1 = (201.21..+inf) AND x16 = (24.46..25.89] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 3
+  explanation: "IF x1 = (201.21..+inf) AND x13 = (0.01..0.02] AND x17 = (0.4..0.45] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (239.85..+inf) AND x17 = (0.4..0.45] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x14 = (0.02..0.03] AND x17 = (0.4..0.45] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (239.85..+inf) AND x14 = (0.02..0.03] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (239.85..+inf) AND x15 = (0.0..0.01] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (239.85..+inf) AND x10 = (-inf..0.14] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (239.85..+inf) AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x17 = (0.4..0.45] AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x14 = (0.02..0.03] AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x2 = (239.85..+inf) AND x3 = (162.82..+inf) AND x17 = (0.4..0.45] AND x20 = (-inf..0.15] AND x21 = (2.19..2.36] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 6
+  explanation: "IF x2 = (239.85..+inf) AND x3 = (162.82..+inf) AND x17 = (0.4..0.45] AND x18 = (-inf..0.66] AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 6
+  explanation: "IF x2 = (239.85..+inf) AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x18 = (-inf..0.66] AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 6
+  explanation: "IF x2 = (239.85..+inf) AND x13 = (0.01..0.02] AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 6
+  explanation: "IF x2 = (239.85..+inf) AND x14 = (0.02..0.03] AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 6
+  explanation: "IF x2 = (239.85..+inf) AND x3 = (162.82..+inf) AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 6
+  explanation: "IF x2 = (239.85..+inf) AND x3 = (162.82..+inf) AND x14 = (0.02..0.03] AND x17 = (0.4..0.45] AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 6
+  explanation: "IF x2 = (239.85..+inf) AND x3 = (162.82..+inf) AND x13 = (0.01..0.02] AND x15 = (0.0..0.01] AND x17 = (0.4..0.45] AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 7
+  explanation: "IF x2 = (239.85..+inf) AND x3 = (162.82..+inf) AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 7
+  exp time: 0.89
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (201.21..+inf) AND x2 = (239.85..+inf) AND x3 = (162.82..+inf) AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.01..0.02] AND x10 = (-inf..0.14] AND x11 = (-inf..0.01] AND x12 = (-inf..0.01] AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x15 = (0.0..0.01] AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x18 = (-inf..0.66] AND x19 = (-inf..-6.79] AND x20 = (-inf..0.15] AND x21 = (2.36..2.5] AND x22 = (-inf..0.12] THEN 0"
+  explanation: "IF x1 = (201.21..+inf) AND x3 = (162.82..+inf) AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 3
+  explanation: "IF x1 = (201.21..+inf) AND x16 = (24.46..25.89] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 3
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (239.85..+inf) AND x17 = (0.4..0.45] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x13 = (0.01..0.02] AND x17 = (0.4..0.45] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x14 = (0.02..0.03] AND x17 = (0.4..0.45] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x17 = (0.4..0.45] AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (239.85..+inf) AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x14 = (0.02..0.03] AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (239.85..+inf) AND x10 = (-inf..0.14] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (239.85..+inf) AND x15 = (0.0..0.01] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x2 = (239.85..+inf) AND x14 = (0.02..0.03] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 4
+  explanation: "IF x2 = (239.85..+inf) AND x3 = (162.82..+inf) AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 6
+  explanation: "IF x2 = (239.85..+inf) AND x13 = (0.01..0.02] AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 6
+  explanation: "IF x2 = (239.85..+inf) AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x18 = (-inf..0.66] AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 6
+  explanation: "IF x2 = (239.85..+inf) AND x3 = (162.82..+inf) AND x17 = (0.4..0.45] AND x18 = (-inf..0.66] AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 6
+  explanation: "IF x2 = (239.85..+inf) AND x14 = (0.02..0.03] AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 6
+  explanation: "IF x2 = (239.85..+inf) AND x3 = (162.82..+inf) AND x14 = (0.02..0.03] AND x17 = (0.4..0.45] AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 6
+  explanation: "IF x2 = (239.85..+inf) AND x3 = (162.82..+inf) AND x13 = (0.01..0.02] AND x15 = (0.0..0.01] AND x17 = (0.4..0.45] AND x20 = (-inf..0.15] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 7
+  explanation: "IF x2 = (239.85..+inf) AND x3 = (162.82..+inf) AND x14 = (0.02..0.03] AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x18 = (-inf..0.66] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 7
+  explanation: "IF x2 = (239.85..+inf) AND x3 = (162.82..+inf) AND x13 = (0.01..0.02] AND x14 = (0.02..0.03] AND x16 = (24.46..25.89] AND x17 = (0.4..0.45] AND x22 = (-inf..0.12] THEN 0"
+  # hypos left: 7
+  exp time: 0.65
+
+Sample of length 22  :  [[0. 0. 5. 0. 0. 0. 0. 0. 4. 5. 3. 3. 4. 5. 2. 0. 5. 2. 2. 4. 3. 3.]]
+Encoded sample of length 101  :  [[1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 1. 0. 1. 1. 1. 1.
+  0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 1. 0. 0. 0. 0.
+  1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.
+  0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1. 0. 0. 0.
+  0. 0. 1. 0. 0.]]
+Back to sample [array([0., 0., 5., 0., 0., 0., 0., 0., 4., 5., 3., 3., 4., 5., 2., 0., 5.,
+       2., 2., 4., 3., 3.])]
+Readable sample ['(-inf..114.66]' '(-inf..128.75]' '(90.07..104.32]' '(0.0..0.01]'
+ '(0.0..+inf)' '(0.0..+inf)' '(0.0..+inf)' '(0.0..0.01]' '(0.05..+inf)'
+ '(0.46..+inf)' '(0.03..+inf)' '(0.03..+inf)' '(0.04..+inf)'
+ '(0.07..+inf)' '(0.02..0.03]' '(-inf..18.48]' '(0.62..+inf)'
+ '(0.69..0.72]' '(-5.72..-5.33]' '(0.26..0.31]' '(2.36..2.5]'
+ '(0.19..0.23]']
+  explaining:  "IF x1 = (201.21..+inf) AND x2 = (239.85..+inf) AND x3 = (162.82..+inf) AND x4 = (0.0..0.01] AND x5 = (0.0..+inf) AND x6 = (0.0..+inf) AND x7 = (0.0..+inf) AND x8 = (0.0..0.01] AND x9 = (0.02..0.03] AND x10 = (0.19..0.24] AND x11 = (0.01..0.02] AND x12 = (0.01..0.02] AND x13 = (0.02..0.03] AND x14 = (0.04..0.05] AND x15 = (0.01..0.02] AND x16 = (20.41..22.08] AND x17 = (0.45..0.5] AND x18 = (-inf..0.66] AND x19 = (-6.19..-5.72] AND x20 = (0.22..0.26] AND x21 = (2.5..2.7] AND x22 = (0.12..0.16] THEN 1"
+  explanation: "IF x10 = (0.19..0.24] AND x19 = (-6.19..-5.72] AND x20 = (0.22..0.26] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (162.82..+inf) AND x13 = (0.02..0.03] AND x19 = (-6.19..-5.72] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 4
+  explanation: "IF x13 = (0.02..0.03] AND x19 = (-6.19..-5.72] AND x20 = (0.22..0.26] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (162.82..+inf) AND x13 = (0.02..0.03] AND x20 = (0.22..0.26] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (162.82..+inf) AND x17 = (0.45..0.5] AND x20 = (0.22..0.26] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (162.82..+inf) AND x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 4
+  explanation: "IF x3 = (162.82..+inf) AND x19 = (-6.19..-5.72] AND x20 = (0.22..0.26] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 4
+  explanation: "IF x17 = (0.45..0.5] AND x19 = (-6.19..-5.72] AND x20 = (0.22..0.26] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 4
+  explanation: "IF x1 = (201.21..+inf) AND x10 = (0.19..0.24] AND x17 = (0.45..0.5] AND x20 = (0.22..0.26] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.19..0.24] AND x17 = (0.45..0.5] AND x20 = (0.22..0.26] AND x21 = (2.5..2.7] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.19..0.24] AND x15 = (0.01..0.02] AND x17 = (0.45..0.5] AND x20 = (0.22..0.26] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.19..0.24] AND x14 = (0.04..0.05] AND x17 = (0.45..0.5] AND x20 = (0.22..0.26] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.19..0.24] AND x13 = (0.02..0.03] AND x14 = (0.04..0.05] AND x20 = (0.22..0.26] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x10 = (0.19..0.24] AND x13 = (0.02..0.03] AND x17 = (0.45..0.5] AND x20 = (0.22..0.26] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.02..0.03] AND x17 = (0.45..0.5] AND x20 = (0.22..0.26] AND x21 = (2.5..2.7] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.02..0.03] AND x15 = (0.01..0.02] AND x17 = (0.45..0.5] AND x20 = (0.22..0.26] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x13 = (0.02..0.03] AND x14 = (0.04..0.05] AND x17 = (0.45..0.5] AND x20 = (0.22..0.26] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (162.82..+inf) AND x13 = (0.02..0.03] AND x14 = (0.04..0.05] AND x17 = (0.45..0.5] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (162.82..+inf) AND x13 = (0.02..0.03] AND x17 = (0.45..0.5] AND x21 = (2.5..2.7] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  explanation: "IF x3 = (162.82..+inf) AND x13 = (0.02..0.03] AND x15 = (0.01..0.02] AND x17 = (0.45..0.5] AND x22 = (0.12..0.16] THEN 1"
+  # hypos left: 5
+  exp time: 1.37
+
+
+exptimes: [1.8327090000000001, 2.961566999999999, 0.288316, 2.370709999999999, 1.5300209999999996, 1.4801220000000015, 2.7336729999999996, 0.4125589999999999, 2.238230999999999, 1.6217090000000027, 3.1096429999999984, 0.5541060000000009, 1.2165040000000005, 0.07492799999999988, 0.257165999999998, 1.562422999999999, 1.3708899999999993, 0.3648409999999984, 0.2513329999999989, 0.18984199999999873, 0.6720959999999998, 2.1150730000000024, 1.1213210000000018, 1.3242249999999984, 1.3100529999999964, 1.3305330000000026, 1.3670939999999945, 1.216592999999996, 2.9930200000000013, 2.849045000000004, 2.950111000000007, 0.21817699999999718, 0.9549489999999992, 0.4744270000000057, 0.7002550000000056, 0.43106699999999876, 0.8918269999999993, 0.6481919999999946, 1.3671580000000034]
+all samples: 39
+total exp time: 51.36
+max exp time per instance: 3.11
+min exp time per instance: 0.07
+avg exp time per instance: 1.32
+total oracle calls: 15491
+max oracle calls per instance: 964
+min oracle calls per instance: 29
+avg oracle calls per instance: 397.21
+avg number of explanations per instance: 15.92
+avg explanation size per instance: 5.45
+

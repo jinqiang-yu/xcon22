@@ -1,0 +1,733 @@
+MODEL:
+IF Observation_number == (5.8..+inf) THEN target == 1
+IF Hospital_identification_number_for_blood_sample == (-inf..819.0] THEN target == 1
+IF Age_of_patient == (39.2..46.8] THEN target == 0
+IF Age_of_patient == (46.8..+inf) THEN target == 0
+IF ml == (209.4..+inf) THEN target == 0
+IF ml == (-inf..35.6], Observation_number == (3.4..4.6] THEN target == 1
+IF Observation_number == (3.4..4.6] THEN target == 0
+IF ml == (-inf..35.6], Observation_number == (4.6..5.8] THEN target == 1
+IF Observation_number == (4.6..5.8] THEN target == 0
+IF ml == (-inf..35.6], Observation_number != (-inf..2.2] THEN target == 1
+IF ml == (-inf..35.6], Hospital_identification_number_for_blood_sample != (947.0..1124.0] THEN target == 1
+IF Hospital_identification_number_for_blood_sample == (819.0..947.0], Age_of_patient != (26.4..32.8] THEN target == 1
+IF ml == (98.7..209.4] THEN target == 0
+IF m2 == (47.6..71.4], Hospital_identification_number_for_blood_sample != (819.0..947.0] THEN target == 1
+IF Date_that_blood_sample_was_taken == (90078.0..110077.0], Observation_number != (-inf..2.2] THEN target == 1
+IF m3 == (9.16..12.42], Observation_number != (-inf..2.2] THEN target == 1
+IF Observation_number == (2.2..3.4] THEN target == 0
+IF m4 == (75.0..100.0] THEN target == 1
+IF Date_that_blood_sample_was_taken == (110077.0..+inf) THEN target == 0
+IF Hospital_identification_number_for_blood_sample == (819.0..947.0], Date_that_blood_sample_was_taken == (60079.0..90078.0] THEN target == 0
+IF Hospital_identification_number_for_blood_sample == (819.0..947.0] THEN target == 1
+IF Date_that_blood_sample_was_taken == (-inf..30078.0] THEN target == 0
+IF m2 == (23.8..47.6] THEN target == 1
+IF m2 == (71.4..95.2], Hospital_identification_number_for_blood_sample == (1281.0..+inf) THEN target == 1
+IF m2 == (71.4..95.2], Age_of_patient == (26.4..32.8] THEN target == 1
+IF ml != (35.6..57.2] THEN target == 0
+IF Hospital_identification_number_for_blood_sample == (947.0..1124.0] THEN target == 1
+IF Age_of_patient == (-inf..26.4] THEN target == 1
+IF Date_that_blood_sample_was_taken == (30078.0..60079.0] THEN target == 0
+IF Hospital_identification_number_for_blood_sample == (1124.0..1281.0] THEN target == 1
+IF Age_of_patient != (26.4..32.8] THEN target == 1
+IF Date_that_blood_sample_was_taken == (60079.0..90078.0] THEN target == 0
+IF Observation_number == (-inf..2.2] THEN target == 1
+IF TRUE THEN target == 1
+
+ENCODINDS:
+# of classes: 2
+min # of vars: 51
+avg # of vars: 51.00
+max # of vars: 51
+min # of clauses: 134
+avg # of clauses: 138.00
+max # of clauses: 142
+
+EXPLANATIONS:
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (-inf..819.0] AND Age_of_patient == (-inf..26.4] AND Date_that_blood_sample_was_taken == (30078.0..60079.0] AND ml == (-inf..35.6] AND m2 == (71.4..95.2] AND m3 == (12.42..16.44] AND m4 == (-inf..25.0] THEN target == 1"
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND ml != (-inf..35.6] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND m2 != (71.4..95.2] AND m3 != (12.42..16.44] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (-inf..35.6] AND m3 != (12.42..16.44] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (-inf..819.0] AND Age_of_patient == (-inf..26.4] AND Date_that_blood_sample_was_taken == (30078.0..60079.0] AND ml == (35.6..57.2] AND m2 == (47.6..71.4] AND m3 == (12.42..16.44] AND m4 == (25.0..50.0] THEN target != 1"
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND ml != (35.6..57.2] AND m2 != (47.6..71.4] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND ml != (35.6..57.2] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND m2 != (47.6..71.4] AND m3 != (12.42..16.44] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (35.6..57.2] AND m2 != (47.6..71.4] AND m3 != (12.42..16.44] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (-inf..819.0] AND Age_of_patient == (-inf..26.4] AND Date_that_blood_sample_was_taken == (30078.0..60079.0] AND ml == (35.6..57.2] AND m2 == (47.6..71.4] AND m3 == (16.44..21.84] AND m4 == (-inf..25.0] THEN target != 1"
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND ml != (35.6..57.2] AND m2 != (47.6..71.4] AND m3 != (16.44..21.84] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND ml != (35.6..57.2] AND m3 != (16.44..21.84] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND m3 != (16.44..21.84] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND m2 != (47.6..71.4] AND m3 != (16.44..21.84] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND m2 != (47.6..71.4] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND ml != (35.6..57.2] AND m2 != (47.6..71.4] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (35.6..57.2] AND m2 != (47.6..71.4] AND m3 != (16.44..21.84] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (-inf..819.0] AND Age_of_patient == (-inf..26.4] AND Date_that_blood_sample_was_taken == (60079.0..90078.0] AND ml == (-inf..35.6] AND m2 == (-inf..23.8] AND m3 == (9.16..12.42] AND m4 == (25.0..50.0] THEN target != 1"
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND ml != (-inf..35.6] AND m3 != (9.16..12.42] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND m2 != (-inf..23.8] AND m3 != (9.16..12.42] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (-inf..35.6] AND m2 != (-inf..23.8] AND m3 != (9.16..12.42] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (-inf..819.0] AND Age_of_patient == (-inf..26.4] AND Date_that_blood_sample_was_taken == (60079.0..90078.0] AND ml == (-inf..35.6] AND m2 == (23.8..47.6] AND m3 == (9.16..12.42] AND m4 == (-inf..25.0] THEN target != 1"
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND m2 != (23.8..47.6] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (-inf..35.6] AND m2 != (23.8..47.6] AND m3 != (9.16..12.42] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 6
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (-inf..35.6] AND m3 != (9.16..12.42] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (-inf..819.0] AND Age_of_patient == (-inf..26.4] AND Date_that_blood_sample_was_taken == (90078.0..110077.0] AND ml == (-inf..35.6] AND m2 == (95.2..+inf) AND m3 == (9.16..12.42] AND m4 == (100.0..+inf) THEN target != 1"
+  expl: "IF Observation_number != (-inf..2.2] AND Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m4 != (100.0..+inf) THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m3 != (9.16..12.42] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (-inf..35.6] AND m3 != (9.16..12.42] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND ml != (-inf..35.6] AND m2 != (95.2..+inf) AND m3 != (9.16..12.42] AND m4 != (100.0..+inf) THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (-inf..35.6] AND m2 != (95.2..+inf) THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (-inf..26.4] AND ml != (-inf..35.6] AND m2 != (95.2..+inf) AND m3 != (9.16..12.42] THEN target != 1"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (-inf..819.0] AND Age_of_patient == (26.4..32.8] AND Date_that_blood_sample_was_taken == (60079.0..90078.0] AND ml == (35.6..57.2] AND m2 == (23.8..47.6] AND m3 == (12.42..16.44] AND m4 == (25.0..50.0] THEN target != 1"
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND m2 != (23.8..47.6] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND m3 != (12.42..16.44] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (-inf..819.0] AND Age_of_patient == (26.4..32.8] AND Date_that_blood_sample_was_taken == (90078.0..110077.0] AND ml == (-inf..35.6] AND m2 == (71.4..95.2] AND m3 == (12.42..16.44] AND m4 == (-inf..25.0] THEN target != 1"
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (-inf..35.6] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND ml != (-inf..35.6] AND m3 != (12.42..16.44] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (-inf..819.0] AND Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m2 != (71.4..95.2] AND m3 != (12.42..16.44] THEN target != 1"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (1124.0..1281.0] AND Age_of_patient == (-inf..26.4] AND Date_that_blood_sample_was_taken == (60079.0..90078.0] AND ml == (-inf..35.6] AND m2 == (23.8..47.6] AND m3 == (-inf..9.16] AND m4 == (25.0..50.0] THEN target != 1"
+  expl: "IF Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND m2 != (23.8..47.6] AND m3 != (-inf..9.16] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND m2 != (23.8..47.6] AND m3 != (-inf..9.16] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Age_of_patient != (-inf..26.4] AND m2 != (23.8..47.6] AND m3 != (-inf..9.16] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (-inf..35.6] AND m2 != (23.8..47.6] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (-inf..35.6] AND m3 != (-inf..9.16] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (-inf..35.6] AND m2 != (23.8..47.6] AND m3 != (-inf..9.16] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Age_of_patient != (-inf..26.4] AND ml != (-inf..35.6] AND m2 != (23.8..47.6] AND m3 != (-inf..9.16] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Observation_number != (-inf..2.2] AND Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (-inf..35.6] AND m2 != (23.8..47.6] THEN target != 1"
+  # hypos left: 6
+  expl: "IF Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (-inf..35.6] AND m2 != (23.8..47.6] AND m3 != (-inf..9.16] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (1124.0..1281.0] AND Age_of_patient == (26.4..32.8] AND Date_that_blood_sample_was_taken == (30078.0..60079.0] AND ml == (209.4..+inf) AND m2 == (47.6..71.4] AND m3 == (21.84..+inf) AND m4 == (75.0..100.0] THEN target == 0"
+  expl: "IF ml != (209.4..+inf) AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 2
+  expl: "IF Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (209.4..+inf) AND m2 != (47.6..71.4] AND m4 != (75.0..100.0] THEN target != 0"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (1124.0..1281.0] AND Age_of_patient == (32.8..39.2] AND Date_that_blood_sample_was_taken == (-inf..30078.0] AND ml == (98.7..209.4] AND m2 == (47.6..71.4] AND m3 == (21.84..+inf) AND m4 == (75.0..100.0] THEN target != 0"
+  expl: "IF ml != (98.7..209.4] AND m2 != (47.6..71.4] AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 3
+  expl: "IF Date_that_blood_sample_was_taken != (-inf..30078.0] AND ml != (98.7..209.4] AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 3
+  expl: "IF Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Age_of_patient != (32.8..39.2] AND m3 != (21.84..+inf) AND m4 != (75.0..100.0] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (-inf..30078.0] AND ml != (98.7..209.4] AND m2 != (47.6..71.4] AND m4 != (75.0..100.0] THEN target != 0"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (1124.0..1281.0] AND Age_of_patient == (39.2..46.8] AND Date_that_blood_sample_was_taken == (30078.0..60079.0] AND ml == (98.7..209.4] AND m2 == (95.2..+inf) AND m3 == (16.44..21.84] AND m4 == (25.0..50.0] THEN target != 0"
+  expl: "IF Age_of_patient != (39.2..46.8] AND ml != (98.7..209.4] AND m2 != (95.2..+inf) AND m4 != (25.0..50.0] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Age_of_patient != (39.2..46.8] AND ml != (98.7..209.4] AND m3 != (16.44..21.84] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Age_of_patient != (39.2..46.8] AND ml != (98.7..209.4] AND m2 != (95.2..+inf) THEN target != 0"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (39.2..46.8] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (98.7..209.4] AND m2 != (95.2..+inf) AND m3 != (16.44..21.84] THEN target != 0"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Age_of_patient != (39.2..46.8] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND m2 != (95.2..+inf) AND m4 != (25.0..50.0] THEN target != 0"
+  # hypos left: 5
+  expl: "IF Age_of_patient != (39.2..46.8] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (98.7..209.4] AND m3 != (16.44..21.84] AND m4 != (25.0..50.0] THEN target != 0"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (1281.0..+inf) AND Age_of_patient == (-inf..26.4] AND Date_that_blood_sample_was_taken == (30078.0..60079.0] AND ml == (209.4..+inf) AND m2 == (71.4..95.2] AND m3 == (21.84..+inf) AND m4 == (100.0..+inf) THEN target != 0"
+  expl: "IF Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (209.4..+inf) AND m2 != (71.4..95.2] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (-inf..26.4] AND ml != (209.4..+inf) AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND ml != (209.4..+inf) AND m3 != (21.84..+inf) AND m4 != (100.0..+inf) THEN target != 0"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (209.4..+inf) AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (-inf..26.4] AND ml != (209.4..+inf) AND m2 != (71.4..95.2] AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (209.4..+inf) AND m3 != (21.84..+inf) AND m4 != (100.0..+inf) THEN target != 0"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (1281.0..+inf) AND Age_of_patient == (-inf..26.4] AND Date_that_blood_sample_was_taken == (60079.0..90078.0] AND ml == (-inf..35.6] AND m2 == (-inf..23.8] AND m3 == (-inf..9.16] AND m4 == (75.0..100.0] THEN target != 1"
+  expl: "IF Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (-inf..35.6] AND m2 != (-inf..23.8] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (-inf..26.4] AND m3 != (-inf..9.16] AND m4 != (75.0..100.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (-inf..26.4] AND ml != (-inf..35.6] AND m3 != (-inf..9.16] AND m4 != (75.0..100.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (-inf..35.6] AND m3 != (-inf..9.16] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (-inf..26.4] AND ml != (-inf..35.6] AND m2 != (-inf..23.8] AND m3 != (-inf..9.16] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND m2 != (-inf..23.8] AND m3 != (-inf..9.16] AND m4 != (75.0..100.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (-inf..35.6] AND m2 != (-inf..23.8] AND m3 != (-inf..9.16] AND m4 != (75.0..100.0] THEN target != 1"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (1281.0..+inf) AND Age_of_patient == (-inf..26.4] AND Date_that_blood_sample_was_taken == (60079.0..90078.0] AND ml == (35.6..57.2] AND m2 == (-inf..23.8] AND m3 == (16.44..21.84] AND m4 == (25.0..50.0] THEN target != 1"
+  expl: "IF Age_of_patient != (-inf..26.4] AND m3 != (16.44..21.84] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Observation_number != (-inf..2.2] AND Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (-inf..26.4] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Observation_number != (-inf..2.2] AND Age_of_patient != (-inf..26.4] AND m2 != (-inf..23.8] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (35.6..57.2] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (35.6..57.2] AND m2 != (-inf..23.8] AND m3 != (16.44..21.84] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (35.6..57.2] AND m2 != (-inf..23.8] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (-inf..26.4] AND ml != (35.6..57.2] AND m2 != (-inf..23.8] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND m2 != (-inf..23.8] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (1281.0..+inf) AND Age_of_patient == (-inf..26.4] AND Date_that_blood_sample_was_taken == (90078.0..110077.0] AND ml == (-inf..35.6] AND m2 == (47.6..71.4] AND m3 == (-inf..9.16] AND m4 == (50.0..75.0] THEN target != 1"
+  expl: "IF Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (-inf..35.6] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND ml != (-inf..35.6] AND m2 != (47.6..71.4] AND m3 != (-inf..9.16] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (-inf..35.6] AND m2 != (47.6..71.4] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Age_of_patient != (-inf..26.4] AND ml != (-inf..35.6] AND m2 != (47.6..71.4] AND m3 != (-inf..9.16] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m2 != (47.6..71.4] AND m3 != (-inf..9.16] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m2 != (47.6..71.4] AND m3 != (-inf..9.16] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (-inf..26.4] AND ml != (-inf..35.6] AND m3 != (-inf..9.16] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Observation_number != (-inf..2.2] AND Age_of_patient != (-inf..26.4] AND ml != (-inf..35.6] AND m3 != (-inf..9.16] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Observation_number != (-inf..2.2] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (-inf..35.6] AND m2 != (47.6..71.4] AND m3 != (-inf..9.16] THEN target != 1"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (1281.0..+inf) AND Age_of_patient == (26.4..32.8] AND Date_that_blood_sample_was_taken == (110077.0..+inf) AND ml == (209.4..+inf) AND m2 == (95.2..+inf) AND m3 == (21.84..+inf) AND m4 == (75.0..100.0] THEN target != 0"
+  expl: "IF Date_that_blood_sample_was_taken != (110077.0..+inf) AND ml != (209.4..+inf) AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 3
+  expl: "IF Age_of_patient != (26.4..32.8] AND ml != (209.4..+inf) AND m2 != (95.2..+inf) AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (26.4..32.8] AND ml != (209.4..+inf) AND m2 != (95.2..+inf) AND m4 != (75.0..100.0] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (110077.0..+inf) AND ml != (209.4..+inf) AND m4 != (75.0..100.0] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND ml != (209.4..+inf) AND m3 != (21.84..+inf) AND m4 != (75.0..100.0] THEN target != 0"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (1281.0..+inf) AND Age_of_patient == (26.4..32.8] AND Date_that_blood_sample_was_taken == (90078.0..110077.0] AND ml == (-inf..35.6] AND m2 == (71.4..95.2] AND m3 == (21.84..+inf) AND m4 == (50.0..75.0] THEN target != 1"
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (26.4..32.8] AND ml != (-inf..35.6] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND ml != (-inf..35.6] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 3
+  expl: "IF ml != (-inf..35.6] AND m2 != (71.4..95.2] AND m3 != (21.84..+inf) AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m3 != (21.84..+inf) AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (-inf..35.6] AND m2 != (71.4..95.2] AND m3 != (21.84..+inf) THEN target != 1"
+  # hypos left: 5
+  expl: "IF Observation_number != (-inf..2.2] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (-inf..35.6] AND m2 != (71.4..95.2] AND m3 != (21.84..+inf) THEN target != 1"
+  # hypos left: 5
+  expl: "IF Observation_number != (-inf..2.2] AND Age_of_patient != (26.4..32.8] AND ml != (-inf..35.6] AND m2 != (71.4..95.2] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Observation_number != (-inf..2.2] AND Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (-inf..35.6] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Observation_number != (-inf..2.2] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (-inf..35.6] AND m3 != (21.84..+inf) AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m2 != (71.4..95.2] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m2 != (71.4..95.2] AND m3 != (21.84..+inf) THEN target != 1"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (1281.0..+inf) AND Age_of_patient == (32.8..39.2] AND Date_that_blood_sample_was_taken == (30078.0..60079.0] AND ml == (209.4..+inf) AND m2 == (-inf..23.8] AND m3 == (9.16..12.42] AND m4 == (75.0..100.0] THEN target != 0"
+  expl: "IF ml != (209.4..+inf) THEN target != 0"
+  # hypos left: 1
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (1281.0..+inf) AND Age_of_patient == (32.8..39.2] AND Date_that_blood_sample_was_taken == (90078.0..110077.0] AND ml == (-inf..35.6] AND m2 == (23.8..47.6] AND m3 == (9.16..12.42] AND m4 == (25.0..50.0] THEN target != 1"
+  expl: "IF Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m2 != (23.8..47.6] AND m3 != (9.16..12.42] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m2 != (23.8..47.6] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Observation_number != (-inf..2.2] AND Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m2 != (23.8..47.6] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Age_of_patient != (32.8..39.2] AND ml != (-inf..35.6] AND m2 != (23.8..47.6] AND m3 != (9.16..12.42] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (-inf..35.6] AND m2 != (23.8..47.6] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (-inf..35.6] AND m2 != (23.8..47.6] AND m3 != (9.16..12.42] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Observation_number != (-inf..2.2] AND ml != (-inf..35.6] AND m2 != (23.8..47.6] AND m3 != (9.16..12.42] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND ml != (-inf..35.6] AND m2 != (23.8..47.6] AND m3 != (9.16..12.42] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (-inf..35.6] AND m2 != (23.8..47.6] AND m3 != (9.16..12.42] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (-inf..35.6] AND m3 != (9.16..12.42] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (1281.0..+inf) AND Age_of_patient == (32.8..39.2] AND Date_that_blood_sample_was_taken == (90078.0..110077.0] AND ml == (35.6..57.2] AND m2 == (47.6..71.4] AND m3 == (16.44..21.84] AND m4 == (50.0..75.0] THEN target != 1"
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m2 != (47.6..71.4] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m2 != (47.6..71.4] AND m3 != (16.44..21.84] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (35.6..57.2] AND m2 != (47.6..71.4] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (35.6..57.2] AND m2 != (47.6..71.4] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (32.8..39.2] AND ml != (35.6..57.2] AND m2 != (47.6..71.4] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND ml != (35.6..57.2] AND m2 != (47.6..71.4] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND ml != (35.6..57.2] AND m3 != (16.44..21.84] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Observation_number != (-inf..2.2] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m2 != (47.6..71.4] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Observation_number != (-inf..2.2] AND ml != (35.6..57.2] AND m3 != (16.44..21.84] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (32.8..39.2] AND ml != (35.6..57.2] AND m2 != (47.6..71.4] AND m3 != (16.44..21.84] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (35.6..57.2] AND m3 != (16.44..21.84] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m3 != (16.44..21.84] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m2 != (47.6..71.4] AND m3 != (16.44..21.84] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Observation_number != (-inf..2.2] AND Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m2 != (47.6..71.4] AND m3 != (16.44..21.84] THEN target != 1"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (1281.0..+inf) AND Age_of_patient == (39.2..46.8] AND Date_that_blood_sample_was_taken == (90078.0..110077.0] AND ml == (98.7..209.4] AND m2 == (47.6..71.4] AND m3 == (21.84..+inf) AND m4 == (50.0..75.0] THEN target != 0"
+  expl: "IF Age_of_patient != (39.2..46.8] AND ml != (98.7..209.4] AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 3
+  expl: "IF Age_of_patient != (39.2..46.8] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (98.7..209.4] AND m2 != (47.6..71.4] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (39.2..46.8] AND ml != (98.7..209.4] AND m2 != (47.6..71.4] AND m4 != (50.0..75.0] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (39.2..46.8] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (1281.0..+inf) AND Age_of_patient == (46.8..+inf) AND Date_that_blood_sample_was_taken == (60079.0..90078.0] AND ml == (57.2..98.7] AND m2 == (71.4..95.2] AND m3 == (9.16..12.42] AND m4 == (75.0..100.0] THEN target != 0"
+  expl: "IF Age_of_patient != (46.8..+inf) THEN target != 0"
+  # hypos left: 1
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (819.0..947.0] AND Age_of_patient == (-inf..26.4] AND Date_that_blood_sample_was_taken == (-inf..30078.0] AND ml == (-inf..35.6] AND m2 == (47.6..71.4] AND m3 == (12.42..16.44] AND m4 == (-inf..25.0] THEN target != 1"
+  expl: "IF Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (-inf..30078.0] AND m2 != (47.6..71.4] AND m3 != (12.42..16.44] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (-inf..30078.0] AND ml != (-inf..35.6] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (-inf..30078.0] AND m2 != (47.6..71.4] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (-inf..26.4] AND m2 != (47.6..71.4] AND m3 != (12.42..16.44] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (-inf..26.4] AND ml != (-inf..35.6] AND m2 != (47.6..71.4] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (-inf..30078.0] AND ml != (-inf..35.6] AND m2 != (47.6..71.4] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Date_that_blood_sample_was_taken != (-inf..30078.0] AND ml != (-inf..35.6] AND m2 != (47.6..71.4] AND m3 != (12.42..16.44] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (819.0..947.0] AND Age_of_patient == (-inf..26.4] AND Date_that_blood_sample_was_taken == (-inf..30078.0] AND ml == (35.6..57.2] AND m2 == (47.6..71.4] AND m3 == (9.16..12.42] AND m4 == (25.0..50.0] THEN target != 1"
+  expl: "IF Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (-inf..30078.0] AND m3 != (9.16..12.42] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (-inf..26.4] AND ml != (35.6..57.2] AND m2 != (47.6..71.4] AND m3 != (9.16..12.42] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (-inf..26.4] AND m2 != (47.6..71.4] AND m3 != (9.16..12.42] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (-inf..30078.0] AND m2 != (47.6..71.4] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (-inf..30078.0] AND ml != (35.6..57.2] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Date_that_blood_sample_was_taken != (-inf..30078.0] AND ml != (35.6..57.2] AND m2 != (47.6..71.4] AND m3 != (9.16..12.42] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 6
+  expl: "IF Observation_number != (-inf..2.2] AND Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (-inf..26.4] AND ml != (35.6..57.2] AND m2 != (47.6..71.4] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (819.0..947.0] AND Age_of_patient == (-inf..26.4] AND Date_that_blood_sample_was_taken == (30078.0..60079.0] AND ml == (35.6..57.2] AND m2 == (71.4..95.2] AND m3 == (21.84..+inf) AND m4 == (25.0..50.0] THEN target != 1"
+  expl: "IF Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND m2 != (71.4..95.2] AND m3 != (21.84..+inf) THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (-inf..26.4] AND m2 != (71.4..95.2] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (-inf..26.4] AND m3 != (21.84..+inf) AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND m3 != (21.84..+inf) THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (35.6..57.2] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (-inf..26.4] AND ml != (35.6..57.2] AND m3 != (21.84..+inf) THEN target != 1"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (-inf..26.4] AND ml != (35.6..57.2] AND m2 != (71.4..95.2] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (819.0..947.0] AND Age_of_patient == (26.4..32.8] AND Date_that_blood_sample_was_taken == (-inf..30078.0] AND ml == (57.2..98.7] AND m2 == (47.6..71.4] AND m3 == (-inf..9.16] AND m4 == (50.0..75.0] THEN target != 1"
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Date_that_blood_sample_was_taken != (-inf..30078.0] AND m2 != (47.6..71.4] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Date_that_blood_sample_was_taken != (-inf..30078.0] AND m2 != (47.6..71.4] AND m3 != (-inf..9.16] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND ml != (57.2..98.7] AND m2 != (47.6..71.4] AND m3 != (-inf..9.16] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Date_that_blood_sample_was_taken != (-inf..30078.0] AND ml != (57.2..98.7] AND m3 != (-inf..9.16] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (-inf..30078.0] AND ml != (57.2..98.7] AND m2 != (47.6..71.4] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (26.4..32.8] AND m2 != (47.6..71.4] AND m3 != (-inf..9.16] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (-inf..30078.0] AND m2 != (47.6..71.4] AND m3 != (-inf..9.16] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (819.0..947.0] AND Age_of_patient == (26.4..32.8] AND Date_that_blood_sample_was_taken == (30078.0..60079.0] AND ml == (-inf..35.6] AND m2 == (71.4..95.2] AND m3 == (16.44..21.84] AND m4 == (-inf..25.0] THEN target != 1"
+  expl: "IF Age_of_patient != (26.4..32.8] AND m2 != (71.4..95.2] AND m3 != (16.44..21.84] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND ml != (-inf..35.6] AND m3 != (16.44..21.84] THEN target != 1"
+  # hypos left: 3
+  expl: "IF ml != (-inf..35.6] AND m2 != (71.4..95.2] AND m3 != (16.44..21.84] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (26.4..32.8] AND ml != (-inf..35.6] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (26.4..32.8] AND m3 != (16.44..21.84] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND m2 != (71.4..95.2] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (-inf..35.6] AND m2 != (71.4..95.2] AND m4 != (-inf..25.0] THEN target != 1"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (819.0..947.0] AND Age_of_patient == (32.8..39.2] AND Date_that_blood_sample_was_taken == (30078.0..60079.0] AND ml == (35.6..57.2] AND m2 == (95.2..+inf) AND m3 == (12.42..16.44] AND m4 == (75.0..100.0] THEN target != 1"
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND m3 != (12.42..16.44] AND m4 != (75.0..100.0] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Age_of_patient != (32.8..39.2] AND ml != (35.6..57.2] AND m3 != (12.42..16.44] THEN target != 1"
+  # hypos left: 3
+  expl: "IF ml != (35.6..57.2] AND m2 != (95.2..+inf) AND m3 != (12.42..16.44] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND m2 != (95.2..+inf) AND m4 != (75.0..100.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (35.6..57.2] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (32.8..39.2] AND ml != (35.6..57.2] AND m2 != (95.2..+inf) THEN target != 1"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND m2 != (95.2..+inf) AND m4 != (75.0..100.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Observation_number != (-inf..2.2] AND Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND m3 != (12.42..16.44] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Observation_number != (-inf..2.2] AND Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND m4 != (75.0..100.0] THEN target != 1"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (819.0..947.0] AND Age_of_patient == (32.8..39.2] AND Date_that_blood_sample_was_taken == (30078.0..60079.0] AND ml == (57.2..98.7] AND m2 == (-inf..23.8] AND m3 == (16.44..21.84] AND m4 == (75.0..100.0] THEN target != 1"
+  expl: "IF ml != (57.2..98.7] AND m3 != (16.44..21.84] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Age_of_patient != (32.8..39.2] AND m2 != (-inf..23.8] AND m3 != (16.44..21.84] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (57.2..98.7] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND ml != (57.2..98.7] AND m2 != (-inf..23.8] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (32.8..39.2] AND m2 != (-inf..23.8] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (32.8..39.2] AND m3 != (16.44..21.84] AND m4 != (75.0..100.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND m4 != (75.0..100.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (819.0..947.0] AND Age_of_patient != (32.8..39.2] AND ml != (57.2..98.7] AND m4 != (75.0..100.0] THEN target != 1"
+  # hypos left: 4
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (947.0..1124.0] AND Age_of_patient == (-inf..26.4] AND Date_that_blood_sample_was_taken == (30078.0..60079.0] AND ml == (57.2..98.7] AND m2 == (23.8..47.6] AND m3 == (9.16..12.42] AND m4 == (100.0..+inf) THEN target != 1"
+  expl: "IF Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND Age_of_patient != (-inf..26.4] AND m2 != (23.8..47.6] THEN target != 1"
+  # hypos left: 3
+  expl: "IF Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (57.2..98.7] AND m2 != (23.8..47.6] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Date_that_blood_sample_was_taken != (30078.0..60079.0] AND m2 != (23.8..47.6] AND m3 != (9.16..12.42] AND m4 != (100.0..+inf) THEN target != 1"
+  # hypos left: 4
+  expl: "IF Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (57.2..98.7] AND m2 != (23.8..47.6] AND m3 != (9.16..12.42] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (-inf..26.4] AND ml != (57.2..98.7] AND m2 != (23.8..47.6] AND m3 != (9.16..12.42] AND m4 != (100.0..+inf) THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (57.2..98.7] AND m3 != (9.16..12.42] AND m4 != (100.0..+inf) THEN target != 1"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (947.0..1124.0] AND Age_of_patient == (32.8..39.2] AND Date_that_blood_sample_was_taken == (-inf..30078.0] AND ml == (98.7..209.4] AND m2 == (95.2..+inf) AND m3 == (16.44..21.84] AND m4 == (50.0..75.0] THEN target != 0"
+  expl: "IF Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND Age_of_patient != (32.8..39.2] AND m2 != (95.2..+inf) THEN target != 0"
+  # hypos left: 3
+  expl: "IF Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND ml != (98.7..209.4] AND m2 != (95.2..+inf) AND m4 != (50.0..75.0] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND Date_that_blood_sample_was_taken != (-inf..30078.0] AND ml != (98.7..209.4] AND m2 != (95.2..+inf) THEN target != 0"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND Date_that_blood_sample_was_taken != (-inf..30078.0] AND ml != (98.7..209.4] AND m3 != (16.44..21.84] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (-inf..30078.0] AND ml != (98.7..209.4] AND m2 != (95.2..+inf) THEN target != 0"
+  # hypos left: 4
+  expl: "IF Observation_number != (-inf..2.2] AND Date_that_blood_sample_was_taken != (-inf..30078.0] AND ml != (98.7..209.4] AND m3 != (16.44..21.84] AND m4 != (50.0..75.0] THEN target != 0"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (947.0..1124.0] AND Age_of_patient == (32.8..39.2] AND Date_that_blood_sample_was_taken == (30078.0..60079.0] AND ml == (35.6..57.2] AND m2 == (71.4..95.2] AND m3 == (-inf..9.16] AND m4 == (25.0..50.0] THEN target != 1"
+  expl: "IF Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Date_that_blood_sample_was_taken != (30078.0..60079.0] AND m3 != (-inf..9.16] THEN target != 1"
+  # hypos left: 2
+  expl: "IF Observation_number != (-inf..2.2] AND Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND Age_of_patient != (32.8..39.2] AND ml != (35.6..57.2] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND Age_of_patient != (32.8..39.2] AND ml != (35.6..57.2] AND m3 != (-inf..9.16] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (32.8..39.2] AND ml != (35.6..57.2] AND m2 != (71.4..95.2] AND m3 != (-inf..9.16] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (947.0..1124.0] AND Age_of_patient == (39.2..46.8] AND Date_that_blood_sample_was_taken == (60079.0..90078.0] AND ml == (209.4..+inf) AND m2 == (-inf..23.8] AND m3 == (16.44..21.84] AND m4 == (75.0..100.0] THEN target != 0"
+  expl: "IF Age_of_patient != (39.2..46.8] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (209.4..+inf) THEN target != 0"
+  # hypos left: 3
+  expl: "IF Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND Age_of_patient != (39.2..46.8] AND ml != (209.4..+inf) AND m2 != (-inf..23.8] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND Age_of_patient != (39.2..46.8] AND ml != (209.4..+inf) AND m3 != (16.44..21.84] AND m4 != (75.0..100.0] THEN target != 0"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Observation_number == (-inf..2.2] AND Hospital_identification_number_for_blood_sample == (947.0..1124.0] AND Age_of_patient == (39.2..46.8] AND Date_that_blood_sample_was_taken == (60079.0..90078.0] AND ml == (98.7..209.4] AND m2 == (71.4..95.2] AND m3 == (16.44..21.84] AND m4 == (100.0..+inf) THEN target != 0"
+  expl: "IF Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND Age_of_patient != (39.2..46.8] AND ml != (98.7..209.4] AND m4 != (100.0..+inf) THEN target != 0"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND Age_of_patient != (39.2..46.8] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND m2 != (71.4..95.2] AND m4 != (100.0..+inf) THEN target != 0"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND Age_of_patient != (39.2..46.8] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (98.7..209.4] AND m3 != (16.44..21.84] THEN target != 0"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND Age_of_patient != (39.2..46.8] AND ml != (98.7..209.4] AND m2 != (71.4..95.2] AND m3 != (16.44..21.84] THEN target != 0"
+  # hypos left: 5
+  expl: "IF Age_of_patient != (39.2..46.8] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (98.7..209.4] AND m2 != (71.4..95.2] AND m4 != (100.0..+inf) THEN target != 0"
+  # hypos left: 5
+  expl: "IF Age_of_patient != (39.2..46.8] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (98.7..209.4] AND m3 != (16.44..21.84] AND m4 != (100.0..+inf) THEN target != 0"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Observation_number == (2.2..3.4] AND Hospital_identification_number_for_blood_sample == (1124.0..1281.0] AND Age_of_patient == (-inf..26.4] AND Date_that_blood_sample_was_taken == (60079.0..90078.0] AND ml == (-inf..35.6] AND m2 == (47.6..71.4] AND m3 == (9.16..12.42] AND m4 == (25.0..50.0] THEN target != 1"
+  expl: "IF Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Age_of_patient != (-inf..26.4] AND ml != (-inf..35.6] AND m2 != (47.6..71.4] AND m3 != (9.16..12.42] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Age_of_patient != (-inf..26.4] AND ml != (-inf..35.6] AND m2 != (47.6..71.4] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Observation_number != (2.2..3.4] AND Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Age_of_patient != (-inf..26.4] AND ml != (-inf..35.6] AND m3 != (9.16..12.42] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND m2 != (47.6..71.4] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Observation_number != (2.2..3.4] AND Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Age_of_patient != (-inf..26.4] AND m2 != (47.6..71.4] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (-inf..35.6] AND m3 != (9.16..12.42] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 6
+  expl: "IF Observation_number != (2.2..3.4] AND Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (-inf..35.6] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 6
+  expl: "IF Observation_number != (2.2..3.4] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (-inf..35.6] AND m3 != (9.16..12.42] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 6
+  expl: "IF Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (-inf..35.6] AND m2 != (47.6..71.4] AND m3 != (9.16..12.42] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 6
+  expl: "IF Observation_number != (2.2..3.4] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (-inf..35.6] AND m2 != (47.6..71.4] AND m3 != (9.16..12.42] THEN target != 1"
+  # hypos left: 6
+  expl: "IF Observation_number != (2.2..3.4] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND m2 != (47.6..71.4] AND m3 != (9.16..12.42] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 6
+  expl: "IF Observation_number != (2.2..3.4] AND Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Age_of_patient != (-inf..26.4] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND m2 != (47.6..71.4] AND m3 != (9.16..12.42] THEN target != 1"
+  # hypos left: 6
+  expl: "IF Observation_number != (2.2..3.4] AND Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (-inf..35.6] AND m2 != (47.6..71.4] AND m3 != (9.16..12.42] AND m4 != (25.0..50.0] THEN target != 1"
+  # hypos left: 7
+  exp time: 0.00
+
+  inst: "IF Observation_number == (2.2..3.4] AND Hospital_identification_number_for_blood_sample == (1124.0..1281.0] AND Age_of_patient == (26.4..32.8] AND Date_that_blood_sample_was_taken == (30078.0..60079.0] AND ml == (209.4..+inf) AND m2 == (71.4..95.2] AND m3 == (21.84..+inf) AND m4 == (100.0..+inf) THEN target != 0"
+  expl: "IF Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (209.4..+inf) AND m3 != (21.84..+inf) AND m4 != (100.0..+inf) THEN target != 0"
+  # hypos left: 4
+  expl: "IF Observation_number != (2.2..3.4] AND Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND ml != (209.4..+inf) AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND ml != (209.4..+inf) AND m3 != (21.84..+inf) AND m4 != (100.0..+inf) THEN target != 0"
+  # hypos left: 4
+  expl: "IF Observation_number != (2.2..3.4] AND Age_of_patient != (26.4..32.8] AND ml != (209.4..+inf) AND m3 != (21.84..+inf) AND m4 != (100.0..+inf) THEN target != 0"
+  # hypos left: 5
+  expl: "IF Observation_number != (2.2..3.4] AND Hospital_identification_number_for_blood_sample != (1124.0..1281.0] AND Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (209.4..+inf) AND m2 != (71.4..95.2] THEN target != 0"
+  # hypos left: 6
+  expl: "IF Observation_number != (2.2..3.4] AND Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (209.4..+inf) AND m2 != (71.4..95.2] AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Observation_number == (2.2..3.4] AND Hospital_identification_number_for_blood_sample == (1281.0..+inf) AND Age_of_patient == (26.4..32.8] AND Date_that_blood_sample_was_taken == (60079.0..90078.0] AND ml == (35.6..57.2] AND m2 == (71.4..95.2] AND m3 == (12.42..16.44] AND m4 == (50.0..75.0] THEN target != 0"
+  expl: "IF Observation_number != (2.2..3.4] THEN target != 0"
+  # hypos left: 1
+  expl: "IF m3 != (12.42..16.44] AND m4 != (50.0..75.0] THEN target != 0"
+  # hypos left: 2
+  expl: "IF Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (35.6..57.2] AND m2 != (71.4..95.2] AND m4 != (50.0..75.0] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (60079.0..90078.0] AND ml != (35.6..57.2] AND m2 != (71.4..95.2] AND m3 != (12.42..16.44] THEN target != 0"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Observation_number == (2.2..3.4] AND Hospital_identification_number_for_blood_sample == (1281.0..+inf) AND Age_of_patient == (32.8..39.2] AND Date_that_blood_sample_was_taken == (90078.0..110077.0] AND ml == (98.7..209.4] AND m2 == (-inf..23.8] AND m3 == (16.44..21.84] AND m4 == (50.0..75.0] THEN target != 0"
+  expl: "IF ml != (98.7..209.4] AND m2 != (-inf..23.8] AND m4 != (50.0..75.0] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Observation_number != (2.2..3.4] AND ml != (98.7..209.4] AND m3 != (16.44..21.84] THEN target != 0"
+  # hypos left: 3
+  expl: "IF Observation_number != (2.2..3.4] AND Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (98.7..209.4] AND m4 != (50.0..75.0] THEN target != 0"
+  # hypos left: 5
+  expl: "IF Observation_number != (2.2..3.4] AND Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (98.7..209.4] AND m2 != (-inf..23.8] THEN target != 0"
+  # hypos left: 5
+  expl: "IF Observation_number != (2.2..3.4] AND Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND m2 != (-inf..23.8] THEN target != 0"
+  # hypos left: 5
+  expl: "IF Observation_number != (2.2..3.4] AND Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (98.7..209.4] AND m4 != (50.0..75.0] THEN target != 0"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Date_that_blood_sample_was_taken != (90078.0..110077.0] AND ml != (98.7..209.4] AND m2 != (-inf..23.8] AND m3 != (16.44..21.84] THEN target != 0"
+  # hypos left: 5
+  exp time: 0.00
+
+  inst: "IF Observation_number == (2.2..3.4] AND Hospital_identification_number_for_blood_sample == (947.0..1124.0] AND Age_of_patient == (26.4..32.8] AND Date_that_blood_sample_was_taken == (30078.0..60079.0] AND ml == (35.6..57.2] AND m2 == (47.6..71.4] AND m3 == (9.16..12.42] AND m4 == (50.0..75.0] THEN target != 1"
+  expl: "IF Observation_number != (2.2..3.4] AND Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND m2 != (47.6..71.4] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND Age_of_patient != (26.4..32.8] AND m2 != (47.6..71.4] AND m3 != (9.16..12.42] THEN target != 1"
+  # hypos left: 4
+  expl: "IF Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND m2 != (47.6..71.4] AND m3 != (9.16..12.42] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Observation_number != (2.2..3.4] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (35.6..57.2] AND m2 != (47.6..71.4] AND m3 != (9.16..12.42] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Observation_number != (2.2..3.4] AND Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND m2 != (47.6..71.4] AND m3 != (9.16..12.42] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND ml != (35.6..57.2] AND m2 != (47.6..71.4] AND m3 != (9.16..12.42] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Observation_number != (2.2..3.4] AND Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND m3 != (9.16..12.42] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Observation_number != (2.2..3.4] AND Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND Age_of_patient != (26.4..32.8] AND ml != (35.6..57.2] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Observation_number != (2.2..3.4] AND Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (35.6..57.2] AND m2 != (47.6..71.4] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND m2 != (47.6..71.4] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 5
+  expl: "IF Observation_number != (2.2..3.4] AND Age_of_patient != (26.4..32.8] AND ml != (35.6..57.2] AND m2 != (47.6..71.4] AND m3 != (9.16..12.42] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 6
+  expl: "IF Hospital_identification_number_for_blood_sample != (947.0..1124.0] AND Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (35.6..57.2] AND m3 != (9.16..12.42] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 6
+  expl: "IF Observation_number != (2.2..3.4] AND Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (30078.0..60079.0] AND ml != (35.6..57.2] AND m3 != (9.16..12.42] AND m4 != (50.0..75.0] THEN target != 1"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Observation_number == (3.4..4.6] AND Hospital_identification_number_for_blood_sample == (1281.0..+inf) AND Age_of_patient == (26.4..32.8] AND Date_that_blood_sample_was_taken == (110077.0..+inf) AND ml == (209.4..+inf) AND m2 == (95.2..+inf) AND m3 == (21.84..+inf) AND m4 == (100.0..+inf) THEN target != 0"
+  expl: "IF Observation_number != (3.4..4.6] AND Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (110077.0..+inf) AND ml != (209.4..+inf) THEN target != 0"
+  # hypos left: 4
+  expl: "IF Observation_number != (3.4..4.6] AND Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (26.4..32.8] AND ml != (209.4..+inf) AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 5
+  expl: "IF Observation_number != (3.4..4.6] AND Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND ml != (209.4..+inf) AND m3 != (21.84..+inf) AND m4 != (100.0..+inf) THEN target != 0"
+  # hypos left: 5
+  expl: "IF Observation_number != (3.4..4.6] AND Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Date_that_blood_sample_was_taken != (110077.0..+inf) AND ml != (209.4..+inf) AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 5
+  expl: "IF Observation_number != (3.4..4.6] AND Date_that_blood_sample_was_taken != (110077.0..+inf) AND ml != (209.4..+inf) AND m3 != (21.84..+inf) AND m4 != (100.0..+inf) THEN target != 0"
+  # hypos left: 5
+  expl: "IF Observation_number != (3.4..4.6] AND Date_that_blood_sample_was_taken != (110077.0..+inf) AND ml != (209.4..+inf) AND m2 != (95.2..+inf) AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 5
+  expl: "IF Observation_number != (3.4..4.6] AND Age_of_patient != (26.4..32.8] AND ml != (209.4..+inf) AND m2 != (95.2..+inf) AND m4 != (100.0..+inf) THEN target != 0"
+  # hypos left: 5
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (26.4..32.8] AND Date_that_blood_sample_was_taken != (110077.0..+inf) AND ml != (209.4..+inf) AND m2 != (95.2..+inf) AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 6
+  exp time: 0.00
+
+  inst: "IF Observation_number == (3.4..4.6] AND Hospital_identification_number_for_blood_sample == (1281.0..+inf) AND Age_of_patient == (32.8..39.2] AND Date_that_blood_sample_was_taken == (110077.0..+inf) AND ml == (98.7..209.4] AND m2 == (95.2..+inf) AND m3 == (21.84..+inf) AND m4 == (100.0..+inf) THEN target != 0"
+  expl: "IF Observation_number != (3.4..4.6] AND Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (110077.0..+inf) AND ml != (98.7..209.4] THEN target != 0"
+  # hypos left: 4
+  expl: "IF Observation_number != (3.4..4.6] AND Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND ml != (98.7..209.4] AND m2 != (95.2..+inf) AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 5
+  expl: "IF Observation_number != (3.4..4.6] AND Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Date_that_blood_sample_was_taken != (110077.0..+inf) AND ml != (98.7..209.4] AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 5
+  expl: "IF Observation_number != (3.4..4.6] AND ml != (98.7..209.4] AND m2 != (95.2..+inf) AND m3 != (21.84..+inf) AND m4 != (100.0..+inf) THEN target != 0"
+  # hypos left: 5
+  expl: "IF Observation_number != (3.4..4.6] AND Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (32.8..39.2] AND ml != (98.7..209.4] AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 5
+  expl: "IF Observation_number != (3.4..4.6] AND Age_of_patient != (32.8..39.2] AND ml != (98.7..209.4] AND m2 != (95.2..+inf) AND m4 != (100.0..+inf) THEN target != 0"
+  # hypos left: 5
+  expl: "IF Observation_number != (3.4..4.6] AND Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Date_that_blood_sample_was_taken != (110077.0..+inf) AND ml != (98.7..209.4] AND m2 != (95.2..+inf) AND m4 != (100.0..+inf) THEN target != 0"
+  # hypos left: 6
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (110077.0..+inf) AND ml != (98.7..209.4] AND m2 != (95.2..+inf) AND m3 != (21.84..+inf) THEN target != 0"
+  # hypos left: 6
+  expl: "IF Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Date_that_blood_sample_was_taken != (110077.0..+inf) AND ml != (98.7..209.4] AND m2 != (95.2..+inf) AND m3 != (21.84..+inf) AND m4 != (100.0..+inf) THEN target != 0"
+  # hypos left: 6
+  expl: "IF Observation_number != (3.4..4.6] AND Hospital_identification_number_for_blood_sample != (1281.0..+inf) AND Age_of_patient != (32.8..39.2] AND Date_that_blood_sample_was_taken != (110077.0..+inf) AND m2 != (95.2..+inf) AND m3 != (21.84..+inf) AND m4 != (100.0..+inf) THEN target != 0"
+  # hypos left: 7
+  exp time: 0.00
+
+exptimes: [0.0019739999999999758, 0.0020300000000000318, 0.0030689999999999884, 0.002650000000000041, 0.0018140000000000378, 0.0019700000000000273, 0.0020050000000000345, 0.0018960000000000088, 0.0033609999999999474, 0.001809000000000005, 0.003043999999999991, 0.0019439999999999458, 0.0019589999999999885, 0.0033170000000000144, 0.0032919999999999616, 0.0031999999999999806, 0.002008999999999983, 0.004176999999999986, 0.0005629999999999802, 0.003994999999999971, 0.0008509999999999907, 0.0013239999999999363, 0.0005650000000000377, 0.0025430000000000175, 0.0012320000000000109, 0.0027630000000000154, 0.0033279999999999976, 0.0033929999999999794, 0.003736000000000017, 0.0024750000000000605, 0.003919000000000006, 0.0026940000000000297, 0.0037679999999999936, 0.0014700000000000268, 0.002475000000000005, 0.003286000000000011, 0.0028289999999999704, 0.002458999999999989, 0.0028630000000000044, 0.0039739999999999776, 0.0019719999999999738, 0.002803999999999973]
+# of insts: 42
+tot # of expls: 272
+min # of expls: 1
+avg # of expls: 6.48
+max # of expls: 14
+
+Min expl sz: 1
+min expl sz: 3.21
+avg expl sz: 4.19
+max expl sz: 5.19
+Max expl sz: 7
+
+tot exp time: 0.11
+min exp time: 0.00
+avg exp time: 0.00
+max exp time: 0.00
